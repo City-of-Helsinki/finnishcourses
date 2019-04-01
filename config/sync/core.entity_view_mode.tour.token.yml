@@ -1,0 +1,10 @@
+uuid: fda51668-78cc-44ed-999e-313670dddbbb
+langcode: en
+status: true
+dependencies:
+  module:
+    - tour
+id: tour.token
+label: Token
+targetEntityType: tour
+cache: true

@@ -1,0 +1,14 @@
+uuid: d9664c5a-b141-41c6-ab85-e5cf58fc261f
+name: Finnishcourses
+mail: teemu.rautiainen@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
