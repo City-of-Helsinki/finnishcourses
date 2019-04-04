@@ -1,0 +1,64 @@
+/**
+ * Mixins
+ */
+
+/**
+ * Font size with line-height.
+ * 
+ * @param  {[type]} $size       [description]
+ * @param  {[type]} $lineheight [description]
+ * @return {[type]}             [description]
+ */
+@mixin font-size($size, $lineheight) {
+  font-size: rem($size);
+  line-height: rem($lineheight);
+}
+
+/**
+ * Border radius helper.
+ * 
+ * @param  {[type]} $radius [description]
+ * @return {[type]}         [description]
+ */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+/**
+ * Box shadow helper.
+ * 
+ * @param  {[type]} $blur:   3px           [description]
+ * @param  {[type]} $color:  #a7a7a7       [description]
+ * @param  {[type]} $dist_h: 0             [description]
+ * @param  {[type]} $dist_v: 0             [description]
+ * @param  {[type]} $size:   0             [description]
+ * @return {[type]}          [description]
+ */
+@mixin box-shadow($blur: 3px, $color: #a7a7a7, $dist_h: 0, $dist_v: 0, $size: 0) {
+  -webkit-box-shadow: $dist_h $dist_v $blur $size $color;
+  -moz-box-shadow:    $dist_h $dist_v $blur $size $color;
+  box-shadow:         $dist_h $dist_v $blur $size $color;
+}
+
+
+/**
+ * Button.
+ * 
+ * @param  {[type]} $bg:    red           [description]
+ * @param  {[type]} $color: white         [description]
+ * @return {[type]}         [description]
+ */
+@mixin button($bg: red, $color: white) {
+  display: inline-block;
+  background: $bg;
+  border: 0;
+  color: #fff;
+  text-transform: uppercase;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 13px;
+  color: $color;
+  @include font-size(18);
+}

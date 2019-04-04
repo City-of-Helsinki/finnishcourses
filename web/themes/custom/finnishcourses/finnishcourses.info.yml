@@ -1,0 +1,31 @@
+name: finnishcourses
+type: theme
+description: 'Theme: finnishcourses'
+package: Core
+# version: VERSION
+core: 8.x
+
+base theme: classy
+
+libraries:
+  - finnishcourses/base
+
+libraries-override:
+  classy/base: false
+
+ckeditor_stylesheets:
+  - css/ckeditor.css
+
+regions:
+  navigation: 'Main navigation'
+  header: 'Header'
+  breadcrumb: 'Breadcrumb'
+  highlighted: 'Highlighted'
+  content_top: 'Top content'
+  content: 'Main content'
+  content_bottom: 'Bottom content'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer_top: 'Top footer'
+  footer: 'Footer'
+  footer_bottom: 'Bottom footer'

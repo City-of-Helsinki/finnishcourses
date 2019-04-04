@@ -1,0 +1,29 @@
+{
+  "name": "finnishcourses",
+  "version": "1.0.0",
+  "scripts": {
+    "preinstall": "npm install git+ssh://git@bitbucket.org/verkkojulkaisut/drupal-neat-breakpoints.git",
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "*",
+    "bourbon": "*",
+    "bourbon-neat": "^2.0.0",
+    "glob": "*",
+    "graceful-fs": "*",
+    "gulp": "*",
+    "gulp-fontmin": "*",
+    "gulp-imagemin": "*",
+    "gulp-minifier": "*",
+    "gulp-newer": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-watch": "*",
+    "path": "*",
+    "gulp-uglify": "*"
+  },
+  "dependencies": {
+    "drupal-neat-breakpoints": "git+ssh://git@bitbucket.org/verkkojulkaisut/drupal-neat-breakpoints.git"
+  }
+}

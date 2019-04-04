@@ -1,0 +1,34 @@
+@import "variables/_colors";
+@import "abstractions/_shared";
+
+/**
+ * CKEditor CSS
+ *
+ * @note
+ * You shouldn't have any needs to modify this file.
+ * This copies styles from abstractions/_shared.scss so
+ * all the body styles effects straigth into ckeditor and node display.
+ */
+
+body {
+  @include shared-node-body-styles;
+}
+
+table {
+  @include shared-formatted-table-styles;
+}
+
+table.unformatted {
+  @include shared-unformatted-table-styles;
+}
+
+ul {
+  @include shared-ul-styles;
+}
+ol {
+  @include shared-ol-styles;
+}
+
+a {
+  @include shared-link-styles;
+}
