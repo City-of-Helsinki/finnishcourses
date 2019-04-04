@@ -1,0 +1,205 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the finnishcourses theme.
+ */
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function finnishcourses_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+  // Suggest "page--[node:type].html.twig" template
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    
+    // Check if node is object
+    if(is_object($node)) {
+      $content_type = $node->bundle();
+      $suggestions[] = 'page__'.$content_type;
+    }
+  }
+}
+
+
+
+
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function finnishcourses_page_attachments_alter(array &$page) {
+
+  /**
+   * Add responsive favicons
+   */
+  _finnishcourses_add_favicons($page['#attached']['html_head']);
+
+}
+
+
+
+
+
+
+
+
+
+/**
+ * CUSTOM
+ */
+
+
+/**
+ * Add favicons
+ * @param  [type] &$head_elements [description]
+ * @return [type]                 [description]
+ */
+function _finnishcourses_add_favicons(&$head_elements) {
+
+  global $theme, $base_url;
+
+
+  $weight = 15;
+
+  $path_to_favicons = base_path() . drupal_get_path('theme', 'finnishcourses') .'/favicons';
+
+
+  $link_icon_mappings = array(
+      'android-chrome' => array(
+          'rel' => 'icon',
+          'sizes' => array(
+              array(192,192),
+            ),
+        ),
+      'apple-touch-icon' => array(
+          'rel' => 'apple-touch-icon',
+          'sizes' => array(
+              array(57,57),
+              array(60,60),
+              array(72,72),
+              array(76,76),
+              array(114,114),
+              array(120,120),
+              array(144,144),
+              array(152,152),
+              array(180,180),
+            ),
+        ),
+      'favicon' => array(
+          'rel' => 'icon',
+          'sizes' => array(
+              array(16,16),
+              array(32,32),
+              array(96,96),
+            ),
+        ),
+    );
+
+
+
+
+  /**
+   * Create elements for sized icons
+   */
+  foreach($link_icon_mappings as $key => $data) {
+
+    foreach($data['sizes'] as $size) {
+
+      $size_key = $key.'-'.$size[0].'x'.$size[1];
+ 
+      $head_elements[] = [array(
+          '#type' => 'html_tag',
+          '#tag' => 'link',
+          '#attributes' => array(
+            'rel' => $data['rel'],
+            'href' => $path_to_favicons .'/'.$size_key.'.png',
+            'sizes' => $size[0].'x'.$size[1],
+          ),
+          '#weight' => $weight
+        ), $size_key];
+
+      $weight++;
+
+    }
+  }
+
+
+
+  /**
+   * Apple precomposed and basic
+   */
+  $head_elements[] = [array(
+      '#type' => 'html_tag',
+      '#tag' => 'link',
+      '#attributes' => array(
+        'rel' => 'apple-touch-icon-precomposed',
+        'href' => $path_to_favicons .'/apple-touch-icon-precomposed.png',
+        'sizes' => '128x128',
+      ),
+      '#weight' => $weight
+
+    ), 'apple-touch-icon-precomposed'];
+
+
+
+  $head_elements[] = [array(
+      '#type' => 'html_tag',
+      '#tag' => 'link',
+      '#attributes' => array(
+        'rel' => 'apple-touch-icon',
+        'href' => $path_to_favicons .'/apple-touch-icon.png',
+      ),
+      '#weight' => $weight
+    ), 'apple-touch-icon'];
+
+
+  /**
+   * Basic favicon
+   */
+  $head_elements[] = [array(
+      '#type' => 'html_tag',
+      '#tag' => 'link',
+      '#attributes' => array(
+        'rel' => 'shortcut icon',
+        'href' => $path_to_favicons .'/favicon.ico',
+        'type' => 'image/vnd.microsoft.icon',
+      ),
+      '#weight' => $weight
+    ), 'basic-favicon'];
+
+  /**
+   * Microsoft <meta> stuff
+   */
+  $ms_tile_mappings = array(
+      // 'msapplication-TileColor' => '',
+      'msapplication-square70x70logo' => $path_to_favicons .'/mstile-70x70.png',
+      'msapplication-square150x150logo' => $path_to_favicons .'/mstile-150x150.png',
+      'msapplication-wide310x150logo' => $path_to_favicons .'/mstile-310x150.png',
+      'msapplication-square310x310logo' => $path_to_favicons .'/mstile-310x310.png',
+      'msapplication-TileImage' => $path_to_favicons .'/mstile-144x144.png',
+    );
+
+
+
+  /**
+   * Create elements for sized icons
+   */
+  foreach($ms_tile_mappings as $key => $content) {
+
+    $head_elements[] = [array(
+        '#type' => 'html_tag',
+        '#tag' => 'meta',
+        '#attributes' => array(
+          'content' => $content,
+          'name' => $key,
+        ),
+        '#weight' => $weight
+      ), $key];
+
+    $weight++;
+
+  }
+
+}
