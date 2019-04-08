@@ -1,0 +1,23 @@
+uuid: 58c06a68-2031-4ca7-ba2b-b7f45f7e0c32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_in_swedish
+    - node.type.course
+id: node.course.field_course_in_swedish
+field_name: field_course_in_swedish
+entity_type: node
+bundle: course
+label: 'Course in Swedish'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

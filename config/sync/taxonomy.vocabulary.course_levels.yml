@@ -1,0 +1,9 @@
+uuid: d0f55447-2c41-42f0-ba7a-baf48fdcc248
+langcode: en
+status: true
+dependencies: {  }
+name: 'Course levels'
+vid: course_levels
+description: ''
+hierarchy: 0
+weight: 0

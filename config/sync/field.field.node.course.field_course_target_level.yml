@@ -1,0 +1,29 @@
+uuid: dee72692-1add-41e2-bebf-18d7b9324ba8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_target_level
+    - node.type.course
+    - taxonomy.vocabulary.course_levels
+id: node.course.field_course_target_level
+field_name: field_course_target_level
+entity_type: node
+bundle: course
+label: 'Course target level'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      course_levels: course_levels
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

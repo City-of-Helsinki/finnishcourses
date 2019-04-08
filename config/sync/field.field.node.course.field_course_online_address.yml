@@ -1,0 +1,23 @@
+uuid: 8aef47aa-0211-44d4-b6ae-7cb1a78a3d96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_online_address
+    - node.type.course
+  module:
+    - link
+id: node.course.field_course_online_address
+field_name: field_course_online_address
+entity_type: node
+bundle: course
+label: 'Course online address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link
