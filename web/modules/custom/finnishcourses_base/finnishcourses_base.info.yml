@@ -1,0 +1,6 @@
+name: 'Finnishcourses base'
+description: 'Contains base custom implementations at Finnishcourses site.'
+type: module
+
+core: '8.x'
+package: 'Finnishcourses custom'

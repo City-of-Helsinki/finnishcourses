@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function finnishcourses_base_element_info_alter(array &$types) {
+  $types['datetime']['#process'][] = 'finnishcourses_base_datetime_set_format';
+}
+
+/**
+ * Element process callback for datetime fields.
+ */
+function finnishcourses_base_datetime_set_format($element) {
+  // Remove seconds in browsers that support HTML5 type=date.
+  $element['time']['#attributes']['step'] = 60;
+  return $element;
+}
