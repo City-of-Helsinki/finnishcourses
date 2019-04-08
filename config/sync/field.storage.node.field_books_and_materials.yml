@@ -1,0 +1,19 @@
+uuid: c4cee030-3d4e-4e15-99ab-06305274287e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_books_and_materials
+field_name: field_books_and_materials
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

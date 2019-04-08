@@ -1,0 +1,21 @@
+uuid: 90a25dd6-0ff4-429c-b1c0-828757f886ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_availability
+    - node.type.course
+  module:
+    - options
+id: node.course.field_course_availability
+field_name: field_course_availability
+entity_type: node
+bundle: course
+label: 'Course availability'
+description: 'Availability information if there are free slots on the course.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

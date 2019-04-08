@@ -1,0 +1,21 @@
+uuid: b2efad9a-8069-4c3a-a7ee-671f40db3f93
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_books_and_materials
+    - node.type.course
+  module:
+    - text
+id: node.course.field_books_and_materials
+field_name: field_books_and_materials
+entity_type: node
+bundle: course
+label: 'Books and materials'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

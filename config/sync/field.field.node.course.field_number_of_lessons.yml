@@ -1,0 +1,23 @@
+uuid: a3f6f614-e4ed-4c97-a5ea-2a60438bd1d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_lessons
+    - node.type.course
+id: node.course.field_number_of_lessons
+field_name: field_number_of_lessons
+entity_type: node
+bundle: course
+label: 'Number of lessons'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

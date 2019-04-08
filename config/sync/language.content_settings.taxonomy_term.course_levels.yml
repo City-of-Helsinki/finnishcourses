@@ -1,0 +1,16 @@
+uuid: 7167c656-5579-4a66-980e-4969fb2bbf57
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.course_levels
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.course_levels
+target_entity_type_id: taxonomy_term
+target_bundle: course_levels
+default_langcode: site_default
+language_alterable: true
