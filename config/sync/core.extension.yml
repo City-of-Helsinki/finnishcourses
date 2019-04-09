@@ -43,7 +43,6 @@ module:
   geolocation: 0
   geolocation_google_places_api: 0
   google_tag: 0
-  group: 0
   help: 0
   history: 0
   honeypot: 0
