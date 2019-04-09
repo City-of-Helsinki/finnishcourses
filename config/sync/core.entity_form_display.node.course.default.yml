@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.course.field_course_information_source
     - field.field.node.course.field_course_length
     - field.field.node.course.field_course_online_address
+    - field.field.node.course.field_course_organization
     - field.field.node.course.field_course_organizer_id
     - field.field.node.course.field_course_start_date
     - field.field.node.course.field_course_target_level
@@ -38,7 +39,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 14
     settings:
       rows: 9
       summary_rows: 3
@@ -47,12 +48,12 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_books_and_materials:
-    weight: 139
+    weight: 30
     settings:
       rows: 5
       placeholder: ''
@@ -60,19 +61,19 @@ content:
     type: text_textarea
     region: content
   field_course_availability:
-    weight: 138
+    weight: 29
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_course_end_date:
-    weight: 125
+    weight: 18
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_course_entry_level:
-    weight: 133
+    weight: 24
     settings:
       match_operator: CONTAINS
       size: 60
@@ -81,7 +82,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_course_id:
-    weight: 140
+    weight: 31
     settings:
       size: 60
       placeholder: ''
@@ -89,14 +90,14 @@ content:
     type: string_textfield
     region: content
   field_course_in_swedish:
-    weight: 134
+    weight: 25
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_course_information_source:
-    weight: 141
+    weight: 32
     settings:
       size: 60
       placeholder: ''
@@ -104,22 +105,28 @@ content:
     type: string_textfield
     region: content
   field_course_length:
-    weight: 123
+    weight: 16
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_course_online_address:
-    weight: 136
+    weight: 27
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
     region: content
+  field_course_organization:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
   field_course_organizer_id:
-    weight: 122
+    weight: 15
     settings:
       size: 60
       placeholder: ''
@@ -127,13 +134,13 @@ content:
     type: string_textfield
     region: content
   field_course_start_date:
-    weight: 124
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_course_target_level:
-    weight: 132
+    weight: 23
     settings:
       match_operator: CONTAINS
       size: 60
@@ -142,27 +149,27 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_course_week_hours:
-    weight: 142
+    weight: 33
     settings: {  }
     third_party_settings: {  }
     type: office_hours_default
     region: content
   field_number_of_lessons:
-    weight: 126
+    weight: 19
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_online_course:
-    weight: 135
+    weight: 26
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_registration_email:
-    weight: 130
+    weight: 22
     settings:
       size: 60
       placeholder: ''
@@ -170,13 +177,13 @@ content:
     type: email_default
     region: content
   field_registration_end_date:
-    weight: 128
+    weight: 21
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_registration_link:
-    weight: 137
+    weight: 28
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -184,21 +191,21 @@ content:
     type: link_default
     region: content
   field_registration_start_date:
-    weight: 127
+    weight: 20
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -206,50 +213,50 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 5
     region: content
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 20
+    weight: 7
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 12
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 6
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 3
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 2
     settings:
       match_operator: CONTAINS
       size: 60
@@ -258,13 +265,13 @@ content:
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default
-    weight: 30
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 11
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }

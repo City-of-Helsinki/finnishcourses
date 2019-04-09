@@ -1,0 +1,19 @@
+uuid: 4a7b135b-2348-4153-8dd1-06a76e5f4a08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_address
+    - taxonomy.vocabulary.organizations
+id: taxonomy_term.organizations.field_address
+field_name: field_address
+entity_type: taxonomy_term
+bundle: organizations
+label: Address
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

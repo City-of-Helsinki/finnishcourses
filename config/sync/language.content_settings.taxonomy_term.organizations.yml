@@ -1,0 +1,16 @@
+uuid: b0291aed-6bc8-4b74-a656-14e4c78eeebe
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.organizations
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.organizations
+target_entity_type_id: taxonomy_term
+target_bundle: organizations
+default_langcode: current_interface
+language_alterable: true

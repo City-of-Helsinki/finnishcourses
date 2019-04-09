@@ -1,9 +1,9 @@
-uuid: d0f55447-2c41-42f0-ba7a-baf48fdcc248
+uuid: 8c06a1da-652a-4cd9-85ea-b808c581a212
 langcode: und
 status: true
 dependencies: {  }
-name: 'Course levels'
-vid: course_levels
+name: Organizations
+vid: organizations
 description: ''
 hierarchy: 0
 weight: 0
