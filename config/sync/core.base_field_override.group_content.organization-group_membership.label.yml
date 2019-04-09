@@ -1,0 +1,18 @@
+uuid: 5773b107-f13f-4b13-ab03-77d2c52ae597
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.content_type.organization-group_membership
+id: group_content.organization-group_membership.label
+field_name: label
+entity_type: group_content
+bundle: organization-group_membership
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

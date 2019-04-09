@@ -1,0 +1,19 @@
+uuid: 6c27fcf4-04ac-4519-ab9d-0ca250da2f70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_postal_code
+    - group.type.organization
+id: group.organization.field_postal_code
+field_name: field_postal_code
+entity_type: group
+bundle: organization
+label: 'Postal code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
