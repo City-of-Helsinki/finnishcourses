@@ -1,0 +1,18 @@
+uuid: b8687cba-fd93-49bf-be69-c1e347e9dc0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - shortcut.set.course-editor
+id: shortcut.course-editor.title
+field_name: title
+entity_type: shortcut
+bundle: course-editor
+label: Name
+description: 'The name of the shortcut.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
