@@ -1,0 +1,9 @@
+uuid: 9e14f65c-a53a-4c92-9cd9-48463ddf1a20
+langcode: und
+status: true
+dependencies: {  }
+name: 'Course features'
+vid: course_features
+description: ''
+hierarchy: 0
+weight: 0
