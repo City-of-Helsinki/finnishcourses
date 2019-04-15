@@ -1,5 +1,8 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Form\FormState;
+
 /**
  * Implements hook_element_info_alter().
  */
@@ -14,4 +17,16 @@ function finnishcourses_base_datetime_set_format($element) {
   // Remove seconds in browsers that support HTML5 type=date.
   $element['time']['#attributes']['step'] = 60;
   return $element;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'node_course_form') {
+    $form['langcode']['widget'][0]['value']['#options'] = [
+      'en' => t('English'),
+    ];
+    //kint($form);
+  }
 }
