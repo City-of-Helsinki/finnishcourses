@@ -1,0 +1,19 @@
+{% if courses is not empty %}
+  <table>
+    {% if tableHeadings is not empty %}
+      {% for heading in tableHeadings %}
+        <th>{{ heading }}</th>
+      {% endfor %}
+    {% endif %}
+
+    {% for course in courses %}
+      <tr>
+        <td>{{ course.title }}</td>
+        <td>{{ course.organizationName }}</td>
+        <td>{{ course.startDate }}</td>
+        <td>{{ course.endDate }}</td>
+        <td><a href="{{ course.editUrl }}?destination=/admin/content/courses">{% trans %}Edit{% endtrans %}</a></td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endif %}

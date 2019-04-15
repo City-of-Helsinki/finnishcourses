@@ -1,7 +1,7 @@
-courses_listings.users_courses:
+course_listings.users_courses:
   path: '/admin/content/courses'
   defaults:
-    _controller: '\Drupal\courses_listings\Controller\usersCoursesListing::build'
+    _controller: '\Drupal\course_listings\Controller\usersCoursesListing::build'
     _title: ''
   requirements:
     _permission: 'create course content'

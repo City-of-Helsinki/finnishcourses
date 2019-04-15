@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function course_listings_theme($existing, $type, $theme, $path) {
+  return [
+    'manage_courses_listing' => [
+      'variables' => ['courses' => NULL, 'tableHeadings' => NULL],
+      'template' => 'manage-courses-listing',
+    ],
+  ];
+}
