@@ -1,0 +1,5 @@
+role:
+  anonymous: default
+  authenticated: default
+  administrator: default
+  course_editor: course-editor

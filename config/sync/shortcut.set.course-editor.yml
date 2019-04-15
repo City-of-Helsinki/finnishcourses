@@ -1,0 +1,6 @@
+uuid: 9792ab56-99cd-463f-a384-2871b7b3580c
+langcode: en
+status: true
+dependencies: {  }
+id: course-editor
+label: 'Course editor'

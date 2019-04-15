@@ -1,0 +1,14 @@
+uuid: f612327a-7205-4e3b-b314-bf4b1ca598d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.course_editor
+  module:
+    - user
+id: user_remove_role_action.course_editor
+label: 'Remove the Course editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: course_editor
