@@ -3,11 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.course.body
     - field.field.node.course.field_books_and_materials
     - field.field.node.course.field_course_availability
     - field.field.node.course.field_course_end_date
     - field.field.node.course.field_course_entry_level
+    - field.field.node.course.field_course_features
     - field.field.node.course.field_course_id
     - field.field.node.course.field_course_in_swedish
     - field.field.node.course.field_course_information_source
@@ -37,13 +37,6 @@ targetEntityType: node
 bundle: course
 mode: default
 content:
-  body:
-    label: hidden
-    type: text_default
-    weight: 101
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   field_books_and_materials:
     weight: 119
     label: above
@@ -69,6 +62,14 @@ content:
     region: content
   field_course_entry_level:
     weight: 113
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_course_features:
+    weight: 124
     label: above
     settings:
       link: true
