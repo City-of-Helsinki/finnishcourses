@@ -30,3 +30,13 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     //kint($form);
   }
 }
+
+/**
+ * Implements hook_page_attachments().
+ */
+function finnishcourses_base_page_attachments(array &$page) {
+  // Attach admin-ui library for admin pages
+  if(\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $page['#attached']['library'][] = 'finnishcourses_base/admin-ui';
+  }
+}

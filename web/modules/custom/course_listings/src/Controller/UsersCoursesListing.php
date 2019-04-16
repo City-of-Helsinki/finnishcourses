@@ -15,6 +15,8 @@ use Drupal\Core\StringTranslation\TranslationInterface;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Path\AliasManager;
 use Drupal\Core\Render\Element\Dropbutton;
+use Drupal\Core\Url;
+use Drupal\Core\Link;
 
 /**
  * Provides Users Courses Listing controller
@@ -96,7 +98,9 @@ class UsersCoursesListing extends ControllerBase {
       $organizationIds[] = $organizationId['target_id'];
     }
 
-    $userCourses = $this->getUserCourses($organizationIds);
+    $published = (\Drupal::request()->query->get('published') == '0') ? 'unpublished' : '';
+
+    $userCourses = $this->getUserCourses($organizationIds, $published);
 
     if (!$userCourses) {
       return;
@@ -109,6 +113,19 @@ class UsersCoursesListing extends ControllerBase {
     }
 
     $headings = $this->getTableHeadings();
+
+    $linkPublishedOptions = ($published != 'unpublished') ? ['attributes' => ['class' => 'active']] : [];
+    $linkUnPublishedOptions = ($published == 'unpublished') ? ['attributes' => ['class' => 'active']] : [];
+
+    $pageHeading = ($published != 'unpublished') ? $this->t('Published courses') : $this->t('Unpublished courses');
+
+    $linkPublished = Link::fromTextAndUrl($this->t('Published'), Url::fromRoute('course_listings.users_courses', [], $linkPublishedOptions));
+    $linkUnPublished = Link::fromTextAndUrl($this->t('Unpublished'), Url::fromRoute('course_listings.users_courses', ['published' => '0'], $linkUnPublishedOptions));
+
+    $navLinks = [
+      'published' => $linkPublished,
+      'unPublished' => $linkUnPublished,
+    ];
 
     // $node = entity_load('node', $nid);
     // if ($node->bundle() != 'event') {
@@ -128,18 +145,26 @@ class UsersCoursesListing extends ControllerBase {
 
     return [
       '#theme' => 'manage_courses_listing',
+      '#pageHeading' => $pageHeading,
       '#courses' => $parsedNodes,
       '#tableHeadings' => $headings,
+      '#navLinks' => $navLinks,
     ];
   }
 
-  public function getUserCourses($userOrganizations = FALSE) {
+  public function getUserCourses($userOrganizations = FALSE, $status = 1) {
     $userCourses = FALSE;
+
+    if ($status == 'unpublished') {
+      $status = 0;
+    } else {
+      $status = 1;
+    }
 
     $query = $this->entityQuery->get('node');
     $query->condition('type', 'course')
           ->condition('field_course_organization', $userOrganizations, 'IN')
-          ->condition('status', 1);
+          ->condition('status', $status);
     $query->sort('field_course_start_date.value', 'ASC');
     $entity_ids = $query->execute();
 

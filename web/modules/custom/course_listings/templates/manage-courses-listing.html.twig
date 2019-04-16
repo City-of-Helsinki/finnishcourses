@@ -1,3 +1,15 @@
+{% if navLinks is not empty %}
+  <div class="courses-listing-nav-links">
+    {{ navLinks.published }}
+    <span class="divider">|</span>
+    {{ navLinks.unPublished }}
+  </div>
+{% endif %}
+
+{% if pageHeading is not empty %}
+  <h1>{{ pageHeading }}</h1>
+{% endif %}
+
 {% if courses is not empty %}
   <table>
     {% if tableHeadings is not empty %}
