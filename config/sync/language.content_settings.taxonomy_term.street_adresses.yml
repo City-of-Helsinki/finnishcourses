@@ -1,0 +1,16 @@
+uuid: 1dcb2127-705a-4f20-aacc-eb6dc35f886a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.street_adresses
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.street_adresses
+target_entity_type_id: taxonomy_term
+target_bundle: street_adresses
+default_langcode: site_default
+language_alterable: true

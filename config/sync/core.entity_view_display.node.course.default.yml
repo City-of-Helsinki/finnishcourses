@@ -16,7 +16,9 @@ dependencies:
     - field.field.node.course.field_course_organization
     - field.field.node.course.field_course_organizer_id
     - field.field.node.course.field_course_start_date
+    - field.field.node.course.field_course_street_address
     - field.field.node.course.field_course_target_level
+    - field.field.node.course.field_course_town
     - field.field.node.course.field_course_week_hours
     - field.field.node.course.field_number_of_lessons
     - field.field.node.course.field_online_course
@@ -148,8 +150,24 @@ content:
     third_party_settings: {  }
     type: datetime_default
     region: content
+  field_course_street_address:
+    weight: 127
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_course_target_level:
     weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_course_town:
+    weight: 126
     label: above
     settings:
       link: true
