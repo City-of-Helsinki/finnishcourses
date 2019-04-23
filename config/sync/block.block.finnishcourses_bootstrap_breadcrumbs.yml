@@ -1,0 +1,22 @@
+uuid: 84603b7e-d58c-4133-a508-b520fbe588df
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - finnishcourses_bootstrap
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: finnishcourses_bootstrap_breadcrumbs
+theme: finnishcourses_bootstrap
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

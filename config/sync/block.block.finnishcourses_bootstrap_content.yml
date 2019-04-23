@@ -1,0 +1,22 @@
+uuid: 522729e7-cc93-4b90-9977-008a929d3cf0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - finnishcourses_bootstrap
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: finnishcourses_bootstrap_content
+theme: finnishcourses_bootstrap
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }
