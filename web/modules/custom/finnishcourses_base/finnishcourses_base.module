@@ -29,6 +29,40 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     ];
     //kint($form);
   }
+
+  if (in_array($form_id, ['node_course_form', 'node_course_edit_form'])) {
+    // foreach (array_keys($form['actions']) as $action) {
+    //   if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+    //     $form['actions'][$action]['#submit'][] = 'finnishcourse_course_form_submit';
+    //   }
+    // }
+  }
+}
+
+function finnishcourse_course_form_submit(array $form, FormStateInterface $form_state) {
+
+}
+
+function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  
+  // Generate course id
+  if (empty($entity->get('field_course_id')->getValue())) {
+    $year = date('y');
+    if (empty(\Drupal::state()->get('courseNumber'))) {
+      $courseNumber = 1;
+    } else {
+      $courseNumber = \Drupal::state()->get('courseNumber') + 1;
+    }
+
+    \Drupal::state()->set('courseNumber', $courseNumber);
+    // Use number_pad function to get 4 digit number
+    $courseID = 'FI' . $year . number_pad($courseNumber, 4);
+    $entity->set('field_course_id', $courseID);
+  }
+}
+
+function number_pad($number,$n) {
+  return str_pad((int) $number,$n,'0',STR_PAD_LEFT);
 }
 
 /**
