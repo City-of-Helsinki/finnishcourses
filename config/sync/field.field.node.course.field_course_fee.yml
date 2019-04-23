@@ -1,0 +1,19 @@
+uuid: ec8100e6-233d-4caf-a151-17571c7a6f00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_fee
+    - node.type.course
+id: node.course.field_course_fee
+field_name: field_course_fee
+entity_type: node
+bundle: course
+label: 'Course fee'
+description: 'Course fee in euros. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
