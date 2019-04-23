@@ -1,0 +1,31 @@
+{% if navLinks is not empty %}
+  <div class="courses-listing-nav-links">
+    {{ navLinks.published }}
+    <span class="divider">|</span>
+    {{ navLinks.unPublished }}
+  </div>
+{% endif %}
+
+{% if pageHeading is not empty %}
+  <h1>{{ pageHeading }}</h1>
+{% endif %}
+
+{% if courses is not empty %}
+  <table>
+    {% if tableHeadings is not empty %}
+      {% for heading in tableHeadings %}
+        <th>{{ heading }}</th>
+      {% endfor %}
+    {% endif %}
+
+    {% for course in courses %}
+      <tr>
+        <td>{{ course.title }}</td>
+        <td>{{ course.organizationName }}</td>
+        <td>{{ course.startDate }}</td>
+        <td>{{ course.endDate }}</td>
+        <td><a href="{{ course.editUrl }}?destination=/admin/content/courses">{% trans %}Edit{% endtrans %}</a></td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endif %}

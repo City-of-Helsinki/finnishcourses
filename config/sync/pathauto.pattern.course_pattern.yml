@@ -1,0 +1,35 @@
+uuid: 4d5b77af-82a9-48e4-bdaf-22e9ddff6566
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: course_pattern
+label: 'Course pattern'
+type: 'canonical_entities:node'
+pattern: '/courses/[node:source:title]'
+selection_criteria:
+  10af0dcc-a987-4543-ba25-e4ebd7b16ea5:
+    id: node_type
+    bundles:
+      course: course
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 10af0dcc-a987-4543-ba25-e4ebd7b16ea5
+  e9948582-e7ea-441b-9305-62f7c5c52114:
+    id: language
+    langcodes:
+      en: en
+      fi: fi
+      ru: ru
+    negate: false
+    context_mapping:
+      language: 'node:langcode:language'
+    uuid: e9948582-e7ea-441b-9305-62f7c5c52114
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

@@ -1,0 +1,30 @@
+uuid: 6e031a2b-8193-4586-8d26-073f588d17ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_organization
+    - taxonomy.vocabulary.organizations
+  module:
+    - user
+id: user.user.field_organization
+field_name: field_organization
+entity_type: user
+bundle: user
+label: Organization
+description: 'Select organizations this user has access to.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      organizations: organizations
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

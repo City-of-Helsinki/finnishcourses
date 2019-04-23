@@ -1,0 +1,20 @@
+uuid: a80db47b-6744-4e18-ab03-7405f1f667bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.course
+  module:
+    - path
+id: node.course.path
+field_name: path
+entity_type: node
+bundle: course
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

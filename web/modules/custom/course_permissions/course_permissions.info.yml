@@ -1,0 +1,6 @@
+name: 'Course permissions'
+description: 'This module provides course permission related custom implementations.'
+type: module
+
+core: '8.x'
+package: 'Finnishcourses custom'

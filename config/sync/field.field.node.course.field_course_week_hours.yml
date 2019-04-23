@@ -1,0 +1,21 @@
+uuid: 727d14cc-59b7-409f-b037-c8257735c50f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_week_hours
+    - node.type.course
+  module:
+    - office_hours
+id: node.course.field_course_week_hours
+field_name: field_course_week_hours
+entity_type: node
+bundle: course
+label: 'Course week hours'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: office_hours

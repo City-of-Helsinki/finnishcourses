@@ -1,0 +1,9 @@
+uuid: b6e2fe2d-879b-4b69-86b6-e3d8bc773897
+langcode: und
+status: true
+dependencies: {  }
+name: 'Street adresses'
+vid: street_adresses
+description: ''
+hierarchy: 0
+weight: 0

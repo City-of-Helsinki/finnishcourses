@@ -1,0 +1,14 @@
+uuid: f545555f-e040-4ff3-a257-9f3bf3fe3815
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.course_editor
+  module:
+    - user
+id: user_add_role_action.course_editor
+label: 'Add the Course editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: course_editor

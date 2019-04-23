@@ -1,0 +1,112 @@
+uuid: cc6b0c9f-1a6c-4bf5-a808-8e4e7dd5fafb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.organizations.field_active_organization
+    - field.field.taxonomy_term.organizations.field_address
+    - field.field.taxonomy_term.organizations.field_email
+    - field.field.taxonomy_term.organizations.field_phone
+    - field.field.taxonomy_term.organizations.field_postal_code
+    - field.field.taxonomy_term.organizations.field_town
+    - field.field.taxonomy_term.organizations.field_website_address
+    - taxonomy.vocabulary.organizations
+  module:
+    - link
+    - path
+    - telephone
+    - text
+id: taxonomy_term.organizations.default
+targetEntityType: taxonomy_term
+bundle: organizations
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 8
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_active_organization:
+    weight: 9
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_address:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_email:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_phone:
+    weight: 6
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_postal_code:
+    weight: 3
+    settings:
+      size: 10
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_town:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_website_address:
+    weight: 7
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

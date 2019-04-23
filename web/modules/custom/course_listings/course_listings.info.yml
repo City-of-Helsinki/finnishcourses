@@ -1,0 +1,6 @@
+name: 'Courses listings'
+description: 'This module provides course listings which need custom code implementation.'
+type: module
+
+core: '8.x'
+package: 'Finnishcourses custom'

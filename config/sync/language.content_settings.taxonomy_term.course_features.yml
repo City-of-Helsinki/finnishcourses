@@ -1,0 +1,16 @@
+uuid: 8cde5420-0361-42a8-b1a1-31d18a17619a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.course_features
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.course_features
+target_entity_type_id: taxonomy_term
+target_bundle: course_features
+default_langcode: current_interface
+language_alterable: true

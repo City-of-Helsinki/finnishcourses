@@ -1,0 +1,76 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Form\FormState;
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function finnishcourses_base_element_info_alter(array &$types) {
+  $types['datetime']['#process'][] = 'finnishcourses_base_datetime_set_format';
+}
+
+/**
+ * Element process callback for datetime fields.
+ */
+function finnishcourses_base_datetime_set_format($element) {
+  // Remove seconds in browsers that support HTML5 type=date.
+  $element['time']['#attributes']['step'] = 60;
+  return $element;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'node_course_form') {
+    $form['langcode']['widget'][0]['value']['#options'] = [
+      'en' => t('English'),
+    ];
+    //kint($form);
+  }
+
+  if (in_array($form_id, ['node_course_form', 'node_course_edit_form'])) {
+    // foreach (array_keys($form['actions']) as $action) {
+    //   if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+    //     $form['actions'][$action]['#submit'][] = 'finnishcourse_course_form_submit';
+    //   }
+    // }
+  }
+}
+
+function finnishcourse_course_form_submit(array $form, FormStateInterface $form_state) {
+
+}
+
+function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
+  
+  // Generate course id
+  if (empty($entity->get('field_course_id')->getValue())) {
+    $year = date('y');
+    if (empty(\Drupal::state()->get('courseNumber'))) {
+      $courseNumber = 1;
+    } else {
+      $courseNumber = \Drupal::state()->get('courseNumber') + 1;
+    }
+
+    \Drupal::state()->set('courseNumber', $courseNumber);
+    // Use number_pad function to get 4 digit number
+    $courseID = 'FI' . $year . number_pad($courseNumber, 4);
+    $entity->set('field_course_id', $courseID);
+  }
+}
+
+function number_pad($number,$n) {
+  return str_pad((int) $number,$n,'0',STR_PAD_LEFT);
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function finnishcourses_base_page_attachments(array &$page) {
+  // Attach admin-ui library for admin pages
+  if(\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $page['#attached']['library'][] = 'finnishcourses_base/admin-ui';
+  }
+}

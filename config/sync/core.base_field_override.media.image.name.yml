@@ -1,0 +1,20 @@
+uuid: ff023b24-fa26-4eb5-99fb-2fbeef9e0256
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image
+id: media.image.name
+field_name: name
+entity_type: media
+bundle: image
+label: Name
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string

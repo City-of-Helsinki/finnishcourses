@@ -1,0 +1,11 @@
+.courses-listing-nav-links {
+  text-align: right;
+}
+
+.courses-listing-nav-links .divider {
+  margin: 0 3px;
+}
+
+.courses-listing-nav-links a.active {
+  color: black;
+}
