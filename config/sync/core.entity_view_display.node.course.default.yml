@@ -56,10 +56,10 @@ content:
     region: content
   field_course_end_date:
     weight: 7
-    label: inline
+    label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: date_only
     third_party_settings: {  }
     type: datetime_default
     region: content
@@ -128,7 +128,7 @@ content:
     region: content
   field_course_organization:
     weight: 20
-    label: above
+    label: hidden
     settings:
       view_mode: course_organization
       link: false
@@ -137,10 +137,10 @@ content:
     region: content
   field_course_start_date:
     weight: 6
-    label: inline
+    label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: date_only
     third_party_settings: {  }
     type: datetime_default
     region: content
@@ -172,12 +172,11 @@ content:
     weight: 8
     label: inline
     settings:
+      show_closed: all
+      office_hours_first_day: ''
       day_format: long
       time_format: G
-      compress: false
-      grouped: false
-      show_closed: all
-      closed_format: Closed
+      closed_format: ''
       separator:
         days: '<br />'
         grouped_days: ' - '
@@ -188,10 +187,11 @@ content:
         position: ''
         open_text: 'Currently open!'
         closed_text: 'Currently closed'
+      compress: 0
+      grouped: 0
       schema:
-        enabled: false
+        enabled: 0
       timezone_field: ''
-      office_hours_first_day: ''
     third_party_settings: {  }
     type: office_hours
     region: content
