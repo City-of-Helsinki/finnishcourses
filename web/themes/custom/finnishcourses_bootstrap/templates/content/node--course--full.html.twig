@@ -94,6 +94,10 @@
     {% endif %}
   </header>
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+    <div class="course-label">
+      <div class="field__label">{% trans %}Course name{% endtrans %}</div>
+      <div class="field__item">{{ label }}</div>
+    </div>
     {{ content.field_course_id }}
     {{ content.field_course_availability }}
     {{ content.field_course_entry_level }}
@@ -108,7 +112,7 @@
     {{ content.field_number_of_lessons }}
     {{ content.field_books_and_materials }}
     <div class="course-organizer">
-      <h3>{% trans %}Organizer(% endtrans %)</h3>
+      <h3>{% trans %}Organizer{% endtrans %}</h3>
       {{ content.field_course_organization }}
     </div>
   </div>
