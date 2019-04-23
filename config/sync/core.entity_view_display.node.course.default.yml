@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.course.field_course_end_date
     - field.field.node.course.field_course_entry_level
     - field.field.node.course.field_course_features
+    - field.field.node.course.field_course_fee
     - field.field.node.course.field_course_id
     - field.field.node.course.field_course_in_swedish
     - field.field.node.course.field_course_information_source
@@ -40,22 +41,22 @@ bundle: course
 mode: default
 content:
   field_books_and_materials:
-    weight: 119
+    weight: 19
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_course_availability:
-    weight: 118
-    label: above
+    weight: 1
+    label: inline
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_course_end_date:
-    weight: 105
-    label: above
+    weight: 7
+    label: inline
     settings:
       format_type: medium
       timezone_override: ''
@@ -63,31 +64,39 @@ content:
     type: datetime_default
     region: content
   field_course_entry_level:
-    weight: 113
-    label: above
+    weight: 3
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_course_features:
-    weight: 124
-    label: above
+    weight: 5
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_course_fee:
+    weight: 11
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_course_id:
-    weight: 120
-    label: above
+    weight: 2
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_course_in_swedish:
-    weight: 114
+    weight: 15
     label: above
     settings:
       format: default
@@ -97,7 +106,7 @@ content:
     type: boolean
     region: content
   field_course_length:
-    weight: 103
+    weight: 13
     label: above
     settings:
       thousand_separator: ''
@@ -106,7 +115,7 @@ content:
     type: number_integer
     region: content
   field_course_online_address:
-    weight: 116
+    weight: 17
     label: above
     settings:
       trim_length: 80
@@ -118,7 +127,7 @@ content:
     type: link
     region: content
   field_course_organization:
-    weight: 123
+    weight: 20
     label: above
     settings:
       link: true
@@ -126,8 +135,8 @@ content:
     type: entity_reference_label
     region: content
   field_course_start_date:
-    weight: 104
-    label: above
+    weight: 6
+    label: inline
     settings:
       format_type: medium
       timezone_override: ''
@@ -135,7 +144,7 @@ content:
     type: datetime_default
     region: content
   field_course_street_address:
-    weight: 127
+    weight: 22
     label: above
     settings:
       link: true
@@ -143,15 +152,15 @@ content:
     type: entity_reference_label
     region: content
   field_course_target_level:
-    weight: 112
-    label: above
+    weight: 4
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_course_town:
-    weight: 126
+    weight: 21
     label: above
     settings:
       link: true
@@ -159,8 +168,8 @@ content:
     type: entity_reference_label
     region: content
   field_course_week_hours:
-    weight: 122
-    label: above
+    weight: 8
+    label: inline
     settings:
       day_format: long
       time_format: G
@@ -186,8 +195,8 @@ content:
     type: office_hours
     region: content
   field_number_of_lessons:
-    weight: 106
-    label: above
+    weight: 12
+    label: inline
     settings:
       thousand_separator: ''
       prefix_suffix: true
@@ -195,7 +204,7 @@ content:
     type: number_integer
     region: content
   field_online_course:
-    weight: 115
+    weight: 16
     label: above
     settings:
       format: default
@@ -205,15 +214,15 @@ content:
     type: boolean
     region: content
   field_registration_email:
-    weight: 110
+    weight: 14
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_registration_end_date:
-    weight: 108
-    label: above
+    weight: 10
+    label: inline
     settings:
       format_type: medium
       timezone_override: ''
@@ -221,7 +230,7 @@ content:
     type: datetime_default
     region: content
   field_registration_link:
-    weight: 117
+    weight: 18
     label: above
     settings:
       trim_length: 80
@@ -233,8 +242,8 @@ content:
     type: link
     region: content
   field_registration_start_date:
-    weight: 107
-    label: above
+    weight: 9
+    label: inline
     settings:
       format_type: medium
       timezone_override: ''
@@ -242,7 +251,7 @@ content:
     type: datetime_default
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
