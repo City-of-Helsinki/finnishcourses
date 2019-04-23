@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.course.field_course_end_date
     - field.field.node.course.field_course_entry_level
     - field.field.node.course.field_course_features
+    - field.field.node.course.field_course_fee
     - field.field.node.course.field_course_id
     - field.field.node.course.field_course_in_swedish
     - field.field.node.course.field_course_information_source
@@ -47,6 +48,7 @@ third_party_settings:
         - field_online_course
         - field_course_online_address
         - field_registration_link
+        - field_course_price
       parent_name: ''
       weight: 11
       format_type: details
@@ -150,6 +152,14 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_course_fee:
+    weight: 30
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_course_id:
     weight: 17
     settings:
@@ -174,7 +184,7 @@ content:
     type: string_textfield
     region: content
   field_course_length:
-    weight: 21
+    weight: 20
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -233,13 +243,13 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_course_week_hours:
-    weight: 23
+    weight: 22
     settings: {  }
     third_party_settings: {  }
     type: office_hours_default
     region: content
   field_number_of_lessons:
-    weight: 22
+    weight: 21
     settings:
       placeholder: ''
     third_party_settings: {  }
