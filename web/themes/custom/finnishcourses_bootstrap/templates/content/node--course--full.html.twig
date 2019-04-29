@@ -94,23 +94,31 @@
     {% endif %}
   </header>
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
-    <div class="course-label">
-      <div class="field__label">{% trans %}Course name{% endtrans %}</div>
-      <div class="field__item">{{ label }}</div>
+    <div class="group-wrapper">
+      <h2>{% trans %}Course information{% endtrans %}</h2>
+
+      <div class="course-label">
+        <div class="field__label">{% trans %}Course name{% endtrans %}</div>
+        <div class="field__item">{{ label }}</div>
+      </div>
+      {{ content.field_course_availability }}
+      {{ content.field_course_entry_level }}
+      {{ content.field_course_target_level }}
+      {{ content.field_course_features }}
+      <div class="course-dates">
+        <div class="field__label">{% trans %}Course dates{% endtrans %}</div>
+        <div class="field__item">{{ content.field_course_start_date }} - {{ content.field_course_end_date }}</div>
+      </div>
+      {{ content.field_course_street_address }}
+      {{ content.field_course_town }}
+      {{ content.field_course_fee }}
+      {{ content.field_course_week_hours }}
+      {{ content.field_course_id }}
+      {{ content.field_number_of_lessons }}
+      {{ content.field_course_features }}
+      {{ content.field_books_and_materials }}
     </div>
-    {{ content.field_course_id }}
-    {{ content.field_course_availability }}
-    {{ content.field_course_entry_level }}
-    {{ content.field_course_target_level }}
-    {{ content.field_course_features }}
-    <div class="course-dates">
-      <div class="field__label">{% trans %}Course dates{% endtrans %}</div>
-      <div class="field__item">{{ content.field_course_start_date }} - {{ content.field_course_end_date }}</div>
-    </div>
-    {{ content.field_course_week_hours }}
-    {{ content.field_course_fee }}
-    {{ content.field_number_of_lessons }}
-    {{ content.field_books_and_materials }}
+    
     <div class="course-organizer">
       <h3>{% trans %}Organizer{% endtrans %}</h3>
       {{ content.field_course_organization }}
