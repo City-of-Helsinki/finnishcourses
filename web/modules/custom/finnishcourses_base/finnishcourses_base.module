@@ -74,12 +74,3 @@ function finnishcourses_base_page_attachments(array &$page) {
     $page['#attached']['library'][] = 'finnishcourses_base/admin-ui';
   }
 }
-
-/**
- * Implements hook_theme_suggestions_HOOK_alter() for taxonomies.
- *
- * {@inheritdoc}
- */
-function finnishcourses_base_theme_suggestions_taxonomy_term_alter(&$suggestions, $vars, $hook) {      
-  $suggestions[] = 'taxonomy_term__' . $vars['elements']['#view_mode'];
-}

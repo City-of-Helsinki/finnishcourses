@@ -24,5 +24,4 @@
 # Ignore .env files as they are personal
 /.env
 
-# Ignore archives
-archives/
+web/themes/custom/finnishcourses_bootstrap/node_modules/
