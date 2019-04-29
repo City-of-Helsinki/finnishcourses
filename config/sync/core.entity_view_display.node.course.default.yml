@@ -55,27 +55,27 @@ content:
     type: list_default
     region: content
   field_course_end_date:
-    weight: 7
-    label: inline
+    weight: 6
+    label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: date_only
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_course_entry_level:
-    weight: 3
+    weight: 2
     label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_course_features:
-    weight: 5
+    weight: 4
     label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
@@ -88,7 +88,7 @@ content:
     type: string
     region: content
   field_course_id:
-    weight: 2
+    weight: 8
     label: inline
     settings:
       link_to_entity: false
@@ -128,18 +128,19 @@ content:
     region: content
   field_course_organization:
     weight: 20
-    label: above
+    label: hidden
     settings:
-      link: true
+      view_mode: course_organization
+      link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
   field_course_start_date:
-    weight: 6
-    label: inline
+    weight: 5
+    label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: date_only
     third_party_settings: {  }
     type: datetime_default
     region: content
@@ -147,15 +148,15 @@ content:
     weight: 22
     label: above
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_course_target_level:
-    weight: 4
+    weight: 3
     label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
@@ -163,34 +164,34 @@ content:
     weight: 21
     label: above
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_course_week_hours:
-    weight: 8
+    weight: 7
     label: inline
     settings:
-      day_format: long
-      time_format: G
-      compress: false
-      grouped: false
       show_closed: all
-      closed_format: Closed
+      office_hours_first_day: ''
+      day_format: short
+      time_format: G
+      closed_format: ''
       separator:
-        days: '<br />'
+        days: ''
         grouped_days: ' - '
         day_hours: ': '
-        hours_hours: '-'
+        hours_hours: '|'
         more_hours: ', '
       current_status:
         position: ''
         open_text: 'Currently open!'
         closed_text: 'Currently closed'
+      compress: 0
+      grouped: 0
       schema:
-        enabled: false
+        enabled: 0
       timezone_field: ''
-      office_hours_first_day: ''
     third_party_settings: {  }
     type: office_hours
     region: content

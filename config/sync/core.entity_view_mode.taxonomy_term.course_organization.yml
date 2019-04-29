@@ -1,0 +1,10 @@
+uuid: 0a1a9fed-f745-4ce0-a489-0435608e7de7
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.course_organization
+label: 'Course organization'
+targetEntityType: taxonomy_term
+cache: true
