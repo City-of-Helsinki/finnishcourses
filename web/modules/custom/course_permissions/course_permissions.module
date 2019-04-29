@@ -4,9 +4,27 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Form\FormState;
 use Drupal\Core\Url;
 use Drupal\Core\Routing;
+use Drupal\course_services\CourseDataService;
 
 function course_permissions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
   if (in_array($form_id, ['node_course_form', 'node_course_edit_form'])) {
     
+    // Show only organizations the current user has access to
+    $courseDataService = \Drupal::service('course_services.course_data_service');
+    $currentUserAccount = $courseDataService->loadAccount();
+
+    $userOrganizations = $courseDataService->getUserOrganizations($currentUserAccount);
+    $allowedOrganizations = [];
+
+    foreach ($userOrganizations as $key => $org) {
+      $allowedOrganizations[] = $org['target_id'];
+    }
+
+    foreach ($form['field_course_organization']['widget']['#options'] as $key => $value) {
+      if (!in_array($key, $allowedOrganizations)) {
+        unset($form['field_course_organization']['widget']['#options'][$key]);
+      }
+    }
   }
 }

@@ -94,7 +94,7 @@ class UsersCoursesListing extends ControllerBase {
       return;
     }
 
-    $account = $this->loadAccount();
+    $account = $this->courseDataService->loadAccount();
 
     $userOrganizations = $this->courseDataService->getUserOrganizations($account);
 

@@ -9,6 +9,8 @@
 namespace Drupal\course_services;
 
 use Drupal\Core\Entity\Query\QueryFactory;
+use Drupal\Core\Session\AccountProxyInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 
 class CourseDataService {
 
@@ -19,8 +21,24 @@ class CourseDataService {
    */
   protected $entityQuery;
 
-  public function __construct(QueryFactory $entityQuery) {
+  /**
+   * Drupal\Core\Session\AccountProxy definition.
+   *
+   * @var \Drupal\Core\Session\AccountProxy
+  */
+  protected $currentUser;
+
+  /**
+   * Drupal\Core\Entity\EntityTypeManagerInterface
+   *
+   * @var  \Drupal\Core\Entity\EntityTypeManagerInterface
+  */
+  protected $entityTypeManager;
+
+  public function __construct(QueryFactory $entityQuery, AccountProxyInterface $current_user, EntityTypeManagerInterface $entityTypeManager) {
     $this->entityQuery = $entityQuery;
+    $this->currentUser = $current_user;
+    $this->entityTypeManager = $entityTypeManager;
   }
 
   /**
@@ -71,6 +89,14 @@ class CourseDataService {
 
     return $userOrganizations;
 
+  }
+
+  public function loadAccount() {
+
+    $account = $this->entityTypeManager->getStorage('user')
+    ->load($this->currentUser->id());
+
+    return $account;
   }
 
 }
