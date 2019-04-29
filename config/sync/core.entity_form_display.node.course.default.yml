@@ -224,7 +224,23 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        360812c4-33ae-4a85-9d85-07f84d631106:
+          dependee: field_online_course
+          settings:
+            state: '!visible'
+            condition: checked
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: course
     type: entity_reference_autocomplete
     region: content
   field_course_target_level:
@@ -239,7 +255,23 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      conditional_fields:
+        4cd804fa-d0bd-42ee-9d09-557f3a858b82:
+          dependee: field_online_course
+          settings:
+            state: '!visible'
+            condition: checked
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form: {  }
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: course
     type: entity_reference_autocomplete
     region: content
   field_course_week_hours:
