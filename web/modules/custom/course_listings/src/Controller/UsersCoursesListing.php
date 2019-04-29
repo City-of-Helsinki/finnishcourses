@@ -17,6 +17,7 @@ use Drupal\Core\Path\AliasManager;
 use Drupal\Core\Render\Element\Dropbutton;
 use Drupal\Core\Url;
 use Drupal\Core\Link;
+use Drupal\course_services\CourseDataService;
 
 /**
  * Provides Users Courses Listing controller
@@ -52,15 +53,23 @@ class UsersCoursesListing extends ControllerBase {
    */
   protected $aliasManager;
 
+  /**
+   * Drupal\course_services\CourseDataService definition.
+   *
+   * @var Drupal\course_services\CourseDataService 
+   */
+  protected $courseDataService;
+
 
   /**
    * {@inheritdoc}
    */
-  public function __construct(AccountProxyInterface $current_user, EntityTypeManagerInterface $entityTypeManager, QueryFactory $entityQuery, AliasManager $aliasManager) {  
+  public function __construct(AccountProxyInterface $current_user, EntityTypeManagerInterface $entityTypeManager, QueryFactory $entityQuery, AliasManager $aliasManager, CourseDataService $courseDataService) {  
     $this->currentUser = $current_user;
     $this->entityTypeManager = $entityTypeManager;
     $this->entityQuery = $entityQuery;
     $this->aliasManager = $aliasManager;
+    $this->courseDataService = $courseDataService;
   } 
 
   /**
@@ -71,7 +80,8 @@ class UsersCoursesListing extends ControllerBase {
       $container->get('current_user'),
       $container->get('entity.manager'),
       $container->get('entity.query'),
-      $container->get('path.alias_manager')
+      $container->get('path.alias_manager'),
+      $container->get('course_services.course_data_service')
     );  
   } 
 
@@ -86,7 +96,7 @@ class UsersCoursesListing extends ControllerBase {
 
     $account = $this->loadAccount();
 
-    $userOrganizations = $this->getUserOrganizations($account);
+    $userOrganizations = $this->courseDataService->getUserOrganizations($account);
 
     if (!$userOrganizations) {
       return;
@@ -100,16 +110,12 @@ class UsersCoursesListing extends ControllerBase {
 
     $published = (\Drupal::request()->query->get('published') == '0') ? 'unpublished' : '';
 
-    $userCourses = $this->getUserCourses($organizationIds, $published);
+    $userCourses = $this->courseDataService->queryUserCourses($organizationIds, $published);
 
     if (!$userCourses) {
-      return;
-    }
-
-    $parsedNodes = $this->getParsedNodes($userCourses);
-
-    if (!$parsedNodes) {
-      return;
+      $parsedNodes = [];
+    } else {
+      $parsedNodes = $this->getParsedNodes($userCourses);
     }
 
     $headings = $this->getTableHeadings();
@@ -150,38 +156,6 @@ class UsersCoursesListing extends ControllerBase {
       '#tableHeadings' => $headings,
       '#navLinks' => $navLinks,
     ];
-  }
-
-  public function getUserCourses($userOrganizations = FALSE, $status = 1) {
-    $userCourses = FALSE;
-
-    if ($status == 'unpublished') {
-      $status = 0;
-    } else {
-      $status = 1;
-    }
-
-    $query = $this->entityQuery->get('node');
-    $query->condition('type', 'course')
-          ->condition('field_course_organization', $userOrganizations, 'IN')
-          ->condition('status', $status);
-    $query->sort('field_course_start_date.value', 'ASC');
-    $entity_ids = $query->execute();
-
-    $userCourses = $entity_ids;
-    return $userCourses;
-  }
-
-  public function getUserOrganizations($account = FALSE) {
-    
-    $userOrganizations = FALSE;
-
-    if ($account) {
-      $userOrganizations = $account->get('field_organization')->getValue();
-    }
-
-    return $userOrganizations;
-
   }
 
   public function getParsedNodes($nids) {
