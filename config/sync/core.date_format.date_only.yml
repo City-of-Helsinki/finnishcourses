@@ -1,8 +1,0 @@
-uuid: 4776c557-95b9-4245-9603-bee1e1af533a
-langcode: en
-status: true
-dependencies: {  }
-id: date_only
-label: 'Date only'
-locked: false
-pattern: j.n.Y

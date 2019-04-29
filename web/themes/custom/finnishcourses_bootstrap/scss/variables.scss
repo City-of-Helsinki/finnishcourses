@@ -40,3 +40,17 @@ $comment-spacer-x: 1.25em;
 $comment-spacer-y: 1.25em;
 // Responsive font sizes
 $enable-responsive-font-sizes: true;
+// Breakpoints
+$grid-breakpoints: (
+        xs: 0,
+        sm: 480px,
+        md: 768px,
+        lg: 1440px
+);
+
+$container-max-widths: (
+        sm: 420px,
+        md: 720px,
+        lg: 960px
+);
+
