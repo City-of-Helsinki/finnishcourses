@@ -17,6 +17,7 @@ module:
   contact: 0
   contextual: 0
   course_listings: 0
+  course_permissions: 0
   course_services: 0
   ctools: 0
   datetime: 0
