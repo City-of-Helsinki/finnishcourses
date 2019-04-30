@@ -181,7 +181,7 @@ content:
         days: ''
         grouped_days: ' - '
         day_hours: ': '
-        hours_hours: '|'
+        hours_hours: '<br/>|<br/>'
         more_hours: ', '
       current_status:
         position: ''
