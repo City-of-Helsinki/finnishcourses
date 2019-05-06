@@ -2,12 +2,13 @@ uuid: 1c3aa8ed-9e1e-47ce-83cc-5e8d2262c82f
 langcode: en
 status: true
 dependencies:
+  module:
+    - node
+    - user
+    - search_api
   config:
     - search_api.server.default_server
     - core.entity_view_mode.node.search_index
-  module:
-    - search_api
-    - node
 _core:
   default_config_hash: GLmLegZGHtMF6annRqgjizJAoiAip-IT-XOsDMCZfog
 id: default_index
@@ -17,35 +18,41 @@ read_only: false
 field_settings:
   author:
     label: 'Author name'
-    type: string
     datasource_id: 'entity:node'
     property_path: 'uid:entity:name'
+    type: string
+    dependencies:
+      module:
+        - node
+        - user
+        - user
   changed:
     label: Changed
-    type: date
     datasource_id: 'entity:node'
     property_path: changed
+    type: date
+    dependencies:
+      module:
+        - node
   created:
     label: 'Authored on'
-    type: date
     datasource_id: 'entity:node'
     property_path: created
-  field_tags:
-    label: Tags
-    type: integer
-    datasource_id: 'entity:node'
-    property_path: field_tags
+    type: date
+    dependencies:
+      module:
+        - node
   node_grants:
     label: 'Node access information'
-    type: string
     property_path: search_api_node_grants
+    type: string
     indexed_locked: true
     type_locked: true
     hidden: true
   rendered_item:
     label: 'Rendered item'
-    type: text
     property_path: rendered_item
+    type: text
     configuration:
       roles:
         anonymous: anonymous
@@ -55,36 +62,58 @@ field_settings:
           page: search_index
   status:
     label: 'Publishing status'
-    type: boolean
     datasource_id: 'entity:node'
     property_path: status
+    type: boolean
     indexed_locked: true
     type_locked: true
+    dependencies:
+      module:
+        - node
   sticky:
     label: 'Sticky at top of lists'
-    type: boolean
     datasource_id: 'entity:node'
     property_path: sticky
+    type: boolean
+    dependencies:
+      module:
+        - node
   title:
     label: Title
-    type: text
     datasource_id: 'entity:node'
     property_path: title
-    boost: 8
+    type: text
+    boost: !!float 8
+    dependencies:
+      module:
+        - node
   type:
     label: 'Content type'
-    type: string
     datasource_id: 'entity:node'
     property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
   uid:
     label: 'Author ID'
-    type: integer
     datasource_id: 'entity:node'
     property_path: uid
+    type: integer
     indexed_locked: true
     type_locked: true
+    dependencies:
+      module:
+        - node
 datasource_settings:
-  'entity:node': {  }
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - course
+    languages:
+      default: true
+      selected: {  }
 processor_settings:
   add_url:
     weights:
@@ -108,11 +137,12 @@ processor_settings:
     title: true
     alt: true
     tags:
+      b: 2
       h1: 5
       h2: 3
       h3: 2
       string: 2
-      b: 2
+    all_fields: false
   ignorecase:
     weights:
       preprocess_index: -5
@@ -120,14 +150,15 @@ processor_settings:
     fields:
       - rendered_item
       - title
+    all_fields: false
   rendered_item:
     weights:
       add_properties: 0
       pre_index_save: -10
   stopwords:
     weights:
-      preprocess_query: -10
       postprocess_query: -10
+      preprocess_query: -10
     fields:
       - rendered_item
       - title
@@ -167,6 +198,7 @@ processor_settings:
       - was
       - will
       - with
+    all_fields: false
   tokenizer:
     weights:
       preprocess_index: -2
@@ -177,6 +209,7 @@ processor_settings:
     spaces: ''
     overlap_cjk: 1
     minimum_word_size: '3'
+    all_fields: false
   transliteration:
     weights:
       preprocess_index: -4
@@ -184,9 +217,11 @@ processor_settings:
     fields:
       - rendered_item
       - title
+    all_fields: false
 tracker_settings:
-  default: {  }
+  default:
+    indexing_order: fifo
 options:
-  cron_limit: 50
   index_directly: true
+  cron_limit: 50
 server: default_server
