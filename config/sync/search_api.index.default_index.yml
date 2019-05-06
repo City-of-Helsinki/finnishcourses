@@ -142,10 +142,7 @@ processor_settings:
       h2: 3
       h3: 2
       string: 2
-<<<<<<< HEAD
     all_fields: false
-=======
->>>>>>> develop
   ignorecase:
     weights:
       preprocess_index: -5
