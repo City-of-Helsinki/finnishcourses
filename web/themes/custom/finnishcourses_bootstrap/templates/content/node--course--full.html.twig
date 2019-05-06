@@ -72,6 +72,7 @@
     'clearfix',
   ]
 %}
+
 <article{{ attributes.addClass(classes) }}>
   <header>
     {{ title_prefix }}
@@ -114,7 +115,17 @@
       {{ content.field_course_fee }}
       {{ content.field_course_week_hours }}
       {{ content.field_course_id }}
-      {{ content.field_number_of_lessons }}
+      <div class="course-lessons">
+        <div class="field__label">
+          {% if node.field_online_course.value %}
+            {% trans %}Guided teaching{% endtrans %}
+          {% else %}
+            {% trans %}Teaching hours{% endtrans %}
+          {% endif %}
+        </div>
+        <div class="field__item">{{ content.field_number_of_lessons }}</div>
+      </div>
+      
       {{ content.field_course_features }}
       {{ content.field_books_and_materials }}
     </div>
@@ -122,6 +133,14 @@
     <div class="course-organizer">
       <h3>{% trans %}Organizer{% endtrans %}</h3>
       {{ content.field_course_organization }}
+    </div>
+
+    <div class="course-registration">
+      <h3>{% trans %}Registration{% endtrans %}</h3>
+      <div class="registration-dates">
+        <div class="field__label">{% trans %}Dates of registration{% endtrans %}</div>
+        <div class="field__item">{{ content.field_course_start_date }} - {{ content.field_course_end_date }}</div>
+      </div>
     </div>
   </div>
 </article>
