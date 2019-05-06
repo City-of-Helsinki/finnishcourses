@@ -1,0 +1,29 @@
+uuid: 904760d4-ae18-4067-a93f-69a7fd4bd721
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_locations_addresses
+    - taxonomy.vocabulary.organizations
+    - taxonomy.vocabulary.street_adresses
+id: taxonomy_term.organizations.field_locations_addresses
+field_name: field_locations_addresses
+entity_type: taxonomy_term
+bundle: organizations
+label: 'Addresses of locations'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      street_adresses: street_adresses
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -8,6 +8,7 @@ module:
   block_content: 0
   block_visibility_groups: 0
   breakpoint: 0
+  business_rules: 0
   ckeditor: 0
   color: 0
   comment: 0
@@ -17,10 +18,13 @@ module:
   contact: 0
   contextual: 0
   course_listings: 0
+  course_permissions: 0
+  course_services: 0
   ctools: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
+  dbug: 0
   devel: 0
   devel_debug_log: 0
   devel_generate: 0
@@ -87,6 +91,7 @@ module:
   search_api: 0
   search_api_db: 0
   search_api_db_defaults: 0
+  select_or_other: 0
   serialization: 0
   shortcut: 0
   shortcutperrole: 0

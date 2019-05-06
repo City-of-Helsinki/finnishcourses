@@ -1,0 +1,6 @@
+name: 'Course services'
+description: 'This module provides custom services needed in course and user permissions handling.'
+type: module
+
+core: '8.x'
+package: 'Finnishcourses custom'
