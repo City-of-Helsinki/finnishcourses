@@ -44,6 +44,7 @@ hidden:
   field_course_end_date: true
   field_course_entry_level: true
   field_course_features: true
+  field_course_fee: true
   field_course_id: true
   field_course_in_swedish: true
   field_course_information_source: true
@@ -52,7 +53,9 @@ hidden:
   field_course_organization: true
   field_course_organizer_id: true
   field_course_start_date: true
+  field_course_street_address: true
   field_course_target_level: true
+  field_course_town: true
   field_course_week_hours: true
   field_number_of_lessons: true
   field_online_course: true
