@@ -26,5 +26,6 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
+  field_organization: true
   langcode: true
   member_for: true
