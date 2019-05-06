@@ -197,7 +197,7 @@ content:
     region: content
   field_number_of_lessons:
     weight: 12
-    label: inline
+    label: hidden
     settings:
       thousand_separator: ''
       prefix_suffix: true
