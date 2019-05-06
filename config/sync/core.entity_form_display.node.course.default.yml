@@ -29,12 +29,14 @@ dependencies:
     - field.field.node.course.field_registration_start_date
     - node.type.course
   module:
+    - conditional_fields
     - datetime
     - field_group
     - link
     - office_hours
     - path
     - scheduler
+    - select_or_other
     - text
 third_party_settings:
   field_group:
@@ -237,9 +239,8 @@ content:
   field_course_street_address:
     weight: 28
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      select_element_type: select_or_other_select
+      sort_options: ''
     third_party_settings:
       conditional_fields:
         360812c4-33ae-4a85-9d85-07f84d631106:
@@ -257,7 +258,24 @@ content:
             selector: ''
           entity_type: node
           bundle: course
-    type: entity_reference_autocomplete
+        388aea95-fc59-402d-bae4-a440056c678d:
+          dependee: field_course_organization
+          settings:
+            state: disabled
+            condition: '!checked'
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: null
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: course
+    type: select_or_other_reference
     region: content
   field_course_target_level:
     weight: 12
@@ -268,9 +286,8 @@ content:
   field_course_town:
     weight: 29
     settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+      select_element_type: select_or_other_select
+      sort_options: ''
     third_party_settings:
       conditional_fields:
         4cd804fa-d0bd-42ee-9d09-557f3a858b82:
@@ -288,7 +305,24 @@ content:
             selector: ''
           entity_type: node
           bundle: course
-    type: entity_reference_autocomplete
+        f0b10bb4-c12e-4a97-bddf-9b497b736fd0:
+          dependee: field_course_organization
+          settings:
+            state: disabled
+            condition: '!checked'
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                target_id: null
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: node
+          bundle: course
+    type: select_or_other_reference
     region: content
   field_course_week_hours:
     weight: 16

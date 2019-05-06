@@ -6,6 +6,8 @@ dependencies:
     - field.field.taxonomy_term.organizations.field_active_organization
     - field.field.taxonomy_term.organizations.field_address
     - field.field.taxonomy_term.organizations.field_email
+    - field.field.taxonomy_term.organizations.field_locations_addresses
+    - field.field.taxonomy_term.organizations.field_locations_towns
     - field.field.taxonomy_term.organizations.field_phone
     - field.field.taxonomy_term.organizations.field_postal_code
     - field.field.taxonomy_term.organizations.field_town
@@ -51,6 +53,24 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: email_default
+    region: content
+  field_locations_addresses:
+    weight: 10
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_locations_towns:
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_phone:
     weight: 6
@@ -100,12 +120,12 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 11
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   translation:
-    weight: 10
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }

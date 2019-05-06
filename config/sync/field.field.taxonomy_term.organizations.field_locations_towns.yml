@@ -1,0 +1,29 @@
+uuid: 435210ba-f3d5-413f-939a-676596bfba3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_locations_towns
+    - taxonomy.vocabulary.organizations
+    - taxonomy.vocabulary.towns
+id: taxonomy_term.organizations.field_locations_towns
+field_name: field_locations_towns
+entity_type: taxonomy_term
+bundle: organizations
+label: 'Towns of locations'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      towns: towns
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

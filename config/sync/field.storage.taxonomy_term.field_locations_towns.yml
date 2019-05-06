@@ -1,0 +1,19 @@
+uuid: a5eb5692-a593-4e17-9878-2902dc0df038
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_locations_towns
+field_name: field_locations_towns
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

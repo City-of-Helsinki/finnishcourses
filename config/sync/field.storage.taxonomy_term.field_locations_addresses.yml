@@ -1,0 +1,19 @@
+uuid: d5b741ed-64f5-4cbc-89f1-afe818998a5a
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_locations_addresses
+field_name: field_locations_addresses
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
