@@ -30,8 +30,19 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     $form['langcode']['widget'][0]['value']['#options'] = [
       'en' => t('English'),
     ];
+    //kint($form);
+  }
 
-    // Set ajax callback function when organization field value changed
+  if (in_array($form_id, ['node_course_form', 'node_course_edit_form'])) {
+
+    //kint($form);
+    if (empty($form['field_course_organization']['widget']['#options'])) {
+      drupal_set_message(t('You do not have access to any organization or there are no organizations added in the system. Please contact
+        your system administrator'), 'warning');
+      //drupal_set_message(t('You have commented @maxcomment times, please edit or delete some of your older comments', ['@maxcomment' => $limitUser]));
+    }
+
+     // Set ajax callback function when organization field value changed
     // refreshLocationOptions callback loads street address and town options for selected organization
     $form['field_course_organization']['widget']['#ajax'] = [
       'callback' => 'refreshLocationOptions',
@@ -52,10 +63,8 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     $form['field_course_town']['#prefix'] = '<div id="town-select">';
     $form['field_course_town']['widget']['#options'] = getTownOptions($form_state);
     $form['field_course_town']['#suffix'] = '</div>';
-    //kint($form);
-  }
 
-  if (in_array($form_id, ['node_course_form', 'node_course_edit_form'])) {
+
     // foreach (array_keys($form['actions']) as $action) {
     //   if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
     //     $form['actions'][$action]['#submit'][] = 'finnishcourse_course_form_submit';
