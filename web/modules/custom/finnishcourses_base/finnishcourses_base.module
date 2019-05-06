@@ -2,6 +2,9 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Form\FormState;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements hook_element_info_alter().
@@ -27,6 +30,28 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     $form['langcode']['widget'][0]['value']['#options'] = [
       'en' => t('English'),
     ];
+
+    // Set ajax callback function when organization field value changed
+    // refreshLocationOptions callback loads street address and town options for selected organization
+    $form['field_course_organization']['widget']['#ajax'] = [
+      'callback' => 'refreshLocationOptions',
+      'event' => 'change',
+      'wrapper' => ['street-select', 'town-select'],
+      'progress' => [
+        'type' => 'throbber',
+        'message' => NULL,
+      ],
+    ];
+
+    //$form['field_course_street_address']['#attributes']['id'][] = 'street-select';
+    $form['field_course_street_address']['#prefix'] = '<div id="street-select">';
+    $form['field_course_street_address']['widget']['#options'] = getAddressOptions($form_state);
+    $form['field_course_street_address']['#suffix'] = '</div>';
+
+    //$form['field_course_town']['#attributes']['id'][] = 'town-select';
+    $form['field_course_town']['#prefix'] = '<div id="town-select">';
+    $form['field_course_town']['widget']['#options'] = getTownOptions($form_state);
+    $form['field_course_town']['#suffix'] = '</div>';
     //kint($form);
   }
 
@@ -37,6 +62,77 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     //   }
     // }
   }
+}
+
+function getAddressOptions($form_state) {
+
+  if (!is_object($form_state) || !method_exists($form_state, 'getTriggeringElement')) {
+    return [];
+  }
+
+  $element = $form_state->getTriggeringElement();
+
+  if (empty($element['#value'])) {
+    return [];
+  }
+
+  $organization = $element['#value'];
+
+  $addressOptions = getOptionsFromTerm($organization, 'field_locations_addresses');
+
+  return $addressOptions;
+}
+
+function getTownOptions($form_state) {
+
+  if (!is_object($form_state) || !method_exists($form_state, 'getTriggeringElement')) {
+    return [];
+  }
+
+  $element = $form_state->getTriggeringElement();
+
+  if (empty($element['#value'])) {
+    return [];
+  }
+
+  $organization = $element['#value'];
+
+  $townOptions = getOptionsFromTerm($organization, 'field_locations_towns');
+
+  return $townOptions;
+}
+
+function getOptionsFromTerm($tid = '', $field = '') {
+  $term = Term::load($tid);
+
+  if (!$term) {
+    return FALSE;
+  }
+
+  $values = $term->get($field)->getValue();
+
+  if (empty($values)) {
+    return FALSE;
+  }
+  $options = [];
+
+  foreach ($values as $key => $value) {
+    $locationTerm = Term::load($value['target_id']);
+    $options[$value['target_id']] = $locationTerm->label();
+  }
+
+  return $options;
+}
+
+function refreshLocationOptions(array $form, FormStateInterface &$form_state) {
+
+  $element = $form_state->getTriggeringElement();
+  //ddl($element['#value']);
+  //ddl($form_state);
+  $response = new AjaxResponse();
+  $response->addCommand(new ReplaceCommand("#street-select", ($form['field_course_street_address'])));
+  $response->addCommand(new ReplaceCommand("#town-select", ($form['field_course_town'])));
+  return $response;
 }
 
 function finnishcourse_course_form_submit(array $form, FormStateInterface $form_state) {
