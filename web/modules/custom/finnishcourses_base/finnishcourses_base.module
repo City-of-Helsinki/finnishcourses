@@ -64,6 +64,9 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     $form['field_course_town']['widget']['#options'] = getTownOptions($form_state);
     $form['field_course_town']['#suffix'] = '</div>';
 
+    // Disable course id field because it will be generated automatically
+    $form['field_course_id']['#disabled'] = 'disabled';
+
 
     // foreach (array_keys($form['actions']) as $action) {
     //   if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
