@@ -1,17 +1,16 @@
 /* VARIABLES */
 
 // colors
-$primary-shade: #00A2E7;
+$primary-shade: #1675D4 !important;
 $dark-schedule-shade: #E2F4FF;
 $light-schedule-shade: #F4F8FA;
 $button-shade: #EAF3F8;
-$link-color: #FFFF;
-$title-color: #00A2E7;
+//$link-color: $primary-shade;
+$title-color: #1675D4;
 $text-shade: #1A1A1A;
 $footer-text-shade: #565E63;
 $green-shade: #129942;
 $orange-shade: #F08300;
-$theme-colors: ( primary: $primary-shade, secondary: $primary-footer);
 // Body
 //
 // Settings for the `<body>` element.
@@ -21,9 +20,9 @@ $primary-footer: #F4F8FA;
 // Links
 //
 // Style anchor elements.
-$link-color: $link-color;
+//$link-color: $link-color;
 $link-decoration: none;
-$link-hover-color: $primary-shade;
+//$link-hover-color: $primary-shade;
 $link-hover-decoration: underline;
 // Comments
 $comment-spacer-x: 1.25em;
