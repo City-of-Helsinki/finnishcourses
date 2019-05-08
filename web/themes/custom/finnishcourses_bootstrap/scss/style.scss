@@ -18,7 +18,7 @@ body {
 --------------------------------------------------*/
 
 a {
-    color: $accent-shade;
+    color: $primary-shade;
 }
 
 .bg-inverse {
@@ -26,14 +26,10 @@ a {
 }
 
 .site-footer {
-    background: $accent-shade !important;
+    background: $primary-footer !important;
 }
 
 .menu--main li a {
-    color: $primary-shade;
-}
-
-.menu--account li a {
     color: $primary-shade;
 }
 
