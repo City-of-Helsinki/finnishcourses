@@ -44,9 +44,9 @@ third_party_settings:
       children:
         - langcode
         - title
+        - group_organization
         - field_course_availability
         - field_course_in_swedish
-        - group_organization
         - field_online_course
         - field_course_entry_level
         - field_course_target_level
@@ -74,7 +74,7 @@ third_party_settings:
         - field_course_start_date
         - field_course_end_date
       parent_name: group_course_base_information
-      weight: 12
+      weight: 13
       format_type: details
       format_settings:
         label: 'Course dates'
@@ -100,7 +100,7 @@ third_party_settings:
         - field_course_street_address
         - field_course_town
       parent_name: group_course_base_information
-      weight: 13
+      weight: 14
       format_type: details
       format_settings:
         label: 'Course location'
@@ -157,7 +157,7 @@ content:
     type: text_textarea
     region: content
   field_course_availability:
-    weight: 7
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -169,7 +169,7 @@ content:
     type: datetime_default
     region: content
   field_course_entry_level:
-    weight: 10
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -184,12 +184,11 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_course_fee:
-    weight: 14
+    weight: 15
     settings:
-      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: number
     region: content
   field_course_id:
     weight: 16
@@ -200,7 +199,7 @@ content:
     type: string_textfield
     region: content
   field_course_in_swedish:
-    weight: 8
+    weight: 9
     settings:
       display_label: true
     third_party_settings: {  }
@@ -291,7 +290,7 @@ content:
     type: select_or_other_reference
     region: content
   field_course_target_level:
-    weight: 11
+    weight: 12
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -351,7 +350,7 @@ content:
     type: number
     region: content
   field_online_course:
-    weight: 9
+    weight: 10
     settings:
       display_label: true
     third_party_settings: {  }

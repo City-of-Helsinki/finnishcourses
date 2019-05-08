@@ -1,4 +1,4 @@
-uuid: 1c3aa8ed-9e1e-47ce-83cc-5e8d2262c82f
+uuid: 62c6a0c9-8248-4607-bfa6-8bc717004009
 langcode: en
 status: true
 dependencies:
@@ -6,21 +6,21 @@ dependencies:
     - node
     - search_api
   config:
+    - field.storage.node.field_course_week_hours
     - field.storage.node.field_books_and_materials
     - field.storage.node.field_course_end_date
     - field.storage.node.field_course_entry_level
     - field.storage.node.field_course_features
     - field.storage.node.field_course_id
+    - field.storage.node.field_course_organization
     - field.storage.node.field_course_start_date
     - field.storage.node.field_course_town
-    - field.storage.node.field_course_week_hours
-    - field.storage.node.field_course_organization
     - search_api.server.default_server
     - core.entity_view_mode.node.search_index
 _core:
   default_config_hash: GLmLegZGHtMF6annRqgjizJAoiAip-IT-XOsDMCZfog
-id: default_index
-name: 'Default content index'
+id: courses_index
+name: 'Courses index'
 description: 'Default content index created by the Database Search Defaults module'
 read_only: false
 field_settings:
