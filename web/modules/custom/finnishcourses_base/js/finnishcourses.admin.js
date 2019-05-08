@@ -15,7 +15,7 @@
     context:{},
 
     autofillUsername: function(context) {
-      // Set event forms title default value to url argument from node title field
+      // Autofill username field based email field so only email must be filled and name field can be hidden
       if ($(context).find('#user-register-form #edit-mail').length && $(context).find('#user-register-form #edit-name').length) {
         $(context).find('#edit-mail').once('emailFocusOut').focusout(function(event) {
           var $email = $(context).find('#edit-mail').val();
