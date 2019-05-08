@@ -9,3 +9,7 @@
 .courses-listing-nav-links a.active {
   color: black;
 }
+
+#user-register-form .form-item-name, #user-form .form-item-name {
+  display: none;
+}

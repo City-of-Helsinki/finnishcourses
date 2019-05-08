@@ -2,4 +2,6 @@ admin-ui:
   version: 1.x
   css:
     theme:
-      css/finnishcourses.admin.css: { }
+      css/finnishcourses.admin.css: {}
+  js:
+    js/finnishcourses.admin.js: {}
