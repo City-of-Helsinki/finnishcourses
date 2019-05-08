@@ -9,6 +9,7 @@ is_admin: null
 permissions:
   - 'access toolbar'
   - 'access user profiles'
+  - 'create content translations'
   - 'create course content'
   - 'create file media'
   - 'create image media'
@@ -27,6 +28,8 @@ permissions:
   - 'edit own video media'
   - 'revert course revisions'
   - 'schedule publishing of nodes'
+  - 'translate course node'
+  - 'update content translations'
   - 'view any unpublished course content'
   - 'view course revisions'
   - 'view the administration theme'
