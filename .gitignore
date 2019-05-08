@@ -26,3 +26,5 @@
 /.env
 
 web/themes/custom/finnishcourses_bootstrap/node_modules/
+
+web/themes/custom/finnishcourses_bootstrap/scss/\.DS_Store
