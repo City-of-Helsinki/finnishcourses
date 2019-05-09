@@ -29,9 +29,12 @@ body {
 .course-label, .field--name-field-course-availability, .field--name-field-course-entry-level,
 .field--name-field-course-target-level, .course-dates, .field--name-field-course-street-address,
 .field--name-field-course-town, .field--name-field-course-fee, .course-lessons, .field--name-field-books-and-materials,
-.registration-dates, .field--name-field-course-id, .field--name-field-course-features {
+.registration-dates, .field--name-field-course-id, .field--name-field-course-features, .field--name-field-registration-start-date,
+.field--name-field-course-online-address, .field--name-field-registration-end-date, .field--name-field-course-length,
+.field--name-field-course-in-swedish, .field--name-field-online-course, .field--name-field-number-of-lessons, .field--name-field-course-start-date,
+.field--name-field-course-end-date {
     display: flex;
-    .field__item {
+    .field__item, .field__item a  {
         display: inline;
         margin-left: 5px;
     }
