@@ -74,7 +74,16 @@ body {
     // field--name-field-course-features missing for now on
 }
 
-// Edits for Organizer still missing
+/* ORGANIZATIONS
+--------------------------------------------------*/
+
+.field--name-field-address, .field--name-field-town, .field--name-field-website-address {
+    display: flex;
+    .field__item,  .field__item a  {
+        display: inline;
+        margin-left: 5px;
+    }
+}
 
 
 /* COLORS 
