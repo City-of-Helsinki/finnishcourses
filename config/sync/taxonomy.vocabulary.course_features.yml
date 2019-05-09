@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Course features'
 vid: course_features
 description: ''
-hierarchy: 0
 weight: 0

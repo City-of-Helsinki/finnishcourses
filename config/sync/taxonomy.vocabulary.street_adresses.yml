@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Street adresses'
 vid: street_adresses
 description: ''
-hierarchy: 0
 weight: 0
