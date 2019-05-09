@@ -15,6 +15,15 @@ body {
 
 .title {
     text-align: center;
+    margin-top: 35px;
+}
+
+.section {
+    margin: auto;
+}
+
+.bg-primary {
+   padding: 150px;
 }
 
 /* COURSE INFORMATION
@@ -95,19 +104,19 @@ body {
 /* COLORS 
 --------------------------------------------------*/
 .bg-primary {
-    color: $primary-shade !important;
+    color: $primary-shade;
 }
 
 .bg-secondary {
-    background-color: $primary-shade !important;
+    background-color: $primary-shade;
 }
 
 .node__title a {
-    color: $primary-shade !important;
+    color: $primary-shade;
 }
 
 a {
-    color: $primary-shade !important;
+    color: $primary-shade;
 }
 
 h1, h2, h3 {
@@ -116,11 +125,11 @@ h1, h2, h3 {
 }
 
 .bg-inverse {
-    background: $primary-shade !important;
+    background: $primary-shade;
 }
 
 .site-footer {
-    background: $light-schedule-shade !important;
+    background: $light-schedule-shade;
 }
 
 .menu--main li a {
