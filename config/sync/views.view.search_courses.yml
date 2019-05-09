@@ -6,6 +6,7 @@ dependencies:
     - search_api.index.courses_index
     - taxonomy.vocabulary.towns
   module:
+    - better_exposed_filters
     - search_api
 id: search_courses
 label: 'Search - Courses'
@@ -35,7 +36,7 @@ display:
           skip_access: false
           preserve_facet_query_args: false
       exposed_form:
-        type: basic
+        type: bef
         options:
           submit_button: Apply
           reset_button: false
@@ -44,6 +45,35 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
+          input_required: false
+          text_input_required: 'Select any filter and click on Apply to see results'
+          bef:
+            general:
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_hide: false
+            field_course_town:
+              bef_format: bef
+              more_options:
+                bef_select_all_none: false
+                bef_collapsible: false
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
+            field_course_fee:
+              bef_format: default
+              slider_options:
+                bef_slider_min: null
+                bef_slider_max: null
+                bef_slider_step: !!float 1
+                bef_slider_animate: ''
+                bef_slider_orientation: ''
+              more_options:
+                is_secondary: false
+                placeholder_text: ''
+          text_input_required_format: basic_html
       pager:
         type: mini
         options:
@@ -192,6 +222,70 @@ display:
           hierarchy: false
           error_message: true
           plugin_id: search_api_term
+        field_course_fee:
+          id: field_course_fee
+          table: search_api_index_courses_index
+          field: field_course_fee
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_course_fee_op
+            label: 'Course fee'
+            description: null
+            use_operator: false
+            operator: field_course_fee_op
+            identifier: field_course_fee
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+            placeholder: null
+            min_placeholder: null
+            max_placeholder: null
+          is_grouped: true
+          group_info:
+            label: 'Course fee'
+            description: ''
+            identifier: course_fee
+            optional: true
+            widget: radios
+            multiple: true
+            remember: false
+            default_group: All
+            default_group_multiple:
+              All: 0
+            group_items:
+              1:
+                title: 0-49
+                operator: between
+                value:
+                  value: ''
+                  min: '0'
+                  max: '49,99'
+              2:
+                title: 50-149
+                operator: between
+                value:
+                  value: ''
+                  min: '50'
+                  max: '149,99'
+              3:
+                title: 'Over 150'
+                operator: '>='
+                value:
+                  value: '150'
+                  min: ''
+                  max: ''
+          plugin_id: search_api_string
       sorts: {  }
       title: 'Search - Courses'
       header: {  }
