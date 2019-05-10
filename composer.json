@@ -113,6 +113,11 @@
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/{$name}": ["type:drupal-drush"]
         },
+        "patches": {
+            "drupal/core": {
+                "Grouped exposed filters do not work like they should": "https://www.drupal.org/files/issues/1810148-58.patch"     
+            }
+        },
         "drupal-scaffold": {
             "initial": {
                 ".editorconfig": "../.editorconfig",
