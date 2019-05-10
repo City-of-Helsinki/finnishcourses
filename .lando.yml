@@ -1,4 +1,6 @@
 name: fc
 recipe: drupal8
 config:
-  webroot: .
+  webroot: web
+  database: mariadb:10.1
+
