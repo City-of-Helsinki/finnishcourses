@@ -51,8 +51,6 @@ hidden:
   description: true
   field_active_organization: true
   field_email: true
-  field_locations_addresses: true
-  field_locations_towns: true
   field_phone: true
   field_postal_code: true
   langcode: true
