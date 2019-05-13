@@ -161,18 +161,20 @@ function finnishcourse_course_form_submit(array $form, FormStateInterface $form_
 function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
   
   // Generate course id
-  if (empty($entity->get('field_course_id')->getValue())) {
-    $year = date('y');
-    if (empty(\Drupal::state()->get('courseNumber'))) {
-      $courseNumber = 1;
-    } else {
-      $courseNumber = \Drupal::state()->get('courseNumber') + 1;
-    }
+  if (is_object($entity) && method_exists($entity, 'bundle') && $entity->bundle() == 'course') {
+    if (empty($entity->get('field_course_id')->getValue())) {
+      $year = date('y');
+      if (empty(\Drupal::state()->get('courseNumber'))) {
+        $courseNumber = 1;
+      } else {
+        $courseNumber = \Drupal::state()->get('courseNumber') + 1;
+      }
 
-    \Drupal::state()->set('courseNumber', $courseNumber);
-    // Use number_pad function to get 4 digit number
-    $courseID = 'FI' . $year . number_pad($courseNumber, 4);
-    $entity->set('field_course_id', $courseID);
+      \Drupal::state()->set('courseNumber', $courseNumber);
+      // Use number_pad function to get 4 digit number
+      $courseID = 'FI' . $year . number_pad($courseNumber, 4);
+      $entity->set('field_course_id', $courseID);
+    }
   }
 }
 
