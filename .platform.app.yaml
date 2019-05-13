@@ -116,3 +116,9 @@ crons:
     drupal:
         spec: '*/20 * * * *'
         cmd: 'cd web ; drush core-cron'
+
+
+# Variables
+variables:
+    php:
+        "date.timezone": "Europe/Helsinki"
