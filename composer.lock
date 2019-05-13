@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aed2996ffbc02671604988b81a8fed16",
+    "content-hash": "658d351a28127bebf103425dd61bec39",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3140,6 +3140,9 @@
                     "recurse": false,
                     "replace": false,
                     "merge-extra": false
+                },
+                "patches_applied": {
+                    "Grouped exposed filters do not work like they should": "https://www.drupal.org/files/issues/1810148-58.patch"
                 }
             },
             "autoload": {
@@ -4635,17 +4638,11 @@
         },
         {
             "name": "drupal/office_hours",
-            "version": "1.1.0",
+            "version": "dev-1.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/office_hours.git",
-                "reference": "8.x-1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/office_hours-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "e0788d4e74ea4dfd8e1ec9b7b61c889832ce5e65"
+                "reference": "f9111304acf161f1c789c1e6b9ed872c9df7ae06"
             },
             "require": {
                 "drupal/core": "*"
@@ -4656,12 +4653,15 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1523743380",
+                    "version": "8.x-1.1+28-dev",
+                    "datestamp": "1557310081",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Handle timezones in Office Hours module": "https://www.drupal.org/files/issues/office_hours-respecting-user_timezone-D8-1925272-17.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -4693,7 +4693,8 @@
                 "source": "http://cgit.drupalcode.org/office_hours",
                 "issues": "http://drupal.org/project/office_hours",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
-            }
+            },
+            "time": "2019-05-09T10:15:32+00:00"
         },
         {
             "name": "drupal/pathauto",
@@ -11559,6 +11560,7 @@
         "drupal/entity_clone": 10,
         "drupal/entity_embed": 10,
         "drupal/group": 5,
+        "drupal/office_hours": 20,
         "drupal/pathologic": 15,
         "drupal/role_delegation": 15,
         "drupal/select_or_other": 15,
