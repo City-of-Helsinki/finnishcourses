@@ -1,0 +1,21 @@
+uuid: b364c10f-7753-4fb6-9cc4-10fd1e709c26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_target_level
+    - node.type.course
+  module:
+    - options
+id: node.course.field_target_level
+field_name: field_target_level
+entity_type: node
+bundle: course
+label: 'Target level'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
