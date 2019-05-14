@@ -1,0 +1,21 @@
+diff --git a/src/Element/ElementBase.php b/src/Element/ElementBase.php
+index c41b5b3..6830451 100644
+--- a/src/Element/ElementBase.php
++++ b/src/Element/ElementBase.php
+@@ -4,6 +4,7 @@ namespace Drupal\select_or_other\Element;
+ 
+ use Drupal\Core\Form\FormStateInterface;
+ use Drupal\Core\Render\Element\FormElement;
++use Drupal\Core\StringTranslation\TranslatableMarkup;
+ 
+ /**
+  * Base class for select or other form elements.
+@@ -25,7 +26,7 @@ abstract class ElementBase extends FormElement {
+    * Adds an 'other' option to the selectbox.
+    */
+   protected static function addOtherOption($options) {
+-    $options['select_or_other'] = 'Other';
++    $options['select_or_other'] = new TranslatableMarkup('Add new');
+ 
+     return $options;
+   }
