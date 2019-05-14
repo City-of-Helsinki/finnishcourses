@@ -14,6 +14,8 @@ permissions:
   - 'create file media'
   - 'create image media'
   - 'create remote_video media'
+  - 'create terms in street_adresses'
+  - 'create terms in towns'
   - 'create video media'
   - 'delete own audio media'
   - 'delete own course content'
