@@ -56,12 +56,12 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
 
     //$form['field_course_street_address']['#attributes']['id'][] = 'street-select';
     $form['field_course_street_address']['#prefix'] = '<div id="street-select">';
-    $form['field_course_street_address']['widget']['#options'] = getAddressOptions($form_state);
+    $form['field_course_street_address']['widget']['#options'] = getAddressOptions($form_state, $form);
     $form['field_course_street_address']['#suffix'] = '</div>';
 
     //$form['field_course_town']['#attributes']['id'][] = 'town-select';
     $form['field_course_town']['#prefix'] = '<div id="town-select">';
-    $form['field_course_town']['widget']['#options'] = getTownOptions($form_state);
+    $form['field_course_town']['widget']['#options'] = getTownOptions($form_state, $form);
     $form['field_course_town']['#suffix'] = '</div>';
 
     // Disable course id field because it will be generated automatically
@@ -83,38 +83,52 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
   }
 }
 
-function getAddressOptions($form_state) {
+function getAddressOptions($form_state, $form) {
 
-  if (!is_object($form_state) || !method_exists($form_state, 'getTriggeringElement')) {
-    return [];
+  $organization = FALSE;
+  if (isset($form['field_course_organization']) && !empty($form['field_course_organization']['widget']['#default_value'])) {
+    $organization = $form['field_course_organization']['widget']['#default_value'];
   }
 
-  $element = $form_state->getTriggeringElement();
+  if (!$organization) {
+    if (!is_object($form_state) || !method_exists($form_state, 'getTriggeringElement')) {
+      return [];
+    }
+    $element = $form_state->getTriggeringElement();
 
-  if (empty($element['#value'])) {
-    return [];
+    if (empty($element['#value'])) {
+      return [];
+    }
+
+    $organization = $element['#value'];
   }
-
-  $organization = $element['#value'];
 
   $addressOptions = getOptionsFromTerm($organization, 'field_locations_addresses');
 
   return $addressOptions;
 }
 
-function getTownOptions($form_state) {
+function getTownOptions($form_state, $form) {
 
-  if (!is_object($form_state) || !method_exists($form_state, 'getTriggeringElement')) {
-    return [];
+  $organization = FALSE;
+
+  if (isset($form['field_course_organization']) && !empty($form['field_course_organization']['widget']['#default_value'])) {
+    $organization = $form['field_course_organization']['widget']['#default_value'];
   }
 
-  $element = $form_state->getTriggeringElement();
+  if (!$organization) {
+    if (!is_object($form_state) || !method_exists($form_state, 'getTriggeringElement')) {
+      return [];
+    }
 
-  if (empty($element['#value'])) {
-    return [];
+    $element = $form_state->getTriggeringElement();
+
+    if (empty($element['#value'])) {
+      return [];
+    }
+
+    $organization = $element['#value'];
   }
-
-  $organization = $element['#value'];
 
   $townOptions = getOptionsFromTerm($organization, 'field_locations_towns');
 
@@ -137,7 +151,11 @@ function getOptionsFromTerm($tid = '', $field = '') {
 
   foreach ($values as $key => $value) {
     $locationTerm = Term::load($value['target_id']);
-    $options[$value['target_id']] = $locationTerm->label();
+    if (!$locationTerm) {
+      continue;
+    }
+    $optionKey = $locationTerm->label() . ' ('.$value['target_id'].')';
+    $options[$optionKey] = $locationTerm->label();
   }
 
   return $options;
@@ -154,9 +172,10 @@ function refreshLocationOptions(array $form, FormStateInterface &$form_state) {
   return $response;
 }
 
-function finnishcourse_course_form_submit(array $form, FormStateInterface $form_state) {
-
-}
+// function finnishcourse_course_form_submit(array $form, FormStateInterface $form_state) {
+//   kint($form);
+//   kint($form_state);
+// }
 
 function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
   
@@ -175,8 +194,59 @@ function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $en
       $courseID = 'FI' . $year . number_pad($courseNumber, 4);
       $entity->set('field_course_id', $courseID);
     }
+
+    $organizationId = $entity->get('field_course_organization')->target_id;
+    $organization = Term::load($organizationId);
+
+    if (!empty($entity->get('field_course_street_address')->getValue())) {
+      $addressTid = $entity->get('field_course_street_address')->target_id;
+
+      $addressIs = FALSE;
+
+      if (!empty($organization->get('field_locations_addresses')->getValue())) {
+        $organizationAddresses = $organization->get('field_locations_addresses')->getValue();
+
+        foreach ($organizationAddresses as $key => $value) {
+          if ($value['target_id'] == $addressTid) {
+
+            $addressIs = TRUE;
+            break;
+          }
+        }
+      }
+      if ($addressIs === FALSE) {
+        $organization->field_locations_addresses[] = ['target_id' => $addressTid];
+        $saveOrganization = TRUE;
+      }      
+
+    }
+    if (!empty($entity->get('field_course_town')->getValue())) {
+      $townTid = $entity->get('field_course_town')->target_id;
+      $townIs = FALSE;
+      if (!empty($organization->get('field_locations_towns')->getValue())) {
+
+        $organizationTowns = $organization->get('field_locations_towns')->getValue();
+
+        foreach ($organizationTowns as $key => $value) {
+          if ($value['target_id'] == $townTid) {
+            $townIs = TRUE;
+            break;
+          }
+        }
+      }
+      if ($townIs === FALSE) {
+        $organization->field_locations_towns[] = ['target_id' => $townTid];
+        $saveOrganization = TRUE;
+      }      
+
+    }
+    if ($saveOrganization) {
+      $organization->save();
+    }
+
   }
 }
+
 
 function number_pad($number,$n) {
   return str_pad((int) $number,$n,'0',STR_PAD_LEFT);
