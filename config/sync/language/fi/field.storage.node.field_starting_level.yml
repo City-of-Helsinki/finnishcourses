@@ -1,0 +1,22 @@
+settings:
+  allowed_values:
+    -
+      label: 'Aloitustaso 0'
+    -
+      label: 'Perustaso alkaa A1.1'
+    -
+      label: 'Perustaso A1.2'
+    -
+      label: 'Perustaso A1.3'
+    -
+      label: 'Perustaso A2.1'
+    -
+      label: 'Perustaso A2.2'
+    -
+      label: 'Keskitaso alkaa B1.1'
+    -
+      label: 'Keskitaso B1.2'
+    -
+      label: 'Keskitaso B2.1'
+    -
+      label: 'Ylin taso C'

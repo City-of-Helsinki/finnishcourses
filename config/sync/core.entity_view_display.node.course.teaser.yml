@@ -7,8 +7,8 @@ dependencies:
     - field.field.node.course.field_books_and_materials
     - field.field.node.course.field_course_availability
     - field.field.node.course.field_course_end_date
-    - field.field.node.course.field_course_entry_level
     - field.field.node.course.field_course_features
+    - field.field.node.course.field_course_fee
     - field.field.node.course.field_course_id
     - field.field.node.course.field_course_in_swedish
     - field.field.node.course.field_course_information_source
@@ -17,7 +17,8 @@ dependencies:
     - field.field.node.course.field_course_organization
     - field.field.node.course.field_course_organizer_id
     - field.field.node.course.field_course_start_date
-    - field.field.node.course.field_course_target_level
+    - field.field.node.course.field_course_street_address
+    - field.field.node.course.field_course_town
     - field.field.node.course.field_course_week_hours
     - field.field.node.course.field_number_of_lessons
     - field.field.node.course.field_online_course
@@ -25,6 +26,7 @@ dependencies:
     - field.field.node.course.field_registration_end_date
     - field.field.node.course.field_registration_link
     - field.field.node.course.field_registration_start_date
+    - field.field.node.course.field_starting_level
     - node.type.course
   module:
     - user
@@ -42,7 +44,6 @@ hidden:
   field_books_and_materials: true
   field_course_availability: true
   field_course_end_date: true
-  field_course_entry_level: true
   field_course_features: true
   field_course_fee: true
   field_course_id: true
@@ -54,7 +55,6 @@ hidden:
   field_course_organizer_id: true
   field_course_start_date: true
   field_course_street_address: true
-  field_course_target_level: true
   field_course_town: true
   field_course_week_hours: true
   field_number_of_lessons: true
@@ -63,4 +63,5 @@ hidden:
   field_registration_end_date: true
   field_registration_link: true
   field_registration_start_date: true
+  field_starting_level: true
   langcode: true
