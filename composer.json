@@ -121,6 +121,9 @@
             },
             "drupal/office_hours": {
                 "Handle timezones in Office Hours module": "https://www.drupal.org/files/issues/office_hours-respecting-user_timezone-D8-1925272-17.patch"
+            },
+            "drupal/select_or_other": {
+                "Make Other option translatable": "patches/contrib/select_or_other/make_other_option_translatable-2926786-custom.patch"
             }
         },
         "drupal-scaffold": {
