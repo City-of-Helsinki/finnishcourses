@@ -1,0 +1,21 @@
+uuid: 2b4e753b-7481-40db-9af7-87e6e85b15e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_starting_level
+    - node.type.course
+  module:
+    - options
+id: node.course.field_starting_level
+field_name: field_starting_level
+entity_type: node
+bundle: course
+label: 'Starting level'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
