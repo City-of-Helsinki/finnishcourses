@@ -57,7 +57,7 @@ function js () {
 // Static Server + watching scss/html files OBS! LANDO URL
 function serve () {
   browserSync.init({
-    proxy: 'http://fc.lndo.site/web/',
+    proxy: 'http://fc.lndo.site/',
   })
 
   gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
