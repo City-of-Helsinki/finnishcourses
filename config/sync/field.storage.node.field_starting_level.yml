@@ -1,0 +1,51 @@
+uuid: 15796e6c-62f7-430f-b15f-b341c80d2e7a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_starting_level
+field_name: field_starting_level
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: aloitustaso_0
+      label: 'Starting level 0'
+    -
+      value: perustaso_alkaa_A1_1
+      label: 'Basic level begins A1.1'
+    -
+      value: perustaso_A1_2
+      label: 'Basic level A1.2'
+    -
+      value: perustaso_A1_3
+      label: 'Basic level A1.3'
+    -
+      value: perustaso_A2_1
+      label: 'Basic level A2.1'
+    -
+      value: perustaso_A2_2
+      label: 'Basic level A2.2'
+    -
+      value: keskitaso_alkaa_B1_1
+      label: 'Intermediate level begins B1.1'
+    -
+      value: keskitaso_B1_2
+      label: 'Intermediate level B1.2'
+    -
+      value: keskitaso_B2_1
+      label: 'Intermediate level B2.1'
+    -
+      value: ylin_taso_C
+      label: 'Advanced level C'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,600 @@
+uuid: fc64892d-e2a6-496d-9eb9-725ad54830e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.courses_index
+    - taxonomy.vocabulary.towns
+  module:
+    - better_exposed_filters
+    - search_api
+id: search_courses
+label: 'Search - Courses'
+module: views
+description: ''
+tag: ''
+base_table: search_api_index_courses_index
+base_field: search_api_id
+core: 8.x
+display:
+  default:
+    display_plugin: default
+    id: default
+    display_title: Master
+    position: 0
+    display_options:
+      access:
+        type: none
+        options: {  }
+      cache:
+        type: tag
+        options: {  }
+      query:
+        type: views_query
+        options:
+          bypass_access: false
+          skip_access: false
+          preserve_facet_query_args: false
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          input_required: false
+          text_input_required: 'Select any filter and click on Apply to see results'
+          bef:
+            general:
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_hide: false
+            field_course_town:
+              bef_format: bef
+              more_options:
+                bef_select_all_none: false
+                bef_collapsible: false
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
+            field_online_course:
+              bef_format: bef_single
+              more_options:
+                bef_select_all_none: false
+                bef_collapsible: false
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
+            field_starting_level:
+              bef_format: default
+              more_options:
+                bef_select_all_none: false
+                bef_collapsible: false
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
+            field_course_fee:
+              bef_format: default
+              slider_options:
+                bef_slider_min: null
+                bef_slider_max: null
+                bef_slider_step: !!float 1
+                bef_slider_animate: ''
+                bef_slider_orientation: horizontal
+              more_options:
+                is_secondary: false
+                placeholder_text: ''
+            field_starting_level_1:
+              bef_format: default
+              more_options:
+                bef_select_all_none: false
+                bef_collapsible: false
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
+            field_course_start_date:
+              bef_format: bef_datepicker
+              more_options:
+                is_secondary: false
+                placeholder_text: ''
+            field_course_start_date_1:
+              bef_format: bef_datepicker
+              more_options:
+                is_secondary: false
+                placeholder_text: ''
+          text_input_required_format: basic_html
+      pager:
+        type: mini
+        options:
+          items_per_page: 10
+          offset: 0
+          id: 0
+          total_pages: null
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          tags:
+            previous: ‹‹
+            next: ››
+      style:
+        type: default
+      row:
+        type: search_api
+        options:
+          view_modes:
+            'entity:node':
+              course: search_index
+      fields:
+        changed:
+          table: search_api_index_courses_index
+          field: changed
+          id: changed
+          entity_type: null
+          entity_field: null
+          plugin_id: search_api_field
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: timestamp
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_date
+          fallback_options:
+            date_format: small
+            custom_date_format: ''
+            timezone: ''
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+      filters:
+        field_course_town:
+          id: field_course_town
+          table: search_api_index_courses_index
+          field: field_course_town
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_course_town_op
+            label: 'Course town'
+            description: ''
+            use_operator: false
+            operator: field_course_town_op
+            identifier: course_town
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              course_editor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: towns
+          hierarchy: false
+          error_message: true
+          plugin_id: search_api_term
+        field_online_course:
+          id: field_online_course
+          table: search_api_index_courses_index
+          field: field_online_course
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '0'
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: Online
+            description: ''
+            use_operator: false
+            operator: field_online_course_op
+            identifier: online_course
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              course_editor: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_boolean
+        field_starting_level:
+          id: field_starting_level
+          table: search_api_index_courses_index
+          field: field_starting_level
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 2
+          exposed: true
+          expose:
+            operator_id: field_starting_level_op
+            label: 'Starting level'
+            description: null
+            use_operator: false
+            operator: field_starting_level_op
+            identifier: field_starting_level
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: true
+          group_info:
+            label: 'What is your current level?'
+            description: ''
+            identifier: starting_level
+            optional: true
+            widget: radios
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: Beginner
+                operator: or
+                value:
+                  aloitustaso_0: aloitustaso_0
+                  perustaso_alkaa_A1_1: perustaso_alkaa_A1_1
+              2:
+                title: Basic
+                operator: or
+                value:
+                  perustaso_A1_2: perustaso_A1_2
+                  perustaso_A1_3: perustaso_A1_3
+                  perustaso_A2_1: perustaso_A2_1
+                  perustaso_A2_2: perustaso_A2_2
+              3:
+                title: Advanced
+                operator: or
+                value:
+                  keskitaso_alkaa_B1_1: keskitaso_alkaa_B1_1
+                  keskitaso_B1_2: keskitaso_B1_2
+                  keskitaso_B2_1: keskitaso_B2_1
+                  ylin_taso_C: ylin_taso_C
+          reduce_duplicates: false
+          plugin_id: search_api_options
+        field_course_fee:
+          id: field_course_fee
+          table: search_api_index_courses_index
+          field: field_course_fee
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 3
+          exposed: true
+          expose:
+            operator_id: field_course_fee_op
+            label: 'Course fee'
+            description: null
+            use_operator: false
+            operator: field_course_fee_op
+            identifier: field_course_fee
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+            placeholder: null
+            min_placeholder: null
+            max_placeholder: null
+          is_grouped: true
+          group_info:
+            label: 'Course fee'
+            description: ''
+            identifier: course_fee
+            optional: true
+            widget: radios
+            multiple: true
+            remember: false
+            default_group: All
+            default_group_multiple:
+              All: 0
+            group_items:
+              1:
+                title: 0-49
+                operator: between
+                value:
+                  value: ''
+                  min: '0.00'
+                  max: '49.99'
+              2:
+                title: 50-149
+                operator: between
+                value:
+                  value: ''
+                  min: '50'
+                  max: '149.99'
+              3:
+                title: 'Over 150'
+                operator: '>='
+                value:
+                  value: '150'
+                  min: ''
+                  max: ''
+          plugin_id: search_api_string
+        field_starting_level_1:
+          id: field_starting_level_1
+          table: search_api_index_courses_index
+          field: field_starting_level
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 4
+          exposed: true
+          expose:
+            operator_id: field_starting_level_1_op
+            label: 'Starting level'
+            description: ''
+            use_operator: false
+            operator: field_starting_level_1_op
+            identifier: starting_level_ext
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              course_editor: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: search_api_options
+        field_course_start_date:
+          id: field_course_start_date
+          table: search_api_index_courses_index
+          field: field_course_start_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 5
+          exposed: true
+          expose:
+            operator_id: field_course_start_date_op
+            label: 'Start date'
+            description: ''
+            use_operator: false
+            operator: field_course_start_date_op
+            identifier: start_date
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              course_editor: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: 'Course start date'
+            description: null
+            identifier: field_course_start_date
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1: {  }
+              2: {  }
+              3: {  }
+          plugin_id: search_api_date
+        field_course_start_date_1:
+          id: field_course_start_date_1
+          table: search_api_index_courses_index
+          field: field_course_start_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '<='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 5
+          exposed: true
+          expose:
+            operator_id: field_course_start_date_1_op
+            label: ''
+            description: ''
+            use_operator: false
+            operator: field_course_start_date_1_op
+            identifier: start_date_2
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              course_editor: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_date
+      sorts: {  }
+      title: 'Search - Courses'
+      header: {  }
+      footer: {  }
+      empty: {  }
+      relationships: {  }
+      arguments: {  }
+      display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: OR
+          2: AND
+          3: OR
+          4: AND
+          5: AND
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+      tags: {  }
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: Page
+    position: 1
+    display_options:
+      display_extenders:
+        metatag_display_extender: {  }
+      path: search/courses
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+      tags: {  }

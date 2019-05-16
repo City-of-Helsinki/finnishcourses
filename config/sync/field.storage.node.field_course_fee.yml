@@ -1,4 +1,4 @@
-uuid: e3f88987-97f6-4375-95af-12855709566b
+uuid: 9319f5c7-1a40-4055-a249-6903a4d286ed
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,10 @@ dependencies:
 id: node.field_course_fee
 field_name: field_course_fee
 entity_type: node
-type: string
+type: decimal
 settings:
-  max_length: 255
-  is_ascii: false
-  case_sensitive: false
+  precision: 10
+  scale: 2
 module: core
 locked: false
 cardinality: 1

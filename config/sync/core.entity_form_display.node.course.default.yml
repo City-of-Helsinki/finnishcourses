@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.course.field_books_and_materials
     - field.field.node.course.field_course_availability
     - field.field.node.course.field_course_end_date
-    - field.field.node.course.field_course_entry_level
     - field.field.node.course.field_course_features
     - field.field.node.course.field_course_fee
     - field.field.node.course.field_course_id
@@ -18,7 +17,6 @@ dependencies:
     - field.field.node.course.field_course_organizer_id
     - field.field.node.course.field_course_start_date
     - field.field.node.course.field_course_street_address
-    - field.field.node.course.field_course_target_level
     - field.field.node.course.field_course_town
     - field.field.node.course.field_course_week_hours
     - field.field.node.course.field_number_of_lessons
@@ -27,6 +25,8 @@ dependencies:
     - field.field.node.course.field_registration_end_date
     - field.field.node.course.field_registration_link
     - field.field.node.course.field_registration_start_date
+    - field.field.node.course.field_starting_level
+    - field.field.node.course.field_target_level
     - node.type.course
   module:
     - conditional_fields
@@ -44,12 +44,12 @@ third_party_settings:
       children:
         - langcode
         - title
+        - group_organization
         - field_course_availability
-        - field_course_organization
         - field_course_in_swedish
         - field_online_course
-        - field_course_entry_level
-        - field_course_target_level
+        - field_starting_level
+        - field_target_level
         - group_course_dates
         - group_course_location
         - field_course_fee
@@ -87,7 +87,7 @@ third_party_settings:
       children:
         - field_course_information_source
       parent_name: ''
-      weight: 14
+      weight: 15
       format_type: details
       format_settings:
         id: ''
@@ -124,6 +124,19 @@ third_party_settings:
         open: true
         required_fields: true
       label: 'Registration info'
+    group_organization:
+      children:
+        - field_course_organization
+      parent_name: group_course_base_information
+      weight: 7
+      format_type: details
+      format_settings:
+        label: Organization
+        open: true
+        required_fields: true
+        id: ''
+        classes: ''
+      label: Organization
 id: node.course.default
 targetEntityType: node
 bundle: course
@@ -144,7 +157,7 @@ content:
     type: text_textarea
     region: content
   field_course_availability:
-    weight: 7
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -154,12 +167,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
-    region: content
-  field_course_entry_level:
-    weight: 11
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
     region: content
   field_course_features:
     weight: 19
@@ -173,13 +180,12 @@ content:
   field_course_fee:
     weight: 15
     settings:
-      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: number
     region: content
   field_course_id:
-    weight: 15
+    weight: 16
     settings:
       size: 60
       placeholder: ''
@@ -277,12 +283,6 @@ content:
           bundle: course
     type: select_or_other_reference
     region: content
-  field_course_target_level:
-    weight: 12
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_course_town:
     weight: 29
     settings:
@@ -345,7 +345,7 @@ content:
     type: boolean_checkbox
     region: content
   field_registration_email:
-    weight: 16
+    weight: 15
     settings:
       size: 60
       placeholder: ''
@@ -359,7 +359,7 @@ content:
     type: datetime_default
     region: content
   field_registration_link:
-    weight: 20
+    weight: 17
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -371,6 +371,18 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
+    region: content
+  field_starting_level:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_target_level:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   langcode:
     type: language_select
