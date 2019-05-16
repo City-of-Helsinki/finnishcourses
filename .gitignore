@@ -9,9 +9,8 @@
 */node_modules/*
 
 # Ignore sensitive information
-/web/sites/*/settings.php
-/web/sites/*/settings.local.php
 /archives*
+/web/sites/finnishcourses.fi.dd
 
 # Ignore Drupal's file directory
 /web/sites/*/files/
@@ -26,3 +25,5 @@
 /.env
 
 web/themes/custom/finnishcourses_bootstrap/node_modules/
+
+web/themes/custom/finnishcourses_bootstrap/scss/\.DS_Store
