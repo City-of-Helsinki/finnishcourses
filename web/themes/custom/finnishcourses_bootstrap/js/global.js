@@ -28,6 +28,7 @@
         position = scroll;
       });
 
+      // COURSE AVAILABILITY
         $(document).ready(function () {
             // Probably need to specify "field__item"
             $('.field__item:contains("Available")').css('color', '#129942');
