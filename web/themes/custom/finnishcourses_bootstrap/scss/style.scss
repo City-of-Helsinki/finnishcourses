@@ -26,6 +26,28 @@ body {
    padding: 150px;
 }
 
+// Still need to be modified
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $primary-footer;
+    text-align: center;
+    a {
+        color: $footer-text-shade;
+        font-weight: bold;
+        padding-bottom: 150px;
+    }
+    .region-footer-first {
+        margin-top: 20px;
+        .contextual-region {
+            margin: auto;
+        }
+    }
+}
+
+
 /* COURSE INFORMATION
 -------------------------------------------------*/
 
