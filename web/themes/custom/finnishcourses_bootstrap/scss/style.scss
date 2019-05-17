@@ -45,7 +45,8 @@ body {
 .registration-dates, .field--name-field-course-id, .field--name-field-course-features, .field--name-field-registration-start-date,
 .field--name-field-course-online-address, .field--name-field-registration-end-date, .field--name-field-course-length,
 .field--name-field-course-in-swedish, .field--name-field-online-course, .field--name-field-number-of-lessons, .field--name-field-course-start-date,
-.field--name-field-course-end-date, .field--name-field-registration-email, .field--name-field-registration-link, .organization-name {
+.field--name-field-course-end-date, .field--name-field-registration-email, .field--name-field-registration-link, .organization-name,
+.field--name-field-starting-level, .field--name-field-target-level{
     display: flex;
     .field__item, .field__item a  {
         display: inline;
@@ -61,7 +62,6 @@ body {
 }
 
 .field--name-field-course-availability .field__item {
-    // Still need to fix colors to this, probably with js?
     font-weight: bold;
 }
 
@@ -77,17 +77,16 @@ body {
         display: grid;
         margin-left: 1px;
         margin-right: 1px;
-        background-color: $dark-schedule-shade;
         width: 140px;
         height: 100px;
+        background-color: $dark-schedule-shade;
     }
 }
 
-.field--name-field-course-id, .course-lessons, .field--name-field-books-and-materials {
+.field--name-field-course-id, .course-lessons, .field--name-field-books-and-materials,
+.field--name-field-course-features {
     margin-top: 20px;
     margin-bottom: 40px;
-
-    // field--name-field-course-features missing for now on
 }
 
 /* ORGANIZATIONS
