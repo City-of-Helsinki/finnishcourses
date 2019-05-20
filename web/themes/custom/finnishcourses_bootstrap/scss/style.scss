@@ -2,7 +2,6 @@
 Theme Name: Bootstrap 4 Sass
 Description: Bootstrap 4 with Sass
 */
-
 // import files
 @import "import";
 
@@ -10,57 +9,127 @@ Description: Bootstrap 4 with Sass
 -------------------------------------------------*/
 
 body {
-    background: white;
-    font-family: $font-family-base;
+  background: $body-bg;
+  font-family: $font-family-base;
+}
+
+.row
+{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+// Still needs to be modified, need to logout from Drupal site
+.region-secondary-menu {
+  background: $primary-shade;
+  .navbar-nav {
+    display: flow-root;
+    transform: translateX(54%);
+
+    .nav-item {
+      float: left;
+
+      a {
+        color: $main-nav-shade;
+        font-weight: 900;
+        font-size: 18px;
+        display: block;
+        padding: 8px;
+        //text-decoration: $link-hover-decoration;
+      }
+    }
+  }
 }
 
 .title {
-    text-align: center;
-    margin-top: 35px;
+  text-align: center;
+  margin-top: 35px;
+}
+
+h1, h2, h3 {
+  font-weight: 900;
 }
 
 .section {
-    margin: auto;
+  margin: auto;
 }
 
 .bg-primary {
-   padding: 150px;
+  padding: 150px;
 }
 
 // Still need to be modified
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: $primary-footer;
-    text-align: center;
-    a {
-        color: $footer-text-shade;
-        font-weight: bold;
-        padding-bottom: 150px;
-    }
-    .region-footer-first {
-        margin-top: 20px;
-        .contextual-region {
-            margin: auto;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: $primary-footer;
+
+  a {
+    color: $footer-text-shade;
+    font-weight: bold;
+  }
+
+  .region-footer-first {
+    margin-top: 20px;
+      //transform: translateX(2%);
+    .contextual-region {
+      margin: auto;
+      .navbar-nav {
+        .nav-item {
+          display: flex;
+          margin: 1px;
+          float: left;
         }
+      }
     }
+  }
 }
 
+/* FRONT PAGE
+-------------------------------------------------*/
+
+.comment-add, .node__meta, .comment-forbidden {
+  display: none;
+}
+
+.node--view-mode-teaser h2 a {
+  font-size: 18px;
+}
+
+.node-readmore a {
+  font-weight: 900;
+}
+
+.views-row {
+  flex: 1;
+  margin: 20px 0;
+  padding: 0 20px;
+  &:nth-child(n+2) {
+    border-left: 1px solid $border-shade;
+  }
+}
+
+.node--view-mode-teaser {
+  border-bottom: none; // Override
+}
+
+.feed-icons {
+  display: none;
+}
 
 /* COURSE INFORMATION
 -------------------------------------------------*/
 
 .group-wrapper h1, h2, h3 {
-        margin-bottom: 35px;
-        margin-top: 35px;
+  margin-bottom: 35px;
+  margin-top: 35px;
 }
 
 .field__label {
-     font-weight: bold;
-     margin-left: 5px;
- }
+  font-weight: 700;
+  margin-left: 5px;
+}
 
 .course-label, .field--name-field-course-availability, .field--name-field-course-entry-level,
 .field--name-field-course-target-level, .course-dates, .field--name-field-course-street-address,
@@ -69,100 +138,103 @@ body {
 .field--name-field-course-online-address, .field--name-field-registration-end-date, .field--name-field-course-length,
 .field--name-field-course-in-swedish, .field--name-field-online-course, .field--name-field-number-of-lessons, .field--name-field-course-start-date,
 .field--name-field-course-end-date, .field--name-field-registration-email, .field--name-field-registration-link, .organization-name,
-.field--name-field-starting-level, .field--name-field-target-level{
-    display: flex;
-    .field__item, .field__item a  {
-        display: inline;
-        margin-left: 5px;
-    }
+.field--name-field-starting-level, .field--name-field-target-level {
+  display: flex;
+
+  .field__item, .field__item a {
+    display: inline;
+    margin-left: 5px;
+  }
 }
 
 
 .field--name-field-course-week-hours {
-    .field__label {
-        display: none;
-    }
+  .field__label {
+    display: none;
+  }
 }
 
 .field--name-field-course-availability .field__item {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .office-hours {
-    display: flex;
-    margin-top: 10px;
-    text-align: center;
-    .office-hours__item-label {
-        width: auto !important; // Overriding style attribute
-    }
-    .office-hours__item {
-        font-weight: bold;
-        display: grid;
-        margin-left: 1px;
-        margin-right: 1px;
-        width: 140px;
-        height: 100px;
-        background-color: $dark-schedule-shade;
-    }
+  display: flex;
+  margin-top: 10px;
+  text-align: center;
+
+  .office-hours__item-label {
+    width: auto !important; // Overriding style attribute
+  }
+
+  .office-hours__item {
+    font-weight: bold;
+    display: grid;
+    margin-left: 1px;
+    margin-right: 1px;
+    width: 140px;
+    height: 100px;
+    background-color: $dark-schedule-shade;
+  }
 }
 
 .field--name-field-course-id, .course-lessons, .field--name-field-books-and-materials,
 .field--name-field-course-features {
-    margin-top: 20px;
-    margin-bottom: 40px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 /* ORGANIZATIONS
 --------------------------------------------------*/
 
 .field--name-field-address, .field--name-field-town, .field--name-field-website-address {
-    display: flex;
-    .field__item,  .field__item a  {
-        display: inline;
-        margin-left: 5px;
-    }
+  display: flex;
+
+  .field__item, .field__item a {
+    display: inline;
+    margin-left: 5px;
+  }
 }
 
 
 /* COLORS 
 --------------------------------------------------*/
 .bg-primary {
-    color: $primary-shade;
+  color: $primary-shade;
 }
 
 .bg-secondary {
-    background-color: $primary-shade;
+  background-color: $primary-shade;
 }
 
 .node__title a {
-    color: $primary-shade;
+  color: $primary-shade;
+}
+
+.node--view-mode-teaser h2 a {
+  color: $primary-shade;
 }
 
 a {
-    color: $primary-shade;
+  color: $primary-shade;
 }
 
 h1, h2, h3 {
-    color: $primary-shade;
-    font-weight: bold;
+  color: $primary-shade;
 }
 
 .bg-inverse {
-    background: $primary-shade;
-}
-
-.site-footer {
-    background: $light-schedule-shade;
+  background: $primary-shade;
 }
 
 .menu--main li a {
-    color: $primary-shade;
+  color: $primary-shade;
 }
 
 .slick {
-    width: 100%;
+  width: 100%;
 }
 
-.slick>div {
-    margin: 0 15px;
+.slick > div {
+  margin: 0 15px;
 }
