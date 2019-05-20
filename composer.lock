@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "658d351a28127bebf103425dd61bec39",
+    "content-hash": "f1fb192f190e1ffc2259d8ce4e4d782e",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5194,6 +5194,9 @@
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Make Other option translatable": "patches/contrib/select_or_other/make_other_option_translatable-2926786-custom.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
