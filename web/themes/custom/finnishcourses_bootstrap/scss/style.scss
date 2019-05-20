@@ -13,8 +13,7 @@ body {
   font-family: $font-family-base;
 }
 
-.row
-{
+.row {
   margin-left: 0;
   margin-right: 0;
 }
@@ -22,10 +21,9 @@ body {
 // Still needs to be modified, need to logout from Drupal site
 .region-secondary-menu {
   background: $primary-shade;
+  padding: 20px 0 0 20px;
   .navbar-nav {
     display: flow-root;
-    transform: translateX(54%);
-
     .nav-item {
       float: left;
 
@@ -35,10 +33,20 @@ body {
         font-size: 18px;
         display: block;
         padding: 8px;
-        //text-decoration: $link-hover-decoration;
       }
     }
   }
+}
+
+.navbar-brand img {
+  width: 35%;
+  float:  right;
+}
+
+.nav-link.active,
+.nav-item.show .nav-link {
+
+  text-decoration: $link-hover-decoration;
 }
 
 .title {
@@ -72,9 +80,10 @@ h1, h2, h3 {
 
   .region-footer-first {
     margin-top: 20px;
-      //transform: translateX(2%);
-    .contextual-region {
+    //transform: translateX(2%);
+    .menu--footer {
       margin: auto;
+
       .navbar-nav {
         .nav-item {
           display: flex;
@@ -97,14 +106,19 @@ h1, h2, h3 {
   font-size: 18px;
 }
 
-.node-readmore a {
-  font-weight: 900;
+.node-readmore {
+  padding: 0;
+
+  a {
+    font-weight: 900;
+  }
 }
 
 .views-row {
   flex: 1;
   margin: 20px 0;
   padding: 0 20px;
+// Need to make borders shorter
   &:nth-child(n+2) {
     border-left: 1px solid $border-shade;
   }
