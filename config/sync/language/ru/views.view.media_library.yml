@@ -54,3 +54,41 @@ display:
         title: Мультимедиа
   widget:
     display_title: Виджет
+    display_options:
+      filters:
+        name:
+          expose:
+            label: Название
+      arguments:
+        bundle:
+          exception:
+            title: Все
+      header:
+        display_link_grid:
+          label: Сетка
+        display_link_table:
+          label: Таблица
+  widget_table:
+    display_options:
+      fields:
+        thumbnail__target_id:
+          label: Миниатюра
+        name:
+          label: Название
+        uid:
+          label: Автор
+        changed:
+          label: Обновлено
+      filters:
+        name:
+          expose:
+            label: Название
+      arguments:
+        bundle:
+          exception:
+            title: Все
+      header:
+        display_link_grid:
+          label: Сетка
+        display_link_table:
+          label: Таблица
