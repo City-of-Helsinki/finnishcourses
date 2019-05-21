@@ -15,6 +15,10 @@ function course_permissions_form_alter(&$form, FormStateInterface $form_state, $
     $currentUserAccount = $courseDataService->loadAccount();
 
     $userOrganizations = $courseDataService->getUserOrganizations($currentUserAccount);
+
+    if (!$userOrganizations) {
+      return;
+    }
     $allowedOrganizations = [];
 
     foreach ($userOrganizations as $key => $org) {
@@ -26,5 +30,8 @@ function course_permissions_form_alter(&$form, FormStateInterface $form_state, $
         unset($form['field_course_organization']['widget']['#options'][$key]);
       }
     }
+
+    // Set field default value
+    $form['field_course_organization']['widget']['#default_value'] = $allowedOrganizations[0];
   }
 }

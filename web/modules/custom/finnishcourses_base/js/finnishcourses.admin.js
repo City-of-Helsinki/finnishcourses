@@ -31,9 +31,41 @@
       }
     },
 
+    courseLocationDefaults: function(context) {
+
+      // Set course location default values after ajax callback
+      // 
+      if ($(context).find('.js-form-item-field-course-street-address-select').length) {
+        var $addressSelect = $(context).find('.js-form-item-field-course-street-address-select select');
+        if ($addressSelect.find('option:eq(1)').length > 0) {
+          $addressSelect.removeAttr('selected').find('option:eq(1)').attr('selected', 'selected');
+        }
+      }
+
+      if ($(context).find('.js-form-item-field-course-town-select').length) {
+        var $townSelect = $(context).find('.js-form-item-field-course-town-select select');
+        if ($townSelect.find('option:eq(1)').length > 0) {
+          $townSelect.removeAttr('selected').find('option:eq(1)').attr('selected', 'selected');
+        }
+      }
+    },
+
     attach: function (context, settings) {
 
       Drupal.behaviors.finnishcourses_base.autofillUsername(context);
+
+
+      $(document).ajaxComplete(function(e, xhr, settings) {
+
+        if (typeof(settings.extraData) != 'undefined' && typeof(settings.extraData._triggering_element_name) != 'undefined') {
+          var $trigger = settings.extraData._triggering_element_name;
+          if ($trigger == 'field_course_organization') {
+            Drupal.behaviors.finnishcourses_base.courseLocationDefaults(context);
+          }
+        }
+        
+        //$('#' + settings.extraData.parentElement + ' td.subtotal').fadeTo('150', '1');
+      });
      
     }
 
