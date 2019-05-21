@@ -1,1 +1,2 @@
-label: 'Kurssin järjestäjän tunnus'
+label: 'Järjestäjän oma kurssitunnus'
+description: 'Tämä on järjestäjän oma kurssin tunnus'

@@ -55,7 +55,7 @@ content:
     type: list_default
     region: content
   field_course_end_date:
-    weight: 4
+    weight: 24
     label: hidden
     settings:
       timezone_override: ''
@@ -131,7 +131,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_course_start_date:
-    weight: 3
+    weight: 23
     label: hidden
     settings:
       timezone_override: ''

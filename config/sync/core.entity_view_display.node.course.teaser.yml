@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.course.field_books_and_materials
     - field.field.node.course.field_course_availability
-    - field.field.node.course.field_course_end_date
     - field.field.node.course.field_course_features
     - field.field.node.course.field_course_fee
     - field.field.node.course.field_course_id
@@ -16,7 +15,6 @@ dependencies:
     - field.field.node.course.field_course_online_address
     - field.field.node.course.field_course_organization
     - field.field.node.course.field_course_organizer_id
-    - field.field.node.course.field_course_start_date
     - field.field.node.course.field_course_street_address
     - field.field.node.course.field_course_town
     - field.field.node.course.field_course_week_hours
@@ -27,6 +25,7 @@ dependencies:
     - field.field.node.course.field_registration_link
     - field.field.node.course.field_registration_start_date
     - field.field.node.course.field_starting_level
+    - field.field.node.course.field_target_level
     - node.type.course
   module:
     - user
@@ -43,7 +42,6 @@ content:
 hidden:
   field_books_and_materials: true
   field_course_availability: true
-  field_course_end_date: true
   field_course_features: true
   field_course_fee: true
   field_course_id: true
@@ -53,7 +51,6 @@ hidden:
   field_course_online_address: true
   field_course_organization: true
   field_course_organizer_id: true
-  field_course_start_date: true
   field_course_street_address: true
   field_course_town: true
   field_course_week_hours: true
@@ -64,4 +61,5 @@ hidden:
   field_registration_link: true
   field_registration_start_date: true
   field_starting_level: true
+  field_target_level: true
   langcode: true
