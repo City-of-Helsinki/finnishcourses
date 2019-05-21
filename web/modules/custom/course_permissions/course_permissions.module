@@ -5,10 +5,13 @@ use Drupal\Core\Form\FormState;
 use Drupal\Core\Url;
 use Drupal\Core\Routing;
 use Drupal\course_services\CourseDataService;
+use Drupal\Core\Render\Element;
 
 function course_permissions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
   if (in_array($form_id, ['node_course_form', 'node_course_edit_form'])) {
+
+    $userAccess = TRUE;
     
     // Show only organizations the current user has access to
     $courseDataService = \Drupal::service('course_services.course_data_service');
@@ -16,13 +19,30 @@ function course_permissions_form_alter(&$form, FormStateInterface $form_state, $
 
     $userOrganizations = $courseDataService->getUserOrganizations($currentUserAccount);
 
-    if (!$userOrganizations) {
-      return;
-    }
     $allowedOrganizations = [];
 
-    foreach ($userOrganizations as $key => $org) {
-      $allowedOrganizations[] = $org['target_id'];
+    if ($userOrganizations) {
+      foreach ($userOrganizations as $key => $org) {
+        $allowedOrganizations[] = $org['target_id'];
+      }
+    }
+    if (!empty($form['field_course_organization']['widget']['#default_value'])) {
+      if (!in_array($form['field_course_organization']['widget']['#default_value'], $allowedOrganizations)) {
+        $userAccess = FALSE;
+        $accessMessage = t('You do not have access to the organization this course belongs to. Access is needed to edit the course. Please contact
+        your system administrator to get access to the organization.');
+      }
+    } else if (empty($allowedOrganizations)) {
+      $userAccess = FALSE;
+      $accessMessage = t('You do not have access to any organization. Access is needed to add courses. Please contact
+        your system administrator to get access to your organization.');
+    }
+
+    if ($userAccess === FALSE) {
+      drupal_set_message($accessMessage, 'warning');
+      foreach (Element::children($form) as $key) {
+        $form[$key]['#access'] = FALSE;
+      }
     }
 
     foreach ($form['field_course_organization']['widget']['#options'] as $key => $value) {
@@ -32,6 +52,9 @@ function course_permissions_form_alter(&$form, FormStateInterface $form_state, $
     }
 
     // Set field default value
-    $form['field_course_organization']['widget']['#default_value'] = $allowedOrganizations[0];
+    if (empty($form['field_course_organization']['widget']['#default_value'])) {
+      $form['field_course_organization']['widget']['#default_value'] = $allowedOrganizations[0];
+    }
+    
   }
 }
