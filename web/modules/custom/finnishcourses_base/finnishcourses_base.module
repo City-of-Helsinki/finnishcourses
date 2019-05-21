@@ -66,6 +66,7 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
 
     // Disable course id field because it will be generated automatically
     $form['field_course_id']['#disabled'] = 'disabled';
+    
 
 
     // foreach (array_keys($form['actions']) as $action) {
