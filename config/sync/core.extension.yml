@@ -33,7 +33,6 @@ module:
   editor: 0
   embed: 0
   entity_browser: 0
-  entity_clone: 0
   entity_embed: 0
   facets: 0
   field: 0
@@ -79,6 +78,7 @@ module:
   path: 0
   pathologic: 0
   permissions_filter: 0
+  quick_node_clone: 0
   quickedit: 0
   rdf: 0
   redirect: 0

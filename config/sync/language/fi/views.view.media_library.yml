@@ -54,3 +54,41 @@ display:
         title: Media
   widget:
     display_title: Widgetti
+    display_options:
+      filters:
+        name:
+          expose:
+            label: Nimi
+      arguments:
+        bundle:
+          exception:
+            title: Kaikki
+      header:
+        display_link_grid:
+          label: Ruudukko
+        display_link_table:
+          label: Taulukko
+  widget_table:
+    display_options:
+      fields:
+        thumbnail__target_id:
+          label: Pienoiskuva
+        name:
+          label: Nimi
+        uid:
+          label: Tekijä
+        changed:
+          label: Päivitetty
+      filters:
+        name:
+          expose:
+            label: Nimi
+      arguments:
+        bundle:
+          exception:
+            title: Kaikki
+      header:
+        display_link_grid:
+          label: Ruudukko
+        display_link_table:
+          label: Taulukko

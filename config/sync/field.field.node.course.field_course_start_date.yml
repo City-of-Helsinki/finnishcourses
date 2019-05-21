@@ -1,4 +1,4 @@
-uuid: acaa1457-0d26-41c8-98d4-e7509b624d36
+uuid: a9932bb2-370b-4ee2-8e00-c8ea00d2d9c2
 langcode: en
 status: true
 dependencies:
@@ -13,7 +13,7 @@ entity_type: node
 bundle: course
 label: 'Course start date'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

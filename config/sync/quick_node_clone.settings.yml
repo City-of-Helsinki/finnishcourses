@@ -1,0 +1,9 @@
+text_to_prepend_to_title: 'Clone of'
+exclude:
+  node:
+    course:
+      - field_course_id
+  paragraph: {  }
+clone_status: false
+_core:
+  default_config_hash: 6XRelHPjACQVOo9yRQMmbXt-ysCA2Pt6l762bxQQbdw

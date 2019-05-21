@@ -1,4 +1,4 @@
-uuid: de816452-9fad-4b69-8b8f-99c6956fca5b
+uuid: 18be09c4-553c-4f8c-a608-f0b842b43b97
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ field_name: field_course_start_date
 entity_type: node
 type: datetime
 settings:
-  datetime_type: datetime
+  datetime_type: date
 module: datetime
 locked: false
 cardinality: 1

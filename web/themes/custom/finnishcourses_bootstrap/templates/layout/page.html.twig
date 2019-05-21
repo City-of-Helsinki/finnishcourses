@@ -90,12 +90,9 @@
         {% endif %}
         <nav{{ navbar_attributes }}>
             <div class="section clearfix">
-                <div class="navbar-brand">
+                <div class="navbar-brand mx-auto">
                     {{ page.header }}
                 </div>
-                <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse"
-                        data-target="#CollapsingNavbar">
-                </button>
                 <div class="collapse navbar-toggleable-xs navbar-nav" id="CollapsingNavbar">
                     {{ page.primary_menu }}
                 </div>
@@ -111,7 +108,7 @@
     {% block content %}
         <div id="main" class="main">
             <div class="row clearfix">
-                <div class="col-sm">
+                <div class="col-sm-9 mx-auto mw-75 p-3">
                 {{ page.breadcrumb }}
                     <main{{ content_attributes }}>
                         <section class="section">
