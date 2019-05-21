@@ -9,7 +9,7 @@ id: node.course.field_number_of_lessons
 field_name: field_number_of_lessons
 entity_type: node
 bundle: course
-label: 'Number of lessons'
+label: 'Number of lessons per week'
 description: ''
 required: true
 translatable: false

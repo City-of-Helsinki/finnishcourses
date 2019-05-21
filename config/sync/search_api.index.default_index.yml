@@ -8,11 +8,9 @@ dependencies:
   config:
     - field.storage.node.field_course_week_hours
     - field.storage.node.field_books_and_materials
-    - field.storage.node.field_course_end_date
     - field.storage.node.field_course_features
     - field.storage.node.field_course_id
     - field.storage.node.field_course_organization
-    - field.storage.node.field_course_start_date
     - field.storage.node.field_course_town
     - search_api.server.default_server
     - core.entity_view_mode.node.search_index
@@ -55,14 +53,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_books_and_materials
-  field_course_end_date:
-    label: 'Course end date'
-    datasource_id: 'entity:node'
-    property_path: field_course_end_date
-    type: date
-    dependencies:
-      config:
-        - field.storage.node.field_course_end_date
   field_course_features:
     label: 'Course features'
     datasource_id: 'entity:node'
@@ -87,14 +77,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_course_organization
-  field_course_start_date:
-    label: 'Course start date'
-    datasource_id: 'entity:node'
-    property_path: field_course_start_date
-    type: date
-    dependencies:
-      config:
-        - field.storage.node.field_course_start_date
   field_course_town:
     label: 'Course town'
     datasource_id: 'entity:node'
