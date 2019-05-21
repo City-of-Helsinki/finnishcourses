@@ -54,14 +54,31 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
       ],
     ];
 
+    $addressOptions = getAddressOptions($form_state, $form);
+    if (!empty($form['field_course_street_address']['widget']['#default_value'])) {
+      $addressDefault = $form['field_course_street_address']['widget']['#default_value'];
+    } else {
+      $addressDefault = array_keys($addressOptions)[0];
+    }
+
+    $townOptions = getTownOptions($form_state, $form);
+    if (!empty($form['field_course_town']['widget']['#default_value'])) {
+      $townDefault = $form['field_course_town']['widget']['#default_value'];
+    } else {
+      $townDefault = array_keys($townOptions)[0];
+    }
+
+    //ddl($addressDefault);
     //$form['field_course_street_address']['#attributes']['id'][] = 'street-select';
     $form['field_course_street_address']['#prefix'] = '<div id="street-select">';
-    $form['field_course_street_address']['widget']['#options'] = getAddressOptions($form_state, $form);
+    $form['field_course_street_address']['widget']['#options'] = $addressOptions;
+    $form['field_course_street_address']['widget']['#default_value'] = $addressDefault;
     $form['field_course_street_address']['#suffix'] = '</div>';
 
     //$form['field_course_town']['#attributes']['id'][] = 'town-select';
     $form['field_course_town']['#prefix'] = '<div id="town-select">';
-    $form['field_course_town']['widget']['#options'] = getTownOptions($form_state, $form);
+    $form['field_course_town']['widget']['#options'] = $townOptions;
+    $form['field_course_town']['widget']['#default_value'] = $townDefault;
     $form['field_course_town']['#suffix'] = '</div>';
 
     // Disable course id field because it will be generated automatically
@@ -87,21 +104,24 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
 function getAddressOptions($form_state, $form) {
 
   $organization = FALSE;
-  if (isset($form['field_course_organization']) && !empty($form['field_course_organization']['widget']['#default_value'])) {
+
+  if (is_object($form_state) && method_exists($form_state, 'getTriggeringElement') && !empty($form_state->getTriggeringElement())) {
+    
+    $element = $form_state->getTriggeringElement();
+    if ($element['#name'] == 'field_course_organization') {
+
+
+      if (!empty($element['#value'])) {
+      
+        $organization = $element['#value'];
+      }
+    }
+  } else if (isset($form['field_course_organization']) && !empty($form['field_course_organization']['widget']['#default_value'])) {
     $organization = $form['field_course_organization']['widget']['#default_value'];
   }
 
   if (!$organization) {
-    if (!is_object($form_state) || !method_exists($form_state, 'getTriggeringElement')) {
-      return [];
-    }
-    $element = $form_state->getTriggeringElement();
-
-    if (empty($element['#value'])) {
-      return [];
-    }
-
-    $organization = $element['#value'];
+    return;
   }
 
   $addressOptions = getOptionsFromTerm($organization, 'field_locations_addresses');
@@ -109,31 +129,87 @@ function getAddressOptions($form_state, $form) {
   return $addressOptions;
 }
 
-function getTownOptions($form_state, $form) {
+function getAddressDefault($form_state, $form) {
 
   $organization = FALSE;
+  if (is_object($form_state) && method_exists($form_state, 'getTriggeringElement') && !empty($form_state->getTriggeringElement())) {
+    
+    $element = $form_state->getTriggeringElement();
+    if ($element['#name'] == 'field_course_organization') {
 
-  if (isset($form['field_course_organization']) && !empty($form['field_course_organization']['widget']['#default_value'])) {
+
+      if (!empty($element['#value'])) {
+      
+        $organization = $element['#value'];
+      }
+    }
+  } else if (isset($form['field_course_organization']) && !empty($form['field_course_organization']['widget']['#default_value'])) {
     $organization = $form['field_course_organization']['widget']['#default_value'];
   }
 
   if (!$organization) {
-    if (!is_object($form_state) || !method_exists($form_state, 'getTriggeringElement')) {
-      return [];
-    }
+    return;
+  }
 
+  $addressDefault = getDefaultFromTerm($organization, 'field_locations_addresses');
+
+  return $addressDefault;
+}
+
+function getTownOptions($form_state, $form) {
+
+  $organization = FALSE;
+
+  if (is_object($form_state) && method_exists($form_state, 'getTriggeringElement') && !empty($form_state->getTriggeringElement())) {
+    
     $element = $form_state->getTriggeringElement();
+    if ($element['#name'] == 'field_course_organization') {
 
-    if (empty($element['#value'])) {
-      return [];
+
+      if (!empty($element['#value'])) {
+      
+        $organization = $element['#value'];
+      }
     }
+  } else if (isset($form['field_course_organization']) && !empty($form['field_course_organization']['widget']['#default_value'])) {
+    $organization = $form['field_course_organization']['widget']['#default_value'];
+  }
 
-    $organization = $element['#value'];
+  if (!$organization) {
+    return;
   }
 
   $townOptions = getOptionsFromTerm($organization, 'field_locations_towns');
 
   return $townOptions;
+}
+
+function getTownDefault($form_state, $form) {
+
+  $organization = FALSE;
+
+  if (is_object($form_state) && method_exists($form_state, 'getTriggeringElement') && !empty($form_state->getTriggeringElement())) {
+    
+    $element = $form_state->getTriggeringElement();
+    if ($element['#name'] == 'field_course_organization') {
+
+
+      if (!empty($element['#value'])) {
+      
+        $organization = $element['#value'];
+      }
+    }
+  } else if (isset($form['field_course_organization']) && !empty($form['field_course_organization']['widget']['#default_value'])) {
+    $organization = $form['field_course_organization']['widget']['#default_value'];
+  }
+
+  if (!$organization) {
+    return;
+  }
+
+  $townDefault = getDefaultFromTerm($organization, 'field_locations_towns');
+
+  return $townDefault;
 }
 
 function getOptionsFromTerm($tid = '', $field = '') {
@@ -160,6 +236,28 @@ function getOptionsFromTerm($tid = '', $field = '') {
   }
 
   return $options;
+}
+
+function getDefaultFromTerm($tid = '', $field = '') {
+  $term = Term::load($tid);
+
+  if (!$term) {
+    return FALSE;
+  }
+
+  $values = $term->get($field)->getValue();
+
+  if (empty($values)) {
+    return FALSE;
+  }
+  $options = [];
+
+  // Get only first value
+  $locationTerm = Term::load($values[0]['target_id']);
+  $defaultKey = $locationTerm->label() . ' ('.$values[0]['target_id'].')';
+  
+
+  return $defaultKey;
 }
 
 function refreshLocationOptions(array $form, FormStateInterface &$form_state) {
