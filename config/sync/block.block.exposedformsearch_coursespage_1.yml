@@ -1,0 +1,35 @@
+uuid: 5091aeca-f69e-452e-94bf-d12539f058ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search_courses
+  module:
+    - block_visibility_groups
+    - system
+    - views
+  theme:
+    - finnishcourses_bootstrap
+id: exposedformsearch_coursespage_1
+theme: finnishcourses_bootstrap
+region: content
+weight: -6
+provider: null
+plugin: 'views_exposed_filter_block:search_courses-page_1'
+settings:
+  id: 'views_exposed_filter_block:search_courses-page_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: 'Search Finnish Courses'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/search/courses*"
+    negate: false
+    context_mapping: {  }
