@@ -71,12 +71,12 @@
     set container = theme.settings.fluid_container ? 'container-fluid' : 'container'
 %}
 
-<div class=" {{ container-fluid }}  ">
+<div class=" {{ container-fluid }} ">
     {% block head %}
         {% if page.secondary_menu or page.page.top_header or page.top_header_form %}
             <nav{{ navbar_top_attributes }}>
                 <div class="section clearfix">
-                    <div class="navbar-nav">
+                    <div class="navbar-nav fixed-top">
                         {{ page.secondary_menu }}
                         {{ page.top_header }}
                     </div>
@@ -138,17 +138,9 @@
 
 {% block footer %}
     <div class="footer">
-        {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+        {% if page.footer_first %}
             <div class="site-footer__top clearfix">
                 {{ page.footer_first }}
-                {{ page.footer_second }}
-                {{ page.footer_third }}
-                {{ page.footer_fourth }}
-            </div>
-        {% endif %}
-        {% if page.footer_fifth %}
-            <div class="site-footer__bottom">
-                {{ page.footer_fifth }}
             </div>
         {% endif %}
     </div>
