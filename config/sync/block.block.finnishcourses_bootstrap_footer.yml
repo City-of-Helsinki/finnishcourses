@@ -1,6 +1,6 @@
 uuid: 40337c52-28c5-4fa2-99eb-04af10400b9c
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.footer
@@ -12,7 +12,7 @@ _core:
   default_config_hash: kkISXE1LT2FJEoYnqCrCpeFB-2pmGmMxMklVk7rQcfg
 id: finnishcourses_bootstrap_footer
 theme: finnishcourses_bootstrap
-region: footer_fifth
+region: top_header
 weight: 0
 provider: null
 plugin: 'system_menu_block:footer'

@@ -1,0 +1,37 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: 'Etsi kursseja'
+      filters:
+        field_course_town:
+          expose:
+            label: 'Valitse sijainti'
+        field_starting_level:
+          expose:
+            label: Aloitustaso
+            description: ''
+        field_course_fee:
+          expose:
+            label: 'Kurssin hinta'
+            description: ''
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+        field_starting_level_1:
+          expose:
+            label: Aloitustaso
+        field_course_start_date:
+          expose:
+            label: 'Kurssi alkaa'
+          group_info:
+            description: ''
+        combine_1:
+          expose:
+            label: Hakusanat
+            placeholder: 'Etsi kursseja hakusanalla, kurssin järjestäjän nimellä tai kurssin tunnuksella.'
+      header:
+        result:
+          content: 'Hakuehdoilla löytyi @total kurssi(a)'
+label: 'Etsi vapaita kursseja'
