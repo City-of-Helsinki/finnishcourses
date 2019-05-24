@@ -23,7 +23,6 @@ body {
   margin-right: 0;
 }
 
-// Still needs to be modified, need to logout from Drupal site
 .region-secondary-menu {
   background: $primary-shade;
   padding: 20px 0 0 20px;
@@ -237,16 +236,76 @@ h1, h2, h3 {
   display: inline;
 }
 
+.form-check-input {
+  margin-left: 0; //Override
+  top: -1px;
+}
+
 .fieldset-legend {
   font-weight: 900;
   margin-bottom: 5px;
 }
 
-#edit-course-fee--wrapper, .form-item-starting-level-ext {
-  background: $search-shade;
+  legend {
+    text-align: center;
+  }
+
+.fieldset-wrapper {
+  #edit-course-town, .form-item-online-course, #edit-starting-level {
+    text-align: center;
+  }
 }
 
-/* COLORS 
+.form-item-online-course {
+    // LAZY UGLY HACK atm - haft to fix this...
+    float: right;
+    top: -39px;
+    right: 30%;
+}
+
+.form-item-more-options-trigger {
+  color: $primary-shade;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 56px;
+}
+
+.form-item-starting-level-ext {
+  float: left;
+  .form-control {
+    width: 100%;
+  }
+}
+
+.form-item-starting-level-ext, .form-item-start-date {
+  label {
+    color: $text-shade;
+    font-weight: 700;
+  }
+}
+
+#edit-course-fee--wrapper {
+  .fieldset-legend {
+    color: $text-shade;
+    font-weight: 700;
+    font-size: 16px;
+    position: absolute;
+  }
+  legend {
+    text-align: left;
+  }
+  .fieldset-wrapper {
+    // LAZY UGLY HACK atm - haft to fix this...
+    margin-left: 75px;
+    margin-top: -7px;
+  }
+}
+
+.form-item-start-date, .form-item-start-date-2 {
+  display: inline;
+}
+
+/* COLORS
 --------------------------------------------------*/
 .bg-primary {
   color: $primary-shade;
@@ -278,6 +337,17 @@ h1, h2, h3, .fieldset-legend {
 
 .menu--main li a {
   color: $primary-shade;
+}
+
+.btn-primary {
+  background-color: $green-shade;
+  border-color: $green-shade;
+  padding: 10px 100px 10px 100px;
+  border-radius: 4px;
+}
+
+.form-actions {
+  text-align: center;
 }
 
 .slick {
