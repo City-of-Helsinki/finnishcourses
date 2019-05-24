@@ -1,0 +1,33 @@
+uuid: 2dbd5a80-4f48-4321-8a3e-a22bbbf099bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - block_visibility_groups
+    - menu_block
+  theme:
+    - finnishcourses_bootstrap
+id: mainnavigation
+theme: finnishcourses_bootstrap
+region: header
+weight: -6
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Main navigation'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand: 0
+  parent: 'main:'
+  suggestion: main
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
