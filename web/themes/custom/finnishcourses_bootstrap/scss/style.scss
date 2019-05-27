@@ -113,7 +113,7 @@ h1, h2, h3 {
         flex-direction: column;
 
         .wrapper {
-          width: 50%;
+          width: 100%;
           display: flex;
           flex-wrap: wrap;
           align-items: flex-start;
@@ -321,12 +321,21 @@ legend {
     // LAZY UGLY HACK atm - haft to fix this...
     margin-left: 75px;
     margin-top: -7px;
+    width: 100%;
   }
 }
 
 .form-item-start-date, .form-item-start-date-2 {
   display: inline;
+  top: -5px;
 }
+
+.form-text, .form-select {
+  border-color: $form-border-shade;
+  border-radius: 2px;
+  -webkit-appearance: none;
+}
+
 
 /* COLORS
 --------------------------------------------------*/
