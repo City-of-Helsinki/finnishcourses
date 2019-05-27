@@ -76,6 +76,7 @@ h1, h2, h3 {
 .site-footer__top {
   display: inline-flex;
   margin: auto;
+
   img {
     width: 122.54px;
     height: 94.2px;
@@ -104,6 +105,7 @@ h1, h2, h3 {
     display: table-row;
     text-align: left;
     border-left: 1px solid $border-shade;
+
     &:nth-last-child(2) {
       border-right: 1px solid $border-shade;
     }
@@ -310,6 +312,7 @@ legend {
     color: $text-shade;
     font-weight: 700;
     font-size: 16px;
+
     position: absolute;
   }
 
@@ -336,6 +339,79 @@ legend {
   -webkit-appearance: none;
 }
 
+// Radio button
+
+// Check variable values
+@if ($custom-radio-size % 2 == 1) {
+  @error '$custom-radio-size must be even';
+}
+
+// round to nearest even number
+@if ($custom-radio-pip-size % 2 == 1) {
+  $custom-radio-pip-size: $custom-radio-pip-size - 1;
+}
+
+
+input[type="radio"] {
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 13px;
+  left: 10px;
+  border-radius: 100%;
+  outline: none !important;
+  -webkit-appearance: none;
+
+  // Radio
+  &::before {
+    position: relative;
+    top: -2px;
+    left: -2px;
+    display: block;
+    content: '';
+    background: $custom-radio-unchecked-bg;
+    border: $custom-radio-border-width solid $custom-radio-unchecked-border;
+    border-radius: 100%;
+    width: 23px;
+    height: 22px;
+  }
+
+  &:checked::before {
+    background: $custom-radio-checked-bg;
+    border-color: $custom-radio-checked-border;
+  }
+
+  &:disabled::before {
+    cursor: not-allowed;
+    background-color: $custom-radio-disabled-bg;
+  }
+
+  // Radio Pip
+  &::after {
+    position: relative;
+    top: 1px;
+    left: 0;
+    display: block;
+    content: '';
+    background: $primary-shade;
+    border-radius: 100%;
+    width: 0;
+    height: 0;
+  }
+
+
+  &:checked::after {
+    transition: all ease-in-out $custom-radio-transition-speed 0;
+    top: -19px;
+    left: 3.5px;
+    width: $custom-radio-pip-size;
+    height: $custom-radio-pip-size;
+  }
+
+  &:disabled::after {
+    background: $custom-radio-disabled-pip-color;
+  }
+}
 
 /* COLORS
 --------------------------------------------------*/
