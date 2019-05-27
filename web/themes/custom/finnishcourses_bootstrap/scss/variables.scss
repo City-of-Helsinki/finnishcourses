@@ -36,21 +36,21 @@ $comment-spacer-y: 1.25em;
 // Responsive font sizes
 $enable-responsive-font-sizes: true;
 // Radio button
-$custom-radio-size:                 20px;
-$custom-radio-border-width:         2px;
-$custom-radio-transition-speed:     100ms;
+$custom-radio-size: 20px;
+$custom-border-width: 2px;
+$custom-radio-transition-speed: 100ms;
 
-$custom-radio-pip-color:            $primary-shade;
-$custom-radio-pip-size:             round($custom-radio-size * .6);
+$custom-radio-pip-color: $primary-shade;
+$custom-radio-pip-size: round($custom-radio-size * .6);
 // States
-$custom-radio-unchecked-bg:         white;
-$custom-radio-unchecked-border:     #8F8F8F;
+$custom-unchecked-bg: white;
+$custom-unchecked-border: #8F8F8F;
 
-$custom-radio-checked-bg:           white;
-$custom-radio-checked-border:       $custom-radio-pip-color;
+$custom-checked-bg: white;
+$custom-checked-border: $custom-radio-pip-color;
 
-$custom-radio-disabled-bg:          white;
-$custom-radio-disabled-pip-color:   white;
+$custom-disabled-bg: white;
+$custom-radio-disabled-pip-color: white;
 // Breakpoints
 $grid-breakpoints: (
         xs: 0,
