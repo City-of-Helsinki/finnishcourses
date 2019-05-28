@@ -45,7 +45,7 @@ body {
 }
 
 .navbar-brand img {
-  width: 35%;
+  width: 65%;
   float: right;
 }
 
@@ -110,7 +110,7 @@ h1, h2, h3 {
       border-right: 1px solid $border-shade;
     }
 
-    .menu--footer, .menu--footer-second, .menu--footer-third {
+    .navigation {
       .nav {
         flex-direction: column;
 
@@ -144,6 +144,7 @@ h1, h2, h3 {
 
 .node--view-mode-teaser h2 a {
   font-size: 18px;
+  padding-top: 0; // Override
 }
 
 .node-readmore {
@@ -156,7 +157,7 @@ h1, h2, h3 {
 
 .views-row {
   flex: 1;
-  margin: 20px 0;
+  margin: 20px 0 66px 0;
   padding: 0 20px;
   // Need to make borders shorter
   &:nth-child(n+2) {
@@ -166,6 +167,8 @@ h1, h2, h3 {
 
 .node--view-mode-teaser {
   border-bottom: none; // Override
+  margin-bottom: 0;   // Override
+  padding-bottom: 0; // Override
 }
 
 .feed-icons {
@@ -253,6 +256,12 @@ h1, h2, h3 {
 /* COURSE SEARCH
 --------------------------------------------------*/
 
+#block-exposedformsearch-coursespage-1 {
+  h2 {
+    text-align: center;
+  }
+}
+
 .form-row {
   display: inline;
 }
@@ -300,7 +309,7 @@ legend {
   }
 }
 
-.form-item-starting-level-ext, .form-item-start-date {
+.form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
   label {
     color: $text-shade;
     font-weight: 700;
@@ -502,6 +511,7 @@ h1, h2, h3, .fieldset-legend {
   color: $primary-shade;
 }
 
+
 .btn-primary {
   background-color: $green-shade;
   border-color: $green-shade;
@@ -509,6 +519,7 @@ h1, h2, h3, .fieldset-legend {
   border-radius: 4px;
   font-size: 21px;
   font-weight: 700;
+  margin-top: 20px;
 }
 
 .form-actions {
