@@ -12,8 +12,8 @@ _core:
   default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
 id: finnishcourses_bootstrap_main_menu
 theme: finnishcourses_bootstrap
-region: primary_menu
-weight: 0
+region: secondary_menu
+weight: -7
 provider: null
 plugin: 'system_menu_block:main'
 settings:

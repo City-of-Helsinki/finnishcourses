@@ -42,6 +42,7 @@ content:
 hidden:
   field_books_and_materials: true
   field_course_availability: true
+  field_course_end_date: true
   field_course_features: true
   field_course_fee: true
   field_course_id: true
@@ -51,6 +52,7 @@ hidden:
   field_course_online_address: true
   field_course_organization: true
   field_course_organizer_id: true
+  field_course_start_date: true
   field_course_street_address: true
   field_course_town: true
   field_course_week_hours: true

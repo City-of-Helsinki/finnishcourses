@@ -1,0 +1,33 @@
+uuid: f5cfb51d-550c-4ccb-af3f-469ef9ea2fe5
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - block_visibility_groups
+    - menu_block
+  theme:
+    - finnishcourses_bootstrap
+id: footer
+theme: finnishcourses_bootstrap
+region: footer_first
+weight: 0
+provider: null
+plugin: 'menu_block:footer'
+settings:
+  id: 'menu_block:footer'
+  label: Footer
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand: 0
+  parent: 'footer:'
+  suggestion: footer
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

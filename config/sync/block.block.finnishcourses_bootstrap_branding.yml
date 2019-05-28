@@ -10,8 +10,8 @@ _core:
   default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
 id: finnishcourses_bootstrap_branding
 theme: finnishcourses_bootstrap
-region: header
-weight: 0
+region: secondary_menu
+weight: -8
 provider: null
 plugin: system_branding_block
 settings:
