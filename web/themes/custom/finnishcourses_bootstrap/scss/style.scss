@@ -18,6 +18,10 @@ body {
   font-family: $font-family-base;
 }
 
+.node__content {
+  margin-bottom: 40px;
+}
+
 .row {
   margin-left: 0;
   margin-right: 0;
@@ -76,6 +80,7 @@ h1, h2, h3 {
 .site-footer__top {
   display: inline-flex;
   margin: auto;
+  width: 70%;
 
   img {
     width: 122.54px;
@@ -159,7 +164,6 @@ h1, h2, h3 {
   flex: 1;
   margin: 20px 0 66px 0;
   padding: 0 20px;
-  // Need to make borders shorter
   &:nth-child(n+2) {
     border-left: 1px solid $border-shade;
   }
@@ -301,14 +305,6 @@ legend {
   margin-top: 56px;
 }
 
-.form-item-starting-level-ext {
-  float: left;
-
-  .form-control {
-    width: 100%;
-  }
-}
-
 .form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
   label {
     color: $text-shade;
@@ -339,10 +335,10 @@ legend {
 
 .form-item-start-date, .form-item-start-date-2 {
   display: inline;
-  top: -5px;
 }
 
 .form-text, .form-select {
+  margin-top: 0.25rem;
   border-color: $form-border-shade;
   border-radius: 2px;
   -webkit-appearance: none;

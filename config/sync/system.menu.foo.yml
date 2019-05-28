@@ -1,0 +1,8 @@
+uuid: 70eb50bf-dea3-4953-87eb-e660fa351b8d
+langcode: en
+status: true
+dependencies: {  }
+id: foo
+label: 'Footer Second'
+description: ''
+locked: false
