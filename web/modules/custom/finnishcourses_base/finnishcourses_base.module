@@ -366,3 +366,38 @@ function finnishcourses_base_theme_suggestions_taxonomy_term_alter(array &$sugge
   $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
   $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
 }
+
+function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  $view = $form_state->get('view');
+
+  if($view->id() == 'search_courses') {
+
+    $form['more_options'] = [
+      '#type' => 'container',
+      '#attributes' => ['id' => 'more-options-wrapper', 'class' => ['more-options-wrapper']],
+    ];
+
+    $form['more_options']['more_options_trigger'] = [
+      '#type' => 'item',
+      '#markup' => t('More search options'),
+    ];
+
+    $form['more_options']['course_fee'] = $form['course_fee'];
+    $form['more_options']['starting_level_ext'] = $form['starting_level_ext'];
+    $form['more_options']['start_date'] = $form['start_date'];
+    $form['more_options']['start_date_2'] = $form['start_date_2'];
+    $form['more_options']['keyword'] = $form['keyword'];
+
+    $form['more_options']['starting_level_ext']['#title'] = t('Starting level');
+    $form['more_options']['start_date']['#title'] = t('Course starts');
+    $form['more_options']['keyword']['#title'] = t('Keyword');
+
+    unset($form['course_fee']);
+    unset($form['starting_level_ext']);
+    unset($form['start_date']);
+    unset($form['start_date_2']);
+    unset($form['keyword']);
+
+  }
+}  
