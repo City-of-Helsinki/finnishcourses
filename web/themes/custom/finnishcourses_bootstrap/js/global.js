@@ -33,7 +33,7 @@
             // Probably need to specify "field__item"
             $('.field__item:contains("Available")').css('color', '#129942');
             $('.field__item:contains("Not available")').css('color', '#EC3620');
-            $('.field__item:contains("Ask for course organizer")').css('color', 'black');
+            $('.field__item:contains("Ask for course organizer")').css('color', '#F08300');
         });
     }
   };

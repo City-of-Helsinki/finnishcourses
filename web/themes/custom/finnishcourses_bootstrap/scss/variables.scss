@@ -11,6 +11,7 @@ $border-shade: #E9EDF0;
 $title-color: #0073cf;
 $text-shade: #1A1A1A;
 $footer-text-shade: #565E63;
+$form-border-shade: #8F8F8F;
 $green-shade: #129942;
 $orange-shade: #F08300;
 $theme-colors: (
@@ -34,6 +35,22 @@ $comment-spacer-x: 1.25em;
 $comment-spacer-y: 1.25em;
 // Responsive font sizes
 $enable-responsive-font-sizes: true;
+// Radio button
+$custom-radio-size: 20px;
+$custom-border-width: 2px;
+$custom-radio-transition-speed: 100ms;
+
+$custom-radio-pip-color: $primary-shade;
+$custom-radio-pip-size: round($custom-radio-size * .6);
+// States
+$custom-unchecked-bg: white;
+$custom-unchecked-border: #8F8F8F;
+
+$custom-checked-bg: white;
+$custom-checked-border: $custom-radio-pip-color;
+
+$custom-disabled-bg: white;
+$custom-radio-disabled-pip-color: white;
 // Breakpoints
 $grid-breakpoints: (
         xs: 0,
