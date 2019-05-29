@@ -328,7 +328,7 @@ legend {
 .more-options-wrapper {
   background: $more-options-shade;
   padding: 20px;
-  //display: none;
+  display: none;
 }
 
 .form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
@@ -367,10 +367,6 @@ legend {
   display: inline; // Override
   width: auto; // Override
 }
-/*
-.form-item-keyword {
-  width: 100%;
-}*/
 
 .form-item-start-date, .form-item-start-date-2 {
   display: inline;
