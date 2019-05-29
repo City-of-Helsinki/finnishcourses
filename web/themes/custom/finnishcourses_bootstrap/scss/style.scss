@@ -328,7 +328,7 @@ legend {
 .more-options-wrapper {
   background: $more-options-shade;
   padding: 20px;
-  display: none;
+  //display: none;
 }
 
 .form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
@@ -352,8 +352,8 @@ legend {
   }
 
   .fieldset-wrapper {
-    // LAZY UGLY HACK atm - haft to fix this...
-    margin-left: 75px;
+    // todo: need to be fixed
+    margin-left: 89px;
     margin-top: -7px;
     width: 100%;
   }
@@ -361,10 +361,16 @@ legend {
 
 .form-item-starting-level-ext {
   float: left;
-  .form-control {
-    width: 100%;
-  }
 }
+
+.form-control {
+  display: inline; // Override
+  width: auto; // Override
+}
+/*
+.form-item-keyword {
+  width: 100%;
+}*/
 
 .form-item-start-date, .form-item-start-date-2 {
   display: inline;
@@ -372,10 +378,19 @@ legend {
 
 .form-text, .form-select {
   margin-top: 0.25rem;
+  margin-left: 12px;
   border-color: $form-border-shade;
   border-radius: 2px;
   -webkit-appearance: none;
-  color: #A5A5A5;
+}
+
+.form-item-keyword {
+  .form-text, .form-control {
+    color: #A5A5A5;
+    width: 89%;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }
 
 // Radio button
