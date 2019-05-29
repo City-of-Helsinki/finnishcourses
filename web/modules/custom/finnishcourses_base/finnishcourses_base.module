@@ -373,14 +373,16 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 
   if($view->id() == 'search_courses') {
 
+    $form['more_options_trigger'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'div',
+      '#value' => t('More search options'),
+      '#attributes' => ['class' => ['more-search-options-trigger']],
+    ];
+
     $form['more_options'] = [
       '#type' => 'container',
       '#attributes' => ['id' => 'more-options-wrapper', 'class' => ['more-options-wrapper']],
-    ];
-
-    $form['more_options']['more_options_trigger'] = [
-      '#type' => 'item',
-      '#markup' => t('More search options'),
     ];
 
     $form['more_options']['course_fee'] = $form['course_fee'];
