@@ -317,11 +317,18 @@ legend {
   float: right;
 }
 
-.form-item-more-options-trigger {
+.more-search-options-trigger {
   color: $primary-shade;
   font-weight: 900;
   text-align: center;
   margin-top: 56px;
+  margin-bottom: 20px;
+}
+
+.more-options-wrapper {
+  background: $more-options-shade;
+  padding: 20px;
+  display: none;
 }
 
 .form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
@@ -368,6 +375,7 @@ legend {
   border-color: $form-border-shade;
   border-radius: 2px;
   -webkit-appearance: none;
+  color: #A5A5A5;
 }
 
 // Radio button

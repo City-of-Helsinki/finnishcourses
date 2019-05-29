@@ -35,7 +35,16 @@
             $('.field__item:contains("Not available")').css('color', '#EC3620');
             $('.field__item:contains("Ask for course organizer")').css('color', '#F08300');
         });
+
+        // SEARCH MORE OPTIONS "BUTTON"
+        $(document).ready(function(){
+
+            $(".more-search-options-trigger").on('click', function (){
+                $(this).parent().children(".more-options-wrapper").toggle();
+                $(".more-search-options-trigger").text($(".more-search-options-trigger").text()
+                == "Less search options" ? "More search options" : "Less search options")
+            });
+        });
     }
   };
-
 })(jQuery, Drupal);
