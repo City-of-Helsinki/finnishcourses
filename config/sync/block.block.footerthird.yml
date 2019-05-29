@@ -1,0 +1,33 @@
+uuid: 7149ce4a-864d-4af7-a38f-81ea53ffa7f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.foote
+  module:
+    - block_visibility_groups
+    - menu_block
+  theme:
+    - finnishcourses_bootstrap
+id: footerthird
+theme: finnishcourses_bootstrap
+region: footer_third
+weight: 0
+provider: null
+plugin: 'menu_block:foote'
+settings:
+  id: 'menu_block:foote'
+  label: 'Footer Third'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand: 0
+  parent: 'foote:'
+  suggestion: foote
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

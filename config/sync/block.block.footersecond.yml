@@ -1,0 +1,33 @@
+uuid: e901e623-27a6-41dd-98f7-745f0cb4e939
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.foo
+  module:
+    - block_visibility_groups
+    - menu_block
+  theme:
+    - finnishcourses_bootstrap
+id: footersecond
+theme: finnishcourses_bootstrap
+region: footer_second
+weight: 0
+provider: null
+plugin: 'menu_block:foo'
+settings:
+  id: 'menu_block:foo'
+  label: 'Footer Second'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand: 0
+  parent: 'foo:'
+  suggestion: foo
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
