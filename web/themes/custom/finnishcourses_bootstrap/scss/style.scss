@@ -343,8 +343,11 @@ legend {
     color: $text-shade;
     font-weight: 700;
     font-size: 16px;
-
     position: absolute;
+    .col-auto {
+      max-width: 96%;
+      margin: auto;
+    }
   }
 
   legend {
@@ -384,8 +387,8 @@ legend {
   .form-text, .form-control {
     color: #A5A5A5;
     width: 89%;
-    margin-left: 15px;
-    margin-right: 15px;
+    max-width: 86%;
+    margin-left: 42px;
   }
 }
 
