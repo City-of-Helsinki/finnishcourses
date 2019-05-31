@@ -181,11 +181,13 @@ h1, h2, h3 {
 .views-row {
   flex: 1;
   margin: 20px 0 66px 0;
-  padding: 0 20px;
+  //padding: 0 20px;
 
-  &:nth-child(n+2) {
+  /*
+   * TODO: BOXES ON FRONTPAGE
+    &:nth-child(n+2) {
     border-left: 1px solid $border-shade;
-  }
+  }*/
 }
 
 .node--view-mode-teaser {
@@ -244,7 +246,7 @@ h1, h2, h3 {
   text-align: center;
 
   .office-hours__item-label {
-    width: auto !important; // Overriding style attribute
+    width: auto !important; // Override
   }
 
   .office-hours__item {
@@ -286,7 +288,8 @@ h1, h2, h3 {
 }
 
 .form-row {
-  display: inline;
+  display: block;
+  // text-algin: center;
 }
 
 .form-check {
@@ -344,6 +347,7 @@ legend {
     font-weight: 700;
     font-size: 16px;
     position: absolute;
+
     .col-auto {
       max-width: 96%;
       margin: auto;
@@ -520,6 +524,50 @@ input[type="checkbox"] {
   }
 }
 
+/* SEARCH COURSES RESULTS
+ -------------------------------------------------*/
+
+#block-finnishcourses-bootstrap-page-title {
+  display: none;
+}
+
+.view-search-courses {
+  .views-row {
+    padding-bottom: 10px;
+    border-bottom: 1px solid $border-shade;
+  }
+
+  .view-header {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    margin-top: 40px;
+  }
+
+  .views-field-title {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 10px;
+
+    a {
+      text-decoration: none; // Override
+    }
+  }
+}
+
+.views-field-field-course-availability, .views-label-field-starting-level,
+.views-label-field-target-level, .views-label-field-course-start-date, .views-label-field-course-town,
+.views-label-field-course-fee, .views-label-field-course-id {
+  font-weight: 700;
+}
+
+.views-field-field-course-id {
+  margin-top: 47px;
+}
+
+.views-label-field-course-id {
+  margin-right: 5px;
+}
 
 /* COLORS
 --------------------------------------------------*/
@@ -545,6 +593,12 @@ a {
 
 h1, h2, h3, .fieldset-legend {
   color: $primary-shade;
+}
+
+.view-search-courses {
+  .view-header, .views-field-title {
+    color: $primary-shade;
+  }
 }
 
 .bg-inverse {
