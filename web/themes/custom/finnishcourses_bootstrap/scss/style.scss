@@ -158,8 +158,60 @@ h1, h2, h3 {
   }
 }
 
-/* FRONT PAGE
--------------------------------------------------*/
+// Material Design Icons
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+
+.material-icons.md-36 {
+  position: absolute;
+  right: 59%;
+}
+
+  /* FRONT PAGE
+  -------------------------------------------------*/
 
 .comment-add, .node__meta, .comment-forbidden {
   display: none;
@@ -384,7 +436,7 @@ legend {
   margin-left: 12px;
   border-color: $form-border-shade;
   border-radius: 2px;
-  -webkit-appearance: none;
+ // -webkit-appearance: none;
 }
 
 .form-item-keyword {
@@ -614,7 +666,7 @@ h1, h2, h3, .fieldset-legend {
 .btn-primary {
   background-color: $green-shade;
   border-color: $green-shade;
-  padding: 10px 100px 10px 100px;
+  padding: 15px 100px 15px 100px;
   border-radius: 4px;
   font-size: 21px;
   font-weight: 700;
