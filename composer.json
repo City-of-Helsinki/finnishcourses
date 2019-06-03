@@ -121,7 +121,8 @@
                 "Grouped exposed filters do not work like they should": "https://www.drupal.org/files/issues/1810148-58.patch"
             },
             "drupal/office_hours": {
-                "Handle timezones in Office Hours module": "https://www.drupal.org/files/issues/office_hours-respecting-user_timezone-D8-1925272-17.patch"
+                "Handle timezones in Office Hours module": "https://www.drupal.org/files/issues/office_hours-respecting-user_timezone-D8-1925272-17.patch",
+                "Copy previous/last day in week widget/input does not work anymore": "https://www.drupal.org/files/issues/2019-05-30/3058137-js-widget-error-copy-previous-day.patch"
             },
             "drupal/select_or_other": {
                 "Make Other option translatable": "patches/contrib/select_or_other/make_other_option_translatable-2926786-custom.patch"

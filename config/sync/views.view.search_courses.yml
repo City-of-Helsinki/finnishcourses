@@ -9,6 +9,7 @@ dependencies:
     - field.storage.node.field_course_fee
     - field.storage.node.field_course_id
     - field.storage.node.field_course_organization
+    - field.storage.node.field_course_organizer_id
     - field.storage.node.field_course_start_date
     - field.storage.node.field_course_street_address
     - field.storage.node.field_course_town
@@ -104,6 +105,14 @@ display:
               more_options:
                 is_secondary: false
                 placeholder_text: ''
+            field_course_times_of_day:
+              bef_format: bef
+              more_options:
+                bef_select_all_none: false
+                bef_collapsible: false
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
             field_starting_level_1:
               bef_format: default
               more_options:
@@ -1003,6 +1012,76 @@ display:
             multi_separator: ', '
           entity_type: node
           plugin_id: search_api_field
+        field_course_organizer_id:
+          id: field_course_organizer_id
+          table: search_api_index_courses_index
+          field: field_course_organizer_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Course id'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+          plugin_id: search_api_field
         field_course_id:
           id: field_course_id
           table: search_api_index_courses_index
@@ -1011,7 +1090,7 @@ display:
           group_type: group
           admin_label: ''
           label: 'Course id'
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -1367,6 +1446,51 @@ display:
                   min: ''
                   max: ''
           plugin_id: search_api_string
+        field_course_times_of_day:
+          id: field_course_times_of_day
+          table: search_api_index_courses_index
+          field: field_course_times_of_day
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            beforenoon: beforenoon
+            afternoon: afternoon
+            evening: evening
+          group: 7
+          exposed: true
+          expose:
+            operator_id: field_course_times_of_day_op
+            label: 'Time of day'
+            description: ''
+            use_operator: false
+            operator: field_course_times_of_day_op
+            identifier: time_of_day
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              course_editor: '0'
+              organization_admin: '0'
+            reduce: true
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: search_api_options
         field_starting_level_1:
           id: field_starting_level_1
           table: search_api_index_courses_index
@@ -1574,6 +1698,7 @@ display:
           4: AND
           5: AND
           6: AND
+          7: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -1589,6 +1714,7 @@ display:
         - 'config:field.storage.node.field_course_fee'
         - 'config:field.storage.node.field_course_id'
         - 'config:field.storage.node.field_course_organization'
+        - 'config:field.storage.node.field_course_organizer_id'
         - 'config:field.storage.node.field_course_start_date'
         - 'config:field.storage.node.field_course_street_address'
         - 'config:field.storage.node.field_course_town'
@@ -1620,6 +1746,7 @@ display:
         - 'config:field.storage.node.field_course_fee'
         - 'config:field.storage.node.field_course_id'
         - 'config:field.storage.node.field_course_organization'
+        - 'config:field.storage.node.field_course_organizer_id'
         - 'config:field.storage.node.field_course_start_date'
         - 'config:field.storage.node.field_course_street_address'
         - 'config:field.storage.node.field_course_town'

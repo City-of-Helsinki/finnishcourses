@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c7ac612cd8c96a7f66191dbb0983b5f",
+    "content-hash": "e84e620db02063564d91beb8aa1205b2",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -4661,7 +4661,8 @@
                     }
                 },
                 "patches_applied": {
-                    "Handle timezones in Office Hours module": "https://www.drupal.org/files/issues/office_hours-respecting-user_timezone-D8-1925272-17.patch"
+                    "Handle timezones in Office Hours module": "https://www.drupal.org/files/issues/office_hours-respecting-user_timezone-D8-1925272-17.patch",
+                    "Copy previous/last day in week widget/input does not work anymore": "https://www.drupal.org/files/issues/2019-05-30/3058137-js-widget-error-copy-previous-day.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
