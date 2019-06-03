@@ -16,7 +16,6 @@ dependencies:
     - field.field.node.course.field_course_length
     - field.field.node.course.field_course_online_address
     - field.field.node.course.field_course_organization
-    - field.field.node.course.field_course_organizer_id
     - field.field.node.course.field_course_start_date
     - field.field.node.course.field_course_street_address
     - field.field.node.course.field_course_times_of_day
@@ -163,7 +162,6 @@ hidden:
   field_course_information_source: true
   field_course_length: true
   field_course_online_address: true
-  field_course_organizer_id: true
   field_course_times_of_day: true
   field_number_of_lessons: true
   field_online_course: true
