@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+{# todo: haft to be more specified in the future, in case of other input submit buttons? #}
+<button{{ attributes }}>
+    <i class="material-icons md-36">search</i>
+    {{ attributes.value }}
+</button>{{ children }}
