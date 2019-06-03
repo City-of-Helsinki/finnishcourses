@@ -336,6 +336,31 @@ function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $en
       $organization->save();
     }
 
+    if (!empty($entity->get('field_course_week_hours')->getValue())) {
+      $datesHours = $entity->get('field_course_week_hours')->getValue();
+      $timesOfDays = [];
+      foreach ($datesHours as $key => $dateHours) {
+        if ($dateHours['starthours'] < '1200') {
+          if (!in_array('beforenoon', $timesOfDays)) {
+            $timesOfDays[] = 'beforenoon';
+          }
+        } else if ($dateHours['starthours'] >= '1200' && $dateHours['starthours'] < '1600') {
+          if (!in_array('afternoon', $timesOfDays)) {
+            $timesOfDays[] = 'afternoon';
+          }
+        } else if ($dateHours['starthours'] >= '1600') {
+          if (!in_array('evening', $timesOfDays)) {
+            $timesOfDays[] = 'evening';
+          }
+        }
+
+      }
+      if (!empty($timesOfDays)) {
+        $entity->set('field_course_times_of_day', $timesOfDays);
+      }
+    }
+    
+
   }
 }
 
