@@ -411,16 +411,19 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
     ];
 
     $form['more_options']['course_fee'] = $form['course_fee'];
+    $form['more_options']['time_of_day'] = $form['time_of_day'];
     $form['more_options']['starting_level_ext'] = $form['starting_level_ext'];
     $form['more_options']['start_date'] = $form['start_date'];
     $form['more_options']['start_date_2'] = $form['start_date_2'];
     $form['more_options']['keyword'] = $form['keyword'];
 
+    $form['more_options']['time_of_day']['#title'] = t('Time of day');
     $form['more_options']['starting_level_ext']['#title'] = t('Starting level');
     $form['more_options']['start_date']['#title'] = t('Course starts');
     $form['more_options']['keyword']['#title'] = t('Keyword');
 
     unset($form['course_fee']);
+    unset($form['time_of_day']);
     unset($form['starting_level_ext']);
     unset($form['start_date']);
     unset($form['start_date_2']);
