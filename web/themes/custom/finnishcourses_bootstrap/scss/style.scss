@@ -51,6 +51,9 @@ body {
 .navbar-brand img {
   width: 65%;
   float: right;
+  @include media-breakpoint-down(sm) {
+    visibility: hidden;
+  }
 }
 
 .nav-link.active,
@@ -81,13 +84,21 @@ h1, h2, h3 {
   display: inline-flex;
   margin: auto;
   width: 70%;
-
+  @include media-breakpoint-down(sm) {
+    display: flow-root;
+  }
   img {
     width: 15%;
     height: 30%;
     max-height: 30%;
     max-width: 30%;
     margin-left: 100px;
+    @include media-breakpoint-down(sm) {
+      width: 40%;
+      height: 40%;
+      max-width: 100%;
+      margin: auto;
+    }
   }
 }
 
@@ -123,40 +134,47 @@ h1, h2, h3 {
     font-weight: bold;
   }
 
-  .region-footer-first, .region-footer-second, .region-footer-third {
-    width: 100%;
-    display: table-row;
-    text-align: left;
-    border-left: 1px solid $border-shade;
 
-    &:nth-last-child(2) {
-      border-right: 1px solid $border-shade;
-    }
+    .region-footer-first, .region-footer-second, .region-footer-third {
+      @include media-breakpoint-up(sm) {
+        width: 100%;
+        display: table-row;
+        text-align: left;
+        border-left: 1px solid $border-shade;
 
-    .navigation {
-      .nav {
-        flex-direction: column;
+        &:nth-last-child(2) {
+          border-right: 1px solid $border-shade;
+        }
+      }
 
-        .wrapper {
-          width: 100%;
-          display: flex;
-          flex-wrap: wrap;
-          align-items: flex-start;
+      @include media-breakpoint-down(sm) {
+        display: flow-root;
+      }
 
-          .nav-item {
-            flex: 1 1 160px;
-            margin: 1px;
-            float: left;
+      .navigation {
+        .nav {
+          flex-direction: column;
 
-            a {
-              padding: 5px 30px 5px 20px;
+          .wrapper {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+
+            .nav-item {
+              flex: 1 1 160px;
+              margin: 1px;
+              float: left;
+
+              a {
+                padding: 5px 30px 5px 20px;
+              }
             }
           }
         }
       }
     }
   }
-}
 
 // Material Design Icons
 
@@ -208,6 +226,9 @@ h1, h2, h3 {
 .material-icons.md-36 {
   position: absolute;
   right: 59%;
+  @include media-breakpoint-down(sm) {
+    right: 71%;
+  }
 }
 
   /* FRONT PAGE
@@ -406,15 +427,33 @@ legend {
     }
   }
 
+  #edit-course-fee {
+    @include media-breakpoint-down(sm) {
+      display: inline-grid;
+      margin-bottom: 16px;
+      .form-check {
+          padding: 5px;
+        label {
+          margin-left: 10px;
+        }
+        }
+    }
+  }
+
   legend {
     text-align: left;
   }
 
   .fieldset-wrapper {
-    // todo: need to be fixed
-    margin-left: 89px;
-    margin-top: -7px;
     width: 100%;
+    // todo: need to be fixed
+    @include media-breakpoint-up(sm) {
+      margin-left: 89px;
+      margin-top: -7px;
+    }
+    @include media-breakpoint-down(sm) {
+      padding-top: 30px;
+    }
   }
 }
 
@@ -432,19 +471,23 @@ legend {
 }
 
 .form-text, .form-select {
-  margin-top: 0.25rem;
-  margin-left: 12px;
   border-color: $form-border-shade;
   border-radius: 2px;
- // -webkit-appearance: none;
+  -webkit-appearance: none;
+  @include media-breakpoint-up(sm) {
+    margin-top: 0.25rem;
+    margin-left: 12px;
+  }
 }
 
 .form-item-keyword {
   .form-text, .form-control {
     color: #A5A5A5;
-    width: 89%;
-    max-width: 86%;
-    margin-left: 42px;
+    @include media-breakpoint-up(sm) {
+      width: 89%;
+      max-width: 86%;
+      margin-left: 42px;
+    }
   }
 }
 
@@ -666,11 +709,18 @@ h1, h2, h3, .fieldset-legend {
 .btn-primary {
   background-color: $green-shade;
   border-color: $green-shade;
-  padding: 15px 100px 15px 100px;
   border-radius: 4px;
   font-size: 21px;
   font-weight: 700;
   margin-top: 20px;
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  @include media-breakpoint-up(sm) {
+    padding: 15px 100px 15px 100px;
+  }
 }
 
 .form-actions {
