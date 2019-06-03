@@ -25,6 +25,9 @@ body {
 .row {
   margin-left: 0;
   margin-right: 0;
+  @include media-breakpoint-down(sm) {
+    display: flow-root;
+  }
 }
 
 .region-secondary-menu {
@@ -128,7 +131,6 @@ h1, h2, h3 {
   text-align: center;
   padding-top: 40px;
   padding-bottom: 100px;
-
   a {
     color: $footer-text-shade;
     font-weight: bold;
@@ -637,6 +639,9 @@ input[type="checkbox"] {
     font-size: 40px;
     font-weight: 900;
     margin-top: 40px;
+    @include media-breakpoint-down(sm) {
+      font-size: 21px;
+    }
   }
 
   .views-field-title {
@@ -646,6 +651,9 @@ input[type="checkbox"] {
 
     a {
       text-decoration: none; // Override
+      @include media-breakpoint-down(sm) {
+        font-size: 18px;
+      }
     }
   }
 }
