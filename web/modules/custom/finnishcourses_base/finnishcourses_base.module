@@ -403,3 +403,22 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 
   }
 }  
+
+function finnishcourses_base_preprocess_field(&$variables) {
+
+}
+
+function finnishcourses_base_preprocess_office_hours(&$variables) {
+  
+  if (!empty($variables['items'])) {
+    foreach ($variables['items'] as $key => $item) {
+      if (isset($item['slots']) && isset($item['slots']['#type']) && $item['slots']['#type'] == 'markup') {
+        if (is_string($item['slots']['#markup'])) {
+          $variables['items'][$key]['classes'] = 'office-hours__item';
+        } else {
+          $variables['items'][$key]['classes'] = 'office-hours__item empty';
+        }
+      }
+    }
+  }
+}
