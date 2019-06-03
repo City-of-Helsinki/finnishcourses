@@ -1,6 +1,6 @@
 uuid: fc64892d-e2a6-496d-9eb9-725ad54830e7
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - field.storage.node.field_course_availability
@@ -9,11 +9,11 @@ dependencies:
     - field.storage.node.field_course_fee
     - field.storage.node.field_course_id
     - field.storage.node.field_course_organization
-    - field.storage.node.field_course_organizer_id
     - field.storage.node.field_course_start_date
     - field.storage.node.field_course_street_address
     - field.storage.node.field_course_town
     - field.storage.node.field_course_week_hours
+    - field.storage.node.field_organizers_course_id
     - field.storage.node.field_starting_level
     - field.storage.node.field_target_level
     - search_api.index.courses_index
@@ -1012,14 +1012,14 @@ display:
             multi_separator: ', '
           entity_type: node
           plugin_id: search_api_field
-        field_course_organizer_id:
-          id: field_course_organizer_id
+        field_organizers_course_id:
+          id: field_organizers_course_id
           table: search_api_index_courses_index
-          field: field_course_organizer_id
+          field: field_organizers_course_id
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Course id'
+          label: 'Course ID'
           exclude: false
           alter:
             alter_text: false
@@ -1653,6 +1653,7 @@ display:
               anonymous: '0'
               administrator: '0'
               course_editor: '0'
+              organization_admin: '0'
             placeholder: 'Search for courses using a keyword, training provider or course code'
           is_grouped: false
           group_info:
@@ -1668,7 +1669,7 @@ display:
             group_items: {  }
           fields:
             field_course_organization: field_course_organization
-            field_course_id: field_course_id
+            field_organizers_course_id: field_organizers_course_id
             field_course_features: field_course_features
           plugin_id: combine
       sorts: {  }
@@ -1714,11 +1715,11 @@ display:
         - 'config:field.storage.node.field_course_fee'
         - 'config:field.storage.node.field_course_id'
         - 'config:field.storage.node.field_course_organization'
-        - 'config:field.storage.node.field_course_organizer_id'
         - 'config:field.storage.node.field_course_start_date'
         - 'config:field.storage.node.field_course_street_address'
         - 'config:field.storage.node.field_course_town'
         - 'config:field.storage.node.field_course_week_hours'
+        - 'config:field.storage.node.field_organizers_course_id'
         - 'config:field.storage.node.field_starting_level'
         - 'config:field.storage.node.field_target_level'
   page_1:
@@ -1746,10 +1747,10 @@ display:
         - 'config:field.storage.node.field_course_fee'
         - 'config:field.storage.node.field_course_id'
         - 'config:field.storage.node.field_course_organization'
-        - 'config:field.storage.node.field_course_organizer_id'
         - 'config:field.storage.node.field_course_start_date'
         - 'config:field.storage.node.field_course_street_address'
         - 'config:field.storage.node.field_course_town'
         - 'config:field.storage.node.field_course_week_hours'
+        - 'config:field.storage.node.field_organizers_course_id'
         - 'config:field.storage.node.field_starting_level'
         - 'config:field.storage.node.field_target_level'

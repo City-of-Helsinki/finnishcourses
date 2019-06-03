@@ -15,7 +15,6 @@ dependencies:
     - field.field.node.course.field_course_length
     - field.field.node.course.field_course_online_address
     - field.field.node.course.field_course_organization
-    - field.field.node.course.field_course_organizer_id
     - field.field.node.course.field_course_start_date
     - field.field.node.course.field_course_street_address
     - field.field.node.course.field_course_times_of_day
@@ -23,6 +22,7 @@ dependencies:
     - field.field.node.course.field_course_week_hours
     - field.field.node.course.field_number_of_lessons
     - field.field.node.course.field_online_course
+    - field.field.node.course.field_organizers_course_id
     - field.field.node.course.field_registration_end_date
     - field.field.node.course.field_registration_link
     - field.field.node.course.field_registration_start_date
@@ -130,14 +130,6 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
-  field_course_organizer_id:
-    type: string
-    weight: 23
-    region: content
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   field_course_start_date:
     weight: 20
     label: hidden
@@ -208,6 +200,14 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_organizers_course_id:
+    weight: 23
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_registration_end_date:
     weight: 5

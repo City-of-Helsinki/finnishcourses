@@ -1,16 +1,16 @@
-uuid: cf5d58bf-9c2f-40b4-b457-33d0930c5be2
+uuid: 273a2059-fc1a-46b7-b87d-a457b6fda98d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_course_organizer_id
+    - field.storage.node.field_organizers_course_id
     - node.type.course
-id: node.course.field_course_organizer_id
-field_name: field_course_organizer_id
+id: node.course.field_organizers_course_id
+field_name: field_organizers_course_id
 entity_type: node
 bundle: course
 label: 'Course ID'
-description: 'This is organizers own course id'
+description: 'This is organizers course ID '
 required: false
 translatable: false
 default_value: {  }
