@@ -9,7 +9,7 @@ id: node.course.field_course_organizer_id
 field_name: field_course_organizer_id
 entity_type: node
 bundle: course
-label: 'Organizers course ID'
+label: 'Course ID'
 description: 'This is organizers own course id'
 required: false
 translatable: false

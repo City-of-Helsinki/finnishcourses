@@ -1,11 +1,11 @@
-uuid: 9b84b35e-fbaf-44ef-b70d-ce415cdf61a1
+uuid: 65d41a74-0ec2-478a-bd05-989c4ace005e
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_registration_email
-field_name: field_registration_email
+id: node.field_ask_more_email
+field_name: field_ask_more_email
 entity_type: node
 type: email
 settings: {  }

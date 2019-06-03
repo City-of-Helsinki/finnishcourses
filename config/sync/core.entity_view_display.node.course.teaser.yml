@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.course.field_ask_more_email
     - field.field.node.course.field_books_and_materials
     - field.field.node.course.field_course_availability
+    - field.field.node.course.field_course_end_date
     - field.field.node.course.field_course_features
     - field.field.node.course.field_course_fee
     - field.field.node.course.field_course_id
@@ -15,12 +17,13 @@ dependencies:
     - field.field.node.course.field_course_online_address
     - field.field.node.course.field_course_organization
     - field.field.node.course.field_course_organizer_id
+    - field.field.node.course.field_course_start_date
     - field.field.node.course.field_course_street_address
+    - field.field.node.course.field_course_times_of_day
     - field.field.node.course.field_course_town
     - field.field.node.course.field_course_week_hours
     - field.field.node.course.field_number_of_lessons
     - field.field.node.course.field_online_course
-    - field.field.node.course.field_registration_email
     - field.field.node.course.field_registration_end_date
     - field.field.node.course.field_registration_link
     - field.field.node.course.field_registration_start_date
@@ -40,6 +43,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_ask_more_email: true
   field_books_and_materials: true
   field_course_availability: true
   field_course_end_date: true
@@ -54,11 +58,11 @@ hidden:
   field_course_organizer_id: true
   field_course_start_date: true
   field_course_street_address: true
+  field_course_times_of_day: true
   field_course_town: true
   field_course_week_hours: true
   field_number_of_lessons: true
   field_online_course: true
-  field_registration_email: true
   field_registration_end_date: true
   field_registration_link: true
   field_registration_start_date: true
