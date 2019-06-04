@@ -1,18 +1,9 @@
 @import "variables";
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-/* COURSE SEARCH
---------------------------------------------------*/
-
-#block-exposedformsearch-coursespage-1 {
-  h2 {
-    text-align: center;
-  }
-}
 
 .form-row {
   display: block;
-  // text-algin: center;
 }
 
 .form-check {
@@ -31,93 +22,6 @@
 
 legend {
   text-align: center;
-}
-
-.fieldset-wrapper {
-  #edit-course-town, .form-item-online-course, #edit-starting-level {
-    text-align: center;
-  }
-}
-
-.form-item-online-course {
-  float: right;
-}
-
-.more-search-options-trigger {
-  color: $primary-shade;
-  font-weight: 900;
-  text-align: center;
-  margin-top: 56px;
-  margin-bottom: 20px;
-}
-
-.more-options-wrapper {
-  background: $more-options-shade;
-  padding: 20px;
-  display: none;
-}
-
-.form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
-  label {
-    color: $text-shade;
-    font-weight: 700;
-  }
-}
-
-#edit-course-fee--wrapper {
-  .fieldset-legend {
-    color: $text-shade;
-    font-weight: 700;
-    font-size: 16px;
-    position: absolute;
-
-    .col-auto {
-      max-width: 96%;
-      margin: auto;
-    }
-  }
-
-  #edit-course-fee {
-    @include media-breakpoint-down(sm) {
-      display: inline-grid;
-      margin-bottom: 16px;
-      .form-check {
-        padding: 5px;
-        label {
-          margin-left: 10px;
-        }
-      }
-    }
-  }
-
-  legend {
-    text-align: left;
-  }
-
-  .fieldset-wrapper {
-    width: 100%;
-    // todo: need to be fixed
-    @include media-breakpoint-up(sm) {
-      margin-left: 89px;
-      margin-top: -7px;
-    }
-    @include media-breakpoint-down(sm) {
-      padding-top: 30px;
-    }
-  }
-}
-
-.form-item-starting-level-ext {
-  float: left;
-}
-
-.form-control {
-  display: inline; // Override
-  width: auto; // Override
-}
-
-.form-item-start-date, .form-item-start-date-2 {
-  display: inline;
 }
 
 .form-text, .form-select {

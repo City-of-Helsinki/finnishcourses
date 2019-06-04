@@ -1,3 +1,7 @@
+@import "variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
 /* COURSE INFORMATION
 -------------------------------------------------*/
 
@@ -56,10 +60,15 @@
     height: 100px;
     background-color: $dark-schedule-shade;
   }
-}
 
-.field--name-field-course-id, .course-lessons, .field--name-field-books-and-materials,
-.field--name-field-course-features {
-  margin-top: 20px;
-  margin-bottom: 40px;
+  .empty {
+    background-color: $light-schedule-shade;
+  }
+
+
+  .field--name-field-course-id, .course-lessons, .field--name-field-books-and-materials,
+  .field--name-field-course-features {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
 }
