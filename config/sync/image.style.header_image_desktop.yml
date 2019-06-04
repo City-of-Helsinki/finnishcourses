@@ -1,0 +1,15 @@
+uuid: 3403a49d-060a-44a2-8017-60b1a696840f
+langcode: en
+status: true
+dependencies: {  }
+name: header_image_desktop
+label: 'Header image - Desktop'
+effects:
+  d9ca1b61-5fbd-49e1-b368-08e4344c6aa1:
+    uuid: d9ca1b61-5fbd-49e1-b368-08e4344c6aa1
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1020
+      height: 340
+      anchor: center-center
