@@ -1,0 +1,41 @@
+/* FRONT PAGE
+  -------------------------------------------------*/
+
+.comment-add, .node__meta, .comment-forbidden {
+  display: none;
+}
+
+.node--view-mode-teaser h2 a {
+  font-size: 18px;
+  padding-top: 0; // Override
+}
+
+.node-readmore {
+  padding: 0;
+
+  a {
+    font-weight: 900;
+  }
+}
+
+.views-row {
+  flex: 1;
+  margin: 20px 0 66px 0;
+  //padding: 0 20px;
+
+  /*
+   * TODO: BOXES ON FRONTPAGE
+    &:nth-child(n+2) {
+    border-left: 1px solid $border-shade;
+  }*/
+}
+
+.node--view-mode-teaser {
+  border-bottom: none; // Override
+  margin-bottom: 0; // Override
+  padding-bottom: 0; // Override
+}
+
+.feed-icons {
+  display: none;
+}

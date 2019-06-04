@@ -1,17 +1,14 @@
-uuid: 35ab681a-818b-4cbd-a77a-92e91a6a9a3f
+uuid: 65d41a74-0ec2-478a-bd05-989c4ace005e
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_course_organizer_id
-field_name: field_course_organizer_id
+id: node.field_ask_more_email
+field_name: field_ask_more_email
 entity_type: node
-type: string
-settings:
-  max_length: 255
-  is_ascii: false
-  case_sensitive: false
+type: email
+settings: {  }
 module: core
 locked: false
 cardinality: 1

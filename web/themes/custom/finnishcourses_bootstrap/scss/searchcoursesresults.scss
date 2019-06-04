@@ -1,0 +1,54 @@
+@import "variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+/* SEARCH COURSES RESULTS
+ -------------------------------------------------*/
+
+#block-finnishcourses-bootstrap-page-title {
+  display: none;
+}
+
+.view-search-courses {
+  .views-row {
+    padding-bottom: 10px;
+    border-bottom: 1px solid $border-shade;
+  }
+
+  .view-header {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    margin-top: 40px;
+    @include media-breakpoint-down(sm) {
+      font-size: 21px;
+    }
+  }
+
+  .views-field-title {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 10px;
+
+    a {
+      text-decoration: none; // Override
+      @include media-breakpoint-down(sm) {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.views-field-field-course-availability, .views-label-field-starting-level,
+.views-label-field-target-level, .views-label-field-course-start-date, .views-label-field-course-town,
+.views-label-field-course-fee, .views-label-field-course-id {
+  font-weight: 700;
+}
+
+.views-field-field-course-id {
+  margin-top: 47px;
+  color: $id-shade;
+}
+
+.views-label-field-course-id {
+  margin-right: 5px;
+}

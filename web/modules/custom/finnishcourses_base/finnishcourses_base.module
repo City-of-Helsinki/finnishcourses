@@ -5,6 +5,7 @@ use Drupal\Core\Form\FormState;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Entity\EntityInterface;
 
 /**
  * Implements hook_element_info_alter().
@@ -76,6 +77,7 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
 
     // Disable course id field because it will be generated automatically
     $form['field_course_id']['#disabled'] = 'disabled';
+    $form['field_course_times_of_day']['#disabled'] = 'disabled';
     
 
 
@@ -336,6 +338,39 @@ function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $en
       $organization->save();
     }
 
+    if (!empty($entity->get('field_course_week_hours')->getValue())) {
+      $datesHours = $entity->get('field_course_week_hours')->getValue();
+      $timesOfDays = [];
+      foreach ($datesHours as $key => $dateHours) {
+        if ($dateHours['starthours'] < '1200') {
+          if (!in_array('beforenoon', $timesOfDays)) {
+            $timesOfDays[] = 'beforenoon';
+          }
+        } else if ($dateHours['starthours'] >= '1200' && $dateHours['starthours'] < '1600') {
+          if (!in_array('afternoon', $timesOfDays)) {
+            $timesOfDays[] = 'afternoon';
+          }
+        } else if ($dateHours['starthours'] >= '1600') {
+          if (!in_array('evening', $timesOfDays)) {
+            $timesOfDays[] = 'evening';
+          }
+        }
+
+      }
+      if (!empty($timesOfDays)) {
+        $entity->set('field_course_times_of_day', $timesOfDays);
+      }
+    }
+
+    // Add course translations if they not exist yet
+    if (!$entity->hasTranslation('fi')) {
+      $entity->addTranslation('fi', $entity->toArray());
+    }
+    if (!$entity->hasTranslation('ru')) {
+      $entity->addTranslation('ru', $entity->toArray());
+    }
+    
+
   }
 }
 
@@ -386,16 +421,19 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
     ];
 
     $form['more_options']['course_fee'] = $form['course_fee'];
+    $form['more_options']['time_of_day'] = $form['time_of_day'];
     $form['more_options']['starting_level_ext'] = $form['starting_level_ext'];
     $form['more_options']['start_date'] = $form['start_date'];
     $form['more_options']['start_date_2'] = $form['start_date_2'];
     $form['more_options']['keyword'] = $form['keyword'];
 
+    $form['more_options']['time_of_day']['#title'] = t('Time of day');
     $form['more_options']['starting_level_ext']['#title'] = t('Starting level');
     $form['more_options']['start_date']['#title'] = t('Course starts');
     $form['more_options']['keyword']['#title'] = t('Keyword');
 
     unset($form['course_fee']);
+    unset($form['time_of_day']);
     unset($form['starting_level_ext']);
     unset($form['start_date']);
     unset($form['start_date_2']);
@@ -403,3 +441,22 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 
   }
 }  
+
+function finnishcourses_base_preprocess_field(&$variables) {
+
+}
+
+function finnishcourses_base_preprocess_office_hours(&$variables) {
+  
+  if (!empty($variables['items'])) {
+    foreach ($variables['items'] as $key => $item) {
+      if (isset($item['slots']) && isset($item['slots']['#type']) && $item['slots']['#type'] == 'markup') {
+        if (is_string($item['slots']['#markup'])) {
+          $variables['items'][$key]['classes'] = 'office-hours__item';
+        } else {
+          $variables['items'][$key]['classes'] = 'office-hours__item empty';
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+uuid: 2e6ceba4-368e-4f1e-9f02-ddb228d8e0c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ask_more_email
+    - node.type.course
+id: node.course.field_ask_more_email
+field_name: field_ask_more_email
+entity_type: node
+bundle: course
+label: 'Ask for more Email address'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

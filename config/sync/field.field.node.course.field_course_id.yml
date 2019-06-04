@@ -9,8 +9,8 @@ id: node.course.field_course_id
 field_name: field_course_id
 entity_type: node
 bundle: course
-label: 'Course ID'
-description: ''
+label: 'Course F-code'
+description: 'F-code is generated automatically when course is created.'
 required: false
 translatable: false
 default_value: {  }

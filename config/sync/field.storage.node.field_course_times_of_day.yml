@@ -1,0 +1,30 @@
+uuid: 62e2bec6-c760-46b0-9eb9-02b964d6c5f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_course_times_of_day
+field_name: field_course_times_of_day
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: beforenoon
+      label: 'Before noon'
+    -
+      value: afternoon
+      label: Afternoon
+    -
+      value: evening
+      label: Evening
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

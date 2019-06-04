@@ -11,22 +11,15 @@ display:
         field_starting_level:
           expose:
             label: Aloitustaso
-            description: ''
         field_course_fee:
           expose:
             label: 'Kurssin hinta'
-            description: ''
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
         field_starting_level_1:
           expose:
             label: Aloitustaso
         field_course_start_date:
           expose:
             label: 'Kurssi alkaa'
-          group_info:
-            description: ''
         combine_1:
           expose:
             label: Hakusanat
