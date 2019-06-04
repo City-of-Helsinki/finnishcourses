@@ -165,6 +165,7 @@ hidden:
   field_course_times_of_day: true
   field_number_of_lessons: true
   field_online_course: true
+  field_organizers_course_id: true
   field_registration_end_date: true
   field_registration_link: true
   field_registration_start_date: true
