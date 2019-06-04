@@ -12,7 +12,7 @@ field_name: field_course_times_of_day
 entity_type: node
 bundle: course
 label: 'Course times of a day'
-description: ''
+description: 'This field value is saved automatically based week hours field values.'
 required: false
 translatable: false
 default_value: {  }

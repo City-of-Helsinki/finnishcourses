@@ -5,6 +5,7 @@ use Drupal\Core\Form\FormState;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Entity\EntityInterface;
 
 /**
  * Implements hook_element_info_alter().
@@ -76,6 +77,7 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
 
     // Disable course id field because it will be generated automatically
     $form['field_course_id']['#disabled'] = 'disabled';
+    $form['field_course_times_of_day']['#disabled'] = 'disabled';
     
 
 
@@ -358,6 +360,14 @@ function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $en
       if (!empty($timesOfDays)) {
         $entity->set('field_course_times_of_day', $timesOfDays);
       }
+    }
+
+    // Add course translations if they not exist yet
+    if (!$entity->hasTranslation('fi')) {
+      $entity->addTranslation('fi', $entity->toArray());
+    }
+    if (!$entity->hasTranslation('ru')) {
+      $entity->addTranslation('ru', $entity->toArray());
     }
     
 
