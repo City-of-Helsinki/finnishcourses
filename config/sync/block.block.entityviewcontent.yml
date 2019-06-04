@@ -1,0 +1,37 @@
+uuid: 658d2d31-60e5-4929-adc3-fdcf5e439117
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - ctools
+    - node
+  theme:
+    - finnishcourses_bootstrap
+id: entityviewcontent
+theme: finnishcourses_bootstrap
+region: header
+weight: 0
+provider: null
+plugin: 'entity_view:node'
+settings:
+  id: 'entity_view:node'
+  label: 'Front page - Header image'
+  provider: ctools
+  label_display: '0'
+  view_mode: header_image
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  node_type:
+    id: node_type
+    bundles:
+      front_page: front_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

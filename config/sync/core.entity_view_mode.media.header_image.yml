@@ -1,0 +1,10 @@
+uuid: 3e1b1691-751e-41c7-b967-e42956903d91
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.header_image
+label: 'Header image'
+targetEntityType: media
+cache: true

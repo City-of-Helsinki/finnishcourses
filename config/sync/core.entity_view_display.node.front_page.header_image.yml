@@ -1,0 +1,33 @@
+uuid: e4ddd198-9ddb-491f-bb21-093d5d268c10
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.header_image
+    - field.field.node.front_page.body
+    - field.field.node.front_page.field_header_image
+    - node.type.front_page
+  module:
+    - user
+id: node.front_page.header_image
+targetEntityType: node
+bundle: front_page
+mode: header_image
+content:
+  field_header_image:
+    type: entity_reference_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: header_image
+      link: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  langcode: true
