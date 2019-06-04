@@ -5,6 +5,7 @@ Description: Bootstrap 4 with Sass
 // import files
 @import "import";
 
+
 // Toolbar-administration fix
 #toolbar-administration * {
   z-index: 2000;
@@ -229,19 +230,6 @@ h1, h2, h3 {
   right: 59%;
   @include media-breakpoint-down(sm) {
     right: 71%;
-  }
-}
-
-
-/* ORGANIZATIONS
---------------------------------------------------*/
-
-.field--name-field-address, .field--name-field-town, .field--name-field-website-address {
-  display: flex;
-
-  .field__item, .field__item a {
-    display: inline;
-    margin-left: 5px;
   }
 }
 
