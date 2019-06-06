@@ -46,14 +46,15 @@
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
 
-/*
-.material-icons.md-36 {
-  position: absolute;
-  right: 59%;
-  @include media-breakpoint-down(sm) {
-    right: 71%;
+#edit-submit-search-courses {
+  .material-icons.md-36 {
+    position: absolute;
+    right: 59%;
+    @include media-breakpoint-down(sm) {
+      right: 71%;
+    }
   }
-}*/
+}
 
 // Hamburger menu - Change size in page.html.twig
 .navbar-toggler {
