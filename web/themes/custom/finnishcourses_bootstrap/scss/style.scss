@@ -52,6 +52,31 @@ body {
   }
 }
 
+.language-switcher-language-url {
+  display: inherit;
+  position:absolute;
+
+  //todo: fix this
+  top: 30px;
+  right: 200px;
+  ul {
+    list-style: none;
+    display: flex;
+  }
+  .language-link {
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
+    padding: 10px;
+    @include media-breakpoint-down(sm) {
+      font-size: 14px;
+    }
+    .is-active {
+      text-decoration: $link-hover-decoration;
+    }
+  }
+}
+
 .region-secondary-menu {
   .navbar-brand img {
     width: 65%;
@@ -64,7 +89,6 @@ body {
 
 .nav-link.active,
 .nav-item.show .nav-link {
-
   text-decoration: $link-hover-decoration;
 }
 
@@ -117,10 +141,20 @@ h1, h2, h3 {
     margin: 20px 20px 20px 20px;
   }
 
-  .footer {
-    position: absolute;
+  @include media-breakpoint-up(md) {
+    .footer {
+      position: absolute;
+    }
   }
 }
+
+.path-frontpage {
+  .footer {
+    @include media-breakpoint-up(md) {
+      position: absolute;
+    }
+  }
+  }
 
 .footer {
   left: 0;
@@ -130,9 +164,6 @@ h1, h2, h3 {
   text-align: center;
   padding-top: 40px;
   padding-bottom: 100px;
-  @include media-breakpoint-up(md) {
-    position: absolute;
-  }
   a {
     color: $footer-text-shade;
     font-weight: bold;
