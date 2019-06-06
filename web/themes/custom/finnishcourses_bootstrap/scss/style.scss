@@ -225,11 +225,17 @@ h1, h2, h3 {
 .material-icons.md-48 { font-size: 48px; }
 
 
-.material-icons.md-36 {
-  position: absolute;
-  right: 59%;
-  @include media-breakpoint-down(sm) {
-    right: 71%;
+.form-group {
+  #edit-submit-search-courses {
+    .form-submit {
+      .material-icons.md-36 {
+        position: absolute;
+        right: 59%;
+        @include media-breakpoint-down(sm) {
+          right: 71%;
+        }
+      }
+    }
   }
 }
 

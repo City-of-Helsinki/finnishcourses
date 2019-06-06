@@ -44,6 +44,23 @@
   font-weight: 700;
 }
 
+#edit-time-of-day--wrapper {
+  legend {
+    font-weight: 700;
+    font-size: 16px;
+    text-align: left;
+    .fieldset-legend {
+      color: $text-shade;
+      position: absolute;
+    }
+  }
+  .fieldset-wrapper {
+    //todo: fix this
+    margin-left: 100px;
+    margin-top: -7px;
+  }
+}
+
 .views-field-field-organizers-course-id {
   margin-top: 47px;
   color: $id-shade;

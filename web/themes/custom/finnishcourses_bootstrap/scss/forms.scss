@@ -3,11 +3,12 @@
 
 
 .form-row {
-  display: block;
+  display: block !important;
 }
 
 .form-check {
-  display: inline;
+  display: inline !important;
+  padding-left: 28px !important;
 }
 
 .form-check-input {
