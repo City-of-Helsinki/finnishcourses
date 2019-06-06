@@ -53,11 +53,8 @@
     @include media-breakpoint-down(sm) {
       right: 71%;
     }
-    @include media-breakpoint(lg) {
+    @include media-breakpoint-up(lg) {
       right: 57%;
-    }
-    @include media-breakpoint-up(xl) {
-      right: 50%;
     }
   }
 }
