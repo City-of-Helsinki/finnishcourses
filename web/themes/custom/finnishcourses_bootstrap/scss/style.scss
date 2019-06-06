@@ -19,16 +19,20 @@ body {
   font-family: $font-family-base;
 }
 
-.node__content {
-  margin-bottom: 40px;
-}
-
 .row {
   margin-left: 0;
   margin-right: 0;
   @include media-breakpoint-down(sm) {
     display: flow-root;
   }
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar-brand {
+  padding-bottom: 0px;
 }
 
 .region-secondary-menu {
@@ -52,11 +56,13 @@ body {
   }
 }
 
-.navbar-brand img {
-  width: 65%;
-  float: right;
-  @include media-breakpoint-down(sm) {
-    visibility: hidden;
+.region-secondary-menu {
+  .navbar-brand img {
+    width: 65%;
+    float: right;
+    @include media-breakpoint-down(sm) {
+      visibility: hidden;
+    }
   }
 }
 
@@ -78,10 +84,6 @@ h1, h2, h3 {
 
 .section {
   margin: auto;
-}
-
-.bg-primary {
-  padding: 150px;
 }
 
 .site-footer__top {
