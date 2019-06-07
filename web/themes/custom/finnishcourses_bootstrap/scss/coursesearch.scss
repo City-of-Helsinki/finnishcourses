@@ -65,7 +65,9 @@ legend {
   label {
     color: $text-shade;
     font-weight: 700;
-    position: absolute;
+    @include media-breakpoint-up(md) {
+      position: absolute;
+    }
   }
 }
 
@@ -88,8 +90,22 @@ legend {
       margin-bottom: 16px;
       .form-check {
         padding: 5px;
+
         label {
           margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  #edit-time-of-day--wrapper {
+    fieldset {
+      @include media-breakpoint-down(sm) {
+        .fieldset-wrapper {
+          display: inline;
+        }
+        #edit-time-of-day.checkbox {
+          display: inline-grid;
         }
       }
     }
@@ -102,7 +118,7 @@ legend {
   .fieldset-wrapper {
     width: 100%;
     // todo: need to be fixed
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
       margin-left: 89px;
       margin-top: -7px;
     }
@@ -275,7 +291,11 @@ input[type="checkbox"] {
   &::before {
     content: url(../images/icons/ic_chevron_down@1x.svg);
     position: absolute;
-    right: 478px; //need to change position, after everything is fixed
+    left: 42%;
+    @include media-breakpoint-down(sm) {
+      left: 27%;
+    }
+
   }
 }
 
@@ -283,42 +303,62 @@ input[type="checkbox"] {
 .form-item-starting-level-ext {
   float: left;
   position: relative;
-  &::before
-  {
+
+  &::before {
     content: url(../images/icons/ic_chevron_down@1x.svg);
     color: $primary-shade;
     position: absolute;
     top: 11px;
     right: 12px;
+    @include media-breakpoint-down(sm) {
+      top: 36px;
+      right: 28px;
+    }
   }
 }
+
 //todo: change position, after everything else have been fixed
 .form-item-start-date, .form-item-start-date-2 {
-  &::before
-  {
-    font-family: "Material Icons";
+  &::before {
     content: url(../images/icons/ic_insert_invitation@1x.svg);
-    color: $primary-shade;
     position: absolute;
     top: 11px;
     right: 33px;
     height: 2px;
     width: 2px;
+    @include media-breakpoint-down(sm) {
+      right: 42px;
+    }
+  }
+}
+
+.form-item-start-date {
+  &::before {
+    @include media-breakpoint-down(sm) {
+      top: 43px;
+    }
+  }
+}
+
+.form-item-start-date-2 {
+  &::before {
+    @include media-breakpoint-down(sm) {
+      top: 12px;
+    }
   }
 }
 
 //todo: change position, after everything else have been fixed
-  .btn-primary {
-    &::before
-    {
-      content: url(../images/icons/ic_search@1x.svg);
-      position: absolute;
-      right: 60%;
-      @include media-breakpoint-down(sm) {
-        right: 71%;
-      }
-      @include media-breakpoint-up(lg) {
-        right: 57%;
-      }
+.btn-primary {
+  &::before {
+    content: url(../images/icons/ic_search@1x.svg);
+    position: absolute;
+    right: 60%;
+    @include media-breakpoint-down(sm) {
+      right: 71%;
+    }
+    @include media-breakpoint-up(lg) {
+      right: 57%;
     }
   }
+}

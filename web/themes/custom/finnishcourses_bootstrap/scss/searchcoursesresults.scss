@@ -49,15 +49,31 @@
     font-weight: 700;
     font-size: 16px;
     text-align: left;
+
     .fieldset-legend {
       color: $text-shade;
       position: absolute;
     }
   }
+
   .fieldset-wrapper {
     //todo: fix this
-    margin-left: 100px;
     margin-top: -7px;
+    @include media-breakpoint-up(md) {
+      margin-left: 100px;
+    }
+    @include media-breakpoint-down(sm) {
+      display: inline;
+      #edit-time-of-day {
+        .form-checkboxes {
+          display: inline-grid;
+          margin-top: 30px;
+          .form-check {
+            padding: 5px;
+          }
+        }
+      }
+    }
   }
 }
 
