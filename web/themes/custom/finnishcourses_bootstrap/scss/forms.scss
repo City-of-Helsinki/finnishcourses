@@ -3,12 +3,12 @@
 
 
 .form-row {
-  display: block !important;
+  display: block !important; // Override
 }
 
 .form-check {
-  display: inline !important;
-  padding-left: 28px !important;
+  display: inline !important; // Override
+  padding-left: 28px !important; // Override
 }
 
 .form-check-input {
@@ -28,6 +28,7 @@ legend {
 .form-text, .form-select {
   border-color: $form-border-shade;
   border-radius: 2px;
+  margin-left: 0;
   -webkit-appearance: none;
   @include media-breakpoint-up(sm) {
     margin-top: 0.25rem;
@@ -38,16 +39,25 @@ legend {
 .form-item-keyword {
   .form-text, .form-control {
     color: #A5A5A5;
-    @include media-breakpoint-up(sm) {
-      width: 89%;
-      max-width: 86%;
-      margin-left: 42px;
+    @include media-breakpoint-up(md) {
+      width: 100%;
+      max-width: 93%;
+      margin-left: 77px;
+    }
+  }
+}
+
+.form-item-start-date, .form-item-start-date-2 {
+  .form-text, .form-control {
+    @include media-breakpoint-up(md) {
+      width: 50%;
+      max-width: 60%;
+      //margin-left: 77px;
     }
   }
 }
 
 // Radio button
-
 // Check variable values
 @if ($custom-radio-size % 2 == 1) {
   @error '$custom-radio-size must be even';

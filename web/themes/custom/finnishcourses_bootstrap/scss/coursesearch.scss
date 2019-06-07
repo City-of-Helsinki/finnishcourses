@@ -16,7 +16,6 @@
 
 .form-row {
   display: block;
-  // text-algin: center;
 }
 
 .form-check {
@@ -57,8 +56,9 @@ legend {
 
 .more-options-wrapper {
   background: $more-options-shade;
-  padding: 20px;
+  padding-top: 20px;
   display: none;
+  padding-bottom: 10px;
 }
 
 .form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
@@ -67,6 +67,20 @@ legend {
     font-weight: 700;
     @include media-breakpoint-up(md) {
       position: absolute;
+      top: 11px;
+    }
+  }
+}
+
+.form-item-starting-level-ext {
+  .form-select {
+    @include media-breakpoint-up(lg) {
+      width: 78%;
+      max-width: 73%;
+      margin-left: 108px;
+    }
+    @include media-breakpoint-down(md) {
+      width: 111%;
     }
   }
 }
@@ -98,19 +112,6 @@ legend {
     }
   }
 
-  #edit-time-of-day--wrapper {
-    fieldset {
-      @include media-breakpoint-down(sm) {
-        .fieldset-wrapper {
-          display: inline;
-        }
-        #edit-time-of-day.checkbox {
-          display: inline-grid;
-        }
-      }
-    }
-  }
-
   legend {
     text-align: left;
   }
@@ -135,11 +136,42 @@ legend {
 
 .form-item-start-date, .form-item-start-date-2 {
   display: inline;
+  label {
+    @include media-breakpoint-up(md) {
+      left: -38%;
+    }
+  }
+  .form-control {
+    @include media-breakpoint-up(md) {
+      width: 46%;
+    }
+  }
+}
+
+.form-item-start-date {
+  @include media-breakpoint-up(md) {
+    left: 29%;
+  }
+}
+
+.form-item-start-date-2 {
+  @include media-breakpoint-up(md) {
+    left: 11%;
+    }
+  @include media-breakpoint-down(md) {
+    margin-top: 46px;
+  }
+  .form-text {
+    @include media-breakpoint-up(md) {
+      margin-left: 70px;
+    }
+  }
 }
 
 .form-text, .form-select {
   border-color: $form-border-shade;
   border-radius: 2px;
+  margin-left: 110px;
   -webkit-appearance: none;
   @include media-breakpoint-up(sm) {
     margin-top: 0.25rem;
@@ -148,12 +180,17 @@ legend {
 }
 
 .form-item-keyword {
+  @include media-breakpoint-up(lg) {
+    margin-top: -31px;
+  }
+  @include media-breakpoint-down(md) {
+    margin-top: -30px;
+  }
   .form-text, .form-control {
     color: #A5A5A5;
     @include media-breakpoint-up(sm) {
-      width: 89%;
-      max-width: 86%;
-      margin-left: 42px;
+      width: 100%;
+      max-width: 100%;
     }
   }
 }
@@ -286,14 +323,18 @@ input[type="checkbox"] {
   }
 }
 
+//Icons
 //todo: also need a upward arrow - need to fix the jquery code
 .more-search-options-trigger {
   &::before {
     content: url(../images/icons/ic_chevron_down@1x.svg);
     position: absolute;
-    left: 42%;
+    left: 38%;
     @include media-breakpoint-down(sm) {
       left: 22%;
+    }
+    @include media-breakpoint-up(lg) {
+      left: 42%;
     }
   }
 }
@@ -302,16 +343,15 @@ input[type="checkbox"] {
 .form-item-starting-level-ext {
   float: left;
   position: relative;
-
   &::before {
     content: url(../images/icons/ic_chevron_down@1x.svg);
     color: $primary-shade;
     position: absolute;
     top: 11px;
     right: 12px;
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       top: 36px;
-      right: 28px;
+      right: 15px;
     }
   }
 }
@@ -322,7 +362,6 @@ input[type="checkbox"] {
     content: url(../images/icons/ic_insert_invitation@1x.svg);
     position: absolute;
     top: 11px;
-    right: 33px;
     height: 2px;
     width: 2px;
     @include media-breakpoint-down(sm) {
@@ -332,17 +371,25 @@ input[type="checkbox"] {
 }
 
 .form-item-start-date {
+  @include media-breakpoint-up(md) {
+    top: -42px;
+  }
   &::before {
+    right: 56%;
     @include media-breakpoint-down(sm) {
       top: 43px;
+      right: 20%;
     }
   }
 }
 
 .form-item-start-date-2 {
+  top: -42px;
   &::before {
+    right: 41%;
     @include media-breakpoint-down(sm) {
       top: 12px;
+      right: 20%;
     }
   }
 }
@@ -361,3 +408,4 @@ input[type="checkbox"] {
     }
   }
 }
+
