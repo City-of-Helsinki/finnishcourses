@@ -157,7 +157,7 @@ h1, h2, h3 {
   }
 }
 
-.path-frontpage, .path-node {
+.path-node {
   .footer {
     @include media-breakpoint-up(md) {
       position: absolute;

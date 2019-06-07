@@ -112,10 +112,6 @@ legend {
   }
 }
 
-.form-item-starting-level-ext {
-  float: left;
-}
-
 .form-control {
   display: inline; // Override
   width: auto; // Override
@@ -273,3 +269,56 @@ input[type="checkbox"] {
     transform: rotate(45deg);
   }
 }
+
+//todo: also need a upward arrow - need to fix the jquery code
+.more-search-options-trigger {
+  &::before {
+    content: url(../images/icons/ic_chevron_down@1x.svg);
+    position: absolute;
+    right: 478px; //need to change position, after everything is fixed
+  }
+}
+
+//todo: change position, after everything else have been fixed
+.form-item-starting-level-ext {
+  float: left;
+  position: relative;
+  &::before
+  {
+    content: url(../images/icons/ic_chevron_down@1x.svg);
+    color: $primary-shade;
+    position: absolute;
+    top: 11px;
+    right: 12px;
+  }
+}
+//todo: change position, after everything else have been fixed
+.form-item-start-date, .form-item-start-date-2 {
+  &::before
+  {
+    font-family: "Material Icons";
+    content: url(../images/icons/ic_insert_invitation@1x.svg);
+    color: $primary-shade;
+    position: absolute;
+    top: 11px;
+    right: 33px;
+    height: 2px;
+    width: 2px;
+  }
+}
+
+//todo: change position, after everything else have been fixed
+  .btn-primary {
+    &::before
+    {
+      content: url(../images/icons/ic_search@1x.svg);
+      position: absolute;
+      right: 60%;
+      @include media-breakpoint-down(sm) {
+        right: 71%;
+      }
+      @include media-breakpoint-up(lg) {
+        right: 57%;
+      }
+    }
+  }
