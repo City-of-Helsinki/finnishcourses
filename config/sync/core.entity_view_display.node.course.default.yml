@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.course.field_ask_exact_times
     - field.field.node.course.field_ask_more_email
     - field.field.node.course.field_books_and_materials
     - field.field.node.course.field_course_availability
@@ -41,6 +42,16 @@ targetEntityType: node
 bundle: course
 mode: default
 content:
+  field_ask_exact_times:
+    weight: 24
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_ask_more_email:
     weight: 22
     label: above

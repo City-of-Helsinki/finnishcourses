@@ -1,0 +1,23 @@
+uuid: 97f5fecf-fce1-4219-a6d6-419d53d32511
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ask_exact_times
+    - node.type.course
+id: node.course.field_ask_exact_times
+field_name: field_ask_exact_times
+entity_type: node
+bundle: course
+label: 'Ask from your training provider for the exact times'
+description: 'If this is checked, text "Ask from your training provider for the exact times" is displayed in the course page under week hours calendar '
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
