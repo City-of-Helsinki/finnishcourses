@@ -24,6 +24,12 @@ body {
   margin-right: 0;
 }
 
+.field--name-field-header-image {
+  @include media-breakpoint-down(sm) {
+    margin-top: 53px;
+  }
+}
+
 .navbar {
   padding: 0;
 }
@@ -62,6 +68,11 @@ body {
   //todo: fix this
   top: 30px;
   right: 200px;
+  @include media-breakpoint-down(sm) {
+    top: 12px;
+    left: 27%;
+    right: 0;
+  }
   ul {
     list-style: none;
     display: flex;
@@ -156,14 +167,6 @@ h1, h2, h3 {
     }
   }
 }
-
-.path-node {
-  .footer {
-    @include media-breakpoint-up(md) {
-      position: absolute;
-    }
-  }
-  }
 
 .footer {
   left: 0;
