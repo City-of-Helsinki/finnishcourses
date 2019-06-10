@@ -12,9 +12,9 @@ field_name: field_registration_link
 entity_type: node
 bundle: course
 label: 'Registration link'
-description: ''
-required: false
-translatable: false
+description: 'Online address where user should register to the course.'
+required: true
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
