@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+title: 'Unpublish courses'
+id: unpublish_courses
+module: course_cron_jobs
+callback: _course_cron_jobs_unpublish_courses
+scheduler:
+  id: simple
+  configuration:
+    rules:
+      - '0 2 * * *'
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+      max_execution_time: 3600
+    launcher:
+      max_threads: 1
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

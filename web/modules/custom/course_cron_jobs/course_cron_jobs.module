@@ -1,0 +1,29 @@
+<?php
+
+use Drupal\course_services\CourseDataService;
+
+function _course_cron_jobs_unpublish_courses() {
+  $courseDataService = \Drupal::service('course_services.course_data_service');
+  \Drupal::logger('course_cron_jobs')->notice('Course cron run');
+  // Get all published courses
+  $allPublishedCourses = $courseDataService->queryAllCourses(1);
+
+  if (!$allPublishedCourses) {
+    return;
+  }
+
+  _handle_published_courses($allPublishedCourses);
+}
+
+function _handle_published_courses($allPublishedCourses) {
+  foreach ($allPublishedCourses as $key => $courseNid) {
+    $loadedCourse = $courseDataService->loadNode($courseNid);
+
+    if (!$loadedCourse || !is_object($loadedCourse)) {
+      continue;
+    }
+
+    $courseOrganization = $courseDataService->getFieldValue('field_organization', $loadedCourse, 'targetId');
+
+  }
+}
