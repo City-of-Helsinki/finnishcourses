@@ -73,6 +73,18 @@ class CourseDataService {
     return $userCourses;
   }
 
+  public function queryAllCourses($status = 1) {
+    $query = $this->entityQuery->get('node');
+    $query->condition('type', 'course')
+          ->condition('status', $status);
+    $entity_ids = $query->execute();
+
+    ddl($entity_ids);
+    $allCourses = $entity_ids;
+
+    return $allCourses;
+  }
+
 
   /**
    * Function to return organizations the current user has access to
@@ -91,12 +103,55 @@ class CourseDataService {
 
   }
 
+  public function getFieldValue($fieldName, $node, $valueSource = 'base', $valueType = FALSE, $referencedEntitysField = FALSE) {
+    if (!$fieldName || !$node) {
+      return FALSE;
+    }
+
+    if (!is_object($node)) {
+      if (isset($node['target_id'])) {
+        $node = $this->loadNode($node['target_id']);
+      } else {
+        $node = $this->loadNode($node);
+      }
+    }
+
+    if (!$node && !is_object($node)) {
+      return FALSE;
+    }
+
+    $fieldValue = $node->get($fieldName)->getValue();
+
+    if (!empty($fieldValue)) {
+      if ($valueSource == 'valueInArray') {
+        $fieldValue = $fieldValue[0]['value'];
+      } else if ($valueType == 'referenced_term' && $referencedEntitysField) {
+        if ($referencedEntitysField == 'label') {
+          $fieldValue = $node->$fieldName->entity->label();
+        }
+      } else if ($valueSource == 'targetId') {
+        $fieldValue = $fieldValue[0]['target_id'];
+      }
+    }
+
+    return $fieldValue;
+
+  }
+
   public function loadAccount() {
 
     $account = $this->entityTypeManager->getStorage('user')
     ->load($this->currentUser->id());
 
     return $account;
+  }
+
+  public function loadNode($nid) {
+
+    $node = $this->entityTypeManager->getStorage('node')
+    ->load($nid);
+
+    return $node;
   }
 
 }
