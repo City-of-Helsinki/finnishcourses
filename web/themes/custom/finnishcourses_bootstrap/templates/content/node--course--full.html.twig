@@ -114,6 +114,9 @@
       {{ content.field_course_town }}
       {{ content.field_course_fee }}
       {{ content.field_course_week_hours }}
+      {% if node.field_ask_exact_times.value %}
+        {% trans %}Ask from your training provider for the exact times{% endtrans %}
+      {% endif %}
       {{ content.field_organizers_course_id }}
       <div class="course-lessons">
         <div class="field__label">
