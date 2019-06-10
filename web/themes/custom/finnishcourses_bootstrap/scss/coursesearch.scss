@@ -73,10 +73,21 @@ legend {
 }
 
 .form-item-starting-level-ext {
+  @include media-breakpoint-only(md) {
+    top: 0;
+    right: 0;
+    left: 94px;
+    margin-left: 29px;
+  }
   @include media-breakpoint-down(sm) {
     top: 38px;
     right: -13px;
     left: 2px;
+  }
+    @include media-breakpoint-down(md) {
+    label {
+      left: -107px;
+    }
   }
   .form-select {
     @include media-breakpoint-up(lg) {
@@ -84,6 +95,7 @@ legend {
       max-width: 73%;
       margin-left: 108px;
     }
+
     @include media-breakpoint-down(sm) {
       width: 116%;
     }
@@ -124,8 +136,12 @@ legend {
   .fieldset-wrapper {
     width: 100%;
     // todo: need to be fixed
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       margin-left: 89px;
+      margin-top: -7px;
+    }
+    @include media-breakpoint-only(md) {
+      margin-left: 131px;
       margin-top: -7px;
     }
     @include media-breakpoint-down(sm) {
@@ -142,8 +158,11 @@ legend {
 .form-item-start-date, .form-item-start-date-2 {
   display: inline;
   label {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       left: -38%;
+    }
+    @include media-breakpoint-up(md) {
+      left: -41%;
     }
   }
   .form-control {
@@ -154,20 +173,35 @@ legend {
 }
 
 .form-item-start-date {
+  top: 62px;
   @include media-breakpoint-up(md) {
     left: 29%;
+    .form-control {
+      margin-left: -2px;
+    }
+  }
+  @include media-breakpoint-only(md) {
+    top: 43px;
+    left: -174px;
   }
   @include media-breakpoint-down(sm) {
-    margin-top: 43px;
+    top: 41px;
   }
 }
 
 .form-item-start-date-2 {
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
+    top: -42px;
     left: 11%;
     }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-only(md) {
+    margin-top: 0;
+    left: 28%;
+    top: -15px;
+  }
+  @include media-breakpoint-down(sm) {
     margin-top: 46px;
+    top: 21px;
   }
   .form-text {
     @include media-breakpoint-up(md) {
@@ -181,7 +215,7 @@ legend {
   border-radius: 2px;
   margin-left: 110px;
   -webkit-appearance: none;
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-down(sm) {
     margin-top: 0.25rem;
     margin-left: 12px;
   }
@@ -191,17 +225,23 @@ legend {
   @include media-breakpoint-up(lg) {
     margin-top: -31px;
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-only(md) {
     margin-top: -30px;
+    margin-top: -12px;
   }
   @include media-breakpoint-down(sm) {
-    margin-top: -65px;
+    margin-top: -30px;
   }
   .form-text, .form-control {
     color: #A5A5A5;
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-down(sm) {
       width: 100%;
       max-width: 100%;
+    }
+    @include media-breakpoint-only(md) {
+      width: 82%;
+      max-width: 85%;
+      margin-left: 136px;
     }
   }
 }
@@ -359,7 +399,11 @@ input[type="checkbox"] {
     position: absolute;
     top: 11px;
     right: 12px;
-    @include media-breakpoint-down(md) {
+   @include media-breakpoint-only(md) {
+      top: 12px;
+      right: 16px;
+    }
+    @include media-breakpoint-down(sm) {
       top: 38px;
       right: -13px;
     }
@@ -384,7 +428,7 @@ input[type="checkbox"] {
     content: ("-");
     position: absolute;
     top: 11px;
-    left: 71px;
+    left: 60px;
     height: 2px;
     width: 2px;
     @include media-breakpoint-down(sm) {
@@ -395,11 +439,8 @@ input[type="checkbox"] {
 }
 
 .form-item-start-date {
-  @include media-breakpoint-up(md) {
-    top: -42px;
-  }
   &::before {
-    right: 56%;
+    right: 60%;
     @include media-breakpoint-down(sm) {
       top: 46px;
       right: 64%;
@@ -408,12 +449,14 @@ input[type="checkbox"] {
 }
 
 .form-item-start-date-2 {
-  top: -42px;
+  @include media-breakpoint-up(lg) {
+  //  top: -15px;
+  }
   &::before {
     right: 41%;
     @include media-breakpoint-down(sm) {
-      top: -48px;
-      right: 15%;
+      top: -70px;
+      right: 14%;
     }
   }
 }
@@ -425,12 +468,18 @@ input[type="checkbox"] {
   }
 }
 
+.form-item-start-date {
+  @include media-breakpoint-up(lg) {
+    top: -42px;
+  }
+}
+
 .form-item-start-date-2 {
   @include media-breakpoint-down(sm) {
     left: 11px;
   .form-control {
       float: right;
-      margin-top: -21%;
+      margin-top: -30%;
     }
   }
 }
