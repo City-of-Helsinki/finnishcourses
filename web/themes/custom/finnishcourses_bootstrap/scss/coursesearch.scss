@@ -339,7 +339,6 @@ input[type="checkbox"] {
   }
 }
 
-//todo: change position, after everything else have been fixed
 .form-item-starting-level-ext {
   float: left;
   position: relative;
@@ -356,12 +355,25 @@ input[type="checkbox"] {
   }
 }
 
-//todo: change position, after everything else have been fixed
 .form-item-start-date, .form-item-start-date-2 {
-  &::before {
-    content: url(../images/icons/ic_insert_invitation@1x.svg);
+   &::before {
+     content: url(../images/icons/ic_insert_invitation@1x.svg);
+     position: absolute;
+     top: 11px;
+     height: 2px;
+     width: 2px;
+     @include media-breakpoint-down(sm) {
+       right: 42px;
+     }
+   }
+ }
+
+.form-item-start-date-2 {
+  &::after {
+    content: ("-");
     position: absolute;
     top: 11px;
+    left: 71px;
     height: 2px;
     width: 2px;
     @include media-breakpoint-down(sm) {
@@ -394,7 +406,6 @@ input[type="checkbox"] {
   }
 }
 
-//todo: change position, after everything else have been fixed
 .btn-primary {
   &::before {
     content: url(../images/icons/ic_search@1x.svg);
