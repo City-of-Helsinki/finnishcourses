@@ -76,6 +76,7 @@ legend {
   @include media-breakpoint-down(sm) {
     top: 38px;
     right: -13px;
+    left: 2px;
   }
   .form-select {
     @include media-breakpoint-up(lg) {
@@ -156,6 +157,9 @@ legend {
   @include media-breakpoint-up(md) {
     left: 29%;
   }
+  @include media-breakpoint-down(sm) {
+    margin-top: 43px;
+  }
 }
 
 .form-item-start-date-2 {
@@ -190,14 +194,14 @@ legend {
   @include media-breakpoint-down(md) {
     margin-top: -30px;
   }
+  @include media-breakpoint-down(sm) {
+    margin-top: -65px;
+  }
   .form-text, .form-control {
     color: #A5A5A5;
     @include media-breakpoint-up(sm) {
       width: 100%;
       max-width: 100%;
-    }
-    @include media-breakpoint-down(sm) {
-      margin-top: -68px;
     }
   }
 }
