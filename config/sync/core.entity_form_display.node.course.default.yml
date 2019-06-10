@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.course.field_ask_exact_times
     - field.field.node.course.field_ask_more_email
     - field.field.node.course.field_books_and_materials
     - field.field.node.course.field_course_availability
@@ -55,6 +56,7 @@ third_party_settings:
         - group_course_location
         - field_course_fee
         - field_course_week_hours
+        - field_ask_exact_times
         - field_organizers_course_id
         - field_course_length
         - field_number_of_lessons
@@ -150,8 +152,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_ask_exact_times:
+    weight: 17
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_ask_more_email:
-    weight: 23
+    weight: 24
     settings:
       size: 60
       placeholder: ''
@@ -159,7 +168,7 @@ content:
     type: email_default
     region: content
   field_books_and_materials:
-    weight: 21
+    weight: 22
     settings:
       rows: 5
       placeholder: ''
@@ -179,7 +188,7 @@ content:
     type: datetime_default
     region: content
   field_course_features:
-    weight: 20
+    weight: 21
     settings:
       match_operator: CONTAINS
       size: 60
@@ -218,14 +227,14 @@ content:
     type: string_textfield
     region: content
   field_course_length:
-    weight: 18
+    weight: 19
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
   field_course_online_address:
-    weight: 22
+    weight: 23
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -339,7 +348,7 @@ content:
     type: office_hours_default
     region: content
   field_number_of_lessons:
-    weight: 19
+    weight: 20
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -353,7 +362,7 @@ content:
     type: boolean_checkbox
     region: content
   field_organizers_course_id:
-    weight: 17
+    weight: 18
     settings:
       size: 60
       placeholder: ''
