@@ -4,11 +4,18 @@
 
 .form-row {
   display: block !important; // Override
+  @include media-breakpoint-up(md) {
+    text-align: center;
+  }
 }
 
 .form-check {
   display: inline !important; // Override
   padding-left: 28px !important; // Override
+}
+
+#edit-course-town--wrapper {
+  display: inline-block !important;
 }
 
 .form-check-input {
