@@ -1,0 +1,4 @@
+label: 'Kuinka monta viikkoa alkamispäivämäärän jälkeen kurssit pidetään julkaistuina '
+description: "Esimerkiksi jos kenttään määritetään 3 viikkoa, tämän järjestäjän kurssit poistetaan julkaisusta automaattisesti 3 viikkoa alkamispäivämäärän jälkeen.\r\n\r\nSivuston laajuinen oletusarvo on 2 viikkoa."
+settings:
+  suffix: viikko(a)
