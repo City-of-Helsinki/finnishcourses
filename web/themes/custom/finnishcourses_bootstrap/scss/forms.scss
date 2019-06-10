@@ -39,10 +39,15 @@ legend {
 .form-item-keyword {
   .form-text, .form-control {
     color: #A5A5A5;
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       width: 100%;
       max-width: 93%;
       margin-left: 77px;
+    }
+    @include media-breakpoint-only(md) {
+      width: 82%;
+      max-width: 82%;
+      margin-left: 124px;
     }
   }
 }
@@ -52,7 +57,6 @@ legend {
     @include media-breakpoint-up(md) {
       width: 50%;
       max-width: 60%;
-      //margin-left: 77px;
     }
   }
 }
