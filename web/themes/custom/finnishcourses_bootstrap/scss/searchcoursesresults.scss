@@ -10,6 +10,7 @@
 
 .view-search-courses {
   .views-row {
+    padding-top: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid $border-shade;
   }
@@ -40,15 +41,53 @@
 
 .views-field-field-course-availability, .views-label-field-starting-level,
 .views-label-field-target-level, .views-label-field-course-start-date, .views-label-field-course-town,
-.views-label-field-course-fee, .views-label-field-course-id {
+.views-label-field-course-fee, .views-label-field-organizers-course-id {
   font-weight: 700;
 }
 
-.views-field-field-course-id {
+#edit-time-of-day--wrapper {
+  @include media-breakpoint-up(lg) {
+    top: -41px;
+    float: right;
+  }
+
+  legend {
+    font-weight: 700;
+    font-size: 16px;
+    text-align: left;
+
+    .fieldset-legend {
+      color: $text-shade;
+      position: absolute;
+    }
+  }
+
+  .fieldset-wrapper {
+    //todo: fix this
+    margin-top: -7px;
+    @include media-breakpoint-up(md) {
+      margin-left: 100px;
+    }
+    @include media-breakpoint-down(sm) {
+      display: inline;
+      #edit-time-of-day {
+        .form-checkboxes {
+          display: inline-grid;
+          margin-top: 30px;
+          .form-check {
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.views-field-field-organizers-course-id {
   margin-top: 47px;
   color: $id-shade;
 }
 
-.views-label-field-course-id {
+.views-label-field-organizers-course-id-course-id {
   margin-right: 5px;
 }

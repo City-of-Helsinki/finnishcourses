@@ -19,16 +19,17 @@ body {
   font-family: $font-family-base;
 }
 
-.node__content {
-  margin-bottom: 40px;
-}
-
 .row {
   margin-left: 0;
   margin-right: 0;
-  @include media-breakpoint-down(sm) {
-    display: flow-root;
-  }
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar-brand {
+  padding-bottom: 0px;
 }
 
 .region-secondary-menu {
@@ -37,7 +38,6 @@ body {
 
   .navbar-nav {
     display: flow-root;
-
     .nav-item {
       float: left;
 
@@ -47,23 +47,58 @@ body {
         font-size: 18px;
         display: block;
         padding: 8px;
+        &:hover{
+          color: $main-nav-shade; // "Override"
+        }
       }
     }
   }
 }
 
-.navbar-brand img {
-  width: 65%;
-  float: right;
-  @include media-breakpoint-down(sm) {
-    visibility: hidden;
+.language-switcher-language-url {
+  display: inherit;
+  position:absolute;
+
+  //todo: fix this
+  top: 30px;
+  right: 200px;
+  ul {
+    list-style: none;
+    display: flex;
+  }
+  .language-link {
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
+    padding: 10px;
+    &:hover{
+      text-decoration: none;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 14px;
+    }
+  }
+}
+
+.language-link.is-active {
+  border-bottom: 1.5px solid $underline-link-color;
+  padding-bottom: 8px;
+}
+
+.region-secondary-menu {
+  .navbar-brand img {
+    width: 65%;
+    float: right;
+    @include media-breakpoint-down(sm) {
+      visibility: hidden;
+    }
   }
 }
 
 .nav-link.active,
 .nav-item.show .nav-link {
-
-  text-decoration: $link-hover-decoration;
+  border-bottom: 1.5px solid $underline-link-color;
+  padding-bottom: 8px;
 }
 
 .title {
@@ -78,10 +113,6 @@ h1, h2, h3 {
 
 .section {
   margin: auto;
-}
-
-.bg-primary {
-  padding: 150px;
 }
 
 .site-footer__top {
@@ -119,10 +150,20 @@ h1, h2, h3 {
     margin: 20px 20px 20px 20px;
   }
 
-  .footer {
-    position: absolute;
+  @include media-breakpoint-up(md) {
+    .footer {
+      position: absolute;
+    }
   }
 }
+
+.path-node {
+  .footer {
+    @include media-breakpoint-up(md) {
+      position: absolute;
+    }
+  }
+  }
 
 .footer {
   left: 0;
@@ -139,7 +180,7 @@ h1, h2, h3 {
 
 
     .region-footer-first, .region-footer-second, .region-footer-third {
-      @include media-breakpoint-up(sm) {
+      @include media-breakpoint-up(md) {
         width: 100%;
         display: table-row;
         text-align: left;
@@ -179,59 +220,6 @@ h1, h2, h3 {
     }
   }
 
-// Material Design Icons
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}
-
-/* Rules for sizing the icon. */
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
-
-/* Rules for using icons as black on a light background. */
-.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
-.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
-
-/* Rules for using icons as white on a dark background. */
-.material-icons.md-light { color: rgba(255, 255, 255, 1); }
-.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
-
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
-
-
-.material-icons.md-36 {
-  position: absolute;
-  right: 59%;
-  @include media-breakpoint-down(sm) {
-    right: 71%;
-  }
-}
 
 /* COLORS
 --------------------------------------------------*/
@@ -288,6 +276,10 @@ h1, h2, h3, .fieldset-legend {
   }
   @include media-breakpoint-up(sm) {
     padding: 15px 100px 15px 100px;
+  }
+  &:hover {
+    background-color: $green-shade;
+    border-color: $green-shade;
   }
 }
 
