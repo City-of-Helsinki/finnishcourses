@@ -73,14 +73,18 @@ legend {
 }
 
 .form-item-starting-level-ext {
+  @include media-breakpoint-down(sm) {
+    top: 38px;
+    right: -13px;
+  }
   .form-select {
     @include media-breakpoint-up(lg) {
       width: 78%;
       max-width: 73%;
       margin-left: 108px;
     }
-    @include media-breakpoint-down(md) {
-      width: 111%;
+    @include media-breakpoint-down(sm) {
+      width: 116%;
     }
   }
 }
@@ -191,6 +195,9 @@ legend {
     @include media-breakpoint-up(sm) {
       width: 100%;
       max-width: 100%;
+    }
+    @include media-breakpoint-down(sm) {
+      margin-top: -68px;
     }
   }
 }
@@ -349,11 +356,11 @@ input[type="checkbox"] {
     top: 11px;
     right: 12px;
     @include media-breakpoint-down(md) {
-      top: 36px;
-      right: 15px;
+      top: 38px;
+      right: -13px;
+    }
     }
   }
-}
 
 .form-item-start-date, .form-item-start-date-2 {
    &::before {
@@ -377,7 +384,8 @@ input[type="checkbox"] {
     height: 2px;
     width: 2px;
     @include media-breakpoint-down(sm) {
-      right: 42px;
+      top: -48px;
+      left: 143px;
     }
   }
 }
@@ -389,8 +397,8 @@ input[type="checkbox"] {
   &::before {
     right: 56%;
     @include media-breakpoint-down(sm) {
-      top: 43px;
-      right: 20%;
+      top: 46px;
+      right: 64%;
     }
   }
 }
@@ -400,8 +408,25 @@ input[type="checkbox"] {
   &::before {
     right: 41%;
     @include media-breakpoint-down(sm) {
-      top: 12px;
-      right: 20%;
+      top: -48px;
+      right: 15%;
+    }
+  }
+}
+.form-item-start-date, .form-item-start-date-2  {
+  .form-control {
+    @include media-breakpoint-down(sm) {
+      width: 45%;
+    }
+  }
+}
+
+.form-item-start-date-2 {
+  @include media-breakpoint-down(sm) {
+    left: 11px;
+  .form-control {
+      float: right;
+      margin-top: -21%;
     }
   }
 }
