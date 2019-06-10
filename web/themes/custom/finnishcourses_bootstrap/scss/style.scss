@@ -168,14 +168,6 @@ h1, h2, h3 {
   }
 }
 
-.path-node {
-  .footer {
-    @include media-breakpoint-up(md) {
-      position: absolute;
-    }
-  }
-  }
-
 .footer {
   left: 0;
   bottom: 0;
