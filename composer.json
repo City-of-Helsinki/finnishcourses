@@ -126,6 +126,9 @@
             },
             "drupal/select_or_other": {
                 "Make Other option translatable": "patches/contrib/select_or_other/make_other_option_translatable-2926786-custom.patch"
+            },
+            "drupal/ultimate_cron": {
+                "Ability to unlock a cron job": "https://www.drupal.org/files/issues/2018-07-16/ultimate-cron_add-unlock-operation_2977639_2.patch"
             }
         },
         "drupal-scaffold": {

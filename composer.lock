@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "184db3c394787188475be61847b816fc",
+    "content-hash": "aaf906987c54e0980ce09cbf00950f5c",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5484,6 +5484,9 @@
                         "status": "not-covered",
                         "message": "Alpha releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Ability to unlock a cron job": "https://www.drupal.org/files/issues/2018-07-16/ultimate-cron_add-unlock-operation_2977639_2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
