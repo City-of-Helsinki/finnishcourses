@@ -32,16 +32,12 @@
 }
 
 .course-lessons, .course-registration {
-  @include media-breakpoint-down(sm) {
     margin-top: 20px;
-  }
 }
 
 .course-organizer {
-  @include media-breakpoint-down(sm) {
     margin-top: 30px;
     margin-bottom: 36px;
-  }
 }
 
 .course-registration {
