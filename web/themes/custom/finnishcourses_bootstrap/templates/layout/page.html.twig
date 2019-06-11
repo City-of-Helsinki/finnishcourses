@@ -67,9 +67,7 @@
  * @see html.html.twig
  */
 #}
-{%
-    set container = theme.settings.fluid_container ? 'container-fluid' : 'container'
-%}
+{% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
 
 <div class=" {{ container-fluid }} ">
     {% block head %}
@@ -109,7 +107,7 @@
         <div id="main" class="main">
             <div class="row clearfix">
                 <div class="col-sm-9 mx-auto mw-75 p-3">
-                {{ page.breadcrumb }}
+                    {{ page.breadcrumb }}
                     <main{{ content_attributes }}>
                         <section class="section">
                             <a id="main-content" tabindex="-1"></a>
@@ -143,8 +141,11 @@
                 {{ page.footer_first }}
                 {{ page.footer_second }}
                 {{ page.footer_third }}
-                <img src="{{ base_path ~ directory }}/images/logo-infofinland.png" />
+                <img src="{{ base_path ~ directory }}/images/logo-infofinland.png"/>
             </div>
+            <button data-drupal-selector="edit-submit-search-courses" type="submit" id="edit-submit-search-courses" value="View courses" class="button-mobile js-form-submit form-submit btn btn-primary fixed-bottom">
+                View courses
+            </button>
         {% endif %}
     </div>
 {% endblock %}
