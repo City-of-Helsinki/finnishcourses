@@ -1,0 +1,32 @@
+uuid: 35409a8e-d1eb-48d5-9bfe-ac3ce6ab88c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - course_cron_jobs
+_core:
+  default_config_hash: 7__IyzSvNb9Blaap5HobvJiTNAwR3PudK_sA64nMWdU
+title: 'Unpublish courses'
+id: unpublish_courses
+weight: 0
+module: course_cron_jobs
+callback: _course_cron_jobs_unpublish_courses
+scheduler:
+  id: crontab
+  configuration:
+    rules:
+      - '* * * * *'
+    catch_up: 0
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

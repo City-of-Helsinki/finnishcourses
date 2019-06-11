@@ -1,0 +1,66 @@
+<?php
+
+use Drupal\course_services\CourseDataService;
+use Drupal\user\Entity\User;
+
+function _course_cron_jobs_unpublish_courses() {
+  // // Login as user 1
+  // $user = User::load(1);
+  // user_login_finalize($user);
+
+  $courseDataService = \Drupal::service('course_services.course_data_service');
+  \Drupal::logger('course_cron_jobs')->notice('Course cron run');
+  // Get all published courses
+  $allPublishedCourses = $courseDataService->queryAllCourses(1);
+
+  if (!$allPublishedCourses) {
+    return;
+  }
+
+  _handle_published_courses($allPublishedCourses);
+}
+
+function _handle_published_courses($allPublishedCourses) {
+
+  $courseDataService = \Drupal::service('course_services.course_data_service');
+
+  foreach ($allPublishedCourses as $key => $course) {
+
+    $courseOrganization = $courseDataService->getFieldValue('field_course_organization', $course, 'targetId');
+
+    if (!$courseOrganization) {
+      continue;
+    }
+
+    $weekCycle = _get_week_cycle($courseOrganization);
+
+    $compareDate = strtotime('-'.$weekCycle.' weeks');
+
+    $courseStartDate = $courseDataService->getFieldValue('field_course_start_date', $course, 'valueInArray');
+
+    if (empty($courseStartDate)) {
+      continue;
+    }
+
+    if (strtotime($courseStartDate) < $compareDate) {
+      $courseDataService->setNodeValue('published', 'FALSE', $course);
+    }
+
+
+  }
+}
+
+function _get_week_cycle($organization) {
+
+  $courseDataService = \Drupal::service('course_services.course_data_service');
+
+  $organizationWeekCycle = '';
+
+  $organizationWeekCycle = $courseDataService->getTermsFieldValue('field_courses_unpublishing_cycle', $organization, 'valueInArray');
+
+  if (empty($organizationWeekCycle)) {
+    $organizationWeekCycle = '2';
+  }
+
+  return $organizationWeekCycle;
+}

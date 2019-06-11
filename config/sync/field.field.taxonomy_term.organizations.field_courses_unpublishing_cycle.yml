@@ -1,0 +1,23 @@
+uuid: 3f20b905-eca0-417e-86b0-27e792b4dbbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_courses_unpublishing_cycle
+    - taxonomy.vocabulary.organizations
+id: taxonomy_term.organizations.field_courses_unpublishing_cycle
+field_name: field_courses_unpublishing_cycle
+entity_type: taxonomy_term
+bundle: organizations
+label: 'Define how many weeks courses will stay published after start date'
+description: "For example if you input 3 weeks, organization course will be automatically unpublished after 2 weeks its start date.\r\n\r\nGlobal default is 2 weeks."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: week(s)
+field_type: integer

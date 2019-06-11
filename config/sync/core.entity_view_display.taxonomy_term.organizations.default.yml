@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.organizations.field_active_organization
     - field.field.taxonomy_term.organizations.field_address
+    - field.field.taxonomy_term.organizations.field_courses_unpublishing_cycle
     - field.field.taxonomy_term.organizations.field_email
     - field.field.taxonomy_term.organizations.field_locations_addresses
     - field.field.taxonomy_term.organizations.field_locations_towns
@@ -51,6 +52,7 @@ content:
 hidden:
   description: true
   field_active_organization: true
+  field_courses_unpublishing_cycle: true
   field_email: true
   field_locations_addresses: true
   field_locations_towns: true
