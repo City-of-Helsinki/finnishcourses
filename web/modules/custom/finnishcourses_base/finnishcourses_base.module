@@ -34,7 +34,7 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     //kint($form);
   }
 
-  if (in_array($form_id, ['node_course_form', 'node_course_edit_form'])) {
+  if (in_array($form_id, ['node_course_form', 'node_course_edit_form', 'node_course_quick_node_clone_form'])) {
 
      // Set ajax callback function when organization field value changed
     // refreshLocationOptions callback loads street address and town options for selected organization

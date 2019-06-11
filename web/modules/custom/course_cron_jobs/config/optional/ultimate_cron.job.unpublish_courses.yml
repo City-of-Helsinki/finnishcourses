@@ -3,6 +3,7 @@ status: true
 dependencies:
   module:
     - node
+    - user
 title: 'Unpublish courses'
 id: unpublish_courses
 module: course_cron_jobs

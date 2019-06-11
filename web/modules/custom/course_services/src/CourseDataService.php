@@ -79,7 +79,6 @@ class CourseDataService {
           ->condition('status', $status);
     $entity_ids = $query->execute();
 
-    ddl($entity_ids);
     $allCourses = $entity_ids;
 
     return $allCourses;
@@ -138,6 +137,43 @@ class CourseDataService {
 
   }
 
+  public function getTermsFieldValue($fieldName, $term, $valueSource = 'base') {
+    if (!$fieldName || !$term) {
+      return FALSE;
+    }
+
+    if (!is_object($term)) {
+      if (isset($term['target_id'])) {
+        $term = $this->loadTaxonomyTermByTid($term['target_id']);
+      } else {
+        $term = $this->loadTaxonomyTermByTid($term);
+      }
+    }
+
+    if (!$term && !is_object($term)) {
+      return FALSE;
+    }
+
+    $fieldValue = $term->get($fieldName)->getValue();
+
+    if (!empty($fieldValue)) {
+      if ($valueSource == 'valueInArray') {
+        $fieldValue = $fieldValue[0]['value'];
+      }
+    }
+
+    return $fieldValue;
+
+  }
+
+  public function loadTaxonomyTermByTid($tid) {
+    if (empty($tid)) {
+      return FALSE;
+    }
+
+    return $this->entityTypeManager->getStorage('taxonomy_term')->load($tid);
+  }
+
   public function loadAccount() {
 
     $account = $this->entityTypeManager->getStorage('user')
@@ -147,11 +183,40 @@ class CourseDataService {
   }
 
   public function loadNode($nid) {
+    if (empty($nid)) {
+      return FALSE;
+    }
 
-    $node = $this->entityTypeManager->getStorage('node')
-    ->load($nid);
+    return $this->entityTypeManager->getStorage('node')->load($nid);;
+  }
 
-    return $node;
+  public function setNodeValue($fieldName, $value, $node) {
+    if (!$fieldName || !$value || !$node) {
+      return FALSE;
+    }
+
+    if (!is_object($node)) {
+      if (isset($node['target_id'])) {
+        $node = $this->loadNode($node['target_id']);
+      } else {
+        $node = $this->loadNode($node);
+      }
+    }
+
+    if (!$node && !is_object($node)) {
+      return FALSE;
+    }
+
+    if ($fieldName == 'published') {
+      if ($value == 'FALSE') {
+        $value = FALSE;
+      } else {
+        $value = TRUE;
+      }
+      $node->setPublished($value);
+    }
+
+    $node->save();
   }
 
 }
