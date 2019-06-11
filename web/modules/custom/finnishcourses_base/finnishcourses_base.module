@@ -432,6 +432,14 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
     $form['more_options']['start_date']['#title'] = t('Course starts');
     $form['more_options']['keyword']['#title'] = t('Keyword');
 
+    $form['submit_fixed'] = [
+      '#type' => 'submit',
+      '#value' => t('View Courses'),
+      '#access' => TRUE,
+      //'#submit' => ['node_form_submit'],
+      '#weight' => 99,
+    ];
+
     unset($form['course_fee']);
     unset($form['time_of_day']);
     unset($form['starting_level_ext']);
