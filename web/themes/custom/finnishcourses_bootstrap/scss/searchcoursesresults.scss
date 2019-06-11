@@ -91,3 +91,32 @@
 .views-label-field-organizers-course-id-course-id {
   margin-right: 5px;
 }
+
+.views-field-field-course-week-hours {
+  .field-contet {
+    .office-hours {
+      display: flex;
+      margin-top: 10px;
+      text-align: center;
+
+      .office-hours__item-label {
+        width: auto !important; // Override
+      }
+
+      .office-hours__item {
+        font-weight: bold;
+        display: grid;
+        margin-left: 1px;
+        margin-right: 1px;
+        width: 140px;
+        height: 100px;
+        background-color: $dark-schedule-shade;
+      }
+
+      .empty {
+        background-color: $light-schedule-shade;
+      }
+
+    }
+  }
+}
