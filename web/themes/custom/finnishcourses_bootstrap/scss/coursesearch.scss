@@ -186,6 +186,11 @@ legend {
       margin-top: 0.25rem;
       margin-left: 12px;
     }
+    @include media-breakpoint-only(md) {
+      width: 82%;
+      max-width: 85%;
+      margin-left: 136px;
+    }
   }
 
   .form-item-keyword {
@@ -355,6 +360,11 @@ legend {
       @include media-breakpoint-up(lg) {
         left: 42%;
       }
+    }
+    @include media-breakpoint-down(sm) {
+      top: 38px;
+      right: -13px;
+    }
     }
   }
 
