@@ -357,7 +357,6 @@ legend {
   }
 
   //Icons
-  //todo: also need a upward arrow - need to fix the jquery code
   .more-search-options-trigger {
     &::before {
       content: url(../images/icons/ic_chevron_down@1x.svg);
@@ -372,7 +371,6 @@ legend {
     }
   }
 
-  //todo: change position, after everything else have been fixed
   .form-item-starting-level-ext {
     float: left;
     position: relative;
@@ -390,7 +388,6 @@ legend {
     }
   }
 
-  //todo: change position, after everything else have been fixed
   .form-item-start-date, .form-item-start-date-2 {
     &::before {
       content: url(../images/icons/ic_insert_invitation@1x.svg);
@@ -430,7 +427,6 @@ legend {
     }
   }
 
-  //todo: change position, after everything else have been fixed
   .btn-primary {
     &::before {
       content: url(../images/icons/ic_search@1x.svg);
