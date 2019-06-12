@@ -140,10 +140,19 @@ h1, h2, h3 {
   font-weight: 900;
 }
 
-.section {
-  margin: 50px;
-  h2 {
-    margin-top: 30px;
+.path-frontpage {
+  .section {
+    margin: auto;
+  }
+}
+
+.path-node {
+  .section {
+    margin: 50px;
+
+    h2 {
+      margin-top: 30px;
+    }
   }
 }
 
