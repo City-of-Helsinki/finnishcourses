@@ -5,12 +5,18 @@
 --------------------------------------------------*/
 
 #block-exposedformsearch-coursespage-1 {
+  @include media-breakpoint-up(md) {
+    padding-top: 50px;
+  }
   .content {
     margin-top: 50px;
   }
 
   h2 {
     text-align: center;
+    @include media-breakpoint-up(lg) {
+      font-size: 40px;
+    }
   }
 }
 
@@ -21,12 +27,18 @@
 
 .fieldset-legend {
   @include media-breakpoint-up(md) {
-    left: 1.5%;
+    left: 0.5%;
   }
 }
 
 legend {
   text-align: center;
+}
+
+#edit-course-fee--wrapper {
+  legend {
+    text-align: left;
+  }
 }
 
 #edit-course-town--wrapper {
@@ -78,11 +90,12 @@ legend {
       left: 4%;
     }
   }
+
   .form-select {
     @include media-breakpoint-up(lg) {
       width: 78%;
       max-width: 73%;
-      margin-left: 108px;
+      margin-left: 110px;
     }
     @include media-breakpoint-down(sm) {
       width: 111%;
@@ -104,337 +117,368 @@ legend {
   }
 }
 
-  #edit-course-fee {
-    @include media-breakpoint-down(sm) {
-      display: inline-grid;
-      margin-bottom: 16px;
-      .form-check {
-        padding: 5px;
+#edit-course-fee {
+  @include media-breakpoint-down(sm) {
+    display: inline-grid;
+    margin-bottom: 16px;
+    .form-check {
+      padding: 5px;
 
-        label {
-          margin-left: 10px;
-        }
+      label {
+        margin-left: 10px;
       }
     }
   }
+}
 
-  legend {
-    text-align: left;
+legend {
+  text-align: left;
+}
+
+#edit-course-fee--wrapper {
+  .fieldset-wrapper {
+    width: 100%;
+    @include media-breakpoint-up(md) {
+      margin-top: -7px;
+      margin-left: -26%;
+    }
+    @include media-breakpoint-down(sm) {
+      padding-top: 30px;
+    }
   }
+}
 
-  #edit-course-fee--wrapper {
-    .fieldset-wrapper {
-      width: 100%;
-      @include media-breakpoint-up(md) {
-        margin-top: -7px;
-        margin-left: -26%;
-      }
-      @include media-breakpoint-down(sm) {
-        padding-top: 30px;
-      }
+.form-control {
+  display: inline; // Override
+  width: auto; // Override
+}
+
+.form-item-start-date, .form-item-start-date-2 {
+  display: inline;
+
+  label {
+    @include media-breakpoint-up(md) {
+      left: -32%;
     }
   }
 
   .form-control {
-    display: inline; // Override
-    width: auto; // Override
-  }
-
-  .form-item-start-date, .form-item-start-date-2 {
-    display: inline;
-
-    label {
-      @include media-breakpoint-up(md) {
-        left: -38%;
-      }
-    }
-
-    .form-control {
-      @include media-breakpoint-up(md) {
-        width: 46%;
-      }
-    }
-  }
-
-  .form-item-start-date {
     @include media-breakpoint-up(md) {
-      left: 29%;
-    }
-  }
-
-  .form-item-start-date-2 {
-    @include media-breakpoint-up(md) {
-      left: 11%;
-    }
-    @include media-breakpoint-down(md) {
-      margin-top: 46px;
-    }
-
-    .form-text {
-      @include media-breakpoint-up(md) {
-        margin-left: 70px;
-      }
-    }
-  }
-
-  .form-text, .form-select {
-    border-color: $form-border-shade;
-    border-radius: 2px;
-    margin-left: 110px;
-    -webkit-appearance: none;
-    @include media-breakpoint-up(sm) {
-      margin-top: 0.25rem;
-      margin-left: 12px;
-    }
-    @include media-breakpoint-only(md) {
-      width: 82%;
-      max-width: 85%;
-      margin-left: 136px;
-    }
-  }
-
-  .form-item-keyword {
-    @include media-breakpoint-up(lg) {
-      margin-top: -31px;
-    }
-    @include media-breakpoint-down(md) {
-      margin-top: -30px;
-    }
-
-    label {
-      @include media-breakpoint-up(md) {
-        left: 2%;
-      }
-    }
-
-    .form-text, .form-control {
-      color: #A5A5A5;
-      @include media-breakpoint-only(sm) {
-        width: 100%;
-        max-width: 100%;
-      }
-      @include media-breakpoint-up(md) {
-        width: 80%;
-        max-width: 80%;
-      }
-    }
-  }
-
-  // Radio button
-
-  // Check variable values
-  @if ($custom-radio-size % 2 == 1) {
-    @error '$custom-radio-size must be even';
-  }
-
-  // round to nearest even number
-  @if ($custom-radio-pip-size % 2 == 1) {
-    $custom-radio-pip-size: $custom-radio-pip-size - 1;
-  }
-
-
-  input[type="radio"] {
-    position: relative;
-    display: inline-block;
-    width: 12px;
-    height: 13px;
-    left: 10px;
-    border-radius: 100%;
-    outline: none !important;
-    -webkit-appearance: none;
-
-    // Radio
-    &::before {
-      position: relative;
-      top: -2px;
-      left: -2px;
-      display: block;
-      content: '';
-      background: $custom-unchecked-bg;
-      border: $custom-border-width solid $custom-unchecked-border;
-      border-radius: 100%;
-      width: 23px;
-      height: 22px;
-    }
-
-    &:checked::before {
-      background: $custom-checked-bg;
-      border-color: $custom-checked-border;
-    }
-
-    &:disabled::before {
-      cursor: not-allowed;
-      background-color: $custom-disabled-bg;
-    }
-
-    // Radio Pip
-    &::after {
-      position: relative;
-      top: 1px;
-      left: 0;
-      display: block;
-      content: '';
-      background: $primary-shade;
-      border-radius: 100%;
-      width: 0;
-      height: 0;
-    }
-
-
-    &:checked::after {
-      transition: all ease-in-out $custom-radio-transition-speed 0;
-      top: -19px;
-      left: 3.5px;
-      width: $custom-radio-pip-size;
-      height: $custom-radio-pip-size;
-    }
-  }
-
-  // Checkbox
-  input[type="checkbox"] {
-    position: relative;
-    display: inline-block;
-    width: 12px;
-    height: 13px;
-    left: 10px;
-    outline: none !important;
-    -webkit-appearance: none;
-
-    // Unchecked
-    &::before {
-      position: relative;
-      top: -4px;
-      margin-left: -14px;
-      display: block;
-      content: '';
-      background: $custom-unchecked-bg;
-      border: $custom-border-width solid $custom-unchecked-border;
-      border-radius: 12%;
-      width: 28px;
-      height: 25px;
-    }
-
-    &:checked::before {
-      background: $custom-checked-bg;
-      border-color: $custom-checked-border;
-    }
-
-    &:disabled::before {
-      cursor: not-allowed;
-      background-color: $custom-disabled-bg;
-    }
-
-    // Checkmark
-    &::after {
-      position: relative;
-      top: 1px;
-      left: 0;
-      display: block;
-      content: '';
-      border-radius: 3px;
-      width: 0;
-      height: 0;
-    }
-
-
-    &:checked::after {
-      top: -29px;
-      left: -6px;
-      width: 13px;
-      height: 21px;
-      border-bottom: 5px solid $primary-shade;
-      border-right: 5px solid $primary-shade;
-      transform: rotate(45deg);
-    }
-  }
-
-  //Icons
-  .more-search-options-trigger {
-    &::before {
-      content: url(../images/icons/ic_chevron_down@1x.svg);
-      position: absolute;
-      left: 38%;
-      @include media-breakpoint-down(sm) {
-        left: 22%;
-      }
-      @include media-breakpoint-up(lg) {
-        left: 42%;
-      }
+      width: 46%;
     }
     @include media-breakpoint-down(sm) {
-      top: 38px;
-      right: -13px;
-    }
+      width: 45%;
     }
   }
-
-  .form-item-starting-level-ext {
-    float: left;
-    position: relative;
-
-    &::before {
-      content: url(../images/icons/ic_chevron_down@1x.svg);
-      color: $primary-shade;
-      position: absolute;
-      top: 11px;
-      right: 12px;
-      @include media-breakpoint-down(md) {
-        top: 36px;
-        right: 15px;
-      }
-    }
-  }
-
-  .form-item-start-date, .form-item-start-date-2 {
-    &::before {
-      content: url(../images/icons/ic_insert_invitation@1x.svg);
-      position: absolute;
-      top: 11px;
-      height: 2px;
-      width: 2px;
-      @include media-breakpoint-down(sm) {
-        right: 42px;
-      }
-    }
-  }
+}
 
   .form-item-start-date {
     @include media-breakpoint-up(md) {
-      top: -42px;
+      left: 25.5%;
     }
-
-    &::before {
-      right: 56%;
-      @include media-breakpoint-down(sm) {
-        top: 43px;
-        right: 20%;
-      }
+    @include media-breakpoint-down(sm) {
+      top: 1px;
     }
   }
 
-  .form-item-start-date-2 {
+.form-item-start-date-2 {
+  @include media-breakpoint-up(md) {
+    left: 11%;
+  }
+  @include media-breakpoint-only(md) {
+    margin-top: 46px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-top: -5%;
+  }
+
+  .form-control {
+    @include media-breakpoint-down(sm) {
+      float: right;
+    }
+  }
+
+  .form-text {
+    @include media-breakpoint-up(md) {
+      margin-left: 70px;
+    }
+  }
+}
+
+.form-text, .form-select {
+  border-color: $form-border-shade;
+  border-radius: 2px;
+  margin-left: 110px;
+  -webkit-appearance: none;
+  @include media-breakpoint-up(sm) {
+    margin-top: 0.25rem;
+  }
+  @include media-breakpoint-only(md) {
+    width: 82%;
+    max-width: 85%;
+    margin-left: 136px;
+  }
+}
+
+.form-item-keyword {
+  @include media-breakpoint-up(lg) {
+    margin-top: -31px;
+  }
+  @include media-breakpoint-down(md) {
+    margin-top: -30px;
+  }
+
+  label {
+    @include media-breakpoint-up(md) {
+      left: 2%;
+    }
+  }
+
+  .form-text, .form-control {
+    color: #A5A5A5;
+    @include media-breakpoint-only(sm) {
+      width: 100%;
+      max-width: 100%;
+    }
+    @include media-breakpoint-only(md) {
+      width: 80%;
+      max-width: 80%;
+    }
+    @include media-breakpoint-up(lg) {
+      width: 91% !important;
+      max-width: 93%;
+      margin-left: 105px !important;
+    }
+  }
+}
+
+// Radio button
+
+// Check variable values
+@if ($custom-radio-size % 2 == 1) {
+  @error '$custom-radio-size must be even';
+}
+
+// round to nearest even number
+@if ($custom-radio-pip-size % 2 == 1) {
+  $custom-radio-pip-size: $custom-radio-pip-size - 1;
+}
+
+
+input[type="radio"] {
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 13px;
+  left: 10px;
+  border-radius: 100%;
+  outline: none !important;
+  -webkit-appearance: none;
+
+  // Radio
+  &::before {
+    position: relative;
+    top: -2px;
+    left: -2px;
+    display: block;
+    content: '';
+    background: $custom-unchecked-bg;
+    border: $custom-border-width solid $custom-unchecked-border;
+    border-radius: 100%;
+    width: 23px;
+    height: 22px;
+  }
+
+  &:checked::before {
+    background: $custom-checked-bg;
+    border-color: $custom-checked-border;
+  }
+
+  &:disabled::before {
+    cursor: not-allowed;
+    background-color: $custom-disabled-bg;
+  }
+
+  // Radio Pip
+  &::after {
+    position: relative;
+    top: 1px;
+    left: 0;
+    display: block;
+    content: '';
+    background: $primary-shade;
+    border-radius: 100%;
+    width: 0;
+    height: 0;
+  }
+
+
+  &:checked::after {
+    transition: all ease-in-out $custom-radio-transition-speed 0;
+    top: -19px;
+    left: 3.5px;
+    width: $custom-radio-pip-size;
+    height: $custom-radio-pip-size;
+  }
+}
+
+// Checkbox
+input[type="checkbox"] {
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 13px;
+  left: 10px;
+  outline: none !important;
+  -webkit-appearance: none;
+
+  // Unchecked
+  &::before {
+    position: relative;
+    top: -4px;
+    margin-left: -14px;
+    display: block;
+    content: '';
+    background: $custom-unchecked-bg;
+    border: $custom-border-width solid $custom-unchecked-border;
+    border-radius: 12%;
+    width: 28px;
+    height: 25px;
+  }
+
+  &:checked::before {
+    background: $custom-checked-bg;
+    border-color: $custom-checked-border;
+  }
+
+  &:disabled::before {
+    cursor: not-allowed;
+    background-color: $custom-disabled-bg;
+  }
+
+  // Checkmark
+  &::after {
+    position: relative;
+    top: 1px;
+    left: 0;
+    display: block;
+    content: '';
+    border-radius: 3px;
+    width: 0;
+    height: 0;
+  }
+
+
+  &:checked::after {
+    top: -29px;
+    left: -6px;
+    width: 13px;
+    height: 21px;
+    border-bottom: 5px solid $primary-shade;
+    border-right: 5px solid $primary-shade;
+    transform: rotate(45deg);
+  }
+}
+
+//Icons
+.more-search-options-trigger {
+  &::before {
+    content: url(../images/icons/ic_chevron_down@1x.svg);
+    position: relative;
+    left: -1%;
+  }
+
+  @include media-breakpoint-down(sm) {
+    top: 38px;
+    right: -13px;
+  }
+}
+
+.form-item-starting-level-ext {
+  float: left;
+  position: relative;
+
+  &::before {
+    content: url(../images/icons/ic_chevron_down@1x.svg);
+    color: $primary-shade;
+    position: absolute;
+    top: 11px;
+    right: 12px;
+    @include media-breakpoint-down(md) {
+      top: 36px;
+      right: 15px;
+    }
+  }
+}
+
+.form-item-start-date, .form-item-start-date-2 {
+  &::before {
+    content: url(../images/icons/ic_insert_invitation@1x.svg);
+    position: absolute;
+    top: 11px;
+    height: 2px;
+    width: 2px;
+    @include media-breakpoint-down(sm) {
+      right: 42px;
+    }
+  }
+}
+
+.form-item-start-date {
+  @include media-breakpoint-up(md) {
     top: -42px;
-
-    &::before {
-      right: 41%;
-      @include media-breakpoint-down(sm) {
-        top: 12px;
-        right: 20%;
-      }
-    }
   }
 
-  .btn-primary {
-    &::before {
-      content: url(../images/icons/ic_search@1x.svg);
-      position: absolute;
-      right: 60%;
-      @include media-breakpoint-down(sm) {
-        right: 71%;
-      }
-      @include media-breakpoint-up(lg) {
-        right: 57%;
-      }
+  &::before {
+    right: 56%;
+    @include media-breakpoint-down(sm) {
+      top: 43px;
+      right: 64%;
     }
   }
+}
+
+.form-item-start-date-2 {
+  top: -42px;
+  &::before {
+    right: 41%;
+    @include media-breakpoint-down(sm) {
+      top: 12px;
+      right: 14%;
+    }
+  }
+}
+
+.form-item-start-date-2 {
+  &::after {
+    content: ("-");
+    position: absolute;
+    top: 11px;
+    height: 2px;
+    width: 2px;
+    @include media-breakpoint-up(md) {
+      right: 86%;
+    }
+    @include media-breakpoint-down(sm) {
+      right: 50%;
+    }
+  }
+}
+
+.btn-primary {
+  &::before {
+    content: url(../images/icons/ic_search@1x.svg);
+    position: relative;
+    @include media-breakpoint-down(sm) {
+      right: 8%;
+    }
+    @include media-breakpoint-only(md) {
+      right: 6%;
+    }
+    @include media-breakpoint-up(lg) {
+      right: 1%;
+    }
+  }
+}
 
