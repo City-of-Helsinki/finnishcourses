@@ -19,6 +19,10 @@ body {
   font-family: $font-family-base;
 }
 
+.main-content {
+    margin-top: 50px;
+}
+
 .row {
   margin-left: 0;
   margin-right: 0;
@@ -223,14 +227,28 @@ h1, h2, h3 {
     }
   }
 
-.button-mobile {
-  border-radius: 0 !important; //Override, for some weird reason with Bootstrap
-  &:hover {
-    background-color: $green-shade; //Override
-    border-color: $green-shade; //Override
+#edit-actions {
+  .btn-primary {
+    right: 0%;
+    top: 87%;
+    padding: 17px;
+    border-radius: 0 !important; //Override, for some weird reason with Bootstrap
+    &:hover {
+      background-color: $green-shade; //Override
+      border-color: $green-shade; //Override
+    }
+
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
   }
-  @include media-breakpoint-up(md) {
-    display: none;
+}
+
+#views-exposed-form-search-courses-page-1 {
+  #edit-actions {
+    .btn-primary {
+      display: none;
+    }
   }
 }
 
