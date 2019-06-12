@@ -226,9 +226,9 @@ legend {
       max-width: 80%;
     }
     @include media-breakpoint-up(lg) {
-      width: 91%;
+      width: 91% !important;
       max-width: 93%;
-      margin-left: 105px;
+      margin-left: 105px !important;
     }
   }
 }
@@ -426,6 +426,22 @@ input[type="checkbox"] {
     @include media-breakpoint-down(sm) {
       top: 12px;
       right: 20%;
+    }
+  }
+}
+
+.form-item-start-date-2 {
+  &::after {
+    content: ("-");
+    position: absolute;
+    top: 11px;
+    height: 2px;
+    width: 2px;
+    @include media-breakpoint-up(md) {
+      right: 86%;
+    }
+    @include media-breakpoint-down(sm) {
+      right: 42px;
     }
   }
 }
