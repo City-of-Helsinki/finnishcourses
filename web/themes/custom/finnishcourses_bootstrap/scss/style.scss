@@ -21,6 +21,21 @@ body {
 
 .main-content {
     margin-top: 50px;
+  @include media-breakpoint-down(sm) {
+    margin-top: 26px;
+  }
+}
+
+
+@include media-breakpoint-down(sm) {
+.node__content {
+  margin-top: 80px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+  }
 }
 
 .row {
@@ -233,6 +248,7 @@ h1, h2, h3 {
     top: 87%;
     padding: 17px;
     border-radius: 0 !important; //Override, for some weird reason with Bootstrap
+    position: fixed;
     &:hover {
       background-color: $green-shade; //Override
       border-color: $green-shade; //Override
@@ -244,10 +260,12 @@ h1, h2, h3 {
   }
 }
 
-#views-exposed-form-search-courses-page-1 {
-  #edit-actions {
-    .btn-primary {
-      display: none;
+.node__content {
+  #views-exposed-form-search-courses-page-1 {
+    #edit-actions {
+      .btn-primary {
+        display: none;
+      }
     }
   }
 }

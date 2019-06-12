@@ -5,14 +5,18 @@
 --------------------------------------------------*/
 
 #block-exposedformsearch-coursespage-1 {
-  padding-top: 50px;
+  @include media-breakpoint-up(md) {
+    padding-top: 50px;
+  }
   .content {
     margin-top: 50px;
   }
 
   h2 {
     text-align: center;
-    font-size: 40px;
+    @include media-breakpoint-up(lg) {
+      font-size: 40px;
+    }
   }
 }
 
@@ -162,21 +166,37 @@ legend {
     @include media-breakpoint-up(md) {
       width: 46%;
     }
+    @include media-breakpoint-down(sm) {
+      width: 45%;
+    }
   }
 }
 
-.form-item-start-date {
-  @include media-breakpoint-up(md) {
-    left: 25.5%;
+  .form-item-start-date {
+    @include media-breakpoint-up(md) {
+      left: 25.5%;
+    }
+    @include media-breakpoint-down(sm) {
+      top: 1px;
+    }
   }
-}
 
 .form-item-start-date-2 {
   @include media-breakpoint-up(md) {
     left: 11%;
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-only(md) {
     margin-top: 46px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-top: -5%;
+  }
+
+  .form-control {
+    @include media-breakpoint-down(sm) {
+      float: right;
+    }
   }
 
   .form-text {
@@ -414,7 +434,7 @@ input[type="checkbox"] {
     right: 56%;
     @include media-breakpoint-down(sm) {
       top: 43px;
-      right: 20%;
+      right: 64%;
     }
   }
 }
@@ -425,7 +445,7 @@ input[type="checkbox"] {
     right: 41%;
     @include media-breakpoint-down(sm) {
       top: 12px;
-      right: 20%;
+      right: 14%;
     }
   }
 }
@@ -441,7 +461,7 @@ input[type="checkbox"] {
       right: 86%;
     }
     @include media-breakpoint-down(sm) {
-      right: 42px;
+      right: 50%;
     }
   }
 }
