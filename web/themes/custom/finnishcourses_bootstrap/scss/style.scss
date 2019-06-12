@@ -20,7 +20,6 @@ body {
 }
 
 .main-content {
-    margin-top: 50px;
   @include media-breakpoint-down(sm) {
     margin-top: 26px;
   }
@@ -142,7 +141,10 @@ h1, h2, h3 {
 }
 
 .section {
-  margin: auto;
+  margin: 50px;
+  h2 {
+    margin-top: 30px;
+  }
 }
 
 .site-footer__top {
