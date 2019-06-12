@@ -21,4 +21,3 @@ settings:
       title: Leveä
 element:
   default_more_title: Lisää
-  default_section_title_tag: h2

@@ -9,7 +9,7 @@ use Drupal\Core\Render\Element;
 
 function course_permissions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
-  if (in_array($form_id, ['node_course_form', 'node_course_edit_form'])) {
+  if (in_array($form_id, ['node_course_form', 'node_course_edit_form', 'node_course_quick_node_clone_form'])) {
 
     $userAccess = TRUE;
     

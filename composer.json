@@ -63,6 +63,7 @@
         "drupal/shortcutperrole": "^1.0@RC",
         "drupal/time_range": "^1.1",
         "drupal/token": "^1.5",
+        "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/view_unpublished": "^1.0@alpha",
         "drupal/webform": "^5.2",
         "drush/drush": "^9.0.0",
@@ -125,6 +126,9 @@
             },
             "drupal/select_or_other": {
                 "Make Other option translatable": "patches/contrib/select_or_other/make_other_option_translatable-2926786-custom.patch"
+            },
+            "drupal/ultimate_cron": {
+                "Ability to unlock a cron job": "https://www.drupal.org/files/issues/2018-07-16/ultimate-cron_add-unlock-operation_2977639_2.patch"
             }
         },
         "drupal-scaffold": {

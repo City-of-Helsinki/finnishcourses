@@ -13,6 +13,11 @@
     padding-top: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid $border-shade;
+    @include media-breakpoint-down(sm) {
+      padding-top: 0;
+      padding-bottom: 0;
+      margin: 20px 0 25px 0;
+    }
   }
 
   .view-header {
@@ -93,4 +98,33 @@
 
 .views-label-field-organizers-course-id-course-id {
   margin-right: 5px;
+}
+
+.views-field-field-course-week-hours {
+  .field-content {
+    .office-hours {
+      display: flex;
+      margin-top: 10px;
+      text-align: center;
+
+      .office-hours__item-label {
+        width: auto !important; // Override
+      }
+
+      .office-hours__item {
+        font-weight: bold;
+        display: grid;
+        margin-left: 1px;
+        margin-right: 1px;
+        width: 140px;
+        height: 100px;
+        background-color: $dark-schedule-shade;
+      }
+
+      .empty {
+        background-color: $light-schedule-shade;
+      }
+
+    }
+  }
 }

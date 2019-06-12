@@ -19,6 +19,24 @@ body {
   font-family: $font-family-base;
 }
 
+.main-content {
+  @include media-breakpoint-down(sm) {
+    margin-top: 26px;
+  }
+}
+
+
+@include media-breakpoint-down(sm) {
+.node__content {
+  margin-top: 80px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
 .row {
   margin-left: 0;
   margin-right: 0;
@@ -122,8 +140,20 @@ h1, h2, h3 {
   font-weight: 900;
 }
 
-.section {
-  margin: auto;
+.path-frontpage {
+  .section {
+    margin: auto;
+  }
+}
+
+.path-node {
+  .section {
+    margin: 50px;
+
+    h2 {
+      margin-top: 30px;
+    }
+  }
 }
 
 .site-footer__top {
@@ -222,6 +252,34 @@ h1, h2, h3 {
       }
     }
   }
+
+#edit-actions {
+  .btn-primary {
+    right: 0%;
+    top: 87%;
+    padding: 17px;
+    border-radius: 0 !important; //Override, for some weird reason with Bootstrap
+    position: fixed;
+    &:hover {
+      background-color: $green-shade; //Override
+      border-color: $green-shade; //Override
+    }
+
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+}
+
+.node__content {
+  #views-exposed-form-search-courses-page-1 {
+    #edit-actions {
+      .btn-primary {
+        display: none;
+      }
+    }
+  }
+}
 
 
 /* COLORS

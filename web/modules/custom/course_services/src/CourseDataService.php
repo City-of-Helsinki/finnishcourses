@@ -73,6 +73,17 @@ class CourseDataService {
     return $userCourses;
   }
 
+  public function queryAllCourses($status = 1) {
+    $query = $this->entityQuery->get('node');
+    $query->condition('type', 'course')
+          ->condition('status', $status);
+    $entity_ids = $query->execute();
+
+    $allCourses = $entity_ids;
+
+    return $allCourses;
+  }
+
 
   /**
    * Function to return organizations the current user has access to
@@ -91,12 +102,121 @@ class CourseDataService {
 
   }
 
+  public function getFieldValue($fieldName, $node, $valueSource = 'base', $valueType = FALSE, $referencedEntitysField = FALSE) {
+    if (!$fieldName || !$node) {
+      return FALSE;
+    }
+
+    if (!is_object($node)) {
+      if (isset($node['target_id'])) {
+        $node = $this->loadNode($node['target_id']);
+      } else {
+        $node = $this->loadNode($node);
+      }
+    }
+
+    if (!$node && !is_object($node)) {
+      return FALSE;
+    }
+
+    $fieldValue = $node->get($fieldName)->getValue();
+
+    if (!empty($fieldValue)) {
+      if ($valueSource == 'valueInArray') {
+        $fieldValue = $fieldValue[0]['value'];
+      } else if ($valueType == 'referenced_term' && $referencedEntitysField) {
+        if ($referencedEntitysField == 'label') {
+          $fieldValue = $node->$fieldName->entity->label();
+        }
+      } else if ($valueSource == 'targetId') {
+        $fieldValue = $fieldValue[0]['target_id'];
+      }
+    }
+
+    return $fieldValue;
+
+  }
+
+  public function getTermsFieldValue($fieldName, $term, $valueSource = 'base') {
+    if (!$fieldName || !$term) {
+      return FALSE;
+    }
+
+    if (!is_object($term)) {
+      if (isset($term['target_id'])) {
+        $term = $this->loadTaxonomyTermByTid($term['target_id']);
+      } else {
+        $term = $this->loadTaxonomyTermByTid($term);
+      }
+    }
+
+    if (!$term && !is_object($term)) {
+      return FALSE;
+    }
+
+    $fieldValue = $term->get($fieldName)->getValue();
+
+    if (!empty($fieldValue)) {
+      if ($valueSource == 'valueInArray') {
+        $fieldValue = $fieldValue[0]['value'];
+      }
+    }
+
+    return $fieldValue;
+
+  }
+
+  public function loadTaxonomyTermByTid($tid) {
+    if (empty($tid)) {
+      return FALSE;
+    }
+
+    return $this->entityTypeManager->getStorage('taxonomy_term')->load($tid);
+  }
+
   public function loadAccount() {
 
     $account = $this->entityTypeManager->getStorage('user')
     ->load($this->currentUser->id());
 
     return $account;
+  }
+
+  public function loadNode($nid) {
+    if (empty($nid)) {
+      return FALSE;
+    }
+
+    return $this->entityTypeManager->getStorage('node')->load($nid);;
+  }
+
+  public function setNodeValue($fieldName, $value, $node) {
+    if (!$fieldName || !$value || !$node) {
+      return FALSE;
+    }
+
+    if (!is_object($node)) {
+      if (isset($node['target_id'])) {
+        $node = $this->loadNode($node['target_id']);
+      } else {
+        $node = $this->loadNode($node);
+      }
+    }
+
+    if (!$node && !is_object($node)) {
+      return FALSE;
+    }
+
+    if ($fieldName == 'published') {
+      if ($value == 'FALSE') {
+        $value = FALSE;
+      } else {
+        $value = TRUE;
+      }
+      $node->setPublished($value);
+    }
+
+    $node->save();
   }
 
 }
