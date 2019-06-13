@@ -264,10 +264,7 @@ h1, h2, h3 {
       background-color: $green-shade; //Override
       border-color: $green-shade; //Override
     }
-
-    @include media-breakpoint-up(md) {
       display: none;
-    }
   }
 }
 

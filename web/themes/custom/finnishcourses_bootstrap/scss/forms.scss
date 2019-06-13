@@ -12,6 +12,9 @@
 .form-check {
   display: inline !important; // Override
   padding-left: 28px !important; // Override
+  @include media-breakpoint-only(md) {
+    padding-left: 22px !important; //Override
+   }
 }
 
 #edit-course-town--wrapper {
@@ -39,7 +42,7 @@ legend {
   -webkit-appearance: none;
   @include media-breakpoint-up(sm) {
     margin-top: 0.25rem;
-    margin-left: 12px;
+    //margin-left: 12px;
   }
 }
 

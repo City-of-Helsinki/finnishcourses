@@ -26,7 +26,7 @@
 }
 
 .fieldset-legend {
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     left: 0.5%;
   }
 }
@@ -45,6 +45,18 @@ legend {
   legend {
     position: relative;
     left: 23%;
+  }
+}
+
+#edit-time-of-day--wrapper {
+  @include media-breakpoint-only(md) {
+    float: right;
+    top: -42px;
+    legend {
+      .fieldset-legend {
+        left: 7%;
+      }
+    }
   }
 }
 
@@ -97,8 +109,14 @@ legend {
       max-width: 73%;
       margin-left: 110px;
     }
-    @include media-breakpoint-down(sm) {
-      width: 111%;
+    @include media-breakpoint-only(md) {
+      margin-left: 54%;
+    }
+    @include media-breakpoint-only(sm) {
+      width: 160%;
+    }
+    @include media-breakpoint-only(xs) {
+      width: 168%;
     }
   }
 }
@@ -109,7 +127,6 @@ legend {
     font-weight: 700;
     font-size: 16px;
     position: absolute;
-
     .col-auto {
       max-width: 96%;
       margin: auto;
@@ -138,9 +155,13 @@ legend {
 #edit-course-fee--wrapper {
   .fieldset-wrapper {
     width: 100%;
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       margin-top: -7px;
       margin-left: -26%;
+    }
+    @include media-breakpoint-only(md) {
+      margin-top: -7px;
+      margin-left: -21%;
     }
     @include media-breakpoint-down(sm) {
       padding-top: 30px;
@@ -157,7 +178,10 @@ legend {
   display: inline;
 
   label {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
+      left: -32%;
+    }
+    @include media-breakpoint-only(md) {
       left: -32%;
     }
   }
@@ -166,41 +190,63 @@ legend {
     @include media-breakpoint-up(md) {
       width: 46%;
     }
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-only(sm) {
       width: 45%;
+    }
+    @include media-breakpoint-only(xs) {
+      width: 65%;
     }
   }
 }
 
   .form-item-start-date {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       left: 25.5%;
+      top: -42px;
     }
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-only(md) {
+      left: 27%;
+      top: -42px;
+    }
+    @include media-breakpoint-only(sm) {
       top: 1px;
+    }
+    @include media-breakpoint-only(xs) {
+      top: 0;
     }
   }
 
 .form-item-start-date-2 {
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
+    top: -42px;
     left: 11%;
   }
   @include media-breakpoint-only(md) {
-    margin-top: 46px;
+    top: -42px;
+    left: 17%;
+    margin-top: 0;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-only(sm) {
     margin-top: -5%;
+  }
+  @include media-breakpoint-only(xs) {
+    margin-top: 0;
+    left: 30%;
+    top: -58px;
   }
 
   .form-control {
     @include media-breakpoint-down(sm) {
       float: right;
     }
+    @include media-breakpoint-down(md) {
+      margin-left: 0 !important; // Override
+    }
   }
 
   .form-text {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       margin-left: 70px;
     }
   }
@@ -211,13 +257,12 @@ legend {
   border-radius: 2px;
   margin-left: 110px;
   -webkit-appearance: none;
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-down(sm) {
     margin-top: 0.25rem;
   }
   @include media-breakpoint-only(md) {
     width: 82%;
     max-width: 85%;
-    margin-left: 136px;
   }
 }
 
@@ -227,6 +272,9 @@ legend {
   }
   @include media-breakpoint-down(md) {
     margin-top: -30px;
+  }
+  @include media-breakpoint-only(xs) {
+    margin-top: -60px;
   }
 
   label {
@@ -242,11 +290,11 @@ legend {
       max-width: 100%;
     }
     @include media-breakpoint-only(md) {
-      width: 80%;
-      max-width: 80%;
+      width: 86%;
+      max-width: 88%;
     }
     @include media-breakpoint-up(lg) {
-      width: 91% !important;
+      width: 89% !important;
       max-width: 93%;
       margin-left: 105px !important;
     }
@@ -409,6 +457,10 @@ input[type="checkbox"] {
       top: 36px;
       right: 15px;
     }
+    @include media-breakpoint-only(xs) {
+      top: 43px;
+      right: -47%;
+    }
   }
 }
 
@@ -426,26 +478,32 @@ input[type="checkbox"] {
 }
 
 .form-item-start-date {
-  @include media-breakpoint-up(md) {
-    top: -42px;
-  }
-
   &::before {
     right: 56%;
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-only(sm) {
       top: 43px;
       right: 64%;
+    }
+    @include media-breakpoint-only(xs) {
+      top: 45px;
+      right: 48%;
     }
   }
 }
 
 .form-item-start-date-2 {
-  top: -42px;
   &::before {
     right: 41%;
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-only(md) {
+      right: 60%;
+    }
+    @include media-breakpoint-only(sm) {
       top: 12px;
       right: 14%;
+    }
+    @include media-breakpoint-only(xs) {
+      top: 12px;
+      left: 83%;
     }
   }
 }
@@ -457,11 +515,18 @@ input[type="checkbox"] {
     top: 11px;
     height: 2px;
     width: 2px;
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       right: 86%;
     }
-    @include media-breakpoint-down(sm) {
-      right: 50%;
+    @include media-breakpoint-only(md) {
+      right: 105%;
+    }
+    @include media-breakpoint-only(sm) {
+      right: 58%;
+    }
+    @include media-breakpoint-only(xs) {
+      top: 10px;
+      right: 72%;
     }
   }
 }
