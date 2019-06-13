@@ -57,12 +57,14 @@ $custom-radio-disabled-pip-color: white;
 $grid-breakpoints: (
         xs: 0,
         sm: 620px,
+        sm-t: 845px,
         md: 1290px,
         lg: 1511px
 );
 
 $container-max-widths: (
         sm: 550px,
+        sm-t: 680px,
         md: 730px,
         lg: 940px,
         xl: 1000px

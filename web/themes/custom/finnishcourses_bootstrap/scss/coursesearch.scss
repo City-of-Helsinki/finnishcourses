@@ -83,6 +83,7 @@ legend {
   padding-top: 20px;
   display: none;
   padding-bottom: 10px;
+  text-align: left;
 }
 
 .form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
@@ -112,6 +113,9 @@ legend {
     @include media-breakpoint-only(md) {
       margin-left: 54%;
     }
+    @include media-breakpoint-only(sm-t) {
+      width: 233%;
+    }
     @include media-breakpoint-only(sm) {
       width: 160%;
     }
@@ -135,7 +139,7 @@ legend {
 }
 
 #edit-course-fee {
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(sm-t) {
     display: inline-grid;
     margin-bottom: 16px;
     .form-check {
@@ -157,13 +161,13 @@ legend {
     width: 100%;
     @include media-breakpoint-up(lg) {
       margin-top: -7px;
-      margin-left: -26%;
+      margin-left: 9%;
     }
     @include media-breakpoint-only(md) {
       margin-top: -7px;
       margin-left: -21%;
     }
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(sm-t) {
       padding-top: 30px;
     }
   }
@@ -179,7 +183,7 @@ legend {
 
   label {
     @include media-breakpoint-up(lg) {
-      left: -32%;
+      left: -33%;
     }
     @include media-breakpoint-only(md) {
       left: -32%;
@@ -190,8 +194,11 @@ legend {
     @include media-breakpoint-up(md) {
       width: 46%;
     }
-    @include media-breakpoint-only(sm) {
-      width: 45%;
+    @include media-breakpoint-only(sm-t)  {
+      width: 92%;
+    }
+    @include media-breakpoint-only(sm)  {
+      width: 63%;
     }
     @include media-breakpoint-only(xs) {
       width: 65%;
@@ -201,12 +208,16 @@ legend {
 
   .form-item-start-date {
     @include media-breakpoint-up(lg) {
-      left: 25.5%;
+      left: 32.5%;
       top: -42px;
     }
     @include media-breakpoint-only(md) {
       left: 27%;
       top: -42px;
+    }
+    @include media-breakpoint-only(sm-t) {
+      left: -46%;
+      top: 78px;
     }
     @include media-breakpoint-only(sm) {
       top: 1px;
@@ -219,16 +230,20 @@ legend {
 .form-item-start-date-2 {
   @include media-breakpoint-up(lg) {
     top: -42px;
-    left: 11%;
+    left: 18%;
   }
   @include media-breakpoint-only(md) {
     top: -42px;
     left: 17%;
     margin-top: 0;
   }
-
-  @include media-breakpoint-only(sm) {
-    margin-top: -5%;
+  @include media-breakpoint-only(sm-t) {
+    left: 49%;
+    top: 20px;
+  }
+  @include media-breakpoint-only(sm)  {
+    top: -57px;
+    left: 27%;
   }
   @include media-breakpoint-only(xs) {
     margin-top: 0;
@@ -237,7 +252,7 @@ legend {
   }
 
   .form-control {
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-between(sm, sm-t)  {
       float: right;
     }
     @include media-breakpoint-down(md) {
@@ -257,7 +272,7 @@ legend {
   border-radius: 2px;
   margin-left: 110px;
   -webkit-appearance: none;
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(sm-t) {
     margin-top: 0.25rem;
   }
   @include media-breakpoint-only(md) {
@@ -270,8 +285,11 @@ legend {
   @include media-breakpoint-up(lg) {
     margin-top: -31px;
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-between(md, sm-t) {
     margin-top: -30px;
+  }
+  @include media-breakpoint-only(sm)  {
+    margin-top: -63px;
   }
   @include media-breakpoint-only(xs) {
     margin-top: -60px;
@@ -285,7 +303,7 @@ legend {
 
   .form-text, .form-control {
     color: #A5A5A5;
-    @include media-breakpoint-only(sm) {
+    @include media-breakpoint-between(sm, sm-t)  {
       width: 100%;
       max-width: 100%;
     }
@@ -437,7 +455,7 @@ input[type="checkbox"] {
     left: -1%;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(sm-t) {
     top: 38px;
     right: -13px;
   }
@@ -453,9 +471,17 @@ input[type="checkbox"] {
     position: absolute;
     top: 11px;
     right: 12px;
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-only(md) {
       top: 36px;
       right: 15px;
+    }
+    @include media-breakpoint-only(sm-t) {
+      right: -106%;
+      top: 42px;
+    }
+    @include media-breakpoint-only(sm)  {
+      top: 42px;
+      right: -44%;
     }
     @include media-breakpoint-only(xs) {
       top: 43px;
@@ -471,7 +497,7 @@ input[type="checkbox"] {
     top: 11px;
     height: 2px;
     width: 2px;
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(sm-t) {
       right: 42px;
     }
   }
@@ -479,8 +505,12 @@ input[type="checkbox"] {
 
 .form-item-start-date {
   &::before {
-    right: 56%;
-    @include media-breakpoint-only(sm) {
+    right: 61%;
+    @include  media-breakpoint-only(sm-t) {
+      top: 43px;
+      right: 64%;
+    }
+    @include media-breakpoint-only(sm)  {
       top: 43px;
       right: 64%;
     }
@@ -497,7 +527,7 @@ input[type="checkbox"] {
     @include media-breakpoint-only(md) {
       right: 60%;
     }
-    @include media-breakpoint-only(sm) {
+    @include media-breakpoint-between(sm, sm-t)  {
       top: 12px;
       right: 14%;
     }
@@ -521,8 +551,11 @@ input[type="checkbox"] {
     @include media-breakpoint-only(md) {
       right: 105%;
     }
+    @include media-breakpoint-only(sm-t) {
+      right: 99%;
+    }
     @include media-breakpoint-only(sm) {
-      right: 58%;
+      right: 69%;
     }
     @include media-breakpoint-only(xs) {
       top: 10px;
@@ -535,7 +568,7 @@ input[type="checkbox"] {
   &::before {
     content: url(../images/icons/ic_search@1x.svg);
     position: relative;
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(sm-t) {
       right: 8%;
     }
     @include media-breakpoint-only(md) {

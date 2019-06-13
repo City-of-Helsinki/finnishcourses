@@ -10,7 +10,7 @@
   margin-top: 35px;
 }
 .group-wrapper {
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(sm-t) {
     margin-top: 80px;
   }
 }
@@ -20,7 +20,7 @@
 }
 
 .node--type-course {
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(sm-t) {
     h2 {
       font-size: 21px;
       margin-bottom: 15px;
@@ -41,7 +41,7 @@
 }
 
 .course-registration {
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(sm-t) {
     border-bottom: 1px solid $border-shade;
     padding-bottom: 36px;
   }
