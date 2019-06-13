@@ -98,6 +98,9 @@ legend {
 }
 
 .form-item-starting-level-ext {
+  @include media-breakpoint-only(md) {
+    width: 38.5% !important; // Overriding col-auto
+  }
   label {
     @include media-breakpoint-up(md) {
       left: 4%;
@@ -111,7 +114,7 @@ legend {
       margin-left: 110px;
     }
     @include media-breakpoint-only(md) {
-      margin-left: 54%;
+      margin-left: 40%;
     }
     @include media-breakpoint-only(sm-t) {
       width: 233%;
@@ -165,7 +168,7 @@ legend {
     }
     @include media-breakpoint-only(md) {
       margin-top: -7px;
-      margin-left: -21%;
+      margin-left: 14%;
     }
     @include media-breakpoint-down(sm-t) {
       padding-top: 30px;
@@ -186,7 +189,7 @@ legend {
       left: -33%;
     }
     @include media-breakpoint-only(md) {
-      left: -32%;
+      left: -35%;
     }
   }
 
@@ -212,7 +215,7 @@ legend {
       top: -42px;
     }
     @include media-breakpoint-only(md) {
-      left: 27%;
+      left: 23%;
       top: -42px;
     }
     @include media-breakpoint-only(sm-t) {
@@ -234,7 +237,7 @@ legend {
   }
   @include media-breakpoint-only(md) {
     top: -42px;
-    left: 17%;
+    left: 12%;
     margin-top: 0;
   }
   @include media-breakpoint-only(sm-t) {
@@ -506,6 +509,9 @@ input[type="checkbox"] {
 .form-item-start-date {
   &::before {
     right: 61%;
+    @include media-breakpoint-only(md) {
+      right: 57%;
+    }
     @include  media-breakpoint-only(sm-t) {
       top: 43px;
       right: 64%;
@@ -525,7 +531,7 @@ input[type="checkbox"] {
   &::before {
     right: 41%;
     @include media-breakpoint-only(md) {
-      right: 60%;
+      right: 56%;
     }
     @include media-breakpoint-between(sm, sm-t)  {
       top: 12px;
