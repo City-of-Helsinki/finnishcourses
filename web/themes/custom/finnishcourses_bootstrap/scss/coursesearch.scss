@@ -23,9 +23,6 @@
 .fieldset-legend {
   font-weight: 900;
   margin-bottom: 5px;
-}
-
-.fieldset-legend {
   @include media-breakpoint-up(lg) {
     left: 0.5%;
   }
@@ -54,7 +51,7 @@ legend {
     top: -42px;
     legend {
       .fieldset-legend {
-        left: 7%;
+        left: 2.5%;
       }
     }
   }
@@ -100,10 +97,14 @@ legend {
 .form-item-starting-level-ext {
   @include media-breakpoint-only(md) {
     width: 38.5% !important; // Overriding col-auto
+    left: -10px;
   }
   label {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       left: 4%;
+    }
+    @include media-breakpoint-only(md) {
+      left: 6%;
     }
   }
 
@@ -195,7 +196,7 @@ legend {
 
   .form-control {
     @include media-breakpoint-up(md) {
-      width: 46%;
+      width: 57%;
     }
     @include media-breakpoint-only(sm-t)  {
       width: 92%;
@@ -237,7 +238,7 @@ legend {
   }
   @include media-breakpoint-only(md) {
     top: -42px;
-    left: 12%;
+    left: 13%;
     margin-top: 0;
   }
   @include media-breakpoint-only(sm-t) {
@@ -279,8 +280,8 @@ legend {
     margin-top: 0.25rem;
   }
   @include media-breakpoint-only(md) {
-    width: 82%;
-    max-width: 85%;
+    width: 80%;
+    max-width: 80%;
   }
 }
 
@@ -288,7 +289,10 @@ legend {
   @include media-breakpoint-up(lg) {
     margin-top: -31px;
   }
-  @include media-breakpoint-between(md, sm-t) {
+  @include media-breakpoint-only(md) {
+    margin-top: -40px;
+  }
+  @include media-breakpoint-only(sm-t) {
     margin-top: -30px;
   }
   @include media-breakpoint-only(sm)  {
@@ -299,7 +303,7 @@ legend {
   }
 
   label {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       left: 2%;
     }
   }
@@ -311,142 +315,15 @@ legend {
       max-width: 100%;
     }
     @include media-breakpoint-only(md) {
-      width: 86%;
-      max-width: 88%;
+      width: 84.5% !important; // Override - not changing for some reason
+      max-width: 85% !important; // Override
+      margin-left: 138px !important; // Override
     }
     @include media-breakpoint-up(lg) {
-      width: 89% !important;
+      width: 89% !important; // Override
       max-width: 93%;
-      margin-left: 105px !important;
+      margin-left: 105px !important; // Override
     }
-  }
-}
-
-// Radio button
-
-// Check variable values
-@if ($custom-radio-size % 2 == 1) {
-  @error '$custom-radio-size must be even';
-}
-
-// round to nearest even number
-@if ($custom-radio-pip-size % 2 == 1) {
-  $custom-radio-pip-size: $custom-radio-pip-size - 1;
-}
-
-
-input[type="radio"] {
-  position: relative;
-  display: inline-block;
-  width: 12px;
-  height: 13px;
-  left: 10px;
-  border-radius: 100%;
-  outline: none !important;
-  -webkit-appearance: none;
-
-  // Radio
-  &::before {
-    position: relative;
-    top: -2px;
-    left: -2px;
-    display: block;
-    content: '';
-    background: $custom-unchecked-bg;
-    border: $custom-border-width solid $custom-unchecked-border;
-    border-radius: 100%;
-    width: 23px;
-    height: 22px;
-  }
-
-  &:checked::before {
-    background: $custom-checked-bg;
-    border-color: $custom-checked-border;
-  }
-
-  &:disabled::before {
-    cursor: not-allowed;
-    background-color: $custom-disabled-bg;
-  }
-
-  // Radio Pip
-  &::after {
-    position: relative;
-    top: 1px;
-    left: 0;
-    display: block;
-    content: '';
-    background: $primary-shade;
-    border-radius: 100%;
-    width: 0;
-    height: 0;
-  }
-
-
-  &:checked::after {
-    transition: all ease-in-out $custom-radio-transition-speed 0;
-    top: -19px;
-    left: 3.5px;
-    width: $custom-radio-pip-size;
-    height: $custom-radio-pip-size;
-  }
-}
-
-// Checkbox
-input[type="checkbox"] {
-  position: relative;
-  display: inline-block;
-  width: 12px;
-  height: 13px;
-  left: 10px;
-  outline: none !important;
-  -webkit-appearance: none;
-
-  // Unchecked
-  &::before {
-    position: relative;
-    top: -4px;
-    margin-left: -14px;
-    display: block;
-    content: '';
-    background: $custom-unchecked-bg;
-    border: $custom-border-width solid $custom-unchecked-border;
-    border-radius: 12%;
-    width: 28px;
-    height: 25px;
-  }
-
-  &:checked::before {
-    background: $custom-checked-bg;
-    border-color: $custom-checked-border;
-  }
-
-  &:disabled::before {
-    cursor: not-allowed;
-    background-color: $custom-disabled-bg;
-  }
-
-  // Checkmark
-  &::after {
-    position: relative;
-    top: 1px;
-    left: 0;
-    display: block;
-    content: '';
-    border-radius: 3px;
-    width: 0;
-    height: 0;
-  }
-
-
-  &:checked::after {
-    top: -29px;
-    left: -6px;
-    width: 13px;
-    height: 21px;
-    border-bottom: 5px solid $primary-shade;
-    border-right: 5px solid $primary-shade;
-    transform: rotate(45deg);
   }
 }
 
@@ -475,8 +352,8 @@ input[type="checkbox"] {
     top: 11px;
     right: 12px;
     @include media-breakpoint-only(md) {
-      top: 36px;
-      right: 15px;
+      top: 10px;
+      right: -46px;
     }
     @include media-breakpoint-only(sm-t) {
       right: -106%;
@@ -510,7 +387,7 @@ input[type="checkbox"] {
   &::before {
     right: 61%;
     @include media-breakpoint-only(md) {
-      right: 57%;
+      right: 54%;
     }
     @include  media-breakpoint-only(sm-t) {
       top: 43px;
@@ -531,7 +408,7 @@ input[type="checkbox"] {
   &::before {
     right: 41%;
     @include media-breakpoint-only(md) {
-      right: 56%;
+      right: 54%;
     }
     @include media-breakpoint-between(sm, sm-t)  {
       top: 12px;
@@ -539,7 +416,7 @@ input[type="checkbox"] {
     }
     @include media-breakpoint-only(xs) {
       top: 12px;
-      left: 83%;
+      right: 47%;
     }
   }
 }
@@ -565,7 +442,7 @@ input[type="checkbox"] {
     }
     @include media-breakpoint-only(xs) {
       top: 10px;
-      right: 72%;
+      right: 103%;
     }
   }
 }
