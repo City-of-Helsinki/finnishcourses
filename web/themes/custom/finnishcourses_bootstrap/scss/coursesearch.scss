@@ -250,7 +250,7 @@ legend {
   }
   @include media-breakpoint-only(xs) {
     margin-top: 0;
-    left: 30%;
+    left: 52%;
     top: -58px;
   }
 
@@ -518,7 +518,7 @@ input[type="checkbox"] {
     }
     @include media-breakpoint-only(sm)  {
       top: 43px;
-      right: 64%;
+      right: 47%;
     }
     @include media-breakpoint-only(xs) {
       top: 45px;
