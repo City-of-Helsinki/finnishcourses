@@ -447,6 +447,13 @@ legend {
   }
 }
 
+.levels-link {
+  &::after {
+    content: url(../images/icons/ic_chevron_right.svg);
+    bottom: -6px;
+  }
+}
+
 .btn-primary {
   &::before {
     content: url(../images/icons/ic_search@1x.svg);

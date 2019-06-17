@@ -5,7 +5,13 @@
 .form-row {
   display: block !important; // Override
   text-align: center;
+  a {
+    &:hover {
+      text-decoration: none; // Override
+    }
+  }
 }
+
 .form-check {
   display: inline !important; // Override
   padding-left: 28px !important; // Override
