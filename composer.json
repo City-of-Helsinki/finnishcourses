@@ -13,10 +13,23 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-youtube-plugin/ckeditor-youtube-plugin",
+                "version": "2.1.13",
+                "type": "drupal-library",
+                "dist": {
+                  "url": "https://github.com/fonini/ckeditor-youtube-plugin/archive/v2.1.13.zip",
+                  "type": "zip"
+                }
+            }
         }
     ],
     "require": {
         "php": ">=5.6",
+        "ckeditor-youtube-plugin/ckeditor-youtube-plugin": "^2.1",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
         "drupal-composer/drupal-scaffold": "^2.5",
@@ -28,6 +41,7 @@
         "drupal/bootstrap_barrio": "^4.22",
         "drupal/bootstrap_sass": "^1.9",
         "drupal/business_rules": "^1.0@beta",
+        "drupal/ckeditor_youtube": "^1.1",
         "drupal/conditional_fields": "^1.0@alpha",
         "drupal/console": "^1.8",
         "drupal/core": "^8.6.0",
@@ -129,6 +143,9 @@
             },
             "drupal/ultimate_cron": {
                 "Ability to unlock a cron job": "https://www.drupal.org/files/issues/2018-07-16/ultimate-cron_add-unlock-operation_2977639_2.patch"
+            },
+            "drupal/ckeditor_youtube": {
+                "Configurable path for plugin library": "https://www.drupal.org/files/issues/2019-04-03/configurable_library_path-2928417-19.patch"
             }
         },
         "drupal-scaffold": {

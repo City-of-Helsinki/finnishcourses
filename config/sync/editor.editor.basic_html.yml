@@ -34,6 +34,7 @@ settings:
           items:
             - Blockquote
             - DrupalImage
+            - Youtube
         -
           name: 'Block Formatting'
           items:
