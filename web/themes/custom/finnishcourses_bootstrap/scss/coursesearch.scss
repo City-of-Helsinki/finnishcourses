@@ -23,10 +23,7 @@
 .fieldset-legend {
   font-weight: 900;
   margin-bottom: 5px;
-}
-
-.fieldset-legend {
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     left: 0.5%;
   }
 }
@@ -45,6 +42,18 @@ legend {
   legend {
     position: relative;
     left: 23%;
+  }
+}
+
+#edit-time-of-day--wrapper {
+  @include media-breakpoint-only(md) {
+    float: right;
+    top: -42px;
+    legend {
+      .fieldset-legend {
+        left: 2.5%;
+      }
+    }
   }
 }
 
@@ -71,6 +80,7 @@ legend {
   padding-top: 20px;
   display: none;
   padding-bottom: 10px;
+  text-align: left;
 }
 
 .form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
@@ -85,9 +95,16 @@ legend {
 }
 
 .form-item-starting-level-ext {
+  @include media-breakpoint-only(md) {
+    width: 38.5% !important; // Overriding col-auto
+    left: -10px;
+  }
   label {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       left: 4%;
+    }
+    @include media-breakpoint-only(md) {
+      left: 6%;
     }
   }
 
@@ -97,8 +114,17 @@ legend {
       max-width: 73%;
       margin-left: 110px;
     }
-    @include media-breakpoint-down(sm) {
-      width: 111%;
+    @include media-breakpoint-only(md) {
+      margin-left: 40%;
+    }
+    @include media-breakpoint-only(sm-t) {
+      width: 233%;
+    }
+    @include media-breakpoint-only(sm) {
+      width: 160%;
+    }
+    @include media-breakpoint-only(xs) {
+      width: 168%;
     }
   }
 }
@@ -109,7 +135,6 @@ legend {
     font-weight: 700;
     font-size: 16px;
     position: absolute;
-
     .col-auto {
       max-width: 96%;
       margin: auto;
@@ -118,7 +143,7 @@ legend {
 }
 
 #edit-course-fee {
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(sm-t) {
     display: inline-grid;
     margin-bottom: 16px;
     .form-check {
@@ -138,11 +163,15 @@ legend {
 #edit-course-fee--wrapper {
   .fieldset-wrapper {
     width: 100%;
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       margin-top: -7px;
-      margin-left: -26%;
+      margin-left: 9%;
     }
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-only(md) {
+      margin-top: -7px;
+      margin-left: 14%;
+    }
+    @include media-breakpoint-down(sm-t) {
       padding-top: 30px;
     }
   }
@@ -157,50 +186,86 @@ legend {
   display: inline;
 
   label {
-    @include media-breakpoint-up(md) {
-      left: -32%;
+    @include media-breakpoint-up(lg) {
+      left: -33%;
+    }
+    @include media-breakpoint-only(md) {
+      left: -35%;
     }
   }
 
   .form-control {
     @include media-breakpoint-up(md) {
-      width: 46%;
+      width: 57%;
     }
-    @include media-breakpoint-down(sm) {
-      width: 45%;
+    @include media-breakpoint-only(sm-t)  {
+      width: 92%;
+    }
+    @include media-breakpoint-only(sm)  {
+      width: 63%;
+    }
+    @include media-breakpoint-only(xs) {
+      width: 65%;
     }
   }
 }
 
   .form-item-start-date {
-    @include media-breakpoint-up(md) {
-      left: 25.5%;
+    @include media-breakpoint-up(lg) {
+      left: 32.5%;
+      top: -42px;
     }
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-only(md) {
+      left: 23%;
+      top: -42px;
+    }
+    @include media-breakpoint-only(sm-t) {
+      left: -46%;
+      top: 78px;
+    }
+    @include media-breakpoint-only(sm) {
       top: 1px;
+    }
+    @include media-breakpoint-only(xs) {
+      top: 0;
     }
   }
 
 .form-item-start-date-2 {
-  @include media-breakpoint-up(md) {
-    left: 11%;
+  @include media-breakpoint-up(lg) {
+    top: -42px;
+    left: 18%;
   }
   @include media-breakpoint-only(md) {
-    margin-top: 46px;
+    top: -42px;
+    left: 13%;
+    margin-top: 0;
   }
-
-  @include media-breakpoint-down(sm) {
-    margin-top: -5%;
+  @include media-breakpoint-only(sm-t) {
+    left: 49%;
+    top: 20px;
+  }
+  @include media-breakpoint-only(sm)  {
+    top: -57px;
+    left: 27%;
+  }
+  @include media-breakpoint-only(xs) {
+    margin-top: 0;
+    left: 52%;
+    top: -58px;
   }
 
   .form-control {
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-between(sm, sm-t)  {
       float: right;
+    }
+    @include media-breakpoint-down(md) {
+      margin-left: 0 !important; // Override
     }
   }
 
   .form-text {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       margin-left: 70px;
     }
   }
@@ -211,13 +276,12 @@ legend {
   border-radius: 2px;
   margin-left: 110px;
   -webkit-appearance: none;
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-down(sm-t) {
     margin-top: 0.25rem;
   }
   @include media-breakpoint-only(md) {
-    width: 82%;
-    max-width: 85%;
-    margin-left: 136px;
+    width: 80%;
+    max-width: 80%;
   }
 }
 
@@ -225,159 +289,41 @@ legend {
   @include media-breakpoint-up(lg) {
     margin-top: -31px;
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-only(md) {
+    margin-top: -40px;
+  }
+  @include media-breakpoint-only(sm-t) {
     margin-top: -30px;
+  }
+  @include media-breakpoint-only(sm)  {
+    margin-top: -63px;
+  }
+  @include media-breakpoint-only(xs) {
+    margin-top: -60px;
   }
 
   label {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       left: 2%;
     }
   }
 
   .form-text, .form-control {
     color: #A5A5A5;
-    @include media-breakpoint-only(sm) {
+    @include media-breakpoint-between(sm, sm-t)  {
       width: 100%;
       max-width: 100%;
     }
     @include media-breakpoint-only(md) {
-      width: 80%;
-      max-width: 80%;
+      width: 84.5% !important; // Override - not changing for some reason
+      max-width: 85% !important; // Override
+      margin-left: 138px !important; // Override
     }
     @include media-breakpoint-up(lg) {
-      width: 91% !important;
+      width: 89% !important; // Override
       max-width: 93%;
-      margin-left: 105px !important;
+      margin-left: 105px !important; // Override
     }
-  }
-}
-
-// Radio button
-
-// Check variable values
-@if ($custom-radio-size % 2 == 1) {
-  @error '$custom-radio-size must be even';
-}
-
-// round to nearest even number
-@if ($custom-radio-pip-size % 2 == 1) {
-  $custom-radio-pip-size: $custom-radio-pip-size - 1;
-}
-
-
-input[type="radio"] {
-  position: relative;
-  display: inline-block;
-  width: 12px;
-  height: 13px;
-  left: 10px;
-  border-radius: 100%;
-  outline: none !important;
-  -webkit-appearance: none;
-
-  // Radio
-  &::before {
-    position: relative;
-    top: -2px;
-    left: -2px;
-    display: block;
-    content: '';
-    background: $custom-unchecked-bg;
-    border: $custom-border-width solid $custom-unchecked-border;
-    border-radius: 100%;
-    width: 23px;
-    height: 22px;
-  }
-
-  &:checked::before {
-    background: $custom-checked-bg;
-    border-color: $custom-checked-border;
-  }
-
-  &:disabled::before {
-    cursor: not-allowed;
-    background-color: $custom-disabled-bg;
-  }
-
-  // Radio Pip
-  &::after {
-    position: relative;
-    top: 1px;
-    left: 0;
-    display: block;
-    content: '';
-    background: $primary-shade;
-    border-radius: 100%;
-    width: 0;
-    height: 0;
-  }
-
-
-  &:checked::after {
-    transition: all ease-in-out $custom-radio-transition-speed 0;
-    top: -19px;
-    left: 3.5px;
-    width: $custom-radio-pip-size;
-    height: $custom-radio-pip-size;
-  }
-}
-
-// Checkbox
-input[type="checkbox"] {
-  position: relative;
-  display: inline-block;
-  width: 12px;
-  height: 13px;
-  left: 10px;
-  outline: none !important;
-  -webkit-appearance: none;
-
-  // Unchecked
-  &::before {
-    position: relative;
-    top: -4px;
-    margin-left: -14px;
-    display: block;
-    content: '';
-    background: $custom-unchecked-bg;
-    border: $custom-border-width solid $custom-unchecked-border;
-    border-radius: 12%;
-    width: 28px;
-    height: 25px;
-  }
-
-  &:checked::before {
-    background: $custom-checked-bg;
-    border-color: $custom-checked-border;
-  }
-
-  &:disabled::before {
-    cursor: not-allowed;
-    background-color: $custom-disabled-bg;
-  }
-
-  // Checkmark
-  &::after {
-    position: relative;
-    top: 1px;
-    left: 0;
-    display: block;
-    content: '';
-    border-radius: 3px;
-    width: 0;
-    height: 0;
-  }
-
-
-  &:checked::after {
-    top: -29px;
-    left: -6px;
-    width: 13px;
-    height: 21px;
-    border-bottom: 5px solid $primary-shade;
-    border-right: 5px solid $primary-shade;
-    transform: rotate(45deg);
   }
 }
 
@@ -389,7 +335,7 @@ input[type="checkbox"] {
     left: -1%;
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(sm-t) {
     top: 38px;
     right: -13px;
   }
@@ -405,9 +351,21 @@ input[type="checkbox"] {
     position: absolute;
     top: 11px;
     right: 12px;
-    @include media-breakpoint-down(md) {
-      top: 36px;
-      right: 15px;
+    @include media-breakpoint-only(md) {
+      top: 10px;
+      right: -46px;
+    }
+    @include media-breakpoint-only(sm-t) {
+      right: -106%;
+      top: 42px;
+    }
+    @include media-breakpoint-only(sm)  {
+      top: 42px;
+      right: -44%;
+    }
+    @include media-breakpoint-only(xs) {
+      top: 43px;
+      right: -47%;
     }
   }
 }
@@ -419,33 +377,46 @@ input[type="checkbox"] {
     top: 11px;
     height: 2px;
     width: 2px;
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(sm-t) {
       right: 42px;
     }
   }
 }
 
 .form-item-start-date {
-  @include media-breakpoint-up(md) {
-    top: -42px;
-  }
-
   &::before {
-    right: 56%;
-    @include media-breakpoint-down(sm) {
+    right: 61%;
+    @include media-breakpoint-only(md) {
+      right: 54%;
+    }
+    @include  media-breakpoint-only(sm-t) {
       top: 43px;
       right: 64%;
+    }
+    @include media-breakpoint-only(sm)  {
+      top: 43px;
+      right: 47%;
+    }
+    @include media-breakpoint-only(xs) {
+      top: 45px;
+      right: 48%;
     }
   }
 }
 
 .form-item-start-date-2 {
-  top: -42px;
   &::before {
     right: 41%;
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-only(md) {
+      right: 54%;
+    }
+    @include media-breakpoint-between(sm, sm-t)  {
       top: 12px;
       right: 14%;
+    }
+    @include media-breakpoint-only(xs) {
+      top: 12px;
+      right: 47%;
     }
   }
 }
@@ -457,11 +428,21 @@ input[type="checkbox"] {
     top: 11px;
     height: 2px;
     width: 2px;
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       right: 86%;
     }
-    @include media-breakpoint-down(sm) {
-      right: 50%;
+    @include media-breakpoint-only(md) {
+      right: 105%;
+    }
+    @include media-breakpoint-only(sm-t) {
+      right: 99%;
+    }
+    @include media-breakpoint-only(sm) {
+      right: 69%;
+    }
+    @include media-breakpoint-only(xs) {
+      top: 10px;
+      right: 103%;
     }
   }
 }
@@ -470,7 +451,7 @@ input[type="checkbox"] {
   &::before {
     content: url(../images/icons/ic_search@1x.svg);
     position: relative;
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(sm-t) {
       right: 8%;
     }
     @include media-breakpoint-only(md) {
