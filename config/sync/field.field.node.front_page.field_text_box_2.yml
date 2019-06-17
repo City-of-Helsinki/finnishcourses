@@ -1,0 +1,21 @@
+uuid: e33b5b10-b9e0-41ce-8083-7bbf8fe67986
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_text_box_2
+    - node.type.front_page
+  module:
+    - text
+id: node.front_page.field_text_box_2
+field_name: field_text_box_2
+entity_type: node
+bundle: front_page
+label: 'Text box 2'
+description: 'This text is centered on desktop.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

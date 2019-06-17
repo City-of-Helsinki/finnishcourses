@@ -3,22 +3,45 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.front_page.body
     - field.field.node.front_page.field_header_image
+    - field.field.node.front_page.field_text_box_1
+    - field.field.node.front_page.field_text_box_2
+    - field.field.node.front_page.field_text_box_3
     - node.type.front_page
   module:
+    - text
     - user
 id: node.front_page.default
 targetEntityType: node
 bundle: front_page
 mode: default
 content:
+  field_text_box_1:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_text_box_2:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_text_box_3:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   links:
     weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
-  body: true
   field_header_image: true
   langcode: true

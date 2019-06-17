@@ -3,8 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.front_page.body
     - field.field.node.front_page.field_header_image
+    - field.field.node.front_page.field_text_box_1
+    - field.field.node.front_page.field_text_box_2
+    - field.field.node.front_page.field_text_box_3
     - node.type.front_page
   module:
     - media_library
@@ -16,15 +18,6 @@ targetEntityType: node
 bundle: front_page
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 13
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-    third_party_settings: {  }
-    region: content
   created:
     type: datetime_timestamp
     weight: 3
@@ -37,6 +30,30 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
+    region: content
+  field_text_box_1:
+    weight: 26
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_text_box_2:
+    weight: 27
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_text_box_3:
+    weight: 28
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
     region: content
   langcode:
     type: language_select
