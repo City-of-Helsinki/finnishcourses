@@ -4,14 +4,14 @@
 
 .form-row {
   display: block !important; // Override
-  @include media-breakpoint-up(md) {
-    text-align: center;
-  }
+  text-align: center;
 }
-
 .form-check {
   display: inline !important; // Override
   padding-left: 28px !important; // Override
+  @include media-breakpoint-only(md) {
+    padding-left: 22px !important; //Override
+   }
 }
 
 #edit-course-town--wrapper {
@@ -39,7 +39,7 @@ legend {
   -webkit-appearance: none;
   @include media-breakpoint-up(sm) {
     margin-top: 0.25rem;
-    margin-left: 12px;
+    //margin-left: 12px;
   }
 }
 
@@ -58,7 +58,7 @@ legend {
     }
   }
 }
-
+/*
 .form-item-start-date, .form-item-start-date-2 {
   .form-text, .form-control {
     @include media-breakpoint-up(md) {
@@ -66,7 +66,7 @@ legend {
       max-width: 60%;
     }
   }
-}
+}*/
 
 // Radio button
 // Check variable values

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aaf906987c54e0980ce09cbf00950f5c",
+    "content-hash": "c648be5967f257c981a11ff4190da023",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -202,6 +202,15 @@
             ],
             "description": "Drupal code generator",
             "time": "2019-06-02T07:36:18+00:00"
+        },
+        {
+            "name": "ckeditor-youtube-plugin/ckeditor-youtube-plugin",
+            "version": "2.1.13",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/fonini/ckeditor-youtube-plugin/archive/v2.1.13.zip"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "composer/installers",
@@ -2606,6 +2615,61 @@
             "homepage": "https://www.drupal.org/project/business_rules",
             "support": {
                 "source": "https://git.drupalcode.org/project/business_rules"
+            }
+        },
+        {
+            "name": "drupal/ckeditor_youtube",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ckeditor_youtube.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ckeditor_youtube-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "3629836974a5dd776c7fd2239be87e3598efc77a"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1494799320",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "patches_applied": {
+                    "Configurable path for plugin library": "https://www.drupal.org/files/issues/2019-04-03/configurable_library_path-2928417-19.patch"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Mauricio Dinarte (dinarcon)",
+                    "homepage": "https://www.drupal.org/u/dinarcon",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Adds the Youtube plugin to CKEditor.",
+            "homepage": "http://drupal.org/project/ckeditor_youtube",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/ckeditor_youtube",
+                "issues": "http://drupal.org/project/issues/ckeditor_youtube"
             }
         },
         {
@@ -9682,6 +9746,15 @@
             "time": "2018-10-10T12:39:06+00:00"
         },
         {
+            "name": "ckeditor-youtube-plugin",
+            "version": "2.1.13",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/fonini/ckeditor-youtube-plugin/archive/v2.1.13.zip"
+            },
+            "type": "drupal-library"
+        },
+        {
             "name": "doctrine/instantiator",
             "version": "1.2.0",
             "source": {
@@ -9736,6 +9809,15 @@
                 "instantiate"
             ],
             "time": "2019-03-17T17:37:11+00:00"
+        },
+        {
+            "name": "drupal-library/ckeditor-youtube-plugin",
+            "version": "2.1.13",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/fonini/ckeditor-youtube-plugin/archive/v2.1.13.zip"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "drupal/coder",
