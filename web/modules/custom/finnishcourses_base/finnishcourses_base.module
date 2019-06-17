@@ -408,6 +408,11 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 
   if($view->id() == 'search_courses') {
 
+    $form['time_of_day']['#title'] = t('Time of day');
+    $form['starting_level_ext']['#title'] = t('Starting level');
+    $form['start_date']['#title'] = t('Course starts');
+    $form['keyword']['#title'] = t('Keyword');
+
     $form['more_options_trigger'] = [
       '#type' => 'html_tag',
       '#tag' => 'div',
@@ -420,17 +425,32 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
       '#attributes' => ['id' => 'more-options-wrapper', 'class' => ['more-options-wrapper']],
     ];
 
-    $form['more_options']['course_fee'] = $form['course_fee'];
-    $form['more_options']['time_of_day'] = $form['time_of_day'];
-    $form['more_options']['starting_level_ext'] = $form['starting_level_ext'];
-    $form['more_options']['start_date'] = $form['start_date'];
-    $form['more_options']['start_date_2'] = $form['start_date_2'];
-    $form['more_options']['keyword'] = $form['keyword'];
+    $form['more_options']['row_1'] = [
+      '#type' => 'container',
+      '#attributes' => ['class' => ['more-options-row-1']],
+    ];
 
-    $form['more_options']['time_of_day']['#title'] = t('Time of day');
-    $form['more_options']['starting_level_ext']['#title'] = t('Starting level');
-    $form['more_options']['start_date']['#title'] = t('Course starts');
-    $form['more_options']['keyword']['#title'] = t('Keyword');
+    $form['more_options']['row_2'] = [
+      '#type' => 'container',
+      '#attributes' => ['class' => ['more-options-row-2']],
+    ];
+
+    $form['more_options']['row_3'] = [
+      '#type' => 'container',
+      '#attributes' => ['class' => ['more-options-row-3']],
+    ];
+
+    $form['more_options']['row_1']['course_fee'] = $form['course_fee'];
+    $form['more_options']['row_1']['time_of_day'] = $form['time_of_day'];
+    $form['more_options']['row_2']['starting_level_ext'] = $form['starting_level_ext'];
+    $form['more_options']['row_2']['dates']['start_date'] = $form['start_date'];
+    $form['more_options']['row_2']['dates']['start_date_2'] = $form['start_date_2'];
+    $form['more_options']['row_3']['keyword'] = $form['keyword'];
+
+    // $form['more_options']['time_of_day']['#title'] = t('Time of day');
+    // $form['more_options']['starting_level_ext']['#title'] = t('Starting level');
+    // $form['more_options']['start_date']['#title'] = t('Course starts');
+    // $form['more_options']['keyword']['#title'] = t('Keyword');
 
     $form['submit_fixed'] = [
       '#type' => 'submit',
