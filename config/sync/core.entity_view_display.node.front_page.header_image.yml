@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.header_image
-    - field.field.node.front_page.body
     - field.field.node.front_page.field_header_image
+    - field.field.node.front_page.field_text_box_1
+    - field.field.node.front_page.field_text_box_2
+    - field.field.node.front_page.field_text_box_3
     - node.type.front_page
   module:
     - user
@@ -29,5 +31,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  body: true
+  field_text_box_1: true
+  field_text_box_2: true
+  field_text_box_3: true
   langcode: true

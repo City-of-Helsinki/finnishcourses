@@ -4,24 +4,18 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.front_page.body
+    - field.field.node.front_page.field_header_image
+    - field.field.node.front_page.field_text_box_1
+    - field.field.node.front_page.field_text_box_2
+    - field.field.node.front_page.field_text_box_3
     - node.type.front_page
   module:
-    - text
     - user
 id: node.front_page.teaser
 targetEntityType: node
 bundle: front_page
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    region: content
   links:
     weight: 100
     settings: {  }
@@ -29,4 +23,7 @@ content:
     region: content
 hidden:
   field_header_image: true
+  field_text_box_1: true
+  field_text_box_2: true
+  field_text_box_3: true
   langcode: true

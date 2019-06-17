@@ -1,0 +1,20 @@
+uuid: 9498aa1b-971c-452b-9e16-a64c3ce87fe2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content
+label: Content
+description: ''
+attributes: {  }
+matchers:
+  524c25cc-b974-4f1d-a753-73c5b681750b:
+    uuid: 524c25cc-b974-4f1d-a753-73c5b681750b
+    id: 'entity:node'
+    weight: 0
+    settings:
+      result_description: ''
+      bundles: {  }
+      group_by_bundle: false
+      include_unpublished: false
