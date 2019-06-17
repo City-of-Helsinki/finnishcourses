@@ -1,0 +1,21 @@
+uuid: d06396d3-b8e3-4186-88bd-9a018f91d3bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_text_box_3
+    - node.type.front_page
+  module:
+    - text
+id: node.front_page.field_text_box_3
+field_name: field_text_box_3
+entity_type: node
+bundle: front_page
+label: 'Text box 3'
+description: 'This text is floated on right on desktop.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
