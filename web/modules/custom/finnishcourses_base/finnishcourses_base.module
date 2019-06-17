@@ -460,13 +460,18 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
       '#weight' => 99,
     ];
 
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+    $courseLevelsLink = ($language == 'en') ? '/language-course-levels' : '/'.$language.'/language-course-levels';
+
+    $form['starting_level']['#suffix'] = "<a href='".$courseLevelsLink."' target='_blank'>".t("I don't know my level")."</a>";
+
     unset($form['course_fee']);
     unset($form['time_of_day']);
     unset($form['starting_level_ext']);
     unset($form['start_date']);
     unset($form['start_date_2']);
     unset($form['keyword']);
-
   }
 }  
 
