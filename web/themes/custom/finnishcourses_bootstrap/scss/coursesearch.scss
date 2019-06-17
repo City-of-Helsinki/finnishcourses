@@ -451,6 +451,7 @@ legend {
   &::after {
     content: url(../images/icons/ic_chevron_right.svg);
     bottom: -6px;
+    position: relative;
   }
 }
 
