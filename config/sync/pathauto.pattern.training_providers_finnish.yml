@@ -1,0 +1,34 @@
+uuid: c04995c5-61c0-4834-a51d-81ab65391aee
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - language
+    - taxonomy
+id: training_providers_finnish
+label: 'Training Providers - Finnish'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'koulutuksen-jarjestajat/[term:name]'
+selection_criteria:
+  dd3100d9-cb6c-4ac8-b4e0-998e1ed70207:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      organizations: organizations
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: dd3100d9-cb6c-4ac8-b4e0-998e1ed70207
+  2e947b74-8375-4060-acfc-b1cfb708ca09:
+    id: language
+    langcodes:
+      fi: fi
+    negate: false
+    context_mapping:
+      language: 'taxonomy_term:langcode:language'
+    uuid: 2e947b74-8375-4060-acfc-b1cfb708ca09
+selection_logic: and
+weight: -10
+relationships:
+  'taxonomy_term:langcode:language':
+    label: Language
