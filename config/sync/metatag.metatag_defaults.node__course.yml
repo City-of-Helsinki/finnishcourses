@@ -1,0 +1,9 @@
+uuid: 6c70327a-f7ce-4a6b-8cac-415a1b1eb954
+langcode: fi
+status: true
+dependencies: {  }
+id: node__course
+label: 'Sisältö: Kurssi'
+tags:
+  title: '[node:title] | [site:name]'
+  description: '[node: field_course_features]'
