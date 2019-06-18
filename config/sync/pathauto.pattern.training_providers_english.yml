@@ -1,0 +1,34 @@
+uuid: b7539334-376c-4366-83e8-304b151886ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - language
+    - taxonomy
+id: training_providers_english
+label: 'Training Providers - English'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'training-providers/[term:name]'
+selection_criteria:
+  4fca82c8-ea1a-49c8-8815-14e08c4b814a:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      organizations: organizations
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 4fca82c8-ea1a-49c8-8815-14e08c4b814a
+  68049ba2-68c7-42a7-a6e2-8cc6ef6eabfb:
+    id: language
+    langcodes:
+      en: en
+    negate: false
+    context_mapping:
+      language: 'taxonomy_term:langcode:language'
+    uuid: 68049ba2-68c7-42a7-a6e2-8cc6ef6eabfb
+selection_logic: and
+weight: -10
+relationships:
+  'taxonomy_term:langcode:language':
+    label: Language

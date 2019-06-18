@@ -272,7 +272,7 @@ function refreshLocationOptions(array $form, FormStateInterface &$form_state) {
 // }
 
 function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
-  
+
   // Generate course id
   if (is_object($entity) && method_exists($entity, 'bundle') && $entity->bundle() == 'course') {
     if (empty($entity->get('field_course_id')->getValue())) {
@@ -369,8 +369,42 @@ function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $en
     if (!$entity->hasTranslation('ru')) {
       $entity->addTranslation('ru', $entity->toArray());
     }
+
+    if (fnmatch('/clone/*/quick_clone', \Drupal::request()->getRequestUri())) {
+      $originalTitle = $entity->getTitle();
+      if ($entity->hasTranslation('fi')) {
+        $translationFi = $entity->getTranslation('fi');
+        $translationFi->setTitle($originalTitle);
+      }
+
+      if ($entity->hasTranslation('ru')) {
+        $translationRu = $entity->getTranslation('ru');
+        $translationRu->setTitle($originalTitle);
+      }
+    }
     
 
+  }
+}
+
+function finnishcourses_base_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+
+  if (is_object($entity) && method_exists($entity, 'getEntityTypeId') && $entity->getEntityTypeId() == 'taxonomy_term' && method_exists($entity, 'bundle') && $entity->bundle() == 'organizations') {
+    $language = $entity->language()->getId();
+
+    if ($language == 'en') {
+      if (!$entity->hasTranslation('fi')) {
+        $entity->addTranslation('fi', $entity->toArray());
+      }
+    } else if ($language == 'fi') {
+      if (!$entity->hasTranslation('en')) {
+        $entity->addTranslation('en', $entity->toArray());
+      }
+    }
+
+    if (!$entity->hasTranslation('ru')) {
+      $entity->addTranslation('ru', $entity->toArray());
+    }
   }
 }
 

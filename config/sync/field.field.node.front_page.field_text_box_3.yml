@@ -14,7 +14,7 @@ bundle: front_page
 label: 'Text box 3'
 description: 'This text is floated on right on desktop.'
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }

@@ -1,0 +1,34 @@
+uuid: de5965c3-efcc-45fd-b302-7ab6941932ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - language
+    - taxonomy
+id: training_providers_russian
+label: 'Training Providers - Russian'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'organizatory-obucheniya/[term:name]'
+selection_criteria:
+  ab8d48be-0d84-4b40-90e5-99a502687d5d:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      organizations: organizations
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: ab8d48be-0d84-4b40-90e5-99a502687d5d
+  d94e1a76-64b7-4f65-a55e-8c220bf1ca53:
+    id: language
+    langcodes:
+      ru: ru
+    negate: false
+    context_mapping:
+      language: 'taxonomy_term:langcode:language'
+    uuid: d94e1a76-64b7-4f65-a55e-8c220bf1ca53
+selection_logic: and
+weight: -10
+relationships:
+  'taxonomy_term:langcode:language':
+    label: Language
