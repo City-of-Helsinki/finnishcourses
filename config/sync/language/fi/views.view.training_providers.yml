@@ -1,0 +1,10 @@
+label: 'Koulutuksen järjestäjät'
+display:
+  default:
+    display_options:
+      title: 'Koulutuksen järjestäjät'
+      header:
+        area:
+          content:
+            value: "<div>\r\n<p><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>Finnishcourses.fi -palvelussa kurssitietoja ilmoittavat seuraavat koulutuksen järjestäjät</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>\r\n</div>\r\n"
+            format: basic_html
