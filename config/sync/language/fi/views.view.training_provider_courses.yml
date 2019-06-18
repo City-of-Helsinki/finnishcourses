@@ -1,0 +1,5 @@
+label: 'Koulutuksen järjestäjät - Kurssit'
+display:
+  default:
+    display_options:
+      title: '{{ field_course_organization }} - Kurssit'

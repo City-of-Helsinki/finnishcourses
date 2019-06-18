@@ -356,7 +356,20 @@ display:
           plugin_id: language
       sorts: {  }
       title: 'Training providers'
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<p>The following training providers publish their course information through the finnishcourses.fi service.</p>\r\n\r\n"
+            format: basic_html
+          plugin_id: text
       footer: {  }
       empty: {  }
       relationships: {  }
