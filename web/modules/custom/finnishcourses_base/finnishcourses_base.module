@@ -374,6 +374,27 @@ function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $en
   }
 }
 
+function finnishcourses_base_entity_presave(Drupal\Core\Entity\EntityInterface $entity) {
+
+  if (is_object($entity) && method_exists($entity, 'getEntityTypeId') && $entity->getEntityTypeId() == 'taxonomy_term' && method_exists($entity, 'bundle') && $entity->bundle() == 'organizations') {
+    $language = $entity->language()->getId();
+
+    if ($language == 'en') {
+      if (!$entity->hasTranslation('fi')) {
+        $entity->addTranslation('fi', $entity->toArray());
+      }
+    } else if ($language == 'fi') {
+      if (!$entity->hasTranslation('en')) {
+        $entity->addTranslation('en', $entity->toArray());
+      }
+    }
+
+    if (!$entity->hasTranslation('ru')) {
+      $entity->addTranslation('ru', $entity->toArray());
+    }
+  }
+}
+
 
 function number_pad($number,$n) {
   return str_pad((int) $number,$n,'0',STR_PAD_LEFT);
