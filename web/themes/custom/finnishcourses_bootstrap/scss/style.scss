@@ -99,6 +99,16 @@ p {
     left: 27%;
     right: 0;
   }
+  @include media-breakpoint-only(sm-t) {
+    top: 12px;
+    left: 27%;
+    right: 0;
+  }
+  @include media-breakpoint-only(md) {
+    top: 12px;
+    left: 27%;
+    right: 0;
+  }
   ul {
     list-style: none;
     display: flex;
