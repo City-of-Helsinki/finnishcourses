@@ -1,3 +1,6 @@
+@import "variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 /* FRONT PAGE
   -------------------------------------------------*/
 
@@ -18,24 +21,50 @@
   }
 }
 
-.views-row {
+#block-finnishcourses-bootstrap-content {
   flex: 1;
-  margin: 20px 0 66px 0;
-  //padding: 0 20px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  .content {
+    .node--type-front-page {
+      .node__content.clearfix {
+        display: inline-flex !important; // Override
+        .field--name-field-text-box-1, .field--name-field-text-box-2, .field--name-field-text-box-3 {
+          max-width: 40%;
+          width: 40%;
+          h2 {
+            font-size: 18px;
+            font-weight: 900;
+            line-height: 34px;
+          }
 
-  /*
-   * TODO: BOXES ON FRONTPAGE
-    &:nth-child(n+2) {
-    border-left: 1px solid $border-shade;
-  }*/
+          p {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 26px;
+          }
+        }
+        .field--name-field-text-box-2, .field--name-field-text-box-3 {
+          padding-left: 25px;
+          padding-right: 25px;
+          @include media-breakpoint-up(md) {
+              border-left: 1px solid $form-border-shade;
+          }
+          @include media-breakpoint-only(xs) {
+              border-bottom: 1px solid $form-border-shade;
+          }
+        }
+      }
+    }
+  }
 }
 
-.node--view-mode-teaser {
-  border-bottom: none; // Override
-  margin-bottom: 0; // Override
-  padding-bottom: 0; // Override
-}
+  .node--view-mode-teaser {
+    border-bottom: none; // Override
+    margin-bottom: 0; // Override
+    padding-bottom: 0; // Override
+  }
 
-.feed-icons {
-  display: none;
-}
+  .feed-icons {
+    display: none;
+  }
