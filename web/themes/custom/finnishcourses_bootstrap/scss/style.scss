@@ -233,7 +233,7 @@ h1, h2, h3 {
 
 
     .region-footer-first, .region-footer-second, .region-footer-third {
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(sm) {
         width: 100%;
         display: table-row;
         text-align: left;
@@ -244,7 +244,7 @@ h1, h2, h3 {
         }
       }
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-down(xs) {
         display: flow-root;
       }
 
@@ -273,27 +273,58 @@ h1, h2, h3 {
     }
   }
 
-#edit-actions {
-  .btn-primary {
-    right: 0%;
-    top: 87%;
-    padding: 17px;
-    border-radius: 0 !important; //Override, for some weird reason with Bootstrap
-    position: fixed;
-    &:hover {
-      background-color: $green-shade; //Override
-      border-color: $green-shade; //Override
+.path-frontpage {
+  #edit-actions {
+    .btn-primary {
+      background-color: $green-shade;
+      border-color: $green-shade;
+      border-radius: 4px;
+      font-size: 21px;
+      font-weight: 700;
+      margin-top: 20px;
+      right: 0%;
+      padding: 13px;
+      border-radius: 0 !important; //Override, for some weird reason with Bootstrap
+      position: fixed;
+      z-index: 2000;
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+      }
+      @include media-breakpoint-up(sm) {
+        padding: 15px 100px 15px 100px;
+      }
+
+      &:hover {
+        background-color: $green-shade; //Override
+        border-color: $green-shade; //Override
+      }
+
+      @include media-breakpoint-up(sm) {
+        display: none;
+      }
     }
-      display: none;
   }
 }
 
-.node__content {
-  #views-exposed-form-search-courses-page-1 {
-    #edit-actions {
-      .btn-primary {
-        display: none;
-      }
+#views-exposed-form-search-courses-page-1 {
+  #edit-submit-fixed.btn-primary {
+    background-color: $green-shade;
+    border-color: $green-shade;
+    border-radius: 4px;
+    font-size: 21px;
+    font-weight: 700;
+    margin-top: 20px;
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    @include media-breakpoint-up(sm) {
+      padding: 15px 100px 15px 100px;
+    }
+    &:hover {
+      background-color: $green-shade;
+      border-color: $green-shade;
     }
   }
 }
@@ -342,28 +373,6 @@ h1, h2, h3, .fieldset-legend {
 
 .menu--main li a {
   color: $primary-shade;
-}
-
-
-.btn-primary {
-  background-color: $green-shade;
-  border-color: $green-shade;
-  border-radius: 4px;
-  font-size: 21px;
-  font-weight: 700;
-  margin-top: 20px;
-  @include media-breakpoint-down(sm) {
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  @include media-breakpoint-up(sm) {
-    padding: 15px 100px 15px 100px;
-  }
-  &:hover {
-    background-color: $green-shade;
-    border-color: $green-shade;
-  }
 }
 
 .form-actions {
