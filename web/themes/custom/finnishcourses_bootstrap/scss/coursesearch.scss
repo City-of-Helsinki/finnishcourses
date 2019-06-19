@@ -447,18 +447,33 @@ legend {
   }
 }
 
+.levels-link {
+  &::after {
+    content: url(../images/icons/ic_chevron_right.svg);
+    bottom: -6px;
+    position: relative;
+  }
+}
+
+// todo: more improvements needed with details
 .btn-primary {
   &::before {
     content: url(../images/icons/ic_search@1x.svg);
     position: relative;
-    @include media-breakpoint-down(sm-t) {
+    @include media-breakpoint-only(xs) {
+      right: 32%;
+    }
+    @include media-breakpoint-only(sm) {
+      right: 8%;
+    }
+    @include media-breakpoint-only(sm-t) {
       right: 8%;
     }
     @include media-breakpoint-only(md) {
-      right: 6%;
+      right: 19%;
     }
     @include media-breakpoint-up(lg) {
-      right: 1%;
+      right: 9%;
     }
   }
 }
