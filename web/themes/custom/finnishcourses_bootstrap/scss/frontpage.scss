@@ -28,16 +28,23 @@
   .content {
     .node--type-front-page {
       .node__content.clearfix {
-        display: inline-flex !important; // Override
+        @include media-breakpoint-up(sm) {
+          display: inline-flex !important; // Override
+        }
         .field--name-field-text-box-1, .field--name-field-text-box-2, .field--name-field-text-box-3 {
-          max-width: 40%;
-          width: 40%;
+          @include media-breakpoint-up(sm) {
+            max-width: 40%;
+            width: 40%;
+          }
+          @include media-breakpoint-only(xs) {
+            max-width: 100%;
+            width: 100%;
+          }
           h2 {
             font-size: 18px;
             font-weight: 900;
             line-height: 34px;
           }
-
           p {
             font-size: 18px;
             font-weight: 400;
@@ -45,13 +52,19 @@
           }
         }
         .field--name-field-text-box-2, .field--name-field-text-box-3 {
-          padding-left: 25px;
-          padding-right: 25px;
-          @include media-breakpoint-up(md) {
-              border-left: 1px solid $form-border-shade;
+          @include media-breakpoint-up(sm) {
+            padding-left: 25px;
+            padding-right: 25px;
+            border-left: 1px solid $box-border-shade;
           }
           @include media-breakpoint-only(xs) {
-              border-bottom: 1px solid $form-border-shade;
+            padding-top: 10px;
+            padding-bottom: 10px;
+          }
+        }
+        .field--name-field-text-box-1, .field--name-field-text-box-2 {
+          @include media-breakpoint-only(xs) {
+            border-bottom: 1px solid $box-border-shade;
           }
         }
       }
@@ -59,12 +72,12 @@
   }
 }
 
-  .node--view-mode-teaser {
-    border-bottom: none; // Override
-    margin-bottom: 0; // Override
-    padding-bottom: 0; // Override
-  }
+.node--view-mode-teaser {
+  border-bottom: none; // Override
+  margin-bottom: 0; // Override
+  padding-bottom: 0; // Override
+}
 
-  .feed-icons {
-    display: none;
-  }
+.feed-icons {
+  display: none;
+}
