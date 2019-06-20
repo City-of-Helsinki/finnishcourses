@@ -60,18 +60,38 @@ p {
   .navbar-brand {
     padding-bottom: 0px;
     position: relative;
-    left: 22%;
+    @include media-breakpoint-up(lg) {
+      right: -13%;
+    }
+    @include media-breakpoint-only(md) {
+      left: -3%
+    }
+    @include media-breakpoint-only(sm-t) {
+      left: -3%;
+    }
+    @include media-breakpoint-down(sm) {
+      left: 0;
+    }
   }
 }
 
 .region-secondary-menu {
   background: $primary-shade;
   padding: 20px 0 0 20px;
-
   .navbar-nav {
     display: flow-root;
     .nav-item {
       float: left;
+      position: relative;
+      @include media-breakpoint-only(md) {
+        right: 5%
+      }
+      @include media-breakpoint-only(sm-t) {
+        right: 47%;
+      }
+      @include media-breakpoint-down(sm) {
+        right: 0;
+      }
 
       a {
         color: $main-nav-shade;
@@ -90,41 +110,29 @@ p {
 .language-switcher-language-url {
   display: inherit;
   position:absolute;
-
-  //todo: fix this
-  top: 30px;
+  top: 39px;
   right: 200px;
-  @include media-breakpoint-down(sm) {
-    top: 12px;
-    left: 27%;
-    right: 0;
-  }
-  @include media-breakpoint-only(sm-t) {
-    top: 12px;
-    left: 27%;
-    right: 0;
-  }
-  @include media-breakpoint-only(md) {
-    top: 12px;
-    left: 27%;
-    right: 0;
-  }
   ul {
     list-style: none;
     display: flex;
     position: relative;
-    right: 67%;
+    @include media-breakpoint-up(lg) {
+      right: 67%;
+    }
+    @include media-breakpoint-down(md) {
+      right: -73%;
+    }
+    @include media-breakpoint-between(sm-t, sm) {
+      right: 42%;
+    }
   }
   .language-link {
     color: white;
     font-weight: 900;
-    font-size: 18px;
+    font-size: 14px;
     padding: 10px;
     &:hover{
       text-decoration: none;
-    }
-    @include media-breakpoint-down(sm) {
-      font-size: 14px;
     }
   }
 }
@@ -138,6 +146,13 @@ p {
   .navbar-brand img {
     width: 65%;
     float: right;
+    @include media-breakpoint-only(md) {
+      right: -100%;
+      position: relative;
+    }
+    @include media-breakpoint-only(sm-t) {
+      right: 0;
+    }
     @include media-breakpoint-down(sm) {
       visibility: hidden;
     }
@@ -168,7 +183,7 @@ h1, h2, h3 {
 
 .path-node {
   .section {
-    margin: 50px;
+    margin: 21px;
 
     h2 {
       margin-top: 30px;
@@ -262,7 +277,9 @@ h1, h2, h3 {
               flex: 1 1 160px;
               margin: 1px;
               float: left;
-
+              active {
+                padding-bottom: 0;
+              }
               a {
                 padding: 5px 30px 5px 20px;
               }
@@ -368,7 +385,8 @@ h1, h2, h3, .fieldset-legend {
 
 .menu--main {
   position: relative;
-  left: 22%;
+  left: 13%;
+  margin-top: 13px;
 }
 
 .menu--main li a {
