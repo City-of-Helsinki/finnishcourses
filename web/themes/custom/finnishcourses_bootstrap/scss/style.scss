@@ -120,10 +120,14 @@ p {
       right: 67%;
     }
     @include media-breakpoint-down(md) {
-      right: -73%;
+      right: -68%;
     }
-    @include media-breakpoint-between(sm-t, sm) {
-      right: 42%;
+    @media screen and (max-width: 1220px) {
+      // todo: create new breakpoint?
+      right: -37%;
+  }
+    @include media-breakpoint-only(sm-t, sm) {
+      right: -47%;
     }
   }
   .language-link {
