@@ -1,3 +1,6 @@
+@import "variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 /* FRONT PAGE
   -------------------------------------------------*/
 
@@ -18,16 +21,55 @@
   }
 }
 
-.views-row {
+#block-finnishcourses-bootstrap-content {
   flex: 1;
-  margin: 20px 0 66px 0;
-  //padding: 0 20px;
-
-  /*
-   * TODO: BOXES ON FRONTPAGE
-    &:nth-child(n+2) {
-    border-left: 1px solid $border-shade;
-  }*/
+  margin-top: 80px;
+  margin-bottom: 80px;
+  .content {
+    .node--type-front-page {
+      .node__content.clearfix {
+        @include media-breakpoint-up(sm) {
+          display: inline-flex !important; // Override
+        }
+        .field--name-field-text-box-1, .field--name-field-text-box-2, .field--name-field-text-box-3 {
+          @include media-breakpoint-up(sm) {
+            max-width: 40%;
+            width: 40%;
+          }
+          @include media-breakpoint-only(xs) {
+            max-width: 100%;
+            width: 100%;
+          }
+          h2 {
+            font-size: 18px;
+            font-weight: 900;
+            line-height: 34px;
+          }
+          p {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 26px;
+          }
+        }
+        .field--name-field-text-box-2, .field--name-field-text-box-3 {
+          @include media-breakpoint-up(sm) {
+            padding-left: 25px;
+            padding-right: 25px;
+            border-left: 1px solid $box-border-shade;
+          }
+          @include media-breakpoint-only(xs) {
+            padding-top: 10px;
+            padding-bottom: 10px;
+          }
+        }
+        .field--name-field-text-box-1, .field--name-field-text-box-2 {
+          @include media-breakpoint-only(xs) {
+            border-bottom: 1px solid $box-border-shade;
+          }
+        }
+      }
+    }
+  }
 }
 
 .node--view-mode-teaser {
