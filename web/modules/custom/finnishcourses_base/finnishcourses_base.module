@@ -511,6 +511,13 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 
 function finnishcourses_base_preprocess_field(&$variables) {
 
+  if (isset($variables['field_name']) && $variables['field_name'] == 'field_course_availability') {
+    $element = $variables['element'];
+    if (isset($element['#object']) && is_object($element['#object'])) {
+      $availabilityValue = $element['#object']->get('field_course_availability')->value;
+      $variables['attributes']['class'][] = $availabilityValue;
+    }
+  }
 }
 
 function finnishcourses_base_preprocess_office_hours(&$variables) {
