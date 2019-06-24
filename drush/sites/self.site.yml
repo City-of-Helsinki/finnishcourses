@@ -12,3 +12,8 @@
 #  user: www-admin
 #  root: /path/to/drupal
 #  uri: http://stage.example.com
+lando:
+  uri: https://fc.lndo.site
+baremetal:
+  uri: http://localhost:8888
+
