@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e457aa41a9812ea471f9c46c7b55341",
+    "content-hash": "ba51c7ec25068af328e37436e9e43ff4",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3212,7 +3212,8 @@
                     "merge-extra": false
                 },
                 "patches_applied": {
-                    "Grouped exposed filters do not work like they should": "https://www.drupal.org/files/issues/1810148-58.patch"
+                    "Grouped exposed filters do not work like they should": "https://www.drupal.org/files/issues/1810148-58.patch",
+                    "Untranslatable aliases generation fix for translations": "https://www.drupal.org/files/issues/2019-05-17/2689459-106.patch"
                 }
             },
             "autoload": {

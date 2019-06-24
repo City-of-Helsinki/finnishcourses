@@ -134,7 +134,8 @@
         },
         "patches": {
             "drupal/core": {
-                "Grouped exposed filters do not work like they should": "https://www.drupal.org/files/issues/1810148-58.patch"
+                "Grouped exposed filters do not work like they should": "https://www.drupal.org/files/issues/1810148-58.patch",
+                "Untranslatable aliases generation fix for translations": "https://www.drupal.org/files/issues/2019-05-17/2689459-106.patch"
             },
             "drupal/office_hours": {
                 "Handle timezones in Office Hours module": "https://www.drupal.org/files/issues/office_hours-respecting-user_timezone-D8-1925272-17.patch"
