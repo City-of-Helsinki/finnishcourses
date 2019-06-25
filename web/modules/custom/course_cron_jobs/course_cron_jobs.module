@@ -26,6 +26,15 @@ function _handle_published_courses($allPublishedCourses) {
 
   foreach ($allPublishedCourses as $key => $course) {
 
+    $courseUnpublishDate = $courseDataService->getFieldValue('field_course_unpublish_date', $course, 'valueInArray');
+
+    if (!empty($courseUnpublishDate)) {
+      if (strtotime($courseUnpublishDate) < strtotime('now')) {
+        $courseDataService->setNodeValue('published', 'FALSE', $course);
+      }
+      continue;
+    }
+
     $courseOrganization = $courseDataService->getFieldValue('field_course_organization', $course, 'targetId');
 
     if (!$courseOrganization) {

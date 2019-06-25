@@ -1,0 +1,21 @@
+uuid: 5f053b8d-2dbc-479e-8ab8-f78366e090db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_unpublish_date
+    - node.type.course
+  module:
+    - datetime
+id: node.course.field_course_unpublish_date
+field_name: field_course_unpublish_date
+entity_type: node
+bundle: course
+label: 'Course unpublish date'
+description: "As a default courses will be unpublished x weeks after course start date. x is defined in organization level. \r\n\r\n<b>Unpublishing date can be overridden</b> in course level with this field. Input the date when this course should be unpublished. "
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
