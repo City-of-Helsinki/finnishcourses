@@ -1,4 +1,4 @@
-/* 
+/*
 Theme Name: Bootstrap 4 Sass
 Description: Bootstrap 4 with Sass
 */
@@ -126,7 +126,7 @@ p {
       // todo: create new breakpoint?
       right: -37%;
   }
-    @include media-breakpoint-only(sm-t, sm) {
+    @include media-breakpoint-only(sm) {
       right: -47%;
     }
   }
