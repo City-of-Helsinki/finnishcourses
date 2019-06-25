@@ -76,13 +76,7 @@
                 <div class="section clearfix">
                     <div class="navbar-nav fixed-top">
                         {{ page.secondary_menu }}
-                        {{ page.top_header }}
                     </div>
-                    {% if page.top_header_form %}
-                        <div class="form-inline navbar-form pull-right">
-                            {{ page.top_header_form }}
-                        </div>
-                    {% endif %}
                 </div>
             </nav>
         {% endif %}
@@ -90,9 +84,6 @@
             <div class="section clearfix">
                 <div class="navbar-brand mx-auto">
                     {{ page.header }}
-                </div>
-                <div class="collapse navbar-toggleable-xs navbar-nav" id="CollapsingNavbar">
-                    {{ page.primary_menu }}
                 </div>
                 {% if page.header_form %}
                     <div class="form-inline navbar-form pull-right">
@@ -107,27 +98,12 @@
         <div id="main" class="main">
             <div class="row clearfix">
                 <div class="col-sm-9 mx-auto mw-75 p-3">
-                    {{ page.breadcrumb }}
                     <main{{ content_attributes }}>
                         <section class="section">
                             <a id="main-content" tabindex="-1"></a>
                             {{ page.content }}
                         </section>
                     </main>
-                    {% if page.sidebar_first %}
-                        <div{{ sidebar_first_attributes }}>
-                            <aside class="section" role="complementary">
-                                {{ page.sidebar_first }}
-                            </aside>
-                        </div>
-                    {% endif %}
-                    {% if page.sidebar_second %}
-                        <div{{ sidebar_second_attributes }}>
-                            <aside class="section" role="complementary">
-                                {{ page.sidebar_second }}
-                            </aside>
-                        </div>
-                    {% endif %}
                 </div>
             </div>
         </div>
