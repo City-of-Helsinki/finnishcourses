@@ -447,6 +447,15 @@ legend {
   }
 }
 
+.levels-link {
+  &::after {
+    content: url(../images/icons/ic_chevron_right.svg);
+    bottom: -7px;
+    position: relative;
+  }
+}
+
+
 #views-exposed-form-search-courses-page-1 {
   .btn-primary {
     &::before {
