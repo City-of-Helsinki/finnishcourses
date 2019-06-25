@@ -543,3 +543,20 @@ function finnishcourses_base_preprocess_office_hours(&$variables) {
     }
   }
 }
+
+function finnishcourses_base_preprocess_views_view_field(&$variables) {
+  if (isset($variables['field']) && !empty($variables['field']->field) && $variables['field']->field == 'nid') {
+    //kint($variables);
+    $nid = $variables['output']->__toString();
+    
+    if (!empty($nid)) {
+      $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+      $node = node_load($nid);
+      if ($language != 'en') {
+        $node = $node->getTranslation($language);
+      }
+      $variables['node_path'] = $node->toUrl()->setAbsolute()->toString();
+    }
+  }
+  
+}
