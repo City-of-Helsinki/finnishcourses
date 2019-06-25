@@ -42,9 +42,17 @@ mounts:
 build:
     flavor: composer
 
+dependencies:
+    nodejs:
+      npm: 6.9.0
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
-    # The deploy hook runs after your application has been deployed and started.
+    build: |
+        set -e
+        cd web/themes/custom/finnishcourses_bootstrap
+        npm install
+        npm run-script gulp-styles
+        npm run-script gulp-js
     deploy: |
         set -e
         php ./drush/platformsh_generate_drush_yml.php

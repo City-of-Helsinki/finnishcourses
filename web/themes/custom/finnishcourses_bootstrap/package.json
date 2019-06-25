@@ -4,6 +4,10 @@
   "description": "Barrio SASS implementation",
   "main": "index.js",
   "scripts": {
+    "gulp-tasks": "gulp --tasks",
+    "gulp": "gulp",
+    "gulp-styles": "gulp styles",
+    "gulp-js": "gulp js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
