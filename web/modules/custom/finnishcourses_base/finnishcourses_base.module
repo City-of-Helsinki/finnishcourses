@@ -6,6 +6,7 @@ use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Language\LanguageInterface;
 
 /**
  * Implements hook_element_info_alter().
@@ -408,6 +409,14 @@ function finnishcourses_base_entity_presave(Drupal\Core\Entity\EntityInterface $
   }
 }
 
+function finnishcourses_base_pathauto_pattern_alter(&$pattern, array $context) {
+  if ($context['module'] == 'node') {
+    if(!$context['data']['node']->path->getFieldDefinition()->isTranslatable()){
+      $context['language'] = LanguageInterface::LANGCODE_NOT_SPECIFIED;
+    }
+  }
+}
+
 
 function number_pad($number,$n) {
   return str_pad((int) $number,$n,'0',STR_PAD_LEFT);
@@ -511,6 +520,13 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 
 function finnishcourses_base_preprocess_field(&$variables) {
 
+  if (isset($variables['field_name']) && $variables['field_name'] == 'field_course_availability') {
+    $element = $variables['element'];
+    if (isset($element['#object']) && is_object($element['#object'])) {
+      $availabilityValue = $element['#object']->get('field_course_availability')->value;
+      $variables['attributes']['class'][] = $availabilityValue;
+    }
+  }
 }
 
 function finnishcourses_base_preprocess_office_hours(&$variables) {
