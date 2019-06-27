@@ -22,11 +22,21 @@ const paths = {
   }
 }
 
+// Prevent broken deployment by exiting with a failure exit code if sass compile fails
+function handleError (err) {
+  if (err.plugin === "gulp-sass") {
+    sass.logError(err)
+  } else {
+    console.error(err.message)
+  }
+  process.exit(-1)
+}
+
 // Compile sass into CSS & auto-inject into browsers
 function styles () {
   return gulp.src([paths.scss.bootstrap, paths.scss.src])
     .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass().on('error', handleError))
     .pipe(postcss([autoprefixer({
       browsers: [
         'Chrome >= 35',
