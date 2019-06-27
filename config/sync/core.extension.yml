@@ -30,7 +30,6 @@ module:
   datetime_range: 0
   dblog: 0
   dbug: 0
-  devel: 0
   devel_debug_log: 0
   devel_generate: 0
   dynamic_page_cache: 0
