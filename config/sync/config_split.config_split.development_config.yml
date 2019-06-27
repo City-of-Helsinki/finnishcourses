@@ -1,6 +1,6 @@
 uuid: b31cb39e-633d-4a43-ac44-687138eff2a5
 langcode: en
-status: true
+status: false
 dependencies: {  }
 id: development_config
 label: 'Development config'
