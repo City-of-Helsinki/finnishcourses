@@ -332,6 +332,25 @@ legend {
   }
 }
 
+
+// Probably need a more specified class? Style for read more-button
+.views-field-nid {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+  .read-more {
+    background-color: $primary-shade;
+    padding: 7px 45px 7px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    color: $link-color-white;
+    &:hover {
+      text-decoration: none; //Override
+      color: $link-color-white; //Override
+    }
+  }
+
 //Icons
 .more-search-options-trigger {
   &::before {
