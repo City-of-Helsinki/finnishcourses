@@ -14,10 +14,6 @@
 
 .form-check {
   display: inline !important; // Override
-  padding-left: 28px !important; // Override
-  @include media-breakpoint-only(md) {
-    padding-left: 22px !important; //Override
-   }
 }
 
 #edit-course-town--wrapper {
@@ -188,7 +184,6 @@ input[type="checkbox"] {
     width: 0;
     height: 0;
   }
-
 
   &:checked::after {
     top: -29px;
