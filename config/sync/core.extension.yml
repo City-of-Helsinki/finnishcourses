@@ -30,8 +30,6 @@ module:
   datetime_range: 0
   dblog: 0
   dbug: 0
-  devel_debug_log: 0
-  devel_generate: 0
   dynamic_page_cache: 0
   editor: 0
   embed: 0
@@ -55,7 +53,6 @@ module:
   honeypot: 0
   image: 0
   image_effects: 0
-  kint: 0
   language: 0
   link: 0
   link_attributes: 0
