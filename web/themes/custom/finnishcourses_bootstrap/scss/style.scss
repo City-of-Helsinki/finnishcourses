@@ -219,63 +219,7 @@ h1, h2, h3 {
 
   @include media-breakpoint-up(md) {
     .footer {
-      position: absolute;
-    }
-  }
-}
-
-.path-frontpage {
-  #edit-actions {
-    .btn-primary {
-      background-color: $green-shade;
-      border-color: $green-shade;
-      border-radius: 4px;
-      font-size: 21px;
-      font-weight: 700;
-      margin-top: 20px;
-      right: 0%;
-      padding: 13px;
-      border-radius: 0 !important; //Override, for some weird reason with Bootstrap
-      position: fixed;
-      z-index: 2000;
-      @include media-breakpoint-down(sm) {
-        width: 100%;
-      }
-      @include media-breakpoint-up(sm) {
-        padding: 15px 100px 15px 100px;
-      }
-
-      &:hover {
-        background-color: $green-shade; //Override
-        border-color: $green-shade; //Override
-      }
-
-      @include media-breakpoint-up(sm) {
-        display: none;
-      }
-    }
-  }
-}
-
-#views-exposed-form-search-courses-page-1 {
-  #edit-submit-fixed.btn-primary {
-    background-color: $green-shade;
-    border-color: $green-shade;
-    border-radius: 4px;
-    font-size: 21px;
-    font-weight: 700;
-    margin-top: 20px;
-    @include media-breakpoint-down(sm) {
-      width: 100%;
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-    @include media-breakpoint-up(sm) {
-      padding: 15px 100px 15px 100px;
-    }
-    &:hover {
-      background-color: $green-shade;
-      border-color: $green-shade;
+    //  position: absolute;
     }
   }
 }
