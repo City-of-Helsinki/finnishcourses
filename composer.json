@@ -43,6 +43,7 @@
         "drupal/business_rules": "^1.0@beta",
         "drupal/ckeditor_youtube": "^1.1",
         "drupal/conditional_fields": "^1.0@alpha",
+        "drupal/config_split": "^1.4",
         "drupal/console": "^1.8",
         "drupal/core": "^8.6.0",
         "drupal/devel_debug_log": "^1.0@beta",

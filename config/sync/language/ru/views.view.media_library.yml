@@ -4,6 +4,7 @@ display:
     display_options:
       exposed_form:
         options:
+          submit_button: 'Apply Filters'
           reset_button_label: Сбросить
           exposed_sorts_label: 'Сортировать по'
           sort_asc_label: 'По возрастанию'

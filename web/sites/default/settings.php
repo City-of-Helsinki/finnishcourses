@@ -32,6 +32,11 @@ $settings['file_scan_ignore_directories'] = [
 // This is defined inside the read-only "config" directory, deployed via Git.
 $config_directories[CONFIG_SYNC_DIRECTORY] = '../config/sync';
 
+// Override this by creating a environment specific variable according to
+// https://docs.platform.sh/development/variables.html#drupal-specific-variables
+// or in your settings.logal.php
+$config['config_split.config_split.development_config']['status'] = FALSE;
+
 // Automatic Platform.sh settings.
 if (file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
   include $app_root . '/' . $site_path . '/settings.platformsh.php';
