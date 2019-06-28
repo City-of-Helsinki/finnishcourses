@@ -131,7 +131,6 @@
   }
 }
 
-
 #views-exposed-form-search-courses-page-1 {
   .btn-primary {
     &::before {
@@ -147,6 +146,15 @@
         right: 1%;
       }
     }
+  }
+}
+
+// Color is changed within the svg file
+.read-more {
+  &::after {
+    content: url(../images/icons/white-baseline-chevron_right-24px.svg);
+    bottom: -7px;
+    position: relative;
   }
 }
 
