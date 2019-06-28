@@ -158,3 +158,13 @@
   }
 }
 
+// Color is changed within the svg file
+.show-courses {
+  &::after {
+    content: url(../images/icons/baseline-arrow_forward-24px.svg);
+    bottom: -7px;
+    left: 3px;
+    position: relative;
+  }
+}
+
