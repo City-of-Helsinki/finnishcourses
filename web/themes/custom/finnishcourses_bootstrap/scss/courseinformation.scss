@@ -20,6 +20,8 @@
 }
 
 .node--type-course {
+  padding-bottom: 60px;
+  border-bottom: 1px solid $border-shade;
   @include media-breakpoint-down(sm-t) {
     h2 {
       font-size: 21px;
