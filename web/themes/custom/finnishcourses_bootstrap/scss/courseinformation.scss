@@ -54,7 +54,7 @@
 .field--name-field-course-online-address, .field--name-field-registration-end-date, .field--name-field-course-length,
 .field--name-field-course-in-swedish, .field--name-field-online-course, .field--name-field-number-of-lessons, .field--name-field-course-start-date,
 .field--name-field-course-end-date, .field--name-field-registration-email, .field--name-field-registration-link, .organization-name,
-.field--name-field-starting-level, .field--name-field-target-level {
+.field--name-field-starting-level, .field--name-field-target-level, .field--name-field-organizers-course-id, .field--name-field-ask-more-email  {
   display: flex;
 
   @include media-breakpoint-down(sm) {
@@ -76,6 +76,10 @@
 
 .field--name-field-course-availability .field__item {
   font-weight: bold;
+}
+
+.field--name-field-organizers-course-id {
+  margin-top: 20px;
 }
 
 .office-hours {
