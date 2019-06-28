@@ -163,10 +163,12 @@ p {
   }
 }
 
-.nav-link.active,
-.nav-item.show .nav-link {
-  border-bottom: 1.5px solid $underline-link-color;
-  padding-bottom: 8px;
+.region-secondary-menu {
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    border-bottom: 1.5px solid $underline-link-color;
+    padding-bottom: 8px;
+  }
 }
 
 .title {
@@ -204,28 +206,6 @@ h1, h2, h3 {
   }
 }
 
-.site-footer__top {
-  display: inline-flex;
-  margin: auto;
-  width: 70%;
-  @include media-breakpoint-down(sm) {
-    display: flow-root;
-  }
-  img {
-    width: 15%;
-    height: 30%;
-    max-height: 30%;
-    max-width: 30%;
-    margin-left: 100px;
-    @include media-breakpoint-down(sm) {
-      width: 40%;
-      height: 40%;
-      max-width: 100%;
-      margin: auto;
-    }
-  }
-}
-
 .node__content {
   .align-center {
     width: 100%;
@@ -241,120 +221,7 @@ h1, h2, h3 {
 
   @include media-breakpoint-up(md) {
     .footer {
-      position: absolute;
-    }
-  }
-}
-
-.footer {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: $primary-footer;
-  text-align: center;
-  padding-top: 40px;
-  padding-bottom: 100px;
-  a {
-    color: $footer-text-shade;
-    font-weight: bold;
-  }
-
-
-    .region-footer-first, .region-footer-second, .region-footer-third {
-      @include media-breakpoint-up(sm) {
-        width: 100%;
-        display: table-row;
-        text-align: left;
-        border-left: 1px solid $border-shade;
-
-        &:nth-last-child(2) {
-          border-right: 1px solid $border-shade;
-        }
-      }
-
-      @include media-breakpoint-down(xs) {
-        display: flow-root;
-      }
-
-      .navigation {
-        .nav {
-          flex-direction: column;
-
-          .wrapper {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-
-            .nav-item {
-              flex: 1 1 160px;
-              margin: 1px;
-              float: left;
-              active {
-                padding-bottom: 0;
-              }
-              a {
-                padding: 5px 30px 5px 20px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-.path-frontpage {
-  #edit-actions {
-    .btn-primary {
-      background-color: $green-shade;
-      border-color: $green-shade;
-      border-radius: 4px;
-      font-size: 21px;
-      font-weight: 700;
-      margin-top: 20px;
-      right: 0%;
-      padding: 13px;
-      border-radius: 0 !important; //Override, for some weird reason with Bootstrap
-      position: fixed;
-      z-index: 2000;
-      @include media-breakpoint-down(sm) {
-        width: 100%;
-      }
-      @include media-breakpoint-up(sm) {
-        padding: 15px 100px 15px 100px;
-      }
-
-      &:hover {
-        background-color: $green-shade; //Override
-        border-color: $green-shade; //Override
-      }
-
-      @include media-breakpoint-up(sm) {
-        display: none;
-      }
-    }
-  }
-}
-
-#views-exposed-form-search-courses-page-1 {
-  #edit-submit-fixed.btn-primary {
-    background-color: $green-shade;
-    border-color: $green-shade;
-    border-radius: 4px;
-    font-size: 21px;
-    font-weight: 700;
-    margin-top: 20px;
-    @include media-breakpoint-down(sm) {
-      width: 100%;
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-    @include media-breakpoint-up(sm) {
-      padding: 15px 100px 15px 100px;
-    }
-    &:hover {
-      background-color: $green-shade;
-      border-color: $green-shade;
+    //  position: absolute;
     }
   }
 }

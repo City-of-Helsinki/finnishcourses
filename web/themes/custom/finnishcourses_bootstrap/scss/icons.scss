@@ -1,68 +1,160 @@
 @import "variables";
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-// Material Design Icons
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
+/* ICONS
+--------------------------------------------------*/
 
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
+.more-search-options-trigger {
+  &::before {
+    content: url(../images/icons/ic_chevron_down@1x.svg);
+    position: relative;
+    left: -1%;
+  }
 
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: 'liga';
+  @include media-breakpoint-down(sm-t) {
+    top: 38px;
+    right: -13px;
+  }
 }
 
-/* Rules for sizing the icon. */
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
+.form-item-starting-level-ext {
+  float: left;
+  position: relative;
 
-/* Rules for using icons as black on a light background. */
-.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
-.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
-
-/* Rules for using icons as white on a dark background. */
-.material-icons.md-light { color: rgba(255, 255, 255, 1); }
-.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
-
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
-
-#edit-submit-search-courses {
-  .material-icons.md-36 {
+  &::before {
+    content: url(../images/icons/ic_chevron_down@1x.svg);
+    color: $primary-shade;
     position: absolute;
-    right: 59%;
-    @include media-breakpoint-down(sm) {
-      right: 71%;
+    top: 11px;
+    right: 12px;
+    @include media-breakpoint-only(md) {
+      top: 10px;
+      right: -46px;
     }
-    @include media-breakpoint-up(lg) {
-      right: 57%;
+    @include media-breakpoint-only(sm-t) {
+      right: -106%;
+      top: 42px;
+    }
+    @include media-breakpoint-only(sm) {
+      top: 42px;
+      right: -44%;
+    }
+    @include media-breakpoint-only(xs) {
+      top: 43px;
+      right: -47%;
     }
   }
 }
 
-// Hamburger menu - Change size in page.html.twig
-.navbar-toggler {
-  border-color: transparent !important;
-  color: white !important;
-  display: none;
+.form-item-start-date, .form-item-start-date-2 {
+  &::before {
+    content: url(../images/icons/ic_insert_invitation@1x.svg);
+    position: absolute;
+    top: 11px;
+    height: 2px;
+    width: 2px;
+    @include media-breakpoint-down(sm-t) {
+      right: 42px;
+    }
+  }
+}
+
+.form-item-start-date {
+  &::before {
+    right: 61%;
+    @include media-breakpoint-only(md) {
+      right: 54%;
+    }
+    @include media-breakpoint-only(sm-t) {
+      top: 43px;
+      right: 64%;
+    }
+    @include media-breakpoint-only(sm) {
+      top: 43px;
+      right: 47%;
+    }
+    @include media-breakpoint-only(xs) {
+      top: 45px;
+      right: 48%;
+    }
+  }
+}
+
+.form-item-start-date-2 {
+  &::before {
+    right: 41%;
+    @include media-breakpoint-only(md) {
+      right: 54%;
+    }
+    @include media-breakpoint-between(sm, sm-t) {
+      top: 12px;
+      right: 14%;
+    }
+    @include media-breakpoint-only(xs) {
+      top: 12px;
+      right: 47%;
+    }
+  }
+}
+
+.form-item-start-date-2 {
+  &::after {
+    content: ("-");
+    position: absolute;
+    top: 11px;
+    height: 2px;
+    width: 2px;
+    @include media-breakpoint-up(lg) {
+      right: 86%;
+    }
+    @include media-breakpoint-only(md) {
+      right: 105%;
+    }
+    @include media-breakpoint-only(sm-t) {
+      right: 99%;
+    }
+    @include media-breakpoint-only(sm) {
+      right: 69%;
+    }
+    @include media-breakpoint-only(xs) {
+      top: 10px;
+      right: 103%;
+    }
+  }
+}
+
+.levels-link {
+  &::after {
+    content: url(../images/icons/ic_chevron_right.svg);
+    bottom: -7px;
+    position: relative;
+  }
+}
+
+#views-exposed-form-search-courses-page-1 {
+  .btn-primary {
+    &::before {
+      content: url(../images/icons/ic_search@1x.svg);
+      position: relative;
+      @include media-breakpoint-down(sm-t) {
+        right: 8%;
+      }
+      @include media-breakpoint-only(md) {
+        right: 6%;
+      }
+      @include media-breakpoint-up(lg) {
+        right: 1%;
+      }
+    }
+  }
+}
+
+// Color is changed within the svg file
+.read-more {
+  &::after {
+    content: url(../images/icons/white-baseline-chevron_right-24px.svg);
+    bottom: -7px;
+    position: relative;
+  }
 }
 
