@@ -12,13 +12,15 @@
       margin-top: 20px;
     }
     .views-row {
-      max-width: 80%;
+      max-width: 100%;
       .views-field-name {
         display: inline;
       }
       .views-field-nothing {  // Show courses field
         display: inline;
         position: relative;
+        float: right;
+        margin-left: -124px; // todo: fix this
       }
     }
   }
