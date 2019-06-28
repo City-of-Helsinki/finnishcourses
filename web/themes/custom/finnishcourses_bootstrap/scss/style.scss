@@ -163,10 +163,12 @@ p {
   }
 }
 
-.nav-link.active,
-.nav-item.show .nav-link {
-  border-bottom: 1.5px solid $underline-link-color;
-  padding-bottom: 8px;
+.region-secondary-menu {
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    border-bottom: 1.5px solid $underline-link-color;
+    padding-bottom: 8px;
+  }
 }
 
 .title {
