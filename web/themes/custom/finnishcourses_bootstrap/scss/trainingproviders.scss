@@ -13,6 +13,7 @@
     }
     .views-row {
       max-width: 100%;
+      padding-bottom: 10px;
       .views-field-name {
           display: inline;
           width: 100%;
@@ -25,6 +26,7 @@
         position: relative;
         float: right;
         margin-left: -124px; // todo: fix this
+        top: -7px; // todo: fix this
         display: inline;
         @include media-breakpoint-only(xs) {
           display: inline-table;
