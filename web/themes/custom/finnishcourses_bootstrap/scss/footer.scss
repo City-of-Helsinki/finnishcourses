@@ -19,7 +19,7 @@
 
 
   .region-footer-first, .region-footer-second, .region-footer-third {
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(sm-t) {
       width: 100%;
       display: table-row;
       text-align: left;
