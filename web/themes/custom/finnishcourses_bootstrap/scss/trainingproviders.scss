@@ -14,13 +14,21 @@
     .views-row {
       max-width: 100%;
       .views-field-name {
-        display: inline;
+          display: inline;
+          width: 100%;
+        @include media-breakpoint-only(xs) {
+          display: inline-table;
+          width: 50%;
+        }
       }
       .views-field-nothing {  // Show courses field
-        display: inline;
         position: relative;
         float: right;
         margin-left: -124px; // todo: fix this
+        display: inline;
+        @include media-breakpoint-only(xs) {
+          display: inline-table;
+        }
       }
     }
   }
