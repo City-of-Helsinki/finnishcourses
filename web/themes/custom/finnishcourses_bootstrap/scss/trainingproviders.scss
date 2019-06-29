@@ -17,7 +17,7 @@
       .views-field-name {
           display: inline;
           width: 100%;
-        @include media-breakpoint-only(xs) {
+        @include media-breakpoint-down(sm) {
           display: inline-table;
           width: 50%;
         }
@@ -28,7 +28,7 @@
         margin-left: -124px; // todo: fix this
         top: -7px; // todo: fix this
         display: inline;
-        @include media-breakpoint-only(xs) {
+        @include media-breakpoint-down(sm) {
           display: inline-table;
         }
       }
