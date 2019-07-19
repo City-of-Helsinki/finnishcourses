@@ -87,9 +87,17 @@ legend {
   text-align: left;
 }
 
-.more-options-row-1, .more-options-row-2, .more-options-row-3 {
-  display: flow-root;
+.more-options-row-1, .more-options-row-3 {
+  display: flow;
   max-width:  100%;
+}
+
+.more-options-row-2 {
+ /* @include media-breakpoint-only(md)
+  display: inline-flex;
+  @include media-breakpoint-down(sm-t) {
+    display: flow;
+  }*/
 }
 
 .form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
@@ -114,7 +122,7 @@ legend {
 
   label {
     @include media-breakpoint-up(lg) {
-      left: 4%;
+      left: 2%;
     }
     @include media-breakpoint-only(md) {
       left: 6%;
@@ -190,77 +198,56 @@ legend {
 }
 
 .form-item-start-date, .form-item-start-date-2 {
-  display: inline;
+  @include media-breakpoint-up(md) {
+    display: inline;
+    top: 50%;
+  }
+  @include media-breakpoint-down(sm-t) {
+    top: 21px;
+    left: -2%;
+  }
 
   label {
     @include media-breakpoint-up(lg) {
-      left: -33%;
+      left: -49%;
+     // top: -66%;
     }
     @include media-breakpoint-only(md) {
       left: -35%;
     }
   }
 
-  .form-control {
-    @include media-breakpoint-up(md) {
-      width: 57%;
-    }
-    @include media-breakpoint-only(sm-t) {
-      width: 92%;
-    }
-    @include media-breakpoint-only(sm) {
-      width: 63%;
-    }
-    @include media-breakpoint-only(xs) {
-      width: 65%;
-    }
+  .form-group {
+    max-width: 50%;
   }
+
+  .form-control {
+      width: 48%;
+    }
 }
 
 .form-item-start-date {
   @include media-breakpoint-up(lg) {
-    left: 32.5%;
+   left: 32.5%;
   }
   @include media-breakpoint-only(md) {
     left: 23%;
-  }
-  @include media-breakpoint-only(sm-t) {
-    left: -46%;
-    top: 78px;
-  }
-  @include media-breakpoint-only(sm) {
-    top: 1px;
-  }
-  @include media-breakpoint-only(xs) {
-    top: 0;
   }
 }
 
 .form-item-start-date-2 {
   @include media-breakpoint-up(lg) {
-    left: 18%;
+    //left: 18%;
   }
   @include media-breakpoint-only(md) {
     left: 13%;
   }
-  @include media-breakpoint-only(sm-t) {
-    left: 49%;
-    top: 20px;
-  }
-  @include media-breakpoint-only(sm) {
-    top: -57px;
-    left: 27%;
-  }
-  @include media-breakpoint-only(xs) {
-    //margin-top: 0;
+  @include media-breakpoint-down(sm-t) {
     left: 52%;
-    top: -58px;
+    top: -37px;
   }
 
   .form-control {
-    @include media-breakpoint-between(sm, sm-t) {
-      float: right;
-    }
     @include media-breakpoint-down(md) {
       margin-left: 0 !important; // Override
     }
