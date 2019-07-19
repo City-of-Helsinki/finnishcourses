@@ -87,6 +87,11 @@ legend {
   text-align: left;
 }
 
+.more-options-row-1, .more-options-row-2, .more-options-row-3 {
+  display: flow-root;
+  max-width:  100%;
+}
+
 .form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
   label {
     color: $text-shade;
@@ -218,11 +223,9 @@ legend {
 .form-item-start-date {
   @include media-breakpoint-up(lg) {
     left: 32.5%;
-    top: -42px;
   }
   @include media-breakpoint-only(md) {
     left: 23%;
-    top: -42px;
   }
   @include media-breakpoint-only(sm-t) {
     left: -46%;
@@ -238,13 +241,10 @@ legend {
 
 .form-item-start-date-2 {
   @include media-breakpoint-up(lg) {
-    top: -42px;
     left: 18%;
   }
   @include media-breakpoint-only(md) {
-    top: -42px;
     left: 13%;
-    margin-top: 0;
   }
   @include media-breakpoint-only(sm-t) {
     left: 49%;
@@ -255,7 +255,7 @@ legend {
     left: 27%;
   }
   @include media-breakpoint-only(xs) {
-    margin-top: 0;
+    //margin-top: 0;
     left: 52%;
     top: -58px;
   }
