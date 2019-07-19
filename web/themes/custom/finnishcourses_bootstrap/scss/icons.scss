@@ -32,16 +32,16 @@
       right: -46px;
     }
     @include media-breakpoint-only(sm-t) {
-      right: -106%;
       top: 42px;
     }
     @include media-breakpoint-only(sm) {
       top: 42px;
-      right: -44%;
     }
     @include media-breakpoint-only(xs) {
       top: 43px;
-      right: -47%;
+    }
+    @include media-breakpoint-down(sm-t) {
+      right: 30px;
     }
   }
 }

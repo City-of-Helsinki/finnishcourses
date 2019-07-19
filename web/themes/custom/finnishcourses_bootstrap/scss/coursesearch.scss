@@ -82,7 +82,7 @@ legend {
 .more-options-wrapper {
   background: $more-options-shade;
   padding-top: 20px;
-  display: none;
+ // display: none;
   padding-bottom: 10px;
   text-align: left;
 }
@@ -108,6 +108,9 @@ legend {
     width: 38.5% !important; // Overriding col-auto
     left: -10px;
   }
+  @include media-breakpoint-down(sm-t) {
+    display: contents;
+  }
 
   label {
     @include media-breakpoint-up(lg) {
@@ -127,14 +130,8 @@ legend {
     @include media-breakpoint-only(md) {
       margin-left: 40%;
     }
-    @include media-breakpoint-only(sm-t) {
-      width: 233%;
-    }
-    @include media-breakpoint-only(sm) {
-      width: 160%;
-    }
-    @include media-breakpoint-only(xs) {
-      width: 168%;
+    @include media-breakpoint-down(sm-t) {
+      width: 100%;
     }
   }
 }
