@@ -17,6 +17,10 @@
       font-size: 40px;
     }
   }
+  .form-check-label {
+    padding-left: 20px !important; // Override
+    padding-right: 20px !important; // Override
+  }
 }
 
 .fieldset-legend {
@@ -162,8 +166,6 @@ legend {
     display: inline-grid;
     margin-bottom: 16px;
     .form-check {
-      padding: 5px;
-
       label {
         margin-left: 10px;
       }
