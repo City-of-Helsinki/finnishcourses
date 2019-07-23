@@ -47,7 +47,7 @@ legend {
 
 .form-item-keyword {
   .form-text, .form-control {
-    color: #A5A5A5;
+    color: $form-border-shade;
     @include media-breakpoint-up(lg) {
       width: 100%;
       max-width: 93%;

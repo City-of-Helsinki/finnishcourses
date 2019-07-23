@@ -59,7 +59,11 @@ legend {
     top: -42px;
     legend {
       .fieldset-legend {
-        left: 2.5%;
+        @include media-breakpoint-down(sm-t) {
+          // todo: fix this
+            right: 81%;
+            width: 20%;
+        }
       }
     }
   }
@@ -96,12 +100,26 @@ legend {
   max-width:  100%;
 }
 
+.more-options-row-1 {
+ @include media-breakpoint-down(sm-t) {
+   left: -2%
+ }
+}
+
 .more-options-row-2 {
- /* @include media-breakpoint-only(md)
-  display: inline-flex;
-  @include media-breakpoint-down(sm-t) {
-    display: flow;
+ /* @include media-breakpoint-down(sm-t) {
+
   }*/
+}
+
+.more-options-row-3 {
+ @include media-breakpoint-down(sm-t) {
+   left: -2%;
+ }
+  @include media-breakpoint-down(sm) {
+    margin-top: 45px;
+  }
+
 }
 
 .form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
@@ -154,6 +172,11 @@ legend {
     font-weight: 700;
     font-size: 16px;
     position: absolute;
+    @include media-breakpoint-down(sm-t) {
+      // todo: fix this
+      right: 77%;
+      width: 21%;
+    }
     .col-auto {
       max-width: 96%;
       margin: auto;
@@ -240,7 +263,7 @@ legend {
 
 .form-item-start-date-2 {
   @include media-breakpoint-up(lg) {
-    //left: 18%;
+    left: 25%;
   }
   @include media-breakpoint-only(md) {
     left: 13%;
@@ -253,12 +276,6 @@ legend {
   .form-control {
     @include media-breakpoint-down(md) {
       margin-left: 0 !important; // Override
-    }
-  }
-
-  .form-text {
-    @include media-breakpoint-up(lg) {
-      margin-left: 70px;
     }
   }
 }
@@ -303,8 +320,8 @@ legend {
   .form-text, .form-control {
     color: #A5A5A5;
     @include media-breakpoint-between(sm, sm-t) {
-      width: 100%;
-      max-width: 100%;
+      width: 105%;
+      max-width: 105%;
     }
     @include media-breakpoint-only(md) {
       width: 84.5% !important; // Override - not changing for some reason
