@@ -59,7 +59,11 @@ legend {
     top: -42px;
     legend {
       .fieldset-legend {
-        left: 2.5%;
+        @include media-breakpoint-down(sm-t) {
+          // todo: fix this
+          right: 81%;
+          width: 20%;
+        }
       }
     }
   }
@@ -93,15 +97,42 @@ legend {
 
 .more-options-row-1, .more-options-row-3 {
   display: flow;
-  max-width:  100%;
+  max-width: 100%;
+
+  .form-group {
+    @include media-breakpoint-down(sm-t) {
+      margin-bottom: 6px;
+    }
+  }
 }
 
 .more-options-row-2 {
- /* @include media-breakpoint-only(md)
-  display: inline-flex;
+  display: inline-block;
+  @include media-breakpoint-only(sm-t) {
+    width: 150% !important; // Override
+  }
+  @include media-breakpoint-down(sm) {
+    width: 100% !important; // Override
+  }
+}
+
+.more-options-row-1 {
+  @include media-breakpoint-up(md) {
+    bottom: -43px;
+  }
   @include media-breakpoint-down(sm-t) {
-    display: flow;
-  }*/
+    left: -2%
+  }
+}
+
+.more-options-row-3 {
+  @include media-breakpoint-down(sm-t) {
+    left: -2%;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-top: 45px;
+  }
+
 }
 
 .form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
@@ -154,6 +185,11 @@ legend {
     font-weight: 700;
     font-size: 16px;
     position: absolute;
+    @include media-breakpoint-down(sm-t) {
+      // todo: fix this
+      right: 77%;
+      width: 21%;
+    }
     .col-auto {
       max-width: 96%;
       margin: auto;
@@ -202,8 +238,8 @@ legend {
 
 .form-item-start-date, .form-item-start-date-2 {
   @include media-breakpoint-up(md) {
-    display: inline;
-    top: 50%;
+    display: inline-block;
+    //top: 50%;
   }
   @include media-breakpoint-down(sm-t) {
     top: 21px;
@@ -213,7 +249,7 @@ legend {
   label {
     @include media-breakpoint-up(lg) {
       left: -49%;
-     // top: -66%;
+      // top: -66%;
     }
     @include media-breakpoint-only(md) {
       left: -35%;
@@ -225,13 +261,13 @@ legend {
   }
 
   .form-control {
-      width: 48%;
-    }
+    width: 48%;
+  }
 }
 
 .form-item-start-date {
   @include media-breakpoint-up(lg) {
-   left: 32.5%;
+    left: 27%;
   }
   @include media-breakpoint-only(md) {
     left: 23%;
@@ -240,7 +276,7 @@ legend {
 
 .form-item-start-date-2 {
   @include media-breakpoint-up(lg) {
-    //left: 18%;
+    left: 16%;
   }
   @include media-breakpoint-only(md) {
     left: 13%;
@@ -250,17 +286,11 @@ legend {
     top: -37px;
   }
 
-  .form-control {
-    @include media-breakpoint-down(md) {
-      margin-left: 0 !important; // Override
-    }
-  }
-
-  .form-text {
-    @include media-breakpoint-up(lg) {
-      margin-left: 70px;
-    }
-  }
+  /* .form-control {
+     @include media-breakpoint-down(md) {
+       margin-left: 0 !important; // Override
+     }
+   }*/
 }
 
 .form-text, .form-select {
@@ -287,11 +317,8 @@ legend {
   @include media-breakpoint-only(sm-t) {
     margin-top: -30px;
   }
-  @include media-breakpoint-only(sm) {
-    margin-top: -63px;
-  }
-  @include media-breakpoint-only(xs) {
-    margin-top: -60px;
+  @include media-breakpoint-down(sm) {
+    margin-top: -93px;
   }
 
   label {
@@ -301,10 +328,9 @@ legend {
   }
 
   .form-text, .form-control {
-    color: #A5A5A5;
-    @include media-breakpoint-between(sm, sm-t) {
-      width: 100%;
-      max-width: 100%;
+    @include media-breakpoint-down(sm-t) {
+      width: 105%;
+      max-width: 105%;
     }
     @include media-breakpoint-only(md) {
       width: 84.5% !important; // Override - not changing for some reason
@@ -325,19 +351,20 @@ legend {
   margin-bottom: 20px;
 }
 
-  .read-more {
-    background-color: $primary-shade;
-    padding: 7px 5px 7px 14px;
-    font-size: 16px;
-    font-weight: 700;
-    color: $link-color-white;
-    &:hover {
-      text-decoration: none; //Override
-      color: $link-color-white; //Override
-    }
-  }
+.read-more {
+  background-color: $primary-shade;
+  padding: 7px 5px 7px 14px;
+  font-size: 16px;
+  font-weight: 700;
+  color: $link-color-white;
 
-  // Search buttons
+  &:hover {
+    text-decoration: none; //Override
+    color: $link-color-white; //Override
+  }
+}
+
+// Search buttons
 #views-exposed-form-search-courses-page-1 {
   #edit-submit-fixed.btn-primary, #edit-submit-search-courses.btn-primary {
     background-color: $green-shade;
