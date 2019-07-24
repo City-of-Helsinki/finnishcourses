@@ -342,8 +342,9 @@ legend {
   }
 
   label {
-    @include media-breakpoint-up(lg) {
-      left: 0.7%;
+    left: 0.7%;
+    @include media-breakpoint-down(md-t) {
+      left: 0;
     }
   }
 
