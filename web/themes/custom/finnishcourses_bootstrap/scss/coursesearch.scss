@@ -149,6 +149,12 @@ legend {
 
 }
 
+.form-item-starting-level-ext, .form-item-keyword, .edit-course-fee-wrapper {
+  label {
+    left: 0;
+  }
+}
+
 .form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
   label {
     color: $text-shade;
@@ -167,15 +173,6 @@ legend {
   }
   @include media-breakpoint-down(sm-t) {
     display: contents;
-  }
-
-  label {
-    @include media-breakpoint-up(lg) {
-      left: 2%;
-    }
-    @include media-breakpoint-between(md, md-t) {
-      left: 6%;
-    }
   }
 
   .form-select {
@@ -199,8 +196,9 @@ legend {
     font-weight: 700;
     font-size: 16px;
     position: absolute;
+    left: 0;
     @include media-breakpoint-between(md, md-t) {
-      left: 4%;
+      left: 3%;
     }
     @include media-breakpoint-down(sm-t) {
       // todo: fix this
@@ -223,9 +221,9 @@ legend {
     margin-bottom: 16px;
     .form-check {
       padding-bottom: 5px;
-      label {
+      /*label {
         margin-left: 10px;
-      }
+      }*/
     }
   }
 }
@@ -340,14 +338,6 @@ legend {
   @include media-breakpoint-down(sm) {
     margin-top: -93px;
   }
-
-  label {
-    left: 0.7%;
-    @include media-breakpoint-down(md-t) {
-      left: 0;
-    }
-  }
-
   .form-text, .form-control {
     @include media-breakpoint-down(sm-t) {
       width: 105%;
