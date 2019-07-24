@@ -57,17 +57,20 @@ legend {
   @include media-breakpoint-between(md, md-t) {
     float: right;
     top: -42px;
+    left: 9%;
+  }
     legend {
       .fieldset-legend {
+        @include media-breakpoint-between(md, md-t) {
+          left: 7%;
+        }
+        }
         @include media-breakpoint-down(sm-t) {
           // todo: fix this
-          right: 81%;
-          width: 20%;
+          right: 78%;
         }
       }
     }
-  }
-}
 
 .fieldset-wrapper {
   #edit-course-town, .form-item-online-course, #edit-starting-level {
@@ -93,6 +96,11 @@ legend {
   display: none;
   padding-bottom: 10px;
   text-align: left;
+  .form-check {
+    @include media-breakpoint-only(md) {
+      padding-left: 13px;
+    }
+  }
 }
 
 .more-options-row-1, .more-options-row-3 {
@@ -120,6 +128,9 @@ legend {
   @include media-breakpoint-up(md) {
     bottom: -43px;
     margin-top: -48px;
+  }
+  @include media-breakpoint-between(md, md-t) {
+    left: -4%;
   }
   @include media-breakpoint-down(sm-t) {
     left: -2%;
@@ -186,12 +197,18 @@ legend {
     font-weight: 700;
     font-size: 16px;
     position: absolute;
+    @include media-breakpoint-between(md, md-t) {
+      left: 4%;
+    }
     @include media-breakpoint-down(sm-t) {
       // todo: fix this
       right: 77%;
+    }
+    @include media-breakpoint-only(sm-t) {
+      // todo: fix this
       width: 21%;
     }
-    .col-auto {
+      .col-auto {
       max-width: 96%;
       margin: auto;
     }
