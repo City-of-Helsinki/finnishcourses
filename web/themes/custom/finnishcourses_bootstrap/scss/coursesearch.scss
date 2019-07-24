@@ -54,20 +54,23 @@ legend {
 }
 
 #edit-time-of-day--wrapper {
-  @include media-breakpoint-only(md) {
+  @include media-breakpoint-between(md, md-t) {
     float: right;
     top: -42px;
+    left: 9%;
+  }
     legend {
       .fieldset-legend {
+        @include media-breakpoint-between(md, md-t) {
+          left: 7%;
+        }
+        }
         @include media-breakpoint-down(sm-t) {
           // todo: fix this
-          right: 81%;
-          width: 20%;
+          right: 78%;
         }
       }
     }
-  }
-}
 
 .fieldset-wrapper {
   #edit-course-town, .form-item-online-course, #edit-starting-level {
@@ -93,12 +96,16 @@ legend {
   display: none;
   padding-bottom: 10px;
   text-align: left;
+  .form-check {
+    @include media-breakpoint-only(md) {
+      padding-left: 13px;
+    }
+  }
 }
 
 .more-options-row-1, .more-options-row-3 {
   display: flow;
   max-width: 100%;
-
   .form-group {
     @include media-breakpoint-down(sm-t) {
       margin-bottom: 6px;
@@ -119,15 +126,22 @@ legend {
 .more-options-row-1 {
   @include media-breakpoint-up(md) {
     bottom: -43px;
+    margin-top: -48px;
+  }
+  @include media-breakpoint-between(md, md-t) {
+    left: -4%;
   }
   @include media-breakpoint-down(sm-t) {
-    left: -2%
+    left: -2%;
   }
 }
 
 .more-options-row-3 {
   @include media-breakpoint-down(sm-t) {
     left: -2%;
+  }
+  @include media-breakpoint-only(sm-t) {
+    margin-top: -45px;
   }
   @include media-breakpoint-down(sm) {
     margin-top: 45px;
@@ -147,7 +161,7 @@ legend {
 }
 
 .form-item-starting-level-ext {
-  @include media-breakpoint-only(md) {
+  @include media-breakpoint-between(md, md-t) {
     width: 38.5% !important; // Overriding col-auto
     left: -10px;
   }
@@ -159,7 +173,7 @@ legend {
     @include media-breakpoint-up(lg) {
       left: 2%;
     }
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-between(md, md-t) {
       left: 6%;
     }
   }
@@ -170,7 +184,7 @@ legend {
       max-width: 73%;
       margin-left: 110px;
     }
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-between(md, md-t) {
       margin-left: 40%;
     }
     @include media-breakpoint-down(sm-t) {
@@ -185,12 +199,18 @@ legend {
     font-weight: 700;
     font-size: 16px;
     position: absolute;
+    @include media-breakpoint-between(md, md-t) {
+      left: 4%;
+    }
     @include media-breakpoint-down(sm-t) {
       // todo: fix this
       right: 77%;
+    }
+    @include media-breakpoint-only(sm-t) {
+      // todo: fix this
       width: 21%;
     }
-    .col-auto {
+      .col-auto {
       max-width: 96%;
       margin: auto;
     }
@@ -221,7 +241,7 @@ legend {
       margin-top: -7px;
       margin-left: 9%;
     }
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-between(md, md-t) {
       margin-top: -7px;
       margin-left: 14%;
     }
@@ -251,7 +271,7 @@ legend {
       left: -49%;
       // top: -66%;
     }
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-between(md, md-t) {
       left: -35%;
     }
   }
@@ -269,7 +289,7 @@ legend {
   @include media-breakpoint-up(lg) {
     left: 27%;
   }
-  @include media-breakpoint-only(md) {
+  @include media-breakpoint-between(md, md-t) {
     left: 23%;
   }
 }
@@ -278,7 +298,7 @@ legend {
   @include media-breakpoint-up(lg) {
     left: 16%;
   }
-  @include media-breakpoint-only(md) {
+  @include media-breakpoint-between(md, md-t) {
     left: 13%;
   }
   @include media-breakpoint-down(sm-t) {
@@ -301,7 +321,7 @@ legend {
   @include media-breakpoint-down(sm-t) {
     margin-top: 0.25rem;
   }
-  @include media-breakpoint-only(md) {
+  @include media-breakpoint-between(md, md-t) {
     width: 80%;
     max-width: 80%;
   }
@@ -311,7 +331,7 @@ legend {
   @include media-breakpoint-up(lg) {
     margin-top: -31px;
   }
-  @include media-breakpoint-only(md) {
+  @include media-breakpoint-between(md, md-t) {
     margin-top: -40px;
   }
   @include media-breakpoint-only(sm-t) {
@@ -323,7 +343,7 @@ legend {
 
   label {
     @include media-breakpoint-up(lg) {
-      left: 2%;
+      left: 0.7%;
     }
   }
 
@@ -332,15 +352,10 @@ legend {
       width: 105%;
       max-width: 105%;
     }
-    @include media-breakpoint-only(md) {
-      width: 84.5% !important; // Override - not changing for some reason
-      max-width: 85% !important; // Override
-      margin-left: 138px !important; // Override
-    }
-    @include media-breakpoint-up(lg) {
-      width: 89% !important; // Override
+    @include media-breakpoint-up(md) {
+      width: 90% !important; // Override
       max-width: 93%;
-      margin-left: 105px !important; // Override
+      margin-left: 111px !important; // Override
     }
   }
 }
