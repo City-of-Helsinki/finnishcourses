@@ -106,7 +106,6 @@ legend {
 .more-options-row-1, .more-options-row-3 {
   display: flow;
   max-width: 100%;
-
   .form-group {
     @include media-breakpoint-down(sm-t) {
       margin-bottom: 6px;
@@ -140,6 +139,9 @@ legend {
 .more-options-row-3 {
   @include media-breakpoint-down(sm-t) {
     left: -2%;
+  }
+  @include media-breakpoint-only(sm-t) {
+    margin-top: -45px;
   }
   @include media-breakpoint-down(sm) {
     margin-top: 45px;
