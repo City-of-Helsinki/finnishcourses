@@ -333,11 +333,6 @@ legend {
       width: 105%;
       max-width: 105%;
     }
-   /* @include media-breakpoint-only(md) {
-      width: 84.5% !important; // Override - not changing for some reason
-      max-width: 85% !important; // Override
-      margin-left: 138px !important; // Override
-    }*/
     @include media-breakpoint-up(md) {
       width: 90% !important; // Override
       max-width: 93%;
