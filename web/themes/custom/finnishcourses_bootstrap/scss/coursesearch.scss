@@ -354,7 +354,7 @@ legend {
     }
     @include media-breakpoint-up(md) {
       width: 90% !important; // Override
-      max-width: 93%;
+      max-width: 93% !important; // Override
       margin-left: 111px !important; // Override
     }
   }
