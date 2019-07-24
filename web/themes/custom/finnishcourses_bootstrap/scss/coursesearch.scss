@@ -239,11 +239,11 @@ legend {
     width: 100%;
     @include media-breakpoint-up(lg) {
       margin-top: -7px;
-      margin-left: 9%;
+      margin-left: 10%;
     }
     @include media-breakpoint-between(md, md-t) {
       margin-top: -7px;
-      margin-left: 14%;
+      margin-left: 16%;
     }
     @include media-breakpoint-down(sm-t) {
       padding-top: 30px;
