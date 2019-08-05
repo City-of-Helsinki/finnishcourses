@@ -14,10 +14,6 @@
 
 .form-check {
   display: inline !important; // Override
-  padding-left: 28px !important; // Override
-  @include media-breakpoint-only(md) {
-    padding-left: 22px !important; //Override
-   }
 }
 
 #edit-course-town--wrapper {
@@ -51,28 +47,19 @@ legend {
 
 .form-item-keyword {
   .form-text, .form-control {
-    color: #A5A5A5;
+    color: $form-border-shade;
     @include media-breakpoint-up(lg) {
       width: 100%;
       max-width: 93%;
       margin-left: 77px;
     }
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-between(md, md-t) {
       width: 82%;
       max-width: 82%;
       margin-left: 124px;
     }
   }
 }
-/*
-.form-item-start-date, .form-item-start-date-2 {
-  .form-text, .form-control {
-    @include media-breakpoint-up(md) {
-      width: 50%;
-      max-width: 60%;
-    }
-  }
-}*/
 
 // Radio button
 // Check variable values
@@ -188,7 +175,6 @@ input[type="checkbox"] {
     width: 0;
     height: 0;
   }
-
 
   &:checked::after {
     top: -29px;

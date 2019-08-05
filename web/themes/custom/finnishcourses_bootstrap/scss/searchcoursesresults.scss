@@ -73,7 +73,7 @@
     @include media-breakpoint-up(lg) {
       margin-left: 100px;
     }
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-between(md, md-t) {
       margin-left: 132px;
     }
     @include media-breakpoint-down(sm-t) {
@@ -83,7 +83,7 @@
           display: inline-grid;
           margin-top: 30px;
           .form-check {
-            padding: 5px;
+            padding-bottom: 5px;
           }
         }
       }

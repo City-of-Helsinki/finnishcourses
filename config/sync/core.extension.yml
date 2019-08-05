@@ -16,6 +16,8 @@ module:
   comment: 0
   conditional_fields: 0
   config: 0
+  config_filter: 0
+  config_split: 0
   config_translation: 0
   contact: 0
   contextual: 0
@@ -28,9 +30,6 @@ module:
   datetime_range: 0
   dblog: 0
   dbug: 0
-  devel: 0
-  devel_debug_log: 0
-  devel_generate: 0
   dynamic_page_cache: 0
   editor: 0
   embed: 0
@@ -54,7 +53,6 @@ module:
   honeypot: 0
   image: 0
   image_effects: 0
-  kint: 0
   language: 0
   link: 0
   link_attributes: 0
@@ -85,6 +83,7 @@ module:
   rdf: 0
   redirect: 0
   redirect_404: 0
+  redis: 0
   responsive_image: 0
   rest: 0
   role_delegation: 0

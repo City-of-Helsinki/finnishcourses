@@ -11,12 +11,15 @@
   .content {
     margin-top: 50px;
   }
-
   h2 {
     text-align: center;
     @include media-breakpoint-up(lg) {
       font-size: 40px;
     }
+  }
+  .form-check-label {
+    padding-left: 20px !important; // Override
+    padding-right: 20px !important; // Override
   }
 }
 
@@ -39,23 +42,35 @@ legend {
 }
 
 #edit-course-town--wrapper {
-  legend {
-    position: relative;
-    left: 23%;
+  .js-form-item {
+    .form-check-label {
+      position: relative;
+      padding-right: 12px;
+    }
+  }
+  .fieldset-wrapper {
+    padding-left: 20px;
   }
 }
 
 #edit-time-of-day--wrapper {
-  @include media-breakpoint-only(md) {
+  @include media-breakpoint-between(md, md-t) {
     float: right;
     top: -42px;
+    left: 9%;
+  }
     legend {
       .fieldset-legend {
-        left: 2.5%;
+        @include media-breakpoint-between(md, md-t) {
+          left: 7%;
+        }
+        }
+        @include media-breakpoint-down(sm-t) {
+          // todo: fix this
+          right: 78%;
+        }
       }
     }
-  }
-}
 
 .fieldset-wrapper {
   #edit-course-town, .form-item-online-course, #edit-starting-level {
@@ -81,6 +96,63 @@ legend {
   display: none;
   padding-bottom: 10px;
   text-align: left;
+  .form-check {
+    @include media-breakpoint-only(md) {
+      padding-left: 13px;
+    }
+  }
+}
+
+.more-options-row-1, .more-options-row-3 {
+  display: flow;
+  max-width: 100%;
+  .form-group {
+    @include media-breakpoint-down(sm-t) {
+      margin-bottom: 6px;
+    }
+  }
+}
+
+.more-options-row-2 {
+  display: inline-block;
+  @include media-breakpoint-only(sm-t) {
+    width: 150% !important; // Override
+  }
+  @include media-breakpoint-down(sm) {
+    width: 100% !important; // Override
+  }
+}
+
+.more-options-row-1 {
+  @include media-breakpoint-up(md) {
+    bottom: -43px;
+    margin-top: -48px;
+  }
+  @include media-breakpoint-between(md, md-t) {
+    left: -4%;
+  }
+  @include media-breakpoint-down(sm-t) {
+    left: -2%;
+  }
+}
+
+.more-options-row-3 {
+  @include media-breakpoint-down(sm-t) {
+    left: -2%;
+  }
+  @include media-breakpoint-only(sm-t) {
+    margin-top: -45px;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-top: 45px;
+  }
+
+}
+
+.form-item-starting-level-ext, .form-item-keyword, .edit-course-fee-wrapper {
+  label {
+    left: 0;
+  }
 }
 
 .form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
@@ -95,17 +167,12 @@ legend {
 }
 
 .form-item-starting-level-ext {
-  @include media-breakpoint-only(md) {
+  @include media-breakpoint-between(md, md-t) {
     width: 38.5% !important; // Overriding col-auto
     left: -10px;
   }
-  label {
-    @include media-breakpoint-up(lg) {
-      left: 4%;
-    }
-    @include media-breakpoint-only(md) {
-      left: 6%;
-    }
+  @include media-breakpoint-down(sm-t) {
+    display: contents;
   }
 
   .form-select {
@@ -114,17 +181,11 @@ legend {
       max-width: 73%;
       margin-left: 110px;
     }
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-between(md, md-t) {
       margin-left: 40%;
     }
-    @include media-breakpoint-only(sm-t) {
-      width: 233%;
-    }
-    @include media-breakpoint-only(sm) {
-      width: 160%;
-    }
-    @include media-breakpoint-only(xs) {
-      width: 168%;
+    @include media-breakpoint-down(sm-t) {
+      width: 100%;
     }
   }
 }
@@ -135,7 +196,19 @@ legend {
     font-weight: 700;
     font-size: 16px;
     position: absolute;
-    .col-auto {
+    left: 0;
+    @include media-breakpoint-between(md, md-t) {
+      left: 3%;
+    }
+    @include media-breakpoint-down(sm-t) {
+      // todo: fix this
+      right: 77%;
+    }
+    @include media-breakpoint-only(sm-t) {
+      // todo: fix this
+      width: 21%;
+    }
+      .col-auto {
       max-width: 96%;
       margin: auto;
     }
@@ -147,11 +220,10 @@ legend {
     display: inline-grid;
     margin-bottom: 16px;
     .form-check {
-      padding: 5px;
-
-      label {
+      padding-bottom: 5px;
+      /*label {
         margin-left: 10px;
-      }
+      }*/
     }
   }
 }
@@ -165,11 +237,11 @@ legend {
     width: 100%;
     @include media-breakpoint-up(lg) {
       margin-top: -7px;
-      margin-left: 9%;
+      margin-left: 10%;
     }
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-between(md, md-t) {
       margin-top: -7px;
-      margin-left: 14%;
+      margin-left: 16%;
     }
     @include media-breakpoint-down(sm-t) {
       padding-top: 30px;
@@ -183,92 +255,60 @@ legend {
 }
 
 .form-item-start-date, .form-item-start-date-2 {
-  display: inline;
+  @include media-breakpoint-up(md) {
+    display: inline-block;
+    //top: 50%;
+  }
+  @include media-breakpoint-down(sm-t) {
+    top: 21px;
+    left: -2%;
+  }
 
   label {
     @include media-breakpoint-up(lg) {
-      left: -33%;
+      left: -49%;
+      // top: -66%;
     }
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-between(md, md-t) {
       left: -35%;
     }
   }
 
+  .form-group {
+    max-width: 50%;
+  }
+
   .form-control {
-    @include media-breakpoint-up(md) {
-      width: 57%;
-    }
-    @include media-breakpoint-only(sm-t)  {
-      width: 92%;
-    }
-    @include media-breakpoint-only(sm)  {
-      width: 63%;
-    }
-    @include media-breakpoint-only(xs) {
-      width: 65%;
-    }
+    width: 48%;
   }
 }
 
-  .form-item-start-date {
-    @include media-breakpoint-up(lg) {
-      left: 32.5%;
-      top: -42px;
-    }
-    @include media-breakpoint-only(md) {
-      left: 23%;
-      top: -42px;
-    }
-    @include media-breakpoint-only(sm-t) {
-      left: -46%;
-      top: 78px;
-    }
-    @include media-breakpoint-only(sm) {
-      top: 1px;
-    }
-    @include media-breakpoint-only(xs) {
-      top: 0;
-    }
+.form-item-start-date {
+  @include media-breakpoint-up(lg) {
+    left: 27%;
   }
+  @include media-breakpoint-between(md, md-t) {
+    left: 23%;
+  }
+}
 
 .form-item-start-date-2 {
   @include media-breakpoint-up(lg) {
-    top: -42px;
-    left: 18%;
+    left: 16%;
   }
-  @include media-breakpoint-only(md) {
-    top: -42px;
+  @include media-breakpoint-between(md, md-t) {
     left: 13%;
-    margin-top: 0;
   }
-  @include media-breakpoint-only(sm-t) {
-    left: 49%;
-    top: 20px;
-  }
-  @include media-breakpoint-only(sm)  {
-    top: -57px;
-    left: 27%;
-  }
-  @include media-breakpoint-only(xs) {
-    margin-top: 0;
+  @include media-breakpoint-down(sm-t) {
     left: 52%;
-    top: -58px;
+    top: -37px;
   }
 
-  .form-control {
-    @include media-breakpoint-between(sm, sm-t)  {
-      float: right;
-    }
-    @include media-breakpoint-down(md) {
-      margin-left: 0 !important; // Override
-    }
-  }
-
-  .form-text {
-    @include media-breakpoint-up(lg) {
-      margin-left: 70px;
-    }
-  }
+  /* .form-control {
+     @include media-breakpoint-down(md) {
+       margin-left: 0 !important; // Override
+     }
+   }*/
 }
 
 .form-text, .form-select {
@@ -279,7 +319,7 @@ legend {
   @include media-breakpoint-down(sm-t) {
     margin-top: 0.25rem;
   }
-  @include media-breakpoint-only(md) {
+  @include media-breakpoint-between(md, md-t) {
     width: 80%;
     max-width: 80%;
   }
@@ -289,187 +329,79 @@ legend {
   @include media-breakpoint-up(lg) {
     margin-top: -31px;
   }
-  @include media-breakpoint-only(md) {
+  @include media-breakpoint-between(md, md-t) {
     margin-top: -40px;
   }
   @include media-breakpoint-only(sm-t) {
     margin-top: -30px;
   }
-  @include media-breakpoint-only(sm)  {
-    margin-top: -63px;
+  @include media-breakpoint-down(sm) {
+    margin-top: -93px;
   }
-  @include media-breakpoint-only(xs) {
-    margin-top: -60px;
-  }
-
-  label {
-    @include media-breakpoint-up(lg) {
-      left: 2%;
-    }
-  }
-
   .form-text, .form-control {
-    color: #A5A5A5;
-    @include media-breakpoint-between(sm, sm-t)  {
-      width: 100%;
-      max-width: 100%;
-    }
-    @include media-breakpoint-only(md) {
-      width: 84.5% !important; // Override - not changing for some reason
-      max-width: 85% !important; // Override
-      margin-left: 138px !important; // Override
-    }
-    @include media-breakpoint-up(lg) {
-      width: 89% !important; // Override
-      max-width: 93%;
-      margin-left: 105px !important; // Override
-    }
-  }
-}
-
-//Icons
-.more-search-options-trigger {
-  &::before {
-    content: url(../images/icons/ic_chevron_down@1x.svg);
-    position: relative;
-    left: -1%;
-  }
-
-  @include media-breakpoint-down(sm-t) {
-    top: 38px;
-    right: -13px;
-  }
-}
-
-.form-item-starting-level-ext {
-  float: left;
-  position: relative;
-
-  &::before {
-    content: url(../images/icons/ic_chevron_down@1x.svg);
-    color: $primary-shade;
-    position: absolute;
-    top: 11px;
-    right: 12px;
-    @include media-breakpoint-only(md) {
-      top: 10px;
-      right: -46px;
-    }
-    @include media-breakpoint-only(sm-t) {
-      right: -106%;
-      top: 42px;
-    }
-    @include media-breakpoint-only(sm)  {
-      top: 42px;
-      right: -44%;
-    }
-    @include media-breakpoint-only(xs) {
-      top: 43px;
-      right: -47%;
-    }
-  }
-}
-
-.form-item-start-date, .form-item-start-date-2 {
-  &::before {
-    content: url(../images/icons/ic_insert_invitation@1x.svg);
-    position: absolute;
-    top: 11px;
-    height: 2px;
-    width: 2px;
     @include media-breakpoint-down(sm-t) {
-      right: 42px;
+      width: 105%;
+      max-width: 105%;
+    }
+    @include media-breakpoint-up(md) {
+      width: 90% !important; // Override
+      max-width: 93% !important; // Override
+      margin-left: 111px !important; // Override
     }
   }
 }
 
-.form-item-start-date {
-  &::before {
-    right: 61%;
-    @include media-breakpoint-only(md) {
-      right: 54%;
-    }
-    @include  media-breakpoint-only(sm-t) {
-      top: 43px;
-      right: 64%;
-    }
-    @include media-breakpoint-only(sm)  {
-      top: 43px;
-      right: 47%;
-    }
-    @include media-breakpoint-only(xs) {
-      top: 45px;
-      right: 48%;
-    }
+// Probably need a more specified class? Style for read more-button
+.views-field-nid {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.read-more {
+  background-color: $primary-shade;
+  padding: 7px 5px 7px 14px;
+  font-size: 16px;
+  font-weight: 700;
+  color: $link-color-white;
+
+  &:hover {
+    text-decoration: none; //Override
+    color: $link-color-white; //Override
   }
 }
 
-.form-item-start-date-2 {
-  &::before {
-    right: 41%;
-    @include media-breakpoint-only(md) {
-      right: 54%;
-    }
-    @include media-breakpoint-between(sm, sm-t)  {
-      top: 12px;
-      right: 14%;
-    }
-    @include media-breakpoint-only(xs) {
-      top: 12px;
-      right: 47%;
-    }
-  }
-}
-
-.form-item-start-date-2 {
-  &::after {
-    content: ("-");
-    position: absolute;
-    top: 11px;
-    height: 2px;
-    width: 2px;
-    @include media-breakpoint-up(lg) {
-      right: 86%;
-    }
-    @include media-breakpoint-only(md) {
-      right: 105%;
-    }
-    @include media-breakpoint-only(sm-t) {
-      right: 99%;
-    }
-    @include media-breakpoint-only(sm) {
-      right: 69%;
-    }
-    @include media-breakpoint-only(xs) {
-      top: 10px;
-      right: 103%;
-    }
-  }
-}
-
-.levels-link {
-  &::after {
-    content: url(../images/icons/ic_chevron_right.svg);
-    bottom: -7px;
-    position: relative;
-  }
-}
-
-
+// Search buttons
 #views-exposed-form-search-courses-page-1 {
-  .btn-primary {
-    &::before {
-      content: url(../images/icons/ic_search@1x.svg);
-      position: relative;
-      @include media-breakpoint-down(sm-t) {
-        right: 8%;
-      }
-      @include media-breakpoint-only(md) {
-        right: 6%;
-      }
-      @include media-breakpoint-up(lg) {
-        right: 1%;
-      }
+  #edit-submit-fixed.btn-primary, #edit-submit-search-courses.btn-primary {
+    background-color: $green-shade;
+    border-color: $green-shade;
+    font-size: 21px;
+    font-weight: 700;
+    margin-top: 20px;
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    @include media-breakpoint-up(sm) {
+      padding: 15px 100px 15px 100px;
+    }
+    &:hover {
+      background-color: $green-shade;
+      border-color: $green-shade;
+    }
+  }
+  #edit-submit-fixed.btn-primary {
+    border-radius: 4px;
+  }
+  #edit-submit-search-courses.btn-primary {
+    border-radius: 0;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+    @include media-breakpoint-up(sm) {
+      display: none;
     }
   }
 }

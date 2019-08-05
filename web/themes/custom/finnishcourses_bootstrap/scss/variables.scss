@@ -10,6 +10,7 @@ $border-shade: #E9EDF0;
 $more-options-shade: #F4F8FA;
 $id-shade: #D8D8D8;
 $underline-link-color: #FFFF;
+$link-color-white: #FFFF;
 $title-color: #0073cf;
 $text-shade: #1A1A1A;
 $footer-text-shade: #565E63;
@@ -60,6 +61,7 @@ $grid-breakpoints: (
         sm: 620px,
         sm-t: 845px,
         md: 1290px,
+        md-t: 1350px,
         lg: 1511px
 );
 
@@ -67,6 +69,7 @@ $container-max-widths: (
         sm: 550px,
         sm-t: 680px,
         md: 730px,
+        md-t: 800px,
         lg: 940px,
         xl: 1000px
 );

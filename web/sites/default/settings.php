@@ -32,6 +32,11 @@ $settings['file_scan_ignore_directories'] = [
 // This is defined inside the read-only "config" directory, deployed via Git.
 $config_directories[CONFIG_SYNC_DIRECTORY] = '../config/sync';
 
+// Override this by creating a environment specific variable according to
+// https://docs.platform.sh/development/variables.html#drupal-specific-variables
+// or in your settings.logal.php
+$config['config_split.config_split.development_config']['status'] = FALSE;
+
 // Automatic Platform.sh settings.
 if (file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
   include $app_root . '/' . $site_path . '/settings.platformsh.php';
@@ -45,6 +50,26 @@ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 // We don't need permission hardening in platform.sh
 // And it only creates trouble for local dev.
 $settings['skip_permissions_hardening'] = TRUE;
+
+// <LANDOSETTINGS>
+// Inspired by https://github.com/lando/lando/issues/585
+if (getenv('LANDO') === 'ON') {
+  $lando_info = json_decode(getenv('LANDO_INFO'), TRUE);
+  $settings['trusted_host_patterns'] = ['.*'];
+  $settings['trusted_host_patterns'] = [
+    '^lndo\.site$',
+    '^.+\.lndo\.site$',
+  ];
+  $settings['hash_salt'] = md5(getenv('LANDO_HOST_IP'));
+  $databases['default']['default'] = [
+    'driver' => 'mysql',
+    'database' => $lando_info['database']['creds']['database'],
+    'username' => $lando_info['database']['creds']['user'],
+    'password' => $lando_info['database']['creds']['password'],
+    'host' => $lando_info['database']['internal_connection']['host'],
+    'port' => $lando_info['database']['internal_connection']['port'],
+  ];
+}
 
 // <DDSETTINGS>
 // Please don't edit anything between <DDSETTINGS> tags.

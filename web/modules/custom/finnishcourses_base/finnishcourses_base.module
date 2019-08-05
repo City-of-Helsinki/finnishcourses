@@ -79,7 +79,7 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     // Disable course id field because it will be generated automatically
     $form['field_course_id']['#disabled'] = 'disabled';
     $form['field_course_times_of_day']['#disabled'] = 'disabled';
-    
+
 
 
     // foreach (array_keys($form['actions']) as $action) {
@@ -92,7 +92,7 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
   if ($form_id == 'user_register_form') {
     if (isset($form['account']) && isset($form['account']['name'])) {
       $form['account']['mail']['#required'] = TRUE;
-      //$form['account']['name']['#access'] = FALSE; 
+      //$form['account']['name']['#access'] = FALSE;
     }
   }
 }
@@ -102,13 +102,13 @@ function getAddressOptions($form_state, $form) {
   $organization = FALSE;
 
   if (is_object($form_state) && method_exists($form_state, 'getTriggeringElement') && !empty($form_state->getTriggeringElement())) {
-    
+
     $element = $form_state->getTriggeringElement();
     if ($element['#name'] == 'field_course_organization') {
 
 
       if (!empty($element['#value'])) {
-      
+
         $organization = $element['#value'];
       }
     }
@@ -129,13 +129,13 @@ function getAddressDefault($form_state, $form) {
 
   $organization = FALSE;
   if (is_object($form_state) && method_exists($form_state, 'getTriggeringElement') && !empty($form_state->getTriggeringElement())) {
-    
+
     $element = $form_state->getTriggeringElement();
     if ($element['#name'] == 'field_course_organization') {
 
 
       if (!empty($element['#value'])) {
-      
+
         $organization = $element['#value'];
       }
     }
@@ -157,13 +157,13 @@ function getTownOptions($form_state, $form) {
   $organization = FALSE;
 
   if (is_object($form_state) && method_exists($form_state, 'getTriggeringElement') && !empty($form_state->getTriggeringElement())) {
-    
+
     $element = $form_state->getTriggeringElement();
     if ($element['#name'] == 'field_course_organization') {
 
 
       if (!empty($element['#value'])) {
-      
+
         $organization = $element['#value'];
       }
     }
@@ -185,13 +185,13 @@ function getTownDefault($form_state, $form) {
   $organization = FALSE;
 
   if (is_object($form_state) && method_exists($form_state, 'getTriggeringElement') && !empty($form_state->getTriggeringElement())) {
-    
+
     $element = $form_state->getTriggeringElement();
     if ($element['#name'] == 'field_course_organization') {
 
 
       if (!empty($element['#value'])) {
-      
+
         $organization = $element['#value'];
       }
     }
@@ -251,7 +251,7 @@ function getDefaultFromTerm($tid = '', $field = '') {
   // Get only first value
   $locationTerm = Term::load($values[0]['target_id']);
   $defaultKey = $locationTerm->label() . ' ('.$values[0]['target_id'].')';
-  
+
 
   return $defaultKey;
 }
@@ -312,7 +312,7 @@ function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $en
       if ($addressIs === FALSE) {
         $organization->field_locations_addresses[] = ['target_id' => $addressTid];
         $saveOrganization = TRUE;
-      }      
+      }
 
     }
     if (!empty($entity->get('field_course_town')->getValue())) {
@@ -332,7 +332,7 @@ function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $en
       if ($townIs === FALSE) {
         $organization->field_locations_towns[] = ['target_id' => $townTid];
         $saveOrganization = TRUE;
-      }      
+      }
 
     }
     if ($saveOrganization) {
@@ -363,6 +363,7 @@ function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $en
       }
     }
 
+
     // Add course translations if they not exist yet
     if (!$entity->hasTranslation('fi')) {
       $entity->addTranslation('fi', $entity->toArray());
@@ -383,7 +384,7 @@ function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $en
         $translationRu->setTitle($originalTitle);
       }
     }
-    
+
 
   }
 }
@@ -445,11 +446,27 @@ function finnishcourses_base_theme_suggestions_taxonomy_term_alter(array &$sugge
   $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
 }
 
+/**
+ * Set the hidden online form element to on if the "fake" online course town is selected.
+ * @param $element Form element
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $complete_form
+ */
+function online_validate(&$element, FormStateInterface $form_state, &$complete_form) {
+  $z = $form_state->getValue('course_town');
+  if ($z[999] === '999') {
+    $form_state->setValueForElement($element, 1);
+  }
+}
+
 function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
   $view = $form_state->get('view');
 
   if($view->id() == 'search_courses') {
+    $form['online_course']['#element_validate'][] = 'online_validate';
+    $form['online_course']['#type'] = 'hidden';
+    $form['course_town']['#options'][999] = 'Online';
 
     $form['time_of_day']['#title'] = t('Time of day');
     $form['starting_level_ext']['#title'] = t('Starting level');
@@ -516,10 +533,9 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
     unset($form['start_date_2']);
     unset($form['keyword']);
   }
-}  
+}
 
 function finnishcourses_base_preprocess_field(&$variables) {
-
   if (isset($variables['field_name']) && $variables['field_name'] == 'field_course_availability') {
     $element = $variables['element'];
     if (isset($element['#object']) && is_object($element['#object'])) {
@@ -530,7 +546,6 @@ function finnishcourses_base_preprocess_field(&$variables) {
 }
 
 function finnishcourses_base_preprocess_office_hours(&$variables) {
-  
   if (!empty($variables['items'])) {
     foreach ($variables['items'] as $key => $item) {
       if (isset($item['slots']) && isset($item['slots']['#type']) && $item['slots']['#type'] == 'markup') {
@@ -542,4 +557,21 @@ function finnishcourses_base_preprocess_office_hours(&$variables) {
       }
     }
   }
+}
+
+function finnishcourses_base_preprocess_views_view_field(&$variables) {
+  if (isset($variables['field']) && !empty($variables['field']->field) && $variables['field']->field == 'nid') {
+    //kint($variables);
+    $nid = $variables['output']->__toString();
+    
+    if (!empty($nid)) {
+      $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+      $node = node_load($nid);
+      if ($language != 'en') {
+        $node = $node->getTranslation($language);
+      }
+      $variables['node_path'] = $node->toUrl()->setAbsolute()->toString();
+    }
+  }
+  
 }

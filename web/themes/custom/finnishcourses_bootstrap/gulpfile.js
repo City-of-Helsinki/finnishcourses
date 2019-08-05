@@ -22,11 +22,21 @@ const paths = {
   }
 }
 
+// Prevent broken deployment by exiting with a failure exit code if sass compile fails
+function handleError (err) {
+  if (err.plugin === "gulp-sass") {
+    sass.logError(err)
+  } else {
+    console.error(err.message)
+  }
+  process.exit(-1)
+}
+
 // Compile sass into CSS & auto-inject into browsers
 function styles () {
   return gulp.src([paths.scss.bootstrap, paths.scss.src])
     .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass().on('error', handleError))
     .pipe(postcss([autoprefixer({
       browsers: [
         'Chrome >= 35',
@@ -54,10 +64,10 @@ function js () {
     .pipe(browserSync.stream())
 }
 
-// Static Server + watching scss/html files OBS! LANDO URL
+// Static Server + watching scss/html files
 function serve () {
   browserSync.init({
-    proxy: 'http://fc.lndo.site/',
+    proxy: 'http://localhost:8888/',
   })
 
   gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)
