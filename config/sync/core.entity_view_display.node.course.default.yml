@@ -232,10 +232,10 @@ content:
     region: content
   field_registration_end_date:
     weight: 5
-    label: inline
+    label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: date_only
     third_party_settings: {  }
     type: datetime_default
     region: content
@@ -253,10 +253,10 @@ content:
     region: content
   field_registration_start_date:
     weight: 4
-    label: inline
+    label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: date_only
     third_party_settings: {  }
     type: datetime_default
     region: content
@@ -284,3 +284,4 @@ hidden:
   field_course_information_source: true
   field_course_times_of_day: true
   langcode: true
+  search_api_excerpt: true
