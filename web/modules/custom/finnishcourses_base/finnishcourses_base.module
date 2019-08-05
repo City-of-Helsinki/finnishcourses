@@ -103,9 +103,10 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
   if (in_array($form_id, ['user_register_form', 'user_form'])) {
     $current_user = \Drupal::currentUser();
     $roles = $current_user->getRoles();
-    
+
     if (!in_array('administrator', $roles) && !in_array('organization_admin', $roles)) {
       unset($form['language']);
+      unset($form['field_organization']);
     }
   }
 }
@@ -378,8 +379,8 @@ function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $en
 
 
     // Add course translations if they not exist yet
-    if (!$entity->hasTranslation('fi')) {
-      $entity->addTranslation('fi', $entity->toArray());
+    if (!$entity->hasTranslation('en')) {
+      $entity->addTranslation('en', $entity->toArray());
     }
     if (!$entity->hasTranslation('ru')) {
       $entity->addTranslation('ru', $entity->toArray());
@@ -387,8 +388,8 @@ function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $en
 
     if (fnmatch('/clone/*/quick_clone', \Drupal::request()->getRequestUri())) {
       $originalTitle = $entity->getTitle();
-      if ($entity->hasTranslation('fi')) {
-        $translationFi = $entity->getTranslation('fi');
+      if ($entity->hasTranslation('en')) {
+        $translationFi = $entity->getTranslation('en');
         $translationFi->setTitle($originalTitle);
       }
 
@@ -580,7 +581,7 @@ function finnishcourses_base_preprocess_views_view_field(&$variables) {
     if (!empty($nid)) {
       $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
       $node = node_load($nid);
-      if ($language != 'en') {
+      if ($language != 'fi') {
         $node = $node->getTranslation($language);
       }
       $variables['node_path'] = $node->toUrl()->setAbsolute()->toString();
