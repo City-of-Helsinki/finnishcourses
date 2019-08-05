@@ -71,7 +71,7 @@
 
         $regEndDateInput.on('change', function(event) {
           if ($regEndDateInput.val() && !$regEndTimeInput.val()) {
-            $regEndTimeInput.val("00:00");
+            $regEndTimeInput.val("23:59");
           }
         });
       }
