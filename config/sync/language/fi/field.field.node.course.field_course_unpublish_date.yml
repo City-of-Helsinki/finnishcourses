@@ -1,0 +1,2 @@
+label: 'Kurssin julkaisusta poistopäivämäärä'
+description: "Oletuksena kurssi poistetaan julkaisusta x viikkoa alkamispäivämäärän jälkeen. X eli viikkojen määrä määritellään organisaatiotasolla.\r\n\r\n<b>Julkaisusta poistopäivämäärä voidaan ylikirjoittaa</b> yksittäisen kurssin kohdalla tämän kentän arvolla. Syötä siis päivämäärä, milloin kurssi tulisi poistua julkaisusta, jos et halua käyttää organisaatiolle määritettyä poistoajankohdan asetusta. "
