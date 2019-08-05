@@ -94,6 +94,19 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
       $form['account']['mail']['#required'] = TRUE;
       //$form['account']['name']['#access'] = FALSE;
     }
+
+    if (isset($form['language']['preferred_langcode'])) {
+      $form['language']['preferred_langcode']['#default_value'] = 'fi';
+    }
+  }
+
+  if (in_array($form_id, ['user_register_form', 'user_form'])) {
+    $current_user = \Drupal::currentUser();
+    $roles = $current_user->getRoles();
+    
+    if (!in_array('administrator', $roles) && !in_array('organization_admin', $roles)) {
+      unset($form['language']);
+    }
   }
 }
 
