@@ -11,6 +11,7 @@ permissions:
   - 'access taxonomy overview'
   - 'access toolbar'
   - 'access user profiles'
+  - 'administer nodes'
   - 'assign course_editor role'
   - 'assign organization_admin role'
   - 'clone course content'

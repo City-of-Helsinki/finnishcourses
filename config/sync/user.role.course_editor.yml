@@ -9,6 +9,7 @@ is_admin: null
 permissions:
   - 'access toolbar'
   - 'access user profiles'
+  - 'administer nodes'
   - 'clone course content'
   - 'create content translations'
   - 'create course content'
