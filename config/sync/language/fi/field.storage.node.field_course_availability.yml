@@ -1,0 +1,8 @@
+settings:
+  allowed_values:
+    -
+      label: 'On tilaa'
+    -
+      label: 'Ei tilaa'
+    -
+      label: 'Kysy kurssin järjestäjältä'
