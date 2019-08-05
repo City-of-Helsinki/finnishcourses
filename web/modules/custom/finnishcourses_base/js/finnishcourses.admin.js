@@ -50,10 +50,37 @@
       }
     },
 
+    fillRegistrationDefaultTimes: function(context) {
+
+      // Set registration date's time field value to 00:00
+
+      if ($(context).find('.field--name-field-registration-start-date').length) {
+        var $regStartDateInput = $(context).find('.field--name-field-registration-start-date .js-form-item-field-registration-start-date-0-value-date input');
+        var $regStartTimeInput = $(context).find('.field--name-field-registration-start-date .js-form-item-field-registration-start-date-0-value-time input');
+
+        $regStartDateInput.on('change', function(event) {
+          if ($regStartDateInput.val() && !$regStartTimeInput.val()) {
+            $regStartTimeInput.val("00:00");
+          }
+        });
+      }
+
+      if ($(context).find('.field--name-field-registration-end-date').length) {
+        var $regEndDateInput = $(context).find('.field--name-field-registration-end-date .js-form-item-field-registration-end-date-0-value-date input');
+        var $regEndTimeInput = $(context).find('.field--name-field-registration-end-date .js-form-item-field-registration-end-date-0-value-time input');
+
+        $regEndDateInput.on('change', function(event) {
+          if ($regEndDateInput.val() && !$regEndTimeInput.val()) {
+            $regEndTimeInput.val("00:00");
+          }
+        });
+      }
+    },
+
     attach: function (context, settings) {
 
       Drupal.behaviors.finnishcourses_base.autofillUsername(context);
-
+      Drupal.behaviors.finnishcourses_base.fillRegistrationDefaultTimes(context);
 
       $(document).ajaxComplete(function(e, xhr, settings) {
 

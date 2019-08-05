@@ -363,6 +363,7 @@ function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $en
       }
     }
 
+
     // Add course translations if they not exist yet
     if (!$entity->hasTranslation('fi')) {
       $entity->addTranslation('fi', $entity->toArray());
