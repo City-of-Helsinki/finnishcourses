@@ -17,6 +17,20 @@
   }
 }
 
+.less {
+  &::before {
+    content: url(../images/icons/baseline-expand_less-24px.svg);
+    position: relative;
+    left: -0.5%;
+    top: 6px;
+  }
+
+  @include media-breakpoint-down(sm-t) {
+    top: 38px;
+    right: -13px;
+  }
+}
+
 .form-item-starting-level-ext {
   float: left;
   position: relative;
