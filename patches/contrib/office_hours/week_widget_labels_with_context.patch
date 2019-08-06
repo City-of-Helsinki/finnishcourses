@@ -1,0 +1,15 @@
+diff --git a/src/Plugin/Field/FieldWidget/OfficeHoursDefaultWidget.php b/src/Plugin/Field/FieldWidget/OfficeHoursDefaultWidget.php
+index 705f639..dba64ea 100644
+--- a/src/Plugin/Field/FieldWidget/OfficeHoursDefaultWidget.php
++++ b/src/Plugin/Field/FieldWidget/OfficeHoursDefaultWidget.php
+@@ -97,8 +97,8 @@ class OfficeHoursDefaultWidget extends OfficeHoursWidgetBase {
+     // Build multi element widget. Copy the description, etc. into the table.
+     $header = [
+       'title' => $this->t($element['#title']),
+-      'from' => $this->t('From'),
+-      'to' => $this->t('To'),
++      'from' => $this->t('From', array(), array('context' => 'Office hours header label')),
++      'to' => $this->t('To', array(), array('context' => 'Office hours header label')),
+     ];
+     if ($element['#field_settings']['comment']) {
+       $header['comment'] = $this->t('Comment');

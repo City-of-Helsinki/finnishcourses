@@ -140,7 +140,8 @@
                 "Untranslatable aliases generation fix for translations": "https://www.drupal.org/files/issues/2019-05-17/2689459-106.patch"
             },
             "drupal/office_hours": {
-                "Handle timezones in Office Hours module": "https://www.drupal.org/files/issues/office_hours-respecting-user_timezone-D8-1925272-17.patch"
+                "Handle timezones in Office Hours module": "https://www.drupal.org/files/issues/office_hours-respecting-user_timezone-D8-1925272-17.patch",
+                "Make week widgets header labels translatable with context": "patches/contrib/office_hours/week_widget_labels_with_context.patch"
             },
             "drupal/select_or_other": {
                 "Make Other option translatable": "patches/contrib/select_or_other/make_other_option_translatable-2926786-custom.patch"
