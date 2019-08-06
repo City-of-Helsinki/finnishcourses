@@ -21,8 +21,22 @@ display:
         edit_node:
           label: Muokkaa
           text: Muokkaa
-        translation_link:
-          label: Käännökset
-          text: Käännökset
+        nothing:
+          label: Kloonaa
+          alter:
+            text: '<a href="/clone/{{ nid }}/quick_clone">Kloonaa</a>'
+      filters:
+        field_course_id_value:
+          expose:
+            label: 'Kurssin F-koodi'
+        status_1:
+          expose:
+            label: Julkaistu
+      title: 'Hallitse kursseja'
+      pager:
+        options:
+          tags:
+            first: '« Ensimmäinen'
+            last: 'Viimeinen »'
   page_1:
     display_title: Sivu

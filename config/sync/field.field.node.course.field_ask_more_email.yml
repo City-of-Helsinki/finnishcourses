@@ -9,10 +9,10 @@ id: node.course.field_ask_more_email
 field_name: field_ask_more_email
 entity_type: node
 bundle: course
-label: 'Ask for more Email address'
-description: ''
+label: 'Ask for more by email'
+description: 'Email address for contacting to get more information'
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

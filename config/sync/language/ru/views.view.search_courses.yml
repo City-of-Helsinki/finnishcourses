@@ -1,0 +1,24 @@
+display:
+  default:
+    display_options:
+      fields:
+        field_course_fee:
+          fallback_options:
+            format_plural_string: !!binary MQNAY291bnQD
+        nid:
+          fallback_options:
+            format_plural_string: !!binary MQNAY291bnQD
+      filters:
+        field_starting_level:
+          expose:
+            description: ''
+        field_course_fee:
+          expose:
+            description: ''
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+        field_course_start_date:
+          group_info:
+            description: ''
+      title: 'Найти курсы финского языка'
