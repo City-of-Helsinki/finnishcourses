@@ -1793,7 +1793,7 @@ display:
             field_course_features: field_course_features
           plugin_id: combine
       sorts: {  }
-      title: 'Search available courses'
+      title: 'Search Finnish courses'
       header:
         result:
           id: result
