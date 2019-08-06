@@ -286,9 +286,7 @@ content:
     third_party_settings: {  }
   field_course_town:
     weight: 29
-    settings:
-      select_element_type: select_or_other_select
-      sort_options: ''
+    settings: {  }
     third_party_settings:
       conditional_fields:
         4cd804fa-d0bd-42ee-9d09-557f3a858b82:
@@ -323,7 +321,7 @@ content:
             selector: ''
           entity_type: node
           bundle: course
-    type: select_or_other_reference
+    type: options_select
     region: content
   field_course_unpublish_date:
     weight: 27
