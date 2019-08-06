@@ -1,0 +1,28 @@
+label: 'Hallitse kursseja'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Käytä
+          reset_button_label: Nollaa
+          exposed_sorts_label: Järjestä
+          sort_asc_label: Laskeva
+          sort_desc_label: Nouseva
+      fields:
+        field_course_organization:
+          label: Järjestäjä
+        field_course_start_date:
+          label: Alkaa
+        field_course_end_date:
+          label: Loppuu
+        status:
+          label: Julkaistu
+        edit_node:
+          label: Muokkaa
+          text: Muokkaa
+        translation_link:
+          label: Käännökset
+          text: Käännökset
+  page_1:
+    display_title: Sivu

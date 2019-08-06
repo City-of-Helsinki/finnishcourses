@@ -776,7 +776,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            en: en
+            fi: fi
           group: 1
           exposed: false
           expose:
