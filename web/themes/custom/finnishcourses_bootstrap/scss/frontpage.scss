@@ -51,10 +51,13 @@
             line-height: 26px;
           }
         }
+        .field--name-field-text-box-1, .field--name-field-text-box-2, .field--name-field-text-box-3 {
+        @include media-breakpoint-up(sm) {
+          padding: 0 25px;
+         }
+        }
         .field--name-field-text-box-2, .field--name-field-text-box-3 {
           @include media-breakpoint-up(sm) {
-            padding-left: 25px;
-            padding-right: 25px;
             border-left: 1px solid $box-border-shade;
           }
           @include media-breakpoint-only(xs) {
