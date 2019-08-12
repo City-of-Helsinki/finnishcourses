@@ -11,14 +11,22 @@ display:
         field_starting_level:
           expose:
             label: Aloitustaso
-            description: ''
+          group_info:
+            group_items:
+              1:
+                title: Vasta-alkaja
+              2:
+                title: Perustaso
+              3:
+                title: Edistynyt
         field_course_fee:
           expose:
-            label: 'Kurssin hinta'
-            description: ''
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
+            label: 'Hinta (€)'
+          group_info:
+            label: 'Hinta (€)'
+            group_items:
+              3:
+                title: 'Yli 150'
         field_starting_level_1:
           expose:
             label: Aloitustaso
@@ -26,11 +34,14 @@ display:
           expose:
             label: 'Kurssi alkaa'
           group_info:
-            description: ''
+            label: 'Kurssi alkaa'
         combine_1:
           expose:
             label: Hakusanat
             placeholder: 'Etsi kursseja hakusanalla, kurssin järjestäjän nimellä tai kurssin tunnuksella.'
+        field_course_times_of_day:
+          expose:
+            label: Kellonaika
       header:
         result:
           content: 'Hakuehdoilla löytyi @total kurssi(a)'
