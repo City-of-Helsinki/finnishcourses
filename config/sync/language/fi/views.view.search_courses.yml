@@ -3,7 +3,7 @@ display:
     display_options:
       exposed_form:
         options:
-          submit_button: 'Etsi kursseja'
+          submit_button: 'Katso kurssit'
       filters:
         field_course_town:
           expose:
@@ -11,6 +11,7 @@ display:
         field_starting_level:
           expose:
             label: Aloitustaso
+            description: ''
           group_info:
             group_items:
               1:
@@ -22,6 +23,10 @@ display:
         field_course_fee:
           expose:
             label: 'Hinta (€)'
+            description: ''
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
           group_info:
             label: 'Hinta (€)'
             group_items:
@@ -35,6 +40,7 @@ display:
             label: 'Kurssi alkaa'
           group_info:
             label: 'Kurssi alkaa'
+            description: ''
         combine_1:
           expose:
             label: Hakusanat
