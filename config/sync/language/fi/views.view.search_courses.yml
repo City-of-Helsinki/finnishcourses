@@ -35,4 +35,21 @@ display:
         result:
           content: 'Hakuehdoilla löytyi @total kurssi(a)'
       title: 'Etsi suomen kielen kursseja'
+      fields:
+        field_starting_level:
+          label: Aloitustaso
+        field_target_level:
+          label: Tavoitetaso
+        field_course_start_date:
+          label: Päivämäärät
+        field_course_town:
+          label: Kaupunki
+        field_course_fee:
+          label: 'Hinta (€)'
+        field_organizers_course_id:
+          label: 'Kurssin ID'
+        field_course_id:
+          label: 'Kurssin ID'
+  page_1:
+    display_title: Sivu
 label: 'Etsi suomen kielen kursseja'

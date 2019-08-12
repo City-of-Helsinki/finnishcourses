@@ -9,8 +9,8 @@ id: node.course.field_ask_exact_times
 field_name: field_ask_exact_times
 entity_type: node
 bundle: course
-label: 'Ask from your training provider for the exact times'
-description: 'If this is checked, text "Ask from your training provider for the exact times" is displayed in the course page under week hours calendar '
+label: 'Check exact times with the training provider'
+description: 'If this is checked, text "Check exact times with the training provider" is displayed in the course page under week hours calendar '
 required: false
 translatable: false
 default_value:

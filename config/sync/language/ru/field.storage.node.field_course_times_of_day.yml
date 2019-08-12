@@ -1,0 +1,8 @@
+settings:
+  allowed_values:
+    -
+      label: 'первая половина дня'
+    -
+      label: 'вторая половина дня'
+    -
+      label: вечер
