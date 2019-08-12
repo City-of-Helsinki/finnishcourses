@@ -5,9 +5,22 @@ display:
         field_course_fee:
           fallback_options:
             format_plural_string: !!binary MQNAY291bnQD
+          label: 'Стоимость (€)'
         nid:
           fallback_options:
             format_plural_string: !!binary MQNAY291bnQD
+        field_starting_level:
+          label: 'Исходный уровень'
+        field_target_level:
+          label: 'Целевой уровень'
+        field_course_start_date:
+          label: Даты
+        field_course_town:
+          label: Город
+        field_organizers_course_id:
+          label: 'Идентификационный номер курса'
+        field_course_id:
+          label: 'Идентификационный номер курса'
       filters:
         field_starting_level:
           expose:
@@ -22,3 +35,6 @@ display:
           group_info:
             description: ''
       title: 'Найти курсы финского языка'
+      exposed_form:
+        options:
+          submit_button: 'Посмотреть курсы'

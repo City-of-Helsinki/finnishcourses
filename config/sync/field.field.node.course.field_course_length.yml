@@ -9,7 +9,7 @@ id: node.course.field_course_length
 field_name: field_course_length
 entity_type: node
 bundle: course
-label: 'Course length'
+label: 'Contact teaching hours'
 description: 'The total number of hours'
 required: false
 translatable: false

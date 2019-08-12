@@ -11,7 +11,7 @@ id: node.course.field_course_availability
 field_name: field_course_availability
 entity_type: node
 bundle: course
-label: 'Course availability'
+label: 'Available places on the course'
 description: 'Availability information if there are free slots on the course.'
 required: false
 translatable: false
