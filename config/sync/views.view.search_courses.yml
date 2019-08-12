@@ -846,7 +846,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Price
+          label: 'Price (€)'
           exclude: false
           alter:
             alter_text: false
@@ -1495,7 +1495,7 @@ display:
             max_placeholder: null
           is_grouped: true
           group_info:
-            label: 'Course fee'
+            label: 'Price (€)'
             description: ''
             identifier: course_fee
             optional: true
@@ -1503,8 +1503,7 @@ display:
             multiple: true
             remember: false
             default_group: All
-            default_group_multiple:
-              All: 0
+            default_group_multiple: {  }
             group_items:
               1:
                 title: 0-49
