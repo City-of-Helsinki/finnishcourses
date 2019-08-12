@@ -91,9 +91,15 @@ legend {
   color: $primary-shade;
   font-weight: 900;
   text-align: center;
-  margin-top: 56px;
+  margin-top: 55px;
   margin-bottom: 20px;
 }
+
+// Style for less search options
+.less {
+  margin-top: 48px;
+}
+
 
 .more-options-wrapper {
   background: $more-options-shade;
