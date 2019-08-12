@@ -241,7 +241,13 @@ function getOptionsFromTerm($tid = '', $field = '') {
     if (!$locationTerm) {
       continue;
     }
-    $optionKey = $locationTerm->label() . ' ('.$value['target_id'].')';
+
+    // Select or other widget need option key in different format
+    if ($field == 'field_locations_addresses') {
+      $optionKey = $locationTerm->label() . ' ('.$value['target_id'].')';
+    } else {
+      $optionKey = $value['target_id'];
+    }
     $options[$optionKey] = $locationTerm->label();
   }
 
