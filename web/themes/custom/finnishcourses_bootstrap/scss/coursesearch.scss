@@ -59,7 +59,7 @@ legend {
     top: -42px;
     left: 9%;
   }
-  @include media-breakpoint-down(md-t) {
+  @include media-breakpoint-down(sm-t) {
     .form-check {
       left: 5%;
     }
