@@ -146,6 +146,7 @@ legend {
   @include media-breakpoint-down(sm) {
     margin-top: 45px;
   }
+}
 
 .more-options-dates {
   display: inline;
@@ -198,17 +199,8 @@ legend {
     font-weight: 700;
     font-size: 16px;
     position: absolute;
-    left: 0;
     @include media-breakpoint-between(md, md-t) {
       left: 3%;
-    }
-    @include media-breakpoint-down(sm-t) {
-      // todo: fix this
-      right: 77%;
-    }
-    @include media-breakpoint-only(sm-t) {
-      // todo: fix this
-      width: 21%;
     }
       .col-auto {
       max-width: 96%;
@@ -223,9 +215,9 @@ legend {
     margin-bottom: 16px;
     .form-check {
       padding-bottom: 5px;
-      /*label {
-        margin-left: 10px;
-      }*/
+      @include media-breakpoint-down(md-t) {
+        left: 5%;
+      }
     }
   }
 }
