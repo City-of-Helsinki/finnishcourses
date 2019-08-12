@@ -13,13 +13,13 @@ settings:
   allowed_values:
     -
       value: available
-      label: Available
+      label: 'Places are available'
     -
       value: not_available
-      label: 'Not available'
+      label: 'Course is full'
     -
       value: ask
-      label: 'Ask for course organizer'
+      label: 'Ask the training provider'
   allowed_values_function: ''
 module: options
 locked: false

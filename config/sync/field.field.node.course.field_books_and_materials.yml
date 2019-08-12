@@ -11,7 +11,7 @@ id: node.course.field_books_and_materials
 field_name: field_books_and_materials
 entity_type: node
 bundle: course
-label: 'Books and materials'
+label: 'Books and course materials'
 description: ''
 required: false
 translatable: true

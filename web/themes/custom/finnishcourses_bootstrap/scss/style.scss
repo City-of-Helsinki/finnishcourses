@@ -17,6 +17,7 @@ Description: Bootstrap 4 with Sass
 body {
   background: $body-bg;
   font-family: $font-family-base;
+  cursor: default;
 }
 
 .main-content {
@@ -78,7 +79,7 @@ p {
 
 .region-secondary-menu {
   background: $primary-shade;
-  padding: 11px 0 6px 0;
+  padding: 11px 0 11px 0;
   .navbar-nav {
     display: flow-root;
     .nav-item {

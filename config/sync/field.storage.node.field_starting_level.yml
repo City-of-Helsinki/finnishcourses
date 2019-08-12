@@ -13,7 +13,7 @@ settings:
   allowed_values:
     -
       value: aloitustaso_0
-      label: 'Starting level 0'
+      label: 'Beginners'' level 0'
     -
       value: perustaso_alkaa_A1_1
       label: 'Basic level begins A1.1'
@@ -38,6 +38,9 @@ settings:
     -
       value: keskitaso_B2_1
       label: 'Intermediate level B2.1'
+    -
+      value: keskitaso_B2_2
+      label: 'Intermediate level B2.2'
     -
       value: ylin_taso_C
       label: 'Advanced level C'
