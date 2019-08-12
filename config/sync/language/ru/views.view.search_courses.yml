@@ -24,16 +24,44 @@ display:
       filters:
         field_starting_level:
           expose:
-            description: ''
+            label: 'Исходный уровень'
+          group_info:
+            group_items:
+              1:
+                title: 'Только начинаю изучать язык'
+              2:
+                title: 'Базовый уровень'
+              3:
+                title: Продвинутый
         field_course_fee:
           expose:
-            description: ''
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
+            label: 'Стоимость (€)'
+          group_info:
+            label: 'Стоимость (€)'
+            group_items:
+              3:
+                title: 'более 150'
         field_course_start_date:
           group_info:
-            description: ''
+            label: 'Курс начинается'
+          expose:
+            label: 'Курс начинается'
+        field_course_town:
+          expose:
+            label: 'Выбрать местоположение'
+        field_online_course:
+          expose:
+            label: Онлайн-курс
+        field_course_times_of_day:
+          expose:
+            label: Время
+        field_starting_level_1:
+          expose:
+            label: 'Исходный уровень'
+        combine_1:
+          expose:
+            label: 'Ключевые слова'
+            placeholder: 'поиск курсов по ключевому слову'
       title: 'Найти курсы финского языка'
       exposed_form:
         options:
