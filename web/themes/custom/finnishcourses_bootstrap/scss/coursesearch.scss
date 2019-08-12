@@ -59,6 +59,11 @@ legend {
     top: -42px;
     left: 9%;
   }
+  @include media-breakpoint-down(md-t) {
+    .form-check {
+      left: 5%;
+    }
+  }
     legend {
       .fieldset-legend {
         @include media-breakpoint-between(md, md-t) {
