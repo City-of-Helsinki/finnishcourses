@@ -25,7 +25,6 @@ display:
         field_starting_level:
           expose:
             label: 'Исходный уровень'
-            description: ''
           group_info:
             group_items:
               1:
@@ -37,10 +36,6 @@ display:
         field_course_fee:
           expose:
             label: 'Стоимость (€)'
-            description: ''
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
           group_info:
             label: 'Стоимость (€)'
             group_items:
@@ -49,7 +44,6 @@ display:
         field_course_start_date:
           group_info:
             label: 'Курс начинается'
-            description: ''
           expose:
             label: 'Курс начинается'
         field_course_town:

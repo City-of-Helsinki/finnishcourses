@@ -143,7 +143,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Availability
+          label: ''
           exclude: false
           alter:
             alter_text: false
@@ -176,9 +176,9 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_class: '{{ field_course_availability__value }}'
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -196,7 +196,7 @@ display:
           delta_first_last: false
           multi_type: separator
           separator: ', '
-          field_api_classes: false
+          field_api_classes: true
           plugin_id: field
         field_starting_level:
           id: field_starting_level
@@ -760,8 +760,8 @@ display:
             office_hours_first_day: ''
             day_format: long
             time_format: G
-            compress: 0
-            grouped: 0
+            compress: false
+            grouped: false
             closed_format: ''
             separator:
               days: '<br />'
