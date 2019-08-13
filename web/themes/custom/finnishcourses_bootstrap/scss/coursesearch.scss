@@ -114,6 +114,7 @@ legend {
   text-align: left;
 
   .form-check-label {
+    padding: 0 17px;
     @include media-breakpoint-between(md, md-t) {
       padding: 0 11.5px;
     }
