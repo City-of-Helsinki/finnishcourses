@@ -41,9 +41,9 @@
     position: absolute;
     top: 11px;
     right: 38px;
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-between(md, md-t) {
       top: 10px;
-      right: -46px;
+      right: -22px;
     }
     @include media-breakpoint-only(sm-t) {
       top: 42px;
@@ -76,8 +76,8 @@
 .form-item-start-date {
   &::before {
     right: 25%;
-    @include media-breakpoint-only(md) {
-      right: 54%;
+    @include media-breakpoint-between(md, md-t) {
+      right: 41%;
     }
     @include media-breakpoint-down(sm-t) {
       top: 44px;
@@ -94,8 +94,8 @@
 .form-item-start-date-2 {
   &::before {
     right: 25%;
-    @include media-breakpoint-only(md) {
-      right: 54%;
+    @include media-breakpoint-between(md, md-t) {
+      right: 41%;
     }
     @include media-breakpoint-down(sm-t) {
       top: 12px;
@@ -119,8 +119,8 @@
     @include media-breakpoint-up(lg) {
       right: 110%;
     }
-    @include media-breakpoint-only(md) {
-      right: 105%;
+    @include media-breakpoint-between(md, md-t) {
+      right: 115%;
     }
     @include media-breakpoint-down(sm-t) {
       right: 102%;
