@@ -71,7 +71,7 @@
     //todo: fix this
     margin-top: -7px;
     @include media-breakpoint-up(lg) {
-      margin-left: 100px;
+   //   margin-left: 100px;
     }
     @include media-breakpoint-between(md, md-t) {
       margin-left: 132px;

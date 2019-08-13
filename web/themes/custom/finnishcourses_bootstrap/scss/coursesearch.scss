@@ -8,15 +8,18 @@
   @include media-breakpoint-up(md) {
     padding-top: 50px;
   }
+
   .content {
     margin-top: 50px;
   }
+
   h2 {
     text-align: center;
     @include media-breakpoint-up(lg) {
       font-size: 40px;
     }
   }
+
   .form-check-label {
     padding-left: 20px !important; // Override
     padding-right: 20px !important; // Override
@@ -26,9 +29,6 @@
 .fieldset-legend {
   font-weight: 900;
   margin-bottom: 5px;
-  @include media-breakpoint-up(lg) {
-    left: 0.5%;
-  }
 }
 
 legend {
@@ -48,12 +48,14 @@ legend {
       padding-right: 12px;
     }
   }
+
   .fieldset-wrapper {
     padding-left: 20px;
   }
 }
 
 #edit-time-of-day--wrapper {
+  left: 5%;
   @include media-breakpoint-between(md, md-t) {
     float: right;
     top: -42px;
@@ -64,18 +66,21 @@ legend {
       left: 5%;
     }
   }
-    legend {
-      .fieldset-legend {
-        @include media-breakpoint-between(md, md-t) {
-          left: 7%;
-        }
-        }
-        @include media-breakpoint-down(sm-t) {
-          // todo: fix this
-          right: 78%;
-        }
+
+  legend {
+    .fieldset-legend {
+      left: -24.5%;
+      @include media-breakpoint-between(md, md-t) {
+        left: 7%;
       }
     }
+
+    @include media-breakpoint-down(sm-t) {
+      // todo: fix this
+      right: 78%;
+    }
+  }
+}
 
 .fieldset-wrapper {
   #edit-course-town, .form-item-online-course, #edit-starting-level {
@@ -107,6 +112,7 @@ legend {
   display: none;
   padding-bottom: 10px;
   text-align: left;
+
   .form-check {
     @include media-breakpoint-only(md) {
       padding-left: 13px;
@@ -117,6 +123,7 @@ legend {
 .more-options-row-1, .more-options-row-3 {
   display: flow;
   max-width: 100%;
+
   .form-group {
     @include media-breakpoint-down(sm-t) {
       margin-bottom: 6px;
@@ -191,7 +198,8 @@ legend {
 
   .form-select {
     @include media-breakpoint-up(lg) {
-      width: 78%;
+      width: 330px;
+      height: 40px;
       max-width: 73%;
       margin-left: 110px;
     }
@@ -210,10 +218,12 @@ legend {
     font-weight: 700;
     font-size: 16px;
     position: absolute;
+    left: 0;
     @include media-breakpoint-between(md, md-t) {
       left: 3%;
     }
-      .col-auto {
+
+    .col-auto {
       max-width: 96%;
       margin: auto;
     }
@@ -242,7 +252,7 @@ legend {
     width: 100%;
     @include media-breakpoint-up(lg) {
       margin-top: -7px;
-      margin-left: 10%;
+      margin-left: 11%;
     }
     @include media-breakpoint-between(md, md-t) {
       margin-top: -7px;
@@ -271,7 +281,7 @@ legend {
 
   label {
     @include media-breakpoint-up(lg) {
-      left: -49%;
+      left: -57%;
       // top: -66%;
     }
     @include media-breakpoint-between(md, md-t) {
@@ -284,13 +294,14 @@ legend {
   }
 
   .form-control {
-    width: 48%;
+    width: 153px;
+    height: 40px;
   }
 }
 
 .form-item-start-date {
   @include media-breakpoint-up(lg) {
-    left: 27%;
+    left: 19.5%;
   }
   @include media-breakpoint-between(md, md-t) {
     left: 23%;
@@ -299,7 +310,7 @@ legend {
 
 .form-item-start-date-2 {
   @include media-breakpoint-up(lg) {
-    left: 16%;
+    left: 23%;
   }
   @include media-breakpoint-between(md, md-t) {
     left: 13%;
@@ -343,6 +354,7 @@ legend {
   @include media-breakpoint-down(sm) {
     margin-top: -93px;
   }
+
   .form-text, .form-control {
     @include media-breakpoint-down(sm-t) {
       width: 105%;
@@ -391,14 +403,17 @@ legend {
     @include media-breakpoint-up(sm) {
       padding: 15px 100px 15px 100px;
     }
+
     &:hover {
       background-color: $green-shade;
       border-color: $green-shade;
     }
   }
+
   #edit-submit-fixed.btn-primary {
     border-radius: 4px;
   }
+
   #edit-submit-search-courses.btn-primary {
     border-radius: 0;
     position: fixed;
