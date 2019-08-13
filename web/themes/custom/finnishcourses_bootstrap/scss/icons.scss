@@ -141,14 +141,12 @@
     &::before {
       content: url(../images/icons/ic_search@1x.svg);
       position: relative;
+      right: 5%;
       @include media-breakpoint-down(sm-t) {
         right: 8%;
       }
       @include media-breakpoint-only(md) {
         right: 6%;
-      }
-      @include media-breakpoint-up(lg) {
-        right: 1%;
       }
     }
   }
