@@ -585,7 +585,6 @@ function finnishcourses_base_preprocess_office_hours(&$variables) {
 
 function finnishcourses_base_preprocess_views_view_field(&$variables) {
   if (isset($variables['field']) && !empty($variables['field']->field) && $variables['field']->field == 'nid') {
-    //kint($variables);
     $nid = $variables['output']->__toString();
     
     if (!empty($nid)) {
@@ -597,5 +596,4 @@ function finnishcourses_base_preprocess_views_view_field(&$variables) {
       $variables['node_path'] = $node->toUrl()->setAbsolute()->toString();
     }
   }
-  
 }
