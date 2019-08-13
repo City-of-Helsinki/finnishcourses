@@ -68,18 +68,13 @@ p {
   .navbar-brand {
     padding-bottom: 0px;
     position: relative;
-    @include media-breakpoint-up(lg) {
       right: -13%;
-    }
-    @include media-breakpoint-only(md) {
-      left: -3%
-    }
-    @include media-breakpoint-only(sm-t) {
-      left: -3%;
-    }
-    @include media-breakpoint-down(sm) {
-      left: 0;
-    }
+  }
+}
+
+#block-finnishcourses-bootstrap-main-menu {
+  @include media-breakpoint-down(sm) {
+    display: none;
   }
 }
 
@@ -158,12 +153,12 @@ p {
   .navbar-brand img {
     width: 65%;
     float: right;
-    @include media-breakpoint-only(md) {
-      right: -100%;
+    @include media-breakpoint-down(md-t) {
+      right: -5%;
       position: relative;
     }
     @include media-breakpoint-only(sm-t) {
-      right: 0;
+      right: 32%;
     }
     @include media-breakpoint-down(sm) {
       visibility: hidden;
