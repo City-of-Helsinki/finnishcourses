@@ -62,8 +62,11 @@ legend {
     left: 9.5%;
   }
   @include media-breakpoint-down(sm-t) {
+    left: 0.7%;
+  }
+  @include media-breakpoint-down(sm-t) {
     .form-check {
-      left: 5%;
+      left: 0.7%;
     }
   }
 
@@ -72,6 +75,9 @@ legend {
       left: -24.5%;
       @include media-breakpoint-between(md, md-t) {
         left: -29%;
+      }
+      @include media-breakpoint-down(sm-t) {
+        left: 11px;
       }
     }
 
@@ -112,7 +118,9 @@ legend {
   display: none;
   padding-bottom: 10px;
   text-align: left;
-
+  @include media-breakpoint-down(sm-t) {
+    max-height: 580px;
+  }
   .form-check-label {
     padding: 0 17px;
     @include media-breakpoint-between(md, md-t) {
@@ -164,17 +172,15 @@ legend {
 .more-options-row-3 {
   @include media-breakpoint-down(sm-t) {
     left: -2%;
-  }
-  @include media-breakpoint-only(sm-t) {
-    margin-top: -45px;
-  }
-  @include media-breakpoint-down(sm) {
-    margin-top: 45px;
+    top: -80px;
   }
 }
 
 .more-options-dates {
   display: inline;
+  @include media-breakpoint-down(sm-t) {
+    top: -30px;
+  }
 }
 
 .form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
@@ -240,11 +246,13 @@ legend {
     font-weight: 700;
     font-size: 16px;
     position: absolute;
-    left: 0;
+      left: 0;
     @include media-breakpoint-between(md, md-t) {
       left: 4.5%;
     }
-
+    @include media-breakpoint-down(sm-t) {
+      left: 11px;
+    }
     .col-auto {
       max-width: 96%;
       margin: auto;
@@ -316,6 +324,9 @@ legend {
   .form-control {
     width: 153px;
     height: 40px;
+    @include media-breakpoint-down(sm-t) {
+      width: 48%;
+    }
   }
 }
 
@@ -380,12 +391,13 @@ legend {
   .form-text, .form-control {
     width: 90% !important; // Override
     max-width: 93% !important; // Override
+    height: 40px;
     @include media-breakpoint-up(lg) {
       margin-left: 111px !important; // Override
     }
     @include media-breakpoint-down(sm-t) {
-      width: 105%;
-      max-width: 105%;
+      width: 104% !important; // Override
+      max-width: 104% !important; // Override
     }
     @include media-breakpoint-between(md, md-t) {
       width: 90.2% !important; // Override
