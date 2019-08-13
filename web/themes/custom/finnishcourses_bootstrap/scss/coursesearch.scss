@@ -118,6 +118,7 @@ legend {
   display: none;
   padding-bottom: 10px;
   text-align: left;
+  max-height: 168px;
   @include media-breakpoint-down(sm-t) {
     max-height: 580px;
   }
@@ -170,9 +171,10 @@ legend {
 }
 
 .more-options-row-3 {
+  top: -26px;
   @include media-breakpoint-down(sm-t) {
     left: -2%;
-    top: -80px;
+    top: -115px;
   }
 }
 
@@ -205,7 +207,7 @@ legend {
 .form-item-keyword {
   label {
     @include media-breakpoint-up(md) {
-      top: 23px;
+      top: 10px;
     }
   }
 }
@@ -375,19 +377,6 @@ legend {
 }
 
 .form-item-keyword {
-  @include media-breakpoint-up(lg) {
-    margin-top: -31px;
-  }
-  @include media-breakpoint-between(md, md-t) {
-    margin-top: -40px;
-  }
-  @include media-breakpoint-only(sm-t) {
-    margin-top: -30px;
-  }
-  @include media-breakpoint-down(sm) {
-    margin-top: -93px;
-  }
-
   .form-text, .form-control {
     width: 90% !important; // Override
     max-width: 93% !important; // Override
