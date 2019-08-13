@@ -16,6 +16,10 @@
   display: inline !important; // Override
 }
 
+.form-text {
+  margin-top: 2px !important; // Override
+}
+
 #edit-course-town--wrapper {
   display: inline-block !important;
 }
@@ -150,8 +154,8 @@ input[type="checkbox"] {
     background: $custom-unchecked-bg;
     border: $custom-border-width solid $custom-unchecked-border;
     border-radius: 12%;
-    width: 28px;
-    height: 25px;
+    width: 24px;
+    height: 22px;
   }
 
   &:checked::before {

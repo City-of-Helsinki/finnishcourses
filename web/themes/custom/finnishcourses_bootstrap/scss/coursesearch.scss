@@ -8,27 +8,27 @@
   @include media-breakpoint-up(md) {
     padding-top: 50px;
   }
+
   .content {
     margin-top: 50px;
   }
+
   h2 {
     text-align: center;
     @include media-breakpoint-up(lg) {
       font-size: 40px;
     }
   }
-  .form-check-label {
+
+  /*.form-check-label {
     padding-left: 20px !important; // Override
     padding-right: 20px !important; // Override
-  }
+  }*/
 }
 
 .fieldset-legend {
   font-weight: 900;
   margin-bottom: 5px;
-  @include media-breakpoint-up(lg) {
-    left: 0.5%;
-  }
 }
 
 legend {
@@ -48,29 +48,45 @@ legend {
       padding-right: 12px;
     }
   }
+
   .fieldset-wrapper {
     padding-left: 20px;
   }
 }
 
 #edit-time-of-day--wrapper {
+  left: 5%;
   @include media-breakpoint-between(md, md-t) {
     float: right;
     top: -42px;
-    left: 9%;
+    left: 9.5%;
   }
-    legend {
-      .fieldset-legend {
-        @include media-breakpoint-between(md, md-t) {
-          left: 7%;
-        }
-        }
-        @include media-breakpoint-down(sm-t) {
-          // todo: fix this
-          right: 78%;
-        }
+  @include media-breakpoint-down(sm-t) {
+    left: 0.7%;
+  }
+  @include media-breakpoint-down(sm-t) {
+    .form-check {
+      left: 0.7%;
+    }
+  }
+
+  legend {
+    .fieldset-legend {
+      left: -24.5%;
+      @include media-breakpoint-between(md, md-t) {
+        left: -29%;
+      }
+      @include media-breakpoint-down(sm-t) {
+        left: 11px;
       }
     }
+
+    @include media-breakpoint-down(sm-t) {
+      // todo: fix this
+      right: 78%;
+    }
+  }
+}
 
 .fieldset-wrapper {
   #edit-course-town, .form-item-online-course, #edit-starting-level {
@@ -86,9 +102,15 @@ legend {
   color: $primary-shade;
   font-weight: 900;
   text-align: center;
-  margin-top: 56px;
+  margin-top: 55px;
   margin-bottom: 20px;
 }
+
+// Style for less search options
+.less {
+  margin-top: 48px;
+}
+
 
 .more-options-wrapper {
   background: $more-options-shade;
@@ -96,6 +118,17 @@ legend {
   display: none;
   padding-bottom: 10px;
   text-align: left;
+  max-height: 168px;
+  @include media-breakpoint-down(sm-t) {
+    max-height: 580px;
+  }
+  .form-check-label {
+    padding: 0 17px;
+    @include media-breakpoint-between(md, md-t) {
+      padding: 0 11.5px;
+    }
+  }
+
   .form-check {
     @include media-breakpoint-only(md) {
       padding-left: 13px;
@@ -106,6 +139,7 @@ legend {
 .more-options-row-1, .more-options-row-3 {
   display: flow;
   max-width: 100%;
+
   .form-group {
     @include media-breakpoint-down(sm-t) {
       margin-bottom: 6px;
@@ -137,21 +171,17 @@ legend {
 }
 
 .more-options-row-3 {
+  top: -26px;
   @include media-breakpoint-down(sm-t) {
     left: -2%;
+    top: -115px;
   }
-  @include media-breakpoint-only(sm-t) {
-    margin-top: -45px;
-  }
-  @include media-breakpoint-down(sm) {
-    margin-top: 45px;
-  }
-
 }
 
-.form-item-starting-level-ext, .form-item-keyword, .edit-course-fee-wrapper {
-  label {
-    left: 0;
+.more-options-dates {
+  display: inline;
+  @include media-breakpoint-down(sm-t) {
+    top: -30px;
   }
 }
 
@@ -166,23 +196,45 @@ legend {
   }
 }
 
+.form-item-starting-level-ext, .form-item-start-date {
+  label {
+    @include media-breakpoint-up(md) {
+      top: 11px;
+    }
+  }
+}
+
+.form-item-keyword {
+  label {
+    @include media-breakpoint-up(md) {
+      top: 10px;
+    }
+  }
+}
+
 .form-item-starting-level-ext {
   @include media-breakpoint-between(md, md-t) {
     width: 38.5% !important; // Overriding col-auto
     left: -10px;
+    label {
+      left: 15px;
+    }
   }
   @include media-breakpoint-down(sm-t) {
     display: contents;
   }
 
   .form-select {
+    width: 330px;
+    height: 40px;
     @include media-breakpoint-up(lg) {
-      width: 78%;
       max-width: 73%;
       margin-left: 110px;
     }
     @include media-breakpoint-between(md, md-t) {
-      margin-left: 40%;
+      width: 500px;
+      height: 40px;
+      margin-left: 36%;
     }
     @include media-breakpoint-down(sm-t) {
       width: 100%;
@@ -196,19 +248,14 @@ legend {
     font-weight: 700;
     font-size: 16px;
     position: absolute;
-    left: 0;
+      left: 0;
     @include media-breakpoint-between(md, md-t) {
-      left: 3%;
+      left: 4.5%;
     }
     @include media-breakpoint-down(sm-t) {
-      // todo: fix this
-      right: 77%;
+      left: 11px;
     }
-    @include media-breakpoint-only(sm-t) {
-      // todo: fix this
-      width: 21%;
-    }
-      .col-auto {
+    .col-auto {
       max-width: 96%;
       margin: auto;
     }
@@ -221,9 +268,9 @@ legend {
     margin-bottom: 16px;
     .form-check {
       padding-bottom: 5px;
-      /*label {
-        margin-left: 10px;
-      }*/
+      @include media-breakpoint-down(md-t) {
+        left: 5%;
+      }
     }
   }
 }
@@ -237,7 +284,7 @@ legend {
     width: 100%;
     @include media-breakpoint-up(lg) {
       margin-top: -7px;
-      margin-left: 10%;
+      margin-left: 11%;
     }
     @include media-breakpoint-between(md, md-t) {
       margin-top: -7px;
@@ -257,7 +304,6 @@ legend {
 .form-item-start-date, .form-item-start-date-2 {
   @include media-breakpoint-up(md) {
     display: inline-block;
-    //top: 50%;
   }
   @include media-breakpoint-down(sm-t) {
     top: 21px;
@@ -266,11 +312,10 @@ legend {
 
   label {
     @include media-breakpoint-up(lg) {
-      left: -49%;
-      // top: -66%;
+      left: -57%;
     }
     @include media-breakpoint-between(md, md-t) {
-      left: -35%;
+      left: -59%;
     }
   }
 
@@ -279,36 +324,34 @@ legend {
   }
 
   .form-control {
-    width: 48%;
+    width: 153px;
+    height: 40px;
+    @include media-breakpoint-down(sm-t) {
+      width: 48%;
+    }
   }
 }
 
 .form-item-start-date {
   @include media-breakpoint-up(lg) {
-    left: 27%;
+    left: 19.5%;
   }
   @include media-breakpoint-between(md, md-t) {
-    left: 23%;
+    left: 22.5%;
   }
 }
 
 .form-item-start-date-2 {
   @include media-breakpoint-up(lg) {
-    left: 16%;
+    left: 23%;
   }
   @include media-breakpoint-between(md, md-t) {
-    left: 13%;
+    left: 25%;
   }
   @include media-breakpoint-down(sm-t) {
     left: 52%;
     top: -37px;
   }
-
-  /* .form-control {
-     @include media-breakpoint-down(md) {
-       margin-left: 0 !important; // Override
-     }
-   }*/
 }
 
 .form-text, .form-select {
@@ -326,27 +369,30 @@ legend {
 }
 
 .form-item-keyword {
-  @include media-breakpoint-up(lg) {
-    margin-top: -31px;
-  }
   @include media-breakpoint-between(md, md-t) {
-    margin-top: -40px;
-  }
-  @include media-breakpoint-only(sm-t) {
-    margin-top: -30px;
-  }
-  @include media-breakpoint-down(sm) {
-    margin-top: -93px;
-  }
-  .form-text, .form-control {
-    @include media-breakpoint-down(sm-t) {
-      width: 105%;
-      max-width: 105%;
+    label {
+      left: 5px;
     }
-    @include media-breakpoint-up(md) {
-      width: 90% !important; // Override
-      max-width: 93% !important; // Override
+  }
+}
+
+.form-item-keyword {
+  .form-text, .form-control {
+    width: 90% !important; // Override
+    max-width: 93% !important; // Override
+    height: 40px;
+    @include media-breakpoint-up(lg) {
       margin-left: 111px !important; // Override
+    }
+    @include media-breakpoint-down(sm-t) {
+      width: 104% !important; // Override
+      max-width: 104% !important; // Override
+    }
+    @include media-breakpoint-between(md, md-t) {
+      width: 90.2% !important; // Override
+      max-width: 93% !important; // Override
+      margin-left: 107px !important; // Override
+      margin-top: 15px;
     }
   }
 }
@@ -386,14 +432,17 @@ legend {
     @include media-breakpoint-up(sm) {
       padding: 15px 100px 15px 100px;
     }
+
     &:hover {
       background-color: $green-shade;
       border-color: $green-shade;
     }
   }
+
   #edit-submit-fixed.btn-primary {
     border-radius: 4px;
   }
+
   #edit-submit-search-courses.btn-primary {
     border-radius: 0;
     position: fixed;

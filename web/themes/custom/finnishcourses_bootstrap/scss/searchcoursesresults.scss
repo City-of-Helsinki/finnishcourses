@@ -4,10 +4,6 @@
 /* SEARCH COURSES RESULTS
  -------------------------------------------------*/
 
-#block-finnishcourses-bootstrap-page-title {
-  display: none;
-}
-
 .view-search-courses {
   .views-row {
     padding-top: 20px;
@@ -70,12 +66,6 @@
   .fieldset-wrapper {
     //todo: fix this
     margin-top: -7px;
-    @include media-breakpoint-up(lg) {
-      margin-left: 100px;
-    }
-    @include media-breakpoint-between(md, md-t) {
-      margin-left: 132px;
-    }
     @include media-breakpoint-down(sm-t) {
       display: inline;
       #edit-time-of-day {
