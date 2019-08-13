@@ -141,17 +141,25 @@
     &::before {
       content: url(../images/icons/ic_search@1x.svg);
       position: relative;
+      right: 5%;
       @include media-breakpoint-down(sm-t) {
         right: 8%;
       }
       @include media-breakpoint-only(md) {
         right: 6%;
       }
-      @include media-breakpoint-up(lg) {
-        right: 1%;
-      }
     }
   }
+}
+
+.form-item-sort-bef-combine {
+    &::after {
+      content: url(../images/icons/ic_chevron_down@1x.svg);
+      color: $primary-shade;
+      position: absolute;
+      top: 7px;
+      right: 42%;
+    }
 }
 
 // Color is changed within the svg file

@@ -68,18 +68,13 @@ p {
   .navbar-brand {
     padding-bottom: 0px;
     position: relative;
-    @include media-breakpoint-up(lg) {
       right: -13%;
-    }
-    @include media-breakpoint-only(md) {
-      left: -3%
-    }
-    @include media-breakpoint-only(sm-t) {
-      left: -3%;
-    }
-    @include media-breakpoint-down(sm) {
-      left: 0;
-    }
+  }
+}
+
+#block-finnishcourses-bootstrap-main-menu {
+  @include media-breakpoint-down(sm) {
+    display: none;
   }
 }
 
@@ -119,24 +114,20 @@ p {
   display: inherit;
   position:absolute;
   top: 39px;
-  right: 200px;
+  right: 300px;
+  @include media-breakpoint-between(md, md-t) {
+    right: 200px;
+  }
+  @include media-breakpoint-only(sm-t) {
+    right: 79px;
+  }
+  @include media-breakpoint-down(sm) {
+    right: 0;
+  }
   ul {
     list-style: none;
     display: flex;
     position: relative;
-    @include media-breakpoint-up(lg) {
-      right: 67%;
-    }
-    @include media-breakpoint-down(md) {
-      right: -68%;
-    }
-    @media screen and (max-width: 1220px) {
-      // todo: create new breakpoint?
-      right: -37%;
-  }
-    @include media-breakpoint-only(sm) {
-      right: -47%;
-    }
   }
   .language-link {
     color: white;
@@ -158,12 +149,12 @@ p {
   .navbar-brand img {
     width: 65%;
     float: right;
-    @include media-breakpoint-only(md) {
-      right: -100%;
+    @include media-breakpoint-down(md-t) {
+      right: -5%;
       position: relative;
     }
     @include media-breakpoint-only(sm-t) {
-      right: 0;
+      right: 32%;
     }
     @include media-breakpoint-down(sm) {
       visibility: hidden;
@@ -172,6 +163,7 @@ p {
 }
 
 .region-secondary-menu {
+  top: 3px;
   .nav-link.active,
   .nav-item.show .nav-link {
     border-bottom: 1.5px solid $underline-link-color;

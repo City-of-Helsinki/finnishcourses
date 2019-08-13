@@ -4,6 +4,19 @@
 /* SEARCH COURSES RESULTS
  -------------------------------------------------*/
 
+.form-item-sort-bef-combine {
+  label {
+    display: none;
+  }
+}
+
+#edit-sort-bef-combine {
+  width: 181px;
+  height: 40px;
+  margin: auto;
+  color: $text-shade;
+}
+
 .view-search-courses {
   .views-row {
     padding-top: 20px;
