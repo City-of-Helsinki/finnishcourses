@@ -9,3 +9,12 @@ function finnishcourses_base_views_query_alter(ViewExecutable $view, QueryPlugin
     //kint($query->getWhere());
   }
 }
+
+function finnishcourses_base_views_pre_build(ViewExecutable $view) {
+  // if ($view->id() == 'content') {
+  //   //$exposed_filters = ['langcode' => 'fi'];
+  //   //$view->exposed_raw_input = array_merge($exposed_filters, (array)$view->exposed_raw_input);
+  //   $view->filter['langcode']->value = ['fi' => 'fi'];
+  //   //kint($view);
+  // }
+}
