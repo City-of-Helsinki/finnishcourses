@@ -115,6 +115,9 @@ p {
   position:absolute;
   top: 39px;
   right: 200px;
+  @include media-breakpoint-between(md, md-t) {
+    right: 280px;
+  }
   ul {
     list-style: none;
     display: flex;
