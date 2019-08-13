@@ -10,7 +10,7 @@ field_name: field_ask_more_email
 entity_type: node
 bundle: course
 label: 'Ask for more by email'
-description: 'Email address for contacting to get more information'
+description: "Email address for contacting to get more information.\r\n\r\n<b>NOTICE!</B> Do not add emails in \"firstname.surname@\" form."
 required: false
 translatable: false
 default_value: {  }
