@@ -70,6 +70,16 @@ display:
               autosubmit: false
               autosubmit_exclude_textfield: false
               autosubmit_hide: false
+            sort:
+              bef_format: default
+              advanced:
+                collapsible: false
+                collapsible_label: 'Sort options'
+                combine: true
+                combine_rewrite: ''
+                reset: false
+                reset_label: ''
+                is_secondary: false
             field_course_town:
               bef_format: bef
               more_options:
@@ -243,7 +253,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Status
+          label: ''
           exclude: false
           alter:
             alter_text: false
@@ -276,9 +286,9 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_class: '{{ field_course_availability__value }}'
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -296,7 +306,7 @@ display:
           delta_first_last: false
           multi_type: separator
           separator: ', '
-          field_api_classes: false
+          field_api_classes: true
           field_rendering: true
           fallback_handler: search_api
           fallback_options:
@@ -1791,7 +1801,55 @@ display:
             field_organizers_course_id: field_organizers_course_id
             field_course_features: field_course_features
           plugin_id: combine
-      sorts: {  }
+      sorts:
+        field_course_fee:
+          id: field_course_fee
+          table: search_api_index_courses_index
+          field: field_course_fee
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: Price
+          plugin_id: search_api
+        field_course_start_date:
+          id: field_course_start_date
+          table: search_api_index_courses_index
+          field: field_course_start_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: 'Starting date'
+          plugin_id: search_api
+        field_starting_level:
+          id: field_starting_level
+          table: search_api_index_courses_index
+          field: field_starting_level
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: 'Starting level'
+          plugin_id: search_api
+        field_target_level:
+          id: field_target_level
+          table: search_api_index_courses_index
+          field: field_target_level
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: 'Target level'
+          plugin_id: search_api
       title: 'Search Finnish courses'
       header:
         result:
@@ -1820,6 +1878,7 @@ display:
           6: AND
           7: AND
           8: AND
+      use_ajax: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -1827,6 +1886,8 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
         - user
       tags:
         - 'config:field.storage.node.field_course_availability'
@@ -1859,6 +1920,8 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'url.query_args:sort_by'
+        - 'url.query_args:sort_order'
         - user
       tags:
         - 'config:field.storage.node.field_course_availability'

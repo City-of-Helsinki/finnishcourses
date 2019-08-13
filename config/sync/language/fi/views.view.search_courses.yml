@@ -4,6 +4,10 @@ display:
       exposed_form:
         options:
           submit_button: 'Katso kurssit'
+          reset_button_label: Nollaa
+          exposed_sorts_label: Lajittelujärjestys
+          sort_asc_label: Nouseva
+          sort_desc_label: Laskeva
       filters:
         field_course_town:
           expose:
@@ -11,7 +15,6 @@ display:
         field_starting_level:
           expose:
             label: Aloitustaso
-            description: ''
           group_info:
             group_items:
               1:
@@ -23,10 +26,6 @@ display:
         field_course_fee:
           expose:
             label: 'Hinta (€)'
-            description: ''
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
           group_info:
             label: 'Hinta (€)'
             group_items:
@@ -40,7 +39,6 @@ display:
             label: 'Kurssi alkaa'
           group_info:
             label: 'Kurssi alkaa'
-            description: ''
         combine_1:
           expose:
             label: Hakusanat
@@ -67,6 +65,19 @@ display:
           label: 'Kurssin ID'
         field_course_id:
           label: 'Kurssin ID'
+      sorts:
+        field_course_fee:
+          expose:
+            label: 'Kurssin hinta'
+        field_course_start_date:
+          expose:
+            label: 'Päivämäärä alkaen'
+        field_starting_level:
+          expose:
+            label: Lähtötaso
+        field_target_level:
+          expose:
+            label: Tavoitetaso
   page_1:
     display_title: Sivu
 label: 'Etsi suomen kielen kursseja'
