@@ -183,9 +183,12 @@ legend {
 
 .more-options-dates {
   display: inline-block;
-  left: 23%;
-  @include media-breakpoint-between(md, md-t) {
-    left: 15%;
+  left: 13%;
+  @include media-breakpoint-only(md-t) {
+    left: 20%;
+  }
+  @include media-breakpoint-only(md) {
+    left: 13%;
   }
   @include media-breakpoint-down(sm-t) {
     top: -35px;
