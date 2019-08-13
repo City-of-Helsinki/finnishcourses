@@ -120,7 +120,7 @@ legend {
   text-align: left;
   max-height: 168px;
   @include media-breakpoint-down(sm-t) {
-    max-height: 580px;
+    max-height: 558px;
     .col-auto {
       width: 100% !important; // Override
     }
