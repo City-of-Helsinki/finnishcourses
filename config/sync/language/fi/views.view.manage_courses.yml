@@ -38,5 +38,8 @@ display:
           tags:
             first: '« Ensimmäinen'
             last: 'Viimeinen »'
+      header:
+        area_text_custom:
+          content: '<a href="/node/add/course" class="button button-action button--primary button--small">Lisää kurssi</a>'
   page_1:
     display_title: Sivu
