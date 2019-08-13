@@ -10,18 +10,6 @@
   Drupal.behaviors.bootstrap_barrio_subtheme = {
     attach: function (context, settings) {
 
-      // COURSE AVAILABILITY
-      // todo: Probably need to specify "field__item"
-      $('.field__item:contains("Available")').css('color', '#129942');
-      $('.field__item:contains("Not available")').css('color', '#EC3620');
-      $('.field__item:contains("Ask for course organizer")').css('color', '#F08300');
-
-      // COURSE AVAILABILITY - for "View courses"
-      // todo: Probably need to specify "field-content"
-      $('.field-content:contains("Available")').css('color', '#129942');
-      $('.field-content:contains("Not available")').css('color', '#EC3620');
-      $('.field-content:contains("Ask for course organizer")').css('color', '#F08300');
-
       // SEARCH MORE OPTIONS "BUTTON"
       let lessSearch = Drupal.t("Less search options");
       let moreSearch = Drupal.t("More search options");

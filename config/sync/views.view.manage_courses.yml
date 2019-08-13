@@ -758,7 +758,18 @@ display:
           plugin_id: language
       sorts: {  }
       title: 'Manage courses'
-      header: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: '<a href="/node/add/course" class="button button-action button--primary button--small">Add course</a>'
+          plugin_id: text_custom
       footer: {  }
       empty: {  }
       relationships:
@@ -819,6 +830,10 @@ display:
           entity_field: uid
           plugin_id: user_uid
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
