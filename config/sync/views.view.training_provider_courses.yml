@@ -1000,7 +1000,9 @@ display:
     position: 1
     display_options:
       display_extenders:
-        metatag_display_extender: {  }
+        metatag_display_extender:
+          metatags:
+            title: 'Training provider courses - Finnishcourses.fi'
       path: training-providers/%/courses
     cache_metadata:
       max-age: -1

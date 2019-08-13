@@ -544,6 +544,8 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
       '#weight' => 99,
     ];
 
+    $form['sort_bef_combine']['#weight'] = 99;
+
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
     $courseLevelsLink = ($language == 'en') ? '/language-course-levels' : '/'.$language.'/language-course-levels';
@@ -556,6 +558,7 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
     unset($form['start_date']);
     unset($form['start_date_2']);
     unset($form['keyword']);
+    //kint($form);
   }
 }
 
