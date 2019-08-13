@@ -82,11 +82,11 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
 
 
 
-    // foreach (array_keys($form['actions']) as $action) {
-    //   if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
-    //     $form['actions'][$action]['#submit'][] = 'finnishcourse_course_form_submit';
-    //   }
-    // }
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'finnishcourse_course_form_submit';
+      }
+    }
   }
 
   if ($form_id == 'user_register_form') {
@@ -287,10 +287,9 @@ function refreshLocationOptions(array $form, FormStateInterface &$form_state) {
   return $response;
 }
 
-// function finnishcourse_course_form_submit(array $form, FormStateInterface $form_state) {
-//   kint($form);
-//   kint($form_state);
-// }
+function finnishcourse_course_form_submit(array $form, FormStateInterface $form_state) {
+  $form_state->setRedirect('view.manage_courses.page_1');
+}
 
 function finnishcourses_base_node_presave(Drupal\Core\Entity\EntityInterface $entity) {
 
@@ -604,7 +603,9 @@ function finnishcourses_base_preprocess_views_view_field(&$variables) {
       $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
       $node = node_load($nid);
       if ($language != 'fi') {
-        $node = $node->getTranslation($language);
+        if ($node->hasTranslation($language)) {
+          $node = $node->getTranslation($language);
+        }
       }
       $variables['node_path'] = $node->toUrl()->setAbsolute()->toString();
     }
