@@ -16,7 +16,7 @@ Description: Bootstrap 4 with Sass
 
 body {
   background: $body-bg;
-  font-family: $font-family-base;
+  font-family: $font-family-base !important; // !important, becuase the font-family was override by another css (Problems with Mozilla Firefox)
   cursor: default;
 }
 
