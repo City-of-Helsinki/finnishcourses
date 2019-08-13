@@ -611,3 +611,13 @@ function finnishcourses_base_preprocess_views_view_field(&$variables) {
     }
   }
 }
+
+function finnishcourses_base_menu_local_tasks_alter(&$data, $route_name) {
+  $current_user = \Drupal::currentUser();
+  $roles = $current_user->getRoles();
+
+  // Hide Clone tab for no administrators
+  if (!in_array('administrator', $roles) && array_key_exists('quick_node_clone.node.quick_clone', $data['tabs'][0])) {
+    unset($data['tabs'][0]['quick_node_clone.node.quick_clone']);
+  }
+}
