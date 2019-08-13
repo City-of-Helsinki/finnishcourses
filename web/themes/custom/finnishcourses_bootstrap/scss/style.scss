@@ -114,27 +114,20 @@ p {
   display: inherit;
   position:absolute;
   top: 39px;
-  right: 200px;
+  right: 300px;
   @include media-breakpoint-between(md, md-t) {
-    right: 280px;
+    right: 200px;
+  }
+  @include media-breakpoint-only(sm-t) {
+    right: 79px;
+  }
+  @include media-breakpoint-down(sm) {
+    right: 0;
   }
   ul {
     list-style: none;
     display: flex;
     position: relative;
-    @include media-breakpoint-up(lg) {
-      right: 67%;
-    }
-    @include media-breakpoint-down(md) {
-      right: -68%;
-    }
-    @media screen and (max-width: 1220px) {
-      // todo: create new breakpoint?
-      right: -37%;
-  }
-    @include media-breakpoint-only(sm) {
-      right: -47%;
-    }
   }
   .language-link {
     color: white;
