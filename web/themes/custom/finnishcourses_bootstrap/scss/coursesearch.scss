@@ -121,6 +121,9 @@ legend {
   max-height: 168px;
   @include media-breakpoint-down(sm-t) {
     max-height: 580px;
+    .col-auto {
+      width: 100% !important; // Override
+    }
   }
   .form-check-label {
     padding: 0 17px;
@@ -179,9 +182,16 @@ legend {
 }
 
 .more-options-dates {
-  display: inline;
+  display: inline-block;
+  left: 23%;
+  @include media-breakpoint-between(md, md-t) {
+    left: 15%;
+  }
   @include media-breakpoint-down(sm-t) {
-    top: -30px;
+    top: -35px;
+    margin-top: 20px;
+    width: 100%;
+    left: -2%;
   }
 }
 
@@ -327,7 +337,7 @@ legend {
     width: 153px;
     height: 40px;
     @include media-breakpoint-down(sm-t) {
-      width: 48%;
+      width: 52%;
     }
   }
 }
