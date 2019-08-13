@@ -120,7 +120,7 @@ legend {
   text-align: left;
   max-height: 168px;
   @include media-breakpoint-down(sm-t) {
-    max-height: 580px;
+    max-height: 558px;
     .col-auto {
       width: 100% !important; // Override
     }
@@ -183,9 +183,9 @@ legend {
 
 .more-options-dates {
   display: inline-block;
-  left: 13%;
+  left: 12%;
   @include media-breakpoint-only(md-t) {
-    left: 20%;
+    left: 15%;
   }
   @include media-breakpoint-only(md) {
     left: 13%;
@@ -226,6 +226,9 @@ legend {
 }
 
 .form-item-starting-level-ext {
+  @include media-breakpoint-up(lg) {
+    left: -1.5%;
+  }
   @include media-breakpoint-between(md, md-t) {
     width: 38.5% !important; // Overriding col-auto
     left: -10px;
@@ -242,7 +245,7 @@ legend {
     height: 40px;
     @include media-breakpoint-up(lg) {
       max-width: 73%;
-      margin-left: 110px;
+      margin-left: 122px;
     }
     @include media-breakpoint-between(md, md-t) {
       width: 500px;
@@ -339,6 +342,9 @@ legend {
   .form-control {
     width: 153px;
     height: 40px;
+    @include media-breakpoint-only(md-t) {
+      width: 157px;
+    }
     @include media-breakpoint-down(sm-t) {
       width: 52%;
     }
