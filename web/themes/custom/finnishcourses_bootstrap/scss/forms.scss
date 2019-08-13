@@ -20,6 +20,11 @@
   margin-top: 2px !important; // Override
 }
 
+.form-control {
+  border: 1px solid $form-border-shade !important; // Override
+  border-radius: 2px; // Override
+}
+
 #edit-course-town--wrapper {
   display: inline-block !important;
 }

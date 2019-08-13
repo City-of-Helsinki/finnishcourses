@@ -83,10 +83,10 @@
       top: 44px;
     }
     @include media-breakpoint-only(sm-t) {
-      right: 57%;
+      right: 53%;
     }
     @include media-breakpoint-down(sm) {
-      right: 59%;
+      right: 56%;
     }
   }
 }
@@ -100,11 +100,11 @@
     @include media-breakpoint-down(sm-t) {
       top: 12px;
     }
-    @include media-breakpoint-only(sm-t) {
-      left: 43%;
+    @include media-breakpoint-down(sm-t) {
+      left: 47%;
     }
     @include media-breakpoint-down(sm) {
-      left: 41%;
+      left: 44%;
     }
   }
 }
@@ -123,7 +123,7 @@
       right: 115%;
     }
     @include media-breakpoint-down(sm-t) {
-      right: 102%;
+      right: 100%;
     }
   }
 }
