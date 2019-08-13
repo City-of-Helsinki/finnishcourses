@@ -27,6 +27,12 @@ body {
   }
 }
 
+.path-frontpage {
+  #block-finnishcourses-bootstrap-page-title {
+    display: none;
+  }
+}
+
 
 @include media-breakpoint-down(sm) {
 .node__content {
