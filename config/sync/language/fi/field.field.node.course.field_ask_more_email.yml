@@ -1,2 +1,2 @@
 label: 'Kysy lisää sähköpostitse'
-description: 'Sähköpostiosoite, josta kävijä voi kysyä lisätietoja'
+description: "Sähköpostiosoite, josta kävijä voi kysyä lisätietoja\r\n\r\n<b>Huom!</b> Ei etunimi.sukunimi -muotoisia sähköpostiosoitteita."

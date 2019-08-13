@@ -1,0 +1,7 @@
+login_redirection:
+  anonymous: null
+  authenticated: /
+  administrator: /
+  course_editor: /admin/content/courses/manage
+  organization_admin: /admin/content/courses/manage
+exclude_urls: ''
