@@ -163,6 +163,7 @@ p {
 }
 
 .region-secondary-menu {
+  top: 3px;
   .nav-link.active,
   .nav-item.show .nav-link {
     border-bottom: 1.5px solid $underline-link-color;
