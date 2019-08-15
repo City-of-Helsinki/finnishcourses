@@ -155,13 +155,6 @@ body {
   .navbar-brand img {
     width: 65%;
     float: right;
-    /*@include media-breakpoint-down(md-t) {
-      right: -5%;
-      position: relative;
-    }
-    @include media-breakpoint-only(sm-t) {
-      right: 32%;
-    }*/
     @include media-breakpoint-down(sm) {
       visibility: hidden;
     }

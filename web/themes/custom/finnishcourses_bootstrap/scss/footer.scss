@@ -11,7 +11,12 @@
   background-color: $primary-footer;
   text-align: center;
   padding-top: 40px;
-  padding-bottom: 150px;
+  padding-bottom: 80px;
+  padding-right: 150px;
+  @include media-breakpoint-down(sm-t) {
+    padding-bottom: 150px;
+    padding-right: 0px;
+  }
   a {
     color: $footer-text-shade;
     font-weight: bold;
@@ -67,7 +72,7 @@
 .site-footer__top {
   display: inline-flex;
   margin: auto;
-  width: 70%;
+  width: 75%;
   @include media-breakpoint-down(sm) {
     display: flow-root;
   }
