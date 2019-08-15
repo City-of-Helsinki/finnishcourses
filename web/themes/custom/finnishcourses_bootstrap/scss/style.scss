@@ -30,10 +30,12 @@ body {
 
 
 // Bootstrap problems? Duplicating titles todo: fix this
-#block-finnishcourses-bootstrap-page-title {
-  display: none;
-}
 
+.path-frontpage {
+  #block-finnishcourses-bootstrap-page-title {
+     display: none;
+  }
+}
 
 @include media-breakpoint-down(sm) {
   .node__content {
