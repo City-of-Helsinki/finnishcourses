@@ -69,7 +69,7 @@
 #}
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
 
-<div class=" {{ container-fluid }} ">
+<div>
     {% block head %}
         {% if page.secondary_menu or page.page.top_header or page.top_header_form %}
             <nav{{ navbar_top_attributes }}>
