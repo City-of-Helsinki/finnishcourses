@@ -68,7 +68,6 @@ body {
   .navbar-brand {
     padding-bottom: 0px;
     position: relative;
-    right: -13%;
   }
 }
 
@@ -88,11 +87,11 @@ body {
     .nav-item {
       float: left;
       position: relative;
-      @include media-breakpoint-only(md) {
-        right: 5%
-      }
+      padding-left: 0px;
+      padding-right: 0px;
+      right: 80%;
       @include media-breakpoint-only(sm-t) {
-        right: 47%;
+        right: 70%;
       }
       @include media-breakpoint-down(sm) {
         right: 0;
@@ -156,13 +155,13 @@ body {
   .navbar-brand img {
     width: 65%;
     float: right;
-    @include media-breakpoint-down(md-t) {
+    /*@include media-breakpoint-down(md-t) {
       right: -5%;
       position: relative;
     }
     @include media-breakpoint-only(sm-t) {
       right: 32%;
-    }
+    }*/
     @include media-breakpoint-down(sm) {
       visibility: hidden;
     }
