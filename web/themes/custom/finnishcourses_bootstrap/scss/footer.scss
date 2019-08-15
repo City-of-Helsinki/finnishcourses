@@ -13,13 +13,14 @@
   padding-top: 40px;
   padding-bottom: 80px;
   padding-right: 150px;
-  @include media-breakpoint-down(sm-t) {
+  @include media-breakpoint-down(sm) {
     padding-bottom: 150px;
     padding-right: 0px;
   }
   a {
     color: $footer-text-shade;
     font-weight: bold;
+    font-size: 14px;
   }
 
 
