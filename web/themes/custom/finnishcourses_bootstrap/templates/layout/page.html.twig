@@ -97,7 +97,7 @@
     {% block content %}
         <div id="main" class="main">
             <div class="row clearfix">
-                <div class="col-sm-9 mx-auto mw-75 p-3">
+                <div class="col-sm-10 mx-auto mw-75 p-3">
                     <main{{ content_attributes }}>
                         <section class="section">
                             <a id="main-content" tabindex="-1"></a>
@@ -117,7 +117,9 @@
                 {{ page.footer_first }}
                 {{ page.footer_second }}
                 {{ page.footer_third }}
+              <a href="https://infofinland.fi">
                 <img src="{{ base_path ~ directory }}/images/logo-infofinland.png"/>
+              </a>
             </div>
         {% endif %}
     </div>

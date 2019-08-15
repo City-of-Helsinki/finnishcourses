@@ -11,7 +11,12 @@
   background-color: $primary-footer;
   text-align: center;
   padding-top: 40px;
-  padding-bottom: 150px;
+  padding-bottom: 80px;
+  padding-right: 150px;
+  @include media-breakpoint-down(sm-t) {
+    padding-bottom: 150px;
+    padding-right: 0px;
+  }
   a {
     color: $footer-text-shade;
     font-weight: bold;
@@ -67,17 +72,16 @@
 .site-footer__top {
   display: inline-flex;
   margin: auto;
-  width: 70%;
+  width: 75%;
   @include media-breakpoint-down(sm) {
     display: flow-root;
   }
   img {
-    width: 15%;
-    height: 30%;
-    max-height: 30%;
-    max-width: 30%;
-    margin-left: 100px;
+    max-height: 200%;
+    max-width: 180%;
+    margin-left: 50px;
     @include media-breakpoint-down(sm) {
+      padding-top: 30px;
       width: 40%;
       height: 40%;
       max-width: 100%;

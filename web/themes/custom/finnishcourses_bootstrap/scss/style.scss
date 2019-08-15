@@ -27,19 +27,19 @@ body {
   }*/
 }
 
-.path-frontpage {
-  #block-finnishcourses-bootstrap-page-title {
-    display: none;
-  }
+
+// Bootstrap problems? Duplicating titles todo: fix this
+#block-finnishcourses-bootstrap-page-title {
+  display: none;
 }
 
 
 @include media-breakpoint-down(sm) {
-.node__content {
-  margin-top: 80px;
-}
+  .node__content {
+    margin-top: 80px;
+  }
 
-p {
+  p {
     font-size: 16px;
     font-weight: 400;
   }
@@ -68,7 +68,6 @@ p {
   .navbar-brand {
     padding-bottom: 0px;
     position: relative;
-      right: -13%;
   }
 }
 
@@ -81,16 +80,18 @@ p {
 .region-secondary-menu {
   background: $primary-shade;
   padding: 11px 0 11px 0;
+
   .navbar-nav {
     display: flow-root;
+
     .nav-item {
       float: left;
       position: relative;
-      @include media-breakpoint-only(md) {
-        right: 5%
-      }
+      padding-left: 0px;
+      padding-right: 0px;
+      right: 80%;
       @include media-breakpoint-only(sm-t) {
-        right: 47%;
+        right: 70%;
       }
       @include media-breakpoint-down(sm) {
         right: 0;
@@ -102,7 +103,8 @@ p {
         font-size: 18px;
         display: block;
         padding: 8px;
-        &:hover{
+
+        &:hover {
           color: $main-nav-shade; // "Override"
         }
       }
@@ -112,7 +114,8 @@ p {
 
 .language-switcher-language-url {
   display: inherit;
-  position:absolute;
+  position: absolute;
+  text-transform: uppercase;
   top: 39px;
   right: 300px;
   @include media-breakpoint-between(md, md-t) {
@@ -124,17 +127,20 @@ p {
   @include media-breakpoint-down(sm) {
     right: 0;
   }
+
   ul {
     list-style: none;
     display: flex;
     position: relative;
   }
+
   .language-link {
     color: white;
     font-weight: 900;
     font-size: 14px;
     padding: 10px;
-    &:hover{
+
+    &:hover {
       text-decoration: none;
     }
   }
@@ -149,13 +155,6 @@ p {
   .navbar-brand img {
     width: 65%;
     float: right;
-    @include media-breakpoint-down(md-t) {
-      right: -5%;
-      position: relative;
-    }
-    @include media-breakpoint-only(sm-t) {
-      right: 32%;
-    }
     @include media-breakpoint-down(sm) {
       visibility: hidden;
     }
@@ -164,6 +163,7 @@ p {
 
 .region-secondary-menu {
   top: 3px;
+
   .nav-link.active,
   .nav-item.show .nav-link {
     border-bottom: 1.5px solid $underline-link-color;
