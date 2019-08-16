@@ -23,13 +23,7 @@ body {
 
 .main-content {
   margin-top: 25px;
-  /*@include media-breakpoint-down(sm) {
-    margin-top: 26px;
-  }*/
 }
-
-
-// Bootstrap problems? Duplicating titles todo: fix this
 
 .path-frontpage {
   #block-finnishcourses-bootstrap-page-title {
@@ -145,7 +139,10 @@ body {
     color: white;
     font-weight: 900;
     font-size: 14px;
-    padding: 10px;
+    margin: 0 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    //padding: 10px;
 
     &:hover {
       text-decoration: none;
