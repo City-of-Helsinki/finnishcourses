@@ -9,6 +9,7 @@
   margin-bottom: 35px;
   margin-top: 35px;
 }
+
 .group-wrapper {
   @include media-breakpoint-down(sm-t) {
     margin-top: 80px;
@@ -34,18 +35,43 @@
 }
 
 .course-lessons, .course-registration {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .course-organizer {
-    margin-top: 30px;
-    margin-bottom: 36px;
+  margin-top: 30px;
+  margin-bottom: 36px;
 }
 
 .course-registration {
   @include media-breakpoint-down(sm-t) {
     border-bottom: 1px solid $border-shade;
     padding-bottom: 36px;
+  }
+}
+
+.view-training-provider-courses {
+  .view-content {
+    .views-row {
+      .views-field-field-organizers-course-id {
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      .views-field-title {
+        font-size: 24px;
+        font-weight: 900;
+        margin-bottom: 10px;
+        @include media-breakpoint-down(sm) {
+          font-size: 18px;
+        }
+
+        a {
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -56,11 +82,18 @@
 .field--name-field-course-online-address, .field--name-field-registration-end-date, .field--name-field-course-length,
 .field--name-field-course-in-swedish, .field--name-field-online-course, .field--name-field-number-of-lessons, .field--name-field-course-start-date,
 .field--name-field-course-end-date, .field--name-field-registration-email, .field--name-field-registration-link, .organization-name,
-.field--name-field-starting-level, .field--name-field-target-level, .field--name-field-organizers-course-id, .field--name-field-ask-more-email  {
+.field--name-field-starting-level, .field--name-field-target-level, .field--name-field-organizers-course-id, .field--name-field-ask-more-email,
+.views-field-field-starting-level, .views-field-field-target-level, .views-field-field-course-start-date,
+.views-field-field-course-town, .views-field-field-course-start-date, .views-field-field-course-fee {
   display: flex;
 
   @include media-breakpoint-down(sm) {
     font-size: 16px;
+  }
+
+  .field-content {
+    display: inline;
+    margin-left: 5px;
   }
 
   .field__item, .field__item a {
