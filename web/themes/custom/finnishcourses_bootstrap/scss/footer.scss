@@ -86,9 +86,13 @@
       width: 124px;
       height: 57px;
       margin-left: 15px;
+      @include media-breakpoint-down(sm) {
+        margin: auto;
+        width: 27%;
+        height: 20%;
+      }
     }
   }
-
   img {
     max-height: 200%;
     max-width: 180%;
@@ -102,3 +106,4 @@
     }
   }
 }
+
