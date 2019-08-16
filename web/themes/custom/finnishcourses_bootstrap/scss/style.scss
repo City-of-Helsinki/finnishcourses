@@ -5,10 +5,11 @@ Description: Bootstrap 4 with Sass
 // import files
 @import "import";
 
-
-// Toolbar-administration fix
-#toolbar-administration * {
-  z-index: 2000;
+#toolbar-administration {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 /* GENERAL STYLES
@@ -55,7 +56,11 @@ body {
     margin-top: 53px;
   }
 }
-
+.user-logged-in {
+  .fixed-top {
+    top: 80px;
+  }
+}
 .navbar {
   padding: 0;
 }
