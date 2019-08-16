@@ -232,6 +232,7 @@ legend {
   .form-select {
     width: 330px;
     height: 40px;
+    cursor: pointer;
     @include media-breakpoint-up(lg) {
       max-width: 73%;
       margin-left: 122px;
@@ -331,6 +332,7 @@ legend {
   .form-control {
     width: 153px;
     height: 40px;
+    cursor: pointer;
     @include media-breakpoint-only(md-t) {
       width: 157px;
     }
@@ -389,6 +391,7 @@ legend {
     width: 90% !important; // Override
     max-width: 93% !important; // Override
     height: 40px;
+    cursor: pointer;
     @include media-breakpoint-up(lg) {
       margin-left: 111px !important; // Override
     }
