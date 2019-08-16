@@ -5,13 +5,6 @@ Description: Bootstrap 4 with Sass
 // import files
 @import "import";
 
-#toolbar-administration {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 2;
-}
-
 /* GENERAL STYLES
 -------------------------------------------------*/
 
@@ -52,11 +45,7 @@ body {
     margin-top: 53px;
   }
 }
-.user-logged-in {
-  .fixed-top {
-    top: 80px;
-  }
-}
+
 .navbar {
   padding: 0;
 }
@@ -283,4 +272,22 @@ h1, h2, h3, .fieldset-legend {
 
 .slick > div {
   margin: 0 15px;
+}
+
+/* ADMIN TOOLBAR FIXES:
+--------------------------------------------------*/
+#toolbar-administration {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1031;
+}
+.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .fixed-top {
+  top: 80px;
+}
+.toolbar-fixed.toolbar-horizontal .fixed-top {
+    top: 40px;
+}
+.toolbar-fixed.toolbar-vertical .fixed-top {
+    top: 40px;
 }
