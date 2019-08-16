@@ -39,15 +39,8 @@ function styles () {
     .pipe(sass().on('error', handleError))
     .pipe(postcss([autoprefixer({
       browsers: [
-        'Chrome >= 35',
-        'Firefox >= 38',
-        'Edge >= 12',
-        'Explorer >= 10',
-        'iOS >= 8',
-        'Safari >= 8',
-        'Android 2.3',
-        'Android >= 4',
-        'Opera >= 12']
+        'defaults'
+      ]
     })]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.scss.dest))

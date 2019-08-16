@@ -5,12 +5,6 @@ Description: Bootstrap 4 with Sass
 // import files
 @import "import";
 
-
-// Toolbar-administration fix
-#toolbar-administration * {
-  z-index: 2000;
-}
-
 /* GENERAL STYLES
 -------------------------------------------------*/
 
@@ -22,17 +16,13 @@ body {
 
 .main-content {
   margin-top: 25px;
-  /*@include media-breakpoint-down(sm) {
-    margin-top: 26px;
-  }*/
 }
 
-
-// Bootstrap problems? Duplicating titles todo: fix this
-#block-finnishcourses-bootstrap-page-title {
-  display: none;
+.path-frontpage {
+  #block-finnishcourses-bootstrap-page-title {
+     display: none;
+  }
 }
-
 
 @include media-breakpoint-down(sm) {
   .node__content {
@@ -102,8 +92,9 @@ body {
         font-weight: 900;
         font-size: 18px;
         display: block;
-        padding: 8px;
-
+        padding-bottom: 8px;
+        padding-left: 2px;
+        padding-right: 2px;
         &:hover {
           color: $main-nav-shade; // "Override"
         }
@@ -138,7 +129,10 @@ body {
     color: white;
     font-weight: 900;
     font-size: 14px;
-    padding: 10px;
+    margin: 0 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    //padding: 10px;
 
     &:hover {
       text-decoration: none;
@@ -279,4 +273,22 @@ h1, h2, h3, .fieldset-legend {
 
 .slick > div {
   margin: 0 15px;
+}
+
+/* ADMIN TOOLBAR FIXES:
+--------------------------------------------------*/
+#toolbar-administration {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1031;
+}
+.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .fixed-top {
+  top: 80px;
+}
+.toolbar-fixed.toolbar-horizontal .fixed-top {
+    top: 40px;
+}
+.toolbar-fixed.toolbar-vertical .fixed-top {
+    top: 40px;
 }

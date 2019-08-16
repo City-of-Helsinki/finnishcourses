@@ -1,6 +1,3 @@
-@import "variables";
-@import "../node_modules/bootstrap/scss/bootstrap";
-
 /* FOOTER
 --------------------------------------------------*/
 
@@ -17,6 +14,7 @@
     padding-bottom: 150px;
     padding-right: 0px;
   }
+
   a {
     color: $footer-text-shade;
     font-weight: bold;
@@ -54,9 +52,11 @@
             flex: 1 1 160px;
             margin: 1px;
             float: left;
+
             active {
               padding-bottom: 0;
             }
+
             a {
               padding: 5px 30px 5px 20px;
               @include media-breakpoint-down(md-t) {
@@ -77,6 +77,19 @@
   @include media-breakpoint-down(sm) {
     display: flow-root;
   }
+
+  .region-footer-third {
+    img {
+      width: 124px;
+      height: 57px;
+      margin-left: 15px;
+      @include media-breakpoint-down(sm) {
+        margin: auto;
+        width: 27%;
+        height: 20%;
+      }
+    }
+  }
   img {
     max-height: 200%;
     max-width: 180%;
@@ -90,3 +103,4 @@
     }
   }
 }
+

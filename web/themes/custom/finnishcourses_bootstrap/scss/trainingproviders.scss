@@ -1,11 +1,12 @@
-@import "variables";
-@import "../node_modules/bootstrap/scss/bootstrap";
-
 /* TRAINING PROVIDERS
 -------------------------------------------------*/
 
 .view-training-providers {
   margin-top: 40px;
+  padding: 0 110px;
+  @include media-breakpoint-down(sm-t) {
+    padding: 0;
+  }
   .view-content {
     h3 {
       margin-bottom: 10px;
