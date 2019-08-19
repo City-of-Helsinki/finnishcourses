@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d5bde05df734d9f3d6a84389fa141164",
+    "content-hash": "49d383eb54f737d0d366269f3c9ff765",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -121,6 +121,15 @@
                 "stack"
             ],
             "time": "2017-12-20T14:37:45+00:00"
+        },
+        {
+            "name": "bootstrap-datepicker/bootstrap-datepicker",
+            "version": "1.9.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/uxsolutions/bootstrap-datepicker/archive/master.zip"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "brumann/polyfill-unserialize",
@@ -2511,6 +2520,57 @@
             "homepage": "https://www.drupal.org/project/bootstrap_barrio",
             "support": {
                 "source": "https://git.drupalcode.org/project/bootstrap_barrio"
+            }
+        },
+        {
+            "name": "drupal/bootstrap_datepicker",
+            "version": "1.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/bootstrap_datepicker.git",
+                "reference": "8.x-1.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/bootstrap_datepicker-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "d662afb84e9fe9e21788baffb173cc132536128e"
+            },
+            "require": {
+                "drupal/core": "^8.6.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1555488185",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Martijn de Wit",
+                    "homepage": "https://www.drupal.org/user/83953"
+                },
+                {
+                    "name": "beljaako",
+                    "homepage": "https://www.drupal.org/user/1031430"
+                }
+            ],
+            "description": "Bootstrap datepicker",
+            "homepage": "http://drupal.org/project/bootstrap_datepicker",
+            "support": {
+                "source": "https://git.drupalcode.org/project/bootstrap_datepicker"
             }
         },
         {
@@ -10194,7 +10254,7 @@
             "version": "8.3.5",
             "source": {
                 "type": "git",
-                "url": "https://git.drupal.org/project/coder.git",
+                "url": "https://git.drupalcode.org/project/coder.git",
                 "reference": "35277fc8675b6a2cbb194f8880145a9c85c845c4"
             },
             "require": {
@@ -12142,6 +12202,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/better_exposed_filters": 15,
+        "drupal/bootstrap_datepicker": 10,
         "drupal/business_rules": 10,
         "drupal/conditional_fields": 15,
         "drupal/devel_debug_log": 10,
