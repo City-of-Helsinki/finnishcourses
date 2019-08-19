@@ -36,3 +36,7 @@
 .field--name-field-course-features #edit-field-course-features .form-type-checkbox:nth-child(3n+1) {
   clear: both;
 }
+
+/*.path-node #block-seven-breadcrumbs {
+  display: none;
+}*/
