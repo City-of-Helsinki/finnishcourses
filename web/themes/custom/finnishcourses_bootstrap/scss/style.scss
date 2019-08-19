@@ -216,6 +216,14 @@ h1, h2, h3 {
   }
 }
 
+.node--type-front-page {
+  header {
+    .node__title {
+      margin: 0;
+    }
+  }
+}
+
 
 /* COLORS
 --------------------------------------------------*/
