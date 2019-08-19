@@ -621,3 +621,12 @@ function finnishcourses_base_menu_local_tasks_alter(&$data, $route_name) {
     unset($data['tabs'][0]['quick_node_clone.node.quick_clone']);
   }
 }
+
+function finnishcourses_base_toolbar_alter(&$items) {
+  $current_user = \Drupal::currentUser();
+  $roles = $current_user->getRoles();
+
+  if (!in_array('administrator', $roles) && !in_array('organization_admin', $roles)) {
+    unset($items['administration']);
+  }
+}
