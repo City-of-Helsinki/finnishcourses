@@ -569,6 +569,17 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
       }
     }
   }
+
+  if ($view->id() == 'manage_courses') {
+    $current_user = \Drupal::currentUser();
+    $roles = $current_user->getRoles();
+    kint($form);
+    // Hide F-code exposed filter for course editors
+    if (!in_array('administrator', $roles) && !in_array('organization_admin', $roles)) {
+      kint($form);
+      unset($form['f_code']);
+    }
+  }
 }
 
 function finnishcourses_base_preprocess_field(&$variables) {
