@@ -58,10 +58,6 @@ display:
         field_starting_level_1:
           expose:
             label: 'Исходный уровень'
-        combine_1:
-          expose:
-            label: 'Ключевые слова'
-            placeholder: 'поиск курсов по ключевому слову'
       title: 'Найти курсы финского языка'
       exposed_form:
         options:

@@ -1673,23 +1673,23 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: search_api_date
-        combine_1:
-          id: combine_1
-          table: views
-          field: combine
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_courses_index
+          field: search_api_fulltext
           relationship: none
           group_type: group
           admin_label: ''
-          operator: contains
+          operator: or
           value: ''
           group: 6
           exposed: true
           expose:
-            operator_id: combine_1_op
+            operator_id: search_api_fulltext_op
             label: Keyword
             description: ''
             use_operator: false
-            operator: combine_1_op
+            operator: search_api_fulltext_op
             identifier: keyword
             required: false
             remember: false
@@ -1713,11 +1713,15 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+          parse_mode: terms
+          min_length: null
           fields:
-            field_course_organization: field_course_organization
-            field_organizers_course_id: field_organizers_course_id
-            field_course_features: field_course_features
-          plugin_id: combine
+            - features_name
+            - field_course_organization
+            - field_organizers_course_id
+            - organization_name
+            - title
+          plugin_id: search_api_fulltext
         field_course_times_of_day:
           id: field_course_times_of_day
           table: search_api_index_courses_index
