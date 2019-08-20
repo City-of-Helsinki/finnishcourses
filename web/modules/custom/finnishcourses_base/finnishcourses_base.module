@@ -36,6 +36,9 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
   }
 
   if (in_array($form_id, ['node_course_form', 'node_course_edit_form', 'node_course_quick_node_clone_form'])) {
+    if (!empty($form['field_books_and_materials']['widget'][0]['#format']) && $form['field_books_and_materials']['widget'][0]['#format'] != 'only_text') {
+      $form['field_books_and_materials']['widget'][0]['#format'] = 'only_text';
+    }
     // Set rest of detail containers to fieldsets
     if (!empty($form['#fieldgroups']['group_course_additional_informat'])) {
       $form['#fieldgroups']['group_course_additional_informat']->format_type = 'fieldset';
