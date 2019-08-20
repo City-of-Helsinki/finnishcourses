@@ -43,6 +43,11 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     if (!empty($form['field_course_week_hours']['widget']['#type'])) {
       $form['field_course_week_hours']['widget']['#type'] = 'fieldset';
     }
+    
+    // Well, they wanted to disable this field
+    if (!empty($form['field_course_unpublish_date'])) {
+      unset($form['field_course_unpublish_date']);
+    }
 
      // Set ajax callback function when organization field value changed
     // refreshLocationOptions callback loads street address and town options for selected organization
