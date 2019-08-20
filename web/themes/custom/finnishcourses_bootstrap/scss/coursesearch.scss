@@ -286,6 +286,7 @@ legend {
 }
 
 .form-item-start-date, .form-item-start-date-2 {
+  position: relative;
   @include media-breakpoint-up(md) {
     display: inline-block;
   }

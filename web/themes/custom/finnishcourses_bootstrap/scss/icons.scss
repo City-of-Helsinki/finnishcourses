@@ -25,6 +25,7 @@
 .form-item-starting-level-ext {
   float: left;
   position: relative;
+
   &::before {
     content: url(../images/icons/ic_chevron_down@1x.svg);
     color: $primary-shade;
@@ -61,44 +62,20 @@
     height: 24px;
     width: 24px;
     pointer-events: none;
-    @include media-breakpoint-down(sm-t) {
-      right: 42px;
+    right: 20px;
+    @include media-breakpoint-only(sm-t) {
+      right: 50px;
+    }
+    @include media-breakpoint-down(sm) {
+      right: 30px;
     }
   }
 }
 
 .form-item-start-date {
   &::before {
-    right: 25%;
-    @include media-breakpoint-between(md, md-t) {
-      right: 41%;
-    }
     @include media-breakpoint-down(sm-t) {
-      top: 44px;
-    }
-    @include media-breakpoint-only(sm-t) {
-      right: 53%;
-    }
-    @include media-breakpoint-down(sm) {
-      right: 56%;
-    }
-  }
-}
-
-.form-item-start-date-2 {
-  &::before {
-    right: 25%;
-    @include media-breakpoint-between(md, md-t) {
-      right: 41%;
-    }
-    @include media-breakpoint-down(sm-t) {
-      top: 12px;
-    }
-    @include media-breakpoint-down(sm-t) {
-      left: 47%;
-    }
-    @include media-breakpoint-down(sm) {
-      left: 44%;
+      top: 40px;
     }
   }
 }
@@ -110,14 +87,15 @@
     top: 11px;
     height: 2px;
     width: 2px;
-    @include media-breakpoint-up(lg) {
-      right: 110%;
-    }
+    left: 0;
     @include media-breakpoint-between(md, md-t) {
-      right: 115%;
+      left: -4px;
     }
-    @include media-breakpoint-down(sm-t) {
-      right: 100%;
+    @include media-breakpoint-only(sm-t) {
+      left: -19px;
+    }
+    @include media-breakpoint-down(sm) {
+      left: -12px;
     }
   }
 }
@@ -141,14 +119,14 @@
 }
 
 .form-item-sort-bef-combine {
-    &::after {
-      content: url(../images/icons/ic_chevron_down@1x.svg);
-      color: $primary-shade;
-      position: absolute;
-      top: 7px;
-      width: 12px;
-      margin-left: -22px;
-    }
+  &::after {
+    content: url(../images/icons/ic_chevron_down@1x.svg);
+    color: $primary-shade;
+    position: absolute;
+    top: 7px;
+    width: 12px;
+    margin-left: -22px;
+  }
 }
 
 // Color is changed within the svg file
