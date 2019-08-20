@@ -385,7 +385,7 @@ content:
     type: select_or_other_reference
     region: content
   field_course_times_of_day:
-    type: options_select
+    type: options_buttons
     weight: 14
     region: content
     settings: {  }
