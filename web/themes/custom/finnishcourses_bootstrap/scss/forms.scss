@@ -1,6 +1,7 @@
 .form-row {
   display: block !important; // Override
   text-align: center;
+
   a {
     &:hover {
       text-decoration: none; // Override
@@ -46,23 +47,23 @@ legend {
   -webkit-appearance: none;
   @include media-breakpoint-up(sm) {
     margin-top: 0.25rem;
-    //margin-left: 12px;
   }
 }
 
 .form-item-keyword {
   .form-text, .form-control {
+    margin-left: 124px;
     color: $form-border-shade;
-    @include media-breakpoint-up(lg) {
-      width: 100%;
-      max-width: 93%;
-      margin-left: 77px;
+    width: 100%;
+    max-width: 93%;
+    @include media-breakpoint-down(sm-t) {
+      margin-left: 0;
     }
-    @include media-breakpoint-between(md, md-t) {
-      width: 82%;
-      max-width: 82%;
-      margin-left: 124px;
-    }
+  }
+
+  @include media-breakpoint-between(md, md-t) {
+    width: 82%;
+    max-width: 82%;
   }
 }
 

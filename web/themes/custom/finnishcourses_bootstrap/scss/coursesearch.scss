@@ -46,7 +46,7 @@ legend {
 
   legend {
     .fieldset-legend {
-      left: -24.5%;
+      left: -34.5%;
       @include media-breakpoint-between(md, md-t) {
         left: -29%;
       }
@@ -87,8 +87,12 @@ legend {
 }
 
 .form-row > [class*="col-"] {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  padding-left: 0;
+  padding-right: 0;
+  @include media-breakpoint-down(sm-t) {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
 }
 
 .more-options-wrapper {
@@ -112,9 +116,9 @@ legend {
   }
 
   .form-check-label {
-    padding: 0 17px;
+    padding: 0 26px;
     @include media-breakpoint-between(md, md-t) {
-      padding: 0 11.5px;
+      padding: 21px;
     }
   }
 }
@@ -186,6 +190,18 @@ legend {
   }
 }
 
+.form-item-start-date {
+  label {
+    left: -76%;
+    @include media-breakpoint-between(md, md-t) {
+      left: -57%;
+    }
+    @include media-breakpoint-down(sm-t) {
+      left: 0;
+    }
+  }
+}
+
 .form-item-keyword {
   label {
     @include media-breakpoint-up(md) {
@@ -213,7 +229,7 @@ legend {
     @include media-breakpoint-between(md, md-t) {
       width: 500px;
       height: 40px;
-      margin-left: 36%;
+      margin-left: 136px;
     }
     @include media-breakpoint-down(sm-t) {
       width: 100%;
@@ -227,6 +243,7 @@ legend {
     font-weight: 700;
     font-size: 16px;
     position: absolute;
+
     .col-auto {
       max-width: 96%;
       margin: auto;
@@ -251,16 +268,14 @@ legend {
 #edit-course-fee--wrapper {
   .fieldset-wrapper {
     width: 100%;
-    @include media-breakpoint-up(lg) {
-      margin-top: -7px;
-      margin-left: 11%;
-    }
+    margin-left: 127px;
+    margin-top: -7px;
     @include media-breakpoint-between(md, md-t) {
-      margin-top: -7px;
-      margin-left: 16%;
+      margin-left: 141px;
     }
     @include media-breakpoint-down(sm-t) {
       padding-top: 30px;
+      margin-left: 0;
     }
   }
 }
@@ -278,7 +293,6 @@ legend {
     top: 21px;
     width: 52.2% !important; // Override, because of .col-auto
     display: inline-flex;
-    // left: -2%;
   }
 
   .form-group {
@@ -286,11 +300,11 @@ legend {
   }
 
   .form-control {
-    width: 153px;
+    width: 191px;
     height: 40px;
     cursor: pointer;
-    @include media-breakpoint-only(md-t) {
-      width: 157px;
+    @include media-breakpoint-between(md, md-t) {
+      max-width: 179px;
     }
     @include media-breakpoint-down(sm-t) {
       width: 91%;
@@ -322,21 +336,20 @@ legend {
 .form-item-keyword {
   .form-text, .form-control {
     width: 90% !important; // Override
-    max-width: 93% !important; // Override
+    max-width: 90% !important; // Override
     height: 40px;
     cursor: pointer;
     @include media-breakpoint-up(lg) {
-      margin-left: 111px !important; // Override
+      margin-left: 120px !important; // Override
     }
     @include media-breakpoint-down(sm-t) {
       width: 104% !important; // Override
       max-width: 100% !important; // Override
     }
     @include media-breakpoint-between(md, md-t) {
-      width: 90.2% !important; // Override
-      max-width: 93% !important; // Override
-      margin-left: 107px !important; // Override
-      margin-top: 15px;
+      width: 106% !important;
+      max-width: 106% !important;
+      margin-left: 139px !important;
     }
   }
 }
