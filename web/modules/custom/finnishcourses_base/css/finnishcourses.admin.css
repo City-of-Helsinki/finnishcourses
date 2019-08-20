@@ -37,6 +37,10 @@
   clear: both;
 }
 
+.node-form .field--name-field-course-times-of-day {
+  display: none;
+}
+
 /*.path-node #block-seven-breadcrumbs {
   display: none;
 }*/
