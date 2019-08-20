@@ -41,6 +41,10 @@
   display: none;
 }
 
+.view-manage-courses .view-header {
+  margin-top: 20px;
+}
+
 /*.path-node #block-seven-breadcrumbs {
   display: none;
 }*/
