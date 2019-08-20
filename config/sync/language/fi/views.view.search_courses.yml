@@ -39,10 +39,6 @@ display:
             label: 'Kurssi alkaa'
           group_info:
             label: 'Kurssi alkaa'
-        combine_1:
-          expose:
-            label: Hakusanat
-            placeholder: 'Etsi kursseja hakusanalla, kurssin järjestäjän nimellä tai kurssin tunnuksella.'
         field_course_times_of_day:
           expose:
             label: Kellonaika
