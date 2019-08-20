@@ -2,10 +2,6 @@
 --------------------------------------------------*/
 
 #block-exposedformsearch-coursespage-1 {
- /* .content {
-    margin-top: 50px;
-  }*/
-
   h2 {
     text-align: center;
     @include media-breakpoint-up(lg) {
@@ -43,19 +39,9 @@ legend {
 }
 
 #edit-time-of-day--wrapper {
-  left: 5%;
   @include media-breakpoint-between(md, md-t) {
     float: right;
     top: -42px;
-    left: 9.5%;
-  }
-  @include media-breakpoint-down(sm-t) {
-    left: 0.7%;
-  }
-  @include media-breakpoint-down(sm-t) {
-    .form-check {
-      left: 0.7%;
-    }
   }
 
   legend {
@@ -65,7 +51,7 @@ legend {
         left: -29%;
       }
       @include media-breakpoint-down(sm-t) {
-        left: 11px;
+        left: -3px;
       }
     }
 
@@ -100,6 +86,10 @@ legend {
   margin-top: 48px;
 }
 
+.form-row > [class*="col-"] {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
 
 .more-options-wrapper {
   background: $more-options-shade;
@@ -111,19 +101,20 @@ legend {
   @include media-breakpoint-down(sm-t) {
     max-height: 558px;
     .col-auto {
-      width: 100% !important; // Override
-    }
-  }
-  .form-check-label {
-    padding: 0 17px;
-    @include media-breakpoint-between(md, md-t) {
-      padding: 0 11.5px;
+      width: 100%; // Override
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
   .form-check {
-    @include media-breakpoint-only(md) {
-      padding-left: 13px;
+    padding-left: 0;
+  }
+
+  .form-check-label {
+    padding: 0 17px;
+    @include media-breakpoint-between(md, md-t) {
+      padding: 0 11.5px;
     }
   }
 }
@@ -131,6 +122,7 @@ legend {
 .more-options-row-1, .more-options-row-3 {
   display: flow;
   max-width: 100%;
+  padding: 0;
 
   .form-group {
     @include media-breakpoint-down(sm-t) {
@@ -141,6 +133,8 @@ legend {
 
 .more-options-row-2 {
   display: inline-block;
+  width: 100%;
+  padding: 0;
   @include media-breakpoint-only(sm-t) {
     width: 150% !important; // Override
   }
@@ -154,36 +148,22 @@ legend {
     bottom: -43px;
     margin-top: -48px;
   }
-  @include media-breakpoint-between(md, md-t) {
-    left: -4%;
-  }
-  @include media-breakpoint-down(sm-t) {
-    left: -2%;
-  }
 }
 
 .more-options-row-3 {
-  top: -26px;
+  margin-top: -33px;
   @include media-breakpoint-down(sm-t) {
-    left: -2%;
-    top: -115px;
+    margin-top: -59px;
   }
 }
 
 .more-options-dates {
-  display: inline-block;
-  left: 12%;
-  @include media-breakpoint-only(md-t) {
-    left: 15%;
-  }
-  @include media-breakpoint-only(md) {
-    left: 13%;
-  }
+  display: inline-flex;
+  float: right;
   @include media-breakpoint-down(sm-t) {
     top: -35px;
     margin-top: 20px;
     width: 100%;
-    left: -2%;
   }
 }
 
@@ -215,15 +195,8 @@ legend {
 }
 
 .form-item-starting-level-ext {
-  @include media-breakpoint-up(lg) {
-    left: -1.5%;
-  }
   @include media-breakpoint-between(md, md-t) {
     width: 38.5% !important; // Overriding col-auto
-    left: -10px;
-    label {
-      left: 15px;
-    }
   }
   @include media-breakpoint-down(sm-t) {
     display: contents;
@@ -254,13 +227,6 @@ legend {
     font-weight: 700;
     font-size: 16px;
     position: absolute;
-      left: 0;
-    @include media-breakpoint-between(md, md-t) {
-      left: 4.5%;
-    }
-    @include media-breakpoint-down(sm-t) {
-      left: 11px;
-    }
     .col-auto {
       max-width: 96%;
       margin: auto;
@@ -274,9 +240,6 @@ legend {
     margin-bottom: 16px;
     .form-check {
       padding-bottom: 5px;
-      @include media-breakpoint-down(md-t) {
-        left: 5%;
-      }
     }
   }
 }
@@ -313,16 +276,9 @@ legend {
   }
   @include media-breakpoint-down(sm-t) {
     top: 21px;
-    left: -2%;
-  }
-
-  label {
-    @include media-breakpoint-up(lg) {
-      left: -57%;
-    }
-    @include media-breakpoint-between(md, md-t) {
-      left: -59%;
-    }
+    width: 52.2% !important; // Override, because of .col-auto
+    display: inline-flex;
+    // left: -2%;
   }
 
   .form-group {
@@ -337,30 +293,15 @@ legend {
       width: 157px;
     }
     @include media-breakpoint-down(sm-t) {
-      width: 52%;
+      width: 91%;
     }
   }
 }
 
-.form-item-start-date {
-  @include media-breakpoint-up(lg) {
-    left: 19.5%;
-  }
-  @include media-breakpoint-between(md, md-t) {
-    left: 22.5%;
-  }
-}
 
 .form-item-start-date-2 {
-  @include media-breakpoint-up(lg) {
-    left: 23%;
-  }
-  @include media-breakpoint-between(md, md-t) {
-    left: 25%;
-  }
   @include media-breakpoint-down(sm-t) {
-    left: 52%;
-    top: -37px;
+    margin-top: 29.5px;
   }
 }
 
@@ -379,14 +320,6 @@ legend {
 }
 
 .form-item-keyword {
-  @include media-breakpoint-between(md, md-t) {
-    label {
-      left: 5px;
-    }
-  }
-}
-
-.form-item-keyword {
   .form-text, .form-control {
     width: 90% !important; // Override
     max-width: 93% !important; // Override
@@ -397,7 +330,7 @@ legend {
     }
     @include media-breakpoint-down(sm-t) {
       width: 104% !important; // Override
-      max-width: 104% !important; // Override
+      max-width: 100% !important; // Override
     }
     @include media-breakpoint-between(md, md-t) {
       width: 90.2% !important; // Override
@@ -435,10 +368,10 @@ legend {
 }
 
 .available {
-   .field__item {
-     color: $available;
-   }
- }
+  .field__item {
+    color: $available;
+  }
+}
 
 .ask {
   .field__item {
