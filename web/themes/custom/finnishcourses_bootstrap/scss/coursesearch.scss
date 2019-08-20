@@ -210,6 +210,13 @@ legend {
   }
 }
 
+#edit-starting-level--wrapper {
+  margin-top: 32px;
+  @include media-breakpoint-down(sm-t) {
+    margin-top: 0;
+  }
+}
+
 .form-item-starting-level-ext {
   @include media-breakpoint-between(md, md-t) {
     width: 38.5% !important; // Overriding col-auto
