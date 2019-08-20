@@ -44,6 +44,11 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
       $form['field_course_week_hours']['widget']['#type'] = 'fieldset';
     }
 
+    // Well, they wanted to disable this field
+    if (!empty($form['field_course_unpublish_date'])) {
+      unset($form['field_course_unpublish_date']);
+    }
+
      // Set ajax callback function when organization field value changed
     // refreshLocationOptions callback loads street address and town options for selected organization
     $form['field_course_organization']['widget']['#ajax'] = [
@@ -645,4 +650,28 @@ function finnishcourses_base_toolbar_alter(&$items) {
   if (!in_array('administrator', $roles) && !in_array('organization_admin', $roles)) {
     unset($items['administration']);
   }
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function finnishcourses_base_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  if ($context['widget'] instanceof \Drupal\text\Plugin\Field\FieldWidget\TextareaWidget) {
+    $element['#after_build'][] = '_finnishcourses_base_remove_textarea_help';
+  }
+}
+
+/**
+ * #after_build callback.
+ */
+function _finnishcourses_base_remove_textarea_help($form_element, FormStateInterface $form_state) {
+  if (isset($form_element['format'])) {
+    // All this stuff is needed to hide the help text.
+    unset($form_element['format']['guidelines']);
+    unset($form_element['format']['help']);
+    unset($form_element['format']['#type']);
+    unset($form_element['format']['#theme_wrappers']);
+  }
+
+  return $form_element;
 }
