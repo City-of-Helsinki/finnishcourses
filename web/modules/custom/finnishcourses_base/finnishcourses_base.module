@@ -657,14 +657,14 @@ function finnishcourses_base_toolbar_alter(&$items) {
  */
 function finnishcourses_base_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
   if ($context['widget'] instanceof \Drupal\text\Plugin\Field\FieldWidget\TextareaWidget) {
-    $element['#after_build'][] = '_allowed_formats_remove_textarea_help';
+    $element['#after_build'][] = '_finnishcourses_base_remove_textarea_help';
   }
 }
 
 /**
  * #after_build callback.
  */
-function _allowed_formats_remove_textarea_help($form_element, FormStateInterface $form_state) {
+function _finnishcourses_base_remove_textarea_help($form_element, FormStateInterface $form_state) {
   if (isset($form_element['format'])) {
     // All this stuff is needed to hide the help text.
     unset($form_element['format']['guidelines']);
