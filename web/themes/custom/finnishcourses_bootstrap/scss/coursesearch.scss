@@ -10,18 +10,26 @@
   }
 }
 
+.fieldset {
+  margin-top: 20px;
+}
+
+
 .fieldset-legend {
   font-weight: 900;
   margin-bottom: 5px;
+  font-size: 24px;
 }
 
-legend {
-  text-align: center;
-}
-
-#edit-course-fee--wrapper {
-  legend {
-    text-align: left;
+.more-options-wrapper {
+  .label {
+    font-weight: 900;
+  }
+  .fieldset-legend {
+    font-size: 16px;
+  }
+  .fieldset {
+    margin-top: 1px;
   }
 }
 
@@ -39,27 +47,8 @@ legend {
 }
 
 #edit-time-of-day--wrapper {
-  @include media-breakpoint-between(md, md-t) {
-    float: right;
-    top: -42px;
-  }
-
-  legend {
-    .fieldset-legend {
-      left: -34.5%;
-      @include media-breakpoint-between(md, md-t) {
-        left: -29%;
-      }
-      @include media-breakpoint-down(sm-t) {
-        left: -3px;
-      }
-    }
-
-    @include media-breakpoint-down(sm-t) {
-      // todo: fix this
-      right: 78%;
-    }
-  }
+  display: flex;
+  flex: 1;
 }
 
 .fieldset-wrapper {
@@ -86,15 +75,6 @@ legend {
   margin-top: 48px;
 }
 
-.form-row > [class*="col-"] {
-  padding-left: 0;
-  padding-right: 0;
-  @include media-breakpoint-down(sm-t) {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-}
-
 .more-options-wrapper {
   background: $more-options-shade;
   padding-top: 20px;
@@ -104,11 +84,10 @@ legend {
   max-height: 168px;
   @include media-breakpoint-down(sm-t) {
     max-height: 558px;
-    .col-auto {
-      width: 100%; // Override
-      padding-left: 0;
-      padding-right: 0;
-    }
+  }
+  .col-auto {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .form-check {
@@ -123,192 +102,69 @@ legend {
   }
 }
 
-.more-options-row-1, .more-options-row-3 {
-  display: flow;
-  max-width: 100%;
-  padding: 0;
+.more-options-row-1, .more-options-row-2, .more-options-row3 {
+  display: flex;
 
-  .form-group {
-    @include media-breakpoint-down(sm-t) {
-      margin-bottom: 6px;
+  .fieldset {
+    display: flex;
+    flex: 1;
+
+    .fieldset-title, .label {
+      color: $text-shade;
+      font-weight: 700;
+      font-size: 16px;
+      flex-basis: 26%;
     }
-  }
-}
-
-.more-options-row-2 {
-  display: inline-block;
-  width: 100%;
-  padding: 0;
-  @include media-breakpoint-only(sm-t) {
-    width: 150% !important; // Override
-  }
-  @include media-breakpoint-down(sm) {
-    width: 100% !important; // Override
-  }
-}
-
-.more-options-row-1 {
-  @include media-breakpoint-up(md) {
-    bottom: -43px;
-    margin-top: -48px;
-  }
-}
-
-.more-options-row-3 {
-  margin-top: -33px;
-  @include media-breakpoint-down(sm-t) {
-    margin-top: -59px;
   }
 }
 
 .more-options-dates {
-  display: inline-flex;
-  float: right;
-  @include media-breakpoint-down(sm-t) {
-    top: -35px;
-    margin-top: 20px;
-    width: 100%;
-  }
-}
-
-.form-item-starting-level-ext, .form-item-start-date, .form-item-keyword {
-  label {
-    color: $text-shade;
-    font-weight: 700;
-    @include media-breakpoint-up(md) {
-      position: absolute;
-      top: 11px;
-    }
-  }
-}
-
-.form-item-starting-level-ext, .form-item-start-date {
-  label {
-    @include media-breakpoint-up(md) {
-      top: 11px;
-    }
-  }
-}
-
-.form-item-start-date {
-  label {
-    left: -76%;
-    @include media-breakpoint-between(md, md-t) {
-      left: -57%;
-    }
-    @include media-breakpoint-down(sm-t) {
-      left: 0;
-    }
-  }
-}
-
-.form-item-keyword {
-  label {
-    @include media-breakpoint-up(md) {
-      top: 10px;
-    }
-  }
+  display: flex;
+  flex: 1;
 }
 
 #edit-starting-level--wrapper {
-  margin-top: 32px;
-  @include media-breakpoint-down(sm-t) {
-    margin-top: 0;
-  }
+  flex: 1;
 }
 
-.form-item-starting-level-ext {
-  @include media-breakpoint-between(md, md-t) {
-    width: 38.5% !important; // Overriding col-auto
-  }
-  @include media-breakpoint-down(sm-t) {
-    display: contents;
-  }
-
-  .form-select {
-    width: 330px;
-    height: 40px;
-    cursor: pointer;
-    @include media-breakpoint-up(lg) {
-      max-width: 73%;
-      margin-left: 122px;
-    }
-    @include media-breakpoint-between(md, md-t) {
-      width: 500px;
-      height: 40px;
-      margin-left: 136px;
-    }
-    @include media-breakpoint-down(sm-t) {
-      width: 100%;
-    }
-  }
+.form-item-starting-level-ext, .form-item-start-date, .form-item-start-date-2,
+.form-item-keyword {
+  display: flex;
 }
 
-#edit-course-fee--wrapper {
-  .fieldset-legend {
-    color: $text-shade;
-    font-weight: 700;
-    font-size: 16px;
-    position: absolute;
+.form-item-starting-level-ext, .form-item-start-date-2, .form-item-keyword {
+  display: flex;
+  flex: 1;
+}
 
-    .col-auto {
-      max-width: 96%;
-      margin: auto;
-    }
-  }
+
+.form-item-start-date {
+  flex: 2 !important;
 }
 
 #edit-course-fee {
   @include media-breakpoint-down(sm-t) {
-    display: inline-grid;
-    margin-bottom: 16px;
     .form-check {
       padding-bottom: 5px;
     }
   }
 }
 
-legend {
-  text-align: left;
-}
-
 #edit-course-fee--wrapper {
+  flex: 1;
+  display: flex;
+  flex-wrap: nowrap;
   .fieldset-wrapper {
-    width: 100%;
-    margin-left: 127px;
-    margin-top: -7px;
-    @include media-breakpoint-between(md, md-t) {
-      margin-left: 141px;
-    }
-    @include media-breakpoint-down(sm-t) {
-      padding-top: 30px;
-      margin-left: 0;
-    }
+    flex-basis: 75%;
   }
-}
-
-.form-control {
-  display: inline; // Override
-  width: auto; // Override
 }
 
 .form-item-start-date, .form-item-start-date-2 {
-  position: relative;
-  @include media-breakpoint-up(md) {
-    display: inline-block;
+  .label {
+    flex-basis: 38% !important; // Overriding flex-basis: 26% for general labels classes
   }
-  @include media-breakpoint-down(sm-t) {
-    top: 21px;
-    width: 52.2% !important; // Override, because of .col-auto
-    display: inline-flex;
-  }
-
-  .form-group {
-    max-width: 50%;
-  }
-
   .form-control {
-    width: 191px;
+    width: 217px;
     height: 40px;
     cursor: pointer;
     @include media-breakpoint-between(md, md-t) {
@@ -321,35 +177,26 @@ legend {
 }
 
 
-.form-item-start-date-2 {
-  @include media-breakpoint-down(sm-t) {
-    margin-top: 29.5px;
-  }
-}
-
-.form-text, .form-select {
-  border-color: $form-border-shade;
-  border-radius: 2px;
-  margin-left: 110px;
-  -webkit-appearance: none;
-  @include media-breakpoint-down(sm-t) {
-    margin-top: 0.25rem;
-  }
-  @include media-breakpoint-between(md, md-t) {
-    width: 80%;
-    max-width: 80%;
+.form-item-starting-level-ext {
+  .form-select {
+    width: 338px;
+    height: 40px;
   }
 }
 
 .form-item-keyword {
+  display: flex;
+  flex: 6.5;
+  .label {
+    display: flex;
+    flex: 1;
+  }
   .form-text, .form-control {
-    width: 90% !important; // Override
-    max-width: 90% !important; // Override
+    color: $form-border-shade;
     height: 40px;
     cursor: pointer;
-    @include media-breakpoint-up(lg) {
-      margin-left: 120px !important; // Override
-    }
+    max-width: 87% !important;
+    width: 100% !important;
     @include media-breakpoint-down(sm-t) {
       width: 104% !important; // Override
       max-width: 100% !important; // Override
@@ -357,7 +204,6 @@ legend {
     @include media-breakpoint-between(md, md-t) {
       width: 106% !important;
       max-width: 106% !important;
-      margin-left: 139px !important;
     }
   }
 }

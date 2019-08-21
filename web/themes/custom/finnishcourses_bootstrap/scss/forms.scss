@@ -9,6 +9,15 @@
   }
 }
 
+.form-row > [class*="col-"] {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
 .form-check {
   display: inline !important; // Override
 }
@@ -33,7 +42,6 @@
 
 .fieldset-legend {
   font-weight: 900;
-  margin-bottom: 5px;
 }
 
 legend {
@@ -43,28 +51,7 @@ legend {
 .form-text, .form-select {
   border-color: $form-border-shade;
   border-radius: 2px;
-  margin-left: 0;
   -webkit-appearance: none;
-  @include media-breakpoint-up(sm) {
-    margin-top: 0.25rem;
-  }
-}
-
-.form-item-keyword {
-  .form-text, .form-control {
-    margin-left: 124px;
-    color: $form-border-shade;
-    width: 100%;
-    max-width: 93%;
-    @include media-breakpoint-down(sm-t) {
-      margin-left: 0;
-    }
-  }
-
-  @include media-breakpoint-between(md, md-t) {
-    width: 82%;
-    max-width: 82%;
-  }
 }
 
 // Radio button

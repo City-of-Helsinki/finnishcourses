@@ -251,6 +251,18 @@ h1, h2, h3, .fieldset-legend {
   color: $primary-shade;
 }
 
+.more-options-wrapper {
+  .fieldset-legend {
+    color: $text-shade;
+  }
+}
+
+.more-options-wrapper {
+  .label {
+    color: $text-shade;
+  }
+}
+
 .view-search-courses {
   .view-header, .views-field-title {
     color: $primary-shade;

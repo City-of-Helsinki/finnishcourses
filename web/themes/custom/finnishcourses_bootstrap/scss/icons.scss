@@ -23,9 +23,6 @@
 }
 
 .form-item-starting-level-ext {
-  float: left;
-  position: relative;
-
   &::before {
     content: url(../images/icons/ic_chevron_down@1x.svg);
     color: $primary-shade;
