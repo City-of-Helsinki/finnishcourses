@@ -73,15 +73,15 @@
 .site-footer__top {
   display: inline-flex;
   margin: auto;
-  width: 75%;
+  width: 50%;
   @include media-breakpoint-down(sm) {
     display: flow-root;
   }
 
   .region-footer-third {
     img {
-      width: 124px;
-      height: 57px;
+      width: 106px;
+      height: 50px;
       margin-left: 15px;
       @include media-breakpoint-down(sm) {
         margin: auto;

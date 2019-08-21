@@ -1,24 +1,5 @@
 /* TYPOGRAPHY */
 
-
-/* Google Fonts */
-
-//@import url("https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900,900italic");
-//@import url("https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800,900");
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-// font families
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  // OBS! CORS
- // src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
- // src: local('Material Icons'),
- // local('MaterialIcons-Regular'),
- /* url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
-  url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
-  url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');*/
-}
 $font-lato: 'Lato',
 Arial,
 Verdana,
@@ -48,7 +29,7 @@ Consolas,
 "Liberation Mono",
 "Courier New",
 monospace;
-$font-family-base: $font-lato;
+$font-family-base: Arial;
 $font-size-base: 1rem; // Assumes the browser default, typically `16px`
 $font-size-lg: 1.25rem;
 $font-size-sm: .875rem;
