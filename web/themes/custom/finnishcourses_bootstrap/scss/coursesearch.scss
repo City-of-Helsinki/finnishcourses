@@ -102,13 +102,7 @@
   }
 
   .form-check-label {
-    padding: 0 26px;
-    @include media-breakpoint-only(md-t) {
-      padding: 0 21px;
-    }
-    @include media-breakpoint-only(md) {
-      padding: 14px;
-    }
+    padding: 0 10px;
     @include media-breakpoint-down(sm-t) {
       padding: 0 9px;
     }
@@ -199,14 +193,11 @@
   }
 
   .form-control {
-    width: 184px;
+    width: 140px;
     height: 40px;
     cursor: pointer;
-    @include media-breakpoint-only(md-t) {
-      width: 170px;
-    }
-    @include media-breakpoint-only(md) {
-      width: 152px;
+    @include media-breakpoint-down(md-t) {
+      width: 130px;
     }
     @include media-breakpoint-down(sm-t) {
       width: 95%;
@@ -227,11 +218,8 @@
 
 .form-item-starting-level-ext {
   .form-select {
-    width: 338px;
+    width: 257px;
     height: 40px;
-    @include media-breakpoint-only(md) {
-      width: 329px;
-    }
     @include media-breakpoint-down(sm-t) {
       width: 100%;
     }
