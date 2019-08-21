@@ -49,6 +49,13 @@
 #edit-time-of-day--wrapper {
   display: flex;
   flex: 1;
+  @include media-breakpoint-down(sm-t) {
+    display: grid;
+    .form-check {
+      padding-bottom: 16px;
+      left: 6px;
+    }
+  }
 }
 
 .fieldset-wrapper {
@@ -77,14 +84,14 @@
 
 .more-options-wrapper {
   background: $more-options-shade;
-  padding-top: 20px;
+  padding: 10px;
   display: none;
-  padding-bottom: 10px;
   text-align: left;
   max-height: 168px;
   @include media-breakpoint-down(sm-t) {
-    max-height: 558px;
+    max-height: 620px;
   }
+
   .col-auto {
     padding-left: 0;
     padding-right: 0;
@@ -96,8 +103,14 @@
 
   .form-check-label {
     padding: 0 26px;
-    @include media-breakpoint-between(md, md-t) {
-      padding: 21px;
+    @include media-breakpoint-only(md-t) {
+      padding: 0 21px;
+    }
+    @include media-breakpoint-only(md) {
+      padding: 14px;
+    }
+    @include media-breakpoint-down(sm-t) {
+      padding: 0 9px;
     }
   }
 }
@@ -105,15 +118,27 @@
 .more-options-row-1, .more-options-row-2, .more-options-row3 {
   display: flex;
 
+  @include media-breakpoint-down(sm-t) {
+    flex-direction: column;
+  }
+
   .fieldset {
     display: flex;
     flex: 1;
+    @include media-breakpoint-down(sm-t) {
+      flex-direction: column;
+      margin-bottom: 10px;
+    }
+
 
     .fieldset-title, .label {
       color: $text-shade;
       font-weight: 700;
       font-size: 16px;
       flex-basis: 26%;
+      @include media-breakpoint-down(sm-t) {
+        margin-bottom: 16px;
+      }
     }
   }
 }
@@ -130,6 +155,9 @@
 .form-item-starting-level-ext, .form-item-start-date, .form-item-start-date-2,
 .form-item-keyword {
   display: flex;
+  @include media-breakpoint-down(sm-t) {
+    flex-direction: column;
+  }
 }
 
 .form-item-starting-level-ext, .form-item-start-date-2, .form-item-keyword {
@@ -139,13 +167,18 @@
 
 
 .form-item-start-date {
-  flex: 2 !important;
+  flex: 2 !important; // Overriding flex: 1 in general for form-item classes
+  @include media-breakpoint-down(sm-t) {
+    flex: 1 !important;
+  }
 }
 
 #edit-course-fee {
   @include media-breakpoint-down(sm-t) {
+    display: grid;
     .form-check {
-      padding-bottom: 5px;
+      padding-bottom: 16px;
+      left: 6px;
     }
   }
 }
@@ -154,6 +187,7 @@
   flex: 1;
   display: flex;
   flex-wrap: nowrap;
+
   .fieldset-wrapper {
     flex-basis: 75%;
   }
@@ -161,18 +195,32 @@
 
 .form-item-start-date, .form-item-start-date-2 {
   .label {
-    flex-basis: 38% !important; // Overriding flex-basis: 26% for general labels classes
+    flex-basis: 38% !important; // Overriding flex-basis: 26% in general for labels classes
   }
+
   .form-control {
-    width: 217px;
+    width: 184px;
     height: 40px;
     cursor: pointer;
-    @include media-breakpoint-between(md, md-t) {
-      max-width: 179px;
+    @include media-breakpoint-only(md-t) {
+      width: 170px;
+    }
+    @include media-breakpoint-only(md) {
+      width: 152px;
     }
     @include media-breakpoint-down(sm-t) {
-      width: 91%;
+      width: 95%;
     }
+  }
+}
+
+.form-item-start-date-2 {
+  @include media-breakpoint-down(sm-t) {
+    margin-top: 41px !important; // Overriding other .fieldset classes with margin-top todo: fix this
+  }
+
+  .form-control {
+    margin-left: auto;
   }
 }
 
@@ -181,16 +229,24 @@
   .form-select {
     width: 338px;
     height: 40px;
+    @include media-breakpoint-only(md) {
+      width: 329px;
+    }
+    @include media-breakpoint-down(sm-t) {
+      width: 100%;
+    }
   }
 }
 
 .form-item-keyword {
   display: flex;
   flex: 6.5;
+
   .label {
     display: flex;
     flex: 1;
   }
+
   .form-text, .form-control {
     color: $form-border-shade;
     height: 40px;
@@ -198,12 +254,7 @@
     max-width: 87% !important;
     width: 100% !important;
     @include media-breakpoint-down(sm-t) {
-      width: 104% !important; // Override
-      max-width: 100% !important; // Override
-    }
-    @include media-breakpoint-between(md, md-t) {
-      width: 106% !important;
-      max-width: 106% !important;
+      max-width: 100% !important;
     }
   }
 }
