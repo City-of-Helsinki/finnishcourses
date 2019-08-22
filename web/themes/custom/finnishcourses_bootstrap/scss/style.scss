@@ -14,8 +14,23 @@ body {
   cursor: default;
 }
 
+
+// todo: fix this...........
+.container-fluid {
+  max-width: 980px;
+  width: 980px;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+
+// todo: fix this...........
 .main-content {
+  max-width: 980px;
   margin-top: 25px;
+  .row {
+    width: 980px;
+  }
 }
 
 .path-frontpage {
