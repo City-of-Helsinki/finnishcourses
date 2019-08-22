@@ -58,11 +58,6 @@
 }
 
 #edit-time-of-day--wrapper {
-  @include media-breakpoint-up(lg) {
-    top: -41px;
-    float: right;
-  }
-
   legend {
     font-weight: 700;
     font-size: 16px;
