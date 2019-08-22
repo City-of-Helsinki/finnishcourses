@@ -67,7 +67,7 @@ legend {
 
 
 input[type="radio"] {
-  position: relative;
+ // position: relative;
   display: inline-block;
   width: 12px;
   height: 13px;
@@ -125,11 +125,11 @@ input[type="radio"] {
 
 // Checkbox
 input[type="checkbox"] {
-  position: relative;
+ // position: relative;
   display: inline-block;
   width: 12px;
   height: 13px;
-  left: 10px;
+  left: 23px;
   outline: none !important;
   -webkit-appearance: none;
 
