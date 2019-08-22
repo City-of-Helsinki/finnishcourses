@@ -28,17 +28,14 @@
     color: $primary-shade;
     position: absolute;
     top: 9px;
-    right: 71px;
+    right: 58px;
     height: 24px;
     width: 24px;
     pointer-events: none;
     @include media-breakpoint-between(md, md-t) {
       top: 10px;
     }
-    @include media-breakpoint-only(sm-t) {
-      top: 42px;
-    }
-    @include media-breakpoint-only(sm) {
+    @include media-breakpoint-down(sm-t) {
       top: 42px;
     }
     @include media-breakpoint-only(xs) {
@@ -91,7 +88,7 @@
     top: 11px;
     height: 2px;
     width: 2px;
-    right: 164px;
+    right: 168px;
     @include media-breakpoint-down(sm-t) {
       left: -3px;
     }

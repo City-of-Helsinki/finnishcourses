@@ -183,6 +183,12 @@
     @include media-breakpoint-down(sm-t) {
       padding-bottom: 16px;
     }
+    .form-check-label {
+      padding: 0 12px;
+      @include media-breakpoint-down(sm-t) {
+        padding: 0 9px;
+      }
+    }
 
     .form-checkbox {
       top: -5px;
@@ -247,7 +253,7 @@
   }
 
   .form-select {
-    width: 257px;
+    width: 276px;
     height: 40px;
     @include media-breakpoint-down(sm-t) {
       width: 100%;
