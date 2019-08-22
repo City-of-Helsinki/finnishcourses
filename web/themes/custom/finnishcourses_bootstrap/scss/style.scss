@@ -18,9 +18,11 @@ body {
 // todo: fix this...........
 .container-fluid {
   max-width: 980px;
-  width: 980px;
   padding-right: 0;
   padding-left: 0;
+  @include media-breakpoint-between(md, lg) {
+    width: 980px;
+  }
 }
 
 
@@ -56,6 +58,7 @@ body {
 }
 
 .field--name-field-header-image {
+  margin-top: 28px;
   @include media-breakpoint-down(sm) {
     margin-top: 53px;
   }
