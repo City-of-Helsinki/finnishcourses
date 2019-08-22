@@ -50,9 +50,11 @@
   flex: 1;
   @include media-breakpoint-down(sm-t) {
     display: grid;
-    .form-check {
+  }
+
+  .form-check {
+    @include media-breakpoint-down(sm-t) {
       padding-bottom: 16px;
-      left: 6px;
     }
   }
 }
@@ -97,11 +99,13 @@
   }
 
   .form-check {
-    padding-left: 0;
+    @include media-breakpoint-down(sm-t) {
+      // padding-left: 0;
+    }
   }
 
   .form-check-label {
-    padding: 0 10px;
+    padding: 0 20px;
     @include media-breakpoint-down(sm-t) {
       padding: 0 9px;
     }
@@ -167,11 +171,22 @@
 }
 
 #edit-course-fee {
+  flex: 1;
   @include media-breakpoint-down(sm-t) {
     display: grid;
-    .form-check {
+  }
+
+  .form-check {
+    @include media-breakpoint-down(sm-t) {
       padding-bottom: 16px;
-      left: 6px;
+    }
+    .form-checkbox {
+      top: -5px;
+      left: 14px;
+      @include media-breakpoint-down(sm-t) {
+        top: 0;
+        left: 0;
+      }
     }
   }
 }
@@ -216,6 +231,8 @@
 
 
 .form-item-starting-level-ext {
+  margin-top: 4px;
+
   .form-select {
     width: 257px;
     height: 40px;

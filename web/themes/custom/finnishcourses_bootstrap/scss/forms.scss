@@ -132,6 +132,9 @@ input[type="checkbox"] {
   left: 23px;
   outline: none !important;
   -webkit-appearance: none;
+  @include media-breakpoint-down(sm-t) {
+    left: 13px;
+  }
 
   // Unchecked
   &::before {
