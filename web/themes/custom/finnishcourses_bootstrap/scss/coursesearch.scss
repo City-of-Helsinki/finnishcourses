@@ -25,9 +25,11 @@
   .label {
     font-weight: 900;
   }
+
   .fieldset-legend {
     font-size: 16px;
   }
+
   .fieldset {
     margin-top: 1px;
   }
@@ -37,7 +39,6 @@
   .js-form-item {
     .form-check-label {
       position: relative;
-      padding-right: 12px;
     }
   }
 
@@ -51,9 +52,11 @@
   flex: 1;
   @include media-breakpoint-down(sm-t) {
     display: grid;
-    .form-check {
+  }
+
+  .form-check {
+    @include media-breakpoint-down(sm-t) {
       padding-bottom: 16px;
-      left: 6px;
     }
   }
 }
@@ -87,7 +90,7 @@
   padding: 10px;
   display: none;
   text-align: left;
-  max-height: 168px;
+  max-height: 200px;
   @include media-breakpoint-down(sm-t) {
     max-height: 620px;
   }
@@ -97,19 +100,15 @@
     padding-right: 0;
   }
 
-  .form-check {
-    padding-left: 0;
-  }
-
   .form-check-label {
-    padding: 0 10px;
+    padding: 0 20px;
     @include media-breakpoint-down(sm-t) {
       padding: 0 9px;
     }
   }
 }
 
-.more-options-row-1, .more-options-row-2, .more-options-row3 {
+.more-options-row-1, .more-options-row-2 {
   display: flex;
 
   @include media-breakpoint-down(sm-t) {
@@ -134,6 +133,13 @@
         margin-bottom: 16px;
       }
     }
+  }
+}
+
+.more-options-row-2, .more-options-row-3 {
+  margin-top: 22px;
+  @include media-breakpoint-down(sm-t) {
+    margin-top: 0;
   }
 }
 
@@ -168,11 +174,25 @@
 }
 
 #edit-course-fee {
+  flex: 1;
   @include media-breakpoint-down(sm-t) {
     display: grid;
-    .form-check {
+  }
+
+  .form-check {
+    @include media-breakpoint-down(sm-t) {
       padding-bottom: 16px;
-      left: 6px;
+    }
+    .form-check-label {
+      padding: 0 12px;
+      @include media-breakpoint-down(sm-t) {
+        padding: 0 9px;
+      }
+    }
+
+    .form-checkbox {
+      top: -5px;
+      left: 14px;
     }
   }
 }
@@ -190,6 +210,11 @@
 .form-item-start-date, .form-item-start-date-2 {
   .label {
     flex-basis: 38% !important; // Overriding flex-basis: 26% in general for labels classes
+    top: 10px;
+    position: relative;
+    @include media-breakpoint-down(sm-t) {
+      top: 0;
+    }
   }
 
   .form-control {
@@ -217,8 +242,18 @@
 
 
 .form-item-starting-level-ext {
+  margin-top: 4px;
+
+  .label {
+    top: 10px;
+    position: relative;
+    @include media-breakpoint-down(sm-t) {
+      top: 0;
+    }
+  }
+
   .form-select {
-    width: 257px;
+    width: 276px;
     height: 40px;
     @include media-breakpoint-down(sm-t) {
       width: 100%;
