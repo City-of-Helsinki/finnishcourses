@@ -25,9 +25,11 @@
   .label {
     font-weight: 900;
   }
+
   .fieldset-legend {
     font-size: 16px;
   }
+
   .fieldset {
     margin-top: 1px;
   }
@@ -180,6 +182,7 @@
     @include media-breakpoint-down(sm-t) {
       padding-bottom: 16px;
     }
+
     .form-checkbox {
       top: -5px;
       left: 14px;
@@ -204,6 +207,11 @@
 .form-item-start-date, .form-item-start-date-2 {
   .label {
     flex-basis: 38% !important; // Overriding flex-basis: 26% in general for labels classes
+    top: 10px;
+    position: relative;
+    @include media-breakpoint-down(sm-t) {
+      top: 0;
+    }
   }
 
   .form-control {
@@ -232,6 +240,14 @@
 
 .form-item-starting-level-ext {
   margin-top: 4px;
+
+  .label {
+    top: 10px;
+    position: relative;
+    @include media-breakpoint-down(sm-t) {
+      top: 0;
+    }
+  }
 
   .form-select {
     width: 257px;
