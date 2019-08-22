@@ -27,8 +27,8 @@
     content: url(../images/icons/ic_chevron_down@1x.svg);
     color: $primary-shade;
     position: absolute;
-    top: 11px;
-    right: 38px;
+    top: 9px;
+    right: 71px;
     height: 24px;
     width: 24px;
     pointer-events: none;
@@ -55,24 +55,28 @@
   &::before {
     content: url(../images/icons/ic_insert_invitation@1x.svg);
     position: absolute;
-    top: 11px;
     height: 24px;
     width: 24px;
     pointer-events: none;
-    right: 20px;
-    @include media-breakpoint-only(sm-t) {
-      right: 50px;
-    }
-    @include media-breakpoint-down(sm) {
-      right: 30px;
-    }
   }
 }
 
 .form-item-start-date {
+   &::before {
+     right: 53px;
+     top: 11px;
+     @include media-breakpoint-down(sm-t) {
+       right: 20px;
+     }
+   }
+ }
+
+.form-item-start-date-2 {
   &::before {
+    right: 8px;
+    top: 12px;
     @include media-breakpoint-down(sm-t) {
-      top: 40px;
+      right: 20px;
     }
   }
 }
@@ -84,16 +88,7 @@
     top: 11px;
     height: 2px;
     width: 2px;
-    left: 0;
-    @include media-breakpoint-between(md, md-t) {
-      left: -4px;
-    }
-    @include media-breakpoint-only(sm-t) {
-      left: -19px;
-    }
-    @include media-breakpoint-down(sm) {
-      left: -12px;
-    }
+    right: 164px;
   }
 }
 
