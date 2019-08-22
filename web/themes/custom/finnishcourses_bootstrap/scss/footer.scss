@@ -24,7 +24,6 @@
   .region-footer-first, .region-footer-second, .region-footer-third {
     @include media-breakpoint-up(sm-t) {
       width: 100%;
-      display: table-row;
       text-align: left;
       border-left: 1px solid $border-shade;
 
@@ -72,7 +71,6 @@
 .site-footer__top {
   display: inline-flex;
   margin: auto;
-  width: 54%;
   @include media-breakpoint-down(sm) {
     display: flow-root;
   }

@@ -100,12 +100,6 @@
     padding-right: 0;
   }
 
-  .form-check {
-    @include media-breakpoint-down(sm-t) {
-      // padding-left: 0;
-    }
-  }
-
   .form-check-label {
     padding: 0 20px;
     @include media-breakpoint-down(sm-t) {
@@ -186,10 +180,6 @@
     .form-checkbox {
       top: -5px;
       left: 14px;
-      @include media-breakpoint-down(sm-t) {
-        top: 0;
-        left: 0;
-      }
     }
   }
 }
