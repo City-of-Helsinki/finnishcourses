@@ -9,7 +9,6 @@
   text-align: center;
   padding-top: 40px;
   padding-bottom: 80px;
-  padding-right: 150px;
   @include media-breakpoint-down(sm) {
     padding-bottom: 150px;
     padding-right: 0px;
@@ -25,7 +24,6 @@
   .region-footer-first, .region-footer-second, .region-footer-third {
     @include media-breakpoint-up(sm-t) {
       width: 100%;
-      display: table-row;
       text-align: left;
       border-left: 1px solid $border-shade;
 
@@ -73,16 +71,19 @@
 .site-footer__top {
   display: inline-flex;
   margin: auto;
-  width: 75%;
   @include media-breakpoint-down(sm) {
     display: flow-root;
   }
 
   .region-footer-third {
     img {
-      width: 124px;
-      height: 57px;
+      width: 106px;
+      height: 50px;
       margin-left: 15px;
+      @include media-breakpoint-down(sm-t) {
+        width: 100px;
+        height: 50px;
+      }
       @include media-breakpoint-down(sm) {
         margin: auto;
         width: 27%;
@@ -91,8 +92,7 @@
     }
   }
   img {
-    max-height: 200%;
-    max-width: 180%;
+    max-width: 200px;
     margin-left: 50px;
     @include media-breakpoint-down(sm) {
       padding-top: 30px;

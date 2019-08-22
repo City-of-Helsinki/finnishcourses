@@ -2,6 +2,7 @@
  -------------------------------------------------*/
 
 .form-item-sort-bef-combine {
+  margin: auto;
   label {
     display: none;
   }
@@ -57,11 +58,6 @@
 }
 
 #edit-time-of-day--wrapper {
-  @include media-breakpoint-up(lg) {
-    top: -41px;
-    float: right;
-  }
-
   legend {
     font-weight: 700;
     font-size: 16px;
@@ -92,7 +88,7 @@
 }
 
 .views-field-field-organizers-course-id {
-  margin-top: 47px;
+  margin-top: 20px;
   color: $id-shade;
 }
 
@@ -116,7 +112,7 @@
         display: grid;
         margin-left: 1px;
         margin-right: 1px;
-        width: 140px;
+        width: 168px;
         height: 100px;
         background-color: $dark-schedule-shade;
       }

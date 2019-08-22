@@ -14,8 +14,25 @@ body {
   cursor: default;
 }
 
+
+// todo: fix this...........
+.container-fluid {
+  max-width: 980px;
+  padding-right: 0;
+  padding-left: 0;
+  @include media-breakpoint-between(md, lg) {
+    width: 980px;
+  }
+}
+
+
+// todo: fix this...........
 .main-content {
+  max-width: 980px;
   margin-top: 25px;
+  .row {
+    width: 980px;
+  }
 }
 
 .path-frontpage {
@@ -41,6 +58,7 @@ body {
 }
 
 .field--name-field-header-image {
+  margin-top: 28px;
   @include media-breakpoint-down(sm) {
     margin-top: 53px;
   }
@@ -170,6 +188,10 @@ body {
   margin-bottom: 45px;
 }
 
+#block-finnishcourses-bootstrap-page-title {
+  display: none;
+}
+
 h1, h2, h3 {
   font-weight: 900;
 }
@@ -216,6 +238,14 @@ h1, h2, h3 {
   }
 }
 
+.node--type-front-page {
+  header {
+    .node__title {
+      margin: 0;
+    }
+  }
+}
+
 
 /* COLORS
 --------------------------------------------------*/
@@ -243,6 +273,18 @@ h1, h2, h3, .fieldset-legend {
   color: $primary-shade;
 }
 
+.more-options-wrapper {
+  .fieldset-legend {
+    color: $text-shade;
+  }
+}
+
+.more-options-wrapper {
+  .label {
+    color: $text-shade;
+  }
+}
+
 .view-search-courses {
   .view-header, .views-field-title {
     color: $primary-shade;
@@ -255,7 +297,7 @@ h1, h2, h3, .fieldset-legend {
 
 .menu--main {
   position: relative;
-  left: 13%;
+  margin-left: 150px;
   margin-top: 13px;
 }
 

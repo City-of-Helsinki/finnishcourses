@@ -23,32 +23,21 @@
 }
 
 .form-item-starting-level-ext {
-  float: left;
-  position: relative;
   &::before {
     content: url(../images/icons/ic_chevron_down@1x.svg);
     color: $primary-shade;
     position: absolute;
-    top: 11px;
-    right: 38px;
+    top: 9px;
+    right: 58px;
     height: 24px;
     width: 24px;
     pointer-events: none;
     @include media-breakpoint-between(md, md-t) {
       top: 10px;
-      right: -22px;
-    }
-    @include media-breakpoint-only(sm-t) {
-      top: 42px;
-    }
-    @include media-breakpoint-only(sm) {
-      top: 42px;
-    }
-    @include media-breakpoint-only(xs) {
-      top: 43px;
     }
     @include media-breakpoint-down(sm-t) {
-      right: 30px;
+      right: 6px;
+      top: 46px;
     }
   }
 }
@@ -57,48 +46,32 @@
   &::before {
     content: url(../images/icons/ic_insert_invitation@1x.svg);
     position: absolute;
-    top: 11px;
     height: 24px;
     width: 24px;
     pointer-events: none;
-    @include media-breakpoint-down(sm-t) {
-      right: 42px;
-    }
   }
 }
 
 .form-item-start-date {
   &::before {
-    right: 25%;
-    @include media-breakpoint-between(md, md-t) {
-      right: 41%;
+    right: 53px;
+    top: 13px;
+    @include media-breakpoint-down(md-t) {
+      right: 63px;
     }
     @include media-breakpoint-down(sm-t) {
-      top: 44px;
-    }
-    @include media-breakpoint-only(sm-t) {
-      right: 53%;
-    }
-    @include media-breakpoint-down(sm) {
-      right: 56%;
+      right: 38px;
+      top: 53px;
     }
   }
 }
 
 .form-item-start-date-2 {
   &::before {
-    right: 25%;
-    @include media-breakpoint-between(md, md-t) {
-      right: 41%;
-    }
+    right: 8px;
+    top: 12px;
     @include media-breakpoint-down(sm-t) {
-      top: 12px;
-    }
-    @include media-breakpoint-down(sm-t) {
-      left: 47%;
-    }
-    @include media-breakpoint-down(sm) {
-      left: 44%;
+      right: 15px;
     }
   }
 }
@@ -110,14 +83,9 @@
     top: 11px;
     height: 2px;
     width: 2px;
-    @include media-breakpoint-up(lg) {
-      right: 110%;
-    }
-    @include media-breakpoint-between(md, md-t) {
-      right: 115%;
-    }
+    right: 168px;
     @include media-breakpoint-down(sm-t) {
-      right: 100%;
+      left: -3px;
     }
   }
 }
@@ -141,13 +109,14 @@
 }
 
 .form-item-sort-bef-combine {
-    &::after {
-      content: url(../images/icons/ic_chevron_down@1x.svg);
-      color: $primary-shade;
-      position: absolute;
-      top: 7px;
-      padding-left: 66px;
-    }
+  &::after {
+    content: url(../images/icons/ic_chevron_down@1x.svg);
+    color: $primary-shade;
+    position: absolute;
+    top: 7px;
+    width: 12px;
+    margin-left: -22px;
+  }
 }
 
 // Color is changed within the svg file

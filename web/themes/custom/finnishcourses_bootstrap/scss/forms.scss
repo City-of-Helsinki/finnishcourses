@@ -1,11 +1,21 @@
 .form-row {
   display: block !important; // Override
   text-align: center;
+
   a {
     &:hover {
       text-decoration: none; // Override
     }
   }
+}
+
+.form-row > [class*="col-"] {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.form-group {
+  margin-bottom: 0;
 }
 
 .form-check {
@@ -32,7 +42,6 @@
 
 .fieldset-legend {
   font-weight: 900;
-  margin-bottom: 5px;
 }
 
 legend {
@@ -42,28 +51,7 @@ legend {
 .form-text, .form-select {
   border-color: $form-border-shade;
   border-radius: 2px;
-  margin-left: 0;
   -webkit-appearance: none;
-  @include media-breakpoint-up(sm) {
-    margin-top: 0.25rem;
-    //margin-left: 12px;
-  }
-}
-
-.form-item-keyword {
-  .form-text, .form-control {
-    color: $form-border-shade;
-    @include media-breakpoint-up(lg) {
-      width: 100%;
-      max-width: 93%;
-      margin-left: 77px;
-    }
-    @include media-breakpoint-between(md, md-t) {
-      width: 82%;
-      max-width: 82%;
-      margin-left: 124px;
-    }
-  }
 }
 
 // Radio button
@@ -79,7 +67,7 @@ legend {
 
 
 input[type="radio"] {
-  position: relative;
+ // position: relative;
   display: inline-block;
   width: 12px;
   height: 13px;
@@ -137,13 +125,16 @@ input[type="radio"] {
 
 // Checkbox
 input[type="checkbox"] {
-  position: relative;
+ // position: relative;
   display: inline-block;
   width: 12px;
   height: 13px;
-  left: 10px;
+  left: 23px;
   outline: none !important;
   -webkit-appearance: none;
+  @include media-breakpoint-down(sm-t) {
+    left: 13px;
+  }
 
   // Unchecked
   &::before {
