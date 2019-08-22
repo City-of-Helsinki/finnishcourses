@@ -90,7 +90,7 @@
   padding: 10px;
   display: none;
   text-align: left;
-  max-height: 168px;
+  max-height: 180px;
   @include media-breakpoint-down(sm-t) {
     max-height: 620px;
   }
@@ -108,7 +108,7 @@
   }
 }
 
-.more-options-row-1, .more-options-row-2, .more-options-row3 {
+.more-options-row-1, .more-options-row-2 {
   display: flex;
 
   @include media-breakpoint-down(sm-t) {
@@ -133,6 +133,13 @@
         margin-bottom: 16px;
       }
     }
+  }
+}
+
+.more-options-row-2, .more-options-row-3 {
+  margin-top: 22px;
+  @include media-breakpoint-down(sm-t) {
+    margin-top: 0;
   }
 }
 
