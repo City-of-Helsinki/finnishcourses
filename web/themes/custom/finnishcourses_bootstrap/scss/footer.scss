@@ -83,6 +83,10 @@
       width: 106px;
       height: 50px;
       margin-left: 15px;
+      @include media-breakpoint-down(sm-t) {
+        width: 100px;
+        height: 50px;
+      }
       @include media-breakpoint-down(sm) {
         margin: auto;
         width: 27%;
@@ -91,8 +95,7 @@
     }
   }
   img {
-    max-height: 200%;
-    max-width: 180%;
+    max-width: 200px;
     margin-left: 50px;
     @include media-breakpoint-down(sm) {
       padding-top: 30px;
