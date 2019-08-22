@@ -90,7 +90,7 @@
   padding: 10px;
   display: none;
   text-align: left;
-  max-height: 180px;
+  max-height: 200px;
   @include media-breakpoint-down(sm-t) {
     max-height: 620px;
   }
