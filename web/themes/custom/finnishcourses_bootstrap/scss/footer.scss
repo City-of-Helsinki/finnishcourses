@@ -9,7 +9,6 @@
   text-align: center;
   padding-top: 40px;
   padding-bottom: 80px;
-  padding-right: 150px;
   @include media-breakpoint-down(sm) {
     padding-bottom: 150px;
     padding-right: 0px;
@@ -73,7 +72,7 @@
 .site-footer__top {
   display: inline-flex;
   margin: auto;
-  width: 50%;
+  width: 54%;
   @include media-breakpoint-down(sm) {
     display: flow-root;
   }
