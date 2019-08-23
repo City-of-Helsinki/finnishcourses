@@ -1,12 +1,30 @@
 /* BASIC PAGE
 --------------------------------------------------*/
 
+.go-back {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 900;
+  a {
+    text-decoration: none;
+  }
+}
 
-// Centering the youtube video, probably need some more specified classes...
-.node--type-page {
+
+// LANGUAGE COURSE LEVEL
+.page-node-15 {
   .field--type-text-with-summary {
     div {
       text-align: center;
     }
+  }
+  h2:not(:first-child) {
+    border-top: 1px solid $border-shade;
+    padding-top: 20px;
+  }
+  p:last-child {
+    border-bottom: 1px solid $border-shade;
+    padding-bottom: 20px;
   }
 }
