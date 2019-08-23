@@ -39,6 +39,10 @@
   .js-form-item {
     .form-check-label {
       position: relative;
+      top: 2px;
+      @include media-breakpoint-down(sm-t) {
+        left: -11px;
+      }
     }
   }
 
@@ -183,6 +187,7 @@
     @include media-breakpoint-down(sm-t) {
       padding-bottom: 16px;
     }
+
     .form-check-label {
       padding: 0 12px;
       @include media-breakpoint-down(sm-t) {
