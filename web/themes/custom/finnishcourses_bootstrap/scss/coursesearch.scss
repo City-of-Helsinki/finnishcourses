@@ -61,6 +61,11 @@
   @include media-breakpoint-down(sm-t) {
     display: grid;
   }
+  .form-check-label {
+    @include media-breakpoint-down(sm-t) {
+      top: 5px;
+    }
+  }
 
   .form-check {
     @include media-breakpoint-down(sm-t) {
