@@ -83,7 +83,14 @@
         <nav{{ navbar_attributes }}>
             <div class="section clearfix">
                 <div class="navbar-brand mx-auto">
-                    {{ page.header }}
+                  {% if is_front %}
+                  <div class="mobile-img-logo">
+                    <a class="mobile-logo-url" href="{{ url('<front>') }}">
+                    <img src="{{ base_path ~ directory }}/images/fc-logo.png"/>
+                    </a>
+                  </div>
+                  {% endif %}
+                  {{ page.header }}
                 </div>
                 {% if page.header_form %}
                     <div class="form-inline navbar-form pull-right">

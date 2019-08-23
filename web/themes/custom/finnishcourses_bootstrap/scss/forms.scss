@@ -19,7 +19,7 @@
 }
 
 .form-check {
-  display: inline !important; // Override
+  display: inline;
 }
 
 .form-text {
@@ -71,6 +71,7 @@ input[type="radio"] {
   display: inline-block;
   width: 12px;
   height: 13px;
+  top: -5px;
   left: 10px;
   border-radius: 100%;
   outline: none !important;

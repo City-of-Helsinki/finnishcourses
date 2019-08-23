@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme override to display a Basic page - node: full.
+ *
+#}
+{{ attach_library('bootstrap_barrio/node') }}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+
+<div class="go-back">
+<a class="go-back-url" href="{{ url('<front>') }}">{% trans %}Go back{% endtrans %}</a>
+</div>
+
+<article{{ attributes.addClass(classes) }}>
+  <h1>{{ label }}</h1>
+  {{ content }}
+</article>
+
+<div class="go-back">
+<a class="go-back-url" href="{{ url('<front>') }}">{% trans %}Go back{% endtrans %}</a>
+</div>
