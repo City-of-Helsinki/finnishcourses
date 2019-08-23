@@ -27,6 +27,29 @@
 .field--name-field-media-image {
   margin-top: 86px;
 }
+
+.mobile-img-logo {
+  img {
+    @include media-breakpoint-up(sm-t) {
+      display: none;
+    }
+    @include media-breakpoint-down(sm-t) {
+      width: 211px;
+      margin-top: 12px;
+      top: 84px;
+      position: relative;
+    }
+  }
+}
+
+.navbar-brand {
+  text-align: center;
+}
+
+#block-mainnavigation {
+  display: none;
+}
+
 #block-finnishcourses-bootstrap-content {
   flex: 1;
   margin-top: 80px;
@@ -68,6 +91,7 @@
           @include media-breakpoint-only(xs) {
             padding: 20px 0;
           }
+
           h2 {
             margin-top: 0;
           }
