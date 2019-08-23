@@ -36,6 +36,10 @@
 }
 
 #edit-course-town--wrapper {
+  .form-check {
+    display: inline-block;
+    padding-bottom: 9px;
+  }
   .js-form-item {
     .form-check-label {
       position: relative;
