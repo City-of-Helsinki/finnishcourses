@@ -41,6 +41,19 @@
   display: none;
 }
 
+.node-form .layout-region-node-secondary .entity-meta {
+  margin-top: 1em;
+}
+
+.role-course_editor .node-form .layout-region-node-secondary .entity-meta .scheduler-form {
+  border-radius: 3px;
+  border-top: 1px solid #bfbfbf;
+}
+
+.role-course_editor .node-form .layout-region-node-secondary .entity-meta .path-form {
+  display: none;
+}
+
 .view-manage-courses .view-header {
   margin-top: 20px;
 }
