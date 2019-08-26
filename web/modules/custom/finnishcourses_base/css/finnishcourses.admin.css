@@ -50,6 +50,10 @@
   border-top: 1px solid #bfbfbf;
 }
 
+.role-course_editor .node-form .layout-region-node-secondary .entity-meta .path-form {
+  display: none;
+}
+
 .view-manage-courses .view-header {
   margin-top: 20px;
 }
