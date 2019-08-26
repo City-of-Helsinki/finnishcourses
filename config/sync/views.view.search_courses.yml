@@ -1779,7 +1779,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+            fi: fi
           group: 8
           exposed: false
           expose:
