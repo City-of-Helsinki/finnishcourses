@@ -43,3 +43,49 @@ display:
           content: '<a href="/node/add/course" class="button button-action button--primary button--small">Lisää kurssi</a>'
   page_1:
     display_title: Sivu
+    display_options:
+      filters:
+        field_course_id_value:
+          expose:
+            label: 'Kurssin F-koodi'
+        status_1:
+          expose:
+            label: Julkaistu
+        title:
+          expose:
+            label: 'Kurssin nimi'
+      menu:
+        title: 'Hallitse kursseja'
+      header:
+        area_text_custom:
+          content: '<a href="/node/add/course" class="button button-action button--primary button--small">Lisää kurssi</a>'
+  page_2:
+    display_title: Arkisto
+    display_options:
+      filters:
+        field_course_id_value:
+          expose:
+            label: 'Kurssin F-koodi'
+        status_1:
+          expose:
+            label: Julkaistu
+        title:
+          expose:
+            label: 'Kurssin nimi'
+      fields:
+        field_course_organization:
+          label: Järjestäjä
+        field_course_start_date:
+          label: Alkaa
+        field_course_end_date:
+          label: Loppuu
+        changed:
+          label: Päivitetty
+        nothing:
+          label: Kloonaa
+      menu:
+        title: Kurssiarkisto
+      header:
+        area_text_custom:
+          content: '<a href="/node/add/course" class="button button-action button--primary button--small">Lisää kurssi</a>'
+      title: Kurssiarkisto
