@@ -86,8 +86,7 @@
       }
       @include media-breakpoint-down(sm) {
         margin: auto;
-        width: 18%;
-        height: 20%;
+        height: 45%;
       }
     }
   }
@@ -95,11 +94,10 @@
     max-width: 200px;
     margin-left: 50px;
     @include media-breakpoint-down(sm) {
-      width: 32%;
-      height: 40%;
+      width: 58%;
       max-width: 100%;
       margin: auto;
-      margin-top: 47px;
+      margin-top: 19px;
     }
   }
 }
