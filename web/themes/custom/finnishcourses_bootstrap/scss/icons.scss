@@ -114,8 +114,13 @@
     color: $primary-shade;
     position: absolute;
     top: 7px;
+    right: 389px;
     width: 12px;
-    margin-left: -22px;
+    @include media-breakpoint-down(sm-t) {
+      top: 9px;
+      width: 12px;
+      right: 28px;
+    }
   }
 }
 

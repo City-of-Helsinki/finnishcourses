@@ -35,6 +35,13 @@ body {
   }
 }
 
+.col {
+  @include media-breakpoint-down(sm-t) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .path-frontpage {
   #block-finnishcourses-bootstrap-page-title {
      display: none;

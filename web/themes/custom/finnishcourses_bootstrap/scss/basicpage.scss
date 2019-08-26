@@ -15,7 +15,7 @@
 // LANGUAGE COURSE LEVEL
 .page-node-15 {
   .field--name-title {
-    @include media-breakpoint-down(sm-t) {
+    @include media-breakpoint-down(sm) {
       font-size: 21px;
     }
   }
@@ -28,10 +28,12 @@
     div {
       text-align: center;
       iframe {
-        @include media-breakpoint-down(sm-t) {
-          position: relative;
-          width: fit-content;
-          height: fit-content;
+        width: 640px;
+        height: 360px;
+        position: relative;
+        @include media-breakpoint-down(sm) {
+          width: 250px;
+          height: 140px;
         }
       }
     }
