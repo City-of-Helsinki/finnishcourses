@@ -39,6 +39,22 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     if (!empty($form['field_books_and_materials']['widget'][0]['#format']) && $form['field_books_and_materials']['widget'][0]['#format'] != 'only_text') {
       $form['field_books_and_materials']['widget'][0]['#format'] = 'only_text';
     }
+    //kint($form);
+    $current_user = \Drupal::currentUser();
+    $roles = $current_user->getRoles();
+    // Hide unneeded fields for course editor
+    if (!in_array('administrator', $roles) && !in_array('organization_admin', $roles)) {
+      unset($form['author']);
+      unset($form['revision_information']);
+      unset($form['meta']);
+      unset($form['promote']);
+      unset($form['created']);
+      unset($form['changed']);
+      unset($form['revision_log']);
+      unset($form['uid']);
+      unset($form['sticky']);
+      //unset($form['path']);
+    }
     // Set rest of detail containers to fieldsets
     if (!empty($form['#fieldgroups']['group_course_additional_informat'])) {
       $form['#fieldgroups']['group_course_additional_informat']->format_type = 'fieldset';
@@ -693,4 +709,13 @@ function _finnishcourses_base_remove_textarea_help($form_element, FormStateInter
   }
 
   return $form_element;
+}
+
+function finnishcourses_base_preprocess_html(&$variables) {
+  // The getRoles() method will return us the machine names, so there is no
+  // need to process roles names additionally. However, I suggest prefixing
+  // the names with "role-", so it's more obvious.
+  foreach ($variables['user']->getRoles() as $role) {
+    $variables['attributes']['class'][] = 'role-' . $role;
+  }
 }
