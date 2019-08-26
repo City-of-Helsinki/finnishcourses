@@ -49,6 +49,7 @@
     display: inline-block;
     padding-bottom: 9px;
   }
+
   .js-form-item {
     .form-check-label {
       position: relative;
@@ -70,6 +71,7 @@
   @include media-breakpoint-down(sm-t) {
     display: grid;
   }
+
   .form-check-label {
     @include media-breakpoint-down(sm-t) {
       top: 5px;
@@ -380,6 +382,15 @@
     left: 0;
     @include media-breakpoint-up(sm) {
       display: none;
+    }
+  }
+}
+
+// Search button under the search form
+#views-exposed-form-search-courses-page-1 {
+  #edit-submit-fixed.btn-primary {
+    @include media-breakpoint-down(sm-t) {
+      width: 91%;
     }
   }
 }
