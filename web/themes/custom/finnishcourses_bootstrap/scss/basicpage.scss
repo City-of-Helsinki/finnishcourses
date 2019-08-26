@@ -14,9 +14,26 @@
 
 // LANGUAGE COURSE LEVEL
 .page-node-15 {
+  .field--name-title {
+    @include media-breakpoint-down(sm-t) {
+      font-size: 21px;
+    }
+  }
   .field--type-text-with-summary {
+    h2 {
+      @include media-breakpoint-down(sm-t) {
+        font-size: 18px !important; // Overriding .path-node .section h2
+      }
+    }
     div {
       text-align: center;
+      iframe {
+        @include media-breakpoint-down(sm-t) {
+          position: relative;
+          width: fit-content;
+          height: fit-content;
+        }
+      }
     }
   }
   h2:not(:first-child) {
