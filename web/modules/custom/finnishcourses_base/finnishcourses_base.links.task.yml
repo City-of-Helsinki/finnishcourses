@@ -1,0 +1,9 @@
+finnishcourses_base.manage_courses:
+  route_name: view.manage_courses.page_1
+  title: 'Manage courses'
+  base_route: view.manage_courses.page_1
+
+finnishcourses_base.archive:
+  route_name: view.manage_courses.page_2
+  title: 'Archive'
+  base_route: view.manage_courses.page_1
