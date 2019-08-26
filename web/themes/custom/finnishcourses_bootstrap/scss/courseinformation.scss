@@ -83,8 +83,9 @@
 .views-field-field-course-town, .views-field-field-course-start-date, .views-field-field-course-fee {
   display: flex;
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(sm-t) {
     font-size: 16px;
+    display: table;
   }
 
   .field-content {
