@@ -1,0 +1,36 @@
+uuid: e98fccb3-66ed-4c61-98ab-f2c09620a03d
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_visibility_groups
+    - ctools
+  theme:
+    - finnishcourses_bootstrap
+id: entityviewcontent_2
+theme: finnishcourses_bootstrap
+region: content
+weight: -4
+provider: null
+plugin: 'entity_view:node'
+settings:
+  id: 'entity_view:node'
+  label: 'Content after feedback form'
+  provider: ctools
+  label_display: '0'
+  view_mode: bottom_content
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      feedback: feedback
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
