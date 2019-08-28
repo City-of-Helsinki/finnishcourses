@@ -77,10 +77,34 @@
       }
     },
 
+    preFillOrganizations: function(context) {
+      if ($(context).find('.user-form #edit-roles').length) {
+        var $infoFinlandCheckbox = $(context).find('input#edit-roles-infofinland-user');
+        var $organizationCheckbox = $(context).find('#edit-field-organization input.form-checkbox');
+        if ($infoFinlandCheckbox.is(':checked')) {
+          $organizationCheckbox.attr('checked', 'checked');
+        } else {
+          $organizationCheckbox.attr('checked', false);
+        }
+      }
+    },
+
+    triggerUserRoleChange: function(context) {
+       if ($(context).find('.user-form #edit-roles').length) {
+        $(context).find('input#edit-roles-infofinland-user').change(function(event) {
+          Drupal.behaviors.finnishcourses_base.preFillOrganizations(context);
+        });;
+      }
+
+
+    },
+
     attach: function (context, settings) {
 
       Drupal.behaviors.finnishcourses_base.autofillUsername(context);
       Drupal.behaviors.finnishcourses_base.fillRegistrationDefaultTimes(context);
+      Drupal.behaviors.finnishcourses_base.preFillOrganizations(context);
+      Drupal.behaviors.finnishcourses_base.triggerUserRoleChange(context);
 
       $(document).ajaxComplete(function(e, xhr, settings) {
 

@@ -1,0 +1,10 @@
+uuid: 9ed94b21-71c3-42a8-b248-376ef57b87b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.bottom_content
+label: 'Bottom content'
+targetEntityType: node
+cache: true

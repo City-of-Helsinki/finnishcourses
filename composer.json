@@ -37,6 +37,18 @@
                   "type": "zip"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "datetimepicker/datetimepicker",
+                "version": "2.5.20",
+                "type": "drupal-library",
+                "dist": {
+                  "url": "https://github.com/xdan/datetimepicker/archive/2.5.20.zip",
+                  "type": "zip"
+                }
+            }
         }
     ],
     "require": {
@@ -45,6 +57,7 @@
         "ckeditor-youtube-plugin/ckeditor-youtube-plugin": "^2.1",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
+        "datetimepicker/datetimepicker": "^2.5",
         "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "^1.26",
         "drupal/admin_toolbar_tools": "^1.26",
@@ -94,6 +107,7 @@
         "drupal/select_or_other": "^1.0@alpha",
         "drupal/shortcutperrole": "^1.0@RC",
         "drupal/simple_sitemap": "^3.2",
+        "drupal/single_datetime": "^1.7",
         "drupal/time_range": "^1.1",
         "drupal/token": "^1.5",
         "drupal/ultimate_cron": "^2.0@alpha",
@@ -159,14 +173,8 @@
                 "Handle timezones in Office Hours module": "https://www.drupal.org/files/issues/office_hours-respecting-user_timezone-D8-1925272-17.patch",
                 "Make week widgets header labels translatable with context": "patches/contrib/office_hours/week_widget_labels_with_context.patch"
             },
-            "drupal/select_or_other": {
-                "Make Other option translatable": "patches/contrib/select_or_other/make_other_option_translatable-2926786-custom.patch"
-            },
             "drupal/ultimate_cron": {
                 "Ability to unlock a cron job": "https://www.drupal.org/files/issues/2018-07-16/ultimate-cron_add-unlock-operation_2977639_2.patch"
-            },
-            "drupal/ckeditor_youtube": {
-                "Configurable path for plugin library": "https://www.drupal.org/files/issues/2019-04-03/configurable_library_path-2928417-19.patch"
             }
         },
         "drupal-scaffold": {

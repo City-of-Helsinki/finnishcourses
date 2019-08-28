@@ -9,14 +9,15 @@ label: 'Basic page'
 type: 'canonical_entities:node'
 pattern: '[node:menu-link:parent]/[node:title]'
 selection_criteria:
-  cf109742-37b0-4313-bf1e-fab6328f9b8a:
+  2a310b6c-e734-49ee-81de-a300700027eb:
     id: node_type
     bundles:
+      feedback: feedback
       page: page
     negate: false
     context_mapping:
       node: node
-    uuid: cf109742-37b0-4313-bf1e-fab6328f9b8a
+    uuid: 2a310b6c-e734-49ee-81de-a300700027eb
 selection_logic: and
 weight: -5
 relationships: {  }
