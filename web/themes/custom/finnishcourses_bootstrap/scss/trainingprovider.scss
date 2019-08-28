@@ -6,7 +6,7 @@
   .field--name-field-course-availability, .views-field-field-starting-level,  .views-field-field-starting-level, .views-field-field-target-level, .views-field-field-course-start-date,
   .views-field-field-course-town, .views-field-field-course-start-date, .views-field-field-course-fee, .views-field-field-organizers-course-id {
     display: flex;
-    .field__item {
+    .field__item, .field-content {
       margin-left: 5px;
     }
   }
