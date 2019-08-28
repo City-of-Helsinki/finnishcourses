@@ -18,15 +18,16 @@
   ]
 %}
 
+{# FIX THIS #}
 <div class="go-back">
 <a class="go-back-url" href="{{ url('<front>') }}">{% trans %}Go back{% endtrans %}</a>
 </div>
 
 <article{{ attributes.addClass(classes) }}>
-  <h1>{{ label }}</h1>
   {{ content }}
 </article>
 
+{# FIX THIS #}
 <div class="go-back">
 <a class="go-back-url" href="{{ url('<front>') }}">{% trans %}Go back{% endtrans %}</a>
 </div>
