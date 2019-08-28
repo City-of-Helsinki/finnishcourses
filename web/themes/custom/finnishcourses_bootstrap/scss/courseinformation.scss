@@ -67,6 +67,7 @@
     border-bottom: 1px solid $border-shade;
     padding-bottom: 36px;
   }
+
   .enroll-online {
     .field__label {
       &::after {
@@ -112,68 +113,38 @@
   }
 }
 
-// Course information - view on front page
-.view-search-courses {
-  .course-label, .field--name-field-course-availability, .field--name-field-course-entry-level,
-  .field--name-field-course-target-level, .course-dates, .field--name-field-course-street-address,
-  .field--name-field-course-town, .field--name-field-course-fee, .course-lessons, .field--name-field-books-and-materials,
-  .registration-dates, .enroll-online, .field--name-field-course-id, .field--name-field-course-features, .field--name-field-registration-start-date,
-  .field--name-field-course-online-address, .field--name-field-registration-end-date, .field--name-field-course-length,
-  .field--name-field-course-in-swedish, .field--name-field-online-course, .field--name-field-number-of-lessons, .field--name-field-course-start-date,
-  .field--name-field-course-end-date, .field--name-field-registration-email, .field--name-field-registration-link, .organization-name,
-  .field--name-field-starting-level, .field--name-field-target-level, .field--name-field-organizers-course-id, .field--name-field-ask-more-email,
-  .views-field-field-starting-level, .views-field-field-target-level, .views-field-field-course-start-date,
-  .views-field-field-course-town, .views-field-field-course-start-date, .views-field-field-course-fee {
-    display: flex;
+.course-label, .field--name-field-course-availability, .field--name-field-course-entry-level,
+.field--name-field-course-target-level, .course-dates, .field--name-field-course-street-address,
+.field--name-field-course-town, .field--name-field-course-fee, .course-lessons, .field--name-field-books-and-materials,
+.registration-dates, .enroll-online, .field--name-field-course-id, .field--name-field-course-features, .field--name-field-registration-start-date,
+.field--name-field-course-online-address, .field--name-field-registration-end-date, .field--name-field-course-length,
+.field--name-field-course-in-swedish, .field--name-field-online-course, .field--name-field-number-of-lessons, .field--name-field-course-start-date,
+.field--name-field-course-end-date, .field--name-field-registration-email, .field--name-field-registration-link, .organization-name,
+.field--name-field-starting-level, .field--name-field-target-level, .field--name-field-organizers-course-id, .field--name-field-ask-more-email,
+.views-field-field-starting-level, .views-field-field-target-level, .views-field-field-course-start-date,
+.views-field-field-course-town, .views-field-field-course-start-date, .views-field-field-course-fee {
+  display: flex;
 
-    @include media-breakpoint-down(sm) {
-      font-size: 16px;
-      display: table;
-    }
-
-    .field-content {
-      display: inline;
-      margin-left: 5px;
-    }
-
-    .field__item, .field__item a {
-      display: inline;
-      margin-left: 5px;
-      @include media-breakpoint-down(sm) {
-        margin-left: 0;
-        font-size: 16px;
-      }
-    }
+  @include media-breakpoint-down(sm) {
+    font-size: 16px;
+    display: table;
   }
-}
 
-// Course information - page
-.node--type-course {
-  .course-label, .field--name-field-course-availability, .field--name-field-course-entry-level,
-  .field--name-field-course-target-level, .course-dates, .field--name-field-course-street-address,
-  .field--name-field-course-town, .field--name-field-course-fee, .course-lessons, .field--name-field-books-and-materials,
-  .registration-dates, .field--name-field-course-id, .field--name-field-course-features, .field--name-field-registration-start-date,
-  .field--name-field-course-online-address, .field--name-field-registration-end-date, .field--name-field-course-length,
-  .field--name-field-course-in-swedish, .field--name-field-online-course, .field--name-field-number-of-lessons, .field--name-field-course-start-date,
-  .field--name-field-course-end-date, .field--name-field-registration-email, .field--name-field-registration-link, .organization-name,
-  .field--name-field-starting-level, .field--name-field-target-level, .field--name-field-organizers-course-id, .field--name-field-ask-more-email,
-  .views-field-field-starting-level, .views-field-field-target-level, .views-field-field-course-start-date,
-  .views-field-field-course-town, .views-field-field-course-start-date, .views-field-field-course-fee {
-    display: flex;
+  .field-content {
+    display: inline;
+    margin-left: 5px;
+  }
 
+  .field__label {
+    display: inline;
+  }
+
+  .field__item, .field__item a {
+    display: inline;
+    margin-left: 5px;
     @include media-breakpoint-down(sm) {
+      margin-left: 0;
       font-size: 16px;
-      flex-wrap: wrap;
-    }
-
-    .field-content {
-      display: inline;
-     // margin-left: 5px;
-    }
-
-    .field__item, .field__item a {
-      display: inline;
-      margin-left: 3px;
     }
   }
 }
