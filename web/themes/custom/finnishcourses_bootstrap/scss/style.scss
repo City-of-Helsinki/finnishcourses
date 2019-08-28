@@ -256,6 +256,27 @@ h1, h2, h3 {
   }
 }
 
+.pagination {
+  justify-content: center;
+  display: flex;
+  margin-top: 20px;
+}
+
+.page-link {
+  border: 0; // Overriding Bootstrap
+  padding: 4px 12px; // Overriding Bootstrap
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.page-item:first-child .page-link {
+  border-top-left-radius: 0.15rem; // Overriding Bootstrap
+  border-top-right-radius: 0.15rem;
+  border-bottom-right-radius: 0.15rem;
+  border-bottom-left-radius: 0.15rem // Overriding Bootstrap
+}
+
 
 /* COLORS
 --------------------------------------------------*/
