@@ -1,0 +1,14 @@
+uuid: 2d5500df-720c-4c84-99e4-57ccc7c9c770
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.infofinland_user
+  module:
+    - user
+id: user_remove_role_action.infofinland_user
+label: 'Remove the Infofinland user role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: infofinland_user

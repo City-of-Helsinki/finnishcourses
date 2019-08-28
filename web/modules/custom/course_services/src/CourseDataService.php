@@ -84,6 +84,41 @@ class CourseDataService {
     return $allCourses;
   }
 
+  public function queryUsersByRole($role) {
+    $user_storage = $this->entityTypeManager->getStorage('user');
+
+    $users = [];
+
+    $ids = $user_storage->getQuery()
+      ->condition('status', 1)
+      ->condition('roles', $role)
+      ->execute();
+
+    if ($ids) {
+      $users = $user_storage->loadMultiple($ids);
+    }
+
+    return $users;
+  }
+
+  /**
+   * Function to get taxonomy terms in vocabulary
+   * @param  string $vid    Vocabulary id 
+   * @return array  $terms  Array of terms in vocabulary
+   */
+  public function getAllTermsInVocabulary($vid) {
+
+    $terms = [];
+
+    if (empty($vid)) {
+      return [];
+    }
+
+    $terms = $this->entityTypeManager->getStorage('taxonomy_term')->loadTree($vid);
+
+    return $terms;
+  }
+
 
   /**
    * Function to return organizations the current user has access to

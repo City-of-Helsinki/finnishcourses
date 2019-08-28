@@ -8,7 +8,6 @@ weight: 3
 is_admin: null
 permissions:
   - 'access toolbar'
-  - 'access user profiles'
   - 'administer nodes'
   - 'clone course content'
   - 'create course content'
@@ -39,5 +38,6 @@ permissions:
   - 'view all media revisions'
   - 'view any unpublished course content'
   - 'view course revisions'
+  - 'view own unpublished content'
   - 'view own unpublished media'
   - 'view the administration theme'

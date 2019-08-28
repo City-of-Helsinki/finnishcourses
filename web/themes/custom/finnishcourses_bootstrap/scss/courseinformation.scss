@@ -44,10 +44,45 @@
   margin-bottom: 36px;
 }
 
+.node--type-course {
+  .field__label {
+    &::after {
+      content: ":";
+    }
+  }
+}
+
+.field--name-field-course-features {
+  .field__item {
+    &:not(:first-child) {
+      &::before {
+        content: ";";
+      }
+    }
+  }
+}
+
 .course-registration {
   @include media-breakpoint-down(sm-t) {
     border-bottom: 1px solid $border-shade;
     padding-bottom: 36px;
+  }
+  .enroll-online {
+    .field__label {
+      &::after {
+        right: 5px;
+        position: relative;
+      }
+    }
+  }
+}
+
+.course-lessons {
+  .field__label {
+    &::after {
+      right: 5px;
+      position: relative;
+    }
   }
 }
 
