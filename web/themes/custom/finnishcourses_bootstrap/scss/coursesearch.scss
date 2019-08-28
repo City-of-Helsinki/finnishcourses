@@ -353,6 +353,7 @@
     font-size: 21px;
     font-weight: 700;
     margin-top: 20px;
+    -webkit-appearance: none;
     @include media-breakpoint-down(sm) {
       width: 100%;
       padding-top: 10px;
