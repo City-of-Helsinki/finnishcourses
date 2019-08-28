@@ -52,6 +52,16 @@
   }
 }
 
+.field--name-field-course-features {
+  .field__item {
+    &:not(:first-child) {
+      &::before {
+        content: ";";
+      }
+    }
+  }
+}
+
 .course-registration {
   @include media-breakpoint-down(sm-t) {
     border-bottom: 1px solid $border-shade;
