@@ -27,24 +27,40 @@
       });
 
       // STICKY MOBILE BUTTON
-      // Observer API
       // Root is the browser viewport / screen
-      let observer = new IntersectionObserver(function(entries) {
+      let searchButtonObserver = new IntersectionObserver(function (entries) {
         // Since there is a single target to be observed, there will be only one entry
-          if(entries[0]['isIntersecting'] === true) {
-           if(entries[0]['intersectionRatio'] > 0.5)
-              // More or less than 50% of target is showing on the screen
+        if (entries[0]['isIntersecting'] === true) {
+          if (entries[0]['intersectionRatio'] > 0.5)
+          // More or less than 50% of target is showing on the screen
             $("#edit-submit-search-courses").hide();
+        } else {
+          // Target is not visible on the screen, show sticky mobile button
+          if ($(window).width() < 844.98) {
+            $("#edit-submit-search-courses").show();
           }
-          else {
-            // Target is not visible on the screen, show sticky mobile button
-            if ($(window).width() < 844.98) {
-              $("#edit-submit-search-courses").show();
-            }
-          }
-        }, { threshold: [0, 0.5, 1] });
+        }
+      }, {threshold: [0, 0.5, 1]});
 
-      observer.observe(document.querySelector("#edit-submit-fixed"));
+      searchButtonObserver.observe(document.querySelector("#edit-submit-fixed"));
+
+      // STICKY NAVBAR - TRANSPARENT BACKGROUND WHEN SCROLLED
+      function checkScroll() {
+        // Navbar changes to px
+        let startY = $('#navbar-top').height() * 2;
+
+        if ($(window).scrollTop() > startY) {
+          $('.region-secondary-menu').addClass("nav-container-sticky");
+        } else {
+          $('.region-secondary-menu').removeClass("nav-container-sticky");
+        }
+      }
+
+      if ($('#navbar-top').length > 0) {
+        $(window).on("scroll load resize", function () {
+          checkScroll();
+        });
+      }
     }
   };
 })(jQuery, Drupal);
