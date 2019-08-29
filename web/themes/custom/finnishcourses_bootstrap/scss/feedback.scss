@@ -26,30 +26,16 @@
 
 .form-item-title, .form-item-name-pseudonym, .form-item-email-address,
 .form-item-phone-number, .form-item-street-address, .form-item-postal-code, .form-item-post-office {
-  display: flex;
   .label {
     font-weight: 900;
-    flex-basis: 21%;
-    top: 7px;
+    top: 3px;
     position: relative;
-  }
-  .form-control {
-    display: flex;
   }
 }
 
 .form-item-message {
-  display: flex;
   .label {
     font-weight: 900;
-    flex-basis: 20.5%;
-    position: relative;
-  }
-  .form-textarea-wrapper {
-    width: 99%;
-    .form-control {
-      display: flex;
-    }
   }
 }
 
