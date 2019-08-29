@@ -1,0 +1,51 @@
+/* FEEDBACK
+--------------------------------------------------*/
+
+#block-webform {
+  .fieldset-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    @include media-breakpoint-down(sm) {
+    font-size: 21px;
+    }
+  }
+  .fieldset-wrapper {
+    text-align: center;
+  }
+}
+
+.form-item-contact-information {
+  text-align: center;
+  h2 {
+    @include media-breakpoint-down(sm) {
+      font-size: 21px;
+    }
+  }
+}
+
+.form-item-title, .form-item-name-pseudonym, .form-item-email-address,
+.form-item-phone-number, .form-item-street-address, .form-item-postal-code, .form-item-post-office {
+  .label {
+    font-weight: 900;
+    top: 3px;
+    position: relative;
+  }
+}
+
+.form-item-message {
+  .label {
+    font-weight: 900;
+  }
+}
+
+.form-item-type-of-feedback {
+  text-align: center;
+}
+
+.webform-button--submit {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 20%;
+}
+
