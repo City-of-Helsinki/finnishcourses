@@ -13,6 +13,7 @@ dependencies:
     - field.storage.node.field_course_street_address
     - field.storage.node.field_course_town
     - field.storage.node.field_course_week_hours
+    - field.storage.node.field_map_link
     - field.storage.node.field_organizers_course_id
     - field.storage.node.field_starting_level
     - field.storage.node.field_target_level
@@ -21,6 +22,7 @@ dependencies:
   module:
     - better_exposed_filters
     - datetime
+    - link
     - office_hours
     - options
     - search_api
@@ -599,6 +601,81 @@ display:
             multi_type: separator
             multi_separator: ', '
           plugin_id: search_api_field
+        field_map_link:
+          id: field_map_link
+          table: search_api_datasource_courses_index_entity_node
+          field: field_map_link
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: uri
+          type: link_separate
+          settings:
+            trim_length: 80
+            url_only: false
+            url_plain: false
+            rel: '0'
+            target: '0'
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: false
+          fallback_handler: search_api
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+          entity_type: node
+          plugin_id: search_api_field
         field_course_street_address:
           id: field_course_street_address
           table: search_api_datasource_courses_index_entity_node
@@ -650,7 +727,7 @@ display:
           click_sort_column: target_id
           type: entity_reference_label
           settings:
-            link: true
+            link: false
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -768,6 +845,55 @@ display:
               towns:
                 display_method: label
           plugin_id: search_api_field
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: 'Address with/without map link'
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '{{ field_course_organization }}, {{ field_course_street_address }}'
+            make_link: true
+            path: '{{ field_map_link }}'
+            absolute: true
+            external: true
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: _blank
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
         field_course_town:
           id: field_course_town
           table: search_api_index_courses_index
@@ -779,7 +905,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_course_town }}, {{ field_course_organization }}, {{ field_course_street_address }}'
+            text: "{{ field_course_town }}, {{ nothing }}\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -1038,7 +1164,7 @@ display:
             alter_text: false
             text: ''
             make_link: false
-            path: ''
+            path: '{{ field_map_link }}'
             absolute: false
             external: false
             replace_spaces: false
@@ -1944,6 +2070,7 @@ display:
         - 'config:field.storage.node.field_course_street_address'
         - 'config:field.storage.node.field_course_town'
         - 'config:field.storage.node.field_course_week_hours'
+        - 'config:field.storage.node.field_map_link'
         - 'config:field.storage.node.field_organizers_course_id'
         - 'config:field.storage.node.field_starting_level'
         - 'config:field.storage.node.field_target_level'
@@ -1978,6 +2105,7 @@ display:
         - 'config:field.storage.node.field_course_street_address'
         - 'config:field.storage.node.field_course_town'
         - 'config:field.storage.node.field_course_week_hours'
+        - 'config:field.storage.node.field_map_link'
         - 'config:field.storage.node.field_organizers_course_id'
         - 'config:field.storage.node.field_starting_level'
         - 'config:field.storage.node.field_target_level'
