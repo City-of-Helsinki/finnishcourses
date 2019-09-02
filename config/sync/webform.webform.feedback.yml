@@ -1,7 +1,13 @@
 uuid: 22596b11-cb75-404f-be13-6a3dc0caf188
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - honeypot
+third_party_settings:
+  honeypot:
+    honeypot: true
+    time_restriction: true
 open: null
 close: null
 weight: 0
@@ -17,7 +23,7 @@ css: ''
 javascript: ''
 settings:
   ajax: false
-  ajax_scroll_top: form
+  ajax_scroll_top: ''
   ajax_progress_type: ''
   ajax_effect: ''
   ajax_speed: null
