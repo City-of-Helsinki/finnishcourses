@@ -58,6 +58,24 @@
   margin-top: 20px;
 }
 
+.view-manage-courses .view-header .results-count {
+  margin: 30px 0 20px;
+  font-size: 14px;
+}
+
+#views-exposed-form-manage-courses-page-2 .form-item-end-date-value-1-max label {
+  display: none;
+}
+
+#views-exposed-form-manage-courses-page-2 .form-item-end-date-value-1-max {
+  margin-top: 31px;
+}
+
+#views-exposed-form-manage-courses-page-2 .form-item-end-date-value-1-min:after {
+  content: '-';
+  margin-left: 3px;
+}
+
 /*.path-node #block-seven-breadcrumbs {
   display: none;
 }*/

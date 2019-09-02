@@ -1,6 +1,34 @@
 display:
   default:
     display_options:
+      filters:
+        publish_on:
+          expose:
+            label: Опубликовать
+          group_info:
+            label: Опубликовать
+        unpublish_on:
+          expose:
+            label: 'Снять с публикации'
+        title:
+          expose:
+            label: Заголовок
+        type:
+          expose:
+            label: 'Тип материала'
+        status:
+          expose:
+            label: Статус
+          group_info:
+            label: 'Статус публикации'
+            group_items:
+              1:
+                title: Опубликовано
+              2:
+                title: 'Снято с публикации'
+        langcode:
+          expose:
+            label: Язык
       exposed_form:
         options:
           submit_button: Фильтр
@@ -31,34 +59,6 @@ display:
           label: 'Снять с публикации'
         operations:
           label: Операции
-      filters:
-        status:
-          expose:
-            label: Статус
-          group_info:
-            label: 'Статус публикации'
-            group_items:
-              1:
-                title: Опубликовано
-              2:
-                title: 'Снято с публикации'
-        type:
-          expose:
-            label: Тип
-        title:
-          expose:
-            label: Заголовок
-        langcode:
-          expose:
-            label: Язык
-        publish_on:
-          expose:
-            label: Опубликовать
-          group_info:
-            label: Опубликовать
-        unpublish_on:
-          expose:
-            label: 'Снять с публикации'
     display_title: Основной
   overview:
     display_options:
