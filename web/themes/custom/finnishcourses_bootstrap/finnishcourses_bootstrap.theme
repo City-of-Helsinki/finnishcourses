@@ -6,6 +6,9 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -29,4 +32,48 @@ function finnishcourses_bootstrap_form_system_theme_settings_alter(&$form, FormS
       'bg-white' => t('White'),
       'bg-transparent' => t('Transparent'),
   );
+}
+
+function finnishcourses_bootstrap_preprocess_node(&$variables) {
+  if (isset($variables['node']) && $variables['node'] instanceof NodeInterface && $variables['node']->bundle() == 'course' && isset($variables['view_mode']) && $variables['view_mode'] == 'full') {
+    $node = $variables['node'];
+    $locationText = '';
+    $townName = '';
+    if (!$node->get('field_course_town')->isEmpty()) {
+      $courseTown = $node->get('field_course_town')->target_id;
+      $town = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($courseTown);
+      $townName = $town->getName();
+      
+    }
+
+    if (!$node->get('field_course_organization')->isEmpty()) {
+      $courseOrganization = $node->get('field_course_organization')->target_id;
+      $organization = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($courseOrganization);
+      $organizationName = $organization->getName();
+      $locationText = $organizationName;
+    }
+
+    if (!$node->get('field_course_street_address')->isEmpty()) {
+      $courseAddress = $node->get('field_course_street_address')->target_id;
+      $address = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($courseAddress);
+      $addressName = $address->getName();
+      $locationText .= ', ' . $addressName;
+    }
+
+    if (!empty($townName)) {
+      $locationText .= ', ' . $townName;
+    }
+
+    if (!$node->get('field_map_link')->isEmpty()) {
+      $courseLocation = Link::fromTextAndUrl($locationText, Url::fromUri($node->get('field_map_link')->first()->getUrl()->toString(), ['attributes' => ['target' => '_blank']]));
+    } else {
+      $courseLocation = $locationText;
+    }
+    //kint($courseLocation);
+
+    $variables['course_location'] = $courseLocation;
+    $variables['course_town'] = $townName;
+
+  }
+
 }
