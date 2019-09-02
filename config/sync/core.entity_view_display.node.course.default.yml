@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.course.field_course_town
     - field.field.node.course.field_course_unpublish_date
     - field.field.node.course.field_course_week_hours
+    - field.field.node.course.field_map_link
     - field.field.node.course.field_number_of_lessons
     - field.field.node.course.field_online_course
     - field.field.node.course.field_organizers_course_id
@@ -153,7 +154,7 @@ content:
     region: content
   field_course_street_address:
     weight: 16
-    label: above
+    label: hidden
     settings:
       link: false
     third_party_settings: {  }
@@ -161,7 +162,7 @@ content:
     region: content
   field_course_town:
     weight: 15
-    label: above
+    label: hidden
     settings:
       link: false
     third_party_settings: {  }
@@ -202,6 +203,18 @@ content:
       timezone_field: ''
     third_party_settings: {  }
     type: office_hours
+    region: content
+  field_map_link:
+    weight: 26
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link_separate
     region: content
   field_number_of_lessons:
     weight: 6

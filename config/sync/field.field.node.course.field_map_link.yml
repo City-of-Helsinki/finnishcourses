@@ -1,0 +1,23 @@
+uuid: 316b029b-2899-4b2c-a02d-88be3e4a061d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_map_link
+    - node.type.course
+  module:
+    - link
+id: node.course.field_map_link
+field_name: field_map_link
+entity_type: node
+bundle: course
+label: 'Map link'
+description: 'You may add a map link to course location. If link is added the course address will be displayed as a link.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link
