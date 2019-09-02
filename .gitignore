@@ -12,6 +12,7 @@
 /archives*
 /web/sites/finnishcourses.fi.dd
 /web/sites/default/local.services.yml
+/web/sites/development.services.yml
 
 # Ignore Drupal's file directory
 /web/sites/*/files/
