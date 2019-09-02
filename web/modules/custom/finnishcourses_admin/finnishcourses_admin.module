@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+// function finnishcourses_admin_theme_registry_alter(&$theme_registry) {
+//   kint($theme_registry);
+//   $theme_registry['views_view']['path'] = drupal_get_path('module', 'kl_admin') . '/templates';
+//   //$theme_registry['node__form__teaser']['path'] = drupal_get_path('module', 'kl_admin') . '/templates';
+// }
+
+// /**
+//  * Implements hook_theme().
+//  */
+// function finnishcourses_admin_theme($existing, $type, $theme, $path) {
+//   return [
+//     'node__highlight__entity_browser_item' => [
+//       'template' => 'node--highlight--entity-browser-item',
+//       'base hook' => 'node'
+//     ],
+//     'node__form__teaser' => [
+//       'template' => 'node--form--teaser',
+//       'base hook' => 'node'
+//     ],
+//   ];
+// }
