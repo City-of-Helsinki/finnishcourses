@@ -36,7 +36,7 @@
             $("#edit-submit-search-courses").hide();
         } else {
           // Target is not visible on the screen, show sticky mobile button
-          if ($(window).width() < 844.98) {
+          if ($(window).width() < 620) {
             $("#edit-submit-search-courses").show();
           }
         }
