@@ -77,3 +77,36 @@ function finnishcourses_bootstrap_preprocess_node(&$variables) {
   }
 
 }
+
+function finnishcourses_bootstrap_preprocess_page(&$variables) {
+  $menus = array('main','footer', 'foo', 'foote');
+
+  $combined_tree = array();
+  $menu_tree = \Drupal::menuTree();
+  $parameters = $menu_tree->getCurrentRouteMenuTreeParameters(trim($menus[0]));
+  $manipulators = array(
+    // Show links to nodes that are accessible for the current user.
+    array('callable' => 'menu.default_tree_manipulators:checkNodeAccess'),
+    // Only show links that are accessible for the current user.
+    array('callable' => 'menu.default_tree_manipulators:checkAccess'),
+    // Use the default sorting of menu links.
+    array('callable' => 'menu.default_tree_manipulators:generateIndexAndSort'),
+  );
+  // Force the entire tree to be build by setting expandParents to an
+  // empty array.
+  $parameters->expandedParents = array();
+  // Iterate over the menus and merge them together.
+  foreach($menus as $menu_name) {
+    $tree_items = $menu_tree->load(trim($menu_name), $parameters);
+    $tree_manipulated = $menu_tree->transform($tree_items, $manipulators);
+    $combined_tree = array_merge($combined_tree, $tree_manipulated);
+  }
+
+  $menu = $menu_tree->build($combined_tree);
+
+  $variables['mobile_menu'] = array(
+    '#prefix' => '<div class="mobile-menu-wrapper">',
+    '#suffix' => '</div>',
+    '#markup' => \Drupal::service("renderer")->renderRoot($menu),
+  );
+}
