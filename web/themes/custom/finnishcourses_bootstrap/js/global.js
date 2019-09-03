@@ -25,6 +25,42 @@
         $(".more-search-options-trigger").text($(".more-search-options-trigger").text()
         === lessSearch ? moreSearch : lessSearch);
       });
+
+      // STICKY MOBILE BUTTON
+      // Root is the browser viewport / screen
+      let searchButtonObserver = new IntersectionObserver(function (entries) {
+        // Since there is a single target to be observed, there will be only one entry
+        if (entries[0]['isIntersecting'] === true) {
+          if (entries[0]['intersectionRatio'] > 0.5)
+          // More or less than 50% of target is showing on the screen
+            $("#edit-submit-search-courses").hide();
+        } else {
+          // Target is not visible on the screen, show sticky mobile button
+          if ($(window).width() < 620) {
+            $("#edit-submit-search-courses").show();
+          }
+        }
+      }, {threshold: [0, 0.5, 1]});
+
+      searchButtonObserver.observe(document.querySelector("#edit-submit-fixed"));
+
+      // STICKY NAVBAR - TRANSPARENT BACKGROUND WHEN SCROLLED
+      function checkScroll() {
+        // Navbar changes to px
+        let startY = $('#navbar-top').height() * 2;
+
+        if ($(window).scrollTop() > startY) {
+          $('.region-secondary-menu').addClass("nav-container-sticky");
+        } else {
+          $('.region-secondary-menu').removeClass("nav-container-sticky");
+        }
+      }
+
+      if ($('#navbar-top').length > 0) {
+        $(window).on("scroll load resize", function () {
+          checkScroll();
+        });
+      }
     }
   };
 })(jQuery, Drupal);

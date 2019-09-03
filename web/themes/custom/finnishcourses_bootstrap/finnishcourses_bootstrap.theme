@@ -6,6 +6,9 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -28,5 +31,82 @@ function finnishcourses_bootstrap_form_system_theme_settings_alter(&$form, FormS
       'bg-dark' => t('Dark'),
       'bg-white' => t('White'),
       'bg-transparent' => t('Transparent'),
+  );
+}
+
+function finnishcourses_bootstrap_preprocess_node(&$variables) {
+  if (isset($variables['node']) && $variables['node'] instanceof NodeInterface && $variables['node']->bundle() == 'course' && isset($variables['view_mode']) && $variables['view_mode'] == 'full') {
+    $node = $variables['node'];
+    $locationText = '';
+    $townName = '';
+    if (!$node->get('field_course_town')->isEmpty()) {
+      $courseTown = $node->get('field_course_town')->target_id;
+      $town = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($courseTown);
+      $townName = $town->getName();
+      
+    }
+
+    if (!$node->get('field_course_organization')->isEmpty()) {
+      $courseOrganization = $node->get('field_course_organization')->target_id;
+      $organization = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($courseOrganization);
+      $organizationName = $organization->getName();
+      $locationText = $organizationName;
+    }
+
+    if (!$node->get('field_course_street_address')->isEmpty()) {
+      $courseAddress = $node->get('field_course_street_address')->target_id;
+      $address = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($courseAddress);
+      $addressName = $address->getName();
+      $locationText .= ', ' . $addressName;
+    }
+
+    if (!empty($townName)) {
+      $locationText .= ', ' . $townName;
+    }
+
+    if (!$node->get('field_map_link')->isEmpty()) {
+      $courseLocation = Link::fromTextAndUrl($locationText, Url::fromUri($node->get('field_map_link')->first()->getUrl()->toString(), ['attributes' => ['target' => '_blank']]));
+    } else {
+      $courseLocation = $locationText;
+    }
+    //kint($courseLocation);
+
+    $variables['course_location'] = $courseLocation;
+    $variables['course_town'] = $townName;
+
+  }
+
+}
+
+function finnishcourses_bootstrap_preprocess_page(&$variables) {
+  $menus = array('main','footer', 'foo', 'foote');
+
+  $combined_tree = array();
+  $menu_tree = \Drupal::menuTree();
+  $parameters = $menu_tree->getCurrentRouteMenuTreeParameters(trim($menus[0]));
+  $manipulators = array(
+    // Show links to nodes that are accessible for the current user.
+    array('callable' => 'menu.default_tree_manipulators:checkNodeAccess'),
+    // Only show links that are accessible for the current user.
+    array('callable' => 'menu.default_tree_manipulators:checkAccess'),
+    // Use the default sorting of menu links.
+    array('callable' => 'menu.default_tree_manipulators:generateIndexAndSort'),
+  );
+  // Force the entire tree to be build by setting expandParents to an
+  // empty array.
+  $parameters->expandedParents = array();
+  // Iterate over the menus and merge them together.
+  foreach($menus as $menu_name) {
+    $tree_items = $menu_tree->load(trim($menu_name), $parameters);
+    $tree_manipulated = $menu_tree->transform($tree_items, $manipulators);
+    $combined_tree = array_merge($combined_tree, $tree_manipulated);
+  }
+
+  $menu = $menu_tree->build($combined_tree);
+
+  $variables['mobile_menu'] = array(
+    '#prefix' => '<div class="mobile-menu-wrapper">',
+    '#suffix' => '</div>',
+    '#markup' => \Drupal::service("renderer")->renderRoot($menu),
   );
 }

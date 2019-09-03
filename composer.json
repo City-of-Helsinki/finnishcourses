@@ -110,6 +110,7 @@
         "drupal/single_datetime": "^1.7",
         "drupal/time_range": "^1.1",
         "drupal/token": "^1.5",
+        "drupal/tvi": "^1.0@beta",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/view_unpublished": "^1.0@alpha",
         "drupal/webform": "^5.2",

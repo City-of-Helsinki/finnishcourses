@@ -72,6 +72,9 @@ display:
         title:
           expose:
             label: 'Kurssin nimi'
+        field_course_end_date_value_1:
+          expose:
+            label: 'Kurssin päätöspäivä välillä'
       fields:
         field_course_organization:
           label: Järjestäjä
