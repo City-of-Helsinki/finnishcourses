@@ -1,0 +1,37 @@
+/* MOBILE MENU
+--------------------------------------------------*/
+
+.mobile-menu-wrapper {
+  text-align: center;
+  background: $primary-shade;
+  width: 800px;
+  height: 802px;
+  padding-top: 140px;
+  display: none;
+  .nav {
+    flex-direction: column;
+    .nav-item {
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+.mobile-menu-icon {
+  top: -63px;
+  position: relative;
+  width: 38px;
+  cursor:pointer;
+  @include media-breakpoint-up(sm-t) {
+   display: none;
+ }
+}
+
+.mobile-close-icon {
+  top: -63px;
+  position: relative;
+  width: 38px;
+  cursor:pointer;
+  display: none;
+}
