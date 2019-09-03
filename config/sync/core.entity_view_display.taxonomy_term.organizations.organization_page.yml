@@ -1,8 +1,9 @@
-uuid: 29fe3a3f-0e74-4aa8-9380-721000c03051
+uuid: a2bb0bcc-3354-4791-8e0c-7b869d60c83a
 langcode: en
-status: true
+status: false
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.organization_page
     - field.field.taxonomy_term.organizations.field_active_organization
     - field.field.taxonomy_term.organizations.field_address
     - field.field.taxonomy_term.organizations.field_courses_unpublishing_cycle
@@ -16,11 +17,19 @@ dependencies:
     - taxonomy.vocabulary.organizations
   module:
     - link
-id: taxonomy_term.organizations.default
+    - text
+id: taxonomy_term.organizations.organization_page
 targetEntityType: taxonomy_term
 bundle: organizations
-mode: default
+mode: organization_page
 content:
+  description:
+    type: text_default
+    weight: 6
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
   field_address:
     weight: 0
     label: inline
@@ -29,8 +38,31 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-  field_town:
+  field_email:
+    type: basic_string
+    weight: 3
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+  field_phone:
+    type: string
+    weight: 4
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_postal_code:
+    type: string
     weight: 1
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_town:
+    weight: 2
     label: inline
     settings:
       link_to_entity: false
@@ -38,7 +70,7 @@ content:
     type: string
     region: content
   field_website_address:
-    weight: 2
+    weight: 5
     label: inline
     settings:
       trim_length: 80
@@ -50,13 +82,9 @@ content:
     type: link
     region: content
 hidden:
-  description: true
   field_active_organization: true
   field_courses_unpublishing_cycle: true
-  field_email: true
   field_locations_addresses: true
   field_locations_towns: true
-  field_phone: true
-  field_postal_code: true
   langcode: true
   search_api_excerpt: true
