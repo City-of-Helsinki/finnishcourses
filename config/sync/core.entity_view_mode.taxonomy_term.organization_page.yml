@@ -1,0 +1,10 @@
+uuid: d7dd0c2e-0037-4a61-af1d-1d7e4845a50a
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.organization_page
+label: 'Organization page'
+targetEntityType: taxonomy_term
+cache: true
