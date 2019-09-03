@@ -67,7 +67,6 @@
         if ($(window).width() < 844) {
           $(".mobile-menu-wrapper").slideToggle("fast", function () {
             $(".mobile-menu-icon").hide();
-            $(".language-switcher-language-url").hide(); // Fix this
             $(".fixed-top").css('backgroundColor', '#0073cf'); // Fix this
             $( ".mobile-close-icon" ).show();
           });
@@ -79,7 +78,6 @@
           $(".mobile-menu-wrapper").slideToggle(function () {
             $(".mobile-close-icon").hide();
             $( ".mobile-menu-icon" ).show();
-            $(".language-switcher-language-url").show(); // Fix this
             $(".fixed-top").css('backgroundColor', 'transparent'); // Fix this
           });
         }
