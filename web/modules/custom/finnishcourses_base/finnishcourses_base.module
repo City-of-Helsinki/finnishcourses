@@ -692,6 +692,45 @@ function finnishcourses_base_preprocess_views_view_field(&$variables) {
       $variables['node_path'] = $node->toUrl()->setAbsolute()->toString();
     }
   }
+
+  if (isset($variables['view']) && $variables['view']->id() == 'search_courses' && isset($variables['field']) && !empty($variables['field']->field) && $variables['field']->field == 'title') {
+    // Quite uqly way to fix langcode in result
+
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $newOutput = '';
+    $newOutput2 = '';
+    if ($language != 'fi') {
+      $output = $variables['output']->__toString();
+      if (strpos($output, '/fi/courses/')) {
+        if ($language == 'en') {
+          $newOutput = str_replace('/fi/courses/', '/courses/', $output);
+          $newOutput2 = str_replace('hreflang="fi"', 'hreflang="en"', $newOutput);
+        } else if ($language == 'ru') {
+          $newOutput = str_replace('/fi/courses/', '/ru/courses/', $output);
+          $newOutput2 = str_replace('hreflang="fi"', 'hreflang="ru"', $newOutput);
+        }
+      }
+
+      if (!empty($newOutput2)) {
+        $variables['output'] = [
+          '#markup' => $newOutput2,
+        ];
+      }
+
+    }
+    // $nid = $variables['output']->__toString();
+    
+    // if (!empty($nid)) {
+    //   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    //   $node = node_load($nid);
+    //   if ($language != 'fi') {
+    //     if ($node->hasTranslation($language)) {
+    //       $node = $node->getTranslation($language);
+    //     }
+    //   }
+    //   $variables['node_path'] = $node->toUrl()->setAbsolute()->toString();
+    // }
+  }
 }
 
 function finnishcourses_base_menu_local_tasks_alter(&$data, $route_name) {
