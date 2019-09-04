@@ -34,15 +34,11 @@
           if (entries[0]['isIntersecting'] === true) {
             if (entries[0]['intersectionRatio'] > 0.5)
             // More or less than 50% of target is showing on the screen
-            //  $("#edit-submit-search-courses").hide();
-              document.querySelector('#edit-submit-search-courses'.hide());
-            console.log('test');
+              $("#edit-submit-search-courses").hide();
           } else {
             // Target is not visible on the screen, show sticky mobile button
             if ($(window).width() < 620) {
-              console.log('test');
               $("#edit-submit-search-courses").show();
-              //  document.querySelector(('#edit-submit-search-courses').show());
             }
           }
         }, {threshold: [0, 0.5, 1]});
