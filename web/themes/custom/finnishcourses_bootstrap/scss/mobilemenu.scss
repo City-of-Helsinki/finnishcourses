@@ -2,12 +2,13 @@
 --------------------------------------------------*/
 
 .mobile-menu {
+  opacity: 0.8;
   @include media-breakpoint-up(sm-t) {
     display: none;
   }
   .mobile-menu-wrapper {
     text-align: center;
-    background: $primary-shade;
+   // background: $primary-shade;
     width: 500px;
     height: 802px;
     padding-top: 140px;

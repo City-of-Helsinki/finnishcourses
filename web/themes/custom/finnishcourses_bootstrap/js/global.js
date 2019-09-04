@@ -69,8 +69,7 @@
         $(".mobile-menu-wrapper").slideToggle("fast", function () {
           if ($(window).width() < 850) {
             $(".mobile-menu-icon").hide();
-            $(".fixed-top").css('backgroundColor', '#0073cf'); // Fix this
-            $(".fixed-top").css({opacity: 0.96}); // Fix this
+            $(".mobile-menu").css('backgroundColor', '#0073cf');
             $(".mobile-close-icon").show();
           }
         });
@@ -81,7 +80,7 @@
           if ($(window).width() < 850) {
             $(".mobile-close-icon").hide();
             $(".mobile-menu-icon").show();
-            $(".fixed-top").css('backgroundColor', 'transparent'); // Fix this
+            $(".mobile-menu").css('backgroundColor', 'transparent');
           }
         });
       });
