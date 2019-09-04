@@ -33,7 +33,11 @@
     @include media-breakpoint-up(sm-t) {
       display: none;
     }
-    @include media-breakpoint-down(sm-t) {
+    @include media-breakpoint-only(sm-t) {
+      width: 211px;
+      top: 84px;
+    }
+    @include media-breakpoint-down(sm) {
       width: 211px;
       margin-top: 12px;
       top: 84px;
