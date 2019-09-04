@@ -1,18 +1,25 @@
 /* MOBILE MENU
 --------------------------------------------------*/
 
-.mobile-menu-wrapper {
-  text-align: center;
-  background: $primary-shade;
-  width: 800px;
-  height: 802px;
-  padding-top: 140px;
-  display: none;
-  .nav {
-    flex-direction: column;
-    .nav-item {
-      a {
-        color: white;
+.mobile-menu {
+  @include media-breakpoint-up(sm-t) {
+    display: none;
+  }
+  .mobile-menu-wrapper {
+    text-align: center;
+    background: $primary-shade;
+    width: 500px;
+    height: 802px;
+    padding-top: 140px;
+    margin: auto;
+    display: none;
+    .nav {
+      flex-direction: column;
+
+      .nav-item {
+        a {
+          color: white;
+        }
       }
     }
   }
@@ -21,7 +28,8 @@
 .mobile-menu-icon {
   top: -63px;
   position: relative;
-  width: 38px;
+  width: 25px;
+  left: 19px;
   cursor:pointer;
   @include media-breakpoint-up(sm-t) {
    display: none;
@@ -31,7 +39,8 @@
 .mobile-close-icon {
   top: -63px;
   position: relative;
-  width: 38px;
+  width: 25px;
+  left: 19px;
   cursor:pointer;
   display: none;
 }
