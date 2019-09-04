@@ -2,16 +2,14 @@
 --------------------------------------------------*/
 
 .mobile-menu {
-  opacity: 0.8;
+  opacity: 0.8; // OBS! Background color is coming through js
   @include media-breakpoint-up(sm-t) {
     display: none;
   }
   .mobile-menu-wrapper {
     text-align: center;
-   // background: $primary-shade;
     width: 500px;
     height: 802px;
-    padding-top: 140px;
     margin: auto;
     display: none;
     .nav {
@@ -19,7 +17,7 @@
 
       .nav-item {
         a {
-          color: white;
+          color: $link-color-white;
         }
       }
     }
