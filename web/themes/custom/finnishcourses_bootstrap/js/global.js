@@ -28,21 +28,27 @@
 
       // STICKY MOBILE BUTTON
       // Root is the browser viewport / screen
-      let searchButtonObserver = new IntersectionObserver(function (entries) {
-        // Since there is a single target to be observed, there will be only one entry
-        if (entries[0]['isIntersecting'] === true) {
-          if (entries[0]['intersectionRatio'] > 0.5)
-          // More or less than 50% of target is showing on the screen
-            $("#edit-submit-search-courses").hide();
-        } else {
-          // Target is not visible on the screen, show sticky mobile button
-          if ($(window).width() < 620) {
-            $("#edit-submit-search-courses").show();
+      if (document.querySelector(".path-frontpage")) {
+        let searchButtonObserver = new IntersectionObserver(function (entries) {
+          // Since there is a single target to be observed, there will be only one entry
+          if (entries[0]['isIntersecting'] === true) {
+            if (entries[0]['intersectionRatio'] > 0.5)
+            // More or less than 50% of target is showing on the screen
+            //  $("#edit-submit-search-courses").hide();
+              document.querySelector('#edit-submit-search-courses'.hide());
+            console.log('test');
+          } else {
+            // Target is not visible on the screen, show sticky mobile button
+            if ($(window).width() < 620) {
+              console.log('test');
+              $("#edit-submit-search-courses").show();
+              //  document.querySelector(('#edit-submit-search-courses').show());
+            }
           }
-        }
-      }, {threshold: [0, 0.5, 1]});
+        }, {threshold: [0, 0.5, 1]});
 
-      searchButtonObserver.observe(document.querySelector("#edit-submit-fixed"));
+        searchButtonObserver.observe(document.querySelector("#edit-submit-fixed"));
+      }
 
       // STICKY NAVBAR - TRANSPARENT BACKGROUND WHEN SCROLLED
       function checkScroll() {
@@ -63,26 +69,26 @@
       }
 
       // HAMBURGER MENU
-        $(".mobile-menu-icon").click(function () {
-          $(".mobile-menu-wrapper").slideToggle("fast", function () {
-            if ($(window).width() < 850) {
-              $(".mobile-menu-icon").hide();
-              $(".fixed-top").css('backgroundColor', '#0073cf'); // Fix this
-              $(".fixed-top").css({opacity: 0.96}); // Fix this
-              $(".mobile-close-icon").show();
-            }
-          });
+      $(".mobile-menu-icon").click(function () {
+        $(".mobile-menu-wrapper").slideToggle("fast", function () {
+          if ($(window).width() < 850) {
+            $(".mobile-menu-icon").hide();
+            $(".fixed-top").css('backgroundColor', '#0073cf'); // Fix this
+            $(".fixed-top").css({opacity: 0.96}); // Fix this
+            $(".mobile-close-icon").show();
+          }
         });
+      });
 
-        $(".mobile-close-icon").click(function () {
-          $(".mobile-menu-wrapper").slideToggle(function () {
-            if ($(window).width() < 850) {
-              $(".mobile-close-icon").hide();
-              $(".mobile-menu-icon").show();
-              $(".fixed-top").css('backgroundColor', 'transparent'); // Fix this
-            }
-          });
+      $(".mobile-close-icon").click(function () {
+        $(".mobile-menu-wrapper").slideToggle(function () {
+          if ($(window).width() < 850) {
+            $(".mobile-close-icon").hide();
+            $(".mobile-menu-icon").show();
+            $(".fixed-top").css('backgroundColor', 'transparent'); // Fix this
+          }
         });
+      });
     }
   };
 })(jQuery, Drupal);
