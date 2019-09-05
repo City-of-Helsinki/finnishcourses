@@ -53,11 +53,8 @@
 
         if ($(window).scrollTop() > startY) {
           $('.region-secondary-menu').addClass("nav-container-sticky");
-          $('.mobile-menu').addClass("opacity-menu");
-
         } else {
           $('.region-secondary-menu').removeClass("nav-container-sticky");
-          $('.mobile-menu').addClass("opacity-menu");
         }
       }
 
@@ -74,6 +71,7 @@
             $(".mobile-menu-icon").hide();
             $(".mobile-menu").css('backgroundColor', '#0073cf');
             $(".mobile-close-icon").show();
+            $('.mobile-menu').addClass("opacity-menu");
           }
         });
       });
@@ -84,6 +82,7 @@
             $(".mobile-close-icon").hide();
             $(".mobile-menu-icon").show();
             $(".mobile-menu").css('backgroundColor', 'transparent');
+            $('.mobile-menu').removeClass("opacity-menu");
           }
         });
       });
