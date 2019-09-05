@@ -71,7 +71,6 @@
             $(".mobile-menu-icon").hide();
             $(".mobile-menu").css('backgroundColor', '#0073cf');
             $(".mobile-close-icon").show();
-            $('.mobile-menu').addClass("opacity-menu");
           }
         });
       });
@@ -82,7 +81,6 @@
             $(".mobile-close-icon").hide();
             $(".mobile-menu-icon").show();
             $(".mobile-menu").css('backgroundColor', 'transparent');
-            $('.mobile-menu').removeClass("opacity-menu");
           }
         });
       });
