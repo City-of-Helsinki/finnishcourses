@@ -53,8 +53,11 @@
 
         if ($(window).scrollTop() > startY) {
           $('.region-secondary-menu').addClass("nav-container-sticky");
+          $('.mobile-menu').addClass("opacity-menu");
+
         } else {
           $('.region-secondary-menu').removeClass("nav-container-sticky");
+          $('.mobile-menu').addClass("opacity-menu");
         }
       }
 

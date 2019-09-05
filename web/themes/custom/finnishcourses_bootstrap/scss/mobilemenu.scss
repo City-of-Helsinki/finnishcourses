@@ -2,7 +2,6 @@
 --------------------------------------------------*/
 
 .mobile-menu {
-  opacity: 0.8; // OBS! Background color is coming through js
   @include media-breakpoint-up(sm-t) {
     display: none;
   }
@@ -21,6 +20,10 @@
       }
     }
   }
+}
+
+.opacity-menu {
+  opacity: 0.8; // OBS! Background color is coming through js
 }
 
 .mobile-menu-icon {
