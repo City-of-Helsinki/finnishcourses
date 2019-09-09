@@ -66,10 +66,10 @@
 
       // HAMBURGER MENU
       $(".mobile-menu-icon").click(function () {
+        $(".mobile-menu").css('backgroundColor', '#0073cf');
         $(".mobile-menu-wrapper").slideToggle("fast", function () {
           if ($(window).width() < 850) {
             $(".mobile-menu-icon").hide();
-            $(".mobile-menu").css('backgroundColor', '#0073cf');
             $(".mobile-close-icon").show();
           }
         });
