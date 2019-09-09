@@ -26,6 +26,15 @@
 
 .field--name-field-media-image {
   margin-top: 86px;
+  .field__item {
+    picture {
+      img {
+        @include media-breakpoint-only(sm) {
+          width: 500px;
+        }
+      }
+    }
+  }
 }
 
 .mobile-img-logo {
