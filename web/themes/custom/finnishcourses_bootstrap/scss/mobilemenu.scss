@@ -1,0 +1,43 @@
+/* MOBILE MENU
+--------------------------------------------------*/
+
+.mobile-menu {
+  @include media-breakpoint-up(sm-t) {
+    display: none;
+  }
+  .mobile-menu-wrapper {
+    text-align: center;
+    height: 802px;
+    margin: auto;
+    display: none;
+    .nav {
+      flex-direction: column;
+
+      .nav-item {
+        a {
+          color: $link-color-white;
+        }
+      }
+    }
+  }
+}
+
+.mobile-menu-icon {
+  top: -63px;
+  position: relative;
+  width: 25px;
+  left: 19px;
+  cursor:pointer;
+  @include media-breakpoint-up(sm-t) {
+   display: none;
+ }
+}
+
+.mobile-close-icon {
+  top: -63px;
+  position: relative;
+  width: 25px;
+  left: 19px;
+  cursor:pointer;
+  display: none;
+}

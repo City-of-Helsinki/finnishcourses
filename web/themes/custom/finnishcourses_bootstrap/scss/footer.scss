@@ -71,6 +71,9 @@
   display: flex;
   width: 62%;
   margin: auto;
+  @include media-breakpoint-down(md) {
+    width: 82%;
+  }
   @include media-breakpoint-down(sm) {
     flex-direction: column;
   }
@@ -94,7 +97,7 @@
     max-width: 200px;
     margin-left: 50px;
     @include media-breakpoint-down(sm) {
-      width: 58%;
+      width: 167px;
       max-width: 100%;
       margin: auto;
       margin-top: 19px;

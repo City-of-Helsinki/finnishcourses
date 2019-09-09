@@ -28,31 +28,35 @@
 
       // STICKY MOBILE BUTTON
       // Root is the browser viewport / screen
-      let searchButtonObserver = new IntersectionObserver(function (entries) {
-        // Since there is a single target to be observed, there will be only one entry
-        if (entries[0]['isIntersecting'] === true) {
-          if (entries[0]['intersectionRatio'] > 0.5)
-          // More or less than 50% of target is showing on the screen
-            $("#edit-submit-search-courses").hide();
-        } else {
-          // Target is not visible on the screen, show sticky mobile button
-          if ($(window).width() < 620) {
-            $("#edit-submit-search-courses").show();
+      if (document.querySelector(".path-frontpage")) {
+        let searchButtonObserver = new IntersectionObserver(function (entries) {
+          // Since there is a single target to be observed, there will be only one entry
+          if (entries[0]['isIntersecting'] === true) {
+            if (entries[0]['intersectionRatio'] > 0.5)
+            // More or less than 50% of target is showing on the screen
+              $("#edit-submit-search-courses").hide();
+          } else {
+            // Target is not visible on the screen, show sticky mobile button
+            if ($(window).width() < 620) {
+              $("#edit-submit-search-courses").show();
+            }
           }
-        }
-      }, {threshold: [0, 0.5, 1]});
+        }, {threshold: [0, 0.5, 1]});
 
-      searchButtonObserver.observe(document.querySelector("#edit-submit-fixed"));
+        searchButtonObserver.observe(document.querySelector("#edit-submit-fixed"));
+      }
 
       // STICKY NAVBAR - TRANSPARENT BACKGROUND WHEN SCROLLED
       function checkScroll() {
         // Navbar changes to px
         let startY = $('#navbar-top').height() * 2;
 
-        if ($(window).scrollTop() > startY) {
-          $('.region-secondary-menu').addClass("nav-container-sticky");
-        } else {
-          $('.region-secondary-menu').removeClass("nav-container-sticky");
+        if (document.querySelector(".path-frontpage")) {
+          if ($(window).scrollTop() > startY) {
+            $('.region-secondary-menu').addClass("nav-container-sticky");
+          } else {
+            $('.region-secondary-menu').removeClass("nav-container-sticky");
+          }
         }
       }
 
@@ -61,6 +65,27 @@
           checkScroll();
         });
       }
+
+      // HAMBURGER MENU
+      $(".mobile-menu-icon").click(function () {
+        $(".mobile-menu").css('backgroundColor', '#0073cf');
+        $(".mobile-menu-wrapper").slideToggle("fast", function () {
+          if ($(window).width() < 850) {
+            $(".mobile-menu-icon").hide();
+            $(".mobile-close-icon").show();
+          }
+        });
+      });
+
+      $(".mobile-close-icon").click(function () {
+        $(".mobile-menu-wrapper").slideToggle(function () {
+          if ($(window).width() < 850) {
+            $(".mobile-close-icon").hide();
+            $(".mobile-menu-icon").show();
+            $(".mobile-menu").css('backgroundColor', 'transparent');
+          }
+        });
+      });
     }
   };
 })(jQuery, Drupal);

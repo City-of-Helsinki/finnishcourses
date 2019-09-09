@@ -1,0 +1,23 @@
+/* ORGANIZATIONS
+--------------------------------------------------*/
+
+.field--name-field-postal-code, .field--name-field-town, .field--name-field-email,
+.field--name-field-phone {
+  display: flex;
+  .field__label {
+    margin-right: 3px;
+  }
+}
+.field--name-description {
+  display: table;
+  .field__label {
+    display: inline;
+    margin-right: 3px;
+  }
+  .field__item {
+    display: inline;
+    p {
+      display: inline;
+    }
+  }
+}
