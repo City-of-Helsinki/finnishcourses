@@ -30,6 +30,7 @@ body {
 .main-content {
   max-width: 980px;
   margin-top: 103px;
+
   .row {
     width: 980px;
   }
@@ -44,8 +45,9 @@ body {
 
 .path-frontpage {
   #block-finnishcourses-bootstrap-page-title {
-     display: none;
+    display: none;
   }
+
   .main-content {
     margin-top: 0;
   }
@@ -96,10 +98,17 @@ body {
 }
 
 .nav-container-sticky {
-  background: $primary-shade;
+  background: $primary-shade !important; // Overriding .region-secondary-menu background
+}
+
+.path-frontpage {
+  .region-secondary-menu {
+    background: none;
+  }
 }
 
 .region-secondary-menu {
+  background: $primary-shade;
   padding: 11px 0 11px 111px;
 
   .navbar-nav {
@@ -126,6 +135,7 @@ body {
         padding-bottom: 8px;
         padding-left: 2px;
         padding-right: 2px;
+
         &:hover {
           color: $main-nav-shade; // "Override"
         }
@@ -188,6 +198,7 @@ body {
 
 .region-secondary-menu {
   top: 3px;
+
   .nav-link.active,
   .nav-item.show .nav-link {
     border-bottom: 1.5px solid $underline-link-color;
@@ -355,12 +366,15 @@ h1, h2, h3, .fieldset-legend {
   width: 100%;
   z-index: 1031;
 }
+
 .toolbar-fixed.toolbar-horizontal.toolbar-tray-open .fixed-top {
   top: 80px;
 }
+
 .toolbar-fixed.toolbar-horizontal .fixed-top {
-    top: 40px;
+  top: 40px;
 }
+
 .toolbar-fixed.toolbar-vertical .fixed-top {
-    top: 40px;
+  top: 40px;
 }

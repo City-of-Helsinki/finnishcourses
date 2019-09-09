@@ -51,10 +51,12 @@
         // Navbar changes to px
         let startY = $('#navbar-top').height() * 2;
 
-        if ($(window).scrollTop() > startY) {
-          $('.region-secondary-menu').addClass("nav-container-sticky");
-        } else {
-          $('.region-secondary-menu').removeClass("nav-container-sticky");
+        if (document.querySelector(".path-frontpage")) {
+          if ($(window).scrollTop() > startY) {
+            $('.region-secondary-menu').addClass("nav-container-sticky");
+          } else {
+            $('.region-secondary-menu').removeClass("nav-container-sticky");
+          }
         }
       }
 
