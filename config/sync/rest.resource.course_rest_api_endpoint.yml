@@ -1,0 +1,20 @@
+uuid: 46f86fdc-7930-4844-8dec-968bab1b3e11
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - course_rest_api
+    - hal
+    - serialization
+id: course_rest_api_endpoint
+plugin_id: course_rest_api_endpoint
+granularity: resource
+configuration:
+  methods:
+    - POST
+  formats:
+    - hal_json
+    - json
+  authentication:
+    - basic_auth

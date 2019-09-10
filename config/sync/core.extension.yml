@@ -27,6 +27,7 @@ module:
   course_cron_jobs: 0
   course_listings: 0
   course_permissions: 0
+  course_rest_api: 0
   course_services: 0
   ctools: 0
   datetime: 0

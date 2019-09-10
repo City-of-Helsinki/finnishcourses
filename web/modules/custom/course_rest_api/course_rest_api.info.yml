@@ -1,0 +1,6 @@
+name: 'Course Rest api'
+description: 'Custom Course Rest api endpoint functionalities.'
+type: module
+
+core: '8.x'
+package: 'Finnishcourses custom'

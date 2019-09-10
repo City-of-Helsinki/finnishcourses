@@ -209,6 +209,24 @@ class CourseDataService {
     return $this->entityTypeManager->getStorage('taxonomy_term')->load($tid);
   }
 
+  public function loadTaxonomyTermByName($termName, $vid = '') {
+    if (empty($termName)) {
+      return FALSE;
+    }
+
+    $properties = [];
+
+    $properties['name'] = $termName;
+
+    if (!empty($vid)) {
+      $properties['vid'] = $vid;
+    }
+
+    $term = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties($properties);
+
+    return !empty($term) ? reset($term) : FALSE;
+  }
+
   public function loadAccount() {
 
     $account = $this->entityTypeManager->getStorage('user')

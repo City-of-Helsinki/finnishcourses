@@ -2,3 +2,6 @@ services:
   course_services.course_data_service:
     class: Drupal\course_services\CourseDataService
     arguments: ['@entity.query', '@current_user', '@entity_type.manager']
+  course_services.course_data_save:
+    class: Drupal\course_services\CourseDataSave
+    arguments: ['@entity.query', '@entity_type.manager', '@course_services.course_data_service']

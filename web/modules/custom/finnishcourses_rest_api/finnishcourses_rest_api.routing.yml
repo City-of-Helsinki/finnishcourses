@@ -1,0 +1,8 @@
+finnishcourses_rest_api.course_post:
+  path: 'rest/api/course/create'
+  defaults:
+    _controller: '\Drupal\finnishcourses_rest_api\Controller\RestApiCourse::post'
+    _title: ''
+  methods: [POST]
+  requirements:
+    _access: 'create course content'
