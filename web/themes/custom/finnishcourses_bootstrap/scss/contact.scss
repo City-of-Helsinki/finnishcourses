@@ -2,7 +2,9 @@
 --------------------------------------------------*/
 
 .form-item-name, .form-item-mail, .form-item-message-0-value, .form-item-subject-0-value {
-  font-weight: 900;
+  .label {
+    font-weight: 900;
+  }
 }
 
 .form-item-message-0-value, .form-item-subject-0-value {
