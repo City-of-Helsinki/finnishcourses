@@ -1,0 +1,21 @@
+/* CONTACT
+--------------------------------------------------*/
+
+.form-item-name, .form-item-mail, .form-item-message-0-value, .form-item-subject-0-value {
+  .label {
+    font-weight: 900;
+  }
+}
+
+.form-item-message-0-value, .form-item-subject-0-value {
+  padding: 0;
+}
+
+// todo: need more specific classes to buttons
+#edit-submit {
+  margin-top: 50px;
+}
+
+#edit-preview {
+  display: none;
+}
