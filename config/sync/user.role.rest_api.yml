@@ -1,0 +1,14 @@
+uuid: 06ad79eb-3854-4e15-8c32-54f92ceaf42d
+langcode: en
+status: true
+dependencies: {  }
+id: rest_api
+label: 'Rest api'
+weight: 6
+is_admin: null
+permissions:
+  - 'create course content'
+  - 'create terms in street_adresses'
+  - 'edit any course content'
+  - 'restful post course_rest_api_endpoint'
+  - 'translate course node'
