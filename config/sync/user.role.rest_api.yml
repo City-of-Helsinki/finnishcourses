@@ -10,4 +10,5 @@ permissions:
   - 'create course content'
   - 'create terms in street_adresses'
   - 'edit any course content'
+  - 'restful post course_rest_api_endpoint'
   - 'translate course node'
