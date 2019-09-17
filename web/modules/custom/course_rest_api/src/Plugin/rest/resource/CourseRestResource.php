@@ -114,7 +114,7 @@ class CourseRestResource extends ResourceBase {
     }
 
     if (empty($data['Organization'])) {
-      throw new BadRequestHttpException('Information is missing');
+      throw new BadRequestHttpException('Organization is missing');
     } else {
       $organization = $this->courseDataService->loadTaxonomyTermByName($data['Organization'], 'organizations');
       if (!$organization) {
