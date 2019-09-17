@@ -73,6 +73,26 @@ class CourseDataService {
     return $userCourses;
   }
 
+  /**
+   * Function to query and return courses with given conditions
+   * @param  string $fieldName Array of organization ids the current user has permission to
+   * @param  string $value          Status used in query
+   * @return array                    Array of course ids(nodes)
+   */
+  public function queryCourses($fieldName, $value, $valueType = 'value') {
+
+
+    $query = $this->entityQuery->get('node');
+    $query->condition('type', 'course')
+          ->condition($fieldName, $value, '=')
+          ->addMetaData('account', \Drupal\user\Entity\User::load(1));
+    $entity_ids = $query->execute();
+
+    $courses = $entity_ids;
+
+    return $courses;
+  }
+
   public function queryAllCourses($status = 1) {
     $query = $this->entityQuery->get('node');
     $query->condition('type', 'course')
@@ -209,6 +229,24 @@ class CourseDataService {
     return $this->entityTypeManager->getStorage('taxonomy_term')->load($tid);
   }
 
+  public function loadTaxonomyTermByName($termName, $vid = '') {
+    if (empty($termName)) {
+      return FALSE;
+    }
+
+    $properties = [];
+
+    $properties['name'] = $termName;
+
+    if (!empty($vid)) {
+      $properties['vid'] = $vid;
+    }
+
+    $term = $this->entityTypeManager->getStorage('taxonomy_term')->loadByProperties($properties);
+
+    return !empty($term) ? reset($term) : FALSE;
+  }
+
   public function loadAccount() {
 
     $account = $this->entityTypeManager->getStorage('user')
@@ -222,7 +260,7 @@ class CourseDataService {
       return FALSE;
     }
 
-    return $this->entityTypeManager->getStorage('node')->load($nid);;
+    return $this->entityTypeManager->getStorage('node')->load($nid);
   }
 
   public function setNodeValue($fieldName, $value, $node) {
@@ -253,5 +291,48 @@ class CourseDataService {
 
     $node->save();
   }
+
+  /**
+   * Function to check if provided town is linked to organization
+   * @param  string  $townId       Town taxonomy term id
+   * @param  string  $organization Organization id
+   * @return boolean               True or false
+   */
+  public function isOrganizationTown($townId, $organization) {
+    $organizationTowns = $this->getOrganizationProperties($organization, 'field_locations_towns');
+
+    if (in_array($townId, $organizationTowns)) {
+      return TRUE;
+    }
+
+    return FALSE;
+  }
+
+  /**
+   * Function to get property values from Organization. For example to get Street addresses and towns linked to Organization.
+   * @param  string $organization Organization id
+   * @param  string $propertyField Property type field machine name
+   * @return array  $properties   Array of properties
+   */
+  function getOrganizationProperties($organization = '', $propertyField = '') {
+  $term = $this->loadTaxonomyTermByTid($organization);
+
+  if (!$term) {
+    return FALSE;
+  }
+
+  $values = $term->get($propertyField)->getValue();
+
+  if (empty($values)) {
+    return FALSE;
+  }
+  $properties = [];
+
+  foreach ($values as $key => $value) {
+    $properties[] = $value['target_id'];
+  }
+
+  return $properties;
+}
 
 }

@@ -1,21 +1,20 @@
-uuid: 81dd7d01-ae4f-4e25-8764-601374252f49
+uuid: 46f86fdc-7930-4844-8dec-968bab1b3e11
 langcode: en
 status: true
 dependencies:
   module:
     - basic_auth
+    - course_rest_api
     - hal
-    - node
-_core:
-  default_config_hash: t_jfECmZhJqBOJuSOFn87EOi_TWi-_fRYTuJgd19vgg
-id: entity.node
-plugin_id: 'entity:node'
+    - serialization
+id: course_rest_api_endpoint
+plugin_id: course_rest_api_endpoint
 granularity: resource
 configuration:
   methods:
-    - GET
     - POST
   formats:
     - hal_json
+    - json
   authentication:
     - basic_auth
