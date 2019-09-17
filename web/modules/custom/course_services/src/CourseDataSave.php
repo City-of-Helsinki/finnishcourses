@@ -14,6 +14,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\course_services\CourseDataService;
 use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
 
 class CourseDataSave {
 
@@ -57,6 +58,7 @@ class CourseDataSave {
   public function createCourse(array $courseData, $organizationId) {
 
     $noticeFields = [];
+    $saveValue = '';
     // First check that we have all required data
     $requiredResponse = $this->checkRequiredData($courseData);
 
@@ -74,26 +76,88 @@ class CourseDataSave {
       'type' => 'course',
       'title' => $courseData['title'],
     ]);
-    \Drupal::logger('course_services')->notice('Organization id is' . $organizationId);
+    
     $node->field_course_organization->target_id = $organizationId;
     //ddl($node);
     foreach ($courseData as $key => $value) {
-      $fieldKey = 'field_'.$key;
-      if (in_array($key, ['course_start_date', 'course_end_date'])) {
-        $date = $this->parseDate($value, 'Y-m-d');
-        $node->set($fieldKey, $date); 
-      } else if (in_array($key, ['registration_start_date', 'registration_end_date'])) {
-        $date = $this->parseDate($value, 'Y-m-d\TH:i:s');
-        $node->set($fieldKey, $date);
+      if ($key == 'title') {
+        continue;
       }
 
-      if (empty($courseData['number_of_lessons'])) {
-        $node->set('field_number_of_lessons', 10);
+      if ($key == 'published') {
+        $node->setPublished($value);
+        continue;
       }
+
+      if ($key == 'week_hours') {
+        $fieldKey = 'field_course_week_hours';
+      } else if ($key == 'teaching_hours_total') {
+        $fieldKey = 'field_course_length';
+      } else if ($key == 'teaching_hours_per_week') {
+        $fieldKey = 'field_number_of_lessons';
+      } else {
+        $fieldKey = 'field_'.$key;
+      }
+
 
       if (!$node->hasField($fieldKey)) {
-        $noticeFields[] = $key;
+        $noticeFields[] = [
+          'key' => $key,
+          'message' => 'Target field not found with provided key'
+        ];
+        continue;
       }
+      if (in_array($key, ['course_start_date', 'course_end_date'])) {
+        $saveValue = $this->parseDate($value, 'Y-m-d');
+      } else if (in_array($key, ['registration_start_date', 'registration_end_date'])) {
+        $saveValue = $this->parseDate($value, 'Y-m-d\TH:i:s');
+      } else if (in_array($key, ['books_and_materials'])) { 
+        $saveValue = [
+          'value' => $value,
+          'format' => 'only_text',
+        ];
+      } else if (in_array($key, ['course_online_address', 'map_link', 'registration_link'])) {
+        $saveValue = ['uri' => $value];
+      } 
+      else if ($key == 'course_week_hours') {
+        $weekHours = $value;
+        if (empty($weekHours)) {
+          continue;
+        }
+        foreach ($weekHours as $key => $hours) {
+          if (empty($hours['day']) || empty($hours['starthours']) || empty($hours['endhours'])) {
+            unset($weekHours[$key]);
+          }
+        }
+
+        $saveValue = $weekHours;
+        
+      } else if ($key == 'course_features') {
+        if (empty($value)) {
+          continue;
+        }
+
+        $courseFeatures = $this->parseCourseFeatures($value);
+        $saveValue = $courseFeatures;
+      } else if ($key == 'course_street_address') {
+        $saveValue = $this->parseStreetAddress($value);
+      } else if ($key == 'course_town') {
+        $saveValue = $this->parseTown($value, $organizationId);
+
+        if (!$saveValue) {
+          $noticeFields[] = [
+            'key' => $key,
+            'message' => 'Provided town not exists in the system or not linked to the organization'
+          ];
+          continue;
+        }
+      }
+
+      else {
+        $saveValue = $value;
+      }
+
+      $node->set($fieldKey, $saveValue);
     }
 
     $node->save();
@@ -144,6 +208,85 @@ class CourseDataSave {
     $formattedDate = $date->format($dateFormat);
 
     return $formattedDate;
+  }
+
+  /**
+   * Parse course features to match Drupal taxonomy terms
+   * @param  string $value            Semicolon separated string of course features
+   * @return array  $courseFeatures   Array of taxonomy term tids
+   */
+  public function parseCourseFeatures($value) {
+    $courseFeatures = [];
+
+    $featuresArray = explode(';', $value);
+
+    foreach ($featuresArray as $feature) {
+      $courseFeature = $this->courseDataService->loadTaxonomyTermByName($feature, 'course_features');
+      
+      if (!$courseFeature || !is_object($courseFeature) || !method_exists($courseFeature, 'id')) {
+        continue;
+      }
+
+      $courseFeatures[] = ['target_id' => $courseFeature->id()];
+    }
+
+    return $courseFeatures;
+  }
+
+  /**
+   * Function to parse street address
+   * @param  string $streetAddress Street address for the course
+   * @return string $addressTid    Street address taxonomy term id in Drupal
+   */
+  public function parseStreetAddress($streetAddress) {
+
+    $addressTid = '';
+
+    $addressTerm = $this->courseDataService->loadTaxonomyTermByName($streetAddress, 'street_adresses');
+    //\Drupal::logger('course_rest_api')->notice('<pre><code>' . print_r($addressTerm, TRUE) . '</code></pre>');
+    if ($addressTerm) {
+      return $addressTerm->id();
+    }
+
+    $newAddressTermId = $this->createTaxonomyTerm($streetAddress, 'street_adresses');
+
+    return $newAddressTermId;
+  }
+
+  /**
+   * Function to parse town
+   * @param  string $town         Town for the course
+   * @param  string $organization Organization tid
+   * @return string $townTid  Town taxonomy term id in Drupal
+   */
+  public function parseTown($town, $organization) {
+
+    $townTid = '';
+
+    $townTerm = $this->courseDataService->loadTaxonomyTermByName($town, 'towns');
+
+    if (!$townTerm) {
+      return FALSE;
+    }
+
+    $isOrganizationTown = $this->courseDataService->isOrganizationTown($townTerm->id(), $organization);
+
+    if (!$isOrganizationTown) {
+      return FALSE;
+    }
+
+    return $townTerm->id();
+  }
+
+  public function createTaxonomyTerm($name, $vocabulary) {
+
+    $term = Term::create([
+      'vid' => $vocabulary,
+      'name' => $name,
+    ]);
+    $term->save();
+
+    return $term->id();
   }
 
   // public function setNodeValue($fieldName, $value, $node) {

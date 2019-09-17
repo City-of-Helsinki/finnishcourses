@@ -3,6 +3,7 @@ namespace Drupal\course_rest_api\Plugin\rest\resource;
 
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
+use Drupal\rest\ModifiedResourceResponse;
 use Drupal\Core\Session\AccountProxyInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -134,10 +135,33 @@ class CourseRestResource extends ResourceBase {
     $responseMessage = '';
     $allErrorFields = '';
     foreach ($data['Courses'] as $key => $courseData) {
-      $courseResponse = $this->courseDataSave->createCourse($courseData, $organizationId);
-      if (!$courseResponse['courseCreated'] && !empty($courseResponse['errorFields'])) {
-        $allErrorFields = implode(', ', $courseResponse['errorFields']);
-        $responseMessage .= ' *** Could not create course "'.$courseData['title'].'". Missing fields: '.$allErrorFields.' *** ';       
+      $existingCourse = FALSE;
+      if (!empty($courseData['organizers_course_id'])) {
+        $existingCourses = $this->courseDataService->queryCourses('field_organizers_course_id', $courseData['organizers_course_id'], 'value');
+      }
+      if ($existingCourses) {
+        $existingCourse = reset($existingCourses);
+        $course = $this->courseDataService->loadNode($existingCourse);
+        //\Drupal::logger('course_rest_api')->notice($course->label());
+
+        $responseMessage .= ' *** Course "'.$courseData['title'].'" already found *** ';
+      } else {
+        $courseResponse = $this->courseDataSave->createCourse($courseData, $organizationId);
+        if (!$courseResponse['courseCreated'] && !empty($courseResponse['errorFields'])) {
+          $allErrorFields = implode(', ', $courseResponse['errorFields']);
+          $responseMessage .= ' *** Could not create course "'.$courseData['title'].'". Missing fields: '.$allErrorFields.' *** ';       
+        }
+
+        if ($courseResponse['courseCreated']) {
+          if (!empty($courseResponse['noticeFields'])) {
+            $responseMessage = 'Courses created with following notices: ';
+            foreach ($courseResponse['noticeFields'] as $notice) {
+              $responseMessage .= '*** Key: ' . $notice['key'] . ' - ' . $notice['message'] . ' *** ';
+            }
+          } else {
+            $responseMessage = 'Courses created succesfully.';
+          }
+        }          
       }
     }
     // if(!empty($data->email->value)){
@@ -154,7 +178,7 @@ class CourseRestResource extends ResourceBase {
     //   $send = true;
     //   $response_status['status'] = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
     // }
-    $response = new ResourceResponse($responseMessage);
+    $response = new ModifiedResourceResponse($responseMessage);
     return $response;
   }
 
