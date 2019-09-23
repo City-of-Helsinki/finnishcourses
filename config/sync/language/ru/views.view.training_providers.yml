@@ -1,0 +1,17 @@
+display:
+  default:
+    display_options:
+      header:
+        area:
+          content:
+            value: "<p>The following training providers publish their course information through the finnishcourses.fi service.</p>\r\n"
+            format: basic_html
+      fields:
+        nothing:
+          alter:
+            text: '<a class="show-courses" href="/ru/training-providers/{{ tid }}/courses">Показать курсы</a>'
+  training_providers:
+    display_title: 'Организаторы обучения'
+    display_options:
+      menu:
+        title: 'Организаторы обучения'
