@@ -2028,7 +2028,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: false
+          empty: true
           content: '@total available course(s) for you'
           plugin_id: result
       footer: {  }
