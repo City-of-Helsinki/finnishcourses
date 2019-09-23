@@ -136,7 +136,7 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     $current_user = \Drupal::currentUser();
     $roles = $current_user->getRoles();
 
-    if (!in_array('administrator', $roles) && !in_array('organization_admin', $roles)) {
+    if (!in_array('administrator', $roles) && !in_array('organization_admin', $roles) && !in_array('infofinland_user', $roles)) {
       unset($form['language']);
       unset($form['field_organization']);
     }
@@ -622,7 +622,7 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 
     $courseLevelsLink = ($language == 'en') ? '/language-course-levels' : '/'.$language.'/language-course-levels';
 
-    $form['starting_level']['#suffix'] = "<a class='levels-link' href='".$courseLevelsLink."' target='_blank'>".t("I don't know my level")."</a>";
+    $form['starting_level']['#suffix'] = "<a class='levels-link' href='".$courseLevelsLink."'>".t("I don't know my level")."</a>";
 
     unset($form['course_fee']);
     unset($form['time_of_day']);
@@ -759,7 +759,7 @@ function finnishcourses_base_toolbar_alter(&$items) {
   $current_user = \Drupal::currentUser();
   $roles = $current_user->getRoles();
 
-  if (!in_array('administrator', $roles) && !in_array('organization_admin', $roles)) {
+  if (!in_array('administrator', $roles) && !in_array('organization_admin', $roles) && !in_array('infofinland_user', $roles)) {
     unset($items['administration']);
   }
 }
