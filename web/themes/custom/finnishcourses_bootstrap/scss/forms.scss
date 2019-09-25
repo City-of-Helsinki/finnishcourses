@@ -67,7 +67,12 @@ legend {
 
 
 input[type="radio"] {
- // position: relative;
+  /* Remove First -- iPhone */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Then Style -- iPhone */
   display: inline-block;
   width: 12px;
   height: 13px;
