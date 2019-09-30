@@ -52,7 +52,6 @@
   .js-form-item {
     .form-check-label {
       position: relative;
-      top: 2px;
       @include media-breakpoint-down(sm-t) {
         left: -11px;
       }
