@@ -15,14 +15,13 @@
 }
 
 .fieldset-title {
+  margin-bottom: 20px;
   @include media-breakpoint-down(sm-t) {
-    margin-bottom: 20px;
     .fieldset-legend {
       font-size: 21px;
     }
   }
 }
-
 
 .fieldset-legend {
   font-weight: 900;
@@ -74,7 +73,7 @@
 
   .form-check-label {
     @include media-breakpoint-down(sm-t) {
-      top: 5px;
+     // top: 5px;
     }
   }
 
@@ -117,6 +116,13 @@
   max-height: 200px;
   @include media-breakpoint-down(sm-t) {
     max-height: 620px;
+  }
+
+  .fieldset-title {
+    margin-bottom: 0;
+    @include media-breakpoint-down(sm-t) {
+      margin-bottom: 20px;
+    }
   }
 
   .col-auto {
@@ -216,8 +222,10 @@
     }
 
     .form-checkbox {
-      top: -5px;
-      left: 14px;
+      @include media-breakpoint-up(sm-t) {
+        top: -5px;
+        left: 14px;
+      }
     }
   }
 }
