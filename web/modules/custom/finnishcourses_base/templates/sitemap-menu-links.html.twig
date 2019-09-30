@@ -1,0 +1,16 @@
+<div class="sitemap-menus">
+  
+  {% for menu_key, menu in menus %}
+    {% if menu_key == 'main' %}
+      <div class="sitemap-menus-main">
+        <h3>{% trans %}Finnishcourses.fi{% endtrans %}</h3>
+        {{ menu }}
+      </div>
+    {% elseif menu_key == 'footer' %}
+      <div class="sitemap-menus-footer">
+        <h3>{% trans %}Information on the service{% endtrans %}</h3>
+        {{ menu }}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
