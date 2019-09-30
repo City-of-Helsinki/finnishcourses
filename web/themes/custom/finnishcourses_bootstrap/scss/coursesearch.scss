@@ -31,7 +31,7 @@
 
 .more-options-wrapper {
   .label {
-    font-weight: 900;
+    font-weight: 600;
   }
 
   .fieldset-legend {
@@ -52,7 +52,6 @@
   .js-form-item {
     .form-check-label {
       position: relative;
-      top: 2px;
       @include media-breakpoint-down(sm-t) {
         left: -11px;
       }
@@ -70,13 +69,6 @@
   @include media-breakpoint-down(sm-t) {
     display: grid;
   }
-
-  .form-check-label {
-    @include media-breakpoint-down(sm-t) {
-     // top: 5px;
-    }
-  }
-
   .form-check {
     @include media-breakpoint-down(sm-t) {
       padding-bottom: 16px;
@@ -99,7 +91,7 @@
   color: $primary-shade;
   font-weight: 900;
   text-align: center;
-  margin-top: 55px;
+  margin-top: 35px;
   margin-bottom: 20px;
 }
 
@@ -156,7 +148,7 @@
 
     .fieldset-title, .label {
       color: $text-shade;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 16px;
       flex-basis: 26%;
       @include media-breakpoint-down(sm-t) {
@@ -304,7 +296,7 @@
   }
 
   .form-text, .form-control {
-    color: $form-border-shade;
+    color: $text-shade;
     height: 40px;
     cursor: pointer;
     max-width: 87% !important;
@@ -360,7 +352,7 @@
     border-color: $green-shade;
     font-size: 21px;
     font-weight: 700;
-    margin-top: 20px;
+    margin-top: 10px;
     -webkit-appearance: none;
     @include media-breakpoint-down(sm) {
       width: 100%;

@@ -44,7 +44,7 @@
   margin-bottom: 36px;
 }
 
-.node--type-course {
+.node--type-course, .field--name-field-course-availability {
   .field__label {
     &::after {
       content: ":";
@@ -55,6 +55,7 @@
 .field--name-field-course-features {
   .field__item {
     &:not(:first-child) {
+      margin-left: 0;
       &::before {
         content: ";";
       }
@@ -148,6 +149,17 @@
     }
   }
 }
+
+.course-lessons {
+  .field__item {
+    margin-left: 0;
+  }
+}
+  .enroll-online {
+    .field__item {
+      margin-left: 0;
+    }
+  }
 
 .course-registration {
   .field--name-field-registration-link {

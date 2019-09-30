@@ -29,6 +29,8 @@
     padding-top: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid $border-shade;
+    width: 800px;
+    margin: auto;
     @include media-breakpoint-down(sm) {
       padding-top: 0;
       padding-bottom: 0;
