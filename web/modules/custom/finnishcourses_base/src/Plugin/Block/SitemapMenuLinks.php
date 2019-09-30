@@ -24,22 +24,29 @@ class SitemapMenuLinks extends BlockBase {
    */
   public function build() {
 
-    $menuLinks = $this->getSitemapMenuLinks();
-
+    $sitemapMenus = $this->getSitemapMenus();
 
     return [
-      '#theme' => 'health_research_form',
-      '#form_action_url' => $form_action_url,
-      '#signin_url' => $signin_url,
-      '#forgot_pw_url' => $forgot_pw_url,
-      //'#allowed_tags' => ['form', 'input'],
+      '#theme' => 'sitemap_menu_links',
+      '#menus' => $sitemapMenus,
     ];
+
+    // return [
+    //   '#markup' => \Drupal::service("renderer")->renderRoot($sitemapMenus),
+    // ];
   }
 
-  public function getSitemapMenuLinks() {
+  public function getSitemapMenus() {
     $menus = array('main','footer', 'foo', 'foote');
 
-    $combined_tree = array();
+    //$combined_tree = array();
+    $sitemapMenus = [
+      'main' => [],
+      'footer' => [],
+    ];
+    $mainMenu = [];
+    $footerMenus = [];
+
     $menu_tree = \Drupal::menuTree();
     $parameters = $menu_tree->getCurrentRouteMenuTreeParameters(trim($menus[0]));
     $manipulators = array(
@@ -52,19 +59,28 @@ class SitemapMenuLinks extends BlockBase {
     );
     // Force the entire tree to be build by setting expandParents to an
     // empty array.
-    $parameters->expandedParents = array();
+    $parameters->expandedParents = [];
     // Iterate over the menus and merge them together.
     foreach($menus as $menu_name) {
       $tree_items = $menu_tree->load(trim($menu_name), $parameters);
       $tree_manipulated = $menu_tree->transform($tree_items, $manipulators);
-      $combined_tree = array_merge($combined_tree, $tree_manipulated);
+      
+      if ($menu_name == 'main') {
+        $mainMenu = $menu_tree->build($tree_manipulated);
+      } else {
+        $footerMenus = array_merge($footerMenus, $tree_manipulated);
+      }
+      
+      // kint($tree_manipulated);
+      // $combined_tree = array_merge($combined_tree, $tree_manipulated);
     }
 
-    $menu = $menu_tree->build($combined_tree);
+    $footerMenus = $menu_tree->build($footerMenus);
+    $sitemapMenus['main'] = \Drupal::service("renderer")->renderRoot($mainMenu);
+    $sitemapMenus['footer'] = \Drupal::service("renderer")->renderRoot($footerMenus);
 
-    return [
-      '#markup' => \Drupal::service("renderer")->renderRoot($menu),
-    ];
+    return $sitemapMenus;
+
   }
 
 }

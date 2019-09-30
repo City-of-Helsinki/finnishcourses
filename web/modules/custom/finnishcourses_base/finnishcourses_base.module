@@ -820,3 +820,15 @@ function finnishcourses_base_language_switch_links_alter(&$variables) {
 
   }
 }
+
+/**
+ * Implements hook_theme().
+ */
+function finnishcourses_base_theme() {
+  return [
+    'sitemap_menu_links' => [
+      'variables' => ['menus' => NULL],
+      'template' => 'sitemap-menu-links',
+    ],
+  ];
+}
