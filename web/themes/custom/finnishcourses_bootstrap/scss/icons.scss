@@ -60,7 +60,7 @@
       right: 63px;
     }
     @include media-breakpoint-down(sm-t) {
-      right: 38px;
+      right: 25px;
       top: 53px;
     }
   }
@@ -71,7 +71,7 @@
     right: 8px;
     top: 12px;
     @include media-breakpoint-down(sm-t) {
-      right: 15px;
+      right: 11px;
     }
   }
 }
