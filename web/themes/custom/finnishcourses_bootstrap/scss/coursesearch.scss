@@ -98,7 +98,7 @@
   color: $primary-shade;
   font-weight: 900;
   text-align: center;
-  margin-top: 55px;
+  margin-top: 35px;
   margin-bottom: 20px;
 }
 
@@ -359,7 +359,7 @@
     border-color: $green-shade;
     font-size: 21px;
     font-weight: 700;
-    margin-top: 20px;
+    margin-top: 10px;
     -webkit-appearance: none;
     @include media-breakpoint-down(sm) {
       width: 100%;
