@@ -1,0 +1,18 @@
+#block-sitemapfrommenulinks {
+  .sitemap-menus {
+    h3 {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+    .nav {
+      display: block;
+      li {
+        margin-left: 10px;
+        a {
+          font-size: 14px;
+          padding: 3px 0;
+        }
+      }
+    }
+  }
+}
