@@ -80,6 +80,11 @@
   }
 
   .region-footer-third {
+    #block-footerthird {
+      @include media-breakpoint-down(sm-t) {
+        margin-bottom: 15px;
+      }
+    }
     img {
       width: 106px;
       height: 50px;
