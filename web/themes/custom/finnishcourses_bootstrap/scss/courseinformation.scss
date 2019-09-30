@@ -44,7 +44,7 @@
   margin-bottom: 36px;
 }
 
-.node--type-course {
+.node--type-course, .field--name-field-course-availability {
   .field__label {
     &::after {
       content: ":";
