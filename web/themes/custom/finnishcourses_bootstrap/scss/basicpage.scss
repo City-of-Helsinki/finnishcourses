@@ -13,7 +13,7 @@
 
 
 // LANGUAGE COURSE LEVEL
-.page-node-15 {
+.page-node-15 { // todo: Need to be changed?
   .field--name-title {
     @include media-breakpoint-down(sm) {
       font-size: 21px;
@@ -26,11 +26,12 @@
       }
     }
     div {
-      text-align: center;
       iframe {
         width: 640px;
         height: 360px;
         position: relative;
+        display: block;
+        margin: auto;
         @include media-breakpoint-down(sm) {
           width: 250px;
           height: 140px;
