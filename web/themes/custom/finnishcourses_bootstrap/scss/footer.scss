@@ -10,6 +10,7 @@
   padding-top: 40px;
   padding-bottom: 80px;
   @include media-breakpoint-down(sm) {
+    padding-top: 20px;
     padding-bottom: 150px;
     padding-right: 0px;
   }
