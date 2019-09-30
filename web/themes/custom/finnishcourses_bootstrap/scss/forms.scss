@@ -29,6 +29,7 @@
 .form-control {
   border: 1px solid $form-border-shade !important; // Override
   border-radius: 2px; // Override
+  color: $text-shade;
 }
 
 #edit-course-town--wrapper {
