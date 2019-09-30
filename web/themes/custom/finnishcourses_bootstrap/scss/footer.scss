@@ -72,7 +72,7 @@
   width: 62%;
   margin: auto;
   @include media-breakpoint-down(md) {
-    width: 82%;
+    width: 95%;
   }
   @include media-breakpoint-down(sm) {
     flex-direction: column;
