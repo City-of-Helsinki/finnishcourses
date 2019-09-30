@@ -800,3 +800,23 @@ function finnishcourses_base_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = 'role-' . $role;
   }
 }
+
+function finnishcourses_base_language_switch_links_alter(&$variables) {
+
+  foreach ($variables as $key => $link) {
+
+    if ($key == 'fi') {
+      $variables[$key]['title'] = 'Suomi';
+    } else if ($key == 'ru') {
+      $variables[$key]['title'] = 'Русский';
+    }
+
+    // if ($node && is_object($node) && method_exists($node, 'hasTranslation')) {
+    //   if (!$node->hasTranslation($key)) {
+    //     //kint($node->getTranslationStatus('sv'));
+    //     $variables[$key]['url'] = Url::fromRoute('<front>', [], ['language' => $key]);
+    //   }
+    // }     
+
+  }
+}
