@@ -31,7 +31,7 @@
 
 .more-options-wrapper {
   .label {
-    font-weight: 900;
+    font-weight: 600;
   }
 
   .fieldset-legend {
@@ -148,7 +148,7 @@
 
     .fieldset-title, .label {
       color: $text-shade;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 16px;
       flex-basis: 26%;
       @include media-breakpoint-down(sm-t) {
