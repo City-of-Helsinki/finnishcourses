@@ -238,6 +238,12 @@ h1, h2, h3 {
   font-weight: 900;
 }
 
+.views-field-title {
+  @include media-breakpoint-down(sm-t) {
+    line-height: 1;
+  }
+}
+
 .path-frontpage {
   .section {
     margin: auto;
