@@ -16,8 +16,9 @@
 
 .fieldset-title {
   margin-bottom: 20px;
+  .fieldset-legend {
+    font-weight: 900;
   @include media-breakpoint-down(sm-t) {
-    .fieldset-legend {
       font-size: 21px;
     }
   }
@@ -30,8 +31,8 @@
 }
 
 .more-options-wrapper {
-  .label {
-    font-weight: 600;
+  .fieldset-legend {
+    font-weight: 100 !important;
   }
 
   .fieldset-legend {
@@ -148,7 +149,7 @@
 
     .fieldset-title, .label {
       color: $text-shade;
-      font-weight: 600;
+      //font-weight: 600;
       font-size: 16px;
       flex-basis: 26%;
       @include media-breakpoint-down(sm-t) {
