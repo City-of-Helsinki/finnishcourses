@@ -13,10 +13,13 @@
 
 
 // LANGUAGE COURSE LEVEL
-.page-node-15 { // todo: Need to be changed?
+.node--type-page {
     #block-finnishcourses-bootstrap-content {
       width: 640px;
       margin: auto;
+      @include media-breakpoint-down(sm-t) {
+        max-width: 400px;
+      }
     }
   .field--name-title {
     @include media-breakpoint-down(sm) {
