@@ -154,15 +154,14 @@
   }
 }
 
-.course-dates {
+// todo: fix this...
+.course-dates, .organization-name {
   .field__item {
     @include media-breakpoint-down(sm) {
       margin-left: 0;
     }
   }
 }
-
-
 
 .course-lessons {
   .field__item {
@@ -172,6 +171,9 @@
   .enroll-online {
     .field__item {
       margin-left: 0;
+      a {
+        margin-left: 0;
+      }
     }
   }
 
