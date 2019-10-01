@@ -171,7 +171,7 @@ body {
   margin-right: 110px;
   @include media-breakpoint-down(sm-t) {
     margin-right: 0;
-    margin-top: -48px;
+    margin-top: 19px;
   }
 
   ul {
@@ -191,6 +191,14 @@ body {
 
     &:hover {
       text-decoration: none;
+    }
+  }
+}
+
+.path-frontpage {
+  .language-switcher-language-url {
+    @include media-breakpoint-down(sm-t) {
+      margin-top: -48px;
     }
   }
 }
