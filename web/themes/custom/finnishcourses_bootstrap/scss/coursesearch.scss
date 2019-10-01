@@ -202,10 +202,11 @@
 
 .form-item-start-date-2 {
   @include media-breakpoint-down(sm) {
+    height: 38px;
     position: relative;
-    top: 2px;
+    top: 3px;
   }
-}
+  }
 
 #edit-course-fee {
   flex: 1;
