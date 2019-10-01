@@ -110,6 +110,9 @@
 .views-field-field-organizers-course-id {
   margin-top: 20px;
   color: $id-shade;
+  @include media-breakpoint-down(sm-t) {
+    margin-top: 0;
+  }
 }
 
 .views-label-field-organizers-course-id-course-id {
