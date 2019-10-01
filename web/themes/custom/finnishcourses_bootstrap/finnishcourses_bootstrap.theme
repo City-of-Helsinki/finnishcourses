@@ -9,6 +9,8 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
+use Drupal\media\Entity\Media;
+use Drupal\image\Entity\ImageStyle;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -74,6 +76,15 @@ function finnishcourses_bootstrap_preprocess_node(&$variables) {
     $variables['course_location'] = $courseLocation;
     $variables['course_town'] = $townName;
 
+  }
+
+
+  if (isset($variables['node']) && $variables['node'] instanceof NodeInterface && $variables['node']->bundle() == 'front_page' && isset($variables['view_mode']) && $variables['view_mode'] == 'header_image') {
+    if (!empty($variables['node']->get('field_header_image'))) {
+      $headerImageId = $variables['node']->get('field_header_image')->getValue()[0]['target_id'];
+      $headerImage = Media::load($headerImageId);
+      $variables['header_image'] = ImageStyle::load('header_image_desktop')->buildUrl($headerImage->field_media_image->entity->getFileUri());
+    }
   }
 
 }
