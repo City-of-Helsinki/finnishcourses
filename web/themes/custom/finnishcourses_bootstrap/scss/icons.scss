@@ -59,7 +59,11 @@
     @include media-breakpoint-down(md-t) {
       right: 63px;
     }
-    @include media-breakpoint-down(sm-t) {
+    @include media-breakpoint-only(sm-t) {
+      right: 32px;
+      top: 53px;
+    }
+    @include media-breakpoint-down(sm) {
       right: 25px;
       top: 53px;
     }
