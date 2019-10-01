@@ -206,6 +206,12 @@
     width: 140px;
     height: 100px;
     background-color: $dark-schedule-shade;
+    .office-hours__item-slots {
+      @include media-breakpoint-down(sm-t) {
+        padding: 7px;
+        font-size: 12px;
+      }
+    }
   }
 
   .empty {
