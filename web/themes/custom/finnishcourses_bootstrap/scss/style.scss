@@ -16,6 +16,10 @@ body {
 
 #block-finnishcourses-bootstrap-page-title {
   text-align: center;
+  @include media-breakpoint-down(sm-t) {
+    top: 15px;
+    position: relative;
+  }
 }
 
 // todo: fix this...........
@@ -30,9 +34,28 @@ body {
 
 
 // todo: fix this...........
+
+.node--type-course {
+  .main-content {
+    @include media-breakpoint-down(sm-t) {
+      margin-top: 5px;
+    }
+  }
+  #block-finnishcourses-bootstrap-page-title {
+    @include media-breakpoint-down(sm-t) {
+      top: 40px;
+      position: relative;
+    }
+  }
+}
+
+
 .main-content {
   max-width: 980px;
   margin-top: 103px;
+  @include media-breakpoint-down(sm-t) {
+    margin-top: 60px;
+  }
 
   .row {
     width: 980px;
