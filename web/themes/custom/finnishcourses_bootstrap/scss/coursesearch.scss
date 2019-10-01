@@ -16,8 +16,9 @@
 
 .fieldset-title {
   margin-bottom: 20px;
+  .fieldset-legend {
+    font-weight: 900;
   @include media-breakpoint-down(sm-t) {
-    .fieldset-legend {
       font-size: 21px;
     }
   }
@@ -30,8 +31,8 @@
 }
 
 .more-options-wrapper {
-  .label {
-    font-weight: 600;
+  .fieldset-legend {
+    font-weight: 100 !important;
   }
 
   .fieldset-legend {
@@ -142,13 +143,13 @@
     flex: 1;
     @include media-breakpoint-down(sm-t) {
       flex-direction: column;
-      margin-bottom: 10px;
+     // margin-bottom: 10px;
     }
 
 
     .fieldset-title, .label {
       color: $text-shade;
-      font-weight: 600;
+      //font-weight: 600;
       font-size: 16px;
       flex-basis: 26%;
       @include media-breakpoint-down(sm-t) {
@@ -165,13 +166,16 @@
   }
 }
 
+.more-options-row-3 {
+  @include media-breakpoint-down(sm-t) {
+    margin-top: 15px;
+  }
+
+}
+
 .more-options-dates {
   display: flex;
   flex: 1;
-  @include media-breakpoint-down(sm-t) {
-    position: relative;
-    top: -11px;
-  }
 }
 
 #edit-starting-level--wrapper {
@@ -201,10 +205,11 @@
 
 .form-item-start-date-2 {
   @include media-breakpoint-down(sm) {
+    height: 38px;
     position: relative;
-    top: 2px;
+    top: 3px;
   }
-}
+  }
 
 #edit-course-fee {
   flex: 1;
@@ -305,7 +310,7 @@
   .label {
     display: flex;
     flex: 1;
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(sm-t) {
       position: relative;
       top: -3px;
     }
