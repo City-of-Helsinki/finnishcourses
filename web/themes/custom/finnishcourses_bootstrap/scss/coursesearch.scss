@@ -198,7 +198,7 @@
 .form-item-start-date-2 {
   @include media-breakpoint-down(sm) {
     position: relative;
-    top: 1px;
+    top: 2px;
   }
 }
 
@@ -245,7 +245,7 @@
     top: 10px;
     position: relative;
     @include media-breakpoint-down(sm-t) {
-      top: 0;
+      top: 16px;
     }
   }
 
@@ -280,7 +280,8 @@
     top: 10px;
     position: relative;
     @include media-breakpoint-down(sm-t) {
-      top: 0;
+      position: relative;
+      top: 10px;
     }
   }
 
