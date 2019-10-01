@@ -195,6 +195,13 @@
   }
 }
 
+.form-item-start-date-2 {
+  @include media-breakpoint-down(sm) {
+    position: relative;
+    top: 1px;
+  }
+}
+
 #edit-course-fee {
   flex: 1;
   @include media-breakpoint-down(sm-t) {
