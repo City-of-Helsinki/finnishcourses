@@ -197,14 +197,6 @@ body {
   }
 }
 
-.path-frontpage {
-  .language-switcher-language-url {
-    @include media-breakpoint-down(sm) {
-      margin-top: -48px;
-    }
-  }
-}
-
 .language-link.is-active {
   border-bottom: 1.5px solid $underline-link-color;
   padding-bottom: 8px;
