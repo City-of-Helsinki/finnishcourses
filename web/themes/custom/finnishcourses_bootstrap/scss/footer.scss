@@ -10,6 +10,7 @@
   padding-top: 40px;
   padding-bottom: 80px;
   @include media-breakpoint-down(sm) {
+    padding-top: 20px;
     padding-bottom: 150px;
     padding-right: 0px;
   }
@@ -69,16 +70,19 @@
 
 .site-footer__top {
   display: flex;
-  width: 62%;
   margin: auto;
-  @include media-breakpoint-down(md) {
-    width: 95%;
-  }
+  max-width: 940px;
   @include media-breakpoint-down(sm) {
     flex-direction: column;
+   // max-width: 900px;
   }
 
   .region-footer-third {
+    #block-footerthird {
+      @include media-breakpoint-down(sm-t) {
+        margin-bottom: 15px;
+      }
+    }
     img {
       width: 106px;
       height: 50px;

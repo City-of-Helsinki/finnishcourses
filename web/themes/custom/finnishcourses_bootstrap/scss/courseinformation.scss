@@ -4,6 +4,10 @@
 .group-wrapper h1, h2, h3 {
   margin-bottom: 35px;
   margin-top: 35px;
+  @include media-breakpoint-down(sm-t) {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 }
 
 .group-wrapper {
@@ -31,6 +35,7 @@
     }
     h3 {
       font-size: 18px;
+      margin-bottom: 8px;
     }
   }
 }
@@ -144,8 +149,16 @@
     display: inline;
     margin-left: 5px;
     @include media-breakpoint-down(sm) {
-      margin-left: 0;
       font-size: 16px;
+    }
+  }
+}
+
+// todo: fix this...
+.course-dates, .organization-name {
+  .field__item {
+    @include media-breakpoint-down(sm) {
+      margin-left: 0;
     }
   }
 }
@@ -158,6 +171,9 @@
   .enroll-online {
     .field__item {
       margin-left: 0;
+      a {
+        margin-left: 0;
+      }
     }
   }
 
@@ -202,6 +218,12 @@
     width: 140px;
     height: 100px;
     background-color: $dark-schedule-shade;
+    .office-hours__item-slots {
+      @include media-breakpoint-down(sm-t) {
+        padding: 7px;
+        font-size: 12px;
+      }
+    }
   }
 
   .empty {

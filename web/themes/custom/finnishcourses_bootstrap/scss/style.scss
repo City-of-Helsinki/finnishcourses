@@ -16,6 +16,10 @@ body {
 
 #block-finnishcourses-bootstrap-page-title {
   text-align: center;
+  @include media-breakpoint-down(sm) {
+    top: 15px;
+    position: relative;
+  }
 }
 
 // todo: fix this...........
@@ -30,9 +34,28 @@ body {
 
 
 // todo: fix this...........
+
+.node--type-course {
+  .main-content {
+    @include media-breakpoint-down(sm) {
+      margin-top: 5px;
+    }
+  }
+  #block-finnishcourses-bootstrap-page-title {
+    @include media-breakpoint-down(sm) {
+      top: 40px;
+      position: relative;
+    }
+  }
+}
+
+
 .main-content {
   max-width: 980px;
   margin-top: 103px;
+  @include media-breakpoint-down(sm) {
+    margin-top: 60px;
+  }
 
   .row {
     width: 980px;
@@ -109,7 +132,9 @@ body {
 
 .path-frontpage {
   .region-secondary-menu {
-    background: none;
+    @include media-breakpoint-down(sm) {
+      background: none;
+    }
   }
 }
 
@@ -146,8 +171,9 @@ body {
   margin-top: 23px;
   margin-left: auto;
   margin-right: 110px;
-  @include media-breakpoint-down(sm-t) {
+  @include media-breakpoint-down(sm) {
     margin-right: 0;
+    margin-top: 19px;
   }
 
   ul {
@@ -167,6 +193,14 @@ body {
 
     &:hover {
       text-decoration: none;
+    }
+  }
+}
+
+.path-frontpage {
+  .language-switcher-language-url {
+    @include media-breakpoint-down(sm) {
+      margin-top: -48px;
     }
   }
 }
@@ -216,6 +250,9 @@ h1, h2, h3 {
     margin-top: 20px;
     margin-bottom: 40px;
     text-align: center;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 0;
   }
 }
 

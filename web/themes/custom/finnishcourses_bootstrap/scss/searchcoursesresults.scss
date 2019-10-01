@@ -35,6 +35,7 @@
       padding-top: 0;
       padding-bottom: 0;
       margin: 20px 0 25px 0;
+      max-width: 400px;
     }
   }
 
@@ -58,6 +59,14 @@
       @include media-breakpoint-down(sm) {
         font-size: 18px;
       }
+    }
+  }
+}
+
+.views-field-field-course-availability {
+  .field--name-field-course-availability {
+    .field__item {
+      margin-left: 5px;
     }
   }
 }
@@ -101,12 +110,16 @@
 .views-field-field-organizers-course-id {
   margin-top: 20px;
   color: $id-shade;
+  @include media-breakpoint-down(sm-t) {
+    margin-top: 0;
+  }
 }
 
 .views-label-field-organizers-course-id-course-id {
   margin-right: 5px;
 }
 
+// Be aware, if changing this, might also haft to change in courseinformation.scss
 .views-field-field-course-week-hours {
   .field-content {
     .office-hours {
@@ -126,6 +139,12 @@
         width: 168px;
         height: 100px;
         background-color: $dark-schedule-shade;
+        .office-hours__item-slots {
+          @include media-breakpoint-down(sm-t) {
+            padding: 7px;
+            font-size: 12px;
+          }
+        }
       }
 
       .empty {
