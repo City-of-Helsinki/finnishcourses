@@ -14,8 +14,10 @@ body {
   cursor: default;
 }
 
-#block-finnishcourses-bootstrap-content {
-  max-width: 760px;
+.node--type-course {
+  #block-finnishcourses-bootstrap-content {
+    max-width: 760px;
+  }
 }
 
 #block-finnishcourses-bootstrap-page-title {
