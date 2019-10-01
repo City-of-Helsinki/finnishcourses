@@ -31,11 +31,14 @@
     border-bottom: 1px solid $border-shade;
     width: 800px;
     margin: auto;
+    @include media-breakpoint-down(sm-t) {
+      max-width: 600px;
+    }
     @include media-breakpoint-down(sm) {
       padding-top: 0;
       padding-bottom: 0;
       margin: 20px 0 25px 0;
-      max-width: 400px;
+      max-width: 500px;
     }
   }
 

@@ -14,9 +14,17 @@ body {
   cursor: default;
 }
 
+.node--type-course {
+  #block-finnishcourses-bootstrap-content {
+    max-width: 760px;
+  }
+}
+
 #block-finnishcourses-bootstrap-page-title {
   text-align: center;
-  @include media-breakpoint-down(sm) {
+  margin-bottom: 25px !important; // Override
+@include media-breakpoint-down(sm) {
+    margin-bottom: 0;
     top: 15px;
     position: relative;
   }
@@ -193,14 +201,6 @@ body {
 
     &:hover {
       text-decoration: none;
-    }
-  }
-}
-
-.path-frontpage {
-  .language-switcher-language-url {
-    @include media-breakpoint-down(sm) {
-      margin-top: -48px;
     }
   }
 }
