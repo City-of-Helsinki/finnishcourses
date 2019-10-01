@@ -14,6 +14,13 @@ body {
   cursor: default;
 }
 
+#block-finnishcourses-bootstrap-page-title {
+  text-align: center;
+  @include media-breakpoint-down(sm) {
+    top: 15px;
+    position: relative;
+  }
+}
 
 // todo: fix this...........
 .container-fluid {
@@ -27,9 +34,28 @@ body {
 
 
 // todo: fix this...........
+
+.node--type-course {
+  .main-content {
+    @include media-breakpoint-down(sm) {
+      margin-top: 5px;
+    }
+  }
+  #block-finnishcourses-bootstrap-page-title {
+    @include media-breakpoint-down(sm) {
+      top: 40px;
+      position: relative;
+    }
+  }
+}
+
+
 .main-content {
   max-width: 980px;
   margin-top: 103px;
+  @include media-breakpoint-down(sm) {
+    margin-top: 60px;
+  }
 
   .row {
     width: 980px;
@@ -88,6 +114,9 @@ body {
   .navbar-brand {
     padding-bottom: 0px;
     position: relative;
+    @include media-breakpoint-down(sm) {
+      margin-right: 0; // Override
+    }
   }
 }
 
@@ -103,30 +132,22 @@ body {
 
 .path-frontpage {
   .region-secondary-menu {
-    background: none;
+    @include media-breakpoint-down(sm) {
+      background: none;
+    }
   }
 }
 
 .region-secondary-menu {
   background: $primary-shade;
-  padding: 11px 0 11px 111px;
+  padding-top: 11px;
+  padding-bottom: 11px;
 
   .navbar-nav {
-    display: flow-root;
-
     .nav-item {
-      float: left;
       position: relative;
       padding-left: 0px;
       padding-right: 0px;
-      right: 80%;
-      @include media-breakpoint-only(sm-t) {
-        right: 70%;
-      }
-      @include media-breakpoint-down(sm) {
-        right: 0;
-      }
-
       a {
         color: $main-nav-shade;
         font-weight: 900;
@@ -146,18 +167,13 @@ body {
 
 .language-switcher-language-url {
   display: inherit;
-  position: absolute;
   text-transform: uppercase;
-  top: 39px;
-  right: 300px;
-  @include media-breakpoint-between(md, md-t) {
-    right: 200px;
-  }
-  @include media-breakpoint-only(sm-t) {
-    right: 79px;
-  }
+  margin-top: 23px;
+  margin-left: auto;
+  margin-right: 110px;
   @include media-breakpoint-down(sm) {
-    right: 0;
+    margin-right: 0;
+    margin-top: 19px;
   }
 
   ul {
@@ -181,6 +197,14 @@ body {
   }
 }
 
+.path-frontpage {
+  .language-switcher-language-url {
+    @include media-breakpoint-down(sm) {
+      margin-top: -48px;
+    }
+  }
+}
+
 .language-link.is-active {
   border-bottom: 1.5px solid $underline-link-color;
   padding-bottom: 8px;
@@ -197,8 +221,6 @@ body {
 }
 
 .region-secondary-menu {
-  top: 3px;
-
   .nav-link.active,
   .nav-item.show .nav-link {
     border-bottom: 1.5px solid $underline-link-color;
@@ -228,6 +250,9 @@ h1, h2, h3 {
     margin-top: 20px;
     margin-bottom: 40px;
     text-align: center;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 0;
   }
 }
 
@@ -338,7 +363,6 @@ h1, h2, h3, .fieldset-legend {
 
 .menu--main {
   position: relative;
-  margin-left: 150px;
   margin-top: 13px;
 }
 

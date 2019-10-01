@@ -13,7 +13,14 @@
 
 
 // LANGUAGE COURSE LEVEL
-.page-node-15 {
+.node--type-page {
+    #block-finnishcourses-bootstrap-content {
+      width: 640px;
+      margin: auto;
+      @include media-breakpoint-down(sm-t) {
+        max-width: 400px;
+      }
+    }
   .field--name-title {
     @include media-breakpoint-down(sm) {
       font-size: 21px;
@@ -26,11 +33,12 @@
       }
     }
     div {
-      text-align: center;
       iframe {
         width: 640px;
         height: 360px;
         position: relative;
+        display: block;
+        margin: auto;
         @include media-breakpoint-down(sm) {
           width: 250px;
           height: 140px;

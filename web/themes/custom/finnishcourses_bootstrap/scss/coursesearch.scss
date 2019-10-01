@@ -31,7 +31,7 @@
 
 .more-options-wrapper {
   .label {
-    font-weight: 900;
+    font-weight: 600;
   }
 
   .fieldset-legend {
@@ -52,7 +52,6 @@
   .js-form-item {
     .form-check-label {
       position: relative;
-      top: 2px;
       @include media-breakpoint-down(sm-t) {
         left: -11px;
       }
@@ -70,13 +69,6 @@
   @include media-breakpoint-down(sm-t) {
     display: grid;
   }
-
-  .form-check-label {
-    @include media-breakpoint-down(sm-t) {
-     // top: 5px;
-    }
-  }
-
   .form-check {
     @include media-breakpoint-down(sm-t) {
       padding-bottom: 16px;
@@ -99,7 +91,7 @@
   color: $primary-shade;
   font-weight: 900;
   text-align: center;
-  margin-top: 55px;
+  margin-top: 35px;
   margin-bottom: 20px;
 }
 
@@ -156,7 +148,7 @@
 
     .fieldset-title, .label {
       color: $text-shade;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 16px;
       flex-basis: 26%;
       @include media-breakpoint-down(sm-t) {
@@ -176,6 +168,10 @@
 .more-options-dates {
   display: flex;
   flex: 1;
+  @include media-breakpoint-down(sm-t) {
+    position: relative;
+    top: -11px;
+  }
 }
 
 #edit-starting-level--wrapper {
@@ -200,6 +196,13 @@
   flex: 2 !important; // Overriding flex: 1 in general for form-item classes
   @include media-breakpoint-down(sm-t) {
     flex: 1 !important;
+  }
+}
+
+.form-item-start-date-2 {
+  @include media-breakpoint-down(sm) {
+    position: relative;
+    top: 2px;
   }
 }
 
@@ -246,7 +249,7 @@
     top: 10px;
     position: relative;
     @include media-breakpoint-down(sm-t) {
-      top: 0;
+      top: 16px;
     }
   }
 
@@ -281,7 +284,8 @@
     top: 10px;
     position: relative;
     @include media-breakpoint-down(sm-t) {
-      top: 0;
+      position: relative;
+      top: 10px;
     }
   }
 
@@ -301,10 +305,14 @@
   .label {
     display: flex;
     flex: 1;
+    @include media-breakpoint-down(sm) {
+      position: relative;
+      top: -3px;
+    }
   }
 
   .form-text, .form-control {
-    color: $form-border-shade;
+    color: $text-shade;
     height: 40px;
     cursor: pointer;
     max-width: 87% !important;
@@ -319,6 +327,9 @@
 .views-field-nid {
   margin-top: 20px;
   margin-bottom: 20px;
+  @include media-breakpoint-down(sm-t) {
+    margin-top: 5px;
+  }
 }
 
 .read-more {
@@ -360,7 +371,7 @@
     border-color: $green-shade;
     font-size: 21px;
     font-weight: 700;
-    margin-top: 20px;
+    margin-top: 10px;
     -webkit-appearance: none;
     @include media-breakpoint-down(sm) {
       width: 100%;
