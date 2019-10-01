@@ -57,10 +57,16 @@
   }
 }
 
+.registration-dates
+.field__item {
+  margin-left: 0 !important;
+}
+
 .field--name-field-course-features {
   .field__item {
     &:not(:first-child) {
       margin-left: 0;
+
       &::before {
         content: ";";
       }
@@ -168,14 +174,16 @@
     margin-left: 0;
   }
 }
-  .enroll-online {
-    .field__item {
+
+.enroll-online {
+  .field__item {
+    margin-left: 0;
+
+    a {
       margin-left: 0;
-      a {
-        margin-left: 0;
-      }
     }
   }
+}
 
 .course-registration {
   .field--name-field-registration-link {
@@ -218,6 +226,7 @@
     width: 140px;
     height: 100px;
     background-color: $dark-schedule-shade;
+
     .office-hours__item-slots {
       @include media-breakpoint-down(sm-t) {
         padding: 7px;
