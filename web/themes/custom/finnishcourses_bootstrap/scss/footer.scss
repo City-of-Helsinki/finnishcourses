@@ -70,13 +70,11 @@
 
 .site-footer__top {
   display: flex;
-  width: 62%;
   margin: auto;
-  @include media-breakpoint-down(md) {
-    width: 95%;
-  }
+  max-width: 940px;
   @include media-breakpoint-down(sm) {
     flex-direction: column;
+   // max-width: 900px;
   }
 
   .region-footer-third {
