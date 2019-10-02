@@ -69,6 +69,7 @@
       // HAMBURGER MENU
       $(".mobile-menu-icon").click(function () {
         $(".mobile-menu").css('backgroundColor', '#0073cf');
+        $(".region-secondary-menu").css('backgroundColor', '#0073cf');
         $(".mobile-menu-wrapper").slideToggle("fast", function () {
           if ($(window).width() < 850) {
             $(".mobile-menu-icon").hide();
@@ -83,6 +84,7 @@
             $(".mobile-close-icon").hide();
             $(".mobile-menu-icon").show();
             $(".mobile-menu").css('backgroundColor', 'transparent');
+            $(".region-secondary-menu").css('backgroundColor', 'transparent');
           }
         });
       });
