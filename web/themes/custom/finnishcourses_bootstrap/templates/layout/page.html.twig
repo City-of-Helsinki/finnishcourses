@@ -72,7 +72,7 @@
 <div>
     {% block head %}
         {% if page.secondary_menu or page.page.top_header or page.top_header_form %}
-            <nav{{ navbar_top_attributes }}>
+  <nav{{ navbar_top_attributes }}>
                 <div class="section clearfix">
                     <div class="navbar-nav fixed-top">
                       {{ page.secondary_menu }}
@@ -112,6 +112,7 @@
                 <div class="col-lg mx-auto mw-75 p-3">
                     <main{{ content_attributes }}>
                         <section class="section">
+                          {{ content.header_image }}
                             <a id="main-content" tabindex="-1"></a>
                             {{ page.content }}
                         </section>
