@@ -176,14 +176,12 @@ body {
 
 .path-frontpage {
   .region-secondary-menu {
-    @include media-breakpoint-down(sm) {
-      background: none;
-    }
+    background: transparent;
   }
 }
 
 .region-secondary-menu {
-  background: transparent;
+  background: $primary-shade;
   padding-top: 11px;
   padding-bottom: 11px;
 
