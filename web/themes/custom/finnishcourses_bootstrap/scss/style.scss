@@ -110,6 +110,38 @@ body {
   }
 }
 
+.path-frontpage {
+  .block-entity-viewnode {
+    height: 478px;
+    @include media-breakpoint-only(md) {
+      height: 400px;
+    }
+    @include media-breakpoint-only(sm-t) {
+      height: 330px;
+    }
+    @include media-breakpoint-down(sm) {
+      height: 200px;
+    }
+  }
+
+  .fill {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    @include media-breakpoint-up(md) {
+      top: 0;
+    }
+    @include media-breakpoint-down(sm) {
+      height: 200px;
+    }
+  }
+}
+
 .navbar {
   padding: 0;
 }
@@ -134,15 +166,17 @@ body {
   }
 }
 
+#navbar-main {
+  margin-top: -15px;
+}
+
 .nav-container-sticky {
   background: $primary-shade !important; // Overriding .region-secondary-menu background
 }
 
 .path-frontpage {
   .region-secondary-menu {
-    @include media-breakpoint-down(sm) {
-      background: none;
-    }
+    background: transparent;
   }
 }
 
@@ -321,9 +355,6 @@ h1, h2, h3 {
 
 /* COLORS
 --------------------------------------------------*/
-.bg-primary {
-  color: $primary-shade;
-}
 
 .bg-secondary {
   background-color: $primary-shade;

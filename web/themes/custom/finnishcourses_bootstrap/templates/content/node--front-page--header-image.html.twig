@@ -73,20 +73,8 @@
 ]
 %}
 <article{{ attributes.addClass(classes) }}>
-  <header>
-    {% if display_submitted %}
-      <div class="node__meta">
-        {{ author_picture }}
-        {% block submitted %}
-          <em{{ author_attributes }}>
-            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-          </em>
-        {% endblock %}
-        {{ metadata }}
-      </div>
-    {% endif %}
-  </header>
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
-    {{ content }}
+    <div class="fill" style="background-image: url({{ header_image }})"></div>
+
   </div>
 </article>
