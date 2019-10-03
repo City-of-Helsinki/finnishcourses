@@ -216,6 +216,9 @@
 
   .office-hours__item-label {
     width: auto !important; // Override
+    @include media-breakpoint-down(sm-t) {
+      font-size: 14px;
+    }
   }
 
   .office-hours__item {
@@ -230,7 +233,7 @@
     .office-hours__item-slots {
       @include media-breakpoint-down(sm-t) {
         padding: 7px;
-        font-size: 12px;
+        font-size: 13px;
       }
     }
   }
