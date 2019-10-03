@@ -11,15 +11,16 @@
   }
 }
 
-
 // LANGUAGE COURSE LEVEL
-.page-node-15 { // todo: fix this
+.node--type-page {
     #block-finnishcourses-bootstrap-content {
       width: 640px;
       margin: auto;
-      @include media-breakpoint-down(sm-t) {
-        max-width: 400px;
+      @include media-breakpoint-down(sm) {
+        max-width: 300px;
+        margin-top: 30px;
       }
+
     }
   .field--name-title {
     @include media-breakpoint-down(sm) {
