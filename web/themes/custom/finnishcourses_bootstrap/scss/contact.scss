@@ -12,6 +12,12 @@
 }
 
 .path-contact {
+  .main-content {
+    @include media-breakpoint-down(sm) {
+      margin-top: 57px;
+    }
+  }
+
   #edit-actions {
     margin-top: 30px;
     margin-bottom: 50px;
