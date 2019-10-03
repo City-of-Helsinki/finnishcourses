@@ -131,7 +131,7 @@ body {
   }
 
   .contextual-region {
-    position: static; // Override
+    position: static; // Override, default "position: absolute;" was causing header image background to disappear
   }
 
 
