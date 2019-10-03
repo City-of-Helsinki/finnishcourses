@@ -122,7 +122,18 @@ body {
     @include media-breakpoint-down(sm) {
       height: 200px;
     }
+    .trigger {
+      margin-top: 108px;
+      @include media-breakpoint-down(sm) {
+        margin-top: 200px;
+      }
+    }
   }
+
+  .contextual-region {
+    position: static; // Override, default "position: absolute;" was causing header image background to disappear
+  }
+
 
   .fill {
     background-repeat: no-repeat;
