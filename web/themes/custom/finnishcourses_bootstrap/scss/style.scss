@@ -23,10 +23,10 @@ body {
 #block-finnishcourses-bootstrap-page-title {
   text-align: center;
   margin-bottom: 25px !important; // Override
-@include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(sm) {
     margin-bottom: 0;
-    top: 15px;
-    position: relative;
+    top: 26px;
+   // position: relative;
   }
 }
 
@@ -46,9 +46,10 @@ body {
 .node--type-course {
   .main-content {
     @include media-breakpoint-down(sm) {
-      margin-top: 5px;
+      margin-top: 10px;
     }
   }
+
   #block-finnishcourses-bootstrap-page-title {
     @include media-breakpoint-down(sm) {
       top: 40px;
@@ -62,7 +63,7 @@ body {
   max-width: 980px;
   margin-top: 103px;
   @include media-breakpoint-down(sm) {
-    margin-top: 60px;
+    margin-top: 0;
   }
 
   .row {
@@ -122,6 +123,7 @@ body {
     @include media-breakpoint-down(sm) {
       height: 200px;
     }
+
     .trigger {
       margin-top: 108px;
       @include media-breakpoint-down(sm) {
@@ -171,14 +173,24 @@ body {
   }
 }
 
+.node--type-page, .path-training-providers, .path-contact { // todo: fix this
+  .region-secondary-menu {
+    .navbar-brand {
+      display: none;
+    }
+  }
+}
+
 #block-finnishcourses-bootstrap-main-menu {
   @include media-breakpoint-down(sm) {
     display: none;
   }
 }
 
-#navbar-main {
-  margin-top: -15px;
+.path-frontpage {
+  #navbar-main {
+    margin-top: -15px;
+  }
 }
 
 .nav-container-sticky {
@@ -201,6 +213,7 @@ body {
       position: relative;
       padding-left: 0px;
       padding-right: 0px;
+
       a {
         color: $main-nav-shade;
         font-weight: 900;
@@ -302,6 +315,7 @@ h1, h2, h3 {
     margin-bottom: 40px;
     text-align: center;
   }
+
   @include media-breakpoint-down(sm) {
     margin-bottom: 0;
   }
