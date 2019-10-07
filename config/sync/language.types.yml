@@ -24,14 +24,14 @@ negotiation:
       language-url-fallback: 1
   language_interface:
     enabled:
-      language-user: -20
-      language-url: -18
+      language-user-admin: -20
+      language-url: -19
       language-selected: -15
     method_weights:
-      language-user-admin: -19
-      language-url: -18
+      language-user: -18
+      language-user-admin: -20
+      language-url: -19
       language-session: -17
-      language-user: -20
       language-browser: -16
       language-selected: -15
 _core:
