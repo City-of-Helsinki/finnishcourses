@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8360e37fd39a8aed4fb21e0bbf3edfde",
+    "content-hash": "228c128c72d556a3ac2581b8ed4135b8",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3698,6 +3698,88 @@
             }
         },
         {
+            "name": "drupal/delete_all",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/delete_all.git",
+                "reference": "8.x-1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/delete_all-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "9bb4758ba2960f7ed88d5715440a9c5b3894324c"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "php": ">=5.6.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.2",
+                    "datestamp": "1562068385",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Author name",
+                    "homepage": "https://www.drupal.org/user/3196009",
+                    "email": "author@example.com"
+                },
+                {
+                    "name": "coderintherye",
+                    "homepage": "https://www.drupal.org/user/297478"
+                },
+                {
+                    "name": "danylevskyi",
+                    "homepage": "https://www.drupal.org/user/322039"
+                },
+                {
+                    "name": "dipakmdhrm",
+                    "homepage": "https://www.drupal.org/user/1687410"
+                },
+                {
+                    "name": "douggreen",
+                    "homepage": "https://www.drupal.org/user/29191"
+                },
+                {
+                    "name": "kbahey",
+                    "homepage": "https://www.drupal.org/user/4063"
+                },
+                {
+                    "name": "realityloop",
+                    "homepage": "https://www.drupal.org/user/139189"
+                },
+                {
+                    "name": "wafaa",
+                    "homepage": "https://www.drupal.org/user/50133"
+                }
+            ],
+            "description": "This extension provides new commands for Drush.",
+            "homepage": "https://www.drupal.org/project/delete_all",
+            "support": {
+                "source": "https://git.drupalcode.org/project/delete_all"
+            }
+        },
+        {
             "name": "drupal/devel",
             "version": "2.1.0",
             "source": {
@@ -6025,6 +6107,57 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/single_datetime",
                 "issues": "https://www.drupal.org/project/issues/single_datetime"
+            }
+        },
+        {
+            "name": "drupal/taxonomy_delete",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/taxonomy_delete.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/taxonomy_delete-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "d0dc627cc2747e3ef20b979a35d4ba78d1bdfec3"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1476292439",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "imalabya",
+                    "homepage": "https://www.drupal.org/user/2641255"
+                }
+            ],
+            "description": "A utility module which will delete all the taxonomy under a Vocabulary.",
+            "homepage": "https://www.drupal.org/project/taxonomy_delete",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/taxonomy_delete",
+                "issues": "http://drupal.org/project/issues/taxonomy_delete"
             }
         },
         {
