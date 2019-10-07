@@ -75,6 +75,7 @@
         "drupal/config_split": "^1.4",
         "drupal/console": "^1.8",
         "drupal/core": "^8.6.0",
+        "drupal/delete_all": "^1.2",
         "drupal/devel_debug_log": "^1.0@beta",
         "drupal/embed": "^1.0",
         "drupal/entity_browser": "^2.1",
