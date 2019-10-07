@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_course_features
     - node.type.course
-    - taxonomy.vocabulary.course_features
 id: node.course.field_course_features
 field_name: field_course_features
 entity_type: node
@@ -17,13 +16,10 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: views
   handler_settings:
-    target_bundles:
-      course_features: course_features
-    sort:
-      field: name
-      direction: asc
-    auto_create: false
-    auto_create_bundle: ''
+    view:
+      view_name: course_features
+      display_name: entity_reference_1
+      arguments: {  }
 field_type: entity_reference
