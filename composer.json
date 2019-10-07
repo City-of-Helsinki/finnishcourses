@@ -110,6 +110,7 @@
         "drupal/shortcutperrole": "^1.0@RC",
         "drupal/simple_sitemap": "^3.2",
         "drupal/single_datetime": "^1.7",
+        "drupal/taxonomy_delete": "^1.0",
         "drupal/time_range": "^1.1",
         "drupal/token": "^1.5",
         "drupal/tvi": "^1.0@beta",
