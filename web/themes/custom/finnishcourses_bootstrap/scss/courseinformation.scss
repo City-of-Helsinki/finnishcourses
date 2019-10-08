@@ -99,7 +99,7 @@
   }
 }
 
-.view-training-provider-courses {
+.view-training-provider-courses, .path-courses {
   .view-content {
     .views-row {
       .views-field-field-organizers-course-id {
@@ -125,6 +125,15 @@
   }
 }
 
+.path-courses {
+  #block-finnishcourses-bootstrap-page-title {
+    @include media-breakpoint-down(sm-t) {
+      top: 0;
+      margin-top: 35px;
+    }
+  }
+}
+
 .course-label, .field--name-field-course-availability, .field--name-field-course-entry-level,
 .field--name-field-course-target-level, .course-dates, .course-location, .field--name-field-course-street-address,
 .field--name-field-course-town, .field--name-field-course-fee, .course-lessons, .field--name-field-books-and-materials,
@@ -134,7 +143,7 @@
 .field--name-field-course-end-date, .field--name-field-registration-email, .field--name-field-registration-link, .organization-name,
 .field--name-field-starting-level, .field--name-field-target-level, .field--name-field-organizers-course-id, .field--name-field-ask-more-email,
 .views-field-field-starting-level, .views-field-field-target-level, .views-field-field-course-start-date,
-.views-field-field-course-town, .views-field-field-course-start-date, .views-field-field-course-fee {
+.views-field-field-course-town, .views-field-field-course-start-date, .views-field-field-course-fee, .views-field-field-organizers-course-id {
   display: flex;
 
   @include media-breakpoint-down(sm) {
