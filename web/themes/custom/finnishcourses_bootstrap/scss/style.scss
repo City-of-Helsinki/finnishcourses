@@ -121,7 +121,7 @@ body {
       height: 330px;
     }
     @include media-breakpoint-down(sm) {
-      height: 200px;
+      height: 161px;
     }
 
     .trigger {
@@ -150,7 +150,8 @@ body {
       top: 0;
     }
     @include media-breakpoint-down(sm) {
-      height: 200px;
+      height: 144px;
+      margin-top: 18px;
     }
   }
 }
