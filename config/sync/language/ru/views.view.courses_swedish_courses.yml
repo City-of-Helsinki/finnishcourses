@@ -1,0 +1,7 @@
+label: 'Kурсы шведского языка'
+display:
+  default:
+    display_options:
+      title: 'Kурсы шведского языка'
+  swedish_courses:
+    display_title: 'Kурсы шведского языка'
