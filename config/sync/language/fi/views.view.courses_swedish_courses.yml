@@ -1,0 +1,25 @@
+label: 'Ruotsin kielen kurssit'
+display:
+  default:
+    display_options:
+      pager:
+        options:
+          tags:
+            first: '« Ensimmäinen'
+            last: 'Viimeinen »'
+      fields:
+        field_starting_level:
+          label: Lähtötaso
+        field_target_level:
+          label: Tavoitetaso
+        field_course_start_date:
+          label: Ajankohta
+        field_course_town:
+          label: Kunta
+        field_course_fee:
+          label: Hinta
+        field_organizers_course_id:
+          label: 'Kurssin ID'
+      title: 'Ruotsin kielen kurssit'
+  swedish_courses:
+    display_title: 'Ruotsin kielen kurssit'
