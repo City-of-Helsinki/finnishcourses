@@ -1,0 +1,28 @@
+uuid: 2a3f0956-ce5e-4052-a291-6b98418118e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+id: go_back_link
+label: 'Go back link'
+logic: or
+conditions:
+  04cb198b-a479-4158-96af-71400b146a73:
+    id: 'entity_bundle:node'
+    bundles:
+      course: course
+      feedback: feedback
+      page: page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: 04cb198b-a479-4158-96af-71400b146a73
+  58baefdb-dff5-4f83-9430-66c2aee2abd5:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      organizations: organizations
+    negate: false
+    context_mapping: {  }
+    uuid: 58baefdb-dff5-4f83-9430-66c2aee2abd5
+allow_other_conditions: true
