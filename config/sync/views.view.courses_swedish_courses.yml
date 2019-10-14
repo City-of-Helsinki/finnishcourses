@@ -1031,7 +1031,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: 'Courses in Swedish'
+      title: 'Swedish language courses'
       header: {  }
       footer: {  }
       empty: {  }
