@@ -98,7 +98,7 @@
     },
 
     triggerUserRoleChange: function(context) {
-       if ($(context).find('.user-form #edit-role-change').length) {
+       if ($(context).find('.user-form #edit-role-change').length || $(context).find('.user-form #edit-roles').length) {
         $(context).find('input#edit-roles-infofinland-user').change(function(event) {
           Drupal.behaviors.finnishcourses_base.preFillOrganizations(context);
         });
