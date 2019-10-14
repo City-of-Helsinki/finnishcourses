@@ -1,0 +1,28 @@
+uuid: 2ed6d64b-2d21-4d53-9e4e-5d2515f91195
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.go_back_link
+  module:
+    - block_visibility_groups
+    - finnishcourses_base
+  theme:
+    - finnishcourses_bootstrap
+id: gobacklink
+theme: finnishcourses_bootstrap
+region: content
+weight: -12
+provider: null
+plugin: go_back_link
+settings:
+  id: go_back_link
+  label: 'Go back link'
+  provider: finnishcourses_base
+  label_display: '0'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: go_back_link
+    context_mapping: {  }

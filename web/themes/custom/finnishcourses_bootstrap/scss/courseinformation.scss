@@ -63,16 +63,26 @@
 }
 
 .field--name-field-course-features {
-  .field__item {
-    &:not(:first-child) {
-      margin-left: 0;
-    }
+  .field__label {
+    white-space: nowrap;
+  }
+  .field__items {
+    .field__item {
+      &:not(:first-child) {
+        margin-left: 0;
+      }
 
       &::after {
         content: ";";
       }
+      &:last-child {
+        &::after {  
+          content: "";
+        }
+      }
     }
   }
+}
 
 .course-registration {
   @include media-breakpoint-down(sm-t) {
