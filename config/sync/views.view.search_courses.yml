@@ -1829,7 +1829,9 @@ display:
               administrator: '0'
               course_editor: '0'
               organization_admin: '0'
-            placeholder: 'Search for courses using a keyword, training provider or course code'
+              infofinland_user: '0'
+              rest_api: '0'
+            placeholder: 'Search for courses using a keyword'
           is_grouped: false
           group_info:
             label: ''

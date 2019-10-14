@@ -33,6 +33,7 @@ display:
                 title: 'Базовый уровень'
               3:
                 title: Продвинутый
+            label: 'Ваш уровень владения языком в настоящий момент?'
         field_course_fee:
           expose:
             label: 'Стоимость (€)'
@@ -58,6 +59,9 @@ display:
         field_starting_level_1:
           expose:
             label: 'Исходный уровень'
+        search_api_fulltext:
+          expose:
+            placeholder: 'поиск курсов по ключевому слову'
       title: 'Найти курсы финского языка'
       exposed_form:
         options:
