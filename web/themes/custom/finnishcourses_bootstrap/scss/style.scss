@@ -467,3 +467,23 @@ h1, h2, h3, .fieldset-legend {
 .toolbar-fixed.toolbar-vertical .fixed-top {
   top: 40px;
 }
+
+
+/* Go back link */
+
+.go-back-link {
+  text-align: center;
+  display: block;
+  &::before {
+    display: inline-block;
+    content: ' ';
+    background-image: url('../images/icons/ic_arrow_back@1x.svg');
+    background-size: 22px 22px;
+    height: 24px;
+    width: 22px;
+    vertical-align: middle;
+    margin-right: 3px;
+  }
+  font-weight: bold;
+  font-size: 14px;
+}
