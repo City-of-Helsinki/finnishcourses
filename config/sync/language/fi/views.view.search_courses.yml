@@ -23,6 +23,7 @@ display:
                 title: Perustaso
               3:
                 title: Edistynyt
+            label: 'Miten hyvin osaat suomea nyt?'
         field_course_fee:
           expose:
             label: 'Hinta (€)'
@@ -42,6 +43,10 @@ display:
         field_course_times_of_day:
           expose:
             label: Kellonaika
+        search_api_fulltext:
+          expose:
+            label: Hakusanat
+            placeholder: 'Hae kursseja hakusanalla'
       header:
         result:
           content: 'Hakuehdoilla löytyi @total kurssi(a)'
