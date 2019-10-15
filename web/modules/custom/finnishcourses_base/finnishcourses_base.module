@@ -359,50 +359,53 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
     $organizationId = $entity->get('field_course_organization')->target_id;
     $organization = Term::load($organizationId);
 
-    if (!empty($entity->get('field_course_street_address')->getValue())) {
-      $addressTid = $entity->get('field_course_street_address')->target_id;
+    if ($organization && is_object($organization) && method_exists($organization, 'bundle') && $organization->bundle() == 'organizations') {
+      $saveOrganization = FALSE;
+      if (!empty($entity->get('field_course_street_address')->getValue())) {
+        $addressTid = $entity->get('field_course_street_address')->target_id;
 
-      $addressIs = FALSE;
+        $addressIs = FALSE;
 
-      if (!empty($organization->get('field_locations_addresses')->getValue())) {
-        $organizationAddresses = $organization->get('field_locations_addresses')->getValue();
+        if (!empty($organization->get('field_locations_addresses')->getValue())) {
+          $organizationAddresses = $organization->get('field_locations_addresses')->getValue();
 
-        foreach ($organizationAddresses as $key => $value) {
-          if ($value['target_id'] == $addressTid) {
+          foreach ($organizationAddresses as $key => $value) {
+            if ($value['target_id'] == $addressTid) {
 
-            $addressIs = TRUE;
-            break;
+              $addressIs = TRUE;
+              break;
+            }
           }
         }
+        if ($addressIs === FALSE) {
+          $organization->field_locations_addresses[] = ['target_id' => $addressTid];
+          $saveOrganization = TRUE;
+        }
+
       }
-      if ($addressIs === FALSE) {
-        $organization->field_locations_addresses[] = ['target_id' => $addressTid];
-        $saveOrganization = TRUE;
-      }
+      if (!empty($entity->get('field_course_town')->getValue())) {
+        $townTid = $entity->get('field_course_town')->target_id;
+        $townIs = FALSE;
+        if (!empty($organization->get('field_locations_towns')->getValue())) {
 
-    }
-    if (!empty($entity->get('field_course_town')->getValue())) {
-      $townTid = $entity->get('field_course_town')->target_id;
-      $townIs = FALSE;
-      if (!empty($organization->get('field_locations_towns')->getValue())) {
+          $organizationTowns = $organization->get('field_locations_towns')->getValue();
 
-        $organizationTowns = $organization->get('field_locations_towns')->getValue();
-
-        foreach ($organizationTowns as $key => $value) {
-          if ($value['target_id'] == $townTid) {
-            $townIs = TRUE;
-            break;
+          foreach ($organizationTowns as $key => $value) {
+            if ($value['target_id'] == $townTid) {
+              $townIs = TRUE;
+              break;
+            }
           }
         }
-      }
-      if ($townIs === FALSE) {
-        $organization->field_locations_towns[] = ['target_id' => $townTid];
-        $saveOrganization = TRUE;
-      }
+        if ($townIs === FALSE) {
+          $organization->field_locations_towns[] = ['target_id' => $townTid];
+          $saveOrganization = TRUE;
+        }
 
-    }
-    if ($saveOrganization) {
-      $organization->save();
+      }
+      if ($saveOrganization) {
+        $organization->save();
+      }
     }
 
     if (!empty($entity->get('field_course_week_hours')->getValue())) {
