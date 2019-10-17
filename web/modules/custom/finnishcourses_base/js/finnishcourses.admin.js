@@ -114,7 +114,7 @@
 
       Drupal.behaviors.finnishcourses_base.autofillUsername(context);
       Drupal.behaviors.finnishcourses_base.fillRegistrationDefaultTimes(context);
-      Drupal.behaviors.finnishcourses_base.preFillOrganizations(context);
+      //Drupal.behaviors.finnishcourses_base.preFillOrganizations(context);
       Drupal.behaviors.finnishcourses_base.triggerUserRoleChange(context);
 
       $(document).ajaxComplete(function(e, xhr, settings) {
