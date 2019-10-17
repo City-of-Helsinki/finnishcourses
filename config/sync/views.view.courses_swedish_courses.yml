@@ -1067,7 +1067,7 @@ display:
       display_extenders:
         metatag_display_extender:
           metatags:
-            title: 'Training provider courses - Finnishcourses.fi'
+            title: 'Swedish language courses - Finnishcourses.fi'
       path: courses/swedish-courses
       display_description: ''
     cache_metadata:
