@@ -1,0 +1,21 @@
+display:
+  default:
+    display_options:
+      fields:
+        field_starting_level:
+          label: 'Исходный уровень'
+        field_target_level:
+          label: 'Целевой уровень'
+        field_course_start_date:
+          label: Даты
+        field_course_town:
+          label: 'Город или населённый пункт'
+        field_course_fee:
+          label: 'Стоимость (€)'
+        field_organizers_course_id:
+          label: 'Идентификационный номер курса'
+      empty:
+        area:
+          content:
+            value: "<p>No upcoming courses for the training provider at the moment.</p>\r\n"
+            format: basic_html

@@ -5,3 +5,8 @@ display:
       title: 'Kурсы шведского языка'
   swedish_courses:
     display_title: 'Kурсы шведского языка'
+    display_options:
+      display_extenders:
+        metatag_display_extender:
+          metatags:
+            title: 'Kурсы шведского языка - Finnishcourses.fi'
