@@ -20,6 +20,7 @@ dependencies:
     - node
     - office_hours
     - options
+    - taxonomy
     - user
 id: training_provider_courses
 label: 'Training provider - Courses'
@@ -646,7 +647,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Fee
+          label: 'Price (€)'
           exclude: false
           alter:
             alter_text: false
@@ -926,16 +927,29 @@ display:
           expose:
             label: ''
           granularity: second
-      title: '{{ field_course_organization }} - Courses'
+      title: ''
       header: {  }
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: 'No upcoming courses for the training provider at the moment.'
+            format: basic_html
+          plugin_id: text
       relationships: {  }
       arguments:
-        field_course_organization_target_id:
-          id: field_course_organization_target_id
-          table: node__field_course_organization
-          field: field_course_organization_target_id
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
           relationship: none
           group_type: group
           admin_label: ''
@@ -944,8 +958,8 @@ display:
             value: all
             title_enable: false
             title: All
-          title_enable: false
-          title: ''
+          title_enable: true
+          title: '{{ arguments.tid }} - Courses'
           default_argument_type: taxonomy_tid
           default_argument_options:
             term_page: '1'
@@ -969,8 +983,10 @@ display:
             fail: 'not found'
           validate_options: {  }
           break_phrase: false
-          not: false
-          plugin_id: numeric
+          add_table: false
+          require_value: false
+          reduce_duplicates: false
+          plugin_id: taxonomy_index_tid
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -1002,7 +1018,7 @@ display:
       display_extenders:
         metatag_display_extender:
           metatags:
-            title: 'Training provider courses - Finnishcourses.fi'
+            title: '[view:title] | Finnishcourses'
       path: training-providers/%/courses
     cache_metadata:
       max-age: -1

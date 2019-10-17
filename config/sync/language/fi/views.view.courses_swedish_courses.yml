@@ -23,3 +23,8 @@ display:
       title: 'Ruotsin kielen kurssit'
   swedish_courses:
     display_title: 'Ruotsin kielen kurssit'
+    display_options:
+      display_extenders:
+        metatag_display_extender:
+          metatags:
+            title: 'Ruotsin kielen kurssit - Finnishcourses.fi'
