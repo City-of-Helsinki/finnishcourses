@@ -137,6 +137,9 @@
 
 // Be aware, if changing this, might also haft to change in courseinformation.scss
 .views-field-field-course-week-hours {
+  @include media-breakpoint-down(sm) {
+    max-width: 485px;
+  }
   .field-content {
     .office-hours {
       display: flex;
@@ -158,13 +161,12 @@
         width: 168px;
         height: 100px;
         background-color: $dark-schedule-shade;
-       /* @include media-breakpoint-down(sm) { // todo: office hours needs to be changed, before this can be in the code
-          width: 45px;
-          height: 75px;
-        }*/
+        @include media-breakpoint-down(sm) {
+          height: 85px;
+        }
         .office-hours__item-slots {
-          @include media-breakpoint-down(sm-t) {
-            padding: 7px;
+          @include media-breakpoint-down(sm) {
+            padding: 5px;
             font-size: 13px;
           }
         }
