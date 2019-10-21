@@ -217,6 +217,12 @@ body {
       padding-left: 0px;
       padding-right: 0px;
 
+      @include media-breakpoint-up(sm-t) {
+        &:first-child {
+          display: none;
+        }
+      }
+
       a {
         color: $main-nav-shade;
         font-weight: 900;
