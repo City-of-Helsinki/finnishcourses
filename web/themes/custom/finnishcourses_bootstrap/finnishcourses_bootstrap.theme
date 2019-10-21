@@ -121,3 +121,17 @@ function finnishcourses_bootstrap_preprocess_page(&$variables) {
     '#markup' => \Drupal::service("renderer")->renderRoot($menu),
   );
 }
+
+function finnishcourses_bootstrap_preprocess_taxonomy_term(&$variables) {
+  if (isset($variables['view_mode']) && $variables['view_mode'] == 'term_page') {
+    if (isset($variables['term']) && method_exists($variables['term'], 'bundle')) {
+      if ($variables['term']->bundle() == 'organizations') {
+        $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+        $langcode = ($language == 'en') ? '' : $language;
+
+        $variables['view_courses_url'] = '/'.$langcode .'/training-providers/'.$variables['term']->id().'/courses';
+      }
+    }
+  }
+}

@@ -32,5 +32,6 @@
 <div{{ attributes.setAttribute('id', 'taxonomy-term-' ~ term.id).addClass(classes) }}>
   <div class="content">
     {{ content }}
+    <a class="view-courses-link" href="{{ view_courses_url }}">{% trans %}View available courses{% endtrans %}</a>
   </div>
 </div>
