@@ -13,7 +13,7 @@ display:
         field_course_town:
           label: Kunta
         field_course_fee:
-          label: 'Hinta (€)'
+          label: Hinta
         field_organizers_course_id:
           label: 'Kurssin ID'
       empty:

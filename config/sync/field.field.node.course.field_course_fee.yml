@@ -9,7 +9,7 @@ id: node.course.field_course_fee
 field_name: field_course_fee
 entity_type: node
 bundle: course
-label: 'Price (€)'
+label: Price
 description: ''
 required: false
 translatable: false
@@ -19,5 +19,5 @@ settings:
   min: null
   max: null
   prefix: ''
-  suffix: €
+  suffix: ' €'
 field_type: decimal

@@ -11,7 +11,7 @@ display:
         field_course_town:
           label: 'Город или населённый пункт'
         field_course_fee:
-          label: 'Стоимость (€)'
+          label: Стоимость
         field_organizers_course_id:
           label: 'Идентификационный номер курса'
       empty:
