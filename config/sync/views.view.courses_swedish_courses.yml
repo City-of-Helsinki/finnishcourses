@@ -649,7 +649,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Fee
+          label: Price
           exclude: false
           alter:
             alter_text: false

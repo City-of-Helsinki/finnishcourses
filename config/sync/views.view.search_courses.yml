@@ -985,7 +985,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Price (€)'
+          label: Price
           exclude: false
           alter:
             alter_text: false

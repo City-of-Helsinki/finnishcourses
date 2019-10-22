@@ -21,3 +21,16 @@
     }
   }
 }
+
+.view-taxonomy-term-organization {
+  .view-courses-link {
+    display: inline-block;
+    margin-top: 30px;
+    &:after {
+      content: url(../images/icons/baseline-arrow_forward-24px.svg);
+      bottom: -7px;
+      left: 3px;
+      position: relative;
+    }
+  }
+}
