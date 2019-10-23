@@ -181,6 +181,9 @@
             },
             "drupal/ultimate_cron": {
                 "Ability to unlock a cron job": "https://www.drupal.org/files/issues/2018-07-16/ultimate-cron_add-unlock-operation_2977639_2.patch"
+            },
+            "drupal/devel": {
+                "Drupal Kint fixed protected value access": "https://www.drupal.org/files/issues/devel.ksm_.2857361.18.patch"
             }
         },
         "drupal-scaffold": {

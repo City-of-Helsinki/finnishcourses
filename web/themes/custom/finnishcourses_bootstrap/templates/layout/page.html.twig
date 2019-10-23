@@ -79,7 +79,10 @@
                       <div class="mobile-menu">
                       <img class="mobile-menu-icon" src="{{ base_path ~ directory }}/images/icons/menu.svg"/>
                       <img class="mobile-close-icon" src="{{ base_path ~ directory }}/images/icons/close.svg"/>
-                      {{ mobile_menu }}
+                      <div class="mobile-menu-wrapper">
+                        {{ mobile_menu_main }}
+                        {{ mobile_menu_secondary }}
+                      </div>
                       </div>
                     </div>
                 </div>

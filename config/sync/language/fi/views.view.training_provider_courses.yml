@@ -13,7 +13,7 @@ display:
         field_course_town:
           label: Kunta
         field_course_fee:
-          label: 'Hinta (€)'
+          label: Hinta
         field_organizers_course_id:
           label: 'Kurssin ID'
       empty:
@@ -21,3 +21,6 @@ display:
           content:
             value: "<p>Ei tulevia kursseja tällä hetkellä.</p>\r\n"
             format: basic_html
+      arguments:
+        tid:
+          title: '{{ arguments.tid }} - Kurssit'
