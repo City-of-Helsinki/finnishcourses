@@ -16,10 +16,30 @@
       .nav-item {
         a {
           color: $link-color-white;
+          :nth-last-child(n + 4) {
+            font-size: 24px;
+
+          }
         }
       }
     }
   }
+}
+
+.mobile-menu-main {
+  font-size: 28pt;
+  font-weight: 900;
+  line-spacing: 34pt;
+  letter-spacing: 0.02pt;
+}
+
+.mobile-menu-secondary {
+  margin-top: 44pt;
+  line-spacing: 34pt;
+  font-size: 16pt;
+  font-size: 16pt;
+  font-size: 16pt;
+  letter-spacing: 0.01pt;
 }
 
 .mobile-menu-icon {
