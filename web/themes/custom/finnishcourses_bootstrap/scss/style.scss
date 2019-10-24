@@ -111,6 +111,19 @@ body {
   }
 }
 
+.path-search {
+  .region-secondary-menu {
+    .navbar-brand {
+      display: none;
+    }
+  }
+  .main {
+    @include media-breakpoint-down(sm) {
+      margin-top: 50px;
+    }
+  }
+}
+
 .path-frontpage {
   .block-entity-viewnode {
     height: 478px;
