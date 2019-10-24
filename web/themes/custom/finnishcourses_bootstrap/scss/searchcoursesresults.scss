@@ -44,14 +44,14 @@
     border-bottom: 1px solid $border-shade;
     width: 800px;
     margin: auto;
-    @include media-breakpoint-down(sm-t) {
+    @include media-breakpoint-only(sm-t) {
       max-width: 600px;
     }
     @include media-breakpoint-down(sm) {
       padding-top: 0;
       padding-bottom: 0;
-      margin: 20px 0 25px 0;
-      max-width: 500px;
+      margin-top: 20px;
+      max-width: 320px;
     }
   }
 
@@ -163,6 +163,7 @@
         background-color: $dark-schedule-shade;
         @include media-breakpoint-down(sm) {
           height: 85px;
+          width: 43px;
         }
         .office-hours__item-slots {
           @include media-breakpoint-down(sm) {
