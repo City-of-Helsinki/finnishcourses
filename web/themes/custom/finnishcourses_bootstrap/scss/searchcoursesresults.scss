@@ -51,7 +51,7 @@
       padding-top: 0;
       padding-bottom: 0;
       margin-top: 20px;
-      max-width: 450px;
+      max-width: 320px;
     }
   }
 
@@ -163,6 +163,7 @@
         background-color: $dark-schedule-shade;
         @include media-breakpoint-down(sm) {
           height: 85px;
+          width: 43px;
         }
         .office-hours__item-slots {
           @include media-breakpoint-down(sm) {
