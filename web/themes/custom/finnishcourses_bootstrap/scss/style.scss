@@ -114,7 +114,9 @@ body {
 .path-search {
   .region-secondary-menu {
     .navbar-brand {
-      display: none;
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
     }
   }
   .main {
