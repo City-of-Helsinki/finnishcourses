@@ -1,0 +1,15 @@
+diff --git a/core/modules/user/src/Controller/UserController.php b/core/modules/user/src/Controller/UserController.php
+index 05316684e6..08f490e36f 100644
+--- a/core/modules/user/src/Controller/UserController.php
++++ b/core/modules/user/src/Controller/UserController.php
+@@ -181,6 +181,11 @@ public function getResetPassForm(Request $request, $uid) {
+       throw new AccessDeniedHttpException();
+     }
+ 
++    if (!Crypt::hashEquals($hash, user_pass_rehash($user, $timestamp))) {
++      // Given hash doesn't match user and timestamp.
++      throw new AccessDeniedHttpException();
++    }
++
+     // Time out, in seconds, until login URL expires.
+     $timeout = $this->config('user.settings')->get('password_reset_timeout');
