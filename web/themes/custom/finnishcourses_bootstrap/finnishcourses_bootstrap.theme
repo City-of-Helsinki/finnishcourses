@@ -139,9 +139,9 @@ function finnishcourses_bootstrap_preprocess_taxonomy_term(&$variables) {
       if ($variables['term']->bundle() == 'organizations') {
         $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
-        $langcode = ($language == 'en') ? '' : $language;
+        $langcode = ($language == 'en') ? '' : '/'.$language;
 
-        $variables['view_courses_url'] = '/'.$langcode .'/training-providers/'.$variables['term']->id().'/courses';
+        $variables['view_courses_url'] = $langcode .'/training-providers/'.$variables['term']->id().'/courses';
       }
     }
   }
