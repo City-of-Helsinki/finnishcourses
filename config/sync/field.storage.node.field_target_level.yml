@@ -39,6 +39,9 @@ settings:
       value: keskitaso_B2_1
       label: 'Intermediate level B2.1'
     -
+      value: keskitaso_B2_2
+      label: 'Intermediate level B2.2'
+    -
       value: ylin_taso_C
       label: 'Advanced level C'
   allowed_values_function: ''
