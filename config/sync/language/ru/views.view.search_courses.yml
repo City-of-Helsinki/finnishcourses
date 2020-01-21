@@ -88,3 +88,6 @@ display:
         field_target_level:
           expose:
             label: 'Целевой уровень'
+      header:
+        result:
+          content: '@total курсов найдено по вашему запросу'

@@ -10,6 +10,7 @@ display:
         nothing:
           alter:
             text: '<a class="show-courses" href="/ru/training-providers/{{ tid }}/courses">Показать курсы</a>'
+      title: "Организаторы обучения\r\n"
   training_providers:
     display_title: 'Организаторы обучения'
     display_options:
