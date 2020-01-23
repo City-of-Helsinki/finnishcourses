@@ -680,10 +680,28 @@ function finnishcourses_base_preprocess_office_hours(&$variables) {
   }
 }
 
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function finnishcourses_base_preprocess_views_view_fields(&$variables) {
+  if (isset($variables['view']) && in_array($variables['view']->id(), ['search_courses', 'courses_swedish_courses'])) {
+
+    // Get nid from Search API item.
+    /** @var \Drupal\views\ResultRow $row */
+    $row = $variables['row'];
+    /** @var Drupal\search_api\Item\Item $item */
+    $item = $row->_item;
+    $nid = $item->getOriginalObject()->get('nid')->value;
+
+    // Add an id attribute containing the nid to the title field.
+    $variables['fields']['title']->element_attributes->setAttribute('id', 'title-' . $nid);
+  }
+}
+
 function finnishcourses_base_preprocess_views_view_field(&$variables) {
   if (isset($variables['field']) && !empty($variables['field']->field) && $variables['field']->field == 'nid') {
     $nid = $variables['output']->__toString();
-    
+
     if (!empty($nid)) {
       $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
       $node = node_load($nid);
@@ -696,6 +714,7 @@ function finnishcourses_base_preprocess_views_view_field(&$variables) {
       $nodePath = $node->toUrl('canonical', ['language' => $node->language()])->setAbsolute()->toString();
 
       $variables['node_path'] = $nodePath;
+      $variables['nid'] = $nid;
 
     }
   }
@@ -725,8 +744,9 @@ function finnishcourses_base_preprocess_views_view_field(&$variables) {
       }
 
     }
+
     // $nid = $variables['output']->__toString();
-    
+
     // if (!empty($nid)) {
     //   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
     //   $node = node_load($nid);
@@ -749,7 +769,7 @@ function finnishcourses_base_menu_local_tasks_alter(&$data, $route_name) {
   if (!in_array('administrator', $roles)) {
     if (array_key_exists('quick_node_clone.node.quick_clone', $data['tabs'][0])) {
       unset($data['tabs'][0]['quick_node_clone.node.quick_clone']);
-    }    
+    }
   }
 
   if (!in_array('administrator', $roles) && !in_array('organization_admin', $roles)) {
@@ -823,7 +843,7 @@ function finnishcourses_base_language_switch_links_alter(&$variables) {
     //     //kint($node->getTranslationStatus('sv'));
     //     $variables[$key]['url'] = Url::fromRoute('<front>', [], ['language' => $key]);
     //   }
-    // }     
+    // }
 
   }
 }
