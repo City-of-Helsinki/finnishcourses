@@ -154,7 +154,6 @@ AddEncoding gzip svgz
   # Specifically, disallow autoload.php from being served directly.
   RewriteRule "^(.+/.*|autoload)\.php($|/)" - [F]
 
-
   # Rules to correctly serve gzip compressed CSS and JS files.
   # Requires both mod_rewrite and mod_headers to be enabled.
   <IfModule mod_headers.c>

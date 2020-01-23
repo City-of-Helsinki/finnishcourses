@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ffcdb6787ac16e247e192a6f90d89aa1",
+    "content-hash": "3b454e421f90171115a45492f5761426",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -127,7 +127,9 @@
             "version": "1.9.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/uxsolutions/bootstrap-datepicker/archive/master.zip"
+                "url": "https://github.com/uxsolutions/bootstrap-datepicker/archive/master.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library"
         },
@@ -217,7 +219,9 @@
             "version": "2.1.13",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fonini/ckeditor-youtube-plugin/archive/v2.1.13.zip"
+                "url": "https://github.com/fonini/ckeditor-youtube-plugin/archive/v2.1.13.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library"
         },
@@ -1223,7 +1227,9 @@
             "version": "2.5.20",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/xdan/datetimepicker/archive/2.5.20.zip"
+                "url": "https://github.com/xdan/datetimepicker/archive/2.5.20.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "drupal-library"
         },
@@ -3635,7 +3641,8 @@
                 "patches_applied": {
                     "Grouped exposed filters do not work like they should": "https://www.drupal.org/files/issues/1810148-58.patch",
                     "Untranslatable aliases generation fix for translations": "https://www.drupal.org/files/issues/2019-05-17/2689459-106.patch",
-                    "User reset security patch": "patches/core/drupal-user-reset.patch"
+                    "User reset security patch": "patches/core/drupal-user-reset.patch",
+                    "https://www.drupal.org/project/drupal/issues/2884296": "https://www.drupal.org/files/issues/2019-11-22/2884296-29.patch"
                 }
             },
             "autoload": {
@@ -10504,6 +10511,7 @@
                 "psr",
                 "psr-7"
             ],
+            "abandoned": "laminas/laminas-diactoros",
             "time": "2019-08-06T17:53:53+00:00"
         },
         {
@@ -10549,6 +10557,7 @@
                 "escaper",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-escaper",
             "time": "2019-09-05T20:03:20+00:00"
         },
         {
@@ -10612,6 +10621,7 @@
                 "feed",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-feed",
             "time": "2019-03-05T20:08:49+00:00"
         },
         {
@@ -10658,6 +10668,7 @@
                 "stdlib",
                 "zf"
             ],
+            "abandoned": "laminas/laminas-stdlib",
             "time": "2018-08-28T21:34:05+00:00"
         }
     ],
