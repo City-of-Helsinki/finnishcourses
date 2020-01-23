@@ -15,7 +15,6 @@ display:
         field_starting_level:
           expose:
             label: Aloitustaso
-            description: ''
           group_info:
             group_items:
               1:
@@ -28,10 +27,6 @@ display:
         field_course_fee:
           expose:
             label: 'Hinta (€)'
-            description: ''
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
           group_info:
             label: 'Hinta (€)'
             group_items:
@@ -45,7 +40,6 @@ display:
             label: 'Kurssi alkaa'
           group_info:
             label: 'Kurssi alkaa'
-            description: ''
         field_course_times_of_day:
           expose:
             label: Kellonaika
