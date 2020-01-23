@@ -45,7 +45,7 @@ function finnishcourses_bootstrap_preprocess_node(&$variables) {
       $courseTown = $node->get('field_course_town')->target_id;
       $town = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($courseTown);
       $townName = $town->getName();
-      
+
     }
 
     if (!$node->get('field_course_organization')->isEmpty()) {
@@ -90,6 +90,7 @@ function finnishcourses_bootstrap_preprocess_node(&$variables) {
 }
 
 function finnishcourses_bootstrap_preprocess_page(&$variables) {
+  $menus = array('main','footer', 'foo', 'foote');
 
   $combined_tree = array();
   $menu_tree = \Drupal::menuTree();
@@ -105,7 +106,7 @@ function finnishcourses_bootstrap_preprocess_page(&$variables) {
   // Force the entire tree to be build by setting expandParents to an
   // empty array.
   $parameters->expandedParents = array();
-  
+
   $main_menu_tree_items = $menu_tree->load(trim('main'), $parameters);
   $main_menu_tree_manipulated = $menu_tree->transform($main_menu_tree_items, $manipulators);
   $main_menu = $menu_tree->build($main_menu_tree_manipulated);
