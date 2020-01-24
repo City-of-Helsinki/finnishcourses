@@ -76,7 +76,7 @@
         content: ";";
       }
       &:last-child {
-        &::after {  
+        &::after {
           content: "";
         }
       }
@@ -117,7 +117,7 @@
         margin-bottom: 20px;
       }
 
-      .views-field-title {
+      .views-field-title > h2 {
         font-size: 24px;
         font-weight: 900;
         margin-bottom: 10px;

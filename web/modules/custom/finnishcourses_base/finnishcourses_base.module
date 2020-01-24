@@ -4,6 +4,8 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Form\FormState;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\Core\TypedData\Exception\MissingDataException;
+use Drupal\search_api\SearchApiException;
 use Drupal\taxonomy\Entity\Term;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Language\LanguageInterface;
@@ -688,15 +690,28 @@ function finnishcourses_base_preprocess_office_hours(&$variables) {
 function finnishcourses_base_preprocess_views_view_fields(&$variables) {
   if (isset($variables['view']) && in_array($variables['view']->id(), ['search_courses', 'courses_swedish_courses'])) {
 
-    // Get nid from Search API item.
     /** @var \Drupal\views\ResultRow $row */
     $row = $variables['row'];
-    /** @var Drupal\search_api\Item\Item $item */
-    $item = $row->_item;
-    $nid = $item->getOriginalObject()->get('nid')->value;
 
-    // Add an id attribute containing the nid to the title field.
-    $variables['fields']['title']->element_attributes->setAttribute('id', 'title-' . $nid);
+    if (isset($row->nid)) {
+      $nid = $row->nid;
+    }
+    elseif (isset($row->_item)) {
+      /** @var Drupal\search_api\Item\Item $item */
+      $item = $row->_item;
+      try {
+        $nid = $item->getOriginalObject()->get('nid')->value;
+      }
+      catch (MissingDataException $e) {
+      }
+      catch (SearchApiException $e) {
+      }
+    }
+
+    if (isset($nid)) {
+      // Add an id attribute containing the nid to the title field.
+      $variables['fields']['title']->element_attributes->setAttribute('id', 'title-' . $nid);
+    }
   }
 }
 
