@@ -18,7 +18,7 @@ id: feedback
 title: Feedback
 description: ''
 category: ''
-elements: "type_of_feedback:\n  '#type': radios\n  '#title': 'Type of feedback'\n  '#options':\n    praise: Praise\n    criticism: Criticism\n    question: Question\n    development_suggestion: 'Development suggestion'\n    other: Other\ntitle:\n  '#type': textfield\n  '#title': Title\nmessage:\n  '#type': textarea\n  '#title': Message\n  '#required': true\ncontact_information:\n  '#type': webform_markup\n  '#display_on': both\n  '#markup': |\n    <h2>Contact information</h2>\n    Give your contact information if you wish for a personal answer.\nname_pseudonym:\n  '#type': textfield\n  '#title': Name/pseudonym\nemail_address:\n  '#type': email\n  '#title': 'Email address'\nphone_number:\n  '#type': tel\n  '#title': 'Phone number'\nstreet_address:\n  '#type': textfield\n  '#title': 'Street address'\npostal_code:\n  '#type': textfield\n  '#title': 'Postal code'\npost_office:\n  '#type': textfield\n  '#title': 'Post office'"
+elements: "type_of_feedback:\n  '#type': radios\n  '#title': 'Type of feedback'\n  '#options':\n    praise: Praise\n    criticism: Criticism\n    question: Question\n    development_suggestion: 'Development suggestion'\n    other: Other\ntitle:\n  '#type': textfield\n  '#title': Title\nmessage:\n  '#type': textarea\n  '#title': Message\n  '#required': true\ncontact_information:\n  '#type': webform_markup\n  '#display_on': both\n  '#markup': |\n    <h2>Contact information</h2>\n    Give your contact information if you wish for a personal answer.\n    \nname_pseudonym:\n  '#type': textfield\n  '#title': Name/pseudonym\nemail_address:\n  '#type': email\n  '#title': 'Email address'\nphone_number:\n  '#type': tel\n  '#title': 'Phone number'\nstreet_address:\n  '#type': textfield\n  '#title': 'Street address'\npostal_code:\n  '#type': textfield\n  '#title': 'Postal code'\npost_office:\n  '#type': textfield\n  '#title': 'Post office'\nservice_request_id:\n  '#type': hidden\n  '#title': 'Service request id'\n  '#default_value': '[webform:handler:remote_post:completed:0:service_request_id]'"
 css: ''
 javascript: ''
 settings:
@@ -186,7 +186,7 @@ handlers:
     id: email
     label: Email
     handler_id: email
-    status: true
+    status: false
     conditions: {  }
     weight: 0
     settings:
@@ -216,3 +216,61 @@ handlers:
       sender_mail: ''
       sender_name: ''
       theme_name: ''
+  remote_post:
+    id: remote_post
+    label: 'Post to Open311'
+    handler_id: remote_post
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      method: POST
+      type: x-www-form-urlencoded
+      excluded_data:
+        serial: serial
+        sid: sid
+        uuid: uuid
+        token: token
+        uri: uri
+        created: created
+        completed: completed
+        changed: changed
+        in_draft: in_draft
+        current_page: current_page
+        remote_addr: remote_addr
+        uid: uid
+        langcode: langcode
+        webform_id: webform_id
+        entity_type: entity_type
+        entity_id: entity_id
+        locked: locked
+        sticky: sticky
+        notes: notes
+        type_of_feedback: type_of_feedback
+        title: title
+        message: message
+        name_pseudonym: name_pseudonym
+        email_address: email_address
+        phone_number: phone_number
+        street_address: street_address
+        postal_code: postal_code
+        post_office: post_office
+        service_request_id: service_request_id
+      custom_data: ''
+      custom_options: ''
+      debug: false
+      completed_url: '[FINNISHCOURSES_OPEN311_API_URL]'
+      completed_custom_data: "api_key: '[FINNISHCOURSES_OPEN311_API_KEY]'\r\nservice_code: '[FINNISHCOURSES_OPEN311_API_SERVICE_CODE]'\r\ntitle: '[webform_submission:values:type_of_feedback]: [webform_submission:values:title]'\r\ndescription: '[webform_submission:values:message]'\r\naddress_string: '[webform_submission:values:street_address], [webform_submission:values:postal_code] [webform_submission:values:post_office]'\r\nemail: '[webform_submission:values:email_address]'\r\nfirst_name: '[webform_submission:values:name_pseudonym]'\r\nphone: '[webform_submission:values:phone_number]'"
+      updated_url: ''
+      updated_custom_data: ''
+      deleted_url: ''
+      deleted_custom_data: ''
+      draft_created_url: ''
+      draft_created_custom_data: ''
+      draft_updated_url: ''
+      draft_updated_custom_data: ''
+      converted_url: ''
+      converted_custom_data: ''
+      message: ''
+      messages: {  }
+      error_url: ''

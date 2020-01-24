@@ -8,6 +8,8 @@ use Drupal\taxonomy\Entity\Term;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\course_services\CourseDataService;
+use Drupal\webform\Plugin\WebformHandlerInterface;
+
 /**
  * Implements hook_element_info_alter().
  */
@@ -858,4 +860,34 @@ function finnishcourses_base_theme() {
       'template' => 'sitemap-menu-links',
     ],
   ];
+}
+
+/**
+ * Implements hook_webform_handler_invoke_alter().
+ */
+function finnishcourses_base_webform_handler_invoke_alter(WebformHandlerInterface $handler, $method_name, array &$args) {
+  if ($handler->getHandlerId() == 'remote_post' && $method_name == 'submit_form') {
+    $config = $handler->getConfiguration();
+    if (isset($config['settings']['completed_url'])) {
+      _finnishcourses_base_replace_with_env_var(
+        'FINNISHCOURSES_OPEN311_API_URL',
+        $config['settings']['completed_url']
+      );
+    }
+    if (isset($config['settings']['completed_custom_data'])) {
+      _finnishcourses_base_replace_with_env_var(
+        'FINNISHCOURSES_OPEN311_API_KEY',
+        $config['settings']['completed_custom_data']
+      );
+      _finnishcourses_base_replace_with_env_var(
+        'FINNISHCOURSES_OPEN311_API_SERVICE_CODE',
+        $config['settings']['completed_custom_data']
+      );
+    }
+    $handler->setConfiguration($config);
+  }
+}
+
+function _finnishcourses_base_replace_with_env_var($varname, &$subject) {
+  $subject = str_replace('[' . $varname . ']', getenv($varname), $subject);
 }
