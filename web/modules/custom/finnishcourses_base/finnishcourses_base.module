@@ -786,16 +786,16 @@ function finnishcourses_base_menu_local_tasks_alter(&$data, $route_name) {
 
   // Hide Clone tab for no administrators
   if (!in_array('administrator', $roles)) {
-    if (array_key_exists('quick_node_clone.node.quick_clone', $data['tabs'][0])) {
+    if (!empty($data['tabs']) && array_key_exists('quick_node_clone.node.quick_clone', $data['tabs'][0])) {
       unset($data['tabs'][0]['quick_node_clone.node.quick_clone']);
     }
   }
 
   if (!in_array('administrator', $roles) && !in_array('organization_admin', $roles)) {
-    if (array_key_exists('entity.user.canonical', $data['tabs'][0])) {
+    if (!empty($data['tabs']) && array_key_exists('entity.user.canonical', $data['tabs'][0])) {
       unset($data['tabs'][0]['entity.user.canonical']);
     }
-    if (array_key_exists('views_view:view.scheduler_scheduled_content.user_page', $data['tabs'][0])) {
+    if (!empty($data['tabs']) && array_key_exists('views_view:view.scheduler_scheduled_content.user_page', $data['tabs'][0])) {
       unset($data['tabs'][0]['views_view:view.scheduler_scheduled_content.user_page']);
     }
   }
