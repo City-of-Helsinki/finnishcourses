@@ -688,7 +688,9 @@ function finnishcourses_base_preprocess_office_hours(&$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function finnishcourses_base_preprocess_views_view_fields(&$variables) {
-  if (isset($variables['view']) && in_array($variables['view']->id(), ['search_courses', 'courses_swedish_courses'])) {
+  if (isset($variables['view']) && in_array($variables['view']->id(), [
+    'search_courses', 'courses_swedish_courses', 'courses_yki_courses',
+  ])) {
 
     /** @var \Drupal\views\ResultRow $row */
     $row = $variables['row'];

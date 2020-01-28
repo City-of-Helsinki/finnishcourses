@@ -1,0 +1,10 @@
+display:
+  default:
+    display_options:
+      title: YKI-kurssit
+  yki_courses:
+    display_options:
+      display_extenders:
+        metatag_display_extender:
+          metatags:
+            title: 'YKI-kurssit - Finnishcourses.fi'
