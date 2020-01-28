@@ -109,10 +109,12 @@
         <div class="field__label">{% trans %}Course dates{% endtrans %}</div>
         <div class="field__item">{{ content.field_course_start_date }} - {{ content.field_course_end_date }}</div>
       </div>
-      <div class="course-location">
-        <div class="field__label">{% trans %}Town{% endtrans %}</div>
-        <div class="field__item">{{ course_town }}, {{ course_location }} </div>
-      </div>      
+      {% if not node.field_online_course.value %}
+        <div class="course-location">
+          <div class="field__label">{% trans %}Town{% endtrans %}</div>
+          <div class="field__item">{{ course_town }}, {{ course_location }} </div>
+        </div>
+      {% endif %}
       {{ content.field_course_fee }}
       {{ content.field_course_week_hours }}
       {% if node.field_ask_exact_times.value %}
@@ -137,7 +139,7 @@
       {{ content.field_ask_more_email }}
       {{ content.field_course_online_address }}
     </div>
-    
+
     <div class="course-organizer">
       <h3>{% trans %}Training provider{% endtrans %}</h3>
       {{ content.field_course_organization }}

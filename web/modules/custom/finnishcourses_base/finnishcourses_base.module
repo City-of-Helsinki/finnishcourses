@@ -689,20 +689,23 @@ function finnishcourses_base_preprocess_office_hours(&$variables) {
  */
 function finnishcourses_base_preprocess_views_view_fields(&$variables) {
   if (isset($variables['view']) && in_array($variables['view']->id(), [
-    'search_courses', 'courses_swedish_courses', 'courses_yki_courses',
+    'search_courses',
+    'courses_swedish_courses',
+    'courses_yki_courses',
+    'training_provider_courses',
   ])) {
 
     /** @var \Drupal\views\ResultRow $row */
     $row = $variables['row'];
 
-    if (isset($row->nid)) {
-      $nid = $row->nid;
+    if (isset($row->_entity)) {
+      $node = $row->_entity;
     }
     elseif (isset($row->_item)) {
       /** @var Drupal\search_api\Item\Item $item */
       $item = $row->_item;
       try {
-        $nid = $item->getOriginalObject()->get('nid')->value;
+        $node = $item->getOriginalObject()->getValue();
       }
       catch (MissingDataException $e) {
       }
@@ -710,9 +713,14 @@ function finnishcourses_base_preprocess_views_view_fields(&$variables) {
       }
     }
 
-    if (isset($nid)) {
+    if (isset($node)) {
       // Add an id attribute containing the nid to the title field.
-      $variables['fields']['title']->element_attributes->setAttribute('id', 'title-' . $nid);
+      $variables['fields']['title']->element_attributes->setAttribute('id', 'title-' . $node->id());
+
+      // Don't show Town field for online courses.
+      if ($node->field_online_course->value) {
+        unset($variables['fields']['field_course_town']);
+      }
     }
   }
 }
