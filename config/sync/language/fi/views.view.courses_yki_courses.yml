@@ -2,9 +2,29 @@ display:
   default:
     display_options:
       title: YKI-kurssit
+      pager:
+        options:
+          tags:
+            first: '« Ensimmäinen'
+            last: 'Viimeinen »'
+      fields:
+        field_starting_level:
+          label: Lähtötaso
+        field_target_level:
+          label: Tavoitetaso
+        field_course_start_date:
+          label: Ajankohta
+        field_course_town:
+          label: Kunta
+        field_course_fee:
+          label: Hinta
+        field_organizers_course_id:
+          label: 'Kurssin ID'
   yki_courses:
     display_options:
       display_extenders:
         metatag_display_extender:
           metatags:
             title: 'YKI-kurssit - Finnishcourses.fi'
+    display_title: YKI-kurssit
+label: YKI-kurssit

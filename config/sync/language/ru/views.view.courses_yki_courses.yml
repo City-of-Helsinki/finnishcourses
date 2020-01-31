@@ -1,8 +1,6 @@
-label: 'Kурсы шведского языка'
 display:
   default:
     display_options:
-      title: 'Kурсы шведского языка'
       fields:
         field_starting_level:
           label: 'Начальный уровень'
@@ -16,10 +14,3 @@ display:
           label: Стоимость
         field_organizers_course_id:
           label: 'Идентификационный номер курса'
-  swedish_courses:
-    display_title: 'Kурсы шведского языка'
-    display_options:
-      display_extenders:
-        metatag_display_extender:
-          metatags:
-            title: 'Kурсы шведского языка - Finnishcourses.fi'
