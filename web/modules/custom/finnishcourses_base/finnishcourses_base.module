@@ -746,7 +746,12 @@ function finnishcourses_base_preprocess_views_view_field(&$variables) {
     }
   }
 
-  if (isset($variables['view']) && in_array($variables['view']->id(), ['search_courses', 'courses_swedish_courses']) && isset($variables['field']) && !empty($variables['field']->field) && $variables['field']->field == 'title') {
+  if (isset($variables['view']) && in_array($variables['view']->id(), [
+    'search_courses',
+    'courses_swedish_courses',
+    'courses_yki_courses',
+    'training_provider_courses',
+  ]) && isset($variables['field']) && !empty($variables['field']->field) && $variables['field']->field == 'title') {
     // Quite uqly way to fix langcode in result
 
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
