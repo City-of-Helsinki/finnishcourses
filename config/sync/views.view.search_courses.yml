@@ -1848,6 +1848,7 @@ display:
           min_length: null
           fields:
             - features_name
+            - field_course_features
             - field_course_organization
             - field_organizers_course_id
             - organization_name
@@ -1907,7 +1908,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            fi: fi
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
           group: 8
           exposed: false
           expose:
