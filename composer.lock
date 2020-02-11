@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b454e421f90171115a45492f5761426",
+    "content-hash": "d1190dd053cf87da09f62cac96bc0885",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -127,9 +127,7 @@
             "version": "1.9.0",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/uxsolutions/bootstrap-datepicker/archive/master.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://github.com/uxsolutions/bootstrap-datepicker/archive/master.zip"
             },
             "type": "drupal-library"
         },
@@ -219,9 +217,7 @@
             "version": "2.1.13",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fonini/ckeditor-youtube-plugin/archive/v2.1.13.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://github.com/fonini/ckeditor-youtube-plugin/archive/v2.1.13.zip"
             },
             "type": "drupal-library"
         },
@@ -1227,9 +1223,7 @@
             "version": "2.5.20",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/xdan/datetimepicker/archive/2.5.20.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://github.com/xdan/datetimepicker/archive/2.5.20.zip"
             },
             "type": "drupal-library"
         },
@@ -4624,6 +4618,60 @@
             "homepage": "https://www.drupal.org/project/file_mdm",
             "support": {
                 "source": "https://git.drupalcode.org/project/file_mdm"
+            }
+        },
+        {
+            "name": "drupal/filelog",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/filelog.git",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/filelog-8.x-1.0.zip",
+                "reference": "8.x-1.0",
+                "shasum": "797e098beb2ffcaddce7943e5265c460a7329d29"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "php": "^7.1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1529609020",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Burschka",
+                    "homepage": "https://github.com/cburschka-pwc",
+                    "email": "christoph.burschka@pwc-digital.ch",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Logs system events to a file.",
+            "homepage": "https://www.drupal.org/project/filelog",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/filelog",
+                "issues": "https://www.drupal.org/project/issues/filelog"
             }
         },
         {
