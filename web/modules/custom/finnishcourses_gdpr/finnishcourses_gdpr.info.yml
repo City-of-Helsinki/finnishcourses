@@ -1,0 +1,5 @@
+name: 'Finnishcourses GDPR'
+type: module
+description: 'Create additional log lines'
+package: 'Finnishcourses custom'
+core: 8.x

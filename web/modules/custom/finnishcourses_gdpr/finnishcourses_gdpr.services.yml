@@ -1,0 +1,5 @@
+services:
+  finnishcourses_gdpr.event_subscriber:
+    class: Drupal\finnishcourses_gdpr\EventSubscriber\FinnishcoursesGdprSubscriber
+    tags:
+      - {name: event_subscriber}
