@@ -67,9 +67,26 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     if (!empty($form['field_course_week_hours']['widget']['#type'])) {
       $form['field_course_week_hours']['widget']['#type'] = 'fieldset';
     }
+	
+	global $course_editor;
+	global $administrator;
+    $administrator = FALSE;
+	$course_editor = FALSE;
+    $administrator = FALSE;
+	$current_user = \Drupal::currentUser();
+    $user = \Drupal\user\Entity\User::load($current_user->id());
+	
+	if($user->hasRole('administrator')){
+		$administrator = TRUE;
+	}
+	if($user->hasRole('course_editor')){
+		$course_editor = TRUE;
+	}
+	
 
     // Well, they wanted to disable this field
-    if (!empty($form['field_course_unpublish_date'])) {
+	//  if (!empty($form['field_course_unpublish_date'])) {
+    if (!$administrator) {
       unset($form['field_course_unpublish_date']);
     }
 
@@ -343,9 +360,35 @@ function finnishcourse_infofinland_user_form_submit(array $form, FormStateInterf
 
 
 function finnishcourses_base_node_presave(EntityInterface $entity) {
-
+	
   // Generate course id
   if (is_object($entity) && method_exists($entity, 'bundle') && $entity->bundle() == 'course') {
+	  
+	global $course_editor;
+    global $administrator;  
+	  
+	// New unpublish date is current + 2 weeks in format 2020-02-12
+	$new_unpublish_date = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d")+14, date("Y")));
+
+	// Get current unpublish date
+	$current_unpublish_date = $entity->get('field_course_unpublish_date')->value;
+
+	/* If its needed to compare unpublish dates 
+	 *
+	 * $new_unpublish_date_convert = DateTime::createFromFormat('Y-m-d', $new_unpublish_date);
+	 * $current_unpublish_date_convert = DateTime::createFromFormat('Y-m-d', $current_unpublish_date);
+	 * 
+	 * if ($new_unpublish_date_convert > $current_unpublish_date_convert) {
+	 * 	drupal_set_message($new_unpublish_date . " is bigger than " . $current_unpublish_date);
+	 *	} 
+	*/
+	
+	if ($course_editor && isset($new_unpublish_date) && $entity->original->get('status')->value == 0 && $entity->get('status')->value == 1 ) {
+		// Set new unpublish date
+		$entity->field_course_unpublish_date->value = $new_unpublish_date;
+	}
+
+	 
     if (empty($entity->get('field_course_id')->getValue())) {
       $year = date('y');
       if (empty(\Drupal::state()->get('courseNumber'))) {
