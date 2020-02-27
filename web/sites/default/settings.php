@@ -559,7 +559,7 @@ if ($settings['hash_salt']) {
  * See https://www.drupal.org/documentation/modules/file for more information
  * about securing private files.
  */
-# $settings['file_private_path'] = '';
+$settings['file_private_path'] = getenv('FINNISHCOURSES_FILE_PRIVATE_PATH');
 
 /**
  * Session write interval:

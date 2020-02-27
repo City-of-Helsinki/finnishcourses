@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.course.field_course_unpublish_date
     - field.field.node.course.field_course_week_hours
     - field.field.node.course.field_map_link
+    - field.field.node.course.field_meta_tags
     - field.field.node.course.field_number_of_lessons
     - field.field.node.course.field_online_course
     - field.field.node.course.field_organizers_course_id
@@ -35,6 +36,7 @@ dependencies:
   module:
     - datetime
     - link
+    - metatag
     - office_hours
     - options
     - text
@@ -215,6 +217,13 @@ content:
       target: ''
     third_party_settings: {  }
     type: link_separate
+    region: content
+  field_meta_tags:
+    weight: 27
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
     region: content
   field_number_of_lessons:
     weight: 6

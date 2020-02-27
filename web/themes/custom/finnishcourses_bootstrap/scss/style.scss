@@ -8,6 +8,7 @@ Description: Bootstrap 4 with Sass
 /* GENERAL STYLES
 -------------------------------------------------*/
 
+
 body {
   background: $body-bg;
   font-family: $font-family-base !important; // !important, becuase the font-family was override by another css (Problems with Mozilla Firefox)

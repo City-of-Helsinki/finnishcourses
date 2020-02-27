@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.front_page.field_header_image
+    - field.field.node.front_page.field_meta_tags
     - field.field.node.front_page.field_text_box_1
     - field.field.node.front_page.field_text_box_2
     - field.field.node.front_page.field_text_box_3
     - node.type.front_page
   module:
     - media_library
+    - metatag
     - path
     - scheduler
     - text
@@ -30,6 +32,12 @@ content:
     settings:
       media_types: {  }
     third_party_settings: {  }
+    region: content
+  field_meta_tags:
+    weight: 29
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   field_text_box_1:
     weight: 26

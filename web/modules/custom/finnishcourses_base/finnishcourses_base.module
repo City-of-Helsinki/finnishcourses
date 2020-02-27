@@ -371,7 +371,7 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
 	$new_unpublish_date = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d")+14, date("Y")));
 
 	// Get current unpublish date
-	$current_unpublish_date = $entity->get('field_course_unpublish_date')->value;
+	//$current_unpublish_date = $entity->get('field_course_unpublish_date')->value;
 
 	/* If its needed to compare unpublish dates 
 	 *
@@ -383,7 +383,7 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
 	 *	} 
 	*/
 	
-	if ($course_editor && isset($new_unpublish_date) && $entity->original->get('status')->value == 0 && $entity->get('status')->value == 1 ) {
+	if (isset($entity->original) && $course_editor && isset($new_unpublish_date) && $entity->original->get('status')->value == 0 && $entity->get('status')->value == 1 ) {
 		// Set new unpublish date
 		$entity->field_course_unpublish_date->value = $new_unpublish_date;
 	}
