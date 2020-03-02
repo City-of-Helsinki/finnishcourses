@@ -134,6 +134,23 @@ function finnishcourses_bootstrap_preprocess_page(&$variables) {
   );
 }
 
+/**
+ * Implements hook_preprocess_page_title().
+ */
+function finnishcourses_bootstrap_preprocess_page_title(&$variables) {
+	
+	// Retrieve an array which contains the path pieces.
+	$current_path = \Drupal::service('path.current')->getPath();
+	$path_args = explode('/', $current_path);
+
+	// set taxonomy name according to language
+	if ($path_args[1] == 'taxonomy' && $path_args[2] == 'term' && is_numeric($path_args[3])) {
+	  $term = \Drupal\taxonomy\Entity\Term::load($path_args[3]);
+	  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+	  $variables['title'] = $term->getTranslation($language)->getName();
+	}
+}
+
 function finnishcourses_bootstrap_preprocess_taxonomy_term(&$variables) {
   if (isset($variables['view_mode']) && $variables['view_mode'] == 'term_page') {
     if (isset($variables['term']) && method_exists($variables['term'], 'bundle')) {
