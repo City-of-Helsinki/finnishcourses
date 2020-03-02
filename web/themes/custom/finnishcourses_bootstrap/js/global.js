@@ -88,6 +88,9 @@
           }
         });
       });
+	  // Front page advanced search date format
+	  $('html:lang(fi) .bef-datepicker').datepicker({ dateFormat: 'd.m.yy' });
+	  $('html:lang(ru) .bef-datepicker').datepicker({ dateFormat: 'd.m.yy' });
     }
   };
 })(jQuery, Drupal);
