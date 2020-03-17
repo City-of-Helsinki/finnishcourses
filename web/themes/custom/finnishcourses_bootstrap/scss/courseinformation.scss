@@ -26,17 +26,24 @@
 .node--type-course {
   padding-bottom: 60px;
   border-bottom: 1px solid $border-shade;
+  
   @include media-breakpoint-down(sm-t) {
     padding-bottom: 0;
 
-    h2 {
-      font-size: 21px;
-      margin-bottom: 15px;
-    }
-    h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
+	#block-finnishcourses-bootstrap-content {
+		.node__content {
+			margin-top: 0;
+		}
+
+		h2 {
+		  font-size: 21px;
+		  margin-bottom: 15px;
+		}
+		h3 {
+		  font-size: 18px;
+		  margin-bottom: 8px;
+		}
+	}
   }
 }
 
@@ -65,6 +72,10 @@
 .field--name-field-course-features {
   .field__label {
     white-space: nowrap;
+	@include media-breakpoint-down(sm) {
+		white-space: normal;
+	}
+	
   }
   .field__items {
     .field__item {
@@ -97,6 +108,7 @@
         position: relative;
       }
     }
+	word-break: break-all;
   }
 }
 
@@ -159,6 +171,7 @@
   @include media-breakpoint-down(sm) {
     font-size: 16px;
     display: table;
+	margin-bottom: 6px;
   }
 
   .field-content {
@@ -175,8 +188,37 @@
     margin-left: 5px;
     @include media-breakpoint-down(sm) {
       font-size: 16px;
+	  margin-left: 0;
+	  
     }
   }
+}
+
+.node__content {
+	.course-label, .field--name-field-course-availability, .field--name-field-course-entry-level,
+	.field--name-field-course-target-level, .course-dates, .course-location, .field--name-field-course-street-address,
+	.field--name-field-course-town, .field--name-field-course-fee, .course-lessons, .field--name-field-books-and-materials,
+	.registration-dates, .enroll-online, .field--name-field-course-id, .field--name-field-course-features,
+	.field--name-field-course-online-address, .field--name-field-website-address, .field--name-field-course-length,
+	.field--name-field-course-in-swedish, .field--name-field-online-course, .field--name-field-number-of-lessons, .field--name-field-registration-email, .organization-name,
+	.field--name-field-starting-level, .field--name-field-target-level, .field--name-field-organizers-course-id, .field--name-field-ask-more-email,
+	.views-field-field-starting-level, .views-field-field-target-level, .views-field-field-course-start-date,
+	.views-field-field-course-town, .views-field-field-course-start-date, .views-field-field-course-fee, .views-field-field-organizers-course-id {
+		@include media-breakpoint-down(sm) {
+			display: grid;
+			grid-template-columns:  45% 50%;
+			grid-column-gap: 5%;
+			margin-bottom: 6px;
+			
+			a {
+				word-break: break-all;
+			}
+			
+			.field-content {
+				margin-left: 0;
+			}		
+		}
+	}
 }
 
 // todo: fix this...
@@ -184,6 +226,13 @@
   .field__item {
     @include media-breakpoint-down(sm) {
       margin-left: 0;
+	  .field {
+		//line-height: 12px;
+		margin-bottom: 0;
+	  }
+	  .field--name-field-course-start-date {
+		margin-left: 2px;
+	  }
     }
   }
 }
@@ -238,7 +287,8 @@
 
 .office-hours {
   display: flex;
-  margin-top: 10px;
+   margin-top: 20px;
+   margin-bottom: 20px;
   text-align: center;
 
   .office-hours__item-label {

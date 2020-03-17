@@ -141,12 +141,12 @@
     </div>
 
     <div class="course-organizer">
-      <h3>{% trans %}Training provider{% endtrans %}</h3>
+      <h2>{% trans %}Training provider{% endtrans %}</h2>
       {{ content.field_course_organization }}
     </div>
 
     <div class="course-registration">
-      <h3>{% trans %}Registration{% endtrans %}</h3>
+      <h2>{% trans %}Registration{% endtrans %}</h2>
       <div class="registration-dates">
         <div class="field__label">{% trans with {'context': 'Registration dates'} %}Dates{% endtrans %}</div>
         <div class="field__item">{{ content.field_registration_start_date }} - {{ content.field_registration_end_date }}</div>

@@ -53,10 +53,20 @@ body {
 
   #block-finnishcourses-bootstrap-page-title {
     @include media-breakpoint-down(sm) {
-      top: 40px;
+      top: 0;
       position: relative;
+	  .title {
+			text-align: left;
+			margin-top: 35px;
+			margin-bottom: 35px;
+		}
     }
   }
+    .group-wrapper {
+	  @include media-breakpoint-down(sm) {
+		margin-top: 40px;
+	  }
+	}
 }
 
 
