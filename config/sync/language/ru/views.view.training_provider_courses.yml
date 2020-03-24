@@ -9,11 +9,13 @@ display:
         field_course_start_date:
           label: Даты
         field_course_town:
-          label: 'Город или населённый пункт'
+          label: Место
         field_course_fee:
           label: Стоимость
         field_organizers_course_id:
           label: 'Идентификационный номер курса'
+        field_online_course:
+          label: Место
       empty:
         area:
           content:

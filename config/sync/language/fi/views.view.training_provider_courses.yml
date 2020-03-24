@@ -11,11 +11,13 @@ display:
         field_course_start_date:
           label: Ajankohta
         field_course_town:
-          label: Kunta
+          label: Paikka
         field_course_fee:
           label: Hinta
         field_organizers_course_id:
           label: 'Kurssin ID'
+        field_online_course:
+          label: Paikka
       empty:
         area:
           content:
