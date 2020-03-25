@@ -75,7 +75,7 @@
         "drupal/conditional_fields": "^1.0@alpha",
         "drupal/config_split": "^1.4",
         "drupal/console": "^1.8",
-        "drupal/core": "8.7.11",
+        "drupal/core": "8.7.12",
         "drupal/delete_all": "^1.2",
         "drupal/devel_debug_log": "^1.0@beta",
         "drupal/embed": "^1.0",
@@ -128,7 +128,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
-        "webflo/drupal-core-require-dev": "8.7.11"
+        "webflo/drupal-core-require-dev": "8.7.12"
     },
     "conflict": {
         "drupal/drupal": "*"

@@ -350,6 +350,19 @@
   }
 }
 
+// Online Course
+
+.views-field-field-online-course {
+  .views-label {
+	font-weight: 700;
+  }
+  .field-content {
+    color: $available;
+	font-weight: bold;
+  }
+}
+
+
 // Course availability
 .not_available {
   .field__item {

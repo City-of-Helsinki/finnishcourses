@@ -111,10 +111,16 @@
       </div>
       {% if not node.field_online_course.value %}
         <div class="course-location">
-          <div class="field__label">{% trans %}Town{% endtrans %}</div>
+          <div class="field__label">{% trans %}Location{% endtrans %}</div>
           <div class="field__item">{{ course_town }}, {{ course_location }} </div>
         </div>
       {% endif %}
+	  {% if node.field_online_course.value %}
+        <div class="course-location online-course">
+          <div class="field__label">{% trans %}Location{% endtrans %}</div>
+          <div class="field__item">{% trans %}Online{% endtrans %}</div>
+        </div>
+      {% endif %}								  		 
       {{ content.field_course_fee }}
       {{ content.field_course_week_hours }}
       {% if node.field_ask_exact_times.value %}
