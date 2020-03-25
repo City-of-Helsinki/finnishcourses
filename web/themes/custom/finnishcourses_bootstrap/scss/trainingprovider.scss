@@ -8,5 +8,21 @@
     .field__item, .field-content {
       margin-left: 5px;
     }
+	
+	@include media-breakpoint-down(sm) {
+			display: grid;
+			grid-template-columns:  45% 50%;
+			grid-column-gap: 5%;
+			margin-bottom: 6px;
+			
+			a {
+				word-break: break-all;
+			}
+			
+			.field__item, .field-content {
+				margin-left: 0;
+			}		
+		}
+		
   }
 }
