@@ -211,7 +211,7 @@
 	.field--name-field-course-in-swedish, .field--name-field-online-course, .field--name-field-number-of-lessons, .field--name-field-registration-email, .organization-name,
 	.field--name-field-starting-level, .field--name-field-target-level, .field--name-field-organizers-course-id, .field--name-field-ask-more-email,
 	.views-field-field-starting-level, .views-field-field-target-level, .views-field-field-course-start-date,
-	.views-field-field-course-town, .views-field-field-course-start-date, .views-field-field-course-fee, .views-field-field-organizers-course-id {
+	.views-field-field-course-town, .views-field-field-online-course, .views-field-field-course-start-date, .views-field-field-course-fee, .views-field-field-organizers-course-id {
 		@include media-breakpoint-down(sm) {
 			display: grid;
 			grid-template-columns:  45% 50%;
