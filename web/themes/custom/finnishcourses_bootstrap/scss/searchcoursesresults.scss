@@ -45,13 +45,15 @@
     width: 800px;
     margin: auto;
     @include media-breakpoint-only(sm-t) {
-      max-width: 600px;
+      /* max-width: 600px; */
+	  width: auto;
     }
     @include media-breakpoint-down(sm) {
       padding-top: 0;
       padding-bottom: 0;
       margin-top: 20px;
-      max-width: 320px;
+	  width: auto;
+      /* max-width: 320px; */
     }
   }
 
@@ -68,12 +70,12 @@
   .views-field-title > h2 {
     font-size: 24px;
     font-weight: 900;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 
     a {
       text-decoration: none; // Override
       @include media-breakpoint-down(sm) {
-        font-size: 18px;
+        font-size: 21px;
       }
     }
   }
@@ -82,7 +84,7 @@
 .views-field-field-course-availability {
   .field--name-field-course-availability {
     .field__item {
-      margin-left: 5px;
+      margin-left: 0;
     }
   }
 }
