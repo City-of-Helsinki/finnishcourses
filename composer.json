@@ -119,7 +119,7 @@
         "drupal/tvi": "^1.0@beta",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/view_unpublished": "^1.0@alpha",
-        "drupal/webform": "^5.2",
+        "drupal/webform": "5.11",
         "drush/drush": "^9.0.0",
         "platformsh/config-reader": "^2.2",
         "vlucas/phpdotenv": "^2.4",
