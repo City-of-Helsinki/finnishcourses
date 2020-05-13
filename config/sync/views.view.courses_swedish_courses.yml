@@ -779,7 +779,7 @@ display:
           settings:
             show_closed: all
             office_hours_first_day: ''
-            day_format: long
+            day_format: short
             time_format: G
             compress: false
             grouped: false
