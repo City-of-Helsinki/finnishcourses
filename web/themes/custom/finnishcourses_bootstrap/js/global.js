@@ -68,7 +68,8 @@
 
       // HAMBURGER MENU
       $(".mobile-menu-icon").click(function () {
-        $(".mobile-menu").css('backgroundColor', '#0073cf');
+        //$(".mobile-menu").css('backgroundColor', '#0073cf');
+		$(".mobile-menu").toggleClass('active');
         $(".region-secondary-menu").css('backgroundColor', '#0073cf');
         $(".mobile-menu-wrapper").slideToggle("fast", function () {
           if ($(window).width() < 850) {
@@ -80,17 +81,21 @@
 
       $(".mobile-close-icon").click(function () {
         $(".mobile-menu-wrapper").slideToggle(function () {
+		$(".mobile-menu").removeClass('active');	
           if ($(window).width() < 850) {
             $(".mobile-close-icon").hide();
             $(".mobile-menu-icon").show();
-            $(".mobile-menu").css('backgroundColor', 'transparent');
-            $(".region-secondary-menu").css('backgroundColor', 'transparent');
+           // $(".mobile-menu").css('backgroundColor', 'transparent');
+            //$(".region-secondary-menu").css('backgroundColor', 'transparent');
           }
         });
       });
 	  // Front page advanced search date format
-	  $('html:lang(fi) .bef-datepicker').datepicker({ dateFormat: 'd.m.yy' });
-	  $('html:lang(ru) .bef-datepicker').datepicker({ dateFormat: 'd.m.yy' });
+	  if ( $( ".bef-datepicker" ).length ) {
+		 console.log('test');
+		$('html:lang(fi) .bef-datepicker').datepicker({ dateFormat: 'd.m.yy' });
+		$('html:lang(ru) .bef-datepicker').datepicker({ dateFormat: 'd.m.yy' });
+	  }
     }
   };
 })(jQuery, Drupal);

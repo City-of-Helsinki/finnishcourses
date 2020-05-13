@@ -2,9 +2,13 @@
 --------------------------------------------------*/
 
 .mobile-menu {
-  @include media-breakpoint-up(sm-t) {
-    display: none;
-  }
+	background: #0073cf;
+	@include media-breakpoint-down(sm-t) {
+		
+	}
+    @include media-breakpoint-up(sm-t) {
+		display: none;
+	}
   .mobile-menu-wrapper {
     text-align: center;
     height: 820px;
@@ -12,52 +16,74 @@
     display: none;
     .nav {
       flex-direction: column;
-
+	   margin: 0 0 0 20px;
+	   text-align: left;
       .nav-item {
+		
         a {
-          color: $link-color-white;
-          :nth-last-child(n + 4) {
-            font-size: 24px;
-
-          }
+			padding: 0;
+			color: $link-color-white;
+			/* :nth-last-child(n + 4) {
+				font-size: 24px;
+			} */
         }
       }
+	  &.navbar-nav {
+		.nav-item {
+			float: left;
+			a {
+				
+			}
+		}
+	  }
     }
+  }
+  &.active {
+	border-top: 1px solid #fff;
+	padding-top: 20px;
   }
 }
 
+
+
 .mobile-menu-main {
-  font-size: 28pt;
-  font-weight: 900;
-  line-spacing: 34pt;
-  letter-spacing: 0.02pt;
+	a {
+	  font-size: 18px;
+	  line-height: 34px;
+	  font-weight: 400;
+	  line-height: 34px;
+	  line-spacing: 34pt;
+	  letter-spacing: 0.02pt;
+	}
 }
 
 .mobile-menu-secondary {
-  margin-top: 44pt;
-  line-spacing: 34pt;
-  font-size: 16pt;
-  font-size: 16pt;
-  font-size: 16pt;
-  letter-spacing: 0.01pt;
+	a {
+		margin-top: 0;
+		line-spacing: 34pt;
+		font-size: 18px;
+		line-height: 34px;
+		font-weight: 400;
+		letter-spacing: 0.02pt;
+	}
 }
 
 .mobile-menu-icon {
-  top: -52px;
-  position: relative;
-  width: 25px;
-  left: 19px;
-  cursor:pointer;
-  @include media-breakpoint-up(sm-t) {
-   display: none;
- }
+	position: absolute;
+    top: 30px;
+	width: 25px;
+	left: 19px;
+	cursor: pointer;
+	@include media-breakpoint-up(sm-t) {
+		display: none;
+	}
 }
 
 .mobile-close-icon {
-  top: -52px;
-  position: relative;
+  position: absolute;
+  top: 30px;
   width: 25px;
   left: 19px;
-  cursor:pointer;
+  cursor: pointer;
   display: none;
 }
