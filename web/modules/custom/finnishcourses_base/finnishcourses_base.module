@@ -598,6 +598,8 @@ function online_validate(&$element, FormStateInterface $form_state, &$complete_f
   $z = $form_state->getValue('course_town');
   if ($z[999] === '999') {
     $form_state->setValueForElement($element, 1);
+  } else {
+	 $form_state->setValueForElement($element, ""); 
   }
 }
 
