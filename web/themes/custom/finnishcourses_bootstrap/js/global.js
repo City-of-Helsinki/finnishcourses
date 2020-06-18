@@ -95,6 +95,7 @@
 		 console.log('test');
 		$('html:lang(fi) .bef-datepicker').datepicker({ dateFormat: 'd.m.yy' });
 		$('html:lang(ru) .bef-datepicker').datepicker({ dateFormat: 'd.m.yy' });
+		$('html:lang(en) .bef-datepicker').datepicker({ dateFormat: 'd.m.yy' });
 	  }
     }
   };
