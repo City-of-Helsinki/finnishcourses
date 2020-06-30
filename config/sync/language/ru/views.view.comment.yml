@@ -23,7 +23,7 @@ display:
             offset_label: Пропустить
       fields:
         comment_bulk_form:
-          action_title: Действие
+          action_title: Action
         subject:
           label: Тема
         name:
@@ -43,7 +43,7 @@ display:
             label: 'Имя автора'
         langcode:
           expose:
-            label: Язык
+            label: Language
       title: Комментарии
       empty:
         area_text_custom:
@@ -68,10 +68,10 @@ display:
             label: 'Имя автора'
         langcode:
           expose:
-            label: Язык
+            label: Language
       fields:
         comment_bulk_form:
-          action_title: Действие
+          action_title: Action
         subject:
           label: Тема
         name:

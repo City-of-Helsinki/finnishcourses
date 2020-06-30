@@ -41,7 +41,7 @@ display:
     display_options:
       fields:
         webform_submission_bulk_form:
-          action_title: Действие
+          action_title: Action
         in_draft:
           label: Черновик
         sticky:
@@ -67,7 +67,7 @@ display:
     display_options:
       fields:
         webform_submission_bulk_form:
-          action_title: Действие
+          action_title: Action
         in_draft:
           label: Черновик
         sticky:

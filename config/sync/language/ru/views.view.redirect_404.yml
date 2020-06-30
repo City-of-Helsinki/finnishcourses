@@ -23,7 +23,7 @@ display:
         timestamp:
           label: 'Последний доступ'
         langcode:
-          label: Язык
+          label: Language
         redirect_404_operations:
           label: Операции
       filters:
@@ -32,7 +32,7 @@ display:
             label: Путь
         langcode:
           expose:
-            label: Язык
+            label: Language
       title: 'Исправление 404 страниц'
   page_1:
     display_title: Страница

@@ -52,7 +52,7 @@ display:
                 title: 'Снято с публикации'
         langcode:
           expose:
-            label: Язык
+            label: Language
       title: Содержимое
       empty:
         area_text_custom:
