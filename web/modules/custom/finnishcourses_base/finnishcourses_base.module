@@ -367,6 +367,20 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
 	global $course_editor;
     global $administrator;  
 	  
+	$days = 14;
+
+	if (isset($entity->field_course_organization->entity->field_courses_unpublishing_cycle->value)) {
+		$days = $entity->field_course_organization->entity->field_courses_unpublishing_cycle->value * 7;
+	}
+
+	$date_now = new DateTime();
+	
+	$course_start_date = new DateTime($entity->field_course_start_date->value);
+	$course_start_date->modify('+' . $days . ' day');
+	
+	// New unpublish date is current + 2 weeks in format 2020-02-12
+	$new_unpublish_date = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d")+$days, date("Y")));
+	$new_unpublish_compare_date = new DateTime($new_unpublish_date);			
 	// New unpublish date is current + 2 weeks in format 2020-02-12
 	$new_unpublish_date = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d")+14, date("Y")));
 
@@ -383,9 +397,10 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
 	 *	} 
 	*/
 	
-	if (isset($entity->original) && $course_editor && isset($new_unpublish_date) && $entity->original->get('status')->value == 0 && $entity->get('status')->value == 1 ) {
+	if (isset($entity->original) && $course_editor && isset($new_unpublish_date) && $entity->original->get('status')->value == 0 && $entity->get('status')->value == 1 && $new_unpublish_compare_date >  $course_start_date) {
 		// Set new unpublish date
 		$entity->field_course_unpublish_date->value = $new_unpublish_date;
+		 \Drupal::logger('finnishcourses_base')->notice('New unpublish date ' . $new_unpublish_date);
 	}
 
 	 
