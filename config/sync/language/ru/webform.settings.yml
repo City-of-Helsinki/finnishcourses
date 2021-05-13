@@ -1,8 +1,6 @@
 settings:
   default_submit_button_label: Отправить
   default_reset_button_label: Сбросить
-  default_wizard_prev_button_label: '< Предыдущая страница'
-  default_wizard_next_button_label: 'Следующая страница >'
   default_wizard_start_label: Начало
   default_wizard_confirmation_label: Завершен
   default_preview_next_button_label: Предпросмотр

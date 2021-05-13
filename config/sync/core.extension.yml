@@ -54,6 +54,7 @@ module:
   finnishcourses_admin: 0
   finnishcourses_base: 0
   finnishcourses_gdpr: 0
+  flood_control: 0
   force_password_change: 0
   geolocation: 0
   geolocation_google_places_api: 0
