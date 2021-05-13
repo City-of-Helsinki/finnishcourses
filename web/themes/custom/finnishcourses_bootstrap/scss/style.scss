@@ -535,3 +535,26 @@ h1, h2, h3, .fieldset-legend {
 		text-align: left;
 	}
 }
+
+
+#views-exposed-form-search-courses-page-1 {
+
+	@include media-breakpoint-up(md) {
+		.form-item-sort-bef-combine {
+			width: 50%;
+		}
+    }
+
+	.form-item-sort-bef-combine {
+		&:after { 
+			right: 26px;
+		}
+	}
+	
+	#edit-actions--2 {
+		display: none;
+	}
+	#edit-submit-fixed--2 {
+		margin-top: 20px;
+	}
+}
