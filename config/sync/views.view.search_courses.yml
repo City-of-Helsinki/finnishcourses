@@ -988,8 +988,8 @@ display:
           label: Location
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: '<span class="field-content">{{ field_online_course }}</span>, {{ field_course_organization }}'
             make_link: false
             path: ''
             absolute: false
@@ -1014,7 +1014,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: '0'
           element_class: ''
           element_label_type: ''
           element_label_class: ''
