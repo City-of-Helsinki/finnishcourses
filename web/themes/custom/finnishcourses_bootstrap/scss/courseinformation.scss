@@ -296,8 +296,10 @@
 }
 
 .course-location.online-course .field__item {
-  font-weight: bold;
-  color: $green-shade;
+  span {
+    font-weight: bold;
+    color: $green-shade;
+  }
 }
 
 .field--name-field-organizers-course-id {

@@ -357,8 +357,10 @@
 	font-weight: 700;
   }
   .field-content {
-    color: $available;
-	font-weight: bold;
+	span {
+		color: $available;
+		font-weight: bold;
+	}
   }
 }
 
