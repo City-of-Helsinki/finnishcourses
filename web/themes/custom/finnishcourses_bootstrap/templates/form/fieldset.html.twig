@@ -24,13 +24,14 @@
   set classes = [
     'js-form-item',
     'form-item',
+	'fieldset',
     'js-form-wrapper',
     'form-group',
     'col-auto',
     errors ? 'has-error',
   ]
 %}
-<div class="fieldset">
+<fieldset{{ attributes.addClass(classes) }}>
   {%
     set legend_span_classes = [
       'fieldset-legend',
@@ -39,9 +40,11 @@
     ]
   %}
   {#  Always wrap fieldset legends in a SPAN for CSS positioning. #}
-  <div class="fieldset-title">
+  {% if legend.title %}
+  <legend class="fieldset-title">
     <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
-  </div>
+  </legend>
+  {% endif %}
   <div class="fieldset-wrapper">
     {% if errors %}
       <div class="alert alert-danger" role="alert">
@@ -59,4 +62,4 @@
       <small{{ description.attributes.addClass('description', 'text-muted') }}>{{ description.content }}</small>
     {% endif %}
   </div>
-</div>
+</fieldset>

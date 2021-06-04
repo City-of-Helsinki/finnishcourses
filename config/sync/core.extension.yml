@@ -54,6 +54,7 @@ module:
   finnishcourses_admin: 0
   finnishcourses_base: 0
   finnishcourses_gdpr: 0
+  flood_control: 0
   force_password_change: 0
   geolocation: 0
   geolocation_google_places_api: 0
@@ -87,6 +88,7 @@ module:
   options: 0
   page_cache: 0
   path: 0
+  path_alias: 0
   pathologic: 0
   permissions_filter: 0
   quick_node_clone: 0
@@ -112,6 +114,7 @@ module:
   simple_sitemap: 0
   single_datetime: 0
   system: 0
+  system_status: 0
   taxonomy: 0
   taxonomy_delete: 0
   telephone: 0

@@ -44,7 +44,15 @@
   }
 }
 
+
 #edit-course-town--wrapper {
+ /*  display: inline-block !important;
+  margin-top: 0; */
+}
+
+#edit-course-town--wrapper, #edit-course-town--2--wrapper {
+
+	margin-top: 0;
   .form-check {
     display: inline-block;
     padding-bottom: 9px;
@@ -54,27 +62,110 @@
     .form-check-label {
       position: relative;
       @include media-breakpoint-down(sm-t) {
-        left: -11px;
+        left: -9px;
       }
     }
   }
-
   .fieldset-wrapper {
     padding-left: 20px;
   }
+  #edit-course-town, #edit-course-town--2 {
+	.form-checkboxes {
+		div.js-form-item {
+			text-align: left;
+		}
+		div.js-form-item-course-town-999 {
+		  width: 80px;
+		  margin: 20px auto 0 auto;;
+			border-bottom: 0;
+			input {
+					&:checked::before {
+						border-color: #129942;	
+					}
+					&:checked::after {
+						border-bottom: 5px solid #129942;
+						border-right: 5px solid #129942;
+					}
+				}
+			div.js-form-item {
+				border-bottom: 0;
+				text-align: left;
+			}
+		}
+	  
+	  
+	  @include media-breakpoint-up(sm-t) {
+		display: grid;
+		grid-gap: 0;
+		justify-self: center;
+		grid-template-columns: repeat(7, 1fr);
+		div.js-form-item {
+			border-bottom: 1px solid #129942;
+		}
+		div.js-form-item-course-town-999 {
+		  grid-column: 1 / span 7;
+		  border-bottom: 0;
+		}
+		
+	  }
+	  @include media-breakpoint-down(sm) {
+		display: grid;
+		grid-gap: 0;
+		justify-self: center;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		div.js-form-item {
+			&:nth-child(5),
+			&:nth-child(6),
+			&:nth-child(7)			{
+				border-bottom: 1px solid #129942;
+			}
+		}
+		
+		
+		
+		div.js-form-item-course-town-999 {
+		  grid-column: 1 / span 3;
+
+		}
+	  }
+	  
+	  
+	}
+  }
 }
 
-#edit-time-of-day--wrapper {
-  display: flex;
-  flex: 1;
-  @include media-breakpoint-down(sm-t) {
-    display: grid;
+.views-exposed-form {
+	.form-item-field-online-course {
+		display: none;
+	}
+}
+
+
+#edit-time-of-day {
+	clear: both;
+}
+
+#edit-time-of-day {
+  
+  .form-checkboxes {
+  
+	  display: flex;
+	  flex: 1;
+	  @include media-breakpoint-down(sm-t) {
+		display: grid;
+		grid-template-columns: 30% 30% 30%;
+		
+		.form-item-time-of-day-afternoon {
+		
+		}
+	  }
+	  .form-check {
+		@include media-breakpoint-down(sm-t) {
+		  padding-bottom: 16px;
+		}
+	  }
   }
-  .form-check {
-    @include media-breakpoint-down(sm-t) {
-      padding-bottom: 16px;
-    }
-  }
+ 
 }
 
 .fieldset-wrapper {
@@ -88,6 +179,7 @@
 }
 
 .more-search-options-trigger {
+  display: block;
   cursor: pointer;
   color: $primary-shade;
   font-weight: 900;
@@ -98,7 +190,7 @@
 
 // Style for less search options
 .less {
-  margin-top: 48px;
+  margin-top: 28px;
 }
 
 .more-options-wrapper {
@@ -148,6 +240,7 @@
 
 
     .fieldset-title, .label {
+	  
       color: $text-shade;
       //font-weight: 600;
       font-size: 16px;
@@ -156,6 +249,10 @@
         margin-bottom: 16px;
       }
     }
+	legend {
+		float: left;
+		text-align: left;
+	}
   }
 }
 
@@ -215,6 +312,7 @@
   flex: 1;
   @include media-breakpoint-down(sm-t) {
     display: grid;
+	grid-template-columns: 30% 30% 30%;
   }
 
   .form-check {
@@ -357,8 +455,10 @@
 	font-weight: 700;
   }
   .field-content {
-    color: $available;
-	font-weight: bold;
+	span {
+		color: $available;
+		font-weight: bold;
+	}
   }
 }
 

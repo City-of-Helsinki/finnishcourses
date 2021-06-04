@@ -98,10 +98,7 @@
     <div class="group-wrapper">
       <h2>{% trans %}Course information{% endtrans %}</h2>
 
-      <div class="course-label">
-        <div class="field__label">{% trans %}Course name{% endtrans %}</div>
-        <div class="field__item">{{ label }}</div>
-      </div>
+
       {{ content.field_course_availability }}
       {{ content.field_starting_level }}
       {{ content.field_target_level }}
@@ -118,7 +115,7 @@
 	  {% if node.field_online_course.value %}
         <div class="course-location online-course">
           <div class="field__label">{% trans %}Location{% endtrans %}</div>
-          <div class="field__item">{% trans %}Online{% endtrans %}</div>
+          <div class="field__item"><span>{% trans %}Online{% endtrans %}</span>, {{ node.field_course_organization.entity.name.value }}</div>
         </div>
       {% endif %}								  		 
       {{ content.field_course_fee }}
@@ -147,12 +144,12 @@
     </div>
 
     <div class="course-organizer">
-      <h3>{% trans %}Training provider{% endtrans %}</h3>
+      <h2>{% trans %}Training provider{% endtrans %}</h2>
       {{ content.field_course_organization }}
     </div>
 
     <div class="course-registration">
-      <h3>{% trans %}Registration{% endtrans %}</h3>
+      <h2>{% trans %}Registration{% endtrans %}</h2>
       <div class="registration-dates">
         <div class="field__label">{% trans with {'context': 'Registration dates'} %}Dates{% endtrans %}</div>
         <div class="field__item">{{ content.field_registration_start_date }} - {{ content.field_registration_end_date }}</div>

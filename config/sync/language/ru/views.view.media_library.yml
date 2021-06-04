@@ -17,7 +17,7 @@ display:
             offset_label: Пропустить
       fields:
         media_bulk_form:
-          action_title: Действие
+          action_title: Action
       filters:
         status:
           expose:
@@ -37,6 +37,9 @@ display:
             label: 'Тип медиа'
           group_info:
             label: 'Тип медиа'
+        langcode:
+          expose:
+            label: Language
       sorts:
         created:
           expose:
@@ -48,8 +51,9 @@ display:
   page:
     display_title: Страница
     display_options:
-      menu:
-        title: Мультимедиа
+      fields:
+        media_bulk_form:
+          action_title: Action
   widget:
     display_title: Виджет
     display_options:

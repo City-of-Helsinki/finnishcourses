@@ -28,7 +28,7 @@ display:
                 title: 'Снято с публикации'
         langcode:
           expose:
-            label: Язык
+            label: Language
       exposed_form:
         options:
           submit_button: Фильтр

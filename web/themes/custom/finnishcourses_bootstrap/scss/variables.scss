@@ -16,9 +16,11 @@ $text-shade: #1A1A1A;
 $footer-text-shade: #565E63;
 $form-border-shade: #8F8F8F;
 $box-border-shade: #E9EDF0;
-$green-shade: #129942;
+//$green-shade: #129942;  kontrastia lisätty
+$green-shade: #0F7B35;
 $orange-shade: #F08300;
-$available: #129942;
+//$available: #129942;  kontrastia lisätty
+$available: $green-shade;
 $ask_org: #F08300;
 $not_available: #EC3620;
 $theme-colors: (

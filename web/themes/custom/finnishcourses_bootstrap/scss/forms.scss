@@ -32,9 +32,7 @@
   color: $text-shade;
 }
 
-#edit-course-town--wrapper {
-  display: inline-block !important;
-}
+
 
 .form-check-input {
   margin-left: 0; //Override
@@ -75,7 +73,7 @@ input[type="radio"] {
 
   /* Then Style -- iPhone */
   display: inline-block;
-  width: 12px;
+  width: 13px;
   height: 13px;
   top: -5px;
   left: 10px;
@@ -87,7 +85,7 @@ input[type="radio"] {
   &::before {
     position: relative;
     top: -2px;
-    left: -2px;
+    left: -3px;
     display: block;
     content: '';
     background: $custom-unchecked-bg;
@@ -124,8 +122,8 @@ input[type="radio"] {
   &:checked::after {
     transition: all ease-in-out $custom-radio-transition-speed 0;
     top: -19px;
-    left: 3.5px;
-    width: $custom-radio-pip-size;
+    left: 2px;
+    width: 13px;
     height: $custom-radio-pip-size;
   }
 }
@@ -147,7 +145,7 @@ input[type="checkbox"] {
   &::before {
     position: relative;
     top: -4px;
-    margin-left: -14px;
+    margin-left: -12px;
     display: block;
     content: '';
     background: $custom-unchecked-bg;
@@ -181,8 +179,8 @@ input[type="checkbox"] {
 
   &:checked::after {
     top: -29px;
-    left: -8px;
-    width: 13px;
+    left: -4px;
+    width: 12px;
     height: 21px;
     border-bottom: 5px solid $primary-shade;
     border-right: 5px solid $primary-shade;

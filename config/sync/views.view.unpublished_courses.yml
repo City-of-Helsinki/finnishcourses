@@ -1,19 +1,24 @@
-uuid: f55b7521-b1c4-40b7-95b7-0cd1474a26d8
+uuid: c2b83ad3-c295-4c00-b9be-9ae563b7694a
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.storage.node.field_course_end_date
+    - field.storage.node.field_course_organization
+    - field.storage.node.field_course_start_date
+    - node.type.course
   module:
-    - redirect_404
+    - datetime
+    - node
     - user
-_core:
-  default_config_hash: kAe9LN5CFd5dvECtV8RZtKnyvURX37zd7nIMOURm-U0
-id: redirect_404
-label: 'Redirect 404'
+id: unpublished_courses
+label: 'Unpublished courses'
 module: views
 description: ''
 tag: ''
-base_table: redirect_404
-base_field: ''
+base_table: node_field_data
+base_field: nid
 display:
   default:
     display_plugin: default
@@ -24,23 +29,23 @@ display:
       access:
         type: perm
         options:
-          perm: 'administer redirects'
+          perm: 'access content'
       cache:
-        type: none
+        type: tag
         options: {  }
       query:
         type: views_query
         options:
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_comment: ''
           query_tags: {  }
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
-          reset_button: true
+          submit_button: Apply
+          reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
@@ -49,7 +54,7 @@ display:
       pager:
         type: mini
         options:
-          items_per_page: 10
+          items_per_page: 100
           offset: 0
           id: 0
           total_pages: null
@@ -76,47 +81,68 @@ display:
           summary: ''
           description: ''
           columns:
-            path: path
-            count: count
-            timestamp: timestamp
+            node_bulk_form: node_bulk_form
+            nid: nid
+            title: title
+            field_course_end_date: field_course_end_date
+            field_course_start_date: field_course_start_date
+            field_course_organization: field_course_organization
           info:
-            path:
-              sortable: true
-              default_sort_order: desc
+            node_bulk_form:
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            count:
+            nid:
               sortable: true
-              default_sort_order: desc
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            timestamp:
+            title:
               sortable: true
-              default_sort_order: desc
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
               responsive: ''
-          default: count
+            field_course_end_date:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_course_start_date:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_course_organization:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          default: field_course_organization
           empty_table: false
       row:
-        type: fields
+        type: 'entity:node'
+        options:
+          view_mode: teaser
       fields:
-        path:
-          table: redirect_404
-          field: path
-          id: path
-          entity_type: null
-          entity_field: null
-          plugin_id: standard
+        node_bulk_form:
+          id: node_bulk_form
+          table: node
+          field: node_bulk_form
           relationship: none
           group_type: group
           admin_label: ''
-          label: Path
+          label: 'Node operations'
           exclude: false
           alter:
             alter_text: false
@@ -157,14 +183,21 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-        count:
-          id: count
-          table: redirect_404
-          field: count
+          action_title: Action
+          include_exclude: include
+          selected_actions:
+            - node_publish_action
+            - node_unpublish_action
+          entity_type: node
+          plugin_id: node_bulk_form
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
           relationship: none
           group_type: group
           admin_label: ''
-          label: Count
+          label: ID
           exclude: false
           alter:
             alter_text: false
@@ -205,17 +238,79 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          format: unserialized
-          key: ''
-          plugin_id: serialized
-        timestamp:
-          id: timestamp
-          table: redirect_404
-          field: timestamp
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          entity_type: node
+          entity_field: title
+          label: ''
+          alter:
+            alter_text: false
+            make_link: false
+            absolute: false
+            trim: false
+            word_boundary: false
+            ellipsis: false
+            strip_tags: false
+            html: false
+          hide_empty: false
+          empty_zero: false
+          settings:
+            link_to_entity: true
+          plugin_id: field
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Last accessed'
+          exclude: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_course_end_date:
+          id: field_course_end_date
+          table: node__field_course_end_date
+          field: field_course_end_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Course end date'
           exclude: false
           alter:
             alter_text: false
@@ -256,18 +351,30 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          date_format: short
-          custom_date_format: ''
-          timezone: ''
-          plugin_id: date
-        langcode:
-          id: langcode
-          table: redirect_404
-          field: langcode
+          click_sort_column: value
+          type: datetime_default
+          settings:
+            timezone_override: ''
+            format_type: date_only
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_course_start_date:
+          id: field_course_start_date
+          table: node__field_course_start_date
+          field: field_course_start_date
           relationship: none
           group_type: group
           admin_label: ''
-          label: Language
+          label: 'Course start date'
           exclude: false
           alter:
             alter_text: false
@@ -308,15 +415,30 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          plugin_id: standard
-        redirect_404_operations:
-          id: redirect_404_operations
-          table: redirect_404
-          field: redirect_404_operations
+          click_sort_column: value
+          type: datetime_default
+          settings:
+            timezone_override: ''
+            format_type: date_only
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_course_organization:
+          id: field_course_organization
+          table: node__field_course_organization
+          field: field_course_organization
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Organiser
           exclude: false
           alter:
             alter_text: false
@@ -357,93 +479,26 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          plugin_id: redirect_404_operations
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       filters:
-        path:
-          id: path
-          table: redirect_404
-          field: path
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: contains
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: path_op
-            label: Path
-            description: ''
-            use_operator: false
-            operator: path_op
-            identifier: path
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: string
-        langcode:
-          id: langcode
-          table: redirect_404
-          field: langcode
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: in
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: langcode_op
-            label: Language
-            description: ''
-            use_operator: false
-            operator: langcode_op
-            identifier: langcode
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: in_operator
-        resolved:
-          id: resolved
-          table: redirect_404
-          field: resolved
+        status:
+          id: status
+          table: node_field_data
+          field: status
           relationship: none
           group_type: group
           admin_label: ''
@@ -453,20 +508,18 @@ display:
           exposed: false
           expose:
             operator_id: ''
-            label: Resolved
+            label: ''
             description: ''
             use_operator: false
-            operator: resolved_op
-            identifier: resolved
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -480,52 +533,115 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: boolean
-      sorts: {  }
-      title: 'Fix 404 pages'
-      header: {  }
-      footer: {  }
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
+          entity_type: node
+          entity_field: status
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            course: course
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+        field_course_start_date_value:
+          id: field_course_start_date_value
+          table: node__field_course_start_date
+          field: field_course_start_date_value
           relationship: none
           group_type: group
           admin_label: ''
-          empty: true
-          tokenize: false
-          content: 'There are no 404 errors to fix.'
-          plugin_id: text_custom
+          operator: '>'
+          value:
+            min: ''
+            max: ''
+            value: now
+            type: offset
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: datetime
+      sorts:
+        field_course_organization_target_id:
+          id: field_course_organization_target_id
+          table: node__field_course_organization
+          field: field_course_organization_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
+      title: 'Unpublished courses'
+      header: {  }
+      footer: {  }
+      empty: {  }
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
+        - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_course_end_date'
+        - 'config:field.storage.node.field_course_organization'
+        - 'config:field.storage.node.field_course_start_date'
   page_1:
     display_plugin: page
     id: page_1
     display_title: Page
     position: 1
     display_options:
-      display_extenders: {  }
-      path: admin/config/search/redirect/404
-      display_description: 'Lists 404 error paths with no redirect assigned yet.'
-      enabled: true
+      display_extenders:
+        metatag_display_extender: {  }
+      path: admin/unpublished-courses
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
+        - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
+        - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_course_end_date'
+        - 'config:field.storage.node.field_course_organization'
+        - 'config:field.storage.node.field_course_start_date'

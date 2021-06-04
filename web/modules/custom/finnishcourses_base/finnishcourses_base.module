@@ -367,8 +367,24 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
 	global $course_editor;
     global $administrator;  
 	  
+	$days = 14;
+	
+	$nid = $entity->id();
+
+	if (isset($entity->field_course_organization->entity->field_courses_unpublishing_cycle->value)) {
+		$days = $entity->field_course_organization->entity->field_courses_unpublishing_cycle->value * 7;
+	}
+
+	$date_now = new DateTime();
+	
+	$original_course_start_date = $entity->field_course_start_date->value;
+	$course_start_date = new DateTime($entity->field_course_start_date->value);
+	$course_start_date->modify('+' . $days . ' day');
+	
 	// New unpublish date is current + 2 weeks in format 2020-02-12
-	$new_unpublish_date = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d")+14, date("Y")));
+	$new_unpublish_date = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d")+$days, date("Y")));
+	$new_unpublish_compare_date = new DateTime($new_unpublish_date);			
+
 
 	// Get current unpublish date
 	//$current_unpublish_date = $entity->get('field_course_unpublish_date')->value;
@@ -383,9 +399,10 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
 	 *	} 
 	*/
 	
-	if (isset($entity->original) && $course_editor && isset($new_unpublish_date) && $entity->original->get('status')->value == 0 && $entity->get('status')->value == 1 ) {
+	if (isset($entity->original) && $course_editor && isset($new_unpublish_date) && $entity->original->get('status')->value == 0 && $entity->get('status')->value == 1 && $new_unpublish_compare_date >  $course_start_date) {
 		// Set new unpublish date
 		$entity->field_course_unpublish_date->value = $new_unpublish_date;
+		 \Drupal::logger('finnishcourses_base')->notice('node ' . $nid . ' published. New unpublish date is ' . $new_unpublish_date . ', Organizations week cycle is: ' . $days / 7 . ', Original course start date is: ' . $original_course_start_date);
 	}
 
 	 
@@ -598,6 +615,8 @@ function online_validate(&$element, FormStateInterface $form_state, &$complete_f
   $z = $form_state->getValue('course_town');
   if ($z[999] === '999') {
     $form_state->setValueForElement($element, 1);
+  } else {
+	 $form_state->setValueForElement($element, ""); 
   }
 }
 
@@ -606,6 +625,9 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
   $view = $form_state->get('view');
 
   if($view->id() == 'search_courses') {
+	  
+	
+	  
     $form['online_course']['#element_validate'][] = 'online_validate';
     $form['online_course']['#type'] = 'hidden';
     $form['course_town']['#options'][999] = 'Online';
@@ -617,7 +639,7 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 
     $form['more_options_trigger'] = [
       '#type' => 'html_tag',
-      '#tag' => 'div',
+      '#tag' => 'label',
       '#value' => t('More search options'),
       '#attributes' => ['class' => ['more-search-options-trigger']],
     ];
@@ -660,7 +682,7 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 
     $form['submit_fixed'] = [
       '#type' => 'submit',
-      '#value' => t('View Courses'),
+      '#value' => t('Show Courses'),
       '#access' => TRUE,
       //'#submit' => ['node_form_submit'],
       '#weight' => 99,
@@ -680,7 +702,11 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
     unset($form['start_date']);
     unset($form['start_date_2']);
     unset($form['keyword']);
-    //kint($form);
+	
+	
+	dsm($form);
+	
+    //dsm($form);
   }
 
   if($view->id() == 'content') {

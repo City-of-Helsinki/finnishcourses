@@ -23,7 +23,7 @@ display:
             last: 'Последняя »'
       fields:
         media_bulk_form:
-          action_title: Действие
+          action_title: Action
         thumbnail__target_id:
           label: Миниатюра
         name:
@@ -60,7 +60,7 @@ display:
                 title: 'Снято с публикации'
         langcode:
           expose:
-            label: Язык
+            label: Language
       title: Мультимедиа
       empty:
         area_text_custom:

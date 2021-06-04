@@ -59,3 +59,7 @@
 *.ttf     -text diff
 *.woff    -text diff
 *.woff2   -text diff
+
+#preserve these when merging
+web/themes/custom/finnishcourses_bootstrap/css/style.css merge=ours
+web/themes/custom/finnishcourses_bootstrap/css/style.min.css merge=ours

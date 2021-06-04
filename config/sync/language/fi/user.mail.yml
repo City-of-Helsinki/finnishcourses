@@ -1,2 +1,6 @@
 register_admin_created:
+  body: "[user:display-name], \r\n\r\nSivuston [site:name] ylläpitäjä on luonut sinulle käyttäjätilin. Voit nyt kirjautua sisään klikkaamalla seuraavaa linkkiä tai kopioimalla sen selaimeesi:\r\n\r\n[user:one-time-login-url] \r\n\r\nLinkki on kertakäyttöinen ja osoittaa sivulle jossa voit asettaa salasanasi.\r\n\r\nKun olet asettanut salasanasi, voit jatkossa kirjautua sisään osoitteessa [site:login-url] seuraavilla käyttäjätunnuksilla:\r\n\r\nkäyttäjätunnus: [user:name] \r\nsalasana: Asettamasi salasana\r\n\r\n-- [site:name] tiimi"
   subject: 'Ylläpitäjä loi sinulle tilin sivustolla [site:name]'
+status_activated:
+  body: "[user:display-name], Käyttäjätilisi sivustolla [site:name] on aktivoitu.\r\n\r\nVoit nyt kirjautua sisään klikkaamalla allaolevaa linkkiä tai kopioimalla sen selaimesi osoitekenttään: [user:one-time-login-url]\r\n\r\nTätä kirjautumislinkkiä voi käyttää vain yhden kerran ja kirjautumisen jälkeen sinut ohjataan sivulle jolla voit asettaa salasanasi. Asetettuasi salasanasi voit jatkossa kirjautua sisään osoitteessa [site:login-url] seuraavalla käyttäjätunnuksella: \r\n\r\nkäyttäjätunnus: [user:name] \r\nsalasana: asettamasi salasana\r\n\r\n[site:name] ylläpitotiimi"
+  subject: 'Käyttäjätiedot [user:name] sivustolla [site:name] aktivoitu'
