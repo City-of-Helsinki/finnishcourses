@@ -691,10 +691,18 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
     $form['sort_bef_combine']['#weight'] = 99;
 
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+	
+
+	$any_level_text = t('Any: All levels');
+	$beginner_level_text = t('Beginner level (0): No Finnish language skills');
+	$basic_level_text = t('Basic (A): levels A1 and A2: basic language skills');
+	$intermediate_level_text = t('Intermediate (B): levels B1 and B2: language skills of an independent user');
+	$advanced_level_text = t('Advanced (C): levels C1 and C2: language skills of a proficient user');
 
     $courseLevelsLink = ($language == 'en') ? '/language-course-levels' : '/'.$language.'/language-course-levels';
 
-    $form['starting_level']['#suffix'] = "<a class='levels-link' href='".$courseLevelsLink."'>".t("I don't know my level")."</a>";
+	$form['starting_level']['#suffix'] = '<div class="level-description"><span>'.$any_level_text.'</span><span>'.$beginner_level_text.'</span><span>'.$basic_level_text.'</span><span>'.$intermediate_level_text.'</span><span>'.$advanced_level_text.'</span></div>';
+    $form['starting_level']['#suffix'] .= "<a class='levels-link' href='".$courseLevelsLink."'>".t("Course level description")."</a>";
 
     unset($form['course_fee']);
     unset($form['time_of_day']);
@@ -702,9 +710,6 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
     unset($form['start_date']);
     unset($form['start_date_2']);
     unset($form['keyword']);
-	
-	
-	dsm($form);
 	
     //dsm($form);
   }
@@ -789,6 +794,7 @@ function finnishcourses_base_preprocess_views_view_fields(&$variables) {
       // Don't show Town field for online courses.
       if ($node->field_online_course->value) {
         unset($variables['fields']['field_course_town']);
+		unset($variables['fields']['field_course_town_1']);
       }
     }
   }

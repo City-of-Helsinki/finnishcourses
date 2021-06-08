@@ -28,6 +28,32 @@
         $(".more-search-options-trigger").text($(".more-search-options-trigger").text()
         === lessSearch ? moreSearch : lessSearch);
       });
+	  
+
+		 
+		$("#edit-starting-level--2 input[type='radio'], #edit-starting-level input[type='radio']", context).click(function(){
+
+            var radioValue = $(this).val();
+			var newValue;
+            if(radioValue){
+				
+				console.log(radioValue);	
+				
+				switch(radioValue) {
+				  case 'All':
+					radioValue = 0;
+					break;
+				}
+				
+		
+				
+				$('.level-description span').hide();
+                console.log(radioValue);
+				
+				$('.level-description span:eq('+radioValue+')').show();
+            }
+        });
+		 
 
 	
 	
@@ -98,7 +124,7 @@
 	$(document).ready(function () {
 		
 	
-     console.log($('.views-exposed-form'));
+     //console.log($('.views-exposed-form'));
 	  
 	  // STICKY MOBILE BUTTON
       // Root is the browser viewport / screen
@@ -147,6 +173,11 @@
 			  });
 		 
 		 });
+		 
+
+		 
+	
+		 
 	});
   
 })(jQuery, Drupal);

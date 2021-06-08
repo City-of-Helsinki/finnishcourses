@@ -91,7 +91,7 @@
 .views-field-field-course-availability {
   .field--name-field-course-availability {
     .field__item {
-      margin-left: 0;
+     // margin-left: 0;
     }
   }
 }
@@ -147,7 +147,7 @@
 // Be aware, if changing this, might also haft to change in courseinformation.scss
 .views-field-field-course-week-hours {
   @include media-breakpoint-down(sm) {
-    max-width: 485px;
+    //max-width: 485px;
   }
   .field-content {
     .office-hours {
@@ -157,6 +157,7 @@
 
       .office-hours__item-label {
         width: auto !important; // Override
+		padding: 3px 0;
         @include media-breakpoint-down(sm-t) {
           font-size: 14px;
         }
@@ -168,13 +169,15 @@
         margin-left: 1px;
         margin-right: 1px;
         width: 168px;
-        height: 100px;
+        height: 114px;
         background-color: $dark-schedule-shade;
-        @include media-breakpoint-down(sm) {
-          height: 85px;
-          width: 43px;
+        @include media-breakpoint-down(md) {
+            width: 14%;
         }
         .office-hours__item-slots {
+		  background: #fff;	
+		  margin: 0 3px 3px 3px;
+		  padding: 4px 0;	
           @include media-breakpoint-down(sm) {
             padding: 5px;
             font-size: 13px;
@@ -183,7 +186,10 @@
       }
 
       .empty {
-        background-color: $light-schedule-shade;
+        // background-color: $light-schedule-shade;
+		.office-hours__item-slots {
+		  background: none;	
+		}  
       }
 
     }

@@ -61,6 +61,7 @@
   .js-form-item {
     .form-check-label {
       position: relative;
+	  padding-left: 24px;
       @include media-breakpoint-down(sm-t) {
         left: -9px;
       }
@@ -121,7 +122,9 @@
 			}
 		}
 		
-		
+		div.js-form-item-course-town-290 {
+		  grid-column: 3 / span 2;
+		}
 		
 		div.js-form-item-course-town-999 {
 		  grid-column: 1 / span 3;
@@ -292,6 +295,24 @@
   flex: 1;
 }
 
+.form-item-starting-level {
+	margin-left: 10px;
+	label {
+		padding-left: 12px;
+	}
+}
+
+// level description
+
+.level-description {
+	margin: 15px 0 10px 0;
+	span {
+		display: none;
+		&:first-child {
+			display: block;
+		}
+	}
+}
 
 .form-item-start-date {
   flex: 2 !important; // Overriding flex: 1 in general for form-item classes
@@ -450,7 +471,8 @@
 
 // Online Course
 
-.views-field-field-online-course {
+.views-field-field-online-course,
+.views-field-field-online-course-1 {
   .views-label {
 	font-weight: 700;
   }
@@ -460,6 +482,11 @@
 		font-weight: bold;
 	}
   }
+}
+
+.views-field-field-online-course-1,
+.views-field-field-course-town-1 {
+	margin: 0 0 15px 0;
 }
 
 

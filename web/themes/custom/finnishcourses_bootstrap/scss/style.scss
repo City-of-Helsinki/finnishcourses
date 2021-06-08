@@ -13,6 +13,7 @@ body {
   background: $body-bg;
   font-family: $font-family-base !important; // !important, becuase the font-family was override by another css (Problems with Mozilla Firefox)
   cursor: default;
+  min-width: fit-content;
 }
 
 .node--type-course {

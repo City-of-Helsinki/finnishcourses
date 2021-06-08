@@ -69,6 +69,11 @@
   display: none;
 }
 
+#block-etusivukuvausteksti {
+	margin: 20px 0;
+	text-align: center;
+}
+
 #block-finnishcourses-bootstrap-content {
   flex: 1;
   margin-top: 80px;
@@ -77,13 +82,15 @@
   .content {
     .node--type-front-page {
       .node__content.clearfix {
-        @include media-breakpoint-up(sm) {
+        @include media-breakpoint-up(sm-t) {
           display: inline-flex !important; // Override
         }
 
         .field--name-field-text-box-1, .field--name-field-text-box-2, .field--name-field-text-box-3 {
-          max-width: 40%;
-          width: 40%;
+		  @include media-breakpoint-up(sm-t) {	
+            max-width: 40%;
+            width: 40%;
+		  }
           @include media-breakpoint-only(xs) {
             max-width: 100%;
             width: 100%;
