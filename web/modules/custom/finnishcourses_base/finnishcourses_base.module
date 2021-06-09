@@ -698,6 +698,19 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
     ];
 
     $form['sort_bef_combine']['#weight'] = 99;
+	
+	 $form['sort_bef_combine']['#options']['field_course_start_date_ASC'] = t('First starting date');
+	 $form['sort_bef_combine']['#options']['field_course_start_date_DESC'] = t('Last starting date');
+	 $form['sort_bef_combine']['#options']['field_course_end_date_ASC'] = t('First ending date');
+	 $form['sort_bef_combine']['#options']['field_course_end_date_DESC'] = t('Last ending date');
+	 $form['sort_bef_combine']['#options']['field_course_fee_ASC'] = t('Lowest price');
+	 $form['sort_bef_combine']['#options']['field_course_fee_DESC'] = t('Highest price');
+	 $form['sort_bef_combine']['#options']['field_starting_level_ASC'] = t('Lowest starting level');
+	 $form['sort_bef_combine']['#options']['field_starting_level_DESC'] = t('Highest starting level');
+	 $form['sort_bef_combine']['#options']['field_target_level_ASC'] = t('Lowest target level');
+	 $form['sort_bef_combine']['#options']['field_target_level_DESC'] = t('Highest target level');
+	 
+	
 
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
 	
@@ -713,9 +726,9 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 	$form['starting_level']['#suffix'] = '<div class="level-description"><span>'.$any_level_text.'</span><span>'.$beginner_level_text.'</span><span>'.$basic_level_text.'</span><span>'.$intermediate_level_text.'</span><span>'.$advanced_level_text.'</span></div>';
     $form['starting_level']['#suffix'] .= "<a class='levels-link' href='".$courseLevelsLink."'>".t("Course level description")."</a>";
 
-	dsm($form['organization']);
 	
-	dsm($form['starting_level_ext']);
+	
+	//dsm($form['sort_bef_combine']);
 	
     unset($form['course_fee']);
     unset($form['time_of_day']);
