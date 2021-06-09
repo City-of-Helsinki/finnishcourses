@@ -18,11 +18,13 @@ display:
           group_info:
             group_items:
               1:
-                title: Vasta-alkaja
+                title: 'Aloitustaso (0)'
               2:
-                title: Perustaso
+                title: 'Perustaso (A)'
               3:
-                title: Edistynyt
+                title: 'Keskitaso (B)'
+              4:
+                title: 'Ylin taso (C)'
             label: 'Miten hyvin osaat suomea nyt?'
         field_course_fee:
           expose:
@@ -31,7 +33,9 @@ display:
             label: 'Hinta (€)'
             group_items:
               3:
-                title: 'Yli 150'
+                title: 'Yli 150 €'
+              1:
+                title: 'Alle 50 €'
         field_starting_level_1:
           expose:
             label: Aloitustaso
@@ -47,6 +51,9 @@ display:
           expose:
             label: Hakusanat
             placeholder: 'Hae kursseja hakusanalla'
+        field_course_organization:
+          expose:
+            label: Organisaatio
       header:
         result:
           content: 'Hakuehdoilla löytyi @total kurssi(a)'

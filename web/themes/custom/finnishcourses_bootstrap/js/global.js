@@ -18,7 +18,7 @@
 	   $(".more-search-options-trigger", context).on('click', function () {
        $(".more-options-wrapper").toggle();
 		
-		console.log($(".more-options-wrapper"));
+		//console.log($(".more-options-wrapper"));
 
         // Adding less class for "Less search options", so expand more svg icon is added through css
         $('.more-search-options-trigger').toggleClass('less');
@@ -29,6 +29,28 @@
         === lessSearch ? moreSearch : lessSearch);
       });
 	  
+	   $(".form-item-sort-bef-combine select", context).each(function () {
+			  
+			  var originalSort = $(this);
+		 
+			  //console.log("test");
+			  
+			  var sort = originalSort.clone();
+			  $('.form-item-sort-bef-combine').hide();
+			  
+			  $('.view-search-courses .view-header').append( '<div class="newsort"></div>' );
+			  $('.view-search-courses .view-header .newsort').append(sort);
+			  
+			  $(sort).change(function() {
+				  var selectedValue = $(this).val();
+				  console.log(selectedValue);
+				  originalSort.val(selectedValue);
+				  
+				  $('.bef-exposed-form form').submit();
+			  });
+		 
+		 });
+	  
 
 		 
 		$("#edit-starting-level--2 input[type='radio'], #edit-starting-level input[type='radio']", context).click(function(){
@@ -37,7 +59,7 @@
 			var newValue;
             if(radioValue){
 				
-				console.log(radioValue);	
+				//console.log(radioValue);	
 				
 				switch(radioValue) {
 				  case 'All':
@@ -45,11 +67,7 @@
 					break;
 				}
 				
-		
-				
 				$('.level-description span').hide();
-                console.log(radioValue);
-				
 				$('.level-description span:eq('+radioValue+')').show();
             }
         });
@@ -152,27 +170,7 @@
       }
 	  
 	  
-	  $(".form-item-sort-bef-combine select").each(function () {
-			  
-			  var originalSort = $(this);
-		 
-			  //console.log("test");
-			  
-			  var sort = originalSort.clone();
-			  $('.form-item-sort-bef-combine').hide();
-			  
-			  $('.view-search-courses .view-header').append( '<div class="newsort"></div>' );
-			  $('.view-search-courses .view-header .newsort').append(sort);
-			  
-			  $(sort).change(function() {
-				  var selectedValue = $(this).val();
-				  console.log(selectedValue);
-				  originalSort.val(selectedValue);
-				  
-				  $('.bef-exposed-form form').submit();
-			  });
-		 
-		 });
+	 
 		 
 
 		 

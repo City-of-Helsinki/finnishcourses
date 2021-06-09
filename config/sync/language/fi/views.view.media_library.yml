@@ -50,6 +50,8 @@ display:
       fields:
         media_bulk_form:
           action_title: Toiminto
+        edit_media:
+          text: Edit
   widget:
     display_title: Widgetti
     display_options:

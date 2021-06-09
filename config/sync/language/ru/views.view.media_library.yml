@@ -54,6 +54,8 @@ display:
       fields:
         media_bulk_form:
           action_title: Action
+        edit_media:
+          text: Edit
   widget:
     display_title: Виджет
     display_options:

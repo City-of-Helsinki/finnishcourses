@@ -31,6 +31,9 @@
 }
 
 .more-options-wrapper {
+	
+    padding: 30px 25px;
+
   .fieldset-legend {
     font-weight: 100 !important;
   }
@@ -61,9 +64,9 @@
   .js-form-item {
     .form-check-label {
       position: relative;
-	  padding-left: 24px;
+	  padding-left: 15px;
       @include media-breakpoint-down(sm-t) {
-        left: -9px;
+        //left: -9px;
       }
     }
   }
@@ -152,7 +155,7 @@
   
   .form-checkboxes {
   
-	  display: flex;
+	 /*  display: flex;
 	  flex: 1;
 	  @include media-breakpoint-down(sm-t) {
 		display: grid;
@@ -166,7 +169,7 @@
 		@include media-breakpoint-down(sm-t) {
 		  padding-bottom: 16px;
 		}
-	  }
+	  } */
   }
  
 }
@@ -201,9 +204,10 @@
   padding: 10px;
   display: none;
   text-align: left;
-  max-height: 200px;
+  //max-height: 200px;
+  padding: 24px 24px;
   @include media-breakpoint-down(sm-t) {
-    max-height: 620px;
+   //max-height: 620px;
   }
 
   .fieldset-title {
@@ -219,17 +223,17 @@
   }
 
   .form-check-label {
-    padding: 0 20px;
+    padding: 0 0 0 12px;
     @include media-breakpoint-down(sm-t) {
       padding: 0 9px;
     }
   }
 }
 
-.more-options-row-1, .more-options-row-2 {
+.more-options-row-1, .more-options-row-2, .more-options-row-3 {
   display: flex;
 
-  @include media-breakpoint-down(sm-t) {
+  @include media-breakpoint-down(sm) {
     flex-direction: column;
   }
 
@@ -240,14 +244,19 @@
       flex-direction: column;
      // margin-bottom: 10px;
     }
+	
+	legend {
+		max-width: none;
+		width: auto;
+	}
 
 
     .fieldset-title, .label {
-	  
+	  width: 130px;
       color: $text-shade;
       //font-weight: 600;
       font-size: 16px;
-      flex-basis: 26%;
+      //flex-basis: 20%;
       @include media-breakpoint-down(sm-t) {
         margin-bottom: 16px;
       }
@@ -256,20 +265,31 @@
 		float: left;
 		text-align: left;
 	}
+	.form-check {
+      display: block;
+	}
+
+  }
+  #edit-course-fee--wrapper {
+	 .fieldset-title, .label {
+		//margin-right: 25px;
+	  }
   }
 }
 
-.more-options-row-2, .more-options-row-3 {
+.more-options-row-2, .more-options-row-3, .more-options-row-4 {
   margin-top: 22px;
   @include media-breakpoint-down(sm-t) {
     margin-top: 0;
   }
 }
 
-.more-options-row-3 {
+.more-options-row-3, .more-options-row-4 {
   @include media-breakpoint-down(sm-t) {
     margin-top: 15px;
   }
+  
+
 
 }
 
@@ -282,7 +302,7 @@
   flex: 1;
 }
 
-.form-item-starting-level-ext, .form-item-start-date, .form-item-start-date-2,
+.form-item-starting-level-ext, .form-item-organization, .form-item-start-date, .form-item-start-date-2,
 .form-item-keyword {
   display: flex;
   @include media-breakpoint-down(sm-t) {
@@ -290,7 +310,7 @@
   }
 }
 
-.form-item-starting-level-ext, .form-item-start-date-2, .form-item-keyword {
+.form-item-starting-level-ext, .form-item-organization, .form-item-start-date-2, .form-item-keyword {
   display: flex;
   flex: 1;
 }
@@ -315,9 +335,9 @@
 }
 
 .form-item-start-date {
-  flex: 2 !important; // Overriding flex: 1 in general for form-item classes
+  //flex: 2 !important; // Overriding flex: 1 in general for form-item classes
   @include media-breakpoint-down(sm-t) {
-    flex: 1 !important;
+  //  flex: 1 !important;
   }
 }
 
@@ -329,7 +349,16 @@
   }
   }
 
-#edit-course-fee {
+#edit-course-fee--wrapper, #edit-course-fee--2--wrapper, #edit-time-of-day--wrapper, #edit-time-of-day--2--wrapper {
+
+	@include media-breakpoint-down(sm-t) {
+		margin: 20px 0 0 0;
+	}
+
+}
+
+#edit-course-fee,
+#edit-course-fee--2 {
   flex: 1;
   @include media-breakpoint-down(sm-t) {
     display: grid;
@@ -350,12 +379,44 @@
 
     .form-checkbox {
       @include media-breakpoint-up(sm-t) {
-        top: -5px;
+        top: -2px;
         left: 14px;
       }
     }
   }
 }
+
+#edit-time-of-day .form-checkboxes,
+#edit-time-of-day--2 .form-checkboxes{
+
+  @include media-breakpoint-down(sm-t) {
+    display: grid;
+	grid-template-columns: 30% 30% 30%;
+  }
+
+  .form-check {
+    @include media-breakpoint-down(sm-t) {
+      padding-bottom: 16px;
+    }
+
+    .form-check-label {
+      padding: 0 12px;
+      @include media-breakpoint-down(sm-t) {
+        padding: 0 9px;
+      }
+    }
+
+    .form-checkbox {
+      @include media-breakpoint-up(sm-t) {
+        top: -2px;
+        left: 14px;
+      }
+    }
+  }
+}
+
+
+
 
 #edit-course-fee--wrapper {
   flex: 1;
@@ -369,7 +430,7 @@
 
 .form-item-start-date, .form-item-start-date-2 {
   .label {
-    flex-basis: 38% !important; // Overriding flex-basis: 26% in general for labels classes
+   // flex-basis: 38% !important; // Overriding flex-basis: 26% in general for labels classes
     top: 10px;
     position: relative;
     @include media-breakpoint-down(sm-t) {
@@ -382,7 +443,7 @@
     height: 40px;
     cursor: pointer;
     @include media-breakpoint-down(md-t) {
-      width: 130px;
+     // width: 130px;
     }
     @include media-breakpoint-down(sm-t) {
       width: 95%;
@@ -392,16 +453,16 @@
 
 .form-item-start-date-2 {
   @include media-breakpoint-down(sm-t) {
-    margin-top: 41px !important; // Overriding other .fieldset classes with margin-top todo: fix this
+   // margin-top: 41px !important; // Overriding other .fieldset classes with margin-top todo: fix this
   }
 
   .form-control {
-    margin-left: auto;
+    //margin-left: auto;
   }
 }
 
 
-.form-item-starting-level-ext {
+.form-item-starting-level-ext, .form-item-organization {
   margin-top: 4px;
 
   .label {
@@ -414,9 +475,9 @@
   }
 
   .form-select {
-    width: 276px;
+    width: 280px;
     height: 40px;
-    @include media-breakpoint-down(sm-t) {
+    @include media-breakpoint-down(sm) {
       width: 100%;
     }
   }
@@ -427,11 +488,12 @@
   flex: 6.5;
 
   .label {
-    display: flex;
-    flex: 1;
+    /* display: flex;
+    flex: 1; */
+	margin-right: 10px;
     @include media-breakpoint-down(sm-t) {
       position: relative;
-      top: -3px;
+      top: 5px;
     }
   }
 
@@ -440,9 +502,10 @@
     height: 40px;
     cursor: pointer;
     max-width: 87% !important;
-    width: 100% !important;
+    width: 275px;
     @include media-breakpoint-down(sm-t) {
-      max-width: 100% !important;
+      max-width: 100%;
+	  width: 100%;
     }
   }
 }

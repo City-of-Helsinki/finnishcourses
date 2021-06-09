@@ -9,7 +9,7 @@ _core:
 id: finnishcourses_bootstrap_local_tasks
 theme: finnishcourses_bootstrap
 region: content
-weight: -9
+weight: -8
 provider: null
 plugin: local_tasks_block
 settings:

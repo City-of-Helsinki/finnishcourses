@@ -13,15 +13,15 @@ dependencies:
 id: exposedformsearch_coursespage_1
 theme: finnishcourses_bootstrap
 region: content
-weight: -11
+weight: -9
 provider: null
 plugin: 'views_exposed_filter_block:search_courses-page_1'
 settings:
   id: 'views_exposed_filter_block:search_courses-page_1'
   label: ''
   provider: views
-  label_display: visible
-  views_label: 'Search Finnish Courses'
+  label_display: '0'
+  views_label: 'Etsi suomen kielen kursseja'
 visibility:
   condition_group:
     id: condition_group

@@ -192,7 +192,7 @@ content:
         days: ''
         grouped_days: ' - '
         day_hours: ': '
-        hours_hours: '<br/>|<br/>'
+        hours_hours: '<span>&ndash;</span>'
         more_hours: ', '
       current_status:
         position: ''

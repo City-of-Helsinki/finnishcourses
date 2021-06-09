@@ -2,6 +2,8 @@ uuid: 35bcab83-321d-4d15-a179-aa431aefe705
 langcode: en
 status: true
 dependencies:
+  module:
+    - block_visibility_groups
   theme:
     - finnishcourses_bootstrap
 _core:
@@ -9,7 +11,7 @@ _core:
 id: finnishcourses_bootstrap_page_title
 theme: finnishcourses_bootstrap
 region: content
-weight: -10
+weight: -11
 provider: null
 plugin: page_title_block
 settings:
@@ -17,4 +19,9 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }
