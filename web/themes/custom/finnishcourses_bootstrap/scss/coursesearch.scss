@@ -123,11 +123,14 @@
 			&:nth-child(7)			{
 				border-bottom: 1px solid #129942;
 			}
+			&:nth-child(7) {
+				grid-column: 3 / span 2;
+			}
 		}
 		
-		div.js-form-item-course-town-290 {
-		  grid-column: 3 / span 2;
-		}
+		/* div.js-form-item-course-town-290 {
+		  
+		} */
 		
 		div.js-form-item-course-town-999 {
 		  grid-column: 1 / span 3;

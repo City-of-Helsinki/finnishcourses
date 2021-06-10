@@ -17,11 +17,12 @@
     margin-top: 0;
   }
   .view-content {
-    h3 {
+    h2 {
       margin-bottom: 10px;
       margin-top: 20px;
+	  font-size: 1.75rem;
     }
-    h3:not(:first-child):not(:last-child) {
+    h2:not(:first-child):not(:last-child) {
       border-top: 1px solid $border-shade;
       padding-top: 20px;
     }

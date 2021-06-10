@@ -728,6 +728,16 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 
 	
 	
+	
+/* $dbug_variable = Dbug::debug($form['sort_bef_combine']);
+$output['#attached']['library'][] = 'dbug/dbug';
+$output['variable'] = [
+            '#type' => 'markup',
+            '#markup' => $dbug_variable,
+]; */
+
+
+
 	//dsm($form['sort_bef_combine']);
 	
     unset($form['course_fee']);
