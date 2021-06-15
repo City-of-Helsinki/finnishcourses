@@ -284,7 +284,7 @@
 
 .field--name-field-course-week-hours {
   @include media-breakpoint-down(sm) {
-    max-width: 485px;
+    /* max-width: 485px; */
   }
   .field__label {
     display: none;
@@ -329,6 +329,10 @@
     background-color: $dark-schedule-shade;
     @include media-breakpoint-down(sm) {
       height: 85px;
+	  width: 15%;
+	  &.empty {
+		//display: none;
+	  }
     }
 
     .office-hours__item-slots {
