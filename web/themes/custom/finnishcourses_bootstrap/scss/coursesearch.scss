@@ -74,13 +74,23 @@
     padding-left: 20px;
   }
   #edit-course-town, #edit-course-town--2 {
+  
+    @include media-breakpoint-down(sm-t) {
+		width: 560px;
+		margin-left: 230px;
+	}
+	@include media-breakpoint-down(sm) {
+	    width: 280px;
+		margin-left: 96px;
+	}
+  
 	.form-checkboxes {
 		div.js-form-item {
 			text-align: left;
 		}
 		div.js-form-item-course-town-999 {
 		  width: 80px;
-		  margin: 20px auto 0 auto;;
+		  margin: 20px auto 0 auto;
 			border-bottom: 0;
 			input {
 					&:checked::before {
@@ -102,40 +112,43 @@
 		display: grid;
 		grid-gap: 0;
 		justify-self: center;
-		grid-template-columns: repeat(7, 1fr);
-		div.js-form-item {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		/* div.js-form-item {
 			border-bottom: 1px solid #129942;
 		}
 		div.js-form-item-course-town-999 {
 		  grid-column: 1 / span 7;
 		  border-bottom: 0;
-		}
+		} */
 		
+	  }
+	  @include media-breakpoint-down(sm-t) {
+		grid-template-columns: 1fr 1fr 1fr;
 	  }
 	  @include media-breakpoint-down(sm) {
 		display: grid;
 		grid-gap: 0;
 		justify-self: center;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
 		div.js-form-item {
-			&:nth-child(5),
+			/* &:nth-child(5),
 			&:nth-child(6),
 			&:nth-child(7)			{
 				border-bottom: 1px solid #129942;
 			}
 			&:nth-child(7) {
 				grid-column: 3 / span 2;
-			}
+			} */
 		}
 		
 		/* div.js-form-item-course-town-290 {
 		  
 		} */
 		
-		div.js-form-item-course-town-999 {
+		/* div.js-form-item-course-town-999 {
 		  grid-column: 1 / span 3;
 
-		}
+		} */
 	  }
 	  
 	  
@@ -144,8 +157,24 @@
 }
 
 .views-exposed-form {
-	.form-item-field-online-course {
-		display: none;
+	div.form-item-field-online-course {
+		//display: none;
+		border-top: 1px solid #129942;
+		padding: 20px 50px;
+		margin: 15px auto 0 auto;
+		width: 300px;
+		
+		display: block;
+		input {
+			position: relative;
+			&:checked::before {
+				border-color: #129942;	
+			}
+			&:checked::after {
+				border-bottom: 5px solid #129942;
+				border-right: 5px solid #129942;
+			}
+		}
 	}
 }
 
@@ -193,8 +222,18 @@
   color: $primary-shade;
   font-weight: 900;
   text-align: center;
-  margin-top: 35px;
-  margin-bottom: 20px;
+  margin: 35px auto 20px auto;
+  border: 0;
+  background: none;
+  &:focus {
+	outline: none;
+	
+  }
+  &.less {
+	&:before {
+		padding-right: 2px;
+	}
+  }
 }
 
 // Style for less search options

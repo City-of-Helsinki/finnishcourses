@@ -80,7 +80,7 @@ display:
               plugin_id: default
               advanced:
                 combine: true
-                combine_rewrite: ''
+                combine_rewrite: "Starting date Asc|First starting date\r\nStarting date Desc|Last starting date\r\nEnding date Asc|First ending date\r\nEnding date Desc|Last ending date\r\nPrice Asc|Lowest price\r\nPrice Desc|Highest price\r\nStarting level Asc|Lowest starting level\r\nStarting level Desc|Highest starting level\r\nTarget level Asc|Lowest target level\r\nTarget level Desc|Highest target level"
                 reset: false
                 reset_label: ''
                 collapsible: false
@@ -311,6 +311,90 @@ display:
           type: entity_reference_label
           settings:
             link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_entity
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+            display_methods:
+              course_features:
+                display_method: label
+              course_levels:
+                display_method: label
+              organizations:
+                display_method: label
+                view_mode: default
+              street_adresses:
+                display_method: label
+              tags:
+                display_method: label
+              towns:
+                display_method: label
+          plugin_id: search_api_field
+        field_course_organization_1:
+          id: field_course_organization_1
+          table: search_api_index_courses_index
+          field: field_course_organization
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -634,7 +718,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ field_course_town_1 }}, {{ nothing }}'
+            text: '{{ field_course_town_1 }}, {{ field_course_organization_1 }}'
             make_link: false
             path: ''
             absolute: false
@@ -718,7 +802,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<span class="online">{{ field_online_course_1 }}</span>, {{ field_course_organization }}'
+            text: '<span class="online">{{ field_online_course_1 }}</span>, {{ field_course_organization_1 }}'
             make_link: false
             path: ''
             absolute: false
@@ -820,12 +904,12 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: '0'
           element_class: ''
-          element_label_type: ''
+          element_label_type: span
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: ''
+          element_wrapper_type: '0'
           element_wrapper_class: '{{ field_course_availability__value }}'
           element_default_classes: true
           empty: ''
@@ -1041,10 +1125,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: datetime_default
+          type: datetime_custom
           settings:
             timezone_override: ''
-            format_type: date_only
+            date_format: j.n.Y
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1112,10 +1196,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: datetime_default
+          type: datetime_custom
           settings:
             timezone_override: ''
-            format_type: date_only
+            date_format: j.n.Y
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1415,7 +1499,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
+          element_type: '0'
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -2036,15 +2120,15 @@ display:
                 operator: between
                 value:
                   value: ''
-                  min: '0.00'
-                  max: '49.99'
+                  min: '0'
+                  max: '50'
               2:
                 title: '50-149 €'
                 operator: between
                 value:
                   value: ''
                   min: '50'
-                  max: '149.99'
+                  max: '150'
               3:
                 title: 'Over 150 €'
                 operator: '>='
@@ -2432,6 +2516,18 @@ display:
           exposed: true
           expose:
             label: 'Starting date'
+          plugin_id: search_api
+        field_course_end_date:
+          id: field_course_end_date
+          table: search_api_index_courses_index
+          field: field_course_end_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: true
+          expose:
+            label: 'Course end date'
           plugin_id: search_api
         field_course_fee:
           id: field_course_fee

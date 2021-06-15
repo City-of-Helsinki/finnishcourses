@@ -39,6 +39,7 @@ dependencies:
     - metatag
     - office_hours
     - options
+    - spamspan
     - text
     - user
 id: node.course.default
@@ -59,9 +60,17 @@ content:
   field_ask_more_email:
     weight: 22
     label: above
-    settings: {  }
+    settings:
+      spamspan_at: ' [at] '
+      spamspan_use_graphic: '1'
+      spamspan_dot: ' [dot] '
+      spamspan_dot_enable: 0
+      spamspan_form_pattern: '<a href="%url?goto=%email">%displaytext</a>'
+      spamspan_form_default_url: contact
+      spamspan_form_default_displaytext: 'contact form'
+      spamspan_use_form: 0
     third_party_settings: {  }
-    type: basic_string
+    type: email_spamspan
     region: content
   field_books_and_materials:
     weight: 13

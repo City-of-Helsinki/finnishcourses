@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.front_page.field_header_image
+    - field.field.node.front_page.field_header_text
+    - field.field.node.front_page.field_meta_tags
     - field.field.node.front_page.field_text_box_1
     - field.field.node.front_page.field_text_box_2
     - field.field.node.front_page.field_text_box_3
@@ -23,7 +25,10 @@ content:
     region: content
 hidden:
   field_header_image: true
+  field_header_text: true
+  field_meta_tags: true
   field_text_box_1: true
   field_text_box_2: true
   field_text_box_3: true
   langcode: true
+  search_api_excerpt: true

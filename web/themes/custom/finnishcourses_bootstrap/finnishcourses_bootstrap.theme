@@ -77,7 +77,10 @@ function finnishcourses_bootstrap_preprocess_node(&$variables) {
     $variables['course_town'] = $townName;
 
   }
+  
 
+
+  
 
   if (isset($variables['node']) && $variables['node'] instanceof NodeInterface && $variables['node']->bundle() == 'front_page' && isset($variables['view_mode']) && $variables['view_mode'] == 'header_image') {
     if (!empty($variables['node']->get('field_header_image'))) {
@@ -85,6 +88,9 @@ function finnishcourses_bootstrap_preprocess_node(&$variables) {
       $headerImage = Media::load($headerImageId);
       $variables['header_image'] = ImageStyle::load('header_image_desktop')->buildUrl($headerImage->field_media_image->entity->getFileUri());
     }
+	if (!empty($variables['node']->get('field_header_text'))) {
+		$variables['header_text'] = $variables['node']->get('field_header_text')->getString();
+	}	
   }
 
 }

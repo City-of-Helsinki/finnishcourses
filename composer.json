@@ -176,7 +176,8 @@
         "patches": {
             "drupal/core": {
                 "Grouped exposed filters do not work like they should": "https://www.drupal.org/files/issues/1810148-58.patch",
-                "Untranslatable aliases generation fix for translations": "https://www.drupal.org/files/issues/2020-01-26/2689459-127.patch"
+                "Untranslatable aliases generation fix for translations": "https://www.drupal.org/files/issues/2020-01-26/2689459-127.patch",
+				"Attribute hreflang not allowed on element li at this point": "https://www.drupal.org/files/issues/2019-06-12/2454289-94_0.patch"
             },
             "drupal/office_hours": {
                 "Handle timezones in Office Hours module": "https://www.drupal.org/files/issues/office_hours-respecting-user_timezone-D8-1925272-17.patch",

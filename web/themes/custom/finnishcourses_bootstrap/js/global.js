@@ -15,13 +15,21 @@
       let lessSearch = Drupal.t("Less search options");
       let moreSearch = Drupal.t("More search options");
 	  
-	   $(".more-search-options-trigger", context).on('click', function () {
-       $(".more-options-wrapper").toggle();
+	   $(".more-search-options-trigger", context).on('click', function (event) {
+		event.preventDefault();  
+        $(".more-options-wrapper").toggle();
 		
 		//console.log($(".more-options-wrapper"));
 
         // Adding less class for "Less search options", so expand more svg icon is added through css
         $('.more-search-options-trigger').toggleClass('less');
+		
+		$('.more-search-options-trigger').attr('aria-expanded', false);
+		$('.more-search-options-trigger.less').attr('aria-expanded', true);
+		
+
+		
+		
 
         // Twice  $(".more-search-options-trigger").text, otherwise it won't toggle between
         // "Less search options" and "More search options"

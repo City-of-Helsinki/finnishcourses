@@ -72,9 +72,9 @@
   'clearfix',
 ]
 %}
-<article{{ attributes.addClass(classes) }}>
+<div{{ attributes.addClass(classes) }}>
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
     <div class="fill" style="background-image: url({{ header_image }})"></div>
-
+   <p class="visually-hidden" lang="fi">{{ header_text }}</p>
   </div>
-</article>
+</div>

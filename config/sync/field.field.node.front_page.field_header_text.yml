@@ -1,0 +1,29 @@
+uuid: edf3f600-5cfc-41e6-acb2-4f46315ce94e
+langcode: fi
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header_text
+    - node.type.front_page
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    full_html: full_html
+    only_text: '0'
+    basic_html: '0'
+    restricted_html: '0'
+    plain_text: '0'
+id: node.front_page.field_header_text
+field_name: field_header_text
+entity_type: node
+bundle: front_page
+label: 'Header text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

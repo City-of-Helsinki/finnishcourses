@@ -628,9 +628,11 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 	  
 	
 	  
-    $form['online_course']['#element_validate'][] = 'online_validate';
-    $form['online_course']['#type'] = 'hidden';
-    $form['course_town']['#options'][999] = 'Online';
+    //$form['online_course']['#element_validate'][] = 'online_validate';
+    //$form['online_course']['#type'] = 'hidden';
+	$form['online_course']['#title'] = t('Online');
+	$form['online_course']['#wrapper_attributes']['class']  = 'online-wrapper';
+    //$form['course_town']['#options'][999] = 'Online';
 	$form['organization']['#title'] = t('Course provider');
 	$form['course_fee']['#title'] = t('Course price');
     $form['time_of_day']['#title'] = t('Time of day');
@@ -641,9 +643,12 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 
     $form['more_options_trigger'] = [
       '#type' => 'html_tag',
-      '#tag' => 'label',
+      '#tag' => 'button',
       '#value' => t('More search options'),
-      '#attributes' => ['class' => ['more-search-options-trigger']],
+      '#attributes' => [
+			'class' => ['more-search-options-trigger'], 
+			'aria-expanded' => 'false',
+			],
     ];
 
     $form['more_options'] = [
@@ -723,8 +728,8 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 
     $courseLevelsLink = ($language == 'en') ? '/language-course-levels' : '/'.$language.'/language-course-levels';
 
-	$form['starting_level']['#suffix'] = '<div class="level-description"><span>'.$any_level_text.'</span><span>'.$beginner_level_text.'</span><span>'.$basic_level_text.'</span><span>'.$intermediate_level_text.'</span><span>'.$advanced_level_text.'</span></div>';
-    $form['starting_level']['#suffix'] .= "<a class='levels-link' href='".$courseLevelsLink."'>".t("Course level description")."</a>";
+	$form['starting_level']['#suffix'] = '<div class="level-description"><span></span><span>'.$beginner_level_text.'</span><span>'.$basic_level_text.'</span><span>'.$intermediate_level_text.'</span><span>'.$advanced_level_text.'</span></div>';
+    $form['starting_level']['#suffix'] .= "<div class='levels-link-container'><a class='levels-link' href='".$courseLevelsLink."'>".t("Course level descriptions")."</a></div>";
 
 	
 	

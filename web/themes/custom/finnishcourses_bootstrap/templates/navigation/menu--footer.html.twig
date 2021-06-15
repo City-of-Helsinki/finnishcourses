@@ -30,7 +30,7 @@
     {% import _self as menus %}
     {% if items %}
         {% if menu_level == 0 %}
-            <ul{{ attributes.addClass('nav navbar-nav') }}>
+            <ul{{ attributes.addClass('nav') }}>
         {% else %}
             <ul class="menu">
         {% endif %}
@@ -43,7 +43,7 @@
                 item.in_active_trail ? 'active',
             ]
             %}
-            <div class="wrapper">
+            
                 <li{{ item.attributes.addClass(classes) }}>
                     {%
                         set link_classes = [
@@ -57,7 +57,7 @@
                         {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
                     {% endif %}
                 </li>
-            </div>
+           
         {% endfor %}
         </ul>
     {% endif %}
