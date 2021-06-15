@@ -77,12 +77,15 @@
                     <div class="navbar-nav fixed-top">
                       {{ page.secondary_menu }}
                       <div class="mobile-menu">
-                      <img alt="{{ 'Open menu'|t }}" class="mobile-menu-icon" src="{{ base_path ~ directory }}/images/icons/menu.svg"/>
-                      <img alt="{{ 'Close menu'|t }}" class="mobile-close-icon" src="{{ base_path ~ directory }}/images/icons/close.svg"/>
-                      <div class="mobile-menu-wrapper">
+				  
+					  <button id="toggle-navigation-menu-button" class="toggle-drawer-button click-interaction" aria-haspopup="true" aria-expanded="false"><span class="assistive text">{{ 'Toggle main navigation'|t }}</span></button>
+					  
+					  
+                      <nav aria-labelledby="finnishcourses-mobile-menu" class="mobile-menu-wrapper">
+					    <label class="sr-only" id="finnishcourses-mobile-menu">{{ 'Main navigation'|t }}</label>
                         {{ mobile_menu_main }}
                         {{ mobile_menu_secondary }}
-                      </div>
+                      </nav>
                       </div>
                     </div>
                 </div>

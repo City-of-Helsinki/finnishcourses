@@ -616,3 +616,57 @@ h1, h2, h3, .fieldset-legend {
     height: 1px;
     word-wrap: normal;
 }
+
+
+
+/* Toggle drawer button theme styles */
+.toggle-drawer-button {
+	min-height: auto;
+	min-width: auto;
+	padding: 0px;
+	position: absolute;
+    top: 26px;
+    width: 24px;
+	height: 24px;
+    left: 14px;
+    cursor: pointer;
+	&:after {
+    	content: url('../images/icons/menu.svg');
+		display: inline-block;
+		min-height: 20px;
+		min-width: 20px;
+		padding: 5px;
+	}
+	&.active:after {
+		content: url('../images/icons/close.svg');
+	}
+	
+	.text {
+		position: absolute !important;
+		left: -10000px !important;
+		width: 1px !important;
+		height: 1px !important;
+		overflow: hidden !important;
+	}
+}
+
+
+/* Toggle navigation menu button theme styles */
+#toggle-navigation-menu-button {
+	display: block;
+    cursor: pointer;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+    border: 0;
+    background: none;
+	&:after {
+		content: url('../images/icons/menu.svg');
+	}
+	&.active:after {
+		content: url('../images/icons/close.svg');
+	}
+	&:focus {
+		outline: 0;
+	}
+}

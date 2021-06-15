@@ -89,7 +89,8 @@ function finnishcourses_bootstrap_preprocess_node(&$variables) {
       $variables['header_image'] = ImageStyle::load('header_image_desktop')->buildUrl($headerImage->field_media_image->entity->getFileUri());
     }
 	if (!empty($variables['node']->get('field_header_text'))) {
-		$variables['header_text'] = $variables['node']->get('field_header_text')->getString();
+		$variables['header_text'] = $variables['node']->field_header_text->value;
+		
 	}	
   }
 
