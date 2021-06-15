@@ -116,10 +116,10 @@ function finnishcourses_bootstrap_preprocess_page(&$variables) {
 
   $main_menu_tree_items = $menu_tree->load(trim('main'), $parameters);
   $main_menu_tree_manipulated = $menu_tree->transform($main_menu_tree_items, $manipulators);
-  $main_menu = $menu_tree->build($main_menu_tree_manipulated);
+  $main_menu = $menu_tree->build($main_menu_tree_manipulated); 
 
   // Iterate over the secondary menus and merge them together.
-  $secondary_menus = array('footer', 'foo', 'foote');
+  $secondary_menus = array('footer', 'foo', 'foote', 'main');
   foreach($secondary_menus as $menu_name) {
     $tree_items = $menu_tree->load(trim($menu_name), $parameters);
     $tree_manipulated = $menu_tree->transform($tree_items, $manipulators);
@@ -128,17 +128,41 @@ function finnishcourses_bootstrap_preprocess_page(&$variables) {
 
   $secondary_menu = $menu_tree->build($combined_tree);
 
-  $variables['mobile_menu_main'] = array(
+   $variables['mobile_menu_main'] = array(
     '#prefix' => '<div class="mobile-menu-main">',
     '#suffix' => '</div>',
     '#markup' => \Drupal::service("renderer")->renderRoot($main_menu),
-  );
+  ); 
+  
 
-  $variables['mobile_menu_secondary'] = array(
+ $variables['mobile_menu_secondary'] = array(
     '#prefix' => '<div class="mobile-menu-secondary">',
     '#suffix' => '</div>',
     '#markup' => \Drupal::service("renderer")->renderRoot($secondary_menu),
   );
+  
+  // Iterate over all menus and merge them together.
+  
+  $mobile_combined_mobile_tree = array();
+  
+  $mobile_menus = array('main', 'footer', 'foo', 'foote');
+  foreach($mobile_menus as $mobile_menu_name) {
+	  
+    $mobile_tree_items = $menu_tree->load(trim($mobile_menu_name), $parameters);
+    $mobile_tree_manipulated = $menu_tree->transform($mobile_tree_items, $manipulators);
+    $mobile_combined_mobile_tree = array_merge($mobile_combined_mobile_tree, $mobile_tree_manipulated);
+  }
+
+  $mobile_menu = $menu_tree->build($mobile_combined_mobile_tree);
+
+  //dsm($mobile_menu);
+  
+  $variables['mobile_menu'] = array(
+    '#markup' => \Drupal::service("renderer")->renderRoot($mobile_menu),
+  );
+  
+  dsm($variables['mobile_menu']);
+  
 }
 
 /**
