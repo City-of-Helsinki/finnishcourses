@@ -60,7 +60,7 @@ display:
           submit_button: 'Show courses'
           reset_button: false
           reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Order by'
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
@@ -236,8 +236,8 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: ‹‹
-            next: ››
+            previous: '‹‹ Previous'
+            next: 'Next ››'
             first: '« First'
             last: 'Last »'
           expose:

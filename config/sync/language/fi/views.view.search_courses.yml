@@ -93,6 +93,8 @@ display:
           tags:
             first: '« Ensimmäinen'
             last: 'Viimeinen »'
+            previous: '‹‹ Edellinen'
+            next: 'Seuraava ››'
   page_1:
     display_title: Sivu
 label: 'Etsi suomen kielen kursseja'

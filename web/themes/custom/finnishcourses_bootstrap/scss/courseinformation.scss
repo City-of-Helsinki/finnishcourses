@@ -292,12 +292,11 @@
 }
 
 .field--name-field-course-availability .field__item {
-  font-weight: bold;
+  
 }
 
 .course-location.online-course .field__item {
   span {
-    font-weight: bold;
     color: $green-shade;
   }
 }
@@ -310,7 +309,7 @@
   display: flex;
    margin-top: 20px;
    margin-bottom: 20px;
-  text-align: center;
+   text-align: center;
 
   .office-hours__item-label {
     width: auto !important; // Override
@@ -320,18 +319,18 @@
   }
 
   .office-hours__item {
-    font-weight: bold;
     display: grid;
     margin-left: 1px;
     margin-right: 1px;
     width: 140px;
-    height: 100px;
+    height: 100px; 
     background-color: $dark-schedule-shade;
+	
     @include media-breakpoint-down(sm) {
       height: 85px;
 	  width: 15%;
 	  &.empty {
-		//display: none;
+		
 	  }
     }
 
@@ -341,6 +340,7 @@
 			display: block;
 			position: relative;
 			font-size: 0;
+			font-weight: normal;
 			&:after {
 				content: "|";
 				font-size: 16px;

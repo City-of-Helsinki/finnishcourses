@@ -1,7 +1,8 @@
 /* ICONS
 --------------------------------------------------*/
 
-.more-search-options-trigger {
+.more-search-options-trigger,
+.show-search-form-trigger {
   &::before {
     content: url(../images/icons/ic_chevron_down@1x.svg);
     position: relative;

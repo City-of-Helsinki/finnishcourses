@@ -576,33 +576,34 @@ h1, h2, h3, .fieldset-legend {
 
 .view-search-courses {
 	
-	.newsort {
-		margin: 20px 0 10px 0;
+	.form-item-sort-bef-combine {
+		margin: 20px auto 10px auto;
 		position: relative;
 		&:after { 
 			content: url('../images/icons/ic_chevron_down@1x.svg');
 			color: #0073cf;
 			position: absolute;
-			top: 0;
+			top: 6px;
 			width: 12px;
-			right: 12px;
+			right: 25px;
 			pointer-events: none;
 			
 			
 		}
-		@include media-breakpoint-down(md-t) {
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+			margin: 20px auto 0 auto;
 		&:after { 
-			top: 0px;
+			top: 45px;
 			}
 		}
-		@include media-breakpoint-up(sm-t) {
-			width: 50%;
-			margin: 20px auto 0 auto;
+/* 		@include media-breakpoint-up(sm-t) {
+			
 			&:after { 
-				top: -22px;
+				
 			}
 		
-		}
+		} */
 		
 	}
 	

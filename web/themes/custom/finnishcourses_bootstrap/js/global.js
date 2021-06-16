@@ -37,7 +37,33 @@
         === lessSearch ? moreSearch : lessSearch);
       });
 	  
-	   $(".form-item-sort-bef-combine select", context).each(function () {
+	  
+	  
+	   $(".show-search-form-trigger", context).on('click', function (event) {
+		event.preventDefault();  
+        $(".block-views-exposed-filter-blocksearch-courses-page-1 form").toggle();
+		
+		//console.log($(".more-options-wrapper"));
+
+        // Adding less class for "Less search options", so expand more svg icon is added through css
+        $('.show-search-form-trigger').toggleClass('less');
+		
+		$('.show-search-form-trigger').attr('aria-expanded', false);
+		$('.show-search-form-trigger.less').attr('aria-expanded', true);
+		
+
+		
+		
+
+        // Twice  $(".more-search-options-trigger").text, otherwise it won't toggle between
+        // "Less search options" and "More search options"
+        $(".more-search-options-trigger").text($(".more-search-options-trigger").text()
+        === lessSearch ? moreSearch : lessSearch);
+      });
+	  
+	  
+	  
+	   $(".form-item-sort-bef-combine", context).each(function () {
 			  
 			  var originalSort = $(this);
 		 
@@ -46,8 +72,7 @@
 			  var sort = originalSort.clone();
 			  $('.form-item-sort-bef-combine').hide();
 			  
-			  $('.view-search-courses .view-header').append( '<div class="newsort"></div>' );
-			  $('.view-search-courses .view-header .newsort').append(sort);
+			  $('.view-search-courses .view-header').append(sort);
 			  
 			  $(sort).change(function() {
 				  var selectedValue = $(this).val();
@@ -170,6 +195,12 @@
         searchButtonObserver.observe(document.querySelector("#edit-submit-fixed"));
       }
 	  
+	  
+	  var newTitle = $('.path-search .view-search-courses h1').text();
+	  $('.path-search .view-search-courses h1').remove();
+	  $('.path-search h1.title').text(newTitle);
+	  $('.path-search h1.title').show();
+	  //console.log(newTitle);
 	  
 	 
 		 

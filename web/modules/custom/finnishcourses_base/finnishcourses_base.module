@@ -626,7 +626,6 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 
   if($view->id() == 'search_courses') {
 	  
-	
 	  
     //$form['online_course']['#element_validate'][] = 'online_validate';
     //$form['online_course']['#type'] = 'hidden';
@@ -701,6 +700,8 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
       //'#submit' => ['node_form_submit'],
       '#weight' => 99,
     ];
+	
+	//$form['sort_bef_combine']['#prefix'] = '<label class="label" for="edit-sort-bef-combine">' .t('Order by'). '</label>';
 
     $form['sort_bef_combine']['#weight'] = 99;
 	

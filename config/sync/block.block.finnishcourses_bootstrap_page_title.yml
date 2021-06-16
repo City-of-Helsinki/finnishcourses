@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - block_visibility_groups
+    - system
   theme:
     - finnishcourses_bootstrap
 _core:
@@ -24,4 +25,9 @@ visibility:
     id: condition_group
     negate: false
     block_visibility_group: ''
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: "search/courses\r\nsearch/courses/*\r\nsearch/courses*"
+    negate: true
     context_mapping: {  }

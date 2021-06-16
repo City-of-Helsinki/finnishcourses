@@ -216,7 +216,8 @@
   display: inline-block;
 }
 
-.more-search-options-trigger {
+.more-search-options-trigger,
+.show-search-form-trigger {
   display: block;
   cursor: pointer;
   color: $primary-shade;
@@ -234,6 +235,25 @@
 		padding-right: 2px;
 	}
   }
+}
+
+.path-frontpage {
+	.show-search-form-trigger {
+		display: none;
+	}
+}
+
+.path-search {
+
+	h1.title {
+		display: none;
+	}
+
+	.block-views-exposed-filter-blocksearch-courses-page-1 {
+		form {
+			display: none;
+		}
+	}
 }
 
 // Style for less search options
