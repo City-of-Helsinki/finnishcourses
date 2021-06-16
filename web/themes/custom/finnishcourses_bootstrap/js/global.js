@@ -39,6 +39,10 @@
 	  
 	  
 	  
+	  // SHOW SEARCH FORM "BUTTON"
+      let hideSearch = Drupal.t("Hide search form");
+      let showSearch = Drupal.t("Show search form");
+	  
 	   $(".show-search-form-trigger", context).on('click', function (event) {
 		event.preventDefault();  
         $(".block-views-exposed-filter-blocksearch-courses-page-1 form").toggle();
@@ -51,6 +55,9 @@
 		$('.show-search-form-trigger').attr('aria-expanded', false);
 		$('.show-search-form-trigger.less').attr('aria-expanded', true);
 		
+		$('.show-search-form-trigger').text(showSearch);
+		$('.show-search-form-trigger.less').text(hideSearch);
+		
       });
 	  
 	  
@@ -58,6 +65,8 @@
 	   $(".form-item-sort-bef-combine", context).each(function () {
 			  
 			  var originalSort = $(this);
+			  
+			  var originalSelect = $("select", this);
 		 
 			  //console.log("test");
 			  
@@ -67,9 +76,9 @@
 			  $('.view-search-courses .view-header').append(sort);
 			  
 			  $(sort).change(function() {
-				  var selectedValue = $(this).val();
+				  var selectedValue = $("select", this).val();
 				  console.log(selectedValue);
-				  originalSort.val(selectedValue);
+				  originalSelect.val(selectedValue);
 				  
 				  $('.bef-exposed-form form').submit();
 			  });
@@ -120,12 +129,21 @@
         });
       }
 
+
+	  // Mobile Navigation "BUTTON"
+      let hideNavigation = Drupal.t("Hide navigation");
+      let showNavigation = Drupal.t("Show navigation");
+	  
+	  
       // HAMBURGER MENU
       $("#toggle-navigation-menu-button").click(function () {
         //$(".mobile-menu").css('backgroundColor', '#0073cf');
 		$("#toggle-navigation-menu-button").toggleClass('active');
 		$("#toggle-navigation-menu-button").attr('aria-expanded', false);
 		$("#toggle-navigation-menu-button.active").attr('aria-expanded', true);
+		
+		$('#toggle-navigation-menu-button .assistive').text(showNavigation);
+		$('#toggle-navigation-menu-button.active .assistive').text(hideNavigation);
 		
         $(".region-secondary-menu").css('backgroundColor', '#0073cf');
         $(".mobile-menu-wrapper").slideToggle("fast", function () {

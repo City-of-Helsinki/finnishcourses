@@ -44,7 +44,7 @@
   {{ title_suffix }}
   {% block content %}
     <div{{ content_attributes.addClass('content') }}>
-	<button class="show-search-form-trigger" aria-expanded="false">{{ 'Show search form'|t }}</button>
+	<button class="show-search-form-trigger" aria-expanded="false" aria-haspopup="true">{{ 'Show search form'|t }}</button>
       {{ content }}
     </div>
   {% endblock %}

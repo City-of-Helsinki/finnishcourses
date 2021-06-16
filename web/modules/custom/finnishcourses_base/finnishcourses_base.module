@@ -647,6 +647,7 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
       '#attributes' => [
 			'class' => ['more-search-options-trigger'], 
 			'aria-expanded' => 'false',
+			'aria-haspopup' => 'true',
 			],
     ];
 

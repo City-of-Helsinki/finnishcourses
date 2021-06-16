@@ -200,7 +200,7 @@ content:
       separator:
         days: ''
         grouped_days: ' - '
-        day_hours: ': '
+        day_hours: ''
         hours_hours: '<span>&ndash;</span>'
         more_hours: ', '
       current_status:
