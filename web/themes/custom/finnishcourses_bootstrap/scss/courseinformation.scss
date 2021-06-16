@@ -173,7 +173,7 @@
 .field--name-field-starting-level, .field--name-field-target-level, .field--name-field-organizers-course-id, .field--name-field-ask-more-email,
 .views-field-field-starting-level, .views-field-field-target-level, .views-field-field-course-start-date,
 .views-field-field-course-town, .views-field-field-course-start-date, .views-field-field-course-fee, .views-field-field-organizers-course-id {
-  display: flex;
+  //display: flex;
 
   @include media-breakpoint-down(sm) {
     font-size: 16px;

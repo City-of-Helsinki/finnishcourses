@@ -409,7 +409,7 @@
 
 .form-item-ending-before {
   @include media-breakpoint-down(sm) {
-    height: 38px;
+    //height: 38px;
     position: relative;
     top: 3px;
   }
