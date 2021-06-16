@@ -161,7 +161,7 @@ function finnishcourses_bootstrap_preprocess_page(&$variables) {
     '#markup' => \Drupal::service("renderer")->renderRoot($mobile_menu),
   );
   
-  dsm($variables['mobile_menu']);
+ 
   
 }
 

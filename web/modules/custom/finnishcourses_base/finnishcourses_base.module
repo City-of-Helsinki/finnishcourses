@@ -859,6 +859,7 @@ function finnishcourses_base_preprocess_views_view_field(&$variables) {
 
       $variables['node_path'] = $nodePath;
       $variables['nid'] = $nid;
+	  $variables['title'] = $node->getTitle();
 
     }
   }

@@ -77,11 +77,11 @@
   
     @include media-breakpoint-down(sm-t) {
 		width: 560px;
-		margin-left: 230px;
+		margin: 0 auto;
 	}
 	@include media-breakpoint-down(sm) {
 	    width: 280px;
-		margin-left: 96px;
+		margin: 0 auto;
 	}
   
 	.form-checkboxes {
@@ -273,10 +273,14 @@
 }
 
 .more-options-row-1, .more-options-row-2, .more-options-row-3 {
-  display: flex;
 
+  @include media-breakpoint-up(sm-t) { 
+	display: grid;
+	grid-template-columns: 448px 448px;
+  }
+  
   @include media-breakpoint-down(sm) {
-    flex-direction: column;
+    //flex-direction: column;
   }
 
   .fieldset {
