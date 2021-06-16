@@ -51,14 +51,6 @@
 		$('.show-search-form-trigger').attr('aria-expanded', false);
 		$('.show-search-form-trigger.less').attr('aria-expanded', true);
 		
-
-		
-		
-
-        // Twice  $(".more-search-options-trigger").text, otherwise it won't toggle between
-        // "Less search options" and "More search options"
-        $(".more-search-options-trigger").text($(".more-search-options-trigger").text()
-        === lessSearch ? moreSearch : lessSearch);
       });
 	  
 	  

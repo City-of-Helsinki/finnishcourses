@@ -1,8 +1,9 @@
 <div class="office-hours">
   {% for item in items %}
     <div class="{{ item.classes }}">
-      <span class="office-hours__item-label" style="width: {{ label_length * 0.60 }}em;">{{ item.label }}</span>
-      <span class="office-hours__item-slots" aria-label="{{ 'No classes'|t }}"> {{ item.slots }}</span>
+	  <span class="sr-only">{{ item.label }} {{ item.slots }}</span>	
+      <span aria-hidden="true" class="office-hours__item-label" style="width: {{ label_length * 0.60 }}em;">{{ item.label }}</span>
+      <span aria-hidden="true" class="office-hours__item-slots" aria-label="{{ 'No classes'|t }}"> {{ item.slots }}</span>
      <!-- <span class="office-hours__item-comments">{{ item.comments }}</span>
       <br /> -->
     </div>

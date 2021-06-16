@@ -1525,7 +1525,7 @@ display:
               days: ''
               grouped_days: ' - '
               day_hours: ''
-              hours_hours: '<br/>|<br/>'
+              hours_hours: '<span>&ndash;</span>'
               more_hours: ', '
             current_status:
               position: ''
@@ -2021,30 +2021,24 @@ display:
                   ylin_taso_C: ylin_taso_C
           reduce_duplicates: false
           plugin_id: search_api_options
-        field_course_start_date_1:
-          id: field_course_start_date_1
+        field_starting_level_1:
+          id: field_starting_level_1
           table: search_api_index_courses_index
-          field: field_course_start_date
+          field: field_starting_level
           relationship: none
           group_type: group
-          admin_label: 'Ending before'
-          operator: '<='
-          value:
-            min: ''
-            max: ''
-            value: ''
-            type: date
-          group: 11
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 3
           exposed: true
           expose:
-            operator_id: field_course_start_date_1_op
-            label: 'Ending before'
+            operator_id: field_starting_level_1_op
+            label: 'Starting level'
             description: ''
             use_operator: false
-            operator: field_course_start_date_1_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: start_date_2
+            operator: field_starting_level_1_op
+            identifier: starting_level_ext
             required: false
             remember: false
             multiple: false
@@ -2053,12 +2047,9 @@ display:
               anonymous: '0'
               administrator: '0'
               course_editor: '0'
-              organization_admin: '0'
-              infofinland_user: '0'
-              rest_api: '0'
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -2071,7 +2062,8 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          plugin_id: search_api_date
+          reduce_duplicates: false
+          plugin_id: search_api_options
         field_course_fee:
           id: field_course_fee
           table: search_api_index_courses_index
@@ -2191,49 +2183,6 @@ display:
               2: {  }
               3: {  }
           plugin_id: search_api_date
-        field_starting_level_1:
-          id: field_starting_level_1
-          table: search_api_index_courses_index
-          field: field_starting_level
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 3
-          exposed: true
-          expose:
-            operator_id: field_starting_level_1_op
-            label: 'Starting level'
-            description: ''
-            use_operator: false
-            operator: field_starting_level_1_op
-            identifier: starting_level_ext
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              course_editor: '0'
-            reduce: false
-            operator_limit_selection: false
-            operator_list: {  }
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          plugin_id: search_api_options
         search_api_fulltext:
           id: search_api_fulltext
           table: search_api_index_courses_index
@@ -2504,6 +2453,57 @@ display:
           hierarchy: false
           error_message: true
           plugin_id: search_api_term
+        field_course_end_date:
+          id: field_course_end_date
+          table: search_api_index_courses_index
+          field: field_course_end_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '<='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 11
+          exposed: true
+          expose:
+            operator_id: field_course_end_date_op
+            label: 'Ending before'
+            description: ''
+            use_operator: false
+            operator: field_course_end_date_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ending_before
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              course_editor: '0'
+              organization_admin: '0'
+              infofinland_user: '0'
+              rest_api: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_date
       sorts:
         field_course_start_date:
           id: field_course_start_date

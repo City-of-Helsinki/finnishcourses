@@ -47,7 +47,7 @@
   }
 }
 
-.form-item-start-date, .form-item-start-date-2 {
+.form-item-start-date, .form-item-ending-before {
   &::before {
     content: url(../images/icons/ic_insert_invitation@1x.svg);
     position: absolute;
@@ -75,7 +75,7 @@
   }
 }
 
-.form-item-start-date-2 {
+.form-item-ending-before {
   &::before {
     right: 186px;
     top: 11px;
@@ -90,7 +90,7 @@
   }
 }
 
-.form-item-start-date-2 {
+.form-item-ending-before {
   &::after {
     //content: ("-");
     position: absolute;

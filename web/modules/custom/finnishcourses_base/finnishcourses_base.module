@@ -637,7 +637,7 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
     $form['time_of_day']['#title'] = t('Time of day');
     $form['starting_level_ext']['#title'] = t('Starting level');
     $form['start_date']['#title'] = t('Starting from');
-	$form['start_date_2']['#title'] = t('Ending before');
+	$form['ending_before']['#title'] = t('Ending before');
     $form['keyword']['#title'] = t('Text search');
 
     $form['more_options_trigger'] = [
@@ -685,7 +685,7 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
       '#attributes' => ['class' => ['more-options-dates']],
     ]; */
     $form['more_options']['row_3']['dates']['start_date'] = $form['start_date'];
-    $form['more_options']['row_3']['dates']['start_date_2'] = $form['start_date_2'];
+    $form['more_options']['row_3']['dates']['ending_before'] = $form['ending_before'];
     $form['more_options']['row_4']['keyword'] = $form['keyword'];
 
     // $form['more_options']['time_of_day']['#title'] = t('Time of day');
@@ -751,7 +751,7 @@ $output['variable'] = [
     unset($form['starting_level_ext']);
 	unset($form['organization']);
     unset($form['start_date']);
-    unset($form['start_date_2']);
+    unset($form['ending_before']);
     unset($form['keyword']);
 	
     
