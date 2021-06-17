@@ -206,14 +206,20 @@
       }
 	  
 	  
+	  // siirretään h1 otsikko kurssihaun tulossivulla
 	  var newTitle = $('.path-search .view-search-courses h1').text();
 	  $('.path-search .view-search-courses h1').remove();
 	  $('.path-search h1.title').text(newTitle);
 	  $('.path-search h1.title').show();
-	  //console.log(newTitle);
 	  
 	 
-		 
+	 // Lisätään lang atribuutti kielen vaihtajaan
+	  $('.language-switcher-language-url li a').each(function () {
+
+		var lang = $( this ).attr( "hreflang" );
+		$( this ).attr( "lang", lang );
+
+	  });
 
 		 
 	
