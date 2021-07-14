@@ -10,7 +10,7 @@
   Drupal.behaviors.bootstrap_barrio_subtheme = {
     attach: function (context, settings) {
 		
-
+		
       // SEARCH MORE OPTIONS "BUTTON"
       let lessSearch = Drupal.t("Less search options");
       let moreSearch = Drupal.t("More search options");
@@ -174,7 +174,7 @@
     }
   };
 
-  
+ 
 	$(document).ready(function () {
 		
 	
@@ -207,10 +207,13 @@
 	  
 	  
 	  // siirretään h1 otsikko kurssihaun tulossivulla
-	  var newTitle = $('.path-search .view-search-courses h1').text();
-	  $('.path-search .view-search-courses h1').remove();
-	  $('.path-search h1.title').text(newTitle);
-	  $('.path-search h1.title').show();
+	  
+	  var newTitle = $('.path-search .view-search-courses .view-header h2').text();
+	  //console.log(newTitle);
+	  $('.path-search .view-search-courses .view-header h2').remove();
+	  $('.path-search h1').text(newTitle).show();
+	  /* $('.path-search h1.title').text(newTitle);
+	  $('.path-search h1.title').show(); */
 	  
 	 
 	 // Lisätään lang atribuutti kielen vaihtajaan

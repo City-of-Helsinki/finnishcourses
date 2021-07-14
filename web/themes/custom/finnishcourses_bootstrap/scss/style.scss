@@ -45,6 +45,19 @@ body {
   
 }
 
+.node--type-page {
+  #block-finnishcourses-bootstrap-page-title {
+	 h1 {
+		margin-top: 15px;
+		margin-bottom: 35px;
+		 @include media-breakpoint-down(md) {
+			margin-top: 15px;
+			margin-bottom: 35px;
+		  }
+	  }
+  }
+}
+
 // todo: fix this...........
 .container-fluid {
   max-width: 980px;

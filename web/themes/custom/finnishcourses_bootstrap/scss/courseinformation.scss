@@ -268,6 +268,7 @@
   .field__item {
 	p {
 		margin-bottom: 0;
+		display: inline;
 	}
   }
 }
@@ -344,12 +345,16 @@
 			&:after {
 				content: "|";
 				font-size: 16px;
+				@include media-breakpoint-down(sm) {
+				font-size: 11px;
+			  }
 			}
 		}
 	
       @include media-breakpoint-down(sm) {
-        padding: 5px;
-        font-size: 13px;
+        padding: 2px 0;
+		font-size: 11px;
+		
       }
     }
   }

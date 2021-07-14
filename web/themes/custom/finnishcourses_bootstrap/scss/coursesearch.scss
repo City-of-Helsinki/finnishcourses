@@ -366,6 +366,18 @@
 
 #edit-starting-level--wrapper {
   flex: 1;
+  #edit-starting-level {
+	@include media-breakpoint-down(sm) {
+		width: 360px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	.js-form-type-radio {
+	  margin-bottom: 10px;
+	  text-align: left;
+    }
+  }
 }
 
 .form-item-starting-level-ext, .form-item-organization, .form-item-start-date, .form-item-ending-before,
@@ -374,6 +386,7 @@
   @include media-breakpoint-down(sm-t) {
     flex-direction: column;
   }
+  
 }
 
 .form-item-starting-level-ext, .form-item-organization, .form-item-ending-before, .form-item-keyword {

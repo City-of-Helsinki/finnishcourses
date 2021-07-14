@@ -6,7 +6,7 @@ display:
       header:
         area:
           content:
-            value: "<div>\r\n<p><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span><span>Finnishcourses.fi -palvelussa kurssitietoja ilmoittavat seuraavat koulutuksen järjestäjät</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>\r\n</div>\r\n"
+            value: "<p>Finnishcourses.fi -palvelussa kurssitietoja ilmoittavat seuraavat koulutuksen järjestäjät</p>\r\n"
             format: basic_html
       fields:
         nothing:

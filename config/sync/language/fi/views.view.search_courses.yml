@@ -54,10 +54,13 @@ display:
         field_course_organization:
           expose:
             label: Organisaatio
+        field_online_course:
+          expose:
+            label: Verkkokurssi
       header:
         result:
           content: 'Hakuehdoilla löytyi @total kurssi(a)'
-      title: 'Etsi suomen kielen kursseja'
+      title: 'Etsi suomen kielen kursseja nyt'
       fields:
         field_starting_level:
           label: Aloitustaso
@@ -75,6 +78,11 @@ display:
           label: 'Kurssin ID'
         field_online_course:
           label: Paikka
+          settings:
+            format_custom_true: Verkkokurssi
+        field_online_course_1:
+          settings:
+            format_custom_true: Verkkokurssi
       sorts:
         field_course_fee:
           expose:
@@ -97,4 +105,9 @@ display:
             next: 'Seuraava ››'
   page_1:
     display_title: Sivu
+    display_options:
+      display_extenders:
+        metatag_display_extender:
+          metatags:
+            title: 'Etsi suomen kielen kursseja | Finnishcourses'
 label: 'Etsi suomen kielen kursseja'

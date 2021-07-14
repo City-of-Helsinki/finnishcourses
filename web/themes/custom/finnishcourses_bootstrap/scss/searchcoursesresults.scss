@@ -9,7 +9,7 @@
 	width: 500px;
 	  margin: auto;
 	  color: $text-shade;
-	  @include media-breakpoint-down(sm-t) {
+	  @include media-breakpoint-down(sm) {
 		width: 100%;
 	  }
 		
@@ -180,17 +180,22 @@
 	margin-right: 1px;
 	width: 168px;
 	height: 114px;
+	
 	background-color: $dark-schedule-shade;
 	@include media-breakpoint-down(md) {
 		width: 14%;
+	}
+	@include media-breakpoint-down(sm) {
+		height: 82px;
 	}
 	.office-hours__item-slots {
 	  background: #fff;	
 	  margin: 0 3px 3px 3px;
 	  padding: 3px 0;	
 	  @include media-breakpoint-down(sm) {
-		padding: 5px;
-		font-size: 13px;
+		padding: 2px 0;
+		margin: 0 2px 2px 2px;
+		font-size: 11px;
 	  }
 	}
   }

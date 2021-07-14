@@ -18,6 +18,8 @@ display:
           label: 'Kurssin ID'
         field_online_course:
           label: Paikka
+          settings:
+            format_custom_true: Verkkokurssi
       empty:
         area:
           content:

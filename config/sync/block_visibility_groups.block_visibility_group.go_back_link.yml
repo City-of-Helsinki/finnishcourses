@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - ctools
+    - system
 id: go_back_link
 label: 'Go back link'
 logic: or
@@ -25,4 +26,10 @@ conditions:
     negate: false
     context_mapping: {  }
     uuid: 58baefdb-dff5-4f83-9430-66c2aee2abd5
+  ae47b2b3-063b-4502-bbfc-c34a671771c2:
+    id: request_path
+    pages: /courses/swedish-courses
+    negate: false
+    context_mapping: {  }
+    uuid: ae47b2b3-063b-4502-bbfc-c34a671771c2
 allow_other_conditions: true

@@ -843,7 +843,7 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: Online
+            format_custom_true: 'Online course'
             format_custom_false: ''
           group_column: value
           group_columns: {  }
@@ -1438,7 +1438,7 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: Online
+            format_custom_true: 'Online course'
             format_custom_false: ''
           group_column: value
           group_columns: {  }
@@ -2630,7 +2630,9 @@ display:
     position: 1
     display_options:
       display_extenders:
-        metatag_display_extender: {  }
+        metatag_display_extender:
+          metatags:
+            title: 'Search Finnish courses | Finnishcourses'
       path: search/courses
       exposed_block: true
     cache_metadata:
