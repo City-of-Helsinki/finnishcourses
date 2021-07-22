@@ -324,7 +324,7 @@
       font-size: 16px;
       //flex-basis: 20%;
       @include media-breakpoint-down(sm-t) {
-        margin-bottom: 16px;
+        margin-bottom: 10px;
       }
     }
 	legend {
@@ -510,10 +510,10 @@
 .form-item-start-date, .form-item-ending-before {
   .label {
    // flex-basis: 38% !important; // Overriding flex-basis: 26% in general for labels classes
-    top: 10px;
+    top: 0;
     position: relative;
     @include media-breakpoint-down(sm-t) {
-      top: 16px;
+     top: 0;
     }
   }
 
@@ -545,11 +545,11 @@
   margin-top: 4px;
 
   .label {
-    top: 10px;
+    top: 0;
     position: relative;
     @include media-breakpoint-down(sm-t) {
       position: relative;
-      top: 10px;
+      top: 0;
     }
   }
 
