@@ -64,21 +64,24 @@
 	  
 	   $(".form-item-sort-bef-combine", context).each(function () {
 			  
-			  var originalSort = $(this);
+			/*   var originalSort = $(this);
 			  
 			  var originalSelect = $("select", this);
 		 
-			  //console.log("test");
 			  
 			  var sort = originalSort.clone();
 			  $('.form-item-sort-bef-combine').hide();
 			  
-			  $('.view-search-courses .view-header').append(sort);
+			  $('.view-search-courses .view-header').append(sort); */
+			  
+			  var sort = $(this);
+			  
+			  sort.detach().appendTo('.view-search-courses .view-header');
 			  
 			  $(sort).change(function() {
 				  var selectedValue = $("select", this).val();
-				  console.log(selectedValue);
-				  originalSelect.val(selectedValue);
+				  //console.log(selectedValue);
+				  sort.val(selectedValue);
 				  
 				  $('.bef-exposed-form form').submit();
 			  });

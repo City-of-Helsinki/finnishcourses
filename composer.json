@@ -123,6 +123,7 @@
         "drupal/tvi": "^1.0@beta",
         "drupal/twig_debugger": "^1.1",
         "drupal/ultimate_cron": "^2.0@alpha",
+        "drupal/upgrade_status": "^3.8",
         "drupal/view_unpublished": "^1.0@alpha",
         "drupal/webform": "5.25",
         "drush/drush": "^9.0.0",

@@ -23,12 +23,32 @@ function _course_cron_jobs_unpublish_courses() {
 function _handle_published_courses($allPublishedCourses) {
 
   $courseDataService = \Drupal::service('course_services.course_data_service');
+ 
 
   foreach ($allPublishedCourses as $key => $course) {
 
     $courseUnpublishDate = $courseDataService->getFieldValue('field_course_unpublish_date', $course, 'valueInArray');
+	
+	$courseEndDate = $courseDataService->getFieldValue('field_course_end_date', $course, 'valueInArray');
+	
+	 if (!empty($courseEndDate)) {
+		
+	 $message = "Nid:" . $course . " course end date: " . $courseEndDate . "<br />";
+	 \Drupal::logger('course_cron_jobs')->notice($message);
+	
+	
+      if (strtotime($courseEndDate) < strtotime('now')) {
+        $courseDataService->setNodeValue('published', 'FALSE', $course);
+      }
+      continue;
+    }
 
     if (!empty($courseUnpublishDate)) {
+		
+	//$message = "Key:" . $key . " courseUnpublishDate: " . $courseUnpublishDate;
+	//\Drupal::logger('course_cron_jobs')->notice($message);
+	
+	
       if (strtotime($courseUnpublishDate) < strtotime('now')) {
         $courseDataService->setNodeValue('published', 'FALSE', $course);
       }
