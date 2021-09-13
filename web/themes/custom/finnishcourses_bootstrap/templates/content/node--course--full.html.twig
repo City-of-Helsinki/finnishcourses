@@ -115,7 +115,7 @@
 	  {% if node.field_online_course.value %}
         <div class="course-location online-course">
           <div class="field__label">{% trans %}Location{% endtrans %}</div>
-          <div class="field__item"><span>{% trans %}Online{% endtrans %}</span>, {{ node.field_course_organization.entity.name.value }}</div>
+          <div class="field__item"><span>{% trans %}Online course{% endtrans %}</span>, {{ node.field_course_organization.entity.name.value }}</div>
         </div>
       {% endif %}								  		 
       {{ content.field_course_fee }}

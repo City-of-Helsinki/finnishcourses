@@ -45,7 +45,7 @@ body {
   
 }
 
-.node--type-page {
+.node--type-page, .path-taxonomy {
   #block-finnishcourses-bootstrap-page-title {
 	 h1 {
 		margin-top: 15px;
@@ -71,7 +71,7 @@ body {
 
 // todo: fix this...........
 
-.node--type-course {
+.node--type-course, .path-taxonomy {
   .main-content {
     @include media-breakpoint-down(sm) {
       margin-top: 10px;
@@ -80,6 +80,8 @@ body {
 
   #block-finnishcourses-bootstrap-page-title {
     @include media-breakpoint-down(sm) {
+	  padding-right: 0;
+      padding-left: 0;	
       top: 0;
       position: relative;
 	  .title {
@@ -159,7 +161,7 @@ body {
   }
   .main {
     @include media-breakpoint-down(sm) {
-      margin-top: 50px;
+    //  margin-top: 50px;
     }
   }
 }
@@ -325,6 +327,12 @@ body {
   }
 }
 
+html:lang(ru) .language-switcher-language-url {
+  @include media-breakpoint-only(sm-t) {
+    margin-right: 40px;
+  }
+}
+
 .language-link.is-active {
   border-bottom: 1.5px solid $underline-link-color;
   padding-bottom: 8px;
@@ -390,7 +398,7 @@ h1, h2, h3 {
   }
 }
 
-.path-node, .path-courses {
+.path-node, .path-courses, .path-training-providers, .path-taxonomy, .path-search {
   .section {
     margin: 21px;
 	@include media-breakpoint-down(sm-t) {

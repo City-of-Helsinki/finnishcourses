@@ -2115,7 +2115,7 @@ display:
                   min: '0'
                   max: '50'
               2:
-                title: '50-149 €'
+                title: '50 - 149 €'
                 operator: between
                 value:
                   value: ''
@@ -2645,6 +2645,372 @@ display:
         - 'url.query_args:sort_by'
         - 'url.query_args:sort_order'
         - user
+      tags:
+        - 'config:field.storage.node.field_course_availability'
+        - 'config:field.storage.node.field_course_end_date'
+        - 'config:field.storage.node.field_course_features'
+        - 'config:field.storage.node.field_course_fee'
+        - 'config:field.storage.node.field_course_id'
+        - 'config:field.storage.node.field_course_organization'
+        - 'config:field.storage.node.field_course_start_date'
+        - 'config:field.storage.node.field_course_street_address'
+        - 'config:field.storage.node.field_course_town'
+        - 'config:field.storage.node.field_course_week_hours'
+        - 'config:field.storage.node.field_map_link'
+        - 'config:field.storage.node.field_online_course'
+        - 'config:field.storage.node.field_organizers_course_id'
+        - 'config:field.storage.node.field_starting_level'
+        - 'config:field.storage.node.field_target_level'
+  page_2:
+    display_plugin: page
+    id: page_2
+    display_title: 'Swedish courses page'
+    position: 2
+    display_options:
+      display_extenders:
+        metatag_display_extender: {  }
+      display_description: ''
+      path: courses/swedish-courses
+      filters:
+        status:
+          id: status
+          table: search_api_index_courses_index
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_boolean
+        search_api_language:
+          id: search_api_language
+          table: search_api_index_courses_index
+          field: search_api_language
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_language
+        field_course_in_swedish:
+          id: field_course_in_swedish
+          table: search_api_index_courses_index
+          field: field_course_in_swedish
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_boolean
+      defaults:
+        filters: false
+        filter_groups: false
+        sorts: false
+        exposed_form: false
+        title: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      sorts:
+        field_course_start_date:
+          id: field_course_start_date
+          table: search_api_index_courses_index
+          field: field_course_start_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: 'Starting date'
+          plugin_id: search_api
+      exposed_form:
+        type: basic
+        options:
+          submit_button: 'Show courses'
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Order by'
+          expose_sort_order: false
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      title: 'Swedish language courses'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+      tags:
+        - 'config:field.storage.node.field_course_availability'
+        - 'config:field.storage.node.field_course_end_date'
+        - 'config:field.storage.node.field_course_features'
+        - 'config:field.storage.node.field_course_fee'
+        - 'config:field.storage.node.field_course_id'
+        - 'config:field.storage.node.field_course_organization'
+        - 'config:field.storage.node.field_course_start_date'
+        - 'config:field.storage.node.field_course_street_address'
+        - 'config:field.storage.node.field_course_town'
+        - 'config:field.storage.node.field_course_week_hours'
+        - 'config:field.storage.node.field_map_link'
+        - 'config:field.storage.node.field_online_course'
+        - 'config:field.storage.node.field_organizers_course_id'
+        - 'config:field.storage.node.field_starting_level'
+        - 'config:field.storage.node.field_target_level'
+  page_3:
+    display_plugin: page
+    id: page_3
+    display_title: 'Swedish courses page'
+    position: 2
+    display_options:
+      display_extenders:
+        metatag_display_extender: {  }
+      display_description: ''
+      path: training-providers-new/%/courses
+      filters:
+        status:
+          id: status
+          table: search_api_index_courses_index
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_boolean
+        search_api_language:
+          id: search_api_language
+          table: search_api_index_courses_index
+          field: search_api_language
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: in
+          value:
+            '***LANGUAGE_language_content***': '***LANGUAGE_language_content***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_language
+      defaults:
+        filters: false
+        filter_groups: false
+        sorts: false
+        exposed_form: false
+        title: false
+        arguments: false
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      sorts:
+        field_course_start_date:
+          id: field_course_start_date
+          table: search_api_index_courses_index
+          field: field_course_start_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: 'Starting date'
+          plugin_id: search_api
+      exposed_form:
+        type: basic
+        options:
+          submit_button: 'Show courses'
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Order by'
+          expose_sort_order: false
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      title: 'Swedish language courses'
+      arguments:
+        field_organizers_course_id:
+          id: field_organizers_course_id
+          table: search_api_index_courses_index
+          field: field_organizers_course_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: true
+          title: '{{ arguments.tid }} - Courses'
+          default_argument_type: taxonomy_tid
+          default_argument_options:
+            term_page: '1'
+            anyall: ','
+            node: false
+            limit: false
+            vids: {  }
+          default_argument_skip_url: false
+          summary_options: {  }
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
+          plugin_id: search_api
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
       tags:
         - 'config:field.storage.node.field_course_availability'
         - 'config:field.storage.node.field_course_end_date'

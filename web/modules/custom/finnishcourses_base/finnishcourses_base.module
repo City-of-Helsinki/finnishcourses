@@ -724,9 +724,9 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 
 	$any_level_text = t('Any: All levels');
 	$beginner_level_text = t('Beginner level (0): No Finnish language skills');
-	$basic_level_text = t('Basic (A): levels A1 and A2: basic language skills');
-	$intermediate_level_text = t('Intermediate (B): levels B1 and B2: language skills of an independent user');
-	$advanced_level_text = t('Advanced (C): levels C1 and C2: language skills of a proficient user');
+	$basic_level_text = t('Basic (A): basic language skills');
+	$intermediate_level_text = t('Intermediate (B): language skills of an independent user');
+	$advanced_level_text = t('Advanced (C): language skills of a proficient user');
 
     $courseLevelsLink = ($language == 'en') ? '/language-course-levels' : '/'.$language.'/language-course-levels';
 
@@ -845,23 +845,36 @@ function finnishcourses_base_preprocess_views_view_fields(&$variables) {
 }
 
 function finnishcourses_base_preprocess_views_view_field(&$variables) {
+	
+	
   if (isset($variables['field']) && !empty($variables['field']->field) && $variables['field']->field == 'nid') {
     $nid = $variables['output']->__toString();
 
     if (!empty($nid)) {
       $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-      $node = node_load($nid);
-      if ($language != 'fi') {
-        if ($node->hasTranslation($language)) {
-          $node = $node->getTranslation($language);
-        }
-      }
+	  
+	  if (isset($language)) {
+		  $node = node_load($nid);
+		  dsm($language);
+		  dsm($nid);
+		  //dsm($node);
+		  if ($language != 'fi') {
+			  
+			/* if ($node->hasTranslation($language)) {
+			  $node = $node->getTranslation($language);
+			} */
+		  }
+		  
+		  if (isset($node)) {
+			$nodePath = $node->toUrl('canonical', ['language' => $node->language()])->setAbsolute()->toString();
+			$variables['node_path'] = $nodePath;
+			$variables['nid'] = $nid;
+			$variables['title'] = $node->getTitle();
+		  }
+	   
+	  }
 
-      $nodePath = $node->toUrl('canonical', ['language' => $node->language()])->setAbsolute()->toString();
-
-      $variables['node_path'] = $nodePath;
-      $variables['nid'] = $nid;
-	  $variables['title'] = $node->getTitle();
+      
 
     }
   }

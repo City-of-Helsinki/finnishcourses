@@ -33,7 +33,7 @@
   {% if not page %}
     <div class="organization-name">
       <div class="field__label">{% trans %}Organizer{% endtrans %}</div>
-      <div class="field__item">{{ name }}</div>
+      <div class="field__item"><a href="{{ url }}">{{ name }}</a></div>
     </div>
   {% endif %}
   <div class="content">

@@ -1,6 +1,16 @@
 /* MOBILE MENU
 --------------------------------------------------*/
 
+
+
+#navbar-top.menu-active {
+	position: absolute;
+}
+
+#navbar-top.menu-active .navbar-nav.fixed-top {
+	position: absolute;
+}
+
 .mobile-menu {
 	background: #0073cf;
 	@include media-breakpoint-down(sm-t) {
@@ -11,13 +21,18 @@
 	}
   .mobile-menu-wrapper {
     text-align: center;
-    height: 820px;
+    height: 834px;
+
+    //overflow-y: scroll;
+    //-webkit-overflow-scrolling: touch;
     margin: auto;
     display: none;
+
     .nav {
       flex-direction: column;
 	   margin: 0 0 0 20px;
 	   text-align: left;
+	   
       .nav-item {
 		
         a {

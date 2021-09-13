@@ -310,6 +310,9 @@
       flex-direction: column;
      // margin-bottom: 10px;
     }
+	@include media-breakpoint-down(xs-t) {
+     margin-bottom: 15px;
+    }
 	
 	legend {
 		max-width: none;
@@ -436,29 +439,56 @@
 
 }
 
+#edit-time-of-day--wrapper {
+  legend {
+    font-weight: 700;
+    font-size: 16px;
+    text-align: left;
+
+    .fieldset-legend {
+      color: $text-shade;
+     // position: absolute;
+    }
+  }
+
+  .fieldset-wrapper {
+    //todo: fix this
+    //margin-top: -7px;
+    @include media-breakpoint-down(sm-t) {
+      // display: inline;
+      #edit-time-of-day {
+        .form-checkboxes {
+          //display: inline-grid;
+          //margin-top: 30px;
+          .form-check {
+            // padding-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
 #edit-course-fee,
 #edit-course-fee--2 {
   flex: 1;
   @include media-breakpoint-down(sm-t) {
-    display: grid;
-	grid-template-columns: 30% 30% 30%;
+   // display: grid;
+	// grid-template-columns: 30% 30% 30%;
   }
 
   .form-check {
-    @include media-breakpoint-down(sm-t) {
-      padding-bottom: 16px;
-    }
+    
+      padding-bottom: 4px;
+    
 
     .form-check-label {
-      padding: 0 12px;
-      @include media-breakpoint-down(sm-t) {
-        padding: 0 9px;
-      }
+      padding: 0 0 0 14px;
     }
 
     .form-checkbox {
       @include media-breakpoint-up(sm-t) {
-        top: -2px;
+        top: 0;
         left: 14px;
       }
     }
@@ -469,20 +499,15 @@
 #edit-time-of-day--2 .form-checkboxes{
 
   @include media-breakpoint-down(sm-t) {
-    display: grid;
-	grid-template-columns: 30% 30% 30%;
+   // display: grid;
+	// grid-template-columns: 30% 30% 30%;
   }
 
   .form-check {
-    @include media-breakpoint-down(sm-t) {
-      padding-bottom: 16px;
-    }
+    padding-bottom: 4px;
 
     .form-check-label {
-      padding: 0 12px;
-      @include media-breakpoint-down(sm-t) {
-        padding: 0 9px;
-      }
+      padding: 0 0 0 14px;
     }
 
     .form-checkbox {
@@ -524,8 +549,11 @@
     @include media-breakpoint-down(md-t) {
      // width: 130px;
     }
-    @include media-breakpoint-down(sm-t) {
+    @include media-breakpoint-only(sm-t) {
       width: 95%;
+    }
+	@include media-breakpoint-down(sm) {
+      width: 100%;
     }
   }
 }

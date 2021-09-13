@@ -65,12 +65,12 @@
       right: 63px;
     } */
     @include media-breakpoint-only(sm-t) {
-      right: 37px;
-      top: 52px;
+    right: 28px;
+    top: 45px;
     }
     @include media-breakpoint-down(sm) {
-      right: 37px;
-      top: 52px;
+     right: 10px;
+     top: 45px;
     }
   }
 }
@@ -80,12 +80,12 @@
     right: 186px;
     top: 11px;
     @include media-breakpoint-only(sm-t) {
-      right: 37px;
-      top: 52px;
+      right: 28px;
+      top: 45px;
     }
     @include media-breakpoint-down(sm) {
-       right: 37px;
-        top: 52px;
+     right: 10px;
+     top: 45px;
     }
   }
 }

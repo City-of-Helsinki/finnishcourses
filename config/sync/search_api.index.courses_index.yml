@@ -7,18 +7,18 @@ dependencies:
     - taxonomy
     - search_api
   config:
-    - field.storage.node.field_course_features
     - field.storage.node.field_books_and_materials
     - field.storage.node.field_course_end_date
+    - field.storage.node.field_course_features
     - field.storage.node.field_course_fee
+    - field.storage.node.field_organizers_course_id
     - field.storage.node.field_course_id
     - field.storage.node.field_course_in_swedish
-    - field.storage.node.field_course_organization
     - field.storage.node.field_course_start_date
     - field.storage.node.field_course_times_of_day
     - field.storage.node.field_course_town
+    - field.storage.node.field_course_organization
     - field.storage.node.field_online_course
-    - field.storage.node.field_organizers_course_id
     - field.storage.node.field_starting_level
     - field.storage.node.field_target_level
     - search_api.server.default_server
@@ -115,6 +115,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_course_organization
+  field_course_organization_1:
+    label: Järjestäjä
+    datasource_id: 'entity:node'
+    property_path: field_course_organization
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_course_organization
   field_course_start_date:
     label: 'Course start date'
     datasource_id: 'entity:node'
@@ -148,7 +156,7 @@ field_settings:
       config:
         - field.storage.node.field_online_course
   field_organizers_course_id:
-    label: 'Course ID'
+    label: 'Organizer ID'
     datasource_id: 'entity:node'
     property_path: field_organizers_course_id
     type: text

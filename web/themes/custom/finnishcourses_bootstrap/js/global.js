@@ -52,13 +52,31 @@
         // Adding less class for "Less search options", so expand more svg icon is added through css
         $('.show-search-form-trigger').toggleClass('less');
 		
-		$('.show-search-form-trigger').attr('aria-expanded', false);
+		$('.showunder 50 €-search-form-trigger').attr('aria-expanded', false);
 		$('.show-search-form-trigger.less').attr('aria-expanded', true);
 		
 		$('.show-search-form-trigger').text(showSearch);
 		$('.show-search-form-trigger.less').text(hideSearch);
 		
       });
+	  
+	  
+	  // aria labelit hintakenttään
+	  
+	  $("#edit-course-fee", context).each(function () {
+		  
+		  $('html:lang(fi) .form-item-course-fee-1').attr('aria-label', 'alle 50 euroa');
+		  $('html:lang(fi) .form-item-course-fee-2').attr('aria-label', '50 viiva 149 euroa');
+		  $('html:lang(fi) .form-item-course-fee-3').attr('aria-label', 'yli 150 euroa');
+		  
+		  $('html:lang(en) .form-item-course-fee-1').attr('aria-label', 'under 50 €');
+		  $('html:lang(en) .form-item-course-fee-2').attr('aria-label', '50 - 149 €');
+		  $('html:lang(en) .form-item-course-fee-3').attr('aria-label', 'over 150 €');
+		  
+		  $('html:lang(ru) .form-item-course-fee-1').attr('aria-label', 'до 50 €');
+		  $('html:lang(ru) .form-item-course-fee-2').attr('aria-label', '50 - 149 €');
+		  $('html:lang(ru) .form-item-course-fee-3').attr('aria-label', 'свыше 150 €');
+	  });
 	  
 	  
 	  
@@ -96,7 +114,7 @@
 			var newValue;
             if(radioValue){
 				
-				//console.log(radioValue);	
+				
 				
 				switch(radioValue) {
 				  case 'All':
@@ -106,8 +124,37 @@
 				
 				$('.level-description span').hide();
 				$('.level-description span:eq('+radioValue+')').show();
+				
+				
+				/* Remove Starting level selection */
+				
+				if(radioValue > 0){
+					//console.log(radioValue);	
+					$("#edit-starting-level-ext").val('All');
+					
+				}	
             }
+			
+			
+			
+			
+			
+			
         });
+		
+		
+		/* Remove Current level selection */
+		
+		$("#edit-starting-level-ext", context).click(function(){
+
+			var startingLevel = $(this).val();
+			
+			if(startingLevel != 'All'){
+				//console.log(startingLevel);
+				$("#edit-starting-level-all").prop("checked", true);
+			}
+			
+		});	
 		 
 
 	
@@ -144,6 +191,8 @@
 		$("#toggle-navigation-menu-button").toggleClass('active');
 		$("#toggle-navigation-menu-button").attr('aria-expanded', false);
 		$("#toggle-navigation-menu-button.active").attr('aria-expanded', true);
+		
+		$("#navbar-top").toggleClass('menu-active');
 		
 		$('#toggle-navigation-menu-button .assistive').text(showNavigation);
 		$('#toggle-navigation-menu-button.active .assistive').text(hideNavigation);

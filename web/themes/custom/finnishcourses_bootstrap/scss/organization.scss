@@ -1,28 +1,64 @@
 /* ORGANIZATIONS
 --------------------------------------------------*/
 
-.field--name-field-postal-code, .field--name-field-town, .field--name-field-email,
-.field--name-field-phone {
+/* .field--name-field-postal-code, .field--name-field-town, .field--name-field-email,
+ .field--name-field-phone {
   display: flex;
   .field__label {
     margin-right: 3px;
   }
-}
-.field--name-description {
-  display: table;
-  .field__label {
-    display: inline;
-    margin-right: 3px;
-  }
-  .field__item {
-    display: inline;
-    p {
-      display: inline;
-    }
-  }
-}
+}  */
+
+
 
 .view-taxonomy-term-organization {
+   .field {
+	  display: block;
+	  .field__label {
+		display: inline;
+		&::after {
+		  content: ":";
+		}
+	  }
+	  .field__item, .field__item a {
+		display: inline;
+		margin-left: 5px;
+		@include media-breakpoint-down(sm-t) {
+		  margin-left: 0;
+		}
+	  }
+	  
+		&.field--name-description {
+		  .field__label {
+			display: block;
+			
+		  }
+		  .field__item {
+			display: block;
+			margin-left: 0;
+			p {
+			  display: block;
+			}
+		  }
+		}
+		
+		@include media-breakpoint-down(sm) {
+			display: grid;
+			grid-template-columns:  45% 50%;
+			grid-column-gap: 5%;
+			margin-bottom: 6px;
+			
+			a {
+				word-break: break-all;
+			}
+			
+			.field-content {
+				margin-left: 0;
+			}		
+		}
+
+	}
+	
   .view-courses-link {
     display: inline-block;
     margin-top: 30px;
@@ -33,4 +69,6 @@
       position: relative;
     }
   }
+  
+
 }

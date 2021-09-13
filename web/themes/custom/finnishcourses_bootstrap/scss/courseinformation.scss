@@ -12,7 +12,7 @@
 
 .group-wrapper {
   @include media-breakpoint-down(sm-t) {
-    margin-top: 80px;
+   // margin-top: 80px;
   }
 }
 
@@ -299,6 +299,7 @@
 .course-location.online-course .field__item {
   span {
     color: $green-shade;
+	font-weight: bold;
   }
 }
 
