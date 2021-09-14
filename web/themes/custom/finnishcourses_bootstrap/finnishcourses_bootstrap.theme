@@ -183,6 +183,7 @@ function finnishcourses_bootstrap_preprocess_page_title(&$variables) {
 }
 
 function finnishcourses_bootstrap_preprocess_taxonomy_term(&$variables) {
+	
   if (isset($variables['view_mode']) && $variables['view_mode'] == 'term_page') {
     if (isset($variables['term']) && method_exists($variables['term'], 'bundle')) {
       if ($variables['term']->bundle() == 'organizations') {

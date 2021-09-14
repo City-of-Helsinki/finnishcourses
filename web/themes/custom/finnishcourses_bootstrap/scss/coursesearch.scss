@@ -65,6 +65,7 @@
     .form-check-label {
       position: relative;
 	  padding-left: 15px;
+	  
       @include media-breakpoint-down(sm-t) {
         //left: -9px;
       }
@@ -321,13 +322,16 @@
 
 
     .fieldset-title, .label {
-	  width: 130px;
+	  
       color: $text-shade;
       //font-weight: 600;
       font-size: 16px;
       //flex-basis: 20%;
       @include media-breakpoint-down(sm-t) {
         margin-bottom: 10px;
+      }
+	  @include media-breakpoint-up(sm-t) {
+        width: 130px;
       }
     }
 	legend {
@@ -370,15 +374,25 @@
 #edit-starting-level--wrapper {
   flex: 1;
   #edit-starting-level {
-	@include media-breakpoint-down(sm) {
+    @include media-breakpoint-between(sm, sm-t){
 		width: 360px;
 		margin: 0 auto;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 	}
+	
+	@media (max-width: 620px) {
+		width: 260px;
+		margin: 0 auto;
+	}
+
+	 
 	.js-form-type-radio {
 	  margin-bottom: 10px;
 	  text-align: left;
+	  @media (max-width: 620px) {
+		display: block;
+	  }
     }
   }
 }
@@ -401,6 +415,7 @@
 	margin-left: 10px;
 	label {
 		padding-left: 12px;
+		white-space: nowrap;
 	}
 }
 
