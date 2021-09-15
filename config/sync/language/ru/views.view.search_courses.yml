@@ -87,9 +87,16 @@ display:
       header:
         result:
           content: '@total курсов найдено по вашему запросу'
+      empty:
+        area:
+          content:
+            value: "<p>Please try loosening your search criteria.</p>\r\n"
+            format: basic_html
   page_1:
     display_options:
       display_extenders:
         metatag_display_extender:
           metatags:
             title: 'Найти курсы финского языка | Finnishcourses'
+  page_2:
+    display_title: 'Kурсы шведского языка'

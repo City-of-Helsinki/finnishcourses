@@ -1309,11 +1309,11 @@ display:
           default_argument_type: taxonomy_tid
           default_argument_options:
             term_page: '1'
-            node: true
-            limit: true
             vids:
               organizations: organizations
             anyall: ','
+            node: false
+            limit: false
           default_argument_skip_url: false
           summary_options:
             base_path: ''
@@ -1366,7 +1366,7 @@ display:
       display_extenders:
         metatag_display_extender:
           metatags:
-            title: '[view:title] | Finnishcourses'
+            title: '[current-page:title]'
       path: training-providers/%/courses
     cache_metadata:
       max-age: -1

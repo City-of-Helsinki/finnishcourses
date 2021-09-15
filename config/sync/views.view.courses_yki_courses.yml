@@ -1111,7 +1111,7 @@ display:
         metatag_display_extender:
           metatags:
             title: 'YKI courses - Finnishcourses.fi'
-      path: courses/yki-courses
+      path: courses/yki-courses-old
       display_description: ''
     cache_metadata:
       max-age: -1

@@ -67,7 +67,7 @@ display:
         field_target_level:
           label: Tavoitetaso
         field_course_start_date:
-          label: Päivämäärät
+          label: Ajankohta
         field_course_town:
           label: Paikka
         field_course_fee:
@@ -103,6 +103,11 @@ display:
             last: 'Viimeinen »'
             previous: '‹‹ Edellinen'
             next: 'Seuraava ››'
+      empty:
+        area:
+          content:
+            value: "<p>Please try loosening your search criteria.</p>\r\n"
+            format: basic_html
   page_1:
     display_title: Sivu
     display_options:
@@ -110,4 +115,8 @@ display:
         metatag_display_extender:
           metatags:
             title: 'Etsi suomen kielen kursseja | Finnishcourses'
+  page_2:
+    display_title: 'Ruotsin kielen kurssit'
+  page_3:
+    display_title: YKI-kurssit
 label: 'Etsi suomen kielen kursseja'

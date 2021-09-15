@@ -96,6 +96,26 @@
   </header>
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
     <div class="group-wrapper">
+	
+	
+	
+	
+	
+    
+    {% if node.field_online_course.value %}
+     <div class="location-header online-course">
+		<div class="field"><span>{% trans %}Online course{% endtrans %}</span>, <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_course_organization.entity.tid.value}) }}"> {{ node.field_course_organization.entity.name.value }}</a></div>
+	</div>
+	{% else %}
+	<div class="location-header">	
+		<div class="field">{{ course_town }}, <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_course_organization.entity.tid.value}) }}"> {{ node.field_course_organization.entity.name.value }}</a></div>
+	</div>
+    {% endif %}
+	
+	
+	   
+	
+	
       <h2>{% trans %}Course information{% endtrans %}</h2>
 
 

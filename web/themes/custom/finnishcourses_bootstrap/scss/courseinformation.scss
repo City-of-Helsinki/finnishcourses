@@ -245,6 +245,15 @@
   }
 }
 
+.location-header {
+	margin-top: 30px;
+	&.online-course span {
+		color: #0F7B35;
+		font-weight: bold;
+	}
+}
+
+
 
 
 .course-lessons {

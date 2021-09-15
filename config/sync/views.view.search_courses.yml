@@ -19,8 +19,13 @@ dependencies:
     - field.storage.node.field_starting_level
     - field.storage.node.field_target_level
     - search_api.index.courses_index
+    - taxonomy.vocabulary.course_features
     - taxonomy.vocabulary.organizations
     - taxonomy.vocabulary.towns
+  content:
+    - 'taxonomy_term:course_features:0486880b-3821-45e1-8954-6eeaa7d909da'
+    - 'taxonomy_term:course_features:6ea2c19e-60b9-445c-a703-12443717db17'
+    - 'taxonomy_term:course_features:7c26a7cf-a0a1-4adc-af8f-77c65593b7d1'
   module:
     - better_exposed_filters
     - datetime
@@ -2575,10 +2580,23 @@ display:
           group_type: group
           admin_label: ''
           empty: true
-          content: '@total available course(s) for you'
+          content: '@total matching courses'
           plugin_id: result
       footer: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: 'Please try loosening your search criteria.'
+            format: basic_html
+          plugin_id: text
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
@@ -2847,13 +2865,13 @@ display:
   page_3:
     display_plugin: page
     id: page_3
-    display_title: 'Swedish courses page'
+    display_title: 'YKI courses page'
     position: 2
     display_options:
       display_extenders:
         metatag_display_extender: {  }
       display_description: ''
-      path: training-providers-new/%/courses
+      path: courses/yki-courses
       filters:
         status:
           id: status
@@ -2933,6 +2951,54 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: search_api_language
+        field_course_features:
+          id: field_course_features
+          table: search_api_index_courses_index
+          field: field_course_features
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            51: 51
+            53: 53
+            52: 52
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: course_features
+          hierarchy: false
+          error_message: true
+          plugin_id: search_api_term
       defaults:
         filters: false
         filter_groups: false
@@ -2967,50 +3033,15 @@ display:
           expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
-      title: 'Swedish language courses'
-      arguments:
-        field_organizers_course_id:
-          id: field_organizers_course_id
-          table: search_api_index_courses_index
-          field: field_organizers_course_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          default_action: default
-          exception:
-            value: all
-            title_enable: false
-            title: All
-          title_enable: true
-          title: '{{ arguments.tid }} - Courses'
-          default_argument_type: taxonomy_tid
-          default_argument_options:
-            term_page: '1'
-            anyall: ','
-            node: false
-            limit: false
-            vids: {  }
-          default_argument_skip_url: false
-          summary_options: {  }
-          summary:
-            sort_order: asc
-            number_of_records: 0
-            format: default_summary
-          specify_validation: false
-          validate:
-            type: none
-            fail: 'not found'
-          validate_options: {  }
-          break_phrase: false
-          not: false
-          plugin_id: search_api
+      title: 'YKI courses'
+      arguments: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
+        - user
       tags:
         - 'config:field.storage.node.field_course_availability'
         - 'config:field.storage.node.field_course_end_date'
