@@ -402,7 +402,7 @@ h1, h2, h3 {
   }
 }
 
-.path-node, .path-courses, .path-training-providers, .path-taxonomy, .path-search, .path-user {
+.path-node, .path-courses, .path-training-providers, .path-taxonomy, .path-search, .path-user, .path-admin {
   .section {
     margin: 21px;
 	@include media-breakpoint-down(sm-t) {

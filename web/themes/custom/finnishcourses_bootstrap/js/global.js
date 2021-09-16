@@ -113,24 +113,24 @@
 	  
 	   $(".form-item-sort-bef-combine", context).each(function () {
 			  
-			/*   var originalSort = $(this);
+			  var originalSort = $(this);
 			  
 			  var originalSelect = $("select", this);
-		 
 			  
 			  var sort = originalSort.clone();
 			  $('.form-item-sort-bef-combine').hide();
 			  
-			  $('.view-search-courses .view-header').append(sort); */
+			  $('.view-search-courses .view-header').append(sort);
 			  
-			  var sort = $(this);
+			 /*  var sort = $(this);
 			  
-			  sort.detach().appendTo('.view-search-courses .view-header');
+			  var newsort = sort.clone();
+			  newsort.appendTo('.view-search-courses .view-header'); */
 			  
 			  $(sort).change(function() {
 				  var selectedValue = $("select", this).val();
-				  //console.log(selectedValue);
-				  sort.val(selectedValue);
+				  console.log(selectedValue);
+				  originalSelect.val(selectedValue);
 				  
 				  $('.bef-exposed-form form').submit();
 			  });
