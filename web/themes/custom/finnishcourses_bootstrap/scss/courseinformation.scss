@@ -214,7 +214,7 @@
 	.views-field-field-course-town, .views-field-field-online-course, .views-field-field-course-start-date, .views-field-field-course-fee, .views-field-field-organizers-course-id {
 		@include media-breakpoint-down(sm) {
 			display: grid;
-			grid-template-columns:  45% 50%;
+			grid-template-columns:  35% 60%;
 			grid-column-gap: 5%;
 			margin-bottom: 6px;
 			

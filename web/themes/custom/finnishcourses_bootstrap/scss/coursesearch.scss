@@ -180,7 +180,7 @@
 }
 
 
-#edit-time-of-day {
+#edit-time-of-day, #edit-time-of-day--2 {
 	clear: both;
 }
 
@@ -208,7 +208,7 @@
 }
 
 .fieldset-wrapper {
-  #edit-course-town, .form-item-online-course, #edit-starting-level {
+  #edit-course-town, #edit-course-town--2, .form-item-online-course, #edit-starting-level, #edit-starting-level--2 {
     text-align: center;
   }
 }
@@ -371,9 +371,9 @@
   flex: 1;
 }
 
-#edit-starting-level--wrapper {
+#edit-starting-level--wrapper, #edit-starting-level--wrapper--2 {
   flex: 1;
-  #edit-starting-level {
+  #edit-starting-level, #edit-starting-level--2 {
     @include media-breakpoint-between(sm, sm-t){
 		width: 360px;
 		margin: 0 auto;
@@ -454,7 +454,7 @@
 
 }
 
-#edit-time-of-day--wrapper {
+#edit-time-of-day--wrapper, #edit-time-of-day--wrapper--2 {
   legend {
     font-weight: 700;
     font-size: 16px;
@@ -471,7 +471,7 @@
     //margin-top: -7px;
     @include media-breakpoint-down(sm-t) {
       // display: inline;
-      #edit-time-of-day {
+      #edit-time-of-day, #edit-time-of-day--2 {
         .form-checkboxes {
           //display: inline-grid;
           //margin-top: 30px;
@@ -537,7 +537,7 @@
 
 
 
-#edit-course-fee--wrapper {
+#edit-course-fee--wrapper, #edit-course-fee--wrapper--2 {
   flex: 1;
   display: flex;
   flex-wrap: nowrap;

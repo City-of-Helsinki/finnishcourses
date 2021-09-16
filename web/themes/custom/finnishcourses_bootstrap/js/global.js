@@ -216,12 +216,38 @@
       let showNavigation = Drupal.t("Show navigation");
 	  
 	  
+	  var currentOffset;
+	  
+	 /*  
+	  function scrollPos (currentOffset) {
+		currentOffset = currentOffset;  
+        return(currentOffset);		
+	  } */
+			
       // HAMBURGER MENU
       $("#toggle-navigation-menu-button").click(function () {
+		  
+		if (window.pageYOffset > 0) {
+		  var currentOffset = window.pageYOffset;
+	    }  
+		  
         //$(".mobile-menu").css('backgroundColor', '#0073cf');
 		$("#toggle-navigation-menu-button").toggleClass('active');
 		$("#toggle-navigation-menu-button").attr('aria-expanded', false);
 		$("#toggle-navigation-menu-button.active").attr('aria-expanded', true);
+		
+		//console.log(window.pageYOffset);
+		
+		if ($('#toggle-navigation-menu-button').hasClass('active')) {
+
+		    $(window).scrollTop(0);
+			
+		} else {
+
+			//console.log(currentOffset);
+			//$(window).scrollTop(currentOffset);
+		}
+		
 		
 		$("#navbar-top").toggleClass('menu-active');
 		
