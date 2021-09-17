@@ -161,7 +161,9 @@
 				
 				if(radioValue > 0){
 					//console.log(radioValue);	
-					$("#edit-starting-level-ext").val('All');
+					$("#edit-starting-level-ext, #edit-starting-level-ext--2").val('All');
+					
+					
 					
 				}	
             }
@@ -176,13 +178,13 @@
 		
 		/* Remove Current level selection */
 		
-		$("#edit-starting-level-ext", context).click(function(){
+		$("#edit-starting-level-ext, #edit-starting-level-ext--2", context).click(function(){
 
 			var startingLevel = $(this).val();
 			
 			if(startingLevel != 'All'){
 				//console.log(startingLevel);
-				$("#edit-starting-level-all").prop("checked", true);
+				$("#edit-starting-level-all, #edit-starting-level-all--2").prop("checked", true);
 			}
 			
 		});	

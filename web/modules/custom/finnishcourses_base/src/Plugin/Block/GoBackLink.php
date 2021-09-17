@@ -27,7 +27,7 @@ class GoBackLink extends BlockBase {
     $goBackLink = t('Go back');
 
     return [
-      '#children' => '<a class="go-back-link" href="#" onclick="history.go(-1)">'.$goBackLink.'</a>',
+      '#children' => '<a class="go-back-link" href="#" onclick="window.history.back()">'.$goBackLink.'</a>',
     ];
   }
 
