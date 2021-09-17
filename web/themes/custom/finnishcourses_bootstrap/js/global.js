@@ -178,7 +178,7 @@
 		
 		/* Remove Current level selection */
 		
-		$("#edit-starting-level-ext, #edit-starting-level-ext--2", context).click(function(){
+		$("#edit-starting-level-ext, #edit-starting-level-ext--2", context).change(function(){
 
 			var startingLevel = $(this).val();
 			
