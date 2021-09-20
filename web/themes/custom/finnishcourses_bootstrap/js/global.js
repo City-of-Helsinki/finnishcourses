@@ -122,6 +122,11 @@
 			  
 			  $('.view-search-courses .view-header').append(sort);
 			  
+			  
+			  $('.view-search-courses .view-header .form-item-sort-bef-combine label').attr('for','newsort');
+			  $('.view-search-courses .view-header .form-item-sort-bef-combine select').attr('id','newsort');
+			  
+			  
 			 /*  var sort = $(this);
 			  
 			  var newsort = sort.clone();
