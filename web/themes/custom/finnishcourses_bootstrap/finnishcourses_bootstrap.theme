@@ -161,7 +161,25 @@ function finnishcourses_bootstrap_preprocess_page(&$variables) {
     '#markup' => \Drupal::service("renderer")->renderRoot($mobile_menu),
   );
   
- 
+   // Iterate over all footer menus and merge them together.
+  
+  $footer_combined_tree = array();
+  
+  $footer_menus = array('footer', 'foo', 'foote');
+  foreach($footer_menus as $footer_menu_name) {
+	  
+    $footer_tree_items = $menu_tree->load(trim($footer_menu_name), $parameters);
+    $footer_tree_manipulated = $menu_tree->transform($footer_tree_items, $manipulators);
+    $footer_combined_tree = array_merge($footer_combined_tree, $footer_tree_manipulated);
+  }
+
+  $footer_menu = $menu_tree->build($footer_combined_tree);
+
+  //dsm($mobile_menu);
+  
+  $variables['footer_menu'] = array(
+    '#markup' => \Drupal::service("renderer")->renderRoot($footer_menu),
+  );
   
 }
 

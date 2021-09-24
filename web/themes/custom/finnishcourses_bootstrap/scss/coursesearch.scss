@@ -35,7 +35,7 @@
     padding: 30px 25px;
 
   .fieldset-legend {
-    font-weight: 100 !important;
+    font-weight: 400 !important; 
   }
 
   .fieldset-legend {
@@ -160,7 +160,7 @@
 .views-exposed-form {
 	div.form-item-field-online-course {
 		//display: none;
-		border-top: 1px solid #129942;
+		border-top: 1px solid #0073cf;
 		padding: 20px 50px;
 		margin: 15px auto 0 auto;
 		width: 300px;
@@ -169,11 +169,11 @@
 		input {
 			position: relative;
 			&:checked::before {
-				border-color: #129942;	
+				border-color: #0073cf;	
 			}
 			&:checked::after {
-				border-bottom: 5px solid #129942;
-				border-right: 5px solid #129942;
+				border-bottom: 5px solid #0073cf;
+				border-right: 5px solid #0073cf;
 			}
 		}
 	}
@@ -745,3 +745,10 @@
   }
 }
 
+.pagination {
+    @include media-breakpoint-down(sm-t) {
+      .page-link {
+			padding: 4px 8px;
+		}
+    }
+}

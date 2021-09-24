@@ -422,6 +422,8 @@ h1, h2, h3 {
 }
 
 .node__content {
+	font-size: 1rem;
+	
   .align-center {
     width: 100%;
     height: 50%;
@@ -613,25 +615,51 @@ h1, h2, h3, .fieldset-legend {
 	.form-item-sort-bef-combine {
 		margin: 20px auto 10px auto;
 		position: relative;
-		&:after { 
-			content: url('../images/icons/ic_chevron_down@1x.svg');
-			color: #0073cf;
-			position: absolute;
-			top: 6px;
-			width: 12px;
-			right: 25px;
-			pointer-events: none;
+		.newsort-wrapper {
+			position: relative;
+			/* position: inline-block;
+			width: 10px; */
+			&:before { 
+				content: url('../images/icons/ic_chevron_down@1x.svg');
+				color: #0073cf;
+				position: absolute;
+				top: 6px;
+				right: 12px;
+				width: 12px;
+				
+				pointer-events: none;
 			
-			
+			}
 		}
 		@include media-breakpoint-down(sm) {
+			display: block;
 			width: 100%;
 			margin: 20px auto 0 auto;
 			padding-right: 0;
 			padding-left: 0;
-		&:after { 
-			top: 45px;
+			/* .newsort-wrapper {
+				&:before { 
+					top: 45px;
+					right: 20px;
+				}
+			} */
+			button {
+				margin-top: 15px;
+				display: inline;
+				width: auto;
 			}
+	
+		}
+		@include media-breakpoint-up(sm-t) {
+			/* .newsort-wrapper {
+				&:before { 
+					top: 7px;
+					right: 220px;
+				}
+			} */
+		}
+		button {
+			//margin-left: 10px;
 		}
 /* 		@include media-breakpoint-up(sm-t) {
 			

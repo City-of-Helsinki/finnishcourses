@@ -106,7 +106,7 @@ display:
       empty:
         area:
           content:
-            value: "<p>Please try loosening your search criteria.</p>\r\n"
+            value: "<p>Koita vähentää hakukriteerejä.</p>\r\n"
             format: basic_html
   page_1:
     display_title: Sivu

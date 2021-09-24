@@ -122,9 +122,16 @@
 			  
 			  $('.view-search-courses .view-header').append(sort);
 			  
+			  var sortText = Drupal.t("Sort");
+			  
 			  
 			  $('.view-search-courses .view-header .form-item-sort-bef-combine label').attr('for','newsort');
 			  $('.view-search-courses .view-header .form-item-sort-bef-combine select').attr('id','newsort');
+			  $('.view-search-courses .view-header .form-item-sort-bef-combine select').wrap( "<div class='newsort-wrapper'></div>" );
+			  $('.view-search-courses .view-header .form-item-sort-bef-combine').append('<span class="icon"></span>');
+			  $('.view-search-courses .view-header .form-item-sort-bef-combine').append('<button type="submit" class="btn btn-primary">'+sortText+'</button>');
+			  
+		
 			  
 			  
 			 /*  var sort = $(this);
@@ -132,12 +139,19 @@
 			  var newsort = sort.clone();
 			  newsort.appendTo('.view-search-courses .view-header'); */
 			  
-			  $(sort).change(function() {
-				  var selectedValue = $("select", this).val();
+			  $('.view-search-courses .view-header .form-item-sort-bef-combine button').click(function() {
+				  var selectedValue = $('.view-search-courses .view-header .form-item-sort-bef-combine select').val();
 				  console.log(selectedValue);
 				  originalSelect.val(selectedValue);
-				  
 				  $('.bef-exposed-form form').submit();
+			  });	  
+			  
+			  $(sort).change(function() {
+				  /* var selectedValue = $("select", this).val();
+				  console.log(selectedValue);
+				  originalSelect.val(selectedValue); */
+				  
+				  //$('.bef-exposed-form form').submit();
 			  });
 		 
 		 });

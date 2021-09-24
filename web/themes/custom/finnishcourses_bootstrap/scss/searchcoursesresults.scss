@@ -6,7 +6,7 @@
 	display: flex;
 	flex: 1;
 	
-	width: 500px;
+	width: 600px;
 	  margin: auto;
 	  color: $text-shade;
 	  @include media-breakpoint-down(sm) {
@@ -24,7 +24,20 @@
     padding-top: 7px;
 	white-space: nowrap;
   }
+  
+  #newsort {
+	@include media-breakpoint-up(sm-t) {
+		width: 300px;
+	}
+ }
+  button {
+	/* width: 130px; */
+	margin-left: 12px;
+  }
+
 }
+
+
 
 
 
@@ -48,7 +61,7 @@
   }
 }
 
-.view-search-courses {
+.view-search-courses, .view-training-provider-courses {
   .views-row {
     padding-top: 20px;
     padding-bottom: 10px;

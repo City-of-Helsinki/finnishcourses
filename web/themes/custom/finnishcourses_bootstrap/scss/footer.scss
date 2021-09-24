@@ -20,6 +20,72 @@
     font-weight: bold;
     font-size: 14px;
   }
+  
+  nav {
+	@include media-breakpoint-up(sm) {
+		columns: 3;  
+		column-count: 3;
+		column-rule: dotted 1px #333;
+	}
+	.nav {
+      //  flex-direction: column;
+
+     
+          width: 100%;
+          display: block;
+         // flex-wrap: wrap;
+          align-items: flex-start;
+
+          .nav-item {
+          //  flex: 1 1 160px;
+            margin: 1px;
+          //  float: left;
+			
+			text-align: center;
+			@include media-breakpoint-up(sm) {
+				text-align: left;
+			}
+            active {
+              padding-bottom: 0;
+            }
+
+            a {
+              padding: 5px 30px 5px 20px;
+              @include media-breakpoint-down(md-t) {
+                padding: 5px 15px 5px 15px;
+              }
+            }
+          }
+        
+      }
+	  
+  }
+  
+  .footer-logos {
+	width: 300px;
+	@include media-breakpoint-down(sm) {
+		width: 100%;
+	}
+	a {
+		display: block;
+		text-align: center;
+		margin: 0 0 20px 0;
+		&.helsinki {
+			img {
+				width: 106px;
+				height: 50px;
+				margin-left: 15px;
+			}
+		}
+		&.infofinland {
+			img {
+				width: 180px;
+				height: auto;
+				margin-left: 15px;
+			}
+		}
+	}
+  }
 
 
   .region-footer-first, .region-footer-second, .region-footer-third {

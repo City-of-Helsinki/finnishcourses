@@ -14,6 +14,7 @@ regions:
   secondary_menu: 'Secondary menu'
   page_bottom: 'Page bottom'
   content: Content
+  footer_new: 'Footer new'
   footer_first: 'Footer Column One'
   footer_second: 'Footer Column Two'
   footer_third: 'Footer Column Three'

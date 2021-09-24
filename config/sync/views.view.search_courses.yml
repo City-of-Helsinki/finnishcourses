@@ -2114,11 +2114,11 @@ display:
             group_items:
               1:
                 title: 'Under 50 €'
-                operator: between
+                operator: '<'
                 value:
-                  value: ''
-                  min: '0'
-                  max: '50'
+                  value: '50'
+                  min: ''
+                  max: '49'
               2:
                 title: '50 - 149 €'
                 operator: between
@@ -2128,7 +2128,7 @@ display:
                   max: '150'
               3:
                 title: 'Over 150 €'
-                operator: '>='
+                operator: '>'
                 value:
                   value: '150'
                   min: ''
@@ -2606,7 +2606,7 @@ display:
           1: OR
           2: AND
           3: OR
-          4: AND
+          4: OR
           5: AND
           6: AND
           7: AND
