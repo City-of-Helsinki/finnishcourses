@@ -499,7 +499,9 @@ h1, h2, h3, .fieldset-legend {
 .more-options-wrapper {
   .label {
     color: $text-shade;
-	width: 121px;
+	 @include media-breakpoint-up(md) {
+        width: 121px;
+      }
   }
 }
 

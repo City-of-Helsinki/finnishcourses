@@ -328,7 +328,7 @@
       @include media-breakpoint-down(sm-t) {
         margin-bottom: 10px;
       }
-	  @include media-breakpoint-up(sm-t) {
+	  @include media-breakpoint-up(md) {
         width: 130px;
       }
     }
