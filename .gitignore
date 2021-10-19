@@ -39,3 +39,7 @@ web/themes/custom/finnishcourses_bootstrap/scss/\.DS_Store
 web/themes/\.idea/
 
 \.platform/local/
+
+/web/sites/default/services.yml
+/web/sites/default/settings.php
+
