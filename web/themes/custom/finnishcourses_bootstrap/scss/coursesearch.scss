@@ -298,6 +298,11 @@
 	grid-template-columns: 448px 448px;
   }
   
+   @include media-breakpoint-only(sm-t) { 
+	display: grid;
+	grid-template-columns: 390px 390px;
+  }
+  
   @include media-breakpoint-down(sm) {
     //flex-direction: column;
   }
