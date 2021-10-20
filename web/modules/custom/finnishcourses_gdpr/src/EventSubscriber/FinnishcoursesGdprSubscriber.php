@@ -33,7 +33,7 @@ class FinnishcoursesGdprSubscriber implements EventSubscriberInterface {
     if ($event->getRequest()->get('_route') == 'entity.user.edit_form') {
 	   $uid = $event->getRequest()->get('user')->uid->value;
 	   $account = \Drupal\user\Entity\User::load($uid); // pass your uid
-       $name = $account->getUsername();
+       $name = $account->getDisplayName();
 	   
 	    // Logs a notice when users edit page is visited
 		\Drupal::logger('finnishcourses_gdpr')->notice('user %name edit visited.',

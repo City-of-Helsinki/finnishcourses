@@ -11,6 +11,7 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\course_services\CourseDataService;
 use Drupal\webform\Plugin\WebformHandlerInterface;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_element_info_alter().
@@ -625,30 +626,20 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
   $view = $form_state->get('view');
 
   if($view->id() == 'search_courses') {
-	  
-	  
-    //$form['online_course']['#element_validate'][] = 'online_validate';
-    //$form['online_course']['#type'] = 'hidden';
-	//$form['online_course']['#title'] = t('Online');
-	$form['online_course']['#wrapper_attributes']['class']  = 'online-wrapper';
-    //$form['course_town']['#options'][999] = 'Online';
-	$form['organization']['#title'] = t('Course provider');
-	$form['course_fee']['#title'] = t('Course price');
+    $form['online_course']['#element_validate'][] = 'online_validate';
+    $form['online_course']['#type'] = 'hidden';
+    $form['course_town']['#options'][999] = 'Online';
+
     $form['time_of_day']['#title'] = t('Time of day');
     $form['starting_level_ext']['#title'] = t('Starting level');
-    $form['start_date']['#title'] = t('Starting from');
-	$form['ending_before']['#title'] = t('Ending before');
-    $form['keyword']['#title'] = t('Text search');
+    $form['start_date']['#title'] = t('Course starts');
+    $form['keyword']['#title'] = t('Keywords');
 
     $form['more_options_trigger'] = [
       '#type' => 'html_tag',
-      '#tag' => 'button',
+      '#tag' => 'div',
       '#value' => t('More search options'),
-      '#attributes' => [
-			'class' => ['more-search-options-trigger'], 
-			'aria-expanded' => 'false',
-			'aria-haspopup' => 'true',
-			],
+      '#attributes' => ['class' => ['more-search-options-trigger']],
     ];
 
     $form['more_options'] = [
@@ -670,24 +661,17 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
       '#type' => 'container',
       '#attributes' => ['class' => ['more-options-row-3']],
     ];
-	$form['more_options']['row_4'] = [
-      '#type' => 'container',
-      '#attributes' => ['class' => ['more-options-row-4']],
-    ];
 
-    
-    
-    $form['more_options']['row_1']['starting_level_ext'] = $form['starting_level_ext'];
-	$form['more_options']['row_1']['organization'] = $form['organization'];
-	$form['more_options']['row_2']['course_fee'] = $form['course_fee'];
-	$form['more_options']['row_2']['time_of_day'] = $form['time_of_day'];
- /*    $form['more_options']['row_3']['dates'] = [
+    $form['more_options']['row_1']['course_fee'] = $form['course_fee'];
+    $form['more_options']['row_1']['time_of_day'] = $form['time_of_day'];
+    $form['more_options']['row_2']['starting_level_ext'] = $form['starting_level_ext'];
+    $form['more_options']['row_2']['dates'] = [
       '#type' => 'container',
       '#attributes' => ['class' => ['more-options-dates']],
-    ]; */
-    $form['more_options']['row_3']['dates']['start_date'] = $form['start_date'];
-    $form['more_options']['row_3']['dates']['ending_before'] = $form['ending_before'];
-    $form['more_options']['row_4']['keyword'] = $form['keyword'];
+    ];
+    $form['more_options']['row_2']['dates']['start_date'] = $form['start_date'];
+    $form['more_options']['row_2']['dates']['start_date_2'] = $form['start_date_2'];
+    $form['more_options']['row_3']['keyword'] = $form['keyword'];
 
     // $form['more_options']['time_of_day']['#title'] = t('Time of day');
     // $form['more_options']['starting_level_ext']['#title'] = t('Starting level');
@@ -696,66 +680,27 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 
     $form['submit_fixed'] = [
       '#type' => 'submit',
-      '#value' => t('Show Courses'),
+      '#value' => t('View Courses'),
       '#access' => TRUE,
       //'#submit' => ['node_form_submit'],
       '#weight' => 99,
     ];
-	
-	//$form['sort_bef_combine']['#prefix'] = '<label class="label" for="edit-sort-bef-combine">' .t('Order by'). '</label>';
 
     $form['sort_bef_combine']['#weight'] = 99;
-	
-	 $form['sort_bef_combine']['#options']['field_course_start_date_ASC'] = t('First starting date');
-	 $form['sort_bef_combine']['#options']['field_course_start_date_DESC'] = t('Last starting date');
-	 $form['sort_bef_combine']['#options']['field_course_end_date_ASC'] = t('First ending date');
-	 $form['sort_bef_combine']['#options']['field_course_end_date_DESC'] = t('Last ending date');
-	 $form['sort_bef_combine']['#options']['field_course_fee_ASC'] = t('Lowest price');
-	 $form['sort_bef_combine']['#options']['field_course_fee_DESC'] = t('Highest price');
-	 $form['sort_bef_combine']['#options']['field_starting_level_ASC'] = t('Lowest starting level');
-	 $form['sort_bef_combine']['#options']['field_starting_level_DESC'] = t('Highest starting level');
-	 $form['sort_bef_combine']['#options']['field_target_level_ASC'] = t('Lowest target level');
-	 $form['sort_bef_combine']['#options']['field_target_level_DESC'] = t('Highest target level');
-	 
-	
 
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-	
-
-	$any_level_text = t('Any: All levels');
-	$beginner_level_text = t('Beginner level (0): No Finnish language skills');
-	$basic_level_text = t('Basic (A): basic language skills');
-	$intermediate_level_text = t('Intermediate (B): language skills of an independent user');
-	$advanced_level_text = t('Advanced (C): language skills of a proficient user');
 
     $courseLevelsLink = ($language == 'en') ? '/language-course-levels' : '/'.$language.'/language-course-levels';
 
-	$form['starting_level']['#suffix'] = '<div class="level-description"><span></span><span>'.$beginner_level_text.'</span><span>'.$basic_level_text.'</span><span>'.$intermediate_level_text.'</span><span>'.$advanced_level_text.'</span></div>';
-    $form['starting_level']['#suffix'] .= "<div class='levels-link-container'><a class='levels-link' href='".$courseLevelsLink."'>".t("Course level descriptions")."</a></div>";
+    $form['starting_level']['#suffix'] = "<a class='levels-link' href='".$courseLevelsLink."'>".t("I don't know my level")."</a>";
 
-	
-	
-	
-/* $dbug_variable = Dbug::debug($form['sort_bef_combine']);
-$output['#attached']['library'][] = 'dbug/dbug';
-$output['variable'] = [
-            '#type' => 'markup',
-            '#markup' => $dbug_variable,
-]; */
-
-
-
-	//dsm($form['sort_bef_combine']);
-	
     unset($form['course_fee']);
     unset($form['time_of_day']);
     unset($form['starting_level_ext']);
-	unset($form['organization']);
     unset($form['start_date']);
-    unset($form['ending_before']);
+    unset($form['start_date_2']);
     unset($form['keyword']);
-	
-    
+    //kint($form);
   }
 
   if($view->id() == 'content') {
@@ -838,43 +783,31 @@ function finnishcourses_base_preprocess_views_view_fields(&$variables) {
       // Don't show Town field for online courses.
       if ($node->field_online_course->value) {
         unset($variables['fields']['field_course_town']);
-		unset($variables['fields']['field_course_town_1']);
       }
     }
   }
 }
 
 function finnishcourses_base_preprocess_views_view_field(&$variables) {
-	
-	
   if (isset($variables['field']) && !empty($variables['field']->field) && $variables['field']->field == 'nid') {
-    //$nid = $variables['output']->__toString();
-
-	$nid = $variables['field']->getValue($variables['row']);
+    $nid = $variables['output']->__toString();
+	
+	
 
     if (!empty($nid)) {
       $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-	  
-	  if (isset($language)) {
-		  $node = node_load($nid);
+      //$node = node_load($nid);
+	  $node = Node::load($nid, TRUE);
+      if ($language != 'fi') {
+        if ($node->hasTranslation($language)) {
+          $node = $node->getTranslation($language);
+        }
+      }
 
-		  if ($language != 'fi') {
-			  
-			if ($node->hasTranslation($language)) {
-			  $node = $node->getTranslation($language);
-			}
-		  }
-		  
-		  if (isset($node)) {
-			$nodePath = $node->toUrl('canonical', ['language' => $node->language()])->setAbsolute()->toString();
-			$variables['node_path'] = $nodePath;
-			$variables['nid'] = $nid;
-			$variables['title'] = $node->getTitle();
-		  }
-	   
-	  }
+      $nodePath = $node->toUrl('canonical', ['language' => $node->language()])->setAbsolute()->toString();
 
-      
+      $variables['node_path'] = $nodePath;
+      $variables['nid'] = $nid;
 
     }
   }
@@ -891,7 +824,7 @@ function finnishcourses_base_preprocess_views_view_field(&$variables) {
     $newOutput = '';
     $newOutput2 = '';
     if ($language != 'fi') {
-      $output = $variables['field']->getValue($variables['row']);
+      $output = $variables['output']->__toString();
       if (strpos($output, '/fi/courses/')) {
         if ($language == 'en') {
           $newOutput = str_replace('/fi/courses/', '/courses/', $output);
@@ -1012,53 +945,6 @@ function finnishcourses_base_language_switch_links_alter(&$variables) {
 
   }
 }
-
-
-/**
- * Implements hook_preprocess_page_title().
- */
-function finnishcourses_base_preprocess_page_title(&$variables) {
-	
-	/* $current_path = \Drupal::request()->getPathInfo();
-	$path_args = explode('/', $current_path);
-	$path_args = array_reverse($path_args);
-	dsm($variables);
-
-    if (isset($path_args[2]) && $path_args[2] == 'training-providers' && isset($path_args[1]) && is_numeric($path_args[1])) {
-		$term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($path_args[1]);
-		$name = $term->getName();
-		dsm($name);
-		
-		$variables['title'] = $name;
-		
-		dsm($variables);
-    } */
-
-  /* $node = \Drupal::request()->attributes->get('node');
-
-  if ($node && $node->bundle() == 'store') {
-    $variables['title'] = t('@title Review', ['@title' => $node->getTitle()]);
-  } */
-}
-
-/**
- * Implements hook_views_pre_view().
- */
-/* function finnishcourses_base_views_pre_view(\Drupal\views\ViewExecutable $view, $display_id, array &$args) {
-
-  if ($view->id() == 'training_provider_courses') {
-
-    if (isset($args[0])) {
-		
-		$term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($args[0]);
-		$name = $term->getName();
-
-		$view->setTitle($name);
-		
-		
-    }
-  }
-} */
 
 /**
  * Implements hook_theme().
