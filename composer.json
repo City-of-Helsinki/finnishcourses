@@ -84,6 +84,7 @@
         "drupal/entity_browser": "^2.1",
         "drupal/entity_clone": "^1.0@beta",
         "drupal/entity_embed": "1.2.0",
+        "drupal/eu_cookie_compliance": "^1.19",
         "drupal/facets": "1.8",
         "drupal/field_group": "3.1",
         "drupal/filelog": "^1.0",
