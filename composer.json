@@ -112,7 +112,7 @@
         "drupal/restui": "^1.17",
         "drupal/role_delegation": "^1.0@alpha",
         "drupal/scheduler": "^1.0",
-        "drupal/search_api": "^1.12",
+        "drupal/search_api": "1.20",
         "drupal/select_or_other": "^1.0@alpha",
         "drupal/shortcutperrole": "^1.0@RC",
         "drupal/simple_sitemap": "^3.2",
