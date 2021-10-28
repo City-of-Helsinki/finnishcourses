@@ -115,6 +115,11 @@
     bottom: -7px;
     position: relative;
   }
+  &:focus {
+	outline: 0 solid #000;
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(0, 115, 207, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(0, 115, 207, 0.25);
+  }
 }
 
 #views-exposed-form-search-courses-page-1 {
@@ -151,6 +156,11 @@
     bottom: -7px;
     position: relative;
   }
+  &:focus {
+	outline: 0 solid #000;
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(0, 115, 207, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(0, 115, 207, 0.25);
+  }
 }
 
 // Color is changed within the svg file
@@ -161,6 +171,11 @@
     left: 3px;
     position: relative;
   }
+  &:focus {
+	outline: 0 solid #000;
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(0, 115, 207, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(0, 115, 207, 0.25);
+  }
 }
 
 .go-back {
@@ -168,6 +183,11 @@
     content: url(../images/icons/ic_arrow_back@1x.svg);
     position: relative;
     top: 6px;
+  }
+  &:focus {
+	outline: 0 solid #000;
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(0, 115, 207, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(0, 115, 207, 0.25);
   }
 }
 
