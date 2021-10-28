@@ -104,6 +104,12 @@ input[type="radio"] {
     cursor: not-allowed;
     background-color: $custom-disabled-bg;
   }
+  
+  &:focus::before {
+	//outline: 1px solid #000;
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(0, 115, 207, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(0, 115, 207, 0.25);
+  }
 
   // Radio Pip
   &::after {
@@ -163,6 +169,12 @@ input[type="checkbox"] {
   &:disabled::before {
     cursor: not-allowed;
     background-color: $custom-disabled-bg;
+  }
+  
+  &:focus::before {
+    //outline: 1px solid #000;
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(0, 115, 207, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(0, 115, 207, 0.25);
   }
 
   // Checkmark
