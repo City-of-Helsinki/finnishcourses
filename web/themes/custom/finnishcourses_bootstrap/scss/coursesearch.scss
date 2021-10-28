@@ -742,7 +742,7 @@
 // Search button under the search form
 #views-exposed-form-search-courses-page-1 {
   #edit-submit-fixed.btn-primary {
-    @include media-breakpoint-down(sm-t) {
+    @include media-breakpoint-down(sm) {
       width: 91%;
     }
   }

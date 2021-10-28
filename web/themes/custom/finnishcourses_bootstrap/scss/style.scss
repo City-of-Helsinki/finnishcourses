@@ -331,7 +331,7 @@ body {
   }
 }
 
-html:lang(ru) .language-switcher-language-url {
+.language-switcher-language-url {
   @include media-breakpoint-only(sm-t) {
     margin-right: 40px;
   }

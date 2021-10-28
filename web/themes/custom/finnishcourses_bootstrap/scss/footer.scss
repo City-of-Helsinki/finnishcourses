@@ -143,6 +143,8 @@
     flex-direction: column;
    // max-width: 900px;
   }
+  
+  
 
   .region-footer-third {
     #block-footerthird {
@@ -173,6 +175,19 @@
       margin: auto;
       margin-top: 19px;
     }
+  }
+  .helsinki {
+	position: relative;
+	@include media-breakpoint-up(sm) {
+		top: 20px;
+	}
+	img {
+	  width: 100px;
+	  margin: 0;
+	   @include media-breakpoint-down(xs) {
+		margin-top: 20px;
+	   }
+	}
   }
 }
 

@@ -640,6 +640,22 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
     $form['start_date']['#title'] = t('Starting from');
 	$form['ending_before']['#title'] = t('Ending before');
     $form['keyword']['#title'] = t('Text search');
+	
+	
+	// Remove non active organisations from the filter
+	
+	foreach ($form['organization']['#options'] AS $key => $term_key) {
+		
+		if ($key != 'All') {
+			$term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
+			$value = $term->field_active_organization->value;
+			
+			if ($value == 0) {
+				unset($form['organization']['#options'][$key]);
+			}
+		}
+	}
+	
 
     $form['more_options_trigger'] = [
       '#type' => 'html_tag',
