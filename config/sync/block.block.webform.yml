@@ -13,7 +13,7 @@ dependencies:
 id: webform
 theme: finnishcourses_bootstrap
 region: content
-weight: -3
+weight: -2
 provider: null
 plugin: webform_block
 settings:
