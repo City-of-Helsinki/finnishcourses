@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b83ce14700e623c89c354277b10b791c",
+    "content-hash": "7b6fa0c079036f755b69f4f2d2c141a0",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2980,6 +2980,72 @@
             "homepage": "http://drupal.org/project/bootstrap_sass",
             "support": {
                 "source": "https://git.drupalcode.org/project/bootstrap_sass"
+            }
+        },
+        {
+            "name": "drupal/business_rules",
+            "version": "2.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/business_rules.git",
+                "reference": "2.0.0-beta1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/business_rules-2.0.0-beta1.zip",
+                "reference": "2.0.0-beta1",
+                "shasum": "3e50c68364a0e780117ab55f7cff064b5526afe3"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/dbug": "*"
+            },
+            "require-dev": {
+                "drupal/group": "*",
+                "drupal/paragraphs": "*",
+                "drupal/sms": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-beta1",
+                    "datestamp": "1615910333",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "C.E.A",
+                    "homepage": "https://www.drupal.org/user/3189629"
+                },
+                {
+                    "name": "colan",
+                    "homepage": "https://www.drupal.org/user/58704"
+                },
+                {
+                    "name": "pratik_kamble",
+                    "homepage": "https://www.drupal.org/user/3204909"
+                },
+                {
+                    "name": "rohit-rajput-sahab",
+                    "homepage": "https://www.drupal.org/user/2036406"
+                },
+                {
+                    "name": "yuriseki",
+                    "homepage": "https://www.drupal.org/user/1523064"
+                }
+            ],
+            "description": "Business Rules",
+            "homepage": "https://www.drupal.org/project/business_rules",
+            "support": {
+                "source": "https://git.drupalcode.org/project/business_rules"
             }
         },
         {
@@ -13958,6 +14024,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/bootstrap_datepicker": 10,
+        "drupal/business_rules": 10,
         "drupal/devel_debug_log": 10,
         "drupal/entity_clone": 10,
         "drupal/group": 5,
