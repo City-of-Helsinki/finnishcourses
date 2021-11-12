@@ -1090,6 +1090,8 @@ display:
             description: ''
             use_operator: false
             operator: field_course_id_value_op
+            operator_limit_selection: false
+            operator_list: {  }
             identifier: f_code
             required: false
             remember: false
@@ -1100,9 +1102,9 @@ display:
               administrator: '0'
               course_editor: '0'
               organization_admin: '0'
+              infofinland_user: '0'
+              rest_api: '0'
             placeholder: ''
-            operator_limit_selection: false
-            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''

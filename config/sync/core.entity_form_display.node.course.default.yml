@@ -66,7 +66,7 @@ third_party_settings:
       children:
         - field_course_information_source
       parent_name: ''
-      weight: 13
+      weight: 12
       format_type: details
       format_settings:
         id: ''
@@ -112,7 +112,6 @@ third_party_settings:
         - field_course_availability
         - field_course_in_swedish
         - field_online_course
-        - status
         - group_course_dates
         - group_registration_details
         - field_starting_level
@@ -476,7 +475,7 @@ content:
     type: link_default
     region: content
   field_meta_tags:
-    weight: 38
+    weight: 15
     settings: {  }
     third_party_settings: {  }
     type: metatag_firehose
@@ -570,7 +569,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 12
+    weight: 13
     region: content
     third_party_settings: {  }
   sticky:

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "232e46bf44b2a96d1a4c3127ddba995d",
+    "content-hash": "7b6fa0c079036f755b69f4f2d2c141a0",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -14024,6 +14024,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/bootstrap_datepicker": 10,
+        "drupal/business_rules": 10,
         "drupal/devel_debug_log": 10,
         "drupal/entity_clone": 10,
         "drupal/group": 5,

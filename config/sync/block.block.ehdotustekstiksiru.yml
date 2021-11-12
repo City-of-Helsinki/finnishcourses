@@ -1,9 +1,9 @@
-uuid: 0daa07e0-109a-4e3d-9bcd-c7e852f75533
+uuid: d67aaf5c-6d23-4c67-b070-7ec8d563865e
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:849165f2-02d8-48fb-827e-1554801ac89c'
+    - 'block_content:basic:6623dd56-6c7f-4cf9-aa80-b0c1df92f0c4'
   module:
     - block_content
     - block_visibility_groups
@@ -14,11 +14,11 @@ dependencies:
 id: ehdotustekstiksiru
 theme: finnishcourses_bootstrap
 region: content
-weight: -9
+weight: -10
 provider: null
-plugin: 'block_content:849165f2-02d8-48fb-827e-1554801ac89c'
+plugin: 'block_content:6623dd56-6c7f-4cf9-aa80-b0c1df92f0c4'
 settings:
-  id: 'block_content:849165f2-02d8-48fb-827e-1554801ac89c'
+  id: 'block_content:6623dd56-6c7f-4cf9-aa80-b0c1df92f0c4'
   label: 'Ehdotus tekstiksi (ru)'
   provider: block_content
   label_display: '0'

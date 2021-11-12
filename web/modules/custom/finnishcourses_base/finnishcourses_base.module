@@ -790,7 +790,8 @@ $output['variable'] = [
     $roles = $current_user->getRoles();
     // Hide F-code exposed filter for course editors
     if (!in_array('administrator', $roles) && !in_array('organization_admin', $roles)) {
-      unset($form['f_code']);
+      //unset($form['f_code']);
+	  $form['f_code']['#access'] = FALSE;
     }
   }
 }
