@@ -649,7 +649,7 @@ $settings['file_private_path'] = getenv('FINNISHCOURSES_FILE_PRIVATE_PATH');
  * configuration values in settings.php will not fire any of the configuration
  * change events.
  */
-# $config['system.file']['path']['temporary'] = '/tmp';
+ $config['system.file']['path']['temporary'] = '/home/master/applications/finnishcoursesprod/tmp';
 # $config['system.site']['name'] = 'My Drupal site';
 # $config['system.theme']['default'] = 'stark';
 # $config['user.settings']['anonymous'] = 'Visitor';
