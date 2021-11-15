@@ -12,8 +12,14 @@ function _course_cron_jobs_unpublish_courses() {
   \Drupal::logger('course_cron_jobs')->notice('Course cron run');
   // Get all published courses
   $allPublishedCourses = $courseDataService->queryAllCourses(1);
+  
+
+  
+
 
   if (!$allPublishedCourses) {
+
+   \Drupal::logger('course_cron_jobs')->notice('allPublishedCourses not defined');
     return;
   }
 
@@ -33,8 +39,33 @@ function _handle_published_courses($allPublishedCourses) {
 	
 	 if (!empty($courseEndDate)) {
 		
+	 $message = "Nid:" . $course . " course end date: " . $courseEndDate . "<br />";
+	 //\Drupal::logger('course_cron_jobs')->notice($message);
 	 
+	 if ($course == 3083) {
+		 
+		$courseStartDate = $courseDataService->getFieldValue('field_course_start_date', $course, 'valueInArray');
 	
+		$courseOrganization = $courseDataService->getFieldValue('field_course_organization', $course, 'targetId');
+		 
+		$weekCycle = _get_week_cycle($courseOrganization);
+
+		$compareDate = strtotime('-'.$weekCycle.' weeks');
+		
+		$message = "Course Nid: " . $course . ", ";
+		$message .= "Course start date: " . strtotime($courseStartDate) . ", ";
+		$message .= "Course compareDate date: " . $compareDate . ", ";
+		
+		if (!empty($courseUnpublishDate)) {
+		
+			$message .= "Course course unpublish Date: " . $courseUnpublishDate . " ";
+		
+		}
+		
+	    \Drupal::logger('course_cron_jobs')->notice($message);
+		
+	}
+
 	
       if (strtotime($courseEndDate) < strtotime('now')) {
         $courseDataService->setNodeValue('published', 'FALSE', $course);
@@ -42,14 +73,11 @@ function _handle_published_courses($allPublishedCourses) {
 		$message = "Course unpublished. Nid:" . $course . " course end date: " . $courseEndDate . "<br />";
 	    \Drupal::logger('course_cron_jobs')->notice($message);
       }
-      continue;
+     // continue;
     }
 
     if (!empty($courseUnpublishDate)) {
 		
-	//$message = "Key:" . $key . " courseUnpublishDate: " . $courseUnpublishDate;
-	//\Drupal::logger('course_cron_jobs')->notice($message);
-	
 	
       if (strtotime($courseUnpublishDate) < strtotime('now')) {
         $courseDataService->setNodeValue('published', 'FALSE', $course);
@@ -57,7 +85,7 @@ function _handle_published_courses($allPublishedCourses) {
 		$message = "Course unpublished. Nid:" . $course . " course unpublish date: " . $courseUnpublishDate . "<br />";
 	    \Drupal::logger('course_cron_jobs')->notice($message);
       }
-      continue;
+     // continue;
     }
 
     $courseOrganization = $courseDataService->getFieldValue('field_course_organization', $course, 'targetId');
@@ -71,19 +99,19 @@ function _handle_published_courses($allPublishedCourses) {
     $compareDate = strtotime('-'.$weekCycle.' weeks');
 
     $courseStartDate = $courseDataService->getFieldValue('field_course_start_date', $course, 'valueInArray');
+	
+	$courseStartDate = strtotime($courseStartDate);
 
-    if (empty($courseStartDate)) {
+    /* if (empty($courseStartDate)) {
       continue;
-    }
+    } */
 
-    if (strtotime($courseStartDate) < $compareDate) {
+    if ($courseStartDate < $compareDate) {
       $courseDataService->setNodeValue('published', 'FALSE', $course);
 	  
 	  $message = "Course unpublished. Nid:" . $course . " course compare date: " . $compareDate . "<br />";
 	  \Drupal::logger('course_cron_jobs')->notice($message);
     }
-
-
   }
 }
 
