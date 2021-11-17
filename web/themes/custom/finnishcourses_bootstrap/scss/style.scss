@@ -421,6 +421,17 @@ h1, h2, h3 {
   }
 }
 
+.path-node {
+	.section {
+		h3 {
+			margin-top: 22px;
+			margin-bottom: 12px;
+			font-size: 21px;
+			font-weight: 900;
+		}
+	}
+}
+
 .node__content {
 	font-size: 1rem;
 	
