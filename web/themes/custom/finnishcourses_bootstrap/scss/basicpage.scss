@@ -30,7 +30,12 @@
   .field--type-text-with-summary {
     h2 {
       @include media-breakpoint-down(sm-t) {
-        font-size: 18px !important; // Overriding .path-node .section h2
+        font-size: 19px !important; // Overriding .path-node .section h2
+      }
+    }
+	h3 {
+      @include media-breakpoint-down(sm-t) {
+        font-size: 17px !important; // Overriding .path-node .section h2
       }
     }
     div {
