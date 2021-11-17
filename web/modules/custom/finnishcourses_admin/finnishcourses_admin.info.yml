@@ -3,4 +3,5 @@ description: 'Contains admin side basic implementations at Finnishcourses site.'
 type: module
 
 core: '8.x'
+core_version_requirement: ^8 || ^9
 package: 'Finnishcourses custom'

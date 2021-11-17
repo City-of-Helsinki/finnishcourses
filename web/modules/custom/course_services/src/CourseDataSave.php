@@ -8,7 +8,7 @@
  
 namespace Drupal\course_services;
 
-use Drupal\Core\Entity\Query\QueryFactory;
+//use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\course_services\CourseDataService;
@@ -23,7 +23,7 @@ class CourseDataSave {
    *
    * @var Drupal\Core\Entity\Query\QueryFactory
    */
-  protected $entityQuery;
+ // protected $entityQuery;
 
   /**
    * Drupal\Core\Entity\EntityTypeManagerInterface
@@ -40,8 +40,8 @@ class CourseDataSave {
  */
   protected $courseDataService;
 
-  public function __construct(QueryFactory $entityQuery, EntityTypeManagerInterface $entityTypeManager, CourseDataService $courseDataService) {
-    $this->entityQuery = $entityQuery;
+  public function __construct(EntityTypeManagerInterface $entityTypeManager, CourseDataService $courseDataService) {
+   // $this->entityQuery = $entityQuery;
     $this->entityTypeManager = $entityTypeManager;
     $this->courseDataService = $courseDataService;
   }

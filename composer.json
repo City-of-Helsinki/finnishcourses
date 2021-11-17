@@ -49,6 +49,18 @@
                   "type": "zip"
                 }
             }
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "furf/jquery-ui-touch-punch",
+				"version": "dev-master",
+				"type": "drupal-library",
+				"dist": {
+					"url": "https://github.com/furf/jquery-ui-touch-punch/archive/refs/heads/master.zip",
+					"type": "zip"
+				}
+			}	
         }
     ],
     "require": {
@@ -58,77 +70,78 @@
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
         "datetimepicker/datetimepicker": "^2.5",
-        "drupal-composer/drupal-scaffold": "^2.5",
         "drupal/admin_toolbar": "3.0.2",
-        "drupal/advagg": "^3.5",
-        "drupal/allowed_formats": "^1.1",
-        "drupal/autologout": "^1.0",
-        "drupal/better_exposed_filters": "4.0.0-beta2",
-        "drupal/block_visibility_groups": "^1.3",
+        "drupal/advagg": "4.1",
+        "drupal/allowed_formats": "1.3",
+        "drupal/autologout": "1.3",
+        "drupal/better_exposed_filters": "^5.0@alpha",
+        "drupal/block_visibility_groups": "1.4",
         "drupal/bootstrap_barrio": "^4.22",
-        "drupal/bootstrap_datepicker": "^1.0@beta",
+        "drupal/bootstrap_datepicker": "^1.0@dev",
         "drupal/bootstrap_sass": "^1.9",
         "drupal/business_rules": "^2.0@beta",
-        "drupal/ckeditor_youtube": "^1.1",
-        "drupal/ckeditorheight": "^1.3",
+        "drupal/ckeditor_youtube": "1.3",
+        "drupal/ckeditorheight": "1.8",
         "drupal/conditional_fields": "4.0.0-alpha1",
-        "drupal/config_split": "^1.4",
+        "drupal/config_split": "1.7",
         "drupal/console": "^1.8",
         "drupal/cookies": "^1.0",
-        "drupal/core": "8.9.19",
+        "drupal/core": "9.2.8",
         "drupal/ctools": "3.7",
         "drupal/dbug": "^2.0",
-        "drupal/delete_all": "^1.2",
+        "drupal/delete_all": "2.0.0",
         "drupal/devel_debug_log": "^1.0@beta",
         "drupal/embed": "1.4",
-        "drupal/entity_browser": "^2.1",
+        "drupal/entity_browser": "2.6",
         "drupal/entity_clone": "^1.0@beta",
         "drupal/entity_embed": "1.2.0",
         "drupal/eu_cookie_compliance": "^1.19",
         "drupal/facets": "1.8",
         "drupal/field_group": "3.1",
-        "drupal/filelog": "^1.0",
+        "drupal/filelog": "2.0",
         "drupal/flood_control": "2.2.2",
-        "drupal/force_password_change": "^1.3",
-        "drupal/geolocation": "^1.11",
+        "drupal/force_password_change": "^2.0@beta",
+        "drupal/geolocation": "3.7",
         "drupal/google_tag": "1.4",
         "drupal/group": "^1.0@RC",
-        "drupal/honeypot": "^1.29",
-        "drupal/image_effects": "^3.1",
+        "drupal/honeypot": "2.0.1",
+        "drupal/image_effects": "3.1",
+        "drupal/jquery_ui_touch_punch": "^1.0",
         "drupal/link_attributes": "^1.5",
-        "drupal/linkit": "4.4",
+        "drupal/linkit": "5.0.0-beta13",
         "drupal/menu_admin_per_menu": "^1.0",
         "drupal/menu_block": "^1.5",
         "drupal/menu_trail_by_path": "^1.1",
         "drupal/metatag": "^1.8",
         "drupal/office_hours": "1.x",
-        "drupal/pathauto": "1.6",
+        "drupal/pathauto": "1.8",
         "drupal/pathologic": "^1.0@alpha",
         "drupal/permissions_filter": "^1.0",
         "drupal/quick_node_clone": "^1.12",
         "drupal/redirect": "^1.3",
-        "drupal/redirect_after_login": "^2.5",
+        "drupal/redirect_after_login": "2.7",
         "drupal/redis": "^1.1",
         "drupal/restui": "^1.17",
         "drupal/role_delegation": "^1.0@alpha",
         "drupal/scheduler": "^1.0",
         "drupal/search_api": "1.20",
-        "drupal/select_or_other": "^1.0@alpha",
-        "drupal/shortcutperrole": "^1.0@RC",
+        "drupal/select_or_other": "1.x-dev",
+        "drupal/shortcutperrole": "2.0.0",
         "drupal/simple_sitemap": "^3.2",
         "drupal/single_datetime": "^1.7",
         "drupal/spamspan": "^1.2",
         "drupal/system_status": "^2.8",
         "drupal/taxonomy_delete": "^1.0",
-        "drupal/time_range": "^1.1",
+        "drupal/time_range": "9.0.0",
         "drupal/token": "^1.5",
         "drupal/tvi": "^1.0@beta",
         "drupal/twig_debugger": "^1.1",
         "drupal/ultimate_cron": "^2.0@alpha",
-        "drupal/upgrade_status": "^3.8",
+        "drupal/upgrade_status": "3.11",
         "drupal/view_unpublished": "^1.0@alpha",
         "drupal/webform": "6.1.0",
-        "drush/drush": "^9.0.0",
+        "drush/drush": "^10.5",
+        "furf/jquery-ui-touch-punch": "dev-master",
         "platformsh/config-reader": "^2.2",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
@@ -180,18 +193,11 @@
             "drupal/core": {
                 "Grouped exposed filters do not work like they should": "https://www.drupal.org/files/issues/1810148-58.patch",
                 "Untranslatable aliases generation fix for translations": "https://www.drupal.org/files/issues/2020-01-26/2689459-127.patch",
-				"Attribute hreflang not allowed on element li at this point": "https://www.drupal.org/files/issues/2019-06-12/2454289-94_0.patch"
+				"Attribute hreflang not allowed on element li at this point": "https://www.drupal.org/files/issues/2020-12-14/D9-2454289-101.patch"
             },
-            "drupal/office_hours": {
-                "Handle timezones in Office Hours module": "https://www.drupal.org/files/issues/office_hours-respecting-user_timezone-D8-1925272-17.patch",
-                "Make week widgets header labels translatable with context": "patches/contrib/office_hours/week_widget_labels_with_context.patch"
-            },
-            "drupal/ultimate_cron": {
-                "Ability to unlock a cron job": "https://www.drupal.org/files/issues/2018-07-16/ultimate-cron_add-unlock-operation_2977639_2.patch"
-            },
-            "drupal/devel": {
-                "Drupal Kint fixed protected value access": "https://www.drupal.org/files/issues/devel.ksm_.2857361.18.patch"
-            }
+			"drupal/redirect_after_login": {
+				"Headers have already been sent after upgrade to Drupal 9.2 (can't login)": "https://www.drupal.org/files/issues/2021-06-20/3214949.patch"
+			}
         },
         "drupal-scaffold": {
             "initial": {

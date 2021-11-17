@@ -9,7 +9,7 @@ use Drupal\node\NodeInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\Query\QueryFactory;
+//use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\StringTranslation\TranslationInterface;
 use Drupal\Core\Datetime\DrupalDateTime;
@@ -44,7 +44,7 @@ class UsersCoursesListing extends ControllerBase {
    *
    * @var Drupal\Core\Entity\Query\QueryFactory
    */
-  protected $entityQuery;
+  //protected $entityQuery;
 
   /**
    * Drupal\Core\Path\AliasManager definition.
@@ -64,10 +64,10 @@ class UsersCoursesListing extends ControllerBase {
   /**
    * {@inheritdoc}
    */
-  public function __construct(AccountProxyInterface $current_user, EntityTypeManagerInterface $entityTypeManager, QueryFactory $entityQuery, AliasManager $aliasManager, CourseDataService $courseDataService) {  
+  public function __construct(AccountProxyInterface $current_user, EntityTypeManagerInterface $entityTypeManager, AliasManager $aliasManager, CourseDataService $courseDataService) {  
     $this->currentUser = $current_user;
     $this->entityTypeManager = $entityTypeManager;
-    $this->entityQuery = $entityQuery;
+    //$this->entityQuery = $entityQuery;
     $this->aliasManager = $aliasManager;
     $this->courseDataService = $courseDataService;
   } 
@@ -78,8 +78,8 @@ class UsersCoursesListing extends ControllerBase {
   public static function create(ContainerInterface $container) {  
     return new static(
       $container->get('current_user'),
-      $container->get('entity.manager'),
-      $container->get('entity.query'),
+      //$container->get('entity_type.manager'),
+      //$container->get('entity.query'),
       $container->get('path.alias_manager'),
       $container->get('course_services.course_data_service')
     );  

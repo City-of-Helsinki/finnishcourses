@@ -8,7 +8,7 @@
  
 namespace Drupal\course_services;
 
-use Drupal\Core\Entity\Query\QueryFactory;
+//use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 
@@ -19,7 +19,7 @@ class CourseDataService {
    *
    * @var Drupal\Core\Entity\Query\QueryFactory
    */
-  protected $entityQuery;
+ // protected $entityQuery;
 
   /**
    * Drupal\Core\Session\AccountProxy definition.
@@ -35,8 +35,8 @@ class CourseDataService {
   */
   protected $entityTypeManager;
 
-  public function __construct(QueryFactory $entityQuery, AccountProxyInterface $current_user, EntityTypeManagerInterface $entityTypeManager) {
-    $this->entityQuery = $entityQuery;
+  public function __construct(AccountProxyInterface $current_user, EntityTypeManagerInterface $entityTypeManager) {
+   // $this->entityQuery = $entityQuery;
     $this->currentUser = $current_user;
     $this->entityTypeManager = $entityTypeManager;
   }
@@ -61,7 +61,8 @@ class CourseDataService {
       $status = 1;
     }
 
-    $query = $this->entityQuery->get('node');
+    //$query = $this->entityQuery->get('node');
+	$query = $this->entityTypeManager->getStorage('node')->getQuery();
     $query->condition('type', 'course')
           ->condition('field_course_organization', $userOrganizations, 'IN')
           ->condition('status', $status);
@@ -82,7 +83,8 @@ class CourseDataService {
   public function queryCourses($fieldName, $value, $valueType = 'value') {
 
 
-    $query = $this->entityQuery->get('node');
+    //$query = $this->entityQuery->get('node');
+	$query = $this->entityTypeManager->getStorage('node')->getQuery();
     $query->condition('type', 'course')
           ->condition($fieldName, $value, '=')
           ->addMetaData('account', \Drupal\user\Entity\User::load(1));
@@ -94,7 +96,8 @@ class CourseDataService {
   }
 
   public function queryAllCourses($status = 1) {
-    $query = $this->entityQuery->get('node');
+    //$query = $this->entityQuery->get('node');
+	$query = $this->entityTypeManager->getStorage('node')->getQuery();
     $query->condition('type', 'course')
           ->condition('status', $status);
     $entity_ids = $query->execute();
