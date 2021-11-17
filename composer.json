@@ -127,7 +127,7 @@
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/upgrade_status": "^3.8",
         "drupal/view_unpublished": "^1.0@alpha",
-        "drupal/webform": "5.28",
+        "drupal/webform": "6.1.0",
         "drush/drush": "^9.0.0",
         "platformsh/config-reader": "^2.2",
         "vlucas/phpdotenv": "^2.4",
