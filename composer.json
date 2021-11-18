@@ -75,7 +75,7 @@
         "drupal/config_split": "^1.4",
         "drupal/console": "^1.8",
         "drupal/cookies": "^1.0",
-        "drupal/core": "8.9.19",
+        "drupal/core": "8.9.20",
         "drupal/ctools": "3.7",
         "drupal/dbug": "^2.0",
         "drupal/delete_all": "^1.2",
