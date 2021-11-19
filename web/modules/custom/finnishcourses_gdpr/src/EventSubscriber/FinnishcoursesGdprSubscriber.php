@@ -21,7 +21,7 @@ class FinnishcoursesGdprSubscriber implements EventSubscriberInterface {
 	if ($event->getRequest()->get('_route') == 'entity.user.canonical') {
 		$uid = $event->getRequest()->get('user')->uid->value;
 		$account = \Drupal\user\Entity\User::load($uid); 
-        $name = $account->getUsername();
+        $name = $account->getAccountName();
 		
 	    // Logs a notice when users page is visited
 		\Drupal::logger('finnishcourses_gdpr')->notice('user %name visited.',
