@@ -109,6 +109,7 @@
         "drupal/jquery_ui_touch_punch": "^1.0",
         "drupal/link_attributes": "^1.5",
         "drupal/linkit": "5.0.0-beta13",
+        "drupal/matomo": "^1.13",
         "drupal/menu_admin_per_menu": "^1.0",
         "drupal/menu_block": "^1.5",
         "drupal/menu_trail_by_path": "^1.1",
