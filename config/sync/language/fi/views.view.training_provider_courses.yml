@@ -5,7 +5,7 @@ display:
       title: '{{ field_course_organization }} - Kurssit'
       fields:
         field_starting_level:
-          label: Aloitustaso
+          label: 'Kurssi alkaa'
         field_target_level:
           label: Tavoitetaso
         field_course_start_date:
@@ -18,9 +18,6 @@ display:
           label: 'Kurssin ID'
         field_online_course:
           label: Paikka
-          settings:
-            format_custom_true: Verkkokurssi
-        field_online_course_1:
           settings:
             format_custom_true: Verkkokurssi
       empty:

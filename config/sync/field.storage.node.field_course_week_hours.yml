@@ -14,7 +14,7 @@ settings:
   time_format: G
   element_type: office_hours_datetime
   increment: 5
-  comment: false
+  comment: 0
   valhrs: true
   limit_start: ''
   limit_end: ''

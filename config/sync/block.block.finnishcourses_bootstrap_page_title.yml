@@ -12,7 +12,7 @@ _core:
 id: finnishcourses_bootstrap_page_title
 theme: finnishcourses_bootstrap
 region: content
-weight: -12
+weight: -11
 provider: null
 plugin: page_title_block
 settings:

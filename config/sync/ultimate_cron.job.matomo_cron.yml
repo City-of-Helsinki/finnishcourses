@@ -1,14 +1,14 @@
-uuid: fad33c04-49fe-4ef1-9254-aae152ad38d6
+uuid: 5efe89b8-d184-409e-9212-46ea600ec246
 langcode: en
 status: true
 dependencies:
   module:
-    - business_rules
+    - matomo
 title: 'Default cron handler'
-id: business_rules_cron
+id: matomo_cron
 weight: 0
-module: business_rules
-callback: business_rules_cron
+module: matomo
+callback: matomo_cron
 scheduler:
   id: simple
 launcher:

@@ -1,2 +1,28 @@
 title: Palaute
-elements: "type_of_feedback:\n  '#title': 'Palautteen tyyppi'\n  '#options':\n    praise: Kiitos\n    criticism: Moite\n    question: Kysymys\n    development_suggestion: Kehitysehdotus\n    other: Muu\ntitle:\n  '#title': Otsikko\nmessage:\n  '#title': Viesti\ncontact_information:\n  '#markup': \"<h2>Yhteystiedot</h2>\\nAnna yhteystietosi, jos haluat vastauksen palautteeseen.\\n\"\nname_pseudonym:\n  '#title': Nimi/nimimerkki\nemail_address:\n  '#title': Sähköpostiosoite\nphone_number:\n  '#title': Puhelinnumero\nstreet_address:\n  '#title': Katuosoite\npostal_code:\n  '#title': Postinumero\npost_office:\n  '#title': Postitoimipaikka\n"
+elements: |
+  type_of_feedback:
+    '#title': 'Palautteen tyyppi'
+    '#options':
+      praise: Kiitos
+      criticism: Moite
+      question: Kysymys
+      development_suggestion: Kehitysehdotus
+      other: Muu
+  title:
+    '#title': Otsikko
+  message:
+    '#title': Viesti
+  contact_information:
+    '#markup': "<h2>Yhteystiedot</h2>\nAnna yhteystietosi, jos haluat vastauksen palautteeseen.\n"
+  name_pseudonym:
+    '#title': Nimi/nimimerkki
+  email_address:
+    '#title': Sähköpostiosoite
+  phone_number:
+    '#title': Puhelinnumero
+  street_address:
+    '#title': Katuosoite
+  postal_code:
+    '#title': Postinumero
+  post_office:
+    '#title': Postitoimipaikka

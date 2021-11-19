@@ -12,7 +12,6 @@ module:
   block_visibility_groups: 0
   bootstrap_datepicker: 0
   breakpoint: 0
-  business_rules: 0
   ckeditor: 0
   ckeditor_youtube: 0
   ckeditorheight: 0
@@ -50,7 +49,6 @@ module:
   file_mdm: 0
   file_mdm_exif: 0
   file_mdm_font: 0
-  filelog: 0
   filter: 0
   finnishcourses_admin: 0
   finnishcourses_base: 0
@@ -58,6 +56,7 @@ module:
   flood_control: 0
   force_password_change: 0
   geolocation: 0
+  geolocation_google_maps: 0
   geolocation_google_places_api: 0
   google_tag: 0
   hal: 0
@@ -66,11 +65,16 @@ module:
   honeypot: 0
   image: 0
   image_effects: 0
+  jquery_ui: 0
+  jquery_ui_datepicker: 0
+  jquery_ui_slider: 0
+  jquery_ui_touch_punch: 0
   language: 0
   link: 0
   link_attributes: 0
   linkit: 0
   locale: 0
+  matomo: 0
   media: 0
   media_library: 0
   menu_block: 0
@@ -141,8 +145,6 @@ module:
   views: 10
   standard: 1000
 theme:
-  stable: 0
-  classy: 0
   bartik: 0
   seven: 0
   bootstrap_barrio: 0

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.course.field_ask_exact_times
     - field.field.node.course.field_ask_more_email
     - field.field.node.course.field_books_and_materials
     - field.field.node.course.field_course_availability
@@ -20,9 +21,14 @@ dependencies:
     - field.field.node.course.field_course_street_address
     - field.field.node.course.field_course_times_of_day
     - field.field.node.course.field_course_town
+    - field.field.node.course.field_course_unpublish_date
     - field.field.node.course.field_course_week_hours
+    - field.field.node.course.field_discount_eligibility
+    - field.field.node.course.field_map_link
+    - field.field.node.course.field_meta_tags
     - field.field.node.course.field_number_of_lessons
     - field.field.node.course.field_online_course
+    - field.field.node.course.field_organizers_course_id
     - field.field.node.course.field_registration_end_date
     - field.field.node.course.field_registration_link
     - field.field.node.course.field_registration_start_date
@@ -42,6 +48,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_ask_exact_times: true
   field_ask_more_email: true
   field_books_and_materials: true
   field_course_availability: true
@@ -58,7 +65,11 @@ hidden:
   field_course_street_address: true
   field_course_times_of_day: true
   field_course_town: true
+  field_course_unpublish_date: true
   field_course_week_hours: true
+  field_discount_eligibility: true
+  field_map_link: true
+  field_meta_tags: true
   field_number_of_lessons: true
   field_online_course: true
   field_organizers_course_id: true
@@ -68,3 +79,4 @@ hidden:
   field_starting_level: true
   field_target_level: true
   langcode: true
+  search_api_excerpt: true

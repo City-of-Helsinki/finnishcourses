@@ -161,31 +161,22 @@ processor_settings:
   add_url:
     weights:
       preprocess_index: -30
-  aggregated_field:
+  tokenizer:
     weights:
-      add_properties: 20
+      preprocess_index: -2
+      preprocess_query: -5
+    fields:
+      - rendered_item
+      - title
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    all_fields: false
+    ignored: ._-
   content_access:
     weights:
       preprocess_index: -6
       preprocess_query: -4
-  entity_status:
-    weights:
-      preprocess_index: -10
-  html_filter:
-    weights:
-      preprocess_index: -3
-      preprocess_query: -6
-    fields:
-      - rendered_item
-    title: true
-    alt: true
-    tags:
-      b: 2
-      h1: 5
-      h2: 3
-      h3: 2
-      string: 2
-    all_fields: false
   ignorecase:
     weights:
       preprocess_index: -5
@@ -194,7 +185,17 @@ processor_settings:
       - rendered_item
       - title
     all_fields: false
-  language_with_fallback: {  }
+  aggregated_field:
+    weights:
+      add_properties: 20
+  transliteration:
+    weights:
+      preprocess_index: -4
+      preprocess_query: -7
+    fields:
+      - rendered_item
+      - title
+    all_fields: false
   rendered_item:
     weights:
       add_properties: 0
@@ -243,26 +244,25 @@ processor_settings:
       - will
       - with
     all_fields: false
-  tokenizer:
+  html_filter:
     weights:
-      preprocess_index: -2
-      preprocess_query: -5
+      preprocess_index: -3
+      preprocess_query: -6
     fields:
       - rendered_item
-      - title
-    spaces: ''
-    overlap_cjk: 1
-    minimum_word_size: '3'
+    title: true
+    alt: true
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      string: 2
     all_fields: false
-    ignored: ._-
-  transliteration:
+  language_with_fallback: {  }
+  entity_status:
     weights:
-      preprocess_index: -4
-      preprocess_query: -7
-    fields:
-      - rendered_item
-      - title
-    all_fields: false
+      preprocess_index: -10
 tracker_settings:
   default:
     indexing_order: fifo

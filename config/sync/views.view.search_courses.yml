@@ -95,16 +95,18 @@ display:
               field_course_town:
                 plugin_id: bef
                 advanced:
+                  sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
                   collapsible: false
                   is_secondary: false
                 select_all_none: false
                 select_all_none_nested: false
-                display_inline: 0
+                display_inline: false
               field_online_course:
                 plugin_id: bef_single
                 advanced:
+                  sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
                   collapsible: false
@@ -112,6 +114,7 @@ display:
               field_starting_level:
                 plugin_id: default
                 advanced:
+                  sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
                   collapsible: false
@@ -119,6 +122,7 @@ display:
               field_starting_level_1:
                 plugin_id: default
                 advanced:
+                  sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
                   collapsible: false
@@ -126,6 +130,7 @@ display:
               field_course_fee:
                 plugin_id: default
                 advanced:
+                  placeholder_text: ''
                   rewrite:
                     filter_rewrite_values: ''
                   collapsible: false
@@ -133,11 +138,13 @@ display:
               field_course_start_date:
                 plugin_id: bef_datepicker
                 advanced:
+                  placeholder_text: ''
                   collapsible: false
                   is_secondary: false
               search_api_fulltext:
                 plugin_id: default
                 advanced:
+                  placeholder_text: ''
                   rewrite:
                     filter_rewrite_values: ''
                   collapsible: false
@@ -145,16 +152,18 @@ display:
               field_course_times_of_day:
                 plugin_id: bef
                 advanced:
+                  sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
                   collapsible: false
                   is_secondary: false
                 select_all_none: false
                 select_all_none_nested: false
-                display_inline: 0
+                display_inline: false
               field_course_organization:
                 plugin_id: default
                 advanced:
+                  sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
                   collapsible: false
@@ -162,6 +171,7 @@ display:
               field_course_end_date:
                 plugin_id: bef_datepicker
                 advanced:
+                  placeholder_text: ''
                   collapsible: false
                   is_secondary: false
             field_course_town:
@@ -1537,7 +1547,7 @@ display:
               open_text: 'Currently open!'
               closed_text: 'Currently closed'
             schema:
-              enabled: 0
+              enabled: false
           group_column: ''
           group_columns: {  }
           group_rows: true

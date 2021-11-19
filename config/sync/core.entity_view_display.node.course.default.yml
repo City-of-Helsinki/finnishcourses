@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.course.field_course_town
     - field.field.node.course.field_course_unpublish_date
     - field.field.node.course.field_course_week_hours
+    - field.field.node.course.field_discount_eligibility
     - field.field.node.course.field_map_link
     - field.field.node.course.field_meta_tags
     - field.field.node.course.field_number_of_lessons
@@ -210,10 +211,20 @@ content:
       compress: false
       grouped: false
       schema:
-        enabled: 0
+        enabled: false
       timezone_field: ''
     third_party_settings: {  }
     type: office_hours
+    region: content
+  field_discount_eligibility:
+    weight: 28
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_map_link:
     weight: 26

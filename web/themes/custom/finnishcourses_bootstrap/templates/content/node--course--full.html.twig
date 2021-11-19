@@ -139,6 +139,11 @@
         </div>
       {% endif %}								  		 
       {{ content.field_course_fee }}
+	  {% if node.field_discount_eligibility.value %}
+        <div class="discount-eligibility">
+          <span>{% trans %}Ask the training provider if you are eligible for the discount.{% endtrans %}</span>
+        </div>
+      {% endif %}
       {{ content.field_course_week_hours }}
       {% if node.field_ask_exact_times.value %}
         <div class="ask-exact-times">

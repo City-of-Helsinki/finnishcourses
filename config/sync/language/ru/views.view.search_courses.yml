@@ -3,10 +3,12 @@ display:
     display_options:
       fields:
         field_course_fee:
-          fallback_options: {  }
+          fallback_options:
+            format_plural_string: !!binary MQNAY291bnQD
           label: Стоимость
         nid:
-          fallback_options: {  }
+          fallback_options:
+            format_plural_string: !!binary MQNAY291bnQD
         field_starting_level:
           label: 'Исходный уровень'
         field_target_level:
@@ -21,16 +23,10 @@ display:
           label: 'Идентификационный номер курса'
         field_online_course:
           label: Место
-          settings:
-            format_custom_true: Онлайн-курс
-        field_online_course_1:
-          settings:
-            format_custom_true: Онлайн-курс
       filters:
         field_starting_level:
           expose:
             label: 'Исходный уровень'
-            description: ''
           group_info:
             group_items:
               1:
@@ -43,21 +39,14 @@ display:
         field_course_fee:
           expose:
             label: 'Стоимость (€)'
-            description: ''
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
           group_info:
             label: 'Стоимость (€)'
             group_items:
               3:
                 title: 'более 150'
-              1:
-                title: 'Менее 50 €'
         field_course_start_date:
           group_info:
             label: 'Курс начинается'
-            description: ''
           expose:
             label: 'Курс начинается'
         field_course_town:

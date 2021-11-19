@@ -55,7 +55,7 @@ display:
       empty:
         area_text_custom:
           content: 'Ei sisältöä.'
-    display_title: Isäntä
+    display_title: Oletus
   page_1:
     display_options:
       menu:

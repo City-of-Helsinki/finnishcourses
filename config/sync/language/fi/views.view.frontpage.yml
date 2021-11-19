@@ -18,7 +18,7 @@ display:
             next: 'Seuraava ›'
             first: '« Ensimmäinen'
             last: 'Viimeinen »'
-    display_title: Isäntä
+    display_title: Oletus
   feed_1:
     display_title: Syöte
   page_1:
