@@ -4,4 +4,6 @@ login_redirection:
   administrator: /
   course_editor: /admin/content/courses/manage
   organization_admin: /admin/content/courses/manage
+  infofinland_user: /
+  rest_api: /
 exclude_urls: ''

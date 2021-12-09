@@ -1,2 +1,3 @@
-enabled: true
-timeout: 28800
+enabled: false
+timeout: null
+url: ''
