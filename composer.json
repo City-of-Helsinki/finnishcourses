@@ -127,6 +127,7 @@
         "drupal/scheduler": "^1.0",
         "drupal/search_api": "1.21",
         "drupal/select_or_other": "1.x-dev",
+        "drupal/sendgrid_integration": "^1.7",
         "drupal/shortcutperrole": "2.0.0",
         "drupal/simple_sitemap": "^3.2",
         "drupal/single_datetime": "^1.7",
