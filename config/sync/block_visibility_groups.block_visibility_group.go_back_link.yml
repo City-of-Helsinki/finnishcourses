@@ -11,25 +11,25 @@ logic: or
 conditions:
   04cb198b-a479-4158-96af-71400b146a73:
     id: 'entity_bundle:node'
+    negate: false
+    uuid: 04cb198b-a479-4158-96af-71400b146a73
+    context_mapping:
+      node: '@node.node_route_context:node'
     bundles:
       course: course
       feedback: feedback
       page: page
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-    uuid: 04cb198b-a479-4158-96af-71400b146a73
   58baefdb-dff5-4f83-9430-66c2aee2abd5:
     id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 58baefdb-dff5-4f83-9430-66c2aee2abd5
+    context_mapping: {  }
     bundles:
       organizations: organizations
-    negate: false
-    context_mapping: {  }
-    uuid: 58baefdb-dff5-4f83-9430-66c2aee2abd5
   ae47b2b3-063b-4502-bbfc-c34a671771c2:
     id: request_path
-    pages: "/courses/swedish-courses\r\n/courses/yki-courses\r\n/training-providers/*\r\n/training-providers\r\n/taxonomy/term/*\r\n"
     negate: false
-    context_mapping: {  }
     uuid: ae47b2b3-063b-4502-bbfc-c34a671771c2
+    context_mapping: {  }
+    pages: "/courses/swedish-courses\r\n/courses/yki-courses\r\n/training-providers/*\r\n/training-providers\r\n/taxonomy/term/*\r\n"
 allow_other_conditions: true

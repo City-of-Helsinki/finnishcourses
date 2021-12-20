@@ -1,9 +1,25 @@
+_core:
+  default_config_hash: UyNPbddlLO3s8kwBAYs5ubS74V4uBRmWxfrE9yEGeGM
 uri: 'public://google-tag'
 compact_snippet: true
 include_file: true
 rebuild_snippets: true
 flush_snippets: false
 debug_output: false
+_default_container:
+  data_layer: dataLayer
+  include_classes: false
+  whitelist_classes: ''
+  blacklist_classes: ''
+  include_environment: false
+  environment_id: ''
+  environment_token: ''
+  path_toggle: 'exclude listed'
+  path_list: ''
+  role_toggle: 'exclude listed'
+  role_list: {  }
+  status_toggle: 'exclude listed'
+  status_list: ''
 container_id: ''
 path_toggle: 'exclude listed'
 path_list: |-
@@ -34,19 +50,3 @@ blacklist_classes: |-
 include_environment: false
 environment_id: ''
 environment_token: ''
-_core:
-  default_config_hash: UyNPbddlLO3s8kwBAYs5ubS74V4uBRmWxfrE9yEGeGM
-_default_container:
-  path_toggle: 'exclude listed'
-  path_list: ''
-  role_toggle: 'exclude listed'
-  role_list: {  }
-  status_toggle: 'exclude listed'
-  status_list: ''
-  data_layer: dataLayer
-  include_classes: false
-  whitelist_classes: ''
-  blacklist_classes: ''
-  include_environment: false
-  environment_id: ''
-  environment_token: ''

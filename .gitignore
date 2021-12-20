@@ -43,3 +43,6 @@ web/themes/\.idea/
 /web/sites/default/services.yml
 /web/sites/default/settings.php
 
+/config/sync/sendgrid_integration.settings.yml
+/config/sync/mailsystem.settings.yml
+

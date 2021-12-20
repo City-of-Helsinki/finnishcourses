@@ -20,11 +20,11 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_organization:
+    type: options_buttons
     weight: 1
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
-    region: content
   language:
     weight: 2
     region: content

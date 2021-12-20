@@ -2,10 +2,19 @@ label: 'Главная страница'
 description: 'Все материалы, выведенные на главную страницу.'
 display:
   default:
+    display_title: 'По умолчанию'
     display_options:
-      empty:
-        title:
-          title: 'Приветствуем на сайте [site:name]'
+      pager:
+        options:
+          tags:
+            next: 'Следующий ›'
+            previous: '‹ Предыдущий'
+            first: '« Первая'
+            last: 'Последняя »'
+          expose:
+            items_per_page_label: 'Элементов на страницу'
+            items_per_page_options_all_label: '- Все -'
+            offset_label: Пропустить
       exposed_form:
         options:
           submit_button: Применить
@@ -13,18 +22,9 @@ display:
           exposed_sorts_label: 'Сортировать по'
           sort_asc_label: 'По возрастанию'
           sort_desc_label: 'По убыванию'
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Элементов на страницу'
-            items_per_page_options_all_label: '- Все -'
-            offset_label: Пропустить
-          tags:
-            previous: '‹ Предыдущий'
-            next: 'Следующий ›'
-            first: '« Первая'
-            last: 'Последняя »'
-    display_title: 'По умолчанию'
+      empty:
+        title:
+          title: 'Приветствуем на сайте [site:name]'
   feed_1:
     display_title: 'Поток данных'
   page_1:

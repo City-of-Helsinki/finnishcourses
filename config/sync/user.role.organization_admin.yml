@@ -1,7 +1,34 @@
 uuid: 19cc6b8d-b379-4422-b639-f276e577775a
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - media.type.audio
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.course
+    - node.type.page
+    - taxonomy.vocabulary.course_features
+    - taxonomy.vocabulary.course_levels
+    - taxonomy.vocabulary.organizations
+    - taxonomy.vocabulary.street_adresses
+    - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.towns
+  module:
+    - content_translation
+    - file
+    - media
+    - node
+    - path
+    - quick_node_clone
+    - role_delegation
+    - scheduler
+    - system
+    - taxonomy
+    - toolbar
+    - view_unpublished
 id: organization_admin
 label: 'Organization admin'
 weight: 4

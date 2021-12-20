@@ -12,22 +12,22 @@ pattern: '/courses/[node:source:title]'
 selection_criteria:
   10af0dcc-a987-4543-ba25-e4ebd7b16ea5:
     id: node_type
-    bundles:
-      course: course
     negate: false
+    uuid: 10af0dcc-a987-4543-ba25-e4ebd7b16ea5
     context_mapping:
       node: node
-    uuid: 10af0dcc-a987-4543-ba25-e4ebd7b16ea5
+    bundles:
+      course: course
   e9948582-e7ea-441b-9305-62f7c5c52114:
     id: language
+    negate: false
+    uuid: e9948582-e7ea-441b-9305-62f7c5c52114
+    context_mapping:
+      language: 'node:langcode:language'
     langcodes:
       en: en
       fi: fi
       ru: ru
-    negate: false
-    context_mapping:
-      language: 'node:langcode:language'
-    uuid: e9948582-e7ea-441b-9305-62f7c5c52114
 selection_logic: and
 weight: -10
 relationships:

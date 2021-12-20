@@ -18,11 +18,11 @@ plugin: go_back_link
 settings:
   id: go_back_link
   label: 'Go back link'
-  provider: finnishcourses_base
   label_display: '0'
+  provider: finnishcourses_base
 visibility:
   condition_group:
     id: condition_group
     negate: false
-    block_visibility_group: go_back_link
     context_mapping: {  }
+    block_visibility_group: go_back_link

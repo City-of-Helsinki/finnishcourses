@@ -21,25 +21,25 @@ mode: header_image
 content:
   field_header_image:
     type: entity_reference_entity_view
-    weight: 1
     label: hidden
     settings:
       view_mode: header_image
       link: false
     third_party_settings: {  }
+    weight: 1
     region: content
   field_header_text:
     type: text_default
-    weight: 2
-    region: content
     label: above
     settings: {  }
     third_party_settings: {  }
-  links:
-    weight: 0
+    weight: 2
     region: content
+  links:
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_meta_tags: true
   field_text_box_1: true

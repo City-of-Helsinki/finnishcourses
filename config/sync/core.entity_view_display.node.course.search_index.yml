@@ -46,25 +46,23 @@ bundle: course
 mode: search_index
 content:
   field_course_availability:
-    weight: 1
+    type: list_default
     label: inline
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    weight: 1
     region: content
   field_course_end_date:
     type: datetime_default
-    weight: 10
-    region: content
     label: hidden
     settings:
       timezone_override: ''
       format_type: date_only
     third_party_settings: {  }
+    weight: 10
+    region: content
   field_course_fee:
     type: number_decimal
-    weight: 7
-    region: content
     label: inline
     settings:
       thousand_separator: ''
@@ -72,56 +70,59 @@ content:
       scale: 2
       prefix_suffix: true
     third_party_settings: {  }
+    weight: 7
+    region: content
   field_course_id:
-    weight: 9
+    type: string
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 9
     region: content
   field_course_organization:
-    weight: 4
+    type: entity_reference_entity_view
     label: hidden
     settings:
       view_mode: course_organization
       link: false
     third_party_settings: {  }
-    type: entity_reference_entity_view
+    weight: 4
     region: content
   field_course_start_date:
     type: datetime_default
-    weight: 11
-    region: content
     label: hidden
     settings:
       timezone_override: ''
       format_type: date_only
     third_party_settings: {  }
+    weight: 11
+    region: content
   field_course_street_address:
-    weight: 5
+    type: entity_reference_label
     label: above
     settings:
       link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 5
     region: content
   field_course_town:
-    weight: 6
+    type: entity_reference_label
     label: above
     settings:
       link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 6
     region: content
   field_course_week_hours:
-    weight: 8
+    type: office_hours
     label: inline
     settings:
-      show_closed: all
-      office_hours_first_day: ''
       day_format: short
       time_format: G
+      compress: false
+      grouped: false
+      show_closed: all
       closed_format: ''
       separator:
         days: ''
@@ -133,33 +134,32 @@ content:
         position: ''
         open_text: 'Currently open!'
         closed_text: 'Currently closed'
-      compress: false
-      grouped: false
+      timezone_field: ''
+      office_hours_first_day: ''
       schema:
         enabled: false
-      timezone_field: ''
     third_party_settings: {  }
-    type: office_hours
+    weight: 8
     region: content
   field_starting_level:
     type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
     weight: 2
     region: content
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
   field_target_level:
     type: list_default
-    weight: 3
-    region: content
     label: inline
     settings: {  }
     third_party_settings: {  }
-  links:
-    weight: 0
+    weight: 3
     region: content
+  links:
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_ask_exact_times: true
   field_ask_more_email: true

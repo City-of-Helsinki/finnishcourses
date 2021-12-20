@@ -1,7 +1,41 @@
 uuid: 9e7dc82b-5d65-4dd0-8d19-4af5afc62b99
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - media.type.audio
+    - media.type.file
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.course
+    - node.type.feedback
+    - node.type.front_page
+    - node.type.page
+    - taxonomy.vocabulary.course_features
+    - taxonomy.vocabulary.course_levels
+    - taxonomy.vocabulary.organizations
+    - taxonomy.vocabulary.street_adresses
+    - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.towns
+  module:
+    - content_translation
+    - file
+    - force_password_change
+    - media
+    - menu_admin_per_menu
+    - menu_link_content
+    - metatag
+    - node
+    - path
+    - quick_node_clone
+    - role_delegation
+    - scheduler
+    - system
+    - taxonomy
+    - toolbar
+    - view_unpublished
+    - webform
 id: infofinland_user
 label: 'Infofinland user'
 weight: 5

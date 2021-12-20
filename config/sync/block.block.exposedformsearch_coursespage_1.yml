@@ -19,17 +19,17 @@ plugin: 'views_exposed_filter_block:search_courses-page_1'
 settings:
   id: 'views_exposed_filter_block:search_courses-page_1'
   label: ''
-  provider: views
   label_display: '0'
+  provider: views
   views_label: 'Etsi suomen kielen kursseja'
 visibility:
   condition_group:
     id: condition_group
     negate: false
-    block_visibility_group: ''
     context_mapping: {  }
+    block_visibility_group: ''
   request_path:
     id: request_path
-    pages: "<front>\r\n/search/courses*"
     negate: false
     context_mapping: {  }
+    pages: "<front>\r\n/search/courses*"

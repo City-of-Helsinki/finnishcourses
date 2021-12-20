@@ -2,10 +2,6 @@ uuid: 62c6a0c9-8248-4607-bfa6-8bc717004009
 langcode: en
 status: true
 dependencies:
-  module:
-    - node
-    - taxonomy
-    - search_api
   config:
     - field.storage.node.field_course_features
     - field.storage.node.field_books_and_materials
@@ -23,6 +19,10 @@ dependencies:
     - field.storage.node.field_target_level
     - search_api.server.default_server
     - core.entity_view_mode.node.search_index
+  module:
+    - node
+    - taxonomy
+    - search_api
 _core:
   default_config_hash: GLmLegZGHtMF6annRqgjizJAoiAip-IT-XOsDMCZfog
 id: courses_index
@@ -266,61 +266,50 @@ processor_settings:
   add_url:
     weights:
       preprocess_index: -30
-  tokenizer:
-    all_fields: false
-    fields:
-      - features_name
-      - rendered_item
-      - title
-    spaces: ''
-    overlap_cjk: 1
-    minimum_word_size: '3'
+  aggregated_field:
     weights:
-      preprocess_index: -2
-      preprocess_query: -5
-    ignored: ._-
+      add_properties: 20
   content_access:
     weights:
       preprocess_index: -6
       preprocess_query: -4
+  entity_status:
+    weights:
+      preprocess_index: -10
+  html_filter:
+    weights:
+      preprocess_index: -3
+      preprocess_query: -6
+    all_fields: false
+    fields:
+      - rendered_item
+    title: true
+    alt: true
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      string: 2
   ignorecase:
+    weights:
+      preprocess_index: -5
+      preprocess_query: -8
     all_fields: false
     fields:
       - features_name
       - organization_name
       - rendered_item
       - title
-    weights:
-      preprocess_index: -5
-      preprocess_query: -8
-  aggregated_field:
-    weights:
-      add_properties: 20
-  transliteration:
-    all_fields: true
-    fields:
-      - features_name
-      - field_books_and_materials
-      - field_course_features
-      - field_course_id
-      - field_course_organization
-      - field_course_times_of_day
-      - field_course_town
-      - field_organizers_course_id
-      - field_starting_level
-      - field_target_level
-      - organization_name
-      - rendered_item
-      - title
-      - type
-    weights:
-      preprocess_index: -4
-      preprocess_query: -7
+  language_with_fallback: {  }
   rendered_item:
     weights:
       add_properties: 0
       pre_index_save: -10
   stopwords:
+    weights:
+      preprocess_index: -5
+      preprocess_query: -10
     all_fields: false
     fields:
       - rendered_item
@@ -361,32 +350,43 @@ processor_settings:
       - was
       - will
       - with
+  tokenizer:
     weights:
-      preprocess_index: -5
-      preprocess_query: -10
-  html_filter:
+      preprocess_index: -2
+      preprocess_query: -5
     all_fields: false
     fields:
+      - features_name
       - rendered_item
-    title: true
-    alt: true
-    tags:
-      b: 2
-      h1: 5
-      h2: 3
-      h3: 2
-      string: 2
+      - title
+    spaces: ''
+    ignored: ._-
+    overlap_cjk: 1
+    minimum_word_size: '3'
+  transliteration:
     weights:
-      preprocess_index: -3
-      preprocess_query: -6
-  language_with_fallback: {  }
-  entity_status:
-    weights:
-      preprocess_index: -10
+      preprocess_index: -4
+      preprocess_query: -7
+    all_fields: true
+    fields:
+      - features_name
+      - field_books_and_materials
+      - field_course_features
+      - field_course_id
+      - field_course_organization
+      - field_course_times_of_day
+      - field_course_town
+      - field_organizers_course_id
+      - field_starting_level
+      - field_target_level
+      - organization_name
+      - rendered_item
+      - title
+      - type
 tracker_settings:
   default:
     indexing_order: fifo
 options:
-  index_directly: true
   cron_limit: 50
+  index_directly: true
 server: default_server

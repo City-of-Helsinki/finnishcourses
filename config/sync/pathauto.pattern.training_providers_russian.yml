@@ -13,20 +13,20 @@ pattern: 'organizatory-obucheniya/[term:name]'
 selection_criteria:
   ab8d48be-0d84-4b40-90e5-99a502687d5d:
     id: 'entity_bundle:taxonomy_term'
-    bundles:
-      organizations: organizations
     negate: false
+    uuid: ab8d48be-0d84-4b40-90e5-99a502687d5d
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: ab8d48be-0d84-4b40-90e5-99a502687d5d
+    bundles:
+      organizations: organizations
   d94e1a76-64b7-4f65-a55e-8c220bf1ca53:
     id: language
-    langcodes:
-      ru: ru
     negate: false
+    uuid: d94e1a76-64b7-4f65-a55e-8c220bf1ca53
     context_mapping:
       language: 'taxonomy_term:langcode:language'
-    uuid: d94e1a76-64b7-4f65-a55e-8c220bf1ca53
+    langcodes:
+      ru: ru
 selection_logic: and
 weight: -10
 relationships:

@@ -53,59 +53,59 @@ third_party_settings:
         - field_course_start_date
         - field_course_end_date
         - field_course_unpublish_date
+      label: 'Course dates'
+      region: content
       parent_name: group_course_basic_details
       weight: 12
       format_type: fieldset
       format_settings:
-        id: ''
         classes: ''
+        id: ''
         description: ''
         required_fields: false
-      label: 'Course dates'
-      region: content
     group_course_additional_informat:
       children:
         - field_course_information_source
+      label: 'Course additional information'
+      region: content
       parent_name: ''
       weight: 12
       format_type: details
       format_settings:
-        id: ''
         classes: ''
+        id: ''
         open: true
         required_fields: false
-      label: 'Course additional information'
-      region: content
     group_course_location:
       children:
         - field_course_street_address
         - field_course_town
         - field_map_link
+      label: 'Course location'
+      region: content
       parent_name: group_course_basic_details
       weight: 16
       format_type: fieldset
       format_settings:
-        id: ''
         classes: ''
+        id: ''
         description: ''
         required_fields: true
-      label: 'Course location'
-      region: content
     group_registration_details:
       children:
         - field_registration_start_date
         - field_registration_end_date
         - field_registration_link
+      label: 'Registration details'
+      region: content
       parent_name: group_course_basic_details
       weight: 13
       format_type: fieldset
       format_settings:
-        id: ''
         classes: ''
+        id: ''
         description: ''
         required_fields: true
-      label: 'Registration details'
-      region: content
     group_course_basic_details:
       children:
         - title
@@ -130,16 +130,16 @@ third_party_settings:
         - field_books_and_materials
         - field_course_online_address
         - field_ask_more_email
+      label: 'Course basic details'
+      region: content
       parent_name: ''
       weight: 11
       format_type: fieldset
       format_settings:
-        id: ''
         classes: ''
+        id: ''
         description: ''
         required_fields: true
-      label: 'Course basic details'
-      region: content
 id: node.course.default
 targetEntityType: node
 bundle: course
@@ -152,36 +152,38 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_ask_exact_times:
+    type: boolean_checkbox
     weight: 20
+    region: content
     settings:
       display_label: true
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_ask_more_email:
-    weight: 28
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
     type: email_default
+    weight: 28
     region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
   field_books_and_materials:
+    type: text_textarea
     weight: 26
+    region: content
     settings:
       rows: 3
       placeholder: ''
     third_party_settings: {  }
-    type: text_textarea
-    region: content
   field_course_availability:
+    type: options_select
     weight: 9
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_course_end_date:
+    type: bootstrap_date_widget
     weight: 26
+    region: content
     settings:
       title: ''
       format: dd.mm.yyyy
@@ -236,67 +238,67 @@ content:
       rtl: 0
       today_highlight: 0
     third_party_settings: {  }
-    type: bootstrap_date_widget
-    region: content
   field_course_features:
+    type: options_buttons
     weight: 25
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
-    region: content
   field_course_fee:
+    type: number
     weight: 17
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_course_id:
+    type: string_textfield
     weight: 21
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_course_in_swedish:
+    type: boolean_checkbox
     weight: 10
+    region: content
     settings:
       display_label: true
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_course_information_source:
+    type: string_textfield
     weight: 21
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_course_length:
+    type: number
     weight: 23
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_course_online_address:
+    type: link_default
     weight: 27
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_course_organization:
+    type: options_buttons
     weight: 8
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
-    region: content
   field_course_start_date:
+    type: bootstrap_date_widget
     weight: 25
+    region: content
     settings:
       title: ''
       format: dd.mm.yyyy
@@ -351,16 +353,18 @@ content:
       multidate_separator: ','
       rtl: 0
     third_party_settings: {  }
-    type: bootstrap_date_widget
-    region: content
   field_course_street_address:
+    type: select_or_other_reference
     weight: 28
+    region: content
     settings:
       select_element_type: select_or_other_select
       sort_options: ''
     third_party_settings:
       conditional_fields:
         360812c4-33ae-4a85-9d85-07f84d631106:
+          entity_type: node
+          bundle: course
           dependee: field_online_course
           settings:
             state: '!visible'
@@ -373,9 +377,9 @@ content:
             effect: show
             effect_options: {  }
             selector: ''
+        388aea95-fc59-402d-bae4-a440056c678d:
           entity_type: node
           bundle: course
-        388aea95-fc59-402d-bae4-a440056c678d:
           dependee: field_course_organization
           settings:
             state: disabled
@@ -390,10 +394,6 @@ content:
             effect: show
             effect_options: {  }
             selector: ''
-          entity_type: node
-          bundle: course
-    type: select_or_other_reference
-    region: content
   field_course_times_of_day:
     type: options_buttons
     weight: 14
@@ -401,11 +401,15 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_course_town:
+    type: options_select
     weight: 29
+    region: content
     settings: {  }
     third_party_settings:
       conditional_fields:
         4cd804fa-d0bd-42ee-9d09-557f3a858b82:
+          entity_type: node
+          bundle: course
           dependee: field_online_course
           settings:
             state: '!visible'
@@ -418,9 +422,9 @@ content:
             effect: show
             effect_options: {  }
             selector: ''
+        f0b10bb4-c12e-4a97-bddf-9b497b736fd0:
           entity_type: node
           bundle: course
-        f0b10bb4-c12e-4a97-bddf-9b497b736fd0:
           dependee: field_course_organization
           settings:
             state: disabled
@@ -435,37 +439,37 @@ content:
             effect: show
             effect_options: {  }
             selector: ''
-          entity_type: node
-          bundle: course
-    type: options_select
-    region: content
   field_course_unpublish_date:
-    weight: 27
-    settings: {  }
-    third_party_settings: {  }
     type: datetime_default
+    weight: 27
     region: content
-  field_course_week_hours:
-    weight: 19
     settings: {  }
     third_party_settings: {  }
+  field_course_week_hours:
     type: office_hours_default
+    weight: 19
     region: content
+    settings: {  }
+    third_party_settings: {  }
   field_discount_eligibility:
+    type: boolean_checkbox
     weight: 18
+    region: content
     settings:
       display_label: true
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_map_link:
+    type: link_default
     weight: 30
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings:
       conditional_fields:
         6ad2ea63-62b4-41c8-8451-c2f542661db5:
+          entity_type: node
+          bundle: course
           dependee: field_online_course
           settings:
             state: '!visible'
@@ -479,71 +483,67 @@ content:
             effect: show
             effect_options: {  }
             selector: ''
-          entity_type: node
-          bundle: course
-    type: link_default
-    region: content
   field_meta_tags:
+    type: metatag_firehose
     weight: 15
+    region: content
     settings:
       sidebar: true
     third_party_settings: {  }
-    type: metatag_firehose
-    region: content
   field_number_of_lessons:
+    type: number
     weight: 24
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_online_course:
+    type: boolean_checkbox
     weight: 11
+    region: content
     settings:
       display_label: true
     third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
   field_organizers_course_id:
+    type: string_textfield
     weight: 22
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_registration_end_date:
+    type: datetime_default
     weight: 36
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: datetime_default
-    region: content
   field_registration_link:
+    type: link_default
     weight: 37
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_registration_start_date:
-    weight: 35
-    settings: {  }
-    third_party_settings: {  }
     type: datetime_default
+    weight: 35
     region: content
+    settings: {  }
+    third_party_settings: {  }
   field_starting_level:
+    type: options_select
     weight: 14
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_target_level:
+    type: options_select
     weight: 15
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   langcode:
     type: language_select
     weight: 5
@@ -559,10 +559,10 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 3
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
@@ -577,17 +577,17 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 13
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 4
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -605,12 +605,12 @@ content:
   uid:
     type: entity_reference_autocomplete
     weight: 0
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
-    region: content
     third_party_settings: {  }
   unpublish_on:
     type: datetime_timestamp_no_default

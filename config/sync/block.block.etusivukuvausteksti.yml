@@ -20,8 +20,8 @@ plugin: 'block_content:97861705-4d12-450a-b3d8-ce7939d767f7'
 settings:
   id: 'block_content:97861705-4d12-450a-b3d8-ce7939d767f7'
   label: 'Etusivu kuvausteksti'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
@@ -29,17 +29,17 @@ visibility:
   condition_group:
     id: condition_group
     negate: false
-    block_visibility_group: ''
     context_mapping: {  }
+    block_visibility_group: ''
   language:
     id: language
-    langcodes:
-      fi: fi
     negate: false
     context_mapping:
       language: '@language.current_language_context:language_content'
+    langcodes:
+      fi: fi
   request_path:
     id: request_path
-    pages: '<front>'
     negate: false
     context_mapping: {  }
+    pages: '<front>'

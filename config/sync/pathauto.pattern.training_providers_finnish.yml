@@ -13,20 +13,20 @@ pattern: 'koulutuksen-jarjestajat/[term:name]'
 selection_criteria:
   dd3100d9-cb6c-4ac8-b4e0-998e1ed70207:
     id: 'entity_bundle:taxonomy_term'
-    bundles:
-      organizations: organizations
     negate: false
+    uuid: dd3100d9-cb6c-4ac8-b4e0-998e1ed70207
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: dd3100d9-cb6c-4ac8-b4e0-998e1ed70207
+    bundles:
+      organizations: organizations
   2e947b74-8375-4060-acfc-b1cfb708ca09:
     id: language
-    langcodes:
-      fi: fi
     negate: false
+    uuid: 2e947b74-8375-4060-acfc-b1cfb708ca09
     context_mapping:
       language: 'taxonomy_term:langcode:language'
-    uuid: 2e947b74-8375-4060-acfc-b1cfb708ca09
+    langcodes:
+      fi: fi
 selection_logic: and
 weight: -10
 relationships:

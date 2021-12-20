@@ -1,7 +1,16 @@
 uuid: 06ad79eb-3854-4e15-8c32-54f92ceaf42d
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.course
+    - rest.resource.course_rest_api_endpoint
+    - taxonomy.vocabulary.street_adresses
+  module:
+    - content_translation
+    - node
+    - rest
+    - taxonomy
 id: rest_api
 label: 'Rest api'
 weight: 6

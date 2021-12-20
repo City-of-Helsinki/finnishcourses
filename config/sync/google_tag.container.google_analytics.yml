@@ -6,16 +6,16 @@ id: google_analytics
 label: 'Google Analytics'
 weight: 0
 container_id: GTM-W5L2T7Z
+data_layer: dataLayer
+include_classes: false
+whitelist_classes: ''
+blacklist_classes: ''
+include_environment: false
+environment_id: ''
+environment_token: ''
 path_toggle: 'exclude listed'
 path_list: ''
 role_toggle: 'exclude listed'
 role_list: {  }
 status_toggle: 'exclude listed'
 status_list: ''
-data_layer: dataLayer
-include_classes: 0
-whitelist_classes: ''
-blacklist_classes: ''
-include_environment: 0
-environment_id: ''
-environment_token: ''

@@ -17,8 +17,8 @@ plugin: 'entity_view:node'
 settings:
   id: 'entity_view:node'
   label: 'Front page - Header image'
-  provider: ctools
   label_display: '0'
+  provider: ctools
   view_mode: header_image
   context_mapping:
     entity: '@node.node_route_context:node'
@@ -26,12 +26,12 @@ visibility:
   condition_group:
     id: condition_group
     negate: false
-    block_visibility_group: ''
     context_mapping: {  }
-  node_type:
-    id: node_type
-    bundles:
-      front_page: front_page
+    block_visibility_group: ''
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      front_page: front_page

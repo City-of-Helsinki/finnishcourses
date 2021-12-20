@@ -17,16 +17,16 @@ plugin: sitemap_menu_links
 settings:
   id: sitemap_menu_links
   label: 'Sitemap from menu links'
-  provider: finnishcourses_base
   label_display: '0'
+  provider: finnishcourses_base
 visibility:
   condition_group:
     id: condition_group
     negate: false
-    block_visibility_group: ''
     context_mapping: {  }
+    block_visibility_group: ''
   request_path:
     id: request_path
-    pages: "/sitemap\r\n/fi/sivukartta\r\n/sivukartta\r\n/ru/karta-sayta\r\n/karta-sayta"
     negate: false
     context_mapping: {  }
+    pages: "/sitemap\r\n/fi/sivukartta\r\n/sivukartta\r\n/ru/karta-sayta\r\n/karta-sayta"

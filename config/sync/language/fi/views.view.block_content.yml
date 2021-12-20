@@ -3,19 +3,7 @@ display:
   default:
     display_title: Oletus
     display_options:
-      exposed_form:
-        options:
-          submit_button: Käytä
-          reset_button_label: Palauta
-          exposed_sorts_label: Lajittele
-      pager:
-        options:
-          tags:
-            previous: '‹ Edellinen'
-            next: 'Seuraava ›'
-          expose:
-            items_per_page_label: 'Merkintöjä sivua kohti'
-            items_per_page_options_all_label: '- Kaikki -'
+      title: 'Kustomoitujen lohkojen kirjasto'
       fields:
         info:
           label: 'Lohkon kuvaus'
@@ -25,6 +13,19 @@ display:
           label: Päivitetty
         operations:
           label: Toimenpiteet
+      pager:
+        options:
+          tags:
+            next: 'Seuraava ›'
+            previous: '‹ Edellinen'
+          expose:
+            items_per_page_label: 'Merkintöjä sivua kohti'
+            items_per_page_options_all_label: '- Kaikki -'
+      exposed_form:
+        options:
+          submit_button: Käytä
+          reset_button_label: Palauta
+          exposed_sorts_label: Lajittele
       filters:
         info:
           expose:
@@ -32,7 +33,6 @@ display:
         type:
           expose:
             label: 'Lohkon tyyppi'
-      title: 'Kustomoitujen lohkojen kirjasto'
   page_1:
     display_title: Sivu
     display_options:

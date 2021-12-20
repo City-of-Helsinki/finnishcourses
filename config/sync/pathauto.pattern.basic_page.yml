@@ -11,13 +11,13 @@ pattern: '[node:menu-link:parent]/[node:title]'
 selection_criteria:
   2a310b6c-e734-49ee-81de-a300700027eb:
     id: node_type
+    negate: false
+    uuid: 2a310b6c-e734-49ee-81de-a300700027eb
+    context_mapping:
+      node: node
     bundles:
       feedback: feedback
       page: page
-    negate: false
-    context_mapping:
-      node: node
-    uuid: 2a310b6c-e734-49ee-81de-a300700027eb
 selection_logic: and
 weight: -5
 relationships: {  }

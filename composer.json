@@ -196,7 +196,7 @@
                 "Grouped exposed filters do not work like they should": "https://www.drupal.org/files/issues/1810148-58.patch",
                 "Untranslatable aliases generation fix for translations": "https://www.drupal.org/files/issues/2020-01-26/2689459-127.patch",
 				"Attribute hreflang not allowed on element li at this point": "https://www.drupal.org/files/issues/2020-12-14/D9-2454289-101.patch",
-				"Error when checkbox 'Use field template' is checked": "https://www.drupal.org/files/issues/2021-12-10/3253568-9.patch"
+				"Error when checkbox 'Use field template' is checked": "https://www.drupal.org/files/issues/2021-12-13/3253568-32.patch"
             },
 			"drupal/redirect_after_login": {
 				"Headers have already been sent after upgrade to Drupal 9.2 (can't login)": "https://www.drupal.org/files/issues/2021-06-20/3214949.patch"

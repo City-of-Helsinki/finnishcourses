@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
@@ -74,6 +76,7 @@ module:
   link_attributes: 0
   linkit: 0
   locale: 0
+  mailsystem: 0
   matomo: 0
   media: 0
   media_library: 0
@@ -113,6 +116,7 @@ module:
   search_api_db: 0
   search_api_db_defaults: 0
   select_or_other: 0
+  sendgrid_integration: 0
   serialization: 0
   shortcut: 0
   shortcutperrole: 0
@@ -150,5 +154,3 @@ theme:
   bootstrap_barrio: 0
   finnishcourses_bootstrap: 0
 profile: standard
-_core:
-  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

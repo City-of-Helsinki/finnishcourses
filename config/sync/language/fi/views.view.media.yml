@@ -2,21 +2,6 @@ display:
   default:
     display_title: Oletus
     display_options:
-      exposed_form:
-        options:
-          submit_button: Suodatin
-          reset_button_label: Palauta
-          exposed_sorts_label: Lajittele
-      pager:
-        options:
-          expose:
-            items_per_page_label: 'Merkintöjä sivua kohti'
-            items_per_page_options_all_label: '- Kaikki -'
-          tags:
-            previous: '‹ Edellinen'
-            next: 'Seuraava ›'
-            first: '« Ensimmäinen'
-            last: 'Viimeinen »'
       fields:
         media_bulk_form:
           action_title: Toiminto
@@ -29,12 +14,30 @@ display:
         status:
           label: Tila
           settings:
-            format_custom_true: Julkaistu
             format_custom_false: Julkaisematon
+            format_custom_true: Julkaistu
         changed:
           label: Päivitetty
         operations:
           label: Toimenpiteet
+      pager:
+        options:
+          tags:
+            next: 'Seuraava ›'
+            previous: '‹ Edellinen'
+            first: '« Ensimmäinen'
+            last: 'Viimeinen »'
+          expose:
+            items_per_page_label: 'Merkintöjä sivua kohti'
+            items_per_page_options_all_label: '- Kaikki -'
+      exposed_form:
+        options:
+          submit_button: Suodatin
+          reset_button_label: Palauta
+          exposed_sorts_label: Lajittele
+      empty:
+        area_text_custom:
+          content: 'Ei mediaa saatavilla.'
       filters:
         bundle:
           expose:
@@ -52,6 +55,3 @@ display:
         langcode:
           expose:
             label: Kieli
-      empty:
-        area_text_custom:
-          content: 'Ei mediaa saatavilla.'

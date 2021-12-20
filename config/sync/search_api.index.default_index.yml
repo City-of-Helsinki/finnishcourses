@@ -2,9 +2,6 @@ uuid: 1c3aa8ed-9e1e-47ce-83cc-5e8d2262c82f
 langcode: en
 status: true
 dependencies:
-  module:
-    - node
-    - search_api
   config:
     - field.storage.node.field_course_week_hours
     - field.storage.node.field_books_and_materials
@@ -14,6 +11,9 @@ dependencies:
     - field.storage.node.field_course_town
     - search_api.server.default_server
     - core.entity_view_mode.node.search_index
+  module:
+    - node
+    - search_api
 _core:
   default_config_hash: GLmLegZGHtMF6annRqgjizJAoiAip-IT-XOsDMCZfog
 id: default_index
@@ -161,41 +161,40 @@ processor_settings:
   add_url:
     weights:
       preprocess_index: -30
-  tokenizer:
+  aggregated_field:
     weights:
-      preprocess_index: -2
-      preprocess_query: -5
-    fields:
-      - rendered_item
-      - title
-    spaces: ''
-    overlap_cjk: 1
-    minimum_word_size: '3'
-    all_fields: false
-    ignored: ._-
+      add_properties: 20
   content_access:
     weights:
       preprocess_index: -6
       preprocess_query: -4
+  entity_status:
+    weights:
+      preprocess_index: -10
+  html_filter:
+    weights:
+      preprocess_index: -3
+      preprocess_query: -6
+    all_fields: false
+    fields:
+      - rendered_item
+    title: true
+    alt: true
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      string: 2
   ignorecase:
     weights:
       preprocess_index: -5
       preprocess_query: -8
+    all_fields: false
     fields:
       - rendered_item
       - title
-    all_fields: false
-  aggregated_field:
-    weights:
-      add_properties: 20
-  transliteration:
-    weights:
-      preprocess_index: -4
-      preprocess_query: -7
-    fields:
-      - rendered_item
-      - title
-    all_fields: false
+  language_with_fallback: {  }
   rendered_item:
     weights:
       add_properties: 0
@@ -204,6 +203,7 @@ processor_settings:
     weights:
       postprocess_query: -10
       preprocess_query: -10
+    all_fields: false
     fields:
       - rendered_item
       - title
@@ -243,30 +243,30 @@ processor_settings:
       - was
       - will
       - with
-    all_fields: false
-  html_filter:
+  tokenizer:
     weights:
-      preprocess_index: -3
-      preprocess_query: -6
+      preprocess_index: -2
+      preprocess_query: -5
+    all_fields: false
     fields:
       - rendered_item
-    title: true
-    alt: true
-    tags:
-      b: 2
-      h1: 5
-      h2: 3
-      h3: 2
-      string: 2
-    all_fields: false
-  language_with_fallback: {  }
-  entity_status:
+      - title
+    spaces: ''
+    ignored: ._-
+    overlap_cjk: 1
+    minimum_word_size: '3'
+  transliteration:
     weights:
-      preprocess_index: -10
+      preprocess_index: -4
+      preprocess_query: -7
+    all_fields: false
+    fields:
+      - rendered_item
+      - title
 tracker_settings:
   default:
     indexing_order: fifo
 options:
-  index_directly: true
   cron_limit: 50
+  index_directly: true
 server: default_server

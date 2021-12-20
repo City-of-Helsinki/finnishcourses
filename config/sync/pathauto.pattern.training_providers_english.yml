@@ -13,20 +13,20 @@ pattern: 'training-providers/[term:name]'
 selection_criteria:
   4fca82c8-ea1a-49c8-8815-14e08c4b814a:
     id: 'entity_bundle:taxonomy_term'
-    bundles:
-      organizations: organizations
     negate: false
+    uuid: 4fca82c8-ea1a-49c8-8815-14e08c4b814a
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: 4fca82c8-ea1a-49c8-8815-14e08c4b814a
+    bundles:
+      organizations: organizations
   68049ba2-68c7-42a7-a6e2-8cc6ef6eabfb:
     id: language
-    langcodes:
-      en: en
     negate: false
+    uuid: 68049ba2-68c7-42a7-a6e2-8cc6ef6eabfb
     context_mapping:
       language: 'taxonomy_term:langcode:language'
-    uuid: 68049ba2-68c7-42a7-a6e2-8cc6ef6eabfb
+    langcodes:
+      en: en
 selection_logic: and
 weight: -10
 relationships:

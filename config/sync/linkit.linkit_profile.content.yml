@@ -4,17 +4,17 @@ status: true
 dependencies:
   module:
     - node
-id: content
 label: Content
+id: content
 description: ''
 matchers:
   524c25cc-b974-4f1d-a753-73c5b681750b:
-    uuid: 524c25cc-b974-4f1d-a753-73c5b681750b
     id: 'entity:node'
-    weight: 0
+    uuid: 524c25cc-b974-4f1d-a753-73c5b681750b
     settings:
+      metadata: ''
       bundles: {  }
       group_by_bundle: false
-      include_unpublished: false
       substitution_type: canonical
-      metadata: ''
+      include_unpublished: false
+    weight: 0
