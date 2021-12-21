@@ -47,4 +47,6 @@ web/themes/\.idea/
 /config/sync/mailsystem.settings.yml
 /config/sync/geolocation_google_maps.settings.yml
 /config/sync/scheduler.settings.yml
+/config/sync/ultimate_cron.job.filelog_cron.yml
+/config/sync/filelog.settings.yml
 
