@@ -85,6 +85,7 @@
         "drupal/conditional_fields": "4.0.0-alpha1",
         "drupal/config_split": "1.7",
         "drupal/console": "^1.8",
+        "drupal/cookiehub": "^1.0",
         "drupal/cookies": "^1.0",
         "drupal/core": "9.3.0",
         "drupal/ctools": "3.7",
@@ -203,6 +204,9 @@
 			},
 			"drupal/force_password_change": {
 				"Failed to start the session because headers have already been sent": "https://www.drupal.org/files/issues/2021-09-01/3221106-8_2.patch"
+			},
+			"drupal/search_api_db": {
+				"undefined index #conjunction": "https://www.drupal.org/files/issues/2021-10-22/undefined_index_conjunction-3150478-19.patch"
 			}
         },
         "drupal-scaffold": {

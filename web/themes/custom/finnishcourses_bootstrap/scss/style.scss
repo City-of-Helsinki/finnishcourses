@@ -760,3 +760,244 @@ h1, h2, h3, .fieldset-legend {
 		outline: 0;
 	}
 }
+
+.ch2 {
+
+	.ch2-style-dark.ch2-icon a svg {
+		border: 2px solid #0073cf;
+		background: #0073cf;
+		fill: #fff;
+	}
+	
+	.ch2-style-dark.ch2-icon a:hover svg {
+		border: 2px solid #004983;
+		background: #004983;
+	}
+
+	.ch2-style-dark .ch2-settings {
+		background: #0073cf;
+	}
+	
+	.ch2-style-dark .ch2-settings-actions {
+		background: #0073cf;
+	}
+	
+	.ch2-style-dark .ch2-settings-scan .ch2-settings-tabs ul li.active a {
+		background-color: #004983 !important;
+	}
+
+	.ch2-style-dark .ch2-dialog {
+		background: #0073cf;
+	}
+	.ch2-style-dark .ch2-btn-primary {
+		background: #ffffff;
+		color: #0073cf;
+	}
+	.ch2-style-dark .ch2-btn-text {
+		background: none;
+	}
+	.ch2-style-light .ch2-switch input:checked + label, .ch2-style-dark .ch2-switch input:checked + label {
+		background: #E2F4FF;
+	}
+	
+	.ch2-style-dark .ch2-switch input:disabled+label:before {
+		background: #0073cf !important;
+	}
+		
+	.ch2-style-dark .ch2-settings-option label {
+		color: #0073cf;
+	}
+	
+	.ch2-style-dark .ch2-switch label {
+		background: #2c86ce;
+	}
+	
+	
+	.ch2-container,
+	#ch2-dialog-description,
+	.ch2-theme-bar .ch2-dialog p,
+	.ch2-dialog-content a,
+	.ch2-style-dark .ch2-btn-text,
+	.ch2-settings-content p,
+	.ch2-settings-declaration p,
+	.ch2-settings-option p strong,
+	.ch2-settings-declaration p strong {
+		font-family: inherit !important;
+		font-size: inherit !important;
+		line-height: inherit !important;
+		letter-spacing: normal !important;
+	}
+	.ch2-container p {
+		margin-top: 0px !important;
+		margin-bottom: 10px !important;
+	}
+	.ch2-style-dark p,
+	.ch2-style-dark .ch2-dialog-content *,
+	.ch2-style-dark .ch2-btn-text, 
+	.ch2-style-dark .ch2-dialog-content p a,
+	.ch2-style-dark .ch2-settings-content p a{
+		color: #FFFFFF !important;
+	}
+	.ch2-btn {
+		margin: 0px !important;
+		height: auto !important;
+		padding: 10px !important;
+		font-size: inherit !important;
+		font-weight: normal !important;
+		line-height: 28px !important;
+		color: #0073cf !important;
+	}
+	.ch2-btn {
+		background: #F4F8FA !important;
+	}
+	.ch2-btn:hover,
+	.ch2-btn:active,
+	.ch2-btn:focus {
+		background: #E2F4FF !important;
+	}
+	.ch2-btn-text {
+		background: #0073cf !important;
+	}
+	.ch2-btn-text:hover,
+	.ch2-btn-text:active,
+	.ch2-btn-text:focus {
+		background: #004983 !important;
+	}
+	.ch2-btn-text,
+	.ch2-style-dark .ch2-btn-text {
+		text-decoration: none !important;
+	}
+	.ch2-theme-bar .ch2-dialog-actions .ch2-btn {
+		margin-right: 20px !important;
+		margin-bottom: 0 !important;
+	}
+	.ch2-theme-bar .ch2-dialog-actions .ch2-btn-text {
+		margin-bottom: 0px !important;
+		margin-left: 0px !important;
+	}
+	.ch2-settings-tabs {
+		margin-bottom: 20px;
+	}
+	.ch2-theme-bar .ch2-dialog p:last-child {
+		margin-left: 0px !important;
+	}
+	.ch2-dialog-actions .ch2-btn-text {
+		margin-right: 0px !important;
+	}
+	.ch2-settings-tab-container .ch2-btn {
+		margin-right: 20px !important;
+		margin-top: 20px !important;
+	}
+	.ch2-settings-tab-container .ch2-btn:last-child {
+		margin-right: 0px !important;
+	}
+	.ch2-btn, 
+	.ch2-btn:hover,
+	.ch2-btn:active, 
+	.ch2-btn:focus {
+		box-shadow: none !important;
+	}
+	.ch2-btn,
+	.ch2-btn-text {
+		text-transform: none;
+	}
+	.ch2-btn-text,
+	.ch2-dialog-content p a,
+	.ch2-settings-content p a {
+		text-decoration: underline !important;
+		border-bottom: 0px !important;
+	}
+	.ch2-dialog-content p a:hover, 
+	.ch2-settings-content p a:hover {
+		color: #FFFFFF !important;
+		background-color: #666666 !important;
+		text-decoration: underline !important;
+	}
+	#ch2-dialog-title {
+		display: none;
+	}
+	.ch2-theme-bar .ch2-dialog p:last-child {
+		/*display: block;*/
+		display: none;
+	}
+	.ch2-style-dark .ch2-settings-scan .ch2-settings-tabs ul li a {
+		color: #FFFFFF !important;
+	}
+	.ch2-settings-scan .ch2-settings-tabs ul li {
+		margin-left: 0px;
+	}
+	.ch2-settings-scan .ch2-settings-tabs ul li a {
+		top: 0px;
+	}
+	.ch2-style-dark .ch2-settings-scan .ch2-settings-tabs ul {
+		margin-top: 0px;
+		border-bottom: 0px solid #AAAAAA !important;
+	}
+	.ch2-style-dark .ch2-settings-scan .ch2-settings-tabs ul li a {
+		border: 0px solid #0073cf !important;
+	}
+	.ch2-style-dark .ch2-settings-scan .ch2-settings-tabs ul li.active a {
+		border: 0px solid #AAAAAA !important;
+		border-bottom: 0px solid #0073cf !important;
+	}
+	.ch2-settings-actions {
+		border-top: 0px solid #AAAAAA !important;
+	}
+	.ch2-style-dark .ch2-settings-scan .ch2-settings-tabs ul li.active a {
+		//background-color: #666666 !important;
+	}
+	.ch2-settings-declaration table td,
+	.ch2-settings-declaration table th {
+		padding: 8px !important;
+		width: auto !important;
+		min-width: 0 !important;
+		max-width: none !important;
+		white-space: normal !important;
+		word-wrap: normal !important;
+		font-size: smaller !important;
+		text-align: middle !important;
+	}
+	.ch2-settings-declaration table th {
+		word-wrap: break-word;
+	}
+	.ch2-style-dark .ch2-settings-declaration table tbody tr td p {
+		background: transparent !important;
+	}
+	.ch2-settings-declaration table tbody tr td p {
+		padding: 0px;
+	}
+	.ch2-settings-declaration table tbody tr td p:last-child {
+		margin-bottom: 0px !important;
+	}
+	.ch2-settings-declaration table th {
+		padding: 8px !important;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: 20px !important;
+		white-space: nowrap !important;
+		word-wrap: normal !important;
+	}
+	.ch2-settings-declaration table {
+		color: #ddd;
+		margin-top: -20px;
+	}
+	.ch2-settings-content {
+		padding-bottom: 0px;
+		padding-top: 0px;
+	}.ch2-theme-bar .ch2-dialog {
+		padding: 20px;
+	}
+	.ch2-theme-bar .ch2-dialog.ch2-visible {
+		justify-content: center;
+	}
+	.ch2-theme-bar .ch2-dialog p:nth-child(2) {
+		display: block;
+	}
+	.ch2-theme-bar .ch2-dialog p:nth-child(2) {
+		margin-bottom: 0px !important;
+	}
+	.ch2-theme-bar .ch2-dialog-actions-vertical div:last-child button {
+		margin-right: 0px !important;
+	}
+}
+
