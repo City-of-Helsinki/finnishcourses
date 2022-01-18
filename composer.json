@@ -207,6 +207,9 @@
 			},
 			"drupal/search_api_db": {
 				"undefined index #conjunction": "https://www.drupal.org/files/issues/2021-10-22/undefined_index_conjunction-3150478-19.patch"
+			},
+			"drupal/cookiehub": {
+				"Cookiehub language": "patches/contrib/cookiehub/cookiehub-language-v2.patch"
 			}
         },
         "drupal-scaffold": {

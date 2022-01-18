@@ -1,0 +1,29 @@
+diff --git web/modules/contrib/cookiehub/cookiehub.module web/modules/contrib/cookiehub/cookiehub.module
+index 8f3d6c11..e3c55ee2 100644
+--- web/modules/contrib/cookiehub/cookiehub.module
++++ web/modules/contrib/cookiehub/cookiehub.module
+@@ -18,6 +18,8 @@ function cookiehub_page_attachments(array &$attachments) {
+ 
+     $cookiehub_url = "https://cookiehub.net/c2/" . $cookiehub_settings->get('id') . '.js';
+     $cookiehub_dev_url = "https://dash.cookiehub.com/dev/" . $cookiehub_settings->get('id') . '.js';
++	
++	$language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+ 
+     if ($cookiehub_settings->get('automatic_cookie_blocking')) {
+       //Integration code with cookie blocking
+@@ -35,13 +37,13 @@ function cookiehub_page_attachments(array &$attachments) {
+       ];
+ 
+       $script = 'document.addEventListener("DOMContentLoaded", function(event) {
+-        var cpm = {};
++        var cpm = {language: "' .$language . '"};
+         window.cookiehub.load(cpm);
+       });';
+     }else{
+       //Default integration code
+       $script = '<script type="text/javascript">
+-        var cpm = {};
++        var cpm = {language: "' .$language . '"};
+         (function(h,u,b){
+           var d=h.getElementsByTagName("script")[0],e=h.createElement("script");
+           e.async=true;e.src="' . ($cookiehub_settings->get('dev_mode') ? $cookiehub_dev_url : $cookiehub_url) . '";
