@@ -877,7 +877,7 @@ function finnishcourses_base_preprocess_views_view_field(&$variables) {
 
 		  if ($language != 'fi') {
 			  
-			if ($node->hasTranslation($language)) {
+			if (!empty($node) && !is_null($node->hasTranslation($language))) {	
 			  $node = $node->getTranslation($language);
 			}
 		  }
