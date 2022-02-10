@@ -39,6 +39,6 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
     "merge-stream": "^1.0.1",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   }
 }
