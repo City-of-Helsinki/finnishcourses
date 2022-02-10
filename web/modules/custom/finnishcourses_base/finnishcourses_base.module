@@ -591,6 +591,32 @@ function finnishcourses_base_page_attachments(array &$page) {
   if(\Drupal::service('router.admin_context')->isAdminRoute()) {
     $page['#attached']['library'][] = 'finnishcourses_base/admin-ui';
   }
+  
+  
+  
+   /**
+   * Initial JS.
+   */
+   
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+   
+  $javascript_header = 'var cpm = {language: "' .$language . '"}';
+  
+    $page['#attached']['html_head'][] = [
+    // The data.
+    [
+      // Add a <script> tag.
+      '#tag' => 'script',
+      // Add JavaScript to the <script> tag.
+      '#value' => \Drupal\Core\Render\Markup::create($javascript_header),
+      // Give weight so it appears after meta tags, etc.
+      '#weight' => -10,
+    ],
+    // A key, to make it possible to recognize this HTML <HEAD> element when altering.
+    'key'
+  ];
+  
+  
 }
 
 /**
@@ -877,7 +903,7 @@ function finnishcourses_base_preprocess_views_view_field(&$variables) {
 
 		  if ($language != 'fi') {
 			  
-			if (!empty($node) && !is_null($node->hasTranslation($language))) {	
+			if ($node->hasTranslation($language)) {
 			  $node = $node->getTranslation($language);
 			}
 		  }
