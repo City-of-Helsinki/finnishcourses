@@ -908,15 +908,6 @@ h1, h2, h3, .fieldset-legend {
 		border-bottom: 0px !important;
 	}
 	
-	
-	
-	
-	.ch2-dialog-content p:last-child,
-	.ch2-settings-content p:last-child,
-	.ch2-settings-declaration p:last-child {
-		border-bottom: 0px !important;
-		padding-bottom: 0px !important;
-	}
 	.ch2-dialog-content p a:hover, 
 	.ch2-settings-content p a:hover {
 		color: #FFFFFF !important;
@@ -979,6 +970,8 @@ h1, h2, h3, .fieldset-legend {
 	}
 	.ch2-settings-declaration table tbody tr td p:last-child {
 		margin-bottom: 0px !important;
+		border-bottom: 0px !important;
+		padding-bottom: 0px !important;
 	}
 	.ch2-settings-declaration table th {
 		padding: 8px !important;
