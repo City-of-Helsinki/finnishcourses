@@ -914,6 +914,10 @@ h1, h2, h3, .fieldset-legend {
 		background-color: #666666 !important;
 		text-decoration: underline !important;
 	}
+	.ch2-settings-header p:last-child {
+		border-bottom: 0px !important;
+		padding-bottom: 0px !important;
+	}
 	.ch2-settings-content p:last-child {
 		border-bottom: 0px !important;
 		padding-bottom: 0px !important;
