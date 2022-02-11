@@ -960,7 +960,8 @@ h1, h2, h3, .fieldset-legend {
 	.ch2-settings-declaration table th {
 		word-wrap: break-word;
 	}
-	.ch2-style-dark .ch2-settings-declaration table tbody tr td p {
+	.ch2-style-dark .ch2-settings-declaration table tbody tr td p,
+	.ch2-style-dark .ch2-settings-declaration table tbody tr td span {
 		background: transparent !important;
 	}
 	.ch2-settings-declaration table tbody tr td p {
