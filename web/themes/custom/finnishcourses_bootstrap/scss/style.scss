@@ -907,6 +907,16 @@ h1, h2, h3, .fieldset-legend {
 		text-decoration: underline !important;
 		border-bottom: 0px !important;
 	}
+	
+	
+	
+	
+	.ch2-dialog-content p:last-child,
+	.ch2-settings-content p:last-child,
+	.ch2-settings-declaration p:last-child {
+		border-bottom: 0px !important;
+		padding-bottom: 0px !important;
+	}
 	.ch2-dialog-content p a:hover, 
 	.ch2-settings-content p a:hover {
 		color: #FFFFFF !important;
