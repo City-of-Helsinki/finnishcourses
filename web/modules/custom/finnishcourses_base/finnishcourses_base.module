@@ -603,7 +603,7 @@ function finnishcourses_base_page_attachments(array &$page) {
   //$javascript_header = 'var cpm = {language: "' .$language . '"}';
   
   
-  $matomo = 'var _paq=window._paq=window._paq||[];_paq.push(["trackPageView"]),_paq.push(["setDoNotTrack",1]),_paq.push(["enableLinkTracking"]),function(){var a="//webanalytics.digiaiiris.com/js/";_paq.push(["setTrackerUrl",a+"tracker.php"]),_paq.push(["setSiteId","441"]);var e=(t=document).createElement("script"),t=t.getElementsByTagName("script")[0];e.type="text/javascript",e.async=!0,e.src=a+"piwik.min.js",t.parentNode.insertBefore(e,t)}();';
+  $matomo = 'var _paq=window._paq=window._paq||[];_paq.push(["disableCookies"]);_paq.push(["trackPageView"]),_paq.push(["setDoNotTrack",1]),_paq.push(["enableLinkTracking"]),function(){var a="//webanalytics.digiaiiris.com/js/";_paq.push(["setTrackerUrl",a+"tracker.php"]),_paq.push(["setSiteId","441"]);var e=(t=document).createElement("script"),t=t.getElementsByTagName("script")[0];e.type="text/javascript",e.async=!0,e.src=a+"piwik.min.js",t.parentNode.insertBefore(e,t)}();';
   
     $page['#attached']['html_head'][] = [
     // The data.
