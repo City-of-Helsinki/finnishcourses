@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc996dc3a4c2e35047f702130c2a6d7a",
+    "content-hash": "73b03dd9beca1a5bc65f81c1b25ea9d2",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3190,16 +3190,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "9.3.8",
+            "version": "9.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "e8e3b7e5b3353f7ebf24de9d39087df75bd66afe"
+                "reference": "86b0c4496e20ae7f945e9a7f0404fafe191ab774"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/e8e3b7e5b3353f7ebf24de9d39087df75bd66afe",
-                "reference": "e8e3b7e5b3353f7ebf24de9d39087df75bd66afe",
+                "url": "https://api.github.com/repos/drupal/core/zipball/86b0c4496e20ae7f945e9a7f0404fafe191ab774",
+                "reference": "86b0c4496e20ae7f945e9a7f0404fafe191ab774",
                 "shasum": ""
             },
             "require": {
@@ -3445,7 +3445,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2022-03-16T15:34:53+00:00"
+            "time": "2022-03-21T21:21:58+00:00"
         },
         {
             "name": "drupal/ctools",
@@ -4506,17 +4506,17 @@
         },
         {
             "name": "drupal/force_password_change",
-            "version": "2.0.0-beta1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/force_password_change.git",
-                "reference": "2.0.0-beta1"
+                "reference": "2.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/force_password_change-2.0.0-beta1.zip",
-                "reference": "2.0.0-beta1",
-                "shasum": "3b34a00245f882061db482d95fd6880a7289a9d5"
+                "url": "https://ftp.drupal.org/files/projects/force_password_change-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "62188e7516ae2edb6db4799a29b254535aead221"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -4524,15 +4524,12 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0-beta1",
-                    "datestamp": "1624666338",
+                    "version": "2.0.0",
+                    "datestamp": "1647524589",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
-                },
-                "patches_applied": {
-                    "Failed to start the session because headers have already been sent": "https://www.drupal.org/files/issues/2021-09-01/3221106-8_2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -5372,17 +5369,17 @@
         },
         {
             "name": "drupal/menu_block",
-            "version": "1.7.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/menu_block.git",
-                "reference": "8.x-1.7"
+                "reference": "8.x-1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/menu_block-8.x-1.7.zip",
-                "reference": "8.x-1.7",
-                "shasum": "6d021a24a6a8691becbecf02ac236a7d8626d4d0"
+                "url": "https://ftp.drupal.org/files/projects/menu_block-8.x-1.8.zip",
+                "reference": "8.x-1.8",
+                "shasum": "6c2ecbe6ed182b87d6cd30c6c87e9b0f408b69f0"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -5390,8 +5387,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.7",
-                    "datestamp": "1619638238",
+                    "version": "8.x-1.8",
+                    "datestamp": "1647931812",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7839,16 +7836,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.8.3",
+            "version": "1.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "1afdd860a2566ed3c2b0b4a3de6e23434a79ec85"
+                "reference": "337e3ad8e5716c15f9657bd214d16cc5e69df268"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/1afdd860a2566ed3c2b0b4a3de6e23434a79ec85",
-                "reference": "1afdd860a2566ed3c2b0b4a3de6e23434a79ec85",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/337e3ad8e5716c15f9657bd214d16cc5e69df268",
+                "reference": "337e3ad8e5716c15f9657bd214d16cc5e69df268",
                 "shasum": ""
             },
             "require": {
@@ -7873,12 +7870,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\Psr7\\": "src/"
-                },
                 "files": [
                     "src/functions_include.php"
-                ]
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -7927,7 +7924,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2021-10-05T13:56:00+00:00"
+            "time": "2022-03-20T21:51:18+00:00"
         },
         {
             "name": "html2text/html2text",
@@ -12483,7 +12480,6 @@
         "drupal/business_rules": 10,
         "drupal/devel_debug_log": 10,
         "drupal/entity_clone": 10,
-        "drupal/force_password_change": 10,
         "drupal/group": 5,
         "drupal/pathologic": 15,
         "drupal/role_delegation": 15,
