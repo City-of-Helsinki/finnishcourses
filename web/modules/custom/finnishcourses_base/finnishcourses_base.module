@@ -897,6 +897,8 @@ function finnishcourses_base_preprocess_views_view_field(&$variables) {
     
 	//$nid = $variables['field']->getValue($variables['row']);
 	$nid = $variables['output']->__toString();
+	
+	dsm($nid);
 
     if (!empty($nid)) {
       $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
@@ -904,14 +906,16 @@ function finnishcourses_base_preprocess_views_view_field(&$variables) {
 	  if (isset($language)) {
 		  $node = Node::load($nid, TRUE);
 
-		  if ($language != 'fi') {
-			  
-			if ($node->hasTranslation($language)) {
-			  $node = $node->getTranslation($language);
-			}
-		  }
-		  
 		  if (isset($node)) {
+			  
+			  if ($language != 'fi') {
+				  
+				if ($node->hasTranslation($language)) {
+				  $node = $node->getTranslation($language);
+				}
+			  }
+		  
+		  
 			$nodePath = $node->toUrl('canonical', ['language' => $node->language()])->setAbsolute()->toString();
 			$variables['node_path'] = $nodePath;
 			$variables['nid'] = $nid;
