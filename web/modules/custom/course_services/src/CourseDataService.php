@@ -11,6 +11,7 @@ namespace Drupal\course_services;
 //use Drupal\Core\Entity\Query\QueryFactory;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Entity\EntityPublishedInterface;
 
 class CourseDataService {
 
@@ -278,6 +279,10 @@ class CourseDataService {
         $node = $this->loadNode($node);
       }
     }
+	
+	
+	
+	
 
     if (!$node && !is_object($node)) {
       return FALSE;
@@ -285,13 +290,18 @@ class CourseDataService {
 
     if ($fieldName == 'published') {
       if ($value == 'FALSE') {
-        $value = FALSE;
+        //$value = FALSE;
+		//$message = "value: FALSE";
+		//\Drupal::logger('course_services')->notice($message);
+		$node->setUnpublished();
       } else {
-        $value = TRUE;
+        $node->setPublished();
       }
-      $node->setPublished($value);
+      //$node->setPublished($value);
     }
-
+	
+	
+	 
     $node->save();
   }
 
