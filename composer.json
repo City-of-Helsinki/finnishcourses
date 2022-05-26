@@ -91,7 +91,7 @@
         "drupal/dbug": "^2.0",
         "drupal/delete_all": "2.0.0",
         "drupal/devel_debug_log": "^1.0@beta",
-        "drupal/embed": "1.4",
+        "drupal/embed": "1.5",
         "drupal/entity_browser": "2.6",
         "drupal/entity_clone": "^1.0@beta",
         "drupal/entity_embed": "1.2.0",
