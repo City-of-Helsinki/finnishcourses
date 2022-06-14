@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "90156ec4374218597e874529cf3f90a7",
+    "content-hash": "f0b87334a6b9e557b752c2d627abfd0e",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1601,8 +1601,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector",
-                    "Doctrine\\Inflector\\": "lib/Doctrine/Inflector"
+                    "Doctrine\\Inflector\\": "lib/Doctrine/Inflector",
+                    "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1887,7 +1887,7 @@
             "extra": {
                 "drupal": {
                     "version": "3.1.0",
-                    "datestamp": "1643097060",
+                    "datestamp": "1643742891",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4135,10 +4135,6 @@
                 {
                     "name": "See other contributors",
                     "homepage": "https://www.drupal.org/node/1538032/committers"
-                },
-                {
-                    "name": "svenryen",
-                    "homepage": "https://www.drupal.org/user/667244"
                 }
             ],
             "description": "This module aims at making the website compliant with the new EU cookie regulation.",
@@ -4413,7 +4409,7 @@
             "extra": {
                 "drupal": {
                     "version": "2.2.2",
-                    "datestamp": "1629899261",
+                    "datestamp": "1629963584",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4672,7 +4668,7 @@
             "extra": {
                 "drupal": {
                     "version": "2.0.2",
-                    "datestamp": "1638391833",
+                    "datestamp": "1651895165",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4810,6 +4806,10 @@
                 {
                     "name": "RobLoach",
                     "homepage": "https://www.drupal.org/user/61114"
+                },
+                {
+                    "name": "bnjmnm",
+                    "homepage": "https://www.drupal.org/user/2369194"
                 },
                 {
                     "name": "jjeff",
@@ -5869,6 +5869,14 @@
                     "homepage": "https://www.drupal.org/user/214652"
                 },
                 {
+                    "name": "greg.1.anderson",
+                    "homepage": "https://www.drupal.org/user/438598"
+                },
+                {
+                    "name": "kporras07",
+                    "homepage": "https://www.drupal.org/user/1349780"
+                },
+                {
                     "name": "pounard",
                     "homepage": "https://www.drupal.org/user/240164"
                 }
@@ -5956,7 +5964,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1644486753",
+                    "datestamp": "1644487627",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6011,7 +6019,7 @@
             "extra": {
                 "drupal": {
                     "version": "8.x-1.4",
-                    "datestamp": "1626702090",
+                    "datestamp": "1654699160",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6169,6 +6177,10 @@
                 {
                     "name": "haydeniv",
                     "homepage": "https://www.drupal.org/user/149501"
+                },
+                {
+                    "name": "hmendes",
+                    "homepage": "https://www.drupal.org/user/3673677"
                 },
                 {
                     "name": "legolasbo",
@@ -6363,32 +6375,33 @@
         },
         {
             "name": "drupal/single_datetime",
-            "version": "1.7.0",
+            "version": "1.8.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/single_datetime.git",
-                "reference": "8.x-1.7"
+                "reference": "8.x-1.8-beta1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/single_datetime-8.x-1.7.zip",
-                "reference": "8.x-1.7",
-                "shasum": "86726e2b2bc73000a7389ab8bd897b2a3d96693b"
+                "url": "https://ftp.drupal.org/files/projects/single_datetime-8.x-1.8-beta1.zip",
+                "reference": "8.x-1.8-beta1",
+                "shasum": "aae99f3d6a063d0051f4fb351fcd89fed1fb0854"
             },
             "require": {
-                "drupal/core": "*"
+                "drupal/core": "^8 || ^9",
+                "zodiacmedia/drupal-libraries-installer": "~v1.0"
+            },
+            "require-dev": {
+                "roave/security-advisories": "dev-master"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-1.7",
-                    "datestamp": "1543186680",
+                    "version": "8.x-1.8-beta1",
+                    "datestamp": "1603574197",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -7071,15 +7084,15 @@
                 "drupal/bootstrap": "~3.0",
                 "drupal/captcha": "~1.0",
                 "drupal/chosen": "~3.0",
-                "drupal/clientside_validation": "~3.0",
+                "drupal/clientside_validation": "*",
                 "drupal/clientside_validation_jquery": "*",
-                "drupal/devel": "~3.0",
+                "drupal/devel": "*",
                 "drupal/entity": "~1.0",
-                "drupal/entity_print": "~2.0",
+                "drupal/entity_print": "*",
                 "drupal/gnode": "*",
-                "drupal/group": "1.0",
+                "drupal/group": "*",
                 "drupal/jquery_ui": "~1.0",
-                "drupal/jquery_ui_checkboxradio": "~1.0",
+                "drupal/jquery_ui_checkboxradio": "*",
                 "drupal/jquery_ui_datepicker": "~1.0",
                 "drupal/lingotek": "~3.0",
                 "drupal/mailsystem": "~4.0",
@@ -7088,7 +7101,7 @@
                 "drupal/smtp": "~1.0",
                 "drupal/styleguide": "~1.0",
                 "drupal/telephone_validation": "~2.0",
-                "drupal/token": "~1.0",
+                "drupal/token": "*",
                 "drupal/variationcache": "~1.0",
                 "drupal/webform_access": "*",
                 "drupal/webform_attachment": "*",
@@ -7110,7 +7123,7 @@
             "extra": {
                 "drupal": {
                     "version": "6.1.2",
-                    "datestamp": "1638988073",
+                    "datestamp": "1644940638",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7694,12 +7707,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "GuzzleHttp\\Promise\\": "src/"
-                },
                 "files": [
                     "src/functions_include.php"
-                ]
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -12380,6 +12393,57 @@
             ],
             "description": "Composer plugin to improve composer performance for Drupal projects",
             "time": "2020-10-22T13:26:00+00:00"
+        },
+        {
+            "name": "zodiacmedia/drupal-libraries-installer",
+            "version": "v1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zodiacmedia/drupal-libraries-installer.git",
+                "reference": "5e671f0c89fca01e4428e2c7f7e067c8ef85d5aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zodiacmedia/drupal-libraries-installer/zipball/5e671f0c89fca01e4428e2c7f7e067c8ef85d5aa",
+                "reference": "5e671f0c89fca01e4428e2c7f7e067c8ef85d5aa",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "composer/installers": "^1.1 || ^2.0",
+                "php": ">=7.2.0"
+            },
+            "require-dev": {
+                "composer/composer": "^2.0",
+                "ext-json": "*",
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Zodiacmedia\\DrupalLibrariesInstaller\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zodiacmedia\\DrupalLibrariesInstaller\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stephen Beemsterboer",
+                    "homepage": "https://github.com/balbuf"
+                },
+                {
+                    "name": "codebymikey",
+                    "homepage": "https://www.drupal.org/u/codebymikey"
+                }
+            ],
+            "description": "Install Drupal libraries via a simple listing in your composer.json file",
+            "time": "2022-03-01T16:51:50+00:00"
         }
     ],
     "packages-dev": [],
