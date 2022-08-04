@@ -132,7 +132,7 @@
         "drupal/spamspan": "^1.2",
         "drupal/system_status": "^2.8",
         "drupal/taxonomy_delete": "^1.0",
-        "drupal/time_range": "9.0.0",
+        "drupal/time_range": "2.0.1",
         "drupal/token": "^1.5",
         "drupal/tvi": "^1.0@beta",
         "drupal/twig_debugger": "^1.1",
