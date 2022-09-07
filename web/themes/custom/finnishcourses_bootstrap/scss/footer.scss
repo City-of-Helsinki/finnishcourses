@@ -83,6 +83,9 @@
 				width: 180px;
 				height: auto;
 				margin-left: 15px;
+				@include media-breakpoint-down(sm) {
+					margin-left: 0;
+				}
 			}
 		}
 	}
@@ -173,7 +176,7 @@
       width: 167px;
       max-width: 100%;
       margin: auto;
-      margin-top: 19px;
+      margin-top: 25px;
     }
   }
   .helsinki {
@@ -184,8 +187,8 @@
 	img {
 	  width: 100px;
 	  margin: 0;
-	   @include media-breakpoint-down(xs) {
-		margin-top: 20px;
+	   @include media-breakpoint-down(sm) {
+		margin-top: 25px;
 	   }
 	}
   }
