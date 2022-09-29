@@ -87,7 +87,7 @@
         "drupal/config_split": "1.7",
         "drupal/console": "^1.8",
         "drupal/cookiehub": "^1.0",
-        "drupal/core": "9.3.19",
+        "drupal/core": "9.3.22",
         "drupal/ctools": "3.7",
         "drupal/dbug": "^2.0",
         "drupal/delete_all": "2.0.0",
@@ -148,6 +148,7 @@
         "w8tcha/ckeditor-wordcount-plugin": "^1.17",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
+        "wikimedia/composer-merge-plugin": "^2.0",
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "conflict": {
@@ -212,6 +213,11 @@
                 ".editorconfig": "../.editorconfig",
                 ".gitattributes": "../.gitattributes"
             }
+        },
+		"merge-plugin": {
+            "include": [
+                "web/modules/contrib/ckwordcount/composer.libraries.json"
+            ]
         }
     }
 }
