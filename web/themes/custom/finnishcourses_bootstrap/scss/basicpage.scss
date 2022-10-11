@@ -14,9 +14,9 @@
 // LANGUAGE COURSE LEVEL
 .node--type-page {
     #block-finnishcourses-bootstrap-content {
-       
+      width: 100%; 
       margin: auto;
-	  @include media-breakpoint-up(sm) {
+	  @include media-breakpoint-up(sm-t) {
 		width: 640px;
 	  }
       @include media-breakpoint-down(sm) {
