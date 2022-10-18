@@ -87,31 +87,34 @@ function _handle_published_courses($allPublishedCourses) {
       }
      // continue;
     }
-
-    $courseOrganization = $courseDataService->getFieldValue('field_course_organization', $course, 'targetId');
-
-    if (!$courseOrganization) {
-      continue;
-    }
-
-    $weekCycle = _get_week_cycle($courseOrganization);
-
-    $compareDate = strtotime('+'.$weekCycle.' weeks');
-
-    $courseStartDate = $courseDataService->getFieldValue('field_course_start_date', $course, 'valueInArray');
 	
-	$courseStartDate = strtotime($courseStartDate);
+	if (empty($courseUnpublishDate)) {
 
-    /* if (empty($courseStartDate)) {
-      continue;
-    } */
+		$courseOrganization = $courseDataService->getFieldValue('field_course_organization', $course, 'targetId');
 
-     if ($courseStartDate < $compareDate) {
-      $courseDataService->setNodeValue('published', 'FALSE', $course);
-	  
-	  $message = "Course unpublished. Nid:" . $course . " course compare date: " . $compareDate . "<br />";
-	  \Drupal::logger('course_cron_jobs')->notice($message);
-    } 
+		if (!$courseOrganization) {
+		  continue;
+		}
+
+		$weekCycle = _get_week_cycle($courseOrganization);
+
+		$compareDate = strtotime('+'.$weekCycle.' weeks');
+
+		$courseStartDate = $courseDataService->getFieldValue('field_course_start_date', $course, 'valueInArray');
+		
+		$courseStartDate = strtotime($courseStartDate);
+
+		/* if (empty($courseStartDate)) {
+		  continue;
+		} */
+
+		 if ($courseStartDate < $compareDate) {
+		  $courseDataService->setNodeValue('published', 'FALSE', $course);
+		  
+		  $message = "Course unpublished. Nid:" . $course . " course compare date: " . $compareDate . "<br />";
+		  \Drupal::logger('course_cron_jobs')->notice($message);
+		} 
+	}
   }
 }
 
