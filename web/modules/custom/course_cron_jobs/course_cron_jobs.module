@@ -102,6 +102,8 @@ function _handle_published_courses($allPublishedCourses) {
 
 		$courseStartDate = $courseDataService->getFieldValue('field_course_start_date', $course, 'valueInArray');
 		
+		$courseRealDate = $courseStartDate;
+		
 		$courseStartDate = strtotime($courseStartDate);
 
 		/* if (empty($courseStartDate)) {
@@ -111,7 +113,7 @@ function _handle_published_courses($allPublishedCourses) {
 		 if ($courseStartDate < $compareDate) {
 		  $courseDataService->setNodeValue('published', 'FALSE', $course);
 		  
-		  $message = "Course unpublished. Nid:" . $course . " course Start Date: " . $courseStartDate . " course compare date: " . $compareDate . "<br />";
+		  $message = "Course unpublished. Nid:" . $course . " course Start Date: " . $courseStartDate . "(". $courseRealDate .")" . " course compare date: " . $compareDate . "<br />";
 		  \Drupal::logger('course_cron_jobs')->notice($message);
 		} 
 	}
