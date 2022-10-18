@@ -98,7 +98,7 @@ function _handle_published_courses($allPublishedCourses) {
 
 		$weekCycle = _get_week_cycle($courseOrganization);
 
-		$compareDate = strtotime('+'.$weekCycle.' weeks');
+		$compareDate = strtotime('-'.$weekCycle.' weeks');
 
 		$courseStartDate = $courseDataService->getFieldValue('field_course_start_date', $course, 'valueInArray');
 		
