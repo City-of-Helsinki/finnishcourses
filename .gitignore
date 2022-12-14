@@ -50,3 +50,8 @@ web/themes/\.idea/
 /config/sync/ultimate_cron.job.filelog_cron.yml
 /config/sync/filelog.settings.yml
 
+/web/password.php
+web/password.php
+
+/web/.htaccess
+web/.htaccess
