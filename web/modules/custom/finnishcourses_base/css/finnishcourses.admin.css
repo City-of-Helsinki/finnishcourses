@@ -63,6 +63,32 @@
   font-size: 14px;
 }
 
+.view-manage-courses .view-header p {
+  margin: 30px 0 20px;
+  font-size: 14px;
+}
+
+.view-manage-courses .view-filters .form-item-f-code {
+	width: 140px;
+}
+
+.view-manage-courses .view-filters .form-item-status-1 {
+	width: 140px;
+}
+
+.view-manage-courses .view-filters .form-item-title {
+	width: 240px;
+}
+
+.view-manage-courses .view-filters .form-item-field-course-organization-target-id {
+	width: 250px;
+}
+
+
+
+
+
+
 #views-exposed-form-manage-courses-page-2 .form-item-end-date-value-1-max label {
   display: none;
 }
