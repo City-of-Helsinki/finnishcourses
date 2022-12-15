@@ -68,15 +68,18 @@
   font-size: 14px;
 }
 
-.view-manage-courses .view-filters .form-item-f-code {
+.view-manage-courses .view-filters .form-item-f-code,
+.view-manage-courses .view-filters .form-item--f-code {
 	width: 140px;
 }
 
-.view-manage-courses .view-filters .form-item-status-1 {
+.view-manage-courses .view-filters .form-item-status-1,
+.view-manage-courses .view-filters .form-item--status-1 {
 	width: 140px;
 }
 
-.view-manage-courses .view-filters .form-item-title {
+.view-manage-courses .view-filters .form-item-title,
+.view-manage-courses .view-filters .form-item--title {
 	width: 240px;
 }
 
