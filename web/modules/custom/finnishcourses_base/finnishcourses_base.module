@@ -12,6 +12,29 @@ use Drupal\Core\Language\LanguageInterface;
 use Drupal\course_services\CourseDataService;
 use Drupal\webform\Plugin\WebformHandlerInterface;
 use Drupal\node\Entity\Node;
+use Drupal\Core\Access\AccessResult;
+
+
+
+/**
+ * Implements hook_entity_access().
+ */
+ 
+function finnishcourses_base_entity_access(\Drupal\Core\Entity\EntityInterface $entity, $operation, \Drupal\Core\Session\AccountInterface $account) {
+		
+  if ($entity->bundle() == 'course' && $operation == 'update') {
+	  
+	$courseDataService = \Drupal::service('course_services.course_data_service');
+	
+	$courseEndDate = $courseDataService->getFieldValue('field_course_end_date', $entity, 'valueInArray');	
+	
+	if (isset($courseEndDate) && is_string($courseEndDate) && strtotime($courseEndDate) < strtotime('now') && !$account->hasPermission('access administration pages')) {
+		 return AccessResult::forbidden();
+	}
+  }
+  return AccessResult::neutral();
+}
+
 
 /**
  * Implements hook_element_info_alter().
