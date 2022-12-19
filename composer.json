@@ -106,6 +106,7 @@
         "drupal/group": "^1.0@RC",
         "drupal/honeypot": "^2.0.2",
         "drupal/image_effects": "3.1",
+        "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jquery_ui_touch_punch": "^1.0",
         "drupal/link_attributes": "^1.5",
         "drupal/linkit": "5.0.0-beta13",
@@ -209,6 +210,9 @@
 			},
 			"drupal/cookiehub": {
 				"Cookiehub language": "patches/contrib/cookiehub/cookiehub-language-v2.patch"
+			},
+			"drupal/inline_entity_form": {
+				"Translate entity type label": "https://www.drupal.org/files/issues/2021-01-28/inline_entity_form-translate-entity-type-label-3195264-2-D8.patch"
 			}
         },
         "drupal-scaffold": {
