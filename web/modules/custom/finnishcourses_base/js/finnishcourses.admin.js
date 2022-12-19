@@ -109,12 +109,39 @@
 
 
     },
+	
+	clearDates: function(context) {
+		
+		// edit-field-continuous-registration-value
+		
+		$('[data-drupal-selector="edit-field-continuous-registration-value"]').change(function()
+		  {
+			if ($(this).is(':checked')) {
+			   
+			   $('[data-drupal-selector="edit-field-registration-start-date-0-value-date"]').val("");
+			   $('[data-drupal-selector="edit-field-registration-end-date-0-value-date"]').val("");
+			   $('[data-drupal-selector="edit-field-registration-start-date-0-value-time"]').val("");
+			   $('[data-drupal-selector="edit-field-registration-end-date-0-value-time"]').val("");
+			   
+			   
+			   
+			  
+			};
+		  });
+	  
+	  
+		/* $('#my-date-field-und-0-value-timeEntry-popup-1').keydown(function(e) {
+		  if (e.keyCode == 8)
+			$('#my-date-field-date-und-0-value-timeEntry-popup-1').val("");
+		});  */
+	},
 
     attach: function (context, settings) {
 
       Drupal.behaviors.finnishcourses_base.autofillUsername(context);
       Drupal.behaviors.finnishcourses_base.fillRegistrationDefaultTimes(context);
       Drupal.behaviors.finnishcourses_base.triggerUserRoleChange(context);
+	  Drupal.behaviors.finnishcourses_base.clearDates(context);
 
       $(document).ajaxComplete(function(e, xhr, settings) {
 
