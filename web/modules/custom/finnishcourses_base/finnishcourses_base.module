@@ -129,8 +129,10 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     $addressOptions = getAddressOptions($form_state, $form);
     if (!empty($form['field_course_street_address']['widget']['#default_value'])) {
       $addressDefault = $form['field_course_street_address']['widget']['#default_value'];
-    } else {
+    } elseif (is_array($addressOptions)) {
       $addressDefault = array_keys($addressOptions)[0];
+	} else {
+		$addressDefault = "";
     }
 
     $townOptions = getTownOptions($form_state, $form);
