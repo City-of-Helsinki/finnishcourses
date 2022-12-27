@@ -131,7 +131,48 @@
 			  $('.view-search-courses .view-header .form-item-sort-bef-combine').append('<span class="icon"></span>');
 			  $('.view-search-courses .view-header .form-item-sort-bef-combine').append('<button type="submit" class="btn btn-primary">'+sortText+'</button>');
 			  
+			  
+			  
+			  	  
+			  
+			  
+			  $('[data-drupal-selector="edit-online-course"]').change(function() {
+				  
+				  console.log("online selection changed");
+				  
+				  var cityCount = 0;
+				  
+				  $('[data-drupal-selector="edit-course-town"] input').each(function () {
+					  
+					  if (this.checked) {
+						   cityCount++;
+					   }
+				  });
+				  
+				 // console.log(cityCount);
+			  
+			  
+				if ($(this).is(':checked')) {
+				  $('[data-drupal-selector="edit-field-online-course-1"]').prop('checked', true);
+				  $('[data-drupal-selector="edit-field-online-course-1-2"]').prop('checked', true);
+				}
+				if (!$(this).is(':checked')) {
+					
+				  if (cityCount > 0) {	
+					$('[data-drupal-selector="edit-field-online-course-2"]').prop('checked', true);
+					$('[data-drupal-selector="edit-field-online-course-2-2"]').prop('checked', true);
+				  
+				  } else {
+					 console.log("all"); 
+					$('[data-drupal-selector="edit-field-online-course-all"]').prop('checked', true);
+					$('[data-drupal-selector="edit-field-online-course-all-2"]').prop('checked', true);
+				  }
+				}
+			  });
 		
+			/* $('[data-drupal-selector="edit-field-online-course"]').change(function() {
+				$('#textbox1').val($(this).is(':checked'));
+			  }); */
 			  
 			  
 			 /*  var sort = $(this);

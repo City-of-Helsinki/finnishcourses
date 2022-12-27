@@ -668,11 +668,15 @@ function finnishcourses_base_theme_suggestions_taxonomy_term_alter(array &$sugge
  */
 function online_validate(&$element, FormStateInterface $form_state, &$complete_form) {
   $z = $form_state->getValue('course_town');
-  if ($z[999] === '999') {
+  
+ // dsm($form_state);
+ // dsm($z);
+  
+  /* if ($z[999] === '999') {
     $form_state->setValueForElement($element, 1);
   } else {
 	 $form_state->setValueForElement($element, ""); 
-  }
+  } */
 }
 
 function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
@@ -682,10 +686,31 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
   if($view->id() == 'search_courses') {
 	  
 	  
-    //$form['online_course']['#element_validate'][] = 'online_validate';
-    //$form['online_course']['#type'] = 'hidden';
-	//$form['online_course']['#title'] = t('Online');
-	$form['online_course']['#wrapper_attributes']['class']  = 'online-wrapper';
+	$form['course_town']['#weight'] = -3; 
+	  
+    $form['field_online_course']['#element_validate'][] = 'online_validate';
+	$form['field_online_course']['#weight'] = -2;
+	
+	
+	$form['field_online_course']['#prefix'] = '<div hidden>';
+	$form['field_online_course']['#suffix'] = '</div>';
+
+	$form['online_course']['#prefix'] = '<div class="online-wrapper">';
+	$form['online_course']['#suffix'] = '</div>';
+	//$form['online_course']['#wrapper_attributes']['class']  = 'online-wrapper';
+	
+	
+	$form['online_course'] = array(
+	'#type' => 'checkbox',
+    '#default_value' => 1,
+	'#title' => t('Online course'),
+	'#weight' => 0,
+	'#prefix' => '<div class="online-wrapper">',
+	'#suffix' =>'</div>'
+	);
+ 
+	//dsm($form);
+	
     //$form['course_town']['#options'][999] = 'Online';
 	$form['organization']['#title'] = t('Course provider');
 	$form['course_fee']['#title'] = t('Course price');
@@ -694,6 +719,9 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
     $form['start_date']['#title'] = t('Starting from');
 	$form['ending_before']['#title'] = t('Ending before');
     $form['keyword']['#title'] = t('Text search');
+	
+	
+	//dsm($form);
 	
 	
 	// Remove non active organisations from the filter
