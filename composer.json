@@ -210,6 +210,9 @@
 			},
 			"drupal/cookiehub": {
 				"Cookiehub language": "patches/contrib/cookiehub/cookiehub-language-v2.patch"
+			},
+			"drupal/inline_entity_form": {
+				"Translate entity type label": "https://www.drupal.org/files/issues/2021-01-28/inline_entity_form-translate-entity-type-label-3195264-2-D8.patch"
 			}
         },
         "drupal-scaffold": {

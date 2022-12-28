@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "b263615052975858d2e40059873fe379",
+=======
+    "content-hash": "ac9cdc8ab3cff266a59be8532821b8be",
+>>>>>>> 3a4db3c105c391ce2b47bdc1ab04e7d1c7864d1c
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5187,6 +5191,12 @@
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
                     }
+<<<<<<< HEAD
+=======
+                },
+                "patches_applied": {
+                    "Translate entity type label": "https://www.drupal.org/files/issues/2021-01-28/inline_entity_form-translate-entity-type-label-3195264-2-D8.patch"
+>>>>>>> 3a4db3c105c391ce2b47bdc1ab04e7d1c7864d1c
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
