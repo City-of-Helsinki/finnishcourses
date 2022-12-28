@@ -138,7 +138,7 @@
 			  
 			  $('[data-drupal-selector="edit-online-course"]').change(function() {
 				  
-				  console.log("online selection changed");
+				  // console.log("online selection changed");
 				  
 				  var cityCount = 0;
 				  
@@ -149,7 +149,7 @@
 					   }
 				  });
 				  
-				 // console.log(cityCount);
+				 console.log(cityCount);
 			  
 			  
 				if ($(this).is(':checked')) {
@@ -159,8 +159,10 @@
 				if (!$(this).is(':checked')) {
 					
 				  if (cityCount > 0) {	
-					$('[data-drupal-selector="edit-field-online-course-2"]').prop('checked', true);
-					$('[data-drupal-selector="edit-field-online-course-2-2"]').prop('checked', true);
+					//$('[data-drupal-selector="edit-field-online-course-2"]').prop('checked', true);
+					//$('[data-drupal-selector="edit-field-online-course-2-2"]').prop('checked', true);
+					$('[data-drupal-selector="edit-field-online-course-all"]').prop('checked', true);
+					$('[data-drupal-selector="edit-field-online-course-all-2"]').prop('checked', true);
 				  
 				  } else {
 					 console.log("all"); 
