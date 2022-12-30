@@ -19,15 +19,15 @@ use Drupal\Core\Access\AccessResult;
 /**
  * Implements hook_entity_access().
  */
- 
+
 function finnishcourses_base_entity_access(\Drupal\Core\Entity\EntityInterface $entity, $operation, \Drupal\Core\Session\AccountInterface $account) {
-		
+
   if ($entity->bundle() == 'course' && $operation == 'update') {
-	  
+
 	$courseDataService = \Drupal::service('course_services.course_data_service');
-	
-	$courseEndDate = $courseDataService->getFieldValue('field_course_end_date', $entity, 'valueInArray');	
-	
+
+	$courseEndDate = $courseDataService->getFieldValue('field_course_end_date', $entity, 'valueInArray');
+
 	if (isset($courseEndDate) && is_string($courseEndDate) && strtotime($courseEndDate) < strtotime('now') && !$account->hasPermission('access administration pages')) {
 		 return AccessResult::forbidden();
 	}
@@ -63,7 +63,7 @@ function finnishcourses_base_entity_base_field_info_alter(&$fields, $entity_type
   }
 }
 
-/**				  
+/**
  * Implements hook_form_alter().
  */
 function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, $form_id) {
@@ -101,7 +101,7 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     if (!empty($form['field_course_week_hours']['widget']['#type'])) {
       $form['field_course_week_hours']['widget']['#type'] = 'fieldset';
     }
-	
+
 	global $course_editor;
 	global $administrator;
     $administrator = FALSE;
@@ -109,21 +109,21 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     $administrator = FALSE;
 	$current_user = \Drupal::currentUser();
     $user = \Drupal\user\Entity\User::load($current_user->id());
-	
+
 	if($user->hasRole('administrator')){
 		$administrator = TRUE;
 	}
 	if($user->hasRole('course_editor')){
 		$course_editor = TRUE;
 	}
-	
+
 
     // Well, they wanted to disable this field
 	//  if (!empty($form['field_course_unpublish_date'])) {
     if (!$administrator) {
       unset($form['field_course_unpublish_date']);
     }
-	
+
 	//dsm($form['field_course_street_address']['widget']);
 
      // Set ajax callback function when organization field value changed
@@ -139,45 +139,46 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     ];
 
     $address_and_map = getAddressOptions($form_state, $form);
-	
-	
-	
+
+
+
 	$firstAddressOption = current($address_and_map);
-	
-	dsm($firstAddressOption);
-	
-	//dsm(current($addressOptions)); 
-	
+
+
+	//dsm($firstAddressOption);
+
+	//dsm(current($addressOptions));
+
 	$addressOptions = array();
-	
+
 	foreach ($address_and_map AS $key => $address) {
 		$addressOptions[$address['address']] = $address['address'];
 	}
-	
-	
-	
+
+
+
     if (!empty($form['field_course_street_address']['widget']['#default_value'])) {
       $addressDefault = $form['field_course_street_address']['widget']['#default_value'];
     } else {
 		//dsm($firstAddressOption['address']);
       $addressDefault = $firstAddressOption['address'];
     }
-	
+
 	//dsm($form['field_map_link']['widget'][0]['uri']['#default_value']);
-	
+
     if (!empty($form['field_map_link']['widget'][0]['uri']['#default_value'])) {
       $mapDefault = $form['field_map_link']['widget'][0]['uri']['#default_value'];
     } else {
-		
+
 		//dsm($firstAddressOption['map']);
-		
-		if (isset($firstAddressOption['map'])) {	
+
+		if (isset($firstAddressOption['map'])) {
 		  $mapDefault = $firstAddressOption['map'];
 		} else {
-			$mapDefault = ""; 
+			$mapDefault = "";
 		}
     }
-	
+
 	//print_r($addressDefault);
 
     $townOptions = getTownOptions($form_state, $form);
@@ -193,7 +194,7 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     $form['field_course_street_address']['widget']['#options'] = $addressOptions;
     $form['field_course_street_address']['widget']['#default_value'] = $addressDefault;
     $form['field_course_street_address']['#suffix'] = '</div>';
-	
+
 	$form['field_map_link']['widget'][0]['uri']['#default_value'] = $mapDefault;
 
     //$form['field_course_town']['#attributes']['id'][] = 'town-select';
@@ -262,8 +263,8 @@ function getAddressOptions($form_state, $form) {
       }
     }
   } else if (isset($form['field_course_organization']) && !empty($form['field_course_organization']['widget']['#default_value'])) {
-	  
-	//dsm($form['field_course_organization']['widget']['#default_value']); 
+
+	//dsm($form['field_course_organization']['widget']['#default_value']);
     $organization = $form['field_course_organization']['widget']['#default_value'];
   }
 
@@ -272,8 +273,8 @@ function getAddressOptions($form_state, $form) {
   }
 
   $addressOptions = getOptionsFromTerm($organization, 'field_locations_addresses');
-  
-  
+
+
    //  dsm($organization);
    // dsm($addressOptions);
 
@@ -295,20 +296,20 @@ function getAddressDefault($form_state, $form) {
       }
     }
   } else if (isset($form['field_course_organization']) && !empty($form['field_course_organization']['widget']['#default_value'])) {
-	  
+
     $organization = $form['field_course_organization']['widget']['#default_value'];
   }
 
   if (!$organization) {
     return;
   }
-  
+
 
 
   $addressDefault = getDefaultFromTerm($organization, 'field_locations_addresses');
-  
-  
- 
+
+
+
 
   return $addressDefault;
 }
@@ -388,29 +389,29 @@ function getOptionsFromTerm($tid = '', $field = '') {
     if (!$locationTerm) {
       continue;
     }
-	
+
 	//dsm($locationTerm);
-	
-	
-	
-	
+
+
+
+
 	//$map = $locationTerm->get('field_map')->getValue();
 	//dsm($map);
-	
+
 	// [field_map] => Array ( [x-default] => Array ( [0] => Array ( [uri] =>
 
     // Select or other widget need option key in different format
     if ($field == 'field_locations_addresses') {
-      $options[$value['target_id']]['address'] = $locationTerm->label() . ' ('.$value['target_id'].')';  
+      $options[$value['target_id']]['address'] = $locationTerm->label() . ' ('.$value['target_id'].')';
 	  if (isset($locationTerm->field_map[0]->uri)) {
 		 $options[$value['target_id']]['map'] = $locationTerm->field_map[0]->uri;
-	  }	  	  
+	  }
     } else {
       $options[$value['target_id']] = $locationTerm->label();
     }
-     
+
   }
-  
+
   //dsm($options);
 
   return $options;
@@ -439,7 +440,7 @@ function getDefaultFromTerm($tid = '', $field = '') {
 }
 
 function refreshLocationOptions(array $form, FormStateInterface &$form_state) {
-	
+
 	//dsm($form);
 
   $element = $form_state->getTriggeringElement();
@@ -447,7 +448,7 @@ function refreshLocationOptions(array $form, FormStateInterface &$form_state) {
   //ddl($form_state);
   //dsm($form_state);
   $response = new AjaxResponse();
-  $response->addCommand(new ReplaceCommand("#street-select", ($form['field_course_street_address'])));
+ // $response->addCommand(new ReplaceCommand("#street-select", ($form['field_course_street_address'])));
   $response->addCommand(new ReplaceCommand("#town-select", ($form['field_course_town'])));
  // $response->addCommand(new ReplaceCommand(".field--name-field-map-link", ($form['field_course_town'])));
   return $response;
@@ -464,15 +465,15 @@ function finnishcourse_infofinland_user_form_submit(array $form, FormStateInterf
 
 
 function finnishcourses_base_node_presave(EntityInterface $entity) {
-	
+
   // Generate course id
   if (is_object($entity) && method_exists($entity, 'bundle') && $entity->bundle() == 'course') {
-	  
+
 	global $course_editor;
-    global $administrator;  
-	  
+    global $administrator;
+
 	$days = 14;
-	
+
 	$nid = $entity->id();
 
 	if (isset($entity->field_course_organization->entity->field_courses_unpublishing_cycle->value)) {
@@ -480,36 +481,36 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
 	}
 
 	$date_now = new DateTime();
-	
+
 	$original_course_start_date = $entity->field_course_start_date->value;
 	$course_start_date = new DateTime($entity->field_course_start_date->value);
 	$course_start_date->modify('+' . $days . ' day');
-	
+
 	// New unpublish date is current + 2 weeks in format 2020-02-12
 	$new_unpublish_date = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d")+$days, date("Y")));
-	$new_unpublish_compare_date = new DateTime($new_unpublish_date);			
+	$new_unpublish_compare_date = new DateTime($new_unpublish_date);
 
 
 	// Get current unpublish date
 	//$current_unpublish_date = $entity->get('field_course_unpublish_date')->value;
 
-	/* If its needed to compare unpublish dates 
+	/* If its needed to compare unpublish dates
 	 *
 	 * $new_unpublish_date_convert = DateTime::createFromFormat('Y-m-d', $new_unpublish_date);
 	 * $current_unpublish_date_convert = DateTime::createFromFormat('Y-m-d', $current_unpublish_date);
-	 * 
+	 *
 	 * if ($new_unpublish_date_convert > $current_unpublish_date_convert) {
 	 * 	drupal_set_message($new_unpublish_date . " is bigger than " . $current_unpublish_date);
-	 *	} 
+	 *	}
 	*/
-	
+
 	if (isset($entity->original) && $course_editor && isset($new_unpublish_date) && $entity->original->get('status')->value == 0 && $entity->get('status')->value == 1 && $new_unpublish_compare_date >  $course_start_date) {
 		// Set new unpublish date
 		$entity->field_course_unpublish_date->value = $new_unpublish_date;
 		 \Drupal::logger('finnishcourses_base')->notice('node ' . $nid . ' published. New unpublish date is ' . $new_unpublish_date . ', Organizations week cycle is: ' . $days / 7 . ', Original course start date is: ' . $original_course_start_date);
 	}
 
-	 
+
     if (empty($entity->get('field_course_id')->getValue())) {
       $year = date('y');
       if (empty(\Drupal::state()->get('courseNumber'))) {
@@ -694,20 +695,20 @@ function finnishcourses_base_page_attachments(array &$page) {
   if(\Drupal::service('router.admin_context')->isAdminRoute()) {
     $page['#attached']['library'][] = 'finnishcourses_base/admin-ui';
   }
-  
-  
-  
+
+
+
    /**
    * Initial JS.
    */
-   
+
   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-   
+
   //$javascript_header = 'var cpm = {language: "' .$language . '"}';
-  
-  
+
+
   $matomo = 'var _paq=window._paq=window._paq||[];_paq.push(["disableCookies"]);_paq.push(["trackPageView"]),_paq.push(["setDoNotTrack",1]),_paq.push(["enableLinkTracking"]),function(){var a="//webanalytics.digiaiiris.com/js/";_paq.push(["setTrackerUrl",a+"tracker.php"]),_paq.push(["setSiteId","441"]);var e=(t=document).createElement("script"),t=t.getElementsByTagName("script")[0];e.type="text/javascript",e.async=!0,e.src=a+"piwik.min.js",t.parentNode.insertBefore(e,t)}();';
-  
+
     $page['#attached']['html_head'][] = [
     // The data.
     [
@@ -721,8 +722,8 @@ function finnishcourses_base_page_attachments(array &$page) {
     // A key, to make it possible to recognize this HTML <HEAD> element when altering.
     'key'
   ];
-  
-  
+
+
 }
 
 /**
@@ -749,7 +750,7 @@ function online_validate(&$element, FormStateInterface $form_state, &$complete_f
   if ($z[999] === '999') {
     $form_state->setValueForElement($element, 1);
   } else {
-	 $form_state->setValueForElement($element, ""); 
+	 $form_state->setValueForElement($element, "");
   }
 }
 
@@ -758,8 +759,8 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
   $view = $form_state->get('view');
 
   if($view->id() == 'search_courses') {
-	  
-	  
+
+
     //$form['online_course']['#element_validate'][] = 'online_validate';
     //$form['online_course']['#type'] = 'hidden';
 	//$form['online_course']['#title'] = t('Online');
@@ -772,29 +773,29 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
     $form['start_date']['#title'] = t('Starting from');
 	$form['ending_before']['#title'] = t('Ending before');
     $form['keyword']['#title'] = t('Text search');
-	
-	
+
+
 	// Remove non active organisations from the filter
-	
+
 	foreach ($form['organization']['#options'] AS $key => $term_key) {
-		
+
 		if ($key != 'All') {
 			$term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($key);
 			$value = $term->field_active_organization->value;
-			
+
 			if ($value == 0) {
 				unset($form['organization']['#options'][$key]);
 			}
 		}
 	}
-	
+
 
     $form['more_options_trigger'] = [
       '#type' => 'html_tag',
       '#tag' => 'button',
       '#value' => t('More search options'),
       '#attributes' => [
-			'class' => ['more-search-options-trigger'], 
+			'class' => ['more-search-options-trigger'],
 			'aria-expanded' => 'false',
 			'aria-haspopup' => 'true',
 			],
@@ -824,8 +825,8 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
       '#attributes' => ['class' => ['more-options-row-4']],
     ];
 
-    
-    
+
+
     $form['more_options']['row_1']['starting_level_ext'] = $form['starting_level_ext'];
 	$form['more_options']['row_1']['organization'] = $form['organization'];
 	$form['more_options']['row_2']['course_fee'] = $form['course_fee'];
@@ -850,11 +851,11 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
       //'#submit' => ['node_form_submit'],
       '#weight' => 99,
     ];
-	
+
 	//$form['sort_bef_combine']['#prefix'] = '<label class="label" for="edit-sort-bef-combine">' .t('Order by'). '</label>';
 
     $form['sort_bef_combine']['#weight'] = 99;
-	
+
 	 $form['sort_bef_combine']['#options']['field_course_start_date_ASC'] = t('First starting date');
 	 $form['sort_bef_combine']['#options']['field_course_start_date_DESC'] = t('Last starting date');
 	 $form['sort_bef_combine']['#options']['field_course_end_date_ASC'] = t('First ending date');
@@ -865,11 +866,11 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 	 $form['sort_bef_combine']['#options']['field_starting_level_DESC'] = t('Highest starting level');
 	 $form['sort_bef_combine']['#options']['field_target_level_ASC'] = t('Lowest target level');
 	 $form['sort_bef_combine']['#options']['field_target_level_DESC'] = t('Highest target level');
-	 
-	
+
+
 
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-	
+
 
 	$any_level_text = t('Any: All levels');
 	$beginner_level_text = t('Beginner level (0): No Finnish language skills');
@@ -882,9 +883,9 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 	$form['starting_level']['#suffix'] = '<div class="level-description"><span></span><span>'.$beginner_level_text.'</span><span>'.$basic_level_text.'</span><span>'.$intermediate_level_text.'</span><span>'.$advanced_level_text.'</span></div>';
     $form['starting_level']['#suffix'] .= "<div class='levels-link-container'><a class='levels-link' href='".$courseLevelsLink."'>".t("Course level descriptions")."</a></div>";
 
-	
-	
-	
+
+
+
 /* $dbug_variable = Dbug::debug($form['sort_bef_combine']);
 $output['#attached']['library'][] = 'dbug/dbug';
 $output['variable'] = [
@@ -895,7 +896,7 @@ $output['variable'] = [
 
 
 	//dsm($form['sort_bef_combine']);
-	
+
     unset($form['course_fee']);
     unset($form['time_of_day']);
     unset($form['starting_level_ext']);
@@ -903,8 +904,8 @@ $output['variable'] = [
     unset($form['start_date']);
     unset($form['ending_before']);
     unset($form['keyword']);
-	
-    
+
+
   }
 
   if($view->id() == 'content') {
@@ -935,15 +936,15 @@ function finnishcourses_base_preprocess_field(&$variables) {
       $variables['attributes']['class'][] = $availabilityValue;
     }
   }
-  
+
   //dsm($variables);
-  
+
   //field_continuous_registration
-  
+
   //field_registration_end_date
-  
+
   //field_registration_start_date
-  
+
 }
 
 function finnishcourses_base_preprocess_office_hours(&$variables) {
@@ -1003,40 +1004,40 @@ function finnishcourses_base_preprocess_views_view_fields(&$variables) {
 }
 
 function finnishcourses_base_preprocess_views_view_field(&$variables) {
-	
-	
+
+
   if (isset($variables['field']) && !empty($variables['field']->field) && $variables['field']->field == 'nid') {
-    
+
 	//$nid = $variables['field']->getValue($variables['row']);
 	$nid = $variables['output']->__toString();
-	
+
 	//dsm($nid);
 
     if (!empty($nid)) {
       $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-	  
+
 	  if (isset($language)) {
 		  $node = Node::load($nid, TRUE);
 
 		  if (isset($node)) {
-			  
+
 			  if ($language != 'fi') {
-				  
+
 				if ($node->hasTranslation($language)) {
 				  $node = $node->getTranslation($language);
 				}
 			  }
-		  
-		  
+
+
 			$nodePath = $node->toUrl('canonical', ['language' => $node->language()])->setAbsolute()->toString();
 			$variables['node_path'] = $nodePath;
 			$variables['nid'] = $nid;
 			$variables['title'] = $node->getTitle();
 		  }
-	   
+
 	  }
 
-      
+
 
     }
   }
