@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "766356273b4c6a3f5bdc02ce9cf74eb6",
+    "content-hash": "0df88dcdec43bec9097174bab1518d25",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -6786,27 +6786,33 @@
         },
         {
             "name": "drupal/select_or_other",
-            "version": "dev-1.x",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/select_or_other.git",
-                "reference": "f7dd92bdf7d1a4ba22572564feefb63e1bd1b1b1"
+                "reference": "4.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/select_or_other-4.0.0.zip",
+                "reference": "4.0.0",
+                "shasum": "dfb9cb2dd40d18eb186d089411340940e6491abb"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-1.0-alpha4+11-dev",
-                    "datestamp": "1627314470",
+                    "version": "4.0.0",
+                    "datestamp": "1627315018",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Select or Other widget not working with Form API ajax callbacks": "https://www.drupal.org/files/issues/2020-10-05/select_or_other_ajax_fix-2853679-4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -6847,8 +6853,7 @@
             "homepage": "https://www.drupal.org/project/select_or_other",
             "support": {
                 "source": "https://git.drupalcode.org/project/select_or_other"
-            },
-            "time": "2021-07-26T15:47:28+00:00"
+            }
         },
         {
             "name": "drupal/sendgrid_integration",
@@ -13989,7 +13994,6 @@
         "drupal/masquerade": 5,
         "drupal/pathologic": 15,
         "drupal/role_delegation": 15,
-        "drupal/select_or_other": 20,
         "drupal/tvi": 10,
         "drupal/ultimate_cron": 15,
         "drupal/view_unpublished": 15,

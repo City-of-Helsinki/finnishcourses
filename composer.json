@@ -129,7 +129,7 @@
         "drupal/role_delegation": "^1.0@alpha",
         "drupal/scheduler": "^1.0",
         "drupal/search_api": "1.27",
-        "drupal/select_or_other": "1.x-dev",
+        "drupal/select_or_other": "4.0.0",
         "drupal/sendgrid_integration": "^1.7",
         "drupal/shortcutperrole": "2.0.0",
         "drupal/simple_sitemap": "^3.2",
@@ -215,6 +215,9 @@
 			},
 			"drupal/inline_entity_form": {
 				"Translate entity type label": "https://www.drupal.org/files/issues/2021-01-28/inline_entity_form-translate-entity-type-label-3195264-2-D8.patch"
+			},
+			"drupal/select_or_other": {
+				"Select or Other widget not working with Form API ajax callbacks": "https://www.drupal.org/files/issues/2020-10-05/select_or_other_ajax_fix-2853679-4.patch"
 			}
         },
         "drupal-scaffold": {

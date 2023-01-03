@@ -138,11 +138,31 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
       ],
     ];
 
-    $address_and_map = getAddressOptions($form_state, $form);
 
 
 
-	$firstAddressOption = current($address_and_map);
+  $address_and_map = getAddressOptions($form_state, $form, 'address');
+
+  if (isset($address_and_map)) {
+
+	  $firstAddressOption = current($address_and_map);
+
+  }
+
+  $mapArray = getAddressOptions($form_state, $form, 'mapArray');
+
+  $defaultMap = "";
+
+ // dsm($mapArray);
+
+  if (isset($mapArray)) {
+
+    $defaultMap = array_values($mapArray)[0];
+  }
+
+
+  //dsm($defaultMap);
+
 
 
 	//dsm($firstAddressOption);
@@ -151,9 +171,11 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
 
 	$addressOptions = array();
 
-	foreach ($address_and_map AS $key => $address) {
-		$addressOptions[$address['address']] = $address['address'];
-	}
+  if (isset($address_and_map)) {
+    foreach ($address_and_map AS $key => $address) {
+      $addressOptions[$address['address']] = $address['address'];
+    }
+  }
 
 
 
@@ -169,14 +191,11 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     if (!empty($form['field_map_link']['widget'][0]['uri']['#default_value'])) {
       $mapDefault = $form['field_map_link']['widget'][0]['uri']['#default_value'];
     } else {
-
-		//dsm($firstAddressOption['map']);
-
-		if (isset($firstAddressOption['map'])) {
-		  $mapDefault = $firstAddressOption['map'];
-		} else {
-			$mapDefault = "";
-		}
+      if (isset($defaultMap)) {
+        $mapDefault = $defaultMap;
+      } else {
+        $mapDefault = "";
+      }
     }
 
 	//print_r($addressDefault);
@@ -184,9 +203,14 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     $townOptions = getTownOptions($form_state, $form);
     if (!empty($form['field_course_town']['widget']['#default_value'])) {
       $townDefault = $form['field_course_town']['widget']['#default_value'];
-    } else {
+    } elseif (is_array($townOptions)) {
       $townDefault = array_keys($townOptions)[0];
     }
+
+   // $form['maps'] = $mapArray;
+
+
+
 
     //ddl($addressDefault);
     //$form['field_course_street_address']['#attributes']['id'][] = 'street-select';
@@ -195,7 +219,27 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     $form['field_course_street_address']['widget']['#default_value'] = $addressDefault;
     $form['field_course_street_address']['#suffix'] = '</div>';
 
-	$form['field_map_link']['widget'][0]['uri']['#default_value'] = $mapDefault;
+    $form['field_map_link']['#prefix'] = '<div id="map-link">';
+	  $form['field_map_link']['widget'][0]['uri']['#default_value'] = $mapDefault;
+    $form['field_map_link']['#suffix'] = '</div>';
+
+    $form['field_course_street_address']['widget']['#ajax'] = [
+      'callback' => 'refreshMapLink',
+      'event' => 'change',
+      'wrapper' => ['mymarkup'],
+      'progress' => [
+        'type' => 'throbber',
+        'message' => NULL,
+      ],
+    ];
+
+   // $mapLinks = getMapLinks();
+
+    //field_course_availability
+
+
+
+    //dsm($form['field_course_street_address']);
 
     //$form['field_course_town']['#attributes']['id'][] = 'town-select';
     $form['field_course_town']['#prefix'] = '<div id="town-select">';
@@ -247,9 +291,11 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
   }
 }
 
-function getAddressOptions($form_state, $form) {
+function getAddressOptions($form_state, $form, $type) {
 
   $organization = FALSE;
+
+  //dsm($type);
 
   if (is_object($form_state) && method_exists($form_state, 'getTriggeringElement') && !empty($form_state->getTriggeringElement())) {
 
@@ -272,11 +318,19 @@ function getAddressOptions($form_state, $form) {
     return;
   }
 
-  $addressOptions = getOptionsFromTerm($organization, 'field_locations_addresses');
+  if (isset($type) && $type == 'address') {
 
+    $addressOptions = getOptionsFromTerm($organization, 'field_locations_addresses', 'address');
 
-   //  dsm($organization);
-   // dsm($addressOptions);
+  } elseif (isset($type) && $type == 'mapArray') {
+
+    $addressOptions = getOptionsFromTerm($organization, 'field_locations_addresses', 'map');
+
+  } else {
+
+    $addressOptions = getOptionsFromTerm($organization, 'field_locations_addresses', 'address');
+
+  }
 
   return $addressOptions;
 }
@@ -370,7 +424,7 @@ function getTownDefault($form_state, $form) {
   return $townDefault;
 }
 
-function getOptionsFromTerm($tid = '', $field = '') {
+function getOptionsFromTerm($tid = '', $field = '', $type = '') {
   $term = Term::load($tid);
 
   if (!$term) {
@@ -390,25 +444,21 @@ function getOptionsFromTerm($tid = '', $field = '') {
       continue;
     }
 
-	//dsm($locationTerm);
-
-
-
-
-	//$map = $locationTerm->get('field_map')->getValue();
-	//dsm($map);
-
-	// [field_map] => Array ( [x-default] => Array ( [0] => Array ( [uri] =>
+   // dsm($value['target_id']);
+   // dsm($value['target_id']);
 
     // Select or other widget need option key in different format
-    if ($field == 'field_locations_addresses') {
-      $options[$value['target_id']]['address'] = $locationTerm->label() . ' ('.$value['target_id'].')';
-	  if (isset($locationTerm->field_map[0]->uri)) {
-		 $options[$value['target_id']]['map'] = $locationTerm->field_map[0]->uri;
-	  }
+    if ($field == 'field_locations_addresses' && isset($type) && $type == 'address') {
+      $options[$value['target_id']]['address'] = $locationTerm->label() . ' (' . $value['target_id'] . ')';
+    }
+    elseif ($field == 'field_locations_addresses' && isset($type) && $type == 'map') {
+     // dsm($value);
+     $options[$value['target_id']] = $locationTerm->field_map[0]->uri;
     } else {
       $options[$value['target_id']] = $locationTerm->label();
     }
+
+    // isset($locationTerm->field_map[0]->uri)
 
   }
 
@@ -439,18 +489,90 @@ function getDefaultFromTerm($tid = '', $field = '') {
   return $defaultKey;
 }
 
-function refreshLocationOptions(array $form, FormStateInterface &$form_state) {
+function refreshMapLink(array $form, FormStateInterface &$form_state) {
 
-	//dsm($form);
+
+
+  $myform = $form;
 
   $element = $form_state->getTriggeringElement();
-  //ddl($element['#value']);
-  //ddl($form_state);
-  //dsm($form_state);
+
+  $street_address_tid = $form_state->getValue('field_course_street_address');
+
+  $street_address_tid = $street_address_tid[0]['target_id'];
+
+  $term = Term::load($street_address_tid);
+
+  if (!$term) {
+    return FALSE;
+  }
+
+  $map = $term->get('field_map')->getValue();
+
+  if (empty($map)) {
+    return FALSE;
+  }
+
+  unset($form['field_map_link']['#group']);
+
+  $mapField = $form['field_map_link'];
+
+  $mapField['widget'][0]['uri']['#value'] = $map[0]['uri'];
+
   $response = new AjaxResponse();
- // $response->addCommand(new ReplaceCommand("#street-select", ($form['field_course_street_address'])));
+
+  
+ // unset($form['field_two']['#group']);
+
+  $response->addCommand(new ReplaceCommand('#map-link', $mapField));
+  return $response;
+
+}
+
+function refreshLocationOptions(array $form, FormStateInterface &$form_state) {
+
+  $element = $form_state->getTriggeringElement();
+  
+  /*
+  
+  Karttakoodi on nyt toistoa, tätä voisi varmasti parantaa
+  
+  */
+  
+  /*
+  $street_address_tid = $form_state->getValue('field_course_street_address');
+
+  $street_address_tid = $street_address_tid[0]['target_id'];
+
+  $term = Term::load($street_address_tid);
+
+  if (!$term) {
+    return FALSE;
+  }
+
+  $map = $term->get('field_map')->getValue();
+
+  if (empty($map)) {
+    return FALSE;
+  }
+
+  unset($form['field_map_link']['#group']);
+
+  $mapField = $form['field_map_link'];
+
+  $mapField['widget'][0]['uri']['#value'] = $map[0]['uri'];
+  */
+  
+  // karttakoodi loppuu
+  
+  
+  unset($form['field_course_street_address']['#group']);
+  unset($form['field_course_town']['#group']);
+
+  $response = new AjaxResponse();
+  //$response->addCommand(new ReplaceCommand("#map-link", $mapField));
+  $response->addCommand(new ReplaceCommand("#street-select", ($form['field_course_street_address'])));
   $response->addCommand(new ReplaceCommand("#town-select", ($form['field_course_town'])));
- // $response->addCommand(new ReplaceCommand(".field--name-field-map-link", ($form['field_course_town'])));
   return $response;
 }
 
@@ -532,6 +654,35 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
       $saveOrganization = FALSE;
       if (!empty($entity->get('field_course_street_address')->getValue())) {
         $addressTid = $entity->get('field_course_street_address')->target_id;
+
+
+       // dsm($addressTid);
+
+        //$map_uri = $street_address_term
+
+        if (!empty($entity->get('field_map_link')->getValue())) {
+
+          $street_address_term = Term::load($addressTid);
+
+          if (empty($street_address_term->get('field_map')->getValue())) {
+
+            $street_address_term->set('field_map', $entity->get('field_map_link')->getValue());
+
+             $street_address_term->save();
+
+           // dsm($street_address_term);
+          }
+
+          //dsm($entity->get('field_map_link')->getValue());
+
+        }
+
+
+
+
+
+
+
 
         $addressIs = FALSE;
 
