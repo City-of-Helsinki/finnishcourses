@@ -35,6 +35,9 @@
 
       // Set course location default values after ajax callback
       // 
+	  
+	  console.log(context);
+	  
       if ($(context).find('.js-form-item-field-course-street-address-select').length) {
         var $addressSelect = $(context).find('.js-form-item-field-course-street-address-select select');
         if ($addressSelect.find('option:eq(1)').length > 0) {
@@ -144,6 +147,8 @@
 	  Drupal.behaviors.finnishcourses_base.clearDates(context);
 
       $(document).ajaxComplete(function(e, xhr, settings) {
+
+		
 
         if (typeof(settings.extraData) != 'undefined' && typeof(settings.extraData._triggering_element_name) != 'undefined') {
           var $trigger = settings.extraData._triggering_element_name;

@@ -144,7 +144,9 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
 	
 	$firstAddressOption = current($address_and_map);
 	
-	dsm($firstAddressOption);
+	//dsm($firstAddressOption);
+
+    //dsm($form['field_course_organization']);
 	
 	//dsm(current($addressOptions)); 
 	
@@ -439,12 +441,14 @@ function getDefaultFromTerm($tid = '', $field = '') {
 }
 
 function refreshLocationOptions(array $form, FormStateInterface &$form_state) {
-	
-	//dsm($form);
+
+
+    dsm($form['field_course_street_address']);
+
 
   $element = $form_state->getTriggeringElement();
-  //ddl($element['#value']);
-  //ddl($form_state);
+    //dsm($element['#value']);
+    dsm($form_state);
   //dsm($form_state);
   $response = new AjaxResponse();
   $response->addCommand(new ReplaceCommand("#street-select", ($form['field_course_street_address'])));
