@@ -1,3 +1,10 @@
+
+
+
+.toolbar-tab .toolbar-item#toolbar-item-administration {
+	display: none;
+}
+
 .courses-listing-nav-links {
   text-align: right;
 }

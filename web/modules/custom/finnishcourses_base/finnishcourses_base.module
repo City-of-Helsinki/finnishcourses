@@ -1056,7 +1056,7 @@ function finnishcourses_base_toolbar_alter(&$items) {
   $roles = $current_user->getRoles();
 
   if (!in_array('administrator', $roles) && !in_array('organization_admin', $roles) && !in_array('infofinland_user', $roles)) {
-    unset($items['administration']);
+    // unset($items['administration']);
   }
 }
 
