@@ -1,8 +1,8 @@
 
 
 
-.toolbar-tab .toolbar-item#toolbar-item-administration {
-	display: none;
+.role-course_editor .toolbar-tab .toolbar-item#toolbar-item-administration {
+	// display: none;
 }
 
 .courses-listing-nav-links {
