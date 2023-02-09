@@ -1,0 +1,13 @@
+diff --git a/modules/search_api_db/src/Plugin/search_api/backend/Database.php b/modules/search_api_db/src/Plugin/search_api/backend/Database.php
+index 0c2611a..095aeff 100644
+--- a/modules/search_api_db/src/Plugin/search_api/backend/Database.php
++++ b/modules/search_api_db/src/Plugin/search_api/backend/Database.php
+@@ -1858,7 +1858,7 @@
+     }
+     $keys = $this->splitKeys($keys, $tokenizer_active);
+     $keys = $this->eliminateDuplicates($keys);
+-    $conj = $keys['#conjunction'];
++    $conj = array_key_exists('#conjunction', $keys) ? $keys['#conjunction'] : NULL;
+     $neg = !empty($keys['#negation']);
+     foreach ($keys as $i => &$nested) {
+       if (is_array($nested)) {

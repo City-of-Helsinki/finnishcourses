@@ -127,7 +127,7 @@
         "drupal/restui": "^1.17",
         "drupal/role_delegation": "^1.0@alpha",
         "drupal/scheduler": "^1.0",
-        "drupal/search_api": "1.28",
+        "drupal/search_api": "^1.28",
         "drupal/select_or_other": "1.x-dev",
         "drupal/sendgrid_integration": "^1.7",
         "drupal/shortcutperrole": "2.0.0",
@@ -214,8 +214,8 @@
 			"drupal/redirect_after_login": {
 				"Headers have already been sent after upgrade to Drupal 9.2 (can't login)": "https://www.drupal.org/files/issues/2021-06-20/3214949.patch"
 			},
-			"drupal/search_api_db": {
-				"undefined index #conjunction": "https://www.drupal.org/files/issues/2021-10-22/undefined_index_conjunction-3150478-19.patch"
+			"drupal/search_api": {
+				"Search Results - undefined array key #conjunction in prepareKeys()": "patches/contrib/search_api/undefined_index_conjunction-3331384.patch"
 			},
 			"drupal/cookiehub": {
 				"Cookiehub language": "patches/contrib/cookiehub/cookiehub-language-v2.patch"
