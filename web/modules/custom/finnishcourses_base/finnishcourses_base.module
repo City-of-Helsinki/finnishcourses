@@ -53,7 +53,7 @@ function finnishcourses_base_datetime_set_format($element) {
   return $element;
 }
 
-/**
+
  /**
  * Implements hook_entity_base_field_info_alter().
  */
@@ -63,6 +63,7 @@ function finnishcourses_base_entity_base_field_info_alter(&$fields, $entity_type
     $fields['description']->setSetting('allowed_formats', ['basic_html' => 'basic_html', 'restricted_html' => 'restricted_html']);
   }
 }  
+/**						   
  * Implements hook_form_alter().
  */
 function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, $form_id) {
