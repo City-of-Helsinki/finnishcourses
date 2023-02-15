@@ -114,7 +114,7 @@ class CourseDataSave {
       } else if (in_array($key, ['books_and_materials'])) { 
         $saveValue = [
           'value' => $value,
-          'format' => 'only_text',
+          'format' => 'materials',
         ];
       } else if (in_array($key, ['course_online_address', 'map_link', 'registration_link'])) {
         $saveValue = ['uri' => $value];
