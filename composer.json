@@ -209,7 +209,8 @@
                 "Untranslatable aliases generation fix for translations": "https://www.drupal.org/files/issues/2022-12-20/2689459-161.patch",
 				"Attribute hreflang not allowed on element li at this point": "https://www.drupal.org/files/issues/2022-12-08/D95x_reroll-2454289-113.patch",
 				"Entity view/form mode formatter/widget settings have no translation UI Action patch": "https://www.drupal.org/files/issues/2020-12-04/2546212-168-actions.patch",
-				"Entity view/form mode formatter/widget settings have no translation UI": "https://www.drupal.org/files/issues/2020-12-04/2546212-168.patch"
+				"Entity view/form mode formatter/widget settings have no translation UI": "https://www.drupal.org/files/issues/2020-12-04/2546212-168.patch",
+				"PHP Notice: Undefined index: type in claro_preprocess_input()": "https://www.drupal.org/files/issues/2020-06-02/preprocess-input-notice-3144876-6.patch"
             },
 			"drupal/redirect_after_login": {
 				"Headers have already been sent after upgrade to Drupal 9.2 (can't login)": "https://www.drupal.org/files/issues/2021-06-20/3214949.patch"

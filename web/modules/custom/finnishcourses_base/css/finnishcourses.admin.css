@@ -95,8 +95,46 @@
 	width: 250px;
 }
 
+.ui-datepicker-calendar tr {
+	border-bottom: 0;
+}
+
+.ui-datepicker-calendar td,
+.ui-datepicker-calendar th {
+    height: auto;
+    padding: 3px;
+}
+
+.ui-datepicker-calendar {
+	background: #fff;
+}
+
+input.bef-datepicker {
+
+	width: 150px;
+	
+}
+
+.form-item--end-date-value-1-min {
+		float: left;
+		margin-right: 10px;
+}
+.form-item--end-date-value-1-max {
+		float: left;		
+}
 
 
+fieldset[data-drupal-selector="edit-end-date-value-1-wrapper"] {
+	border: 0;
+	box-shadow: none;
+}
+
+fieldset[data-drupal-selector="edit-end-date-value-1-wrapper"] .fieldset__label {
+    padding: 0 1rem;
+    line-height: 0;
+	font-size: 0.889rem;
+	color: #232429;
+}
 
 
 
