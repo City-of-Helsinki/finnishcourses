@@ -65,7 +65,7 @@ if ( ($_SERVER['HTTP_HOST'] !== 'finnishcourses.usability.konsepto-asiakas.fi') 
   header('HTTP/1.1 301 Moved Permanently');
   header('Location: https://finnishcourses.fi'. $_SERVER['REQUEST_URI']);
   exit();
-}
+} 
 
 // Remove www
 if ($_SERVER['HTTP_HOST'] == 'www.finnishcourses.fi') {
@@ -745,6 +745,7 @@ $settings['trusted_host_patterns'] = [
   '^finnishcourses\.fi$',
   '^phpstack-342940-1979446\.cloudwaysapps\.com$',
   '^finnishcourses.usability\.konsepto-asiakas\.fi$', 
+  '^phpstack-970996-3397994\.cloudwaysapps\.com$',
 ];
 
 /**
