@@ -121,7 +121,7 @@
         "drupal/restui": "^1.17",
         "drupal/role_delegation": "^1.0@alpha",
         "drupal/scheduler": "^1.0",
-        "drupal/search_api": "^1.28",
+        "drupal/search_api": "1.29",
         "drupal/sendgrid_integration": "2.1",
         "drupal/simple_sitemap": "4.1.4",
         "drupal/single_datetime": "2.0.0-beta1",

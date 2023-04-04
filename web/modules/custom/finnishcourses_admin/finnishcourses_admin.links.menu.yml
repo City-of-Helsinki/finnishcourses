@@ -1,0 +1,15 @@
+finnishcourses_admin.course_add:
+  title: 'Add course'
+  description: 'Finnishcourses admin add course link'
+  route_name: node.add_page
+  route_parameters:
+    node_type: 'course'
+  parent: system.admin
+  weight: 1
+  
+finnishcourses_admin.manage_courses:
+  title: 'Manage courses'
+  description: 'Manage courses'
+  route_name: view.manage_courses.page_1
+  parent: system.admin  
+  weight: 2
