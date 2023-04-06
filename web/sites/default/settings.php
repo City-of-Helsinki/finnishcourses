@@ -797,3 +797,9 @@ $settings['entity_update_backup'] = TRUE;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $config['config_split.config_split.development_config']['status'] = FALSE;
+/**
+ * Development mode settings.
+ */
+if (file_exists($app_root . '/modules/contrib/dev_mode/settings.dev_mode.php')) {
+  include $app_root . '/modules/contrib/dev_mode/settings.dev_mode.php';
+}
