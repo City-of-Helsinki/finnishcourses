@@ -13,6 +13,7 @@
 /web/sites/finnishcourses.fi.dd
 /web/sites/default/local.services.yml
 /web/sites/development.services.yml
+/web/sites/default/settings.php
 
 # ignore dev settings
 /web/sites/default/services.yml
