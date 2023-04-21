@@ -87,7 +87,7 @@
         "drupal/config_split": "1.9",
         "drupal/console": "^1.8",
         "drupal/cookiehub": "^1.0",
-        "drupal/core": "9.5.5",
+        "drupal/core": "9.5.8",
         "drupal/ctools": "3.13",
         "drupal/dbug": "^2.0",
         "drupal/delete_all": "2.0.0",
@@ -143,7 +143,7 @@
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/upgrade_status": "3.11",
         "drupal/view_unpublished": "^1.0@alpha",
-        "drupal/webform": "6.1.2",
+        "drupal/webform": "6.1.4",
         "drush/drush": "^10.5",
         "furf/jquery-ui-touch-punch": "dev-master",
         "platformsh/config-reader": "^2.2",
@@ -223,7 +223,12 @@
 			},
 			"drupal/inline_entity_form": {
 				"Translate entity type label": "https://www.drupal.org/files/issues/2021-01-28/inline_entity_form-translate-entity-type-label-3195264-2-D8.patch"
+			},
+			"drupal/webform": {
+				"Fix PHP 8.1 deprecation": "https://www.drupal.org/files/issues/2023-02-28/3344996-3.patch"
 			}
+			
+			
         },
         "drupal-scaffold": {
             "initial": {
