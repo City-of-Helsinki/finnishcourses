@@ -85,7 +85,7 @@
         "drupal/conditional_fields": "4.0.0-alpha2",
         "drupal/config_split": "1.9",
         "drupal/cookiehub": "^1.0",
-        "drupal/core": "10.0.8",
+        "drupal/core": "10.0.9",
         "drupal/ctools": "3.13",
         "drupal/devel": "5.1.1",
         "drupal/devel_debug_log": "2.0.2",
@@ -157,6 +157,9 @@
             "cweagans/composer-patches": true,
             "wikimedia/composer-merge-plugin": true,
             "zaporylie/composer-drupal-optimizations": true
+        },
+        "platform": {
+            "php": "8.1.0"
         }
     },
     "autoload": {
@@ -199,7 +202,8 @@
 				"Entity view/form mode formatter/widget settings have no translation UI Action patch": "https://www.drupal.org/files/issues/2020-12-04/2546212-168-actions.patch",
 				"Entity view/form mode formatter/widget settings have no translation UI": "https://www.drupal.org/files/issues/2020-12-04/2546212-168.patch",
 				"PHP Notice: Undefined index: type in claro_preprocess_input()": "https://www.drupal.org/files/issues/2020-06-02/preprocess-input-notice-3144876-6.patch",
-				"Make exposed filter values available as tokens for text areas":"https://www.drupal.org/files/issues/2022-10-30/2761273-50.patch"
+				"Make exposed filter values available as tokens for text areas":"https://www.drupal.org/files/issues/2022-10-30/2761273-50.patch",
+				"Notice: Undefined index: value in NumericFilter->acceptExposedInput()": "https://www.drupal.org/files/issues/2023-02-23/2825860-139.patch"
             },
 			"drupal/redirect_after_login": {
 				"Headers have already been sent after upgrade to Drupal 9.2 (can't login)": "https://www.drupal.org/files/issues/2021-06-20/3214949.patch"
