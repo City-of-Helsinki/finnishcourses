@@ -87,7 +87,7 @@
         "drupal/config_split": "1.9",
         "drupal/console": "^1.8",
         "drupal/cookiehub": "^1.0",
-        "drupal/core": "9.5.8",
+        "drupal/core": "9.5.9",
         "drupal/ctools": "3.13",
         "drupal/dbug": "^2.0",
         "drupal/delete_all": "2.0.0",
@@ -143,7 +143,7 @@
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/upgrade_status": "3.11",
         "drupal/view_unpublished": "^1.0@alpha",
-        "drupal/webform": "6.1.4",
+        "drupal/webform": "6.2.0-beta5",
         "drush/drush": "^10.5",
         "furf/jquery-ui-touch-punch": "dev-master",
         "platformsh/config-reader": "^2.2",
@@ -210,7 +210,8 @@
 				"Attribute hreflang not allowed on element li at this point": "https://www.drupal.org/files/issues/2022-12-08/D95x_reroll-2454289-113.patch",
 				"Entity view/form mode formatter/widget settings have no translation UI Action patch": "https://www.drupal.org/files/issues/2020-12-04/2546212-168-actions.patch",
 				"Entity view/form mode formatter/widget settings have no translation UI": "https://www.drupal.org/files/issues/2020-12-04/2546212-168.patch",
-				"PHP Notice: Undefined index: type in claro_preprocess_input()": "https://www.drupal.org/files/issues/2020-06-02/preprocess-input-notice-3144876-6.patch"
+				"PHP Notice: Undefined index: type in claro_preprocess_input()": "https://www.drupal.org/files/issues/2020-06-02/preprocess-input-notice-3144876-6.patch",
+				"Notice: Undefined index: value in NumericFilter->acceptExposedInput()": "https://www.drupal.org/files/issues/2023-02-21/core-notice_in_numeric_filter-2825860-135.patch"
             },
 			"drupal/redirect_after_login": {
 				"Headers have already been sent after upgrade to Drupal 9.2 (can't login)": "https://www.drupal.org/files/issues/2021-06-20/3214949.patch"
@@ -225,9 +226,8 @@
 				"Translate entity type label": "https://www.drupal.org/files/issues/2021-01-28/inline_entity_form-translate-entity-type-label-3195264-2-D8.patch"
 			},
 			"drupal/webform": {
-				"Fix PHP 8.1 deprecation": "https://www.drupal.org/files/issues/2023-02-28/3344996-3.patch"
+				"Fix PHP 8.1 deprecation": "https://www.drupal.org/files/issues/2022-08-05/3301970_2.patch"
 			}
-			
 			
         },
         "drupal-scaffold": {
