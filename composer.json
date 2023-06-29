@@ -96,6 +96,7 @@
         "drupal/field_group": "3.4",
         "drupal/filelog": "2.1.1",
         "drupal/flood_control": "2.3.2",
+        "drupal/force_password_change": "^2.0",
         "drupal/geolocation": "3.12",
         "drupal/google_tag": "1.6",
         "drupal/group": "^1.0@RC",
@@ -122,6 +123,7 @@
         "drupal/role_delegation": "^1.0@alpha",
         "drupal/scheduler": "^1.0",
         "drupal/search_api": "1.29",
+        "drupal/select_or_other": "^4.1",
         "drupal/sendgrid_integration": "2.1",
         "drupal/simple_sitemap": "4.1.4",
         "drupal/single_datetime": "2.0.0-beta1",
@@ -219,9 +221,6 @@
 			},
 			"drupal/shortcutperrole": {
 				"Automated Drupal 10 patch": "https://www.drupal.org/files/issues/2022-06-16/shortcutperrole.2.0.x-dev.rector.patch"
-			},
-			"drupal/force_password_change": {
-				"Automated Drupal 10 patch": "https://www.drupal.org/files/issues/2022-07-22/force_password_change.2.0.x-dev.rector.patch"
 			}
 			
         },
