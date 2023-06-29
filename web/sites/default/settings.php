@@ -65,7 +65,7 @@ if ( ($_SERVER['HTTP_HOST'] !== 'finnishcourses.usability.konsepto-asiakas.fi') 
   header('HTTP/1.1 301 Moved Permanently');
   header('Location: https://finnishcourses.fi'. $_SERVER['REQUEST_URI']);
   exit();
-}
+} 
 
 // Remove www
 if ($_SERVER['HTTP_HOST'] == 'www.finnishcourses.fi') {
@@ -745,6 +745,7 @@ $settings['trusted_host_patterns'] = [
   '^finnishcourses\.fi$',
   '^phpstack-342940-1979446\.cloudwaysapps\.com$',
   '^finnishcourses.usability\.konsepto-asiakas\.fi$', 
+  '^phpstack-970996-3397994\.cloudwaysapps\.com$',
 ];
 
 /**
@@ -796,3 +797,9 @@ $settings['entity_update_backup'] = TRUE;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $config['config_split.config_split.development_config']['status'] = FALSE;
+/**
+ * Development mode settings.
+ */
+if (file_exists($app_root . '/modules/contrib/dev_mode/settings.dev_mode.php')) {
+  include $app_root . '/modules/contrib/dev_mode/settings.dev_mode.php';
+}

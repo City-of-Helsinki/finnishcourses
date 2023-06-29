@@ -4,7 +4,8 @@ namespace Drupal\finnishcourses_gdpr\EventSubscriber;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\KernelEvents;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+//use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -15,8 +16,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  
 class FinnishcoursesGdprSubscriber implements EventSubscriberInterface {
 
-    public function checkForUserPage(GetResponseEvent $event) {
-	
+    //public function checkForUserPage(GetResponseEvent $event) { 
+	public function checkForUserPage(RequestEvent $event) {
 	
 	if ($event->getRequest()->get('_route') == 'entity.user.canonical') {
 		$uid = $event->getRequest()->get('user')->uid->value;
