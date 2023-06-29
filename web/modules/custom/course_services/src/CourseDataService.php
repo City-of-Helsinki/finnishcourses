@@ -65,6 +65,7 @@ class CourseDataService {
     //$query = $this->entityQuery->get('node');
 	$query = $this->entityTypeManager->getStorage('node')->getQuery();
     $query->condition('type', 'course')
+		  ->accessCheck(TRUE)
           ->condition('field_course_organization', $userOrganizations, 'IN')
           ->condition('status', $status);
     $query->sort('field_course_start_date.value', 'ASC');
@@ -85,7 +86,7 @@ class CourseDataService {
 
 
     //$query = $this->entityQuery->get('node');
-	$query = $this->entityTypeManager->getStorage('node')->getQuery();
+	$query = $this->entityTypeManager->getStorage('node')->getQuery()->accessCheck(FALSE);
     $query->condition('type', 'course')
           ->condition($fieldName, $value, '=')
           ->addMetaData('account', \Drupal\user\Entity\User::load(1));
@@ -98,9 +99,9 @@ class CourseDataService {
 
   public function queryAllCourses($status = 1) {
     //$query = $this->entityQuery->get('node');
-	$query = $this->entityTypeManager->getStorage('node')->getQuery();
+	$query = $this->entityTypeManager->getStorage('node')->getQuery()->accessCheck(FALSE);
     $query->condition('type', 'course')
-          ->condition('status', $status);
+          ->condition('status', $status); 
     $entity_ids = $query->execute();
 
     $allCourses = $entity_ids;
@@ -115,6 +116,7 @@ class CourseDataService {
 
     $ids = $user_storage->getQuery()
       ->condition('status', 1)
+	  ->accessCheck(TRUE)
       ->condition('roles', $role)
       ->execute();
 
