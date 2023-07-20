@@ -161,7 +161,7 @@
             "zaporylie/composer-drupal-optimizations": true
         },
         "platform": {
-            "php": "8.1.0"
+            "php": "8.0.0"
         }
     },
     "autoload": {
