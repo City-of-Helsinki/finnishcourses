@@ -233,8 +233,14 @@ function getAddressOptions($form_state, $form) {
   }
 
   $addressOptions = getOptionsFromTerm($organization, 'field_locations_addresses');
+  
+  //dsm($addressOptions);
+  
+  if ($addressOptions) {
 
-  return $addressOptions;
+	return $addressOptions;
+  
+  }
 }
 
 function getAddressDefault($form_state, $form) {
