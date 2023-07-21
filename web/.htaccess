@@ -1,30 +1,4 @@
-# A simple password protection that prevents both unauthorized humans and robots from seeing the website
-# The password is saved into a session cookie for the subsequent page views and checked according to the following rules
-# See the file '/password.php' for a detailed description of how to use this script
-<IfModule mod_rewrite.c>
-	RewriteEngine On
-	RewriteBase /
-	# Allow password page
-	RewriteRule ^password\.php - [L]
-	# Allow Let's Encrypt bot
-	RewriteRule ^.well-known/acme-challenge - [L]
-	# Allow InfiniteWP
-	RewriteCond %{REMOTE_ADDR} !^104\.248\.36\.122
-	# Allow Uptime Robot
-	# https://stackoverflow.com/a/36024233
-	# https://uptimerobot.com/locations
-	RewriteCond expr "! -R '69.162.124.224/28'"
-	RewriteCond expr "! -R '63.143.42.240/28'"
-	RewriteCond expr "! -R '216.245.221.80/28'"
-	RewriteCond expr "! -R '208.115.199.16/28'"
-	#RewriteCond %{REMOTE_ADDR} !^69\.162\.124\.
-	#RewriteCond %{REMOTE_ADDR} !^63\.143\.42\.
-	#RewriteCond %{REMOTE_ADDR} !^216\.245\.221\.
-	#RewriteCond %{REMOTE_ADDR} !^208\.115\.199\.
-	RewriteCond %{HTTP_COOKIE} !password=hel.fi;?
-	#RewriteCond %{HTTP_COOKIE} !password=foobar2;?
-	RewriteRule ^(.*)$ /password.php?password= [L]
-</IfModule>
+
 
 #
 # Apache/PHP/Drupal settings:
