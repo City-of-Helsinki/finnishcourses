@@ -564,15 +564,15 @@ h1, h2, h3, .fieldset-legend {
   z-index: 1031;
 }
 
-.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .fixed-top {
+.user-logged-in.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .fixed-top {
   top: 80px;
 }
 
-.toolbar-fixed.toolbar-horizontal .fixed-top {
+.user-logged-in.toolbar-fixed.toolbar-horizontal .fixed-top {
   top: 40px;
 }
 
-.toolbar-fixed.toolbar-vertical .fixed-top {
+.user-logged-in.toolbar-fixed.toolbar-vertical .fixed-top {
   top: 40px;
 }
 
