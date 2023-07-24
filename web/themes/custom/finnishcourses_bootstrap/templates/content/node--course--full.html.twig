@@ -179,7 +179,7 @@
         <div class="field__label">{% trans with {'context': 'Registration dates'} %}Dates{% endtrans %}</div>
 		
 		
-		{% if content.field_continuous_registration %} {% trans %}Continuous registration{% endtrans %} {% else %}
+		{% if content.field_continuous_registration %} {% trans %}There is continuous enrolment for the course.{% endtrans %} {% else %}
 		
 			<div class="field__item">{{ content.field_registration_start_date }} - {{ content.field_registration_end_date }}</div>
 		{% endif %}
