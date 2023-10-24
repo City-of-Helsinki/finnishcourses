@@ -148,9 +148,14 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     $townOptions = getTownOptions($form_state, $form);
     if (!empty($form['field_course_town']['widget']['#default_value'])) {
       $townDefault = $form['field_course_town']['widget']['#default_value'];
-    } else {
+    } elseif (is_array($townOptions)) {
       $townDefault = array_keys($townOptions)[0];
-    }
+    } else {
+	  $townDefault = "";
+
+	\Drupal::messenger()->addMessage('Organisaation kuntatieto puuttuu');
+
+	}
 
     //ddl($addressDefault);
     //$form['field_course_street_address']['#attributes']['id'][] = 'street-select';
