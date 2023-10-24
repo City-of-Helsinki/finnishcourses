@@ -21,9 +21,9 @@
 	#RewriteCond %{REMOTE_ADDR} !^63\.143\.42\.
 	#RewriteCond %{REMOTE_ADDR} !^216\.245\.221\.
 	#RewriteCond %{REMOTE_ADDR} !^208\.115\.199\.
-	RewriteCond %{HTTP_COOKIE} !password=hel.fi;?
+	#RewriteCond %{HTTP_COOKIE} !password=hel.fi;?
 	#RewriteCond %{HTTP_COOKIE} !password=foobar2;?
-	RewriteRule ^(.*)$ /password.php?password= [L]
+	#RewriteRule ^(.*)$ /password.php?password= [L]
 </IfModule>
 
 #
