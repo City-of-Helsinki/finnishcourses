@@ -161,6 +161,12 @@ function finnishcourses_bootstrap_preprocess_page(&$variables) {
     '#markup' => \Drupal::service("renderer")->renderRoot($mobile_menu),
   );
   
+  $variables['current_language'] = array(
+    '#markup' => Drupal::languageManager()->getCurrentLanguage()->getName(),
+  );
+  
+  
+  
    // Iterate over all footer menus and merge them together.
   
   $footer_combined_tree = array();

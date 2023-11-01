@@ -60,8 +60,8 @@ function js () {
 // Static Server + watching scss/html files
 function serve () {
   browserSync.init({
-	open: false,
-    proxy: 'http://finnishcourses.test/',
+	open: true,
+    proxy: 'https://phpstack-342940-3726246.cloudwaysapps.com',
   })
 
   gulp.watch([paths.scss.watch, paths.scss.bootstrap], styles).on('change', browserSync.reload)

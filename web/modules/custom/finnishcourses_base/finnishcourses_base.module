@@ -546,6 +546,9 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
     if (!$entity->hasTranslation('ru')) {
       $entity->addTranslation('ru', $entity->toArray());
     }
+	if (!$entity->hasTranslation('sv')) {
+      $entity->addTranslation('sv', $entity->toArray());
+    }
 
     if (fnmatch('/clone/*/quick_clone', \Drupal::request()->getRequestUri())) {
       $originalTitle = $entity->getTitle();
@@ -556,6 +559,11 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
 
       if ($entity->hasTranslation('ru')) {
         $translationRu = $entity->getTranslation('ru');
+        $translationRu->setTitle($originalTitle);
+      }
+	  
+	  if ($entity->hasTranslation('sv')) {
+        $translationRu = $entity->getTranslation('sv');
         $translationRu->setTitle($originalTitle);
       }
     }
@@ -581,6 +589,10 @@ function finnishcourses_base_entity_presave(EntityInterface $entity) {
 
     if (!$entity->hasTranslation('ru')) {
       $entity->addTranslation('ru', $entity->toArray());
+    }
+	
+	 if (!$entity->hasTranslation('sv')) {
+      $entity->addTranslation('sv', $entity->toArray());
     }
   }
 }
