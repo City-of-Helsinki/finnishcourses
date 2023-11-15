@@ -19,7 +19,7 @@
   "author": "@hatuhay",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^4.6.2",
     "jquery": "^3.4.1",
     "material-icons": "^0.3.1",
     "popper.js": "^1.14.3"
