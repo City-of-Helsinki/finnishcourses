@@ -3,10 +3,7 @@ display:
     display_options:
       fields:
         field_course_fee:
-          fallback_options:
-            format_plural_string: !!binary MQNAY291bnQD
           label: Стоимость
-        nid:
           fallback_options:
             format_plural_string: !!binary MQNAY291bnQD
         field_starting_level:
@@ -23,6 +20,14 @@ display:
           label: 'Идентификационный номер курса'
         field_online_course:
           label: Место
+          settings:
+            format_custom_true: Онлайн-курс
+        field_online_course_1:
+          settings:
+            format_custom_true: Онлайн-курс
+        nid:
+          fallback_options:
+            format_plural_string: !!binary MQNAY291bnQD
       filters:
         field_starting_level:
           expose:
@@ -44,6 +49,8 @@ display:
             group_items:
               3:
                 title: 'более 150'
+              1:
+                title: 'Менее 50 €'
         field_course_start_date:
           group_info:
             label: 'Курс начинается'
@@ -107,3 +114,5 @@ display:
             title: 'Найти курсы финского языка | Finnishcourses'
   page_2:
     display_title: 'Kурсы шведского языка'
+    display_options:
+      title: 'Kурсы шведского языка'

@@ -1322,7 +1322,7 @@ display:
               position: ''
               open_text: 'Currently open!'
               closed_text: 'Currently closed'
-            office_hours_first_day: ''
+            office_hours_first_day: '1'
             schema:
               enabled: false
           group_column: ''
@@ -1692,6 +1692,7 @@ display:
               allow_secondary: false
               secondary_label: 'Advanced options'
               secondary_open: false
+              reset_button_always_show: false
             sort:
               plugin_id: default
               advanced:
@@ -1714,14 +1715,6 @@ display:
                 select_all_none: false
                 select_all_none_nested: false
                 display_inline: false
-              field_online_course:
-                plugin_id: bef_single
-                advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
               field_starting_level:
                 plugin_id: default
                 advanced:
@@ -1785,6 +1778,17 @@ display:
                   placeholder_text: ''
                   collapsible: false
                   is_secondary: false
+              field_online_course:
+                plugin_id: bef
+                advanced:
+                  placeholder_text: ''
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
             field_course_town:
               bef_format: bef
               more_options:
@@ -1992,50 +1996,6 @@ display:
           hierarchy: false
           limit: true
           error_message: true
-        field_online_course:
-          id: field_online_course
-          table: search_api_index_courses_index
-          field: field_online_course
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api_boolean
-          operator: '='
-          value: '0'
-          group: 1
-          exposed: true
-          expose:
-            operator_id: ''
-            label: 'Online course'
-            description: ''
-            use_operator: false
-            operator: field_online_course_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_online_course
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              course_editor: '0'
-              organization_admin: '0'
-              infofinland_user: '0'
-              rest_api: '0'
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
         field_starting_level:
           id: field_starting_level
           table: search_api_index_courses_index
@@ -2586,6 +2546,71 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_online_course:
+          id: field_online_course
+          table: search_api_index_courses_index
+          field: field_online_course
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api_string
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_online_course_op
+            label: 'Online course'
+            description: null
+            use_operator: false
+            operator: field_online_course_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_online_course
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: null
+            max_placeholder: null
+            placeholder: null
+          is_grouped: true
+          group_info:
+            label: 'Online course'
+            description: ''
+            identifier: field_online_course
+            optional: true
+            widget: radios
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: 'Show online courses'
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: '1'
+              2:
+                title: 'Dont show online courses'
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: '0'
+              3:
+                title: ''
+                operator: '='
+                value:
+                  min: ''
+                  max: ''
+                  value: ''
       filter_groups:
         operator: AND
         groups:
@@ -2610,7 +2635,7 @@ display:
           separator: ''
           hide_empty: false
       query:
-        type: views_query
+        type: search_api_query
         options:
           bypass_access: false
           skip_access: false
@@ -2669,6 +2694,7 @@ display:
         metatag_display_extender:
           metatags:
             title: 'Search Finnish courses | Finnishcourses'
+          tokenize: false
       path: search/courses
     cache_metadata:
       max-age: -1
@@ -2858,7 +2884,9 @@ display:
         filter_groups: false
       display_description: ''
       display_extenders:
-        metatag_display_extender: {  }
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
       path: courses/swedish-courses
     cache_metadata:
       max-age: -1

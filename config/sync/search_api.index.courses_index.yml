@@ -3,16 +3,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_course_features
     - field.storage.node.field_books_and_materials
     - field.storage.node.field_course_end_date
+    - field.storage.node.field_course_features
     - field.storage.node.field_course_fee
     - field.storage.node.field_course_id
     - field.storage.node.field_course_in_swedish
-    - field.storage.node.field_course_organization
     - field.storage.node.field_course_start_date
     - field.storage.node.field_course_times_of_day
     - field.storage.node.field_course_town
+    - field.storage.node.field_course_organization
     - field.storage.node.field_online_course
     - field.storage.node.field_organizers_course_id
     - field.storage.node.field_starting_level
@@ -51,7 +51,7 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: 'field_course_features:entity:name'
     type: text
-    boost: !!float 2
+    boost: 2.0
     dependencies:
       config:
         - field.storage.node.field_course_features
@@ -110,7 +110,7 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: field_course_organization
     type: text
-    boost: !!float 5
+    boost: 5.0
     dependencies:
       config:
         - field.storage.node.field_course_organization
@@ -150,7 +150,7 @@ field_settings:
     label: 'Online course'
     datasource_id: 'entity:node'
     property_path: field_online_course
-    type: boolean
+    type: string
     dependencies:
       config:
         - field.storage.node.field_online_course
@@ -159,7 +159,7 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: field_organizers_course_id
     type: text
-    boost: !!float 3
+    boost: 3.0
     dependencies:
       config:
         - field.storage.node.field_organizers_course_id
@@ -199,7 +199,7 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: 'field_course_organization:entity:name'
     type: text
-    boost: !!float 5
+    boost: 5.0
     dependencies:
       config:
         - field.storage.node.field_course_organization
@@ -211,7 +211,7 @@ field_settings:
     type: text
     configuration:
       roles:
-        anonymous: anonymous
+        - anonymous
       view_mode:
         'entity:node':
           article: search_index
@@ -231,7 +231,7 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: title
     type: text
-    boost: !!float 8
+    boost: 8.0
     dependencies:
       module:
         - node
@@ -276,6 +276,7 @@ processor_settings:
   entity_status:
     weights:
       preprocess_index: -10
+  entity_type: {  }
   html_filter:
     weights:
       preprocess_index: -3
@@ -376,6 +377,7 @@ processor_settings:
       - field_course_organization
       - field_course_times_of_day
       - field_course_town
+      - field_online_course
       - field_organizers_course_id
       - field_starting_level
       - field_target_level
@@ -389,4 +391,5 @@ tracker_settings:
 options:
   cron_limit: 50
   index_directly: true
+  track_changes_in_references: true
 server: default_server

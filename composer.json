@@ -89,6 +89,7 @@
         "drupal/ctools": "3.14",
         "drupal/devel": "5.1.2",
         "drupal/devel_debug_log": "2.0.2",
+        "drupal/disable_language": "^1.0@beta",
         "drupal/embed": "1.6",
         "drupal/entity_browser": "2.9",
         "drupal/entity_clone": "2.0.0-beta2",

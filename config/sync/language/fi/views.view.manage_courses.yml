@@ -54,11 +54,17 @@ display:
         title:
           expose:
             label: 'Kurssin nimi'
+        field_course_town_target_id:
+          expose:
+            label: ' Kaupunki'
+        field_course_organization_target_id:
+          expose:
+            label: 'Kurssin järjestäjä'
       menu:
         title: 'Hallitse kursseja'
       header:
         area_text_custom:
-          content: '<a href="/node/add/course" class="button button-action button--primary button--small">Lisää kurssi</a>'
+          content: "<a href=\"/node/add/course\" class=\"button button-action button--primary button--small\">Lisää kurssi</a>\r\n<p>Kurssit arkistoituvat automaattisesti päättymispäivän jälkeen. Arkisto -välilehdeltä voit käydä kloonaamassa kursseja uusiksi kursseiksi.</p>"
   page_2:
     display_title: Arkisto
     display_options:

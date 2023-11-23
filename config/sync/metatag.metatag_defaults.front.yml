@@ -7,6 +7,9 @@ _core:
 id: front
 label: 'Front page'
 tags:
-  shortlink: '[site:url]'
   canonical_url: '[site:url]'
-  og_image: 'https://finnishcourses.fi/sites/default/files/media-icons/finnish_courses_someikoni.png'
+  og_image: 'https://finnishcourses.fi/sites/default/files/media-icons/finnish_courses_logo_square.png'
+  og_image_height: '1000'
+  og_image_type: image/png
+  og_image_width: '1000'
+  shortlink: '[site:url]'

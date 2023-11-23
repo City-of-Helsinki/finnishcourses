@@ -20,6 +20,7 @@ dependencies:
     - taxonomy.vocabulary.towns
   module:
     - content_translation
+    - disable_language
     - file
     - force_password_change
     - media
@@ -84,6 +85,7 @@ permissions:
   - 'delete content translations'
   - 'delete media'
   - 'delete own course content'
+  - 'delete own files'
   - 'delete terms in course_features'
   - 'delete terms in course_levels'
   - 'delete terms in organizations'
@@ -130,6 +132,7 @@ permissions:
   - 'view any unpublished course content'
   - 'view any webform submission'
   - 'view course revisions'
+  - 'view disabled languages'
   - 'view feedback revisions'
   - 'view front_page revisions'
   - 'view own unpublished content'

@@ -10,7 +10,7 @@ field_name: field_courses_unpublishing_cycle
 entity_type: taxonomy_term
 bundle: organizations
 label: 'Define how many weeks courses will stay published after start date'
-description: "For example if you input 3 weeks, organization course will be automatically unpublished after 2 weeks its start date.\r\n\r\nGlobal default is 2 weeks."
+description: "For example if you input 3 weeks, organization course will be automatically unpublished after 3 weeks counting from its start date.\r\n\r\nGlobal default is 2 weeks."
 required: false
 translatable: false
 default_value: {  }

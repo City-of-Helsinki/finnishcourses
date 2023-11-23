@@ -1,10 +1,7 @@
-label: 'Пользовательские блоки'
-description: 'Поиск и управление пользовательскими блоками.'
 display:
   default:
     display_title: 'По умолчанию'
     display_options:
-      title: 'Пользовательские блоки'
       fields:
         info:
           label: 'Описание блока'
@@ -41,4 +38,4 @@ display:
     display_title: Страница
     display_options:
       menu:
-        title: 'Пользовательские блоки'
+        title: Блоки

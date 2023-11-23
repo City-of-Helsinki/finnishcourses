@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.materials
     - media.type.audio
     - media.type.file
     - media.type.image
@@ -14,6 +15,8 @@ dependencies:
     - taxonomy.vocabulary.towns
   module:
     - content_translation
+    - file
+    - filter
     - media
     - node
     - path
@@ -44,6 +47,7 @@ permissions:
   - 'delete own audio media'
   - 'delete own course content'
   - 'delete own file media'
+  - 'delete own files'
   - 'delete own image media'
   - 'edit any course content'
   - 'edit own audio media'
@@ -56,6 +60,7 @@ permissions:
   - 'schedule publishing of nodes'
   - 'translate page node'
   - 'update media'
+  - 'use text format materials'
   - 'view all media revisions'
   - 'view any unpublished course content'
   - 'view course revisions'

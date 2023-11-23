@@ -1,9 +1,7 @@
-label: 'Kustomoitujen lohkojen kirjasto'
 display:
   default:
     display_title: Oletus
     display_options:
-      title: 'Kustomoitujen lohkojen kirjasto'
       fields:
         info:
           label: 'Lohkon kuvaus'
@@ -35,6 +33,3 @@ display:
             label: 'Lohkon tyyppi'
   page_1:
     display_title: Sivu
-    display_options:
-      menu:
-        title: 'Kustomoitujen lohkojen kirjasto'

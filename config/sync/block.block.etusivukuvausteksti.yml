@@ -1,9 +1,9 @@
-uuid: 63ba3cfc-cd95-483a-8f6e-cbf63d0104ed
-langcode: fi
+uuid: f8d4a1cd-d2cd-4eee-8744-9ad7afc479d5
+langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:97861705-4d12-450a-b3d8-ce7939d767f7'
+    - 'block_content:basic:3bafbb62-730e-4071-80a1-88338d629979'
   module:
     - block_content
     - block_visibility_groups
@@ -14,11 +14,11 @@ dependencies:
 id: etusivukuvausteksti
 theme: finnishcourses_bootstrap
 region: content
-weight: -10
+weight: -11
 provider: null
-plugin: 'block_content:97861705-4d12-450a-b3d8-ce7939d767f7'
+plugin: 'block_content:3bafbb62-730e-4071-80a1-88338d629979'
 settings:
-  id: 'block_content:97861705-4d12-450a-b3d8-ce7939d767f7'
+  id: 'block_content:3bafbb62-730e-4071-80a1-88338d629979'
   label: 'Etusivu kuvausteksti'
   label_display: '0'
   provider: block_content
@@ -35,7 +35,7 @@ visibility:
     id: language
     negate: false
     context_mapping:
-      language: '@language.current_language_context:language_content'
+      language: '@language.current_language_context:language_interface'
     langcodes:
       fi: fi
   request_path:

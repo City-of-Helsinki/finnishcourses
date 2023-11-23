@@ -16,3 +16,7 @@ display:
     display_options:
       menu:
         title: 'Koulutuksen järjestäjät'
+      display_extenders:
+        metatag_display_extender:
+          metatags:
+            description: 'Finnishcourses.fi -palvelussa kurssitietoja ilmoittavat seuraavat koulutuksen järjestäjät. '

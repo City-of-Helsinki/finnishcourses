@@ -100,6 +100,10 @@
 		  $('html:lang(fi) .form-item-course-fee-2').attr('aria-label', '50 viiva 149 euroa');
 		  $('html:lang(fi) .form-item-course-fee-3').attr('aria-label', 'yli 150 euroa');
 		  
+		  $('html:lang(sv) .form-item-course-fee-1').attr('aria-label', 'under 50 €');
+		  $('html:lang(sv) .form-item-course-fee-2').attr('aria-label', '50 - 149 €');
+		  $('html:lang(sv) .form-item-course-fee-3').attr('aria-label', 'över 150 €');
+		  
 		  $('html:lang(en) .form-item-course-fee-1').attr('aria-label', 'under 50 €');
 		  $('html:lang(en) .form-item-course-fee-2').attr('aria-label', '50 - 149 €');
 		  $('html:lang(en) .form-item-course-fee-3').attr('aria-label', 'over 150 €');

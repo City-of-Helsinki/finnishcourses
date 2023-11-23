@@ -6,7 +6,7 @@ display:
       title: Комментарии
       fields:
         comment_bulk_form:
-          action_title: Action
+          action_title: Действие
         subject:
           label: Тема
         name:
@@ -59,7 +59,7 @@ display:
     display_options:
       fields:
         comment_bulk_form:
-          action_title: Action
+          action_title: Действие
         subject:
           label: Тема
         name:

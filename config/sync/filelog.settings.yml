@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: S9vPQ20qB-BHjhkaC3APBdq8wiP4MrBeJUbButjIGnA
 enabled: true
 location: 'private://logs'
 rotation:
@@ -5,7 +7,7 @@ rotation:
   delete: false
   destination: 'archive/[date:custom:Y/m/d].log'
   gzip: true
-format: '[[log:created]] [[log:level]] [[log:type]] [client: [log:ip], [log:user]] [log:message]'
+format: '[[log:created]] [[log:level]] [[log:channel]] [client: [log:ip], [log:user]] [log:message]'
 level: 7
-_core:
-  default_config_hash: S9vPQ20qB-BHjhkaC3APBdq8wiP4MrBeJUbButjIGnA
+channels_type: exclude
+channels: {  }

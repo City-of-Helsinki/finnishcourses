@@ -5,5 +5,5 @@ dependencies: {  }
 id: node__course
 label: 'Sisältö: Kurssi'
 tags:
+  description: '[node:field_course_organization], [node:field_course_start_date:date:date_only] - [node:field_course_end_date:date:date_only], [node:field_course_town]'
   title: '[node:title] | [site:name]'
-  description: '[node: field_course_features]'

@@ -1,6 +1,0 @@
-title: 'Ota yhteyttä'
-settings:
-  confirmation_message: 'Viestisi on lähetetty.'
-handlers:
-  email_notification:
-    label: Sähköposti-ilmoitus

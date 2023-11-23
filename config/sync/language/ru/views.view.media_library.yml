@@ -1,3 +1,4 @@
+label: Медиа-библиотека
 display:
   default:
     display_title: 'По умолчанию'
@@ -5,7 +6,7 @@ display:
       title: Мультимедиа
       fields:
         media_bulk_form:
-          action_title: Action
+          action_title: Действие
       pager:
         options:
           expose:
@@ -53,9 +54,11 @@ display:
     display_options:
       fields:
         media_bulk_form:
-          action_title: Action
+          action_title: Действие
         edit_media:
-          text: Edit
+          text: Редактировать
+        delete_media:
+          text: Удалить
   widget:
     display_title: Виджет
     display_options:
