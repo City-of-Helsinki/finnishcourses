@@ -1,0 +1,10 @@
+display:
+  page_1:
+    display_options:
+      filters:
+        field_course_town_target_id:
+          expose:
+            label: 'Город или населённый пункт'
+        field_course_organization_target_id:
+          expose:
+            label: 'Время начала'

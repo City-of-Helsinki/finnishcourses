@@ -1,0 +1,24 @@
+settings:
+  allowed_values:
+    -
+      label: 'Startnivå 0'
+    -
+      label: 'Studiestart på grundnivån A1.1'
+    -
+      label: 'Grundnivå A1.2'
+    -
+      label: 'Grundnivå A1.3'
+    -
+      label: 'Grundnivå A2.1'
+    -
+      label: 'Grundnivå A2.2'
+    -
+      label: 'Studiestart på medelnivån B1.1'
+    -
+      label: 'Medelnivå B1.2'
+    -
+      label: 'Medelnivå B2.1'
+    -
+      label: 'Medelnivå B2.2'
+    -
+      label: 'Den högsta nivån C'

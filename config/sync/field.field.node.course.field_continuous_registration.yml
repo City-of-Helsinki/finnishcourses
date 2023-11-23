@@ -1,0 +1,21 @@
+uuid: b8b85d1f-03a4-431b-a8f1-f1732dbdde84
+langcode: fi
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_continuous_registration
+    - node.type.course
+id: node.course.field_continuous_registration
+field_name: field_continuous_registration
+entity_type: node
+bundle: course
+label: 'Jatkuva rekisteröityminen'
+description: 'Kurssille voi ilmoittautua jatkuvasti'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Käytössä
+  off_label: 'Pois päältä'
+field_type: boolean

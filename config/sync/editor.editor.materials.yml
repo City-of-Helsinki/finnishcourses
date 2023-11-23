@@ -1,0 +1,54 @@
+uuid: 89f64a12-4e72-42ce-be7e-557b567c5ff0
+langcode: fi
+status: true
+dependencies:
+  config:
+    - filter.format.materials
+  module:
+    - ckeditor
+format: materials
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+  plugins:
+    drupallink:
+      linkit_enabled: false
+      linkit_profile: ''
+    wordcount:
+      enable: true
+      show_remaining: true
+      show_paragraphs: false
+      show_word_count: false
+      show_char_count: true
+      count_bytes: false
+      count_spaces: false
+      count_html: 0
+      count_line_breaks: false
+      max_words: -1
+      max_chars: 50
+      hard_limit: 1
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

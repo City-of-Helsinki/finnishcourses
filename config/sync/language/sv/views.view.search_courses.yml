@@ -1,0 +1,109 @@
+display:
+  default:
+    display_options:
+      fields:
+        field_online_course_1:
+          settings:
+            format_custom_true: Webbkurs
+        field_starting_level:
+          label: Startnivå
+        field_target_level:
+          label: Målnivå
+        field_course_start_date:
+          label: Datum
+        field_course_fee:
+          label: Pris
+        field_course_town:
+          label: Plats
+        field_online_course:
+          label: Plats
+          settings:
+            format_custom_true: Webbkurs
+        field_organizers_course_id:
+          label: 'Kursens ID'
+        field_course_id:
+          label: 'Kursens ID'
+      pager:
+        options:
+          tags:
+            next: 'Nästa ››'
+            previous: '‹‹ Tillbaka'
+            first: '« Första'
+            last: 'Sista »'
+      exposed_form:
+        options:
+          submit_button: 'Visa kurser'
+          exposed_sorts_label: 'Alternativ för sorteringsordningen'
+      empty:
+        area:
+          content:
+            value: "<p><font style=\"vertical-align: inherit;\"><font style=\"vertical-align: inherit;\">Yritä löysätä hakuehtojasi.</font></font></p>\r\n"
+            format: basic_html
+      filters:
+        field_starting_level:
+          expose:
+            description: ''
+          group_info:
+            label: 'Hur bra är dina finskakunskaper i dagsläget?'
+            group_items:
+              1:
+                title: 'Startnivå (0) '
+              2:
+                title: 'Grundnivå (A)'
+              3:
+                title: 'Medelnivå (B)'
+              4:
+                title: 'Den högsta nivån (C)'
+        field_course_fee:
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+            label: Kursavgiften
+          group_info:
+            label: 'Pris (€)'
+            group_items:
+              3:
+                title: 'Över 150 €'
+        field_course_start_date:
+          group_info:
+            description: ''
+            label: 'Kursens startdatum'
+          admin_label: Starttid
+          expose:
+            label: Starttid
+        field_online_course:
+          expose:
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+            label: Webbkurs
+          group_info:
+            label: Webbkurs
+        field_course_town:
+          expose:
+            label: 'Välj ort'
+        field_starting_level_1:
+          expose:
+            label: Startnivå
+        search_api_fulltext:
+          expose:
+            label: Sökord
+            placeholder: 'Sök kurser med ett sökord'
+        field_course_times_of_day:
+          expose:
+            label: Klockslag
+        field_course_organization:
+          expose:
+            label: Organisation
+        field_course_end_date:
+          expose:
+            label: Sluttid
+  page_1:
+    display_options:
+      display_extenders:
+        metatag_display_extender:
+          metatags:
+            title: 'Sök kurser i finska | Finnishcourses'

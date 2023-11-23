@@ -1,0 +1,8 @@
+_core:
+  default_config_hash: jv0PKCJEOq2bOwY9RspuPZCf67ifVJ4tfTk-BfZMw8k
+site_key: 6LdDbSojAAAAACWJAwJJFAOfJ6zlxI23W9wU8KgV
+secret_key: 6LdDbSojAAAAABxnsOf6Ri2mlILQ-6UVIQlIhjLW
+verify_hostname: true
+default_challenge: recaptcha/reCAPTCHA
+error_message: 'Bot verification failed.'
+cacheable: false

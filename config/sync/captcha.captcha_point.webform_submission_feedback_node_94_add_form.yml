@@ -1,0 +1,7 @@
+uuid: 980b7f92-ed5e-490a-a2f0-67fee6925479
+langcode: fi
+status: true
+dependencies: {  }
+formId: webform_submission_feedback_node_94_add_form
+captchaType: recaptcha_v3/v3_bot_verification
+label: webform_submission_feedback_node_94_add_form
