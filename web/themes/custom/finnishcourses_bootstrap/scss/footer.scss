@@ -77,7 +77,15 @@
 				height: 50px;
 				margin-left: 15px;
 			}
+			
 		}
+		&.helsinki.language-sv {
+			img {
+				width: 125px;
+				height: 46px;
+				margin-left: 15px;
+			}
+		} 
 		&.infofinland {
 			img {
 				width: 180px;
@@ -189,6 +197,11 @@
 	  margin: 0;
 	   @include media-breakpoint-down(sm) {
 		margin-top: 25px;
+	   }
+	}
+	&.language-sv {
+		img {
+			width: 125px;
 	   }
 	}
   }

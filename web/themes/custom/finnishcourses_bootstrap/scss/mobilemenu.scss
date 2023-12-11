@@ -1,14 +1,18 @@
 /* MOBILE MENU
 --------------------------------------------------*/
 
-
+.navbar {
+    @include media-breakpoint-down(sm-t) {
+		min-height: 80px;
+	}
+}
 
 #navbar-top.menu-active {
-	position: absolute;
+	//position: absolute;
 }
 
 #navbar-top.menu-active .navbar-nav.fixed-top {
-	position: absolute;
+	//position: absolute;
 }
 
 .mobile-menu {
@@ -25,7 +29,7 @@
 
     //overflow-y: scroll;
     //-webkit-overflow-scrolling: touch;
-    margin: auto;
+    margin: 57px auto 0 auto;
     display: none;
 
     .nav {

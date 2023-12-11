@@ -166,6 +166,23 @@ function finnishcourses_bootstrap_preprocess_page(&$variables) {
     '#markup' => \Drupal::service("renderer")->renderRoot($mobile_menu),
   );
   
+  $variables['current_language'] = array(
+    '#markup' => Drupal::languageManager()->getCurrentLanguage()->getName(),
+  );
+  
+  $language_id = Drupal::languageManager()->getCurrentLanguage()->getId();
+  
+  if ($language_id == 'ru') {
+	  $language_id = 'fi';
+  }
+  
+  $variables['language_id'] = array(
+    '#markup' => $language_id,
+  );
+  
+ 
+  
+  
    // Iterate over all footer menus and merge them together.
   
   $footer_combined_tree = array();
@@ -218,4 +235,14 @@ function finnishcourses_bootstrap_preprocess_taxonomy_term(&$variables) {
       }
     }
   }
+}
+
+
+function finnishcourses_bootstrap_preprocess_region(&$variables) {
+	
+ 
+
+  // Create the $content variable that templates expect.
+  //$variables['content'] = $variables['elements']['#children'];
+  //$variables['region'] = $variables['elements']['#region'];
 }
