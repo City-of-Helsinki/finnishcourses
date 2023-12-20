@@ -745,6 +745,7 @@ $settings['trusted_host_patterns'] = [
   '^finnishcourses\.fi$',
   '^phpstack-342940-1979446\.cloudwaysapps\.com$',
   '^finnishcourses.usability\.konsepto-asiakas\.fi$', 
+  '^phpstack-342940-3726246\.cloudwaysapps\.com$',
 ];
 
 /**
