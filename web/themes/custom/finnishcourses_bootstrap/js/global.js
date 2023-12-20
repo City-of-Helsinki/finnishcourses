@@ -164,6 +164,12 @@
 			  } 
 		 
 			 
+			 $('[data-drupal-selector="edit-online-course"]').each(function () {
+					  
+				  if (this.checked) {
+					   $(".block-views-exposed-filter-blocksearch-courses-page-1 form").show();
+				   }
+			  });
 			  
 			// console.log(startingLevel);
 			  
