@@ -261,7 +261,7 @@
       // STICKY NAVBAR - TRANSPARENT BACKGROUND WHEN SCROLLED
       function checkScroll() {
         // Navbar changes to px
-        let startY = $('#navbar-top').height() * 2;
+        let startY = $('#navbar-top').height() * 1.0;
 
         if (document.querySelector(".path-frontpage")) {
           if ($(window).scrollTop() > startY) {
@@ -309,6 +309,10 @@
 		if ($('#toggle-navigation-menu-button').hasClass('active')) {
 
 		    $(window).scrollTop(0);
+			$("#toggle-language-button").removeClass('active');
+		    $("#toggle-language-button").attr('aria-expanded', false);
+			$("#navbar-top").removeClass('language-active');
+			$(".language-switcher-language-url").hide();
 			
 		} else {
 
@@ -327,6 +331,57 @@
           if ($(window).width() < 850) {
             $(".mobile-menu-icon").hide();
             $(".mobile-close-icon").show();
+          }
+        });
+      });
+	  
+	  
+	   // Mobile LANGUAGE CHANGE "BUTTON"
+      let hideLanguages = Drupal.t("Hide languages");
+      let showLanguages = Drupal.t("Show languages");
+	  
+	  
+	   // MOBILE LANGUAGE CHANGE
+      $("#toggle-language-button").click(function () {
+		  
+		if (window.pageYOffset > 0) {
+		  var currentOffset = window.pageYOffset;
+	    }  
+		  
+        //$(".mobile-menu").css('backgroundColor', '#0073cf');
+		$("#toggle-language-button").toggleClass('active');
+		$("#toggle-language-button").attr('aria-expanded', false);
+		$("#toggle-language-button.active").attr('aria-expanded', true);
+		
+		//console.log(window.pageYOffset);
+		
+		if ($('#toggle-language-button').hasClass('active')) {
+
+		    $(window).scrollTop(0);
+			
+			$("#toggle-navigation-menu-button").removeClass('active');
+			$("#toggle-navigation-menu-button").attr('aria-expanded', false);
+			$("#navbar-top").removeClass('menu-active');
+			$(".mobile-menu-wrapper").hide();
+			
+			
+		} else {
+
+			//console.log(currentOffset);
+			//$(window).scrollTop(currentOffset);
+		}
+		
+		
+		$("#navbar-top").toggleClass('language-active');
+		
+		$('#toggle-language-button .assistive').text(showLanguages);
+		$('#toggle-language-button.active .assistive').text(hideLanguages);
+		
+        $(".language-switcher-language-url").css('backgroundColor', '#0073cf');
+        $(".language-switcher-language-url").slideToggle("fast", function () {
+          if ($(window).width() < 850) {
+           // $(".mobile-menu-icon").hide();
+           // $(".mobile-close-icon").show();
           }
         });
       });

@@ -1,0 +1,23 @@
+label: Utbildningsanordnare
+display:
+  default:
+    display_options:
+      title: Utbildningsanordnare
+      fields:
+        nothing:
+          alter:
+            text: '<a class="show-courses" href="/sv/training-providers/{{ tid }}/courses">Visa kurser</a>'
+      header:
+        area:
+          content:
+            value: "<p>Följande utbildningsanordnare publicerar kursinformation i tjänsten Finnishcourses.fi</p>\r\n"
+            format: basic_html
+  training_providers:
+    display_title: Utbildningsanordnare
+    display_options:
+      display_extenders:
+        metatag_display_extender:
+          metatags:
+            description: 'Följande utbildningsanordnare publicerar kursinformation i tjänsten Finnishcourses.fi.'
+      menu:
+        title: Utbildningsanordnare

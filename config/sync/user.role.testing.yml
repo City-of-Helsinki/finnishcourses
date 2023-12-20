@@ -1,0 +1,12 @@
+uuid: 2f048555-4052-4b60-86f5-e9555f0652cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - disable_language
+id: testing
+label: Testing
+weight: 7
+is_admin: null
+permissions:
+  - 'view disabled languages'
