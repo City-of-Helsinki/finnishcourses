@@ -38,31 +38,15 @@
       });
 	  
 	  
-	  
 	  // SHOW SEARCH FORM "BUTTON"
       let hideSearch = Drupal.t("Hide search form");
       let showSearch = Drupal.t("Show search form");
 	  
-	   $(".show-search-form-trigger", context).on('click', function (event) {
-		event.preventDefault();  
-        $(".block-views-exposed-filter-blocksearch-courses-page-1 form").toggle();
-		
-		//console.log($(".more-options-wrapper"));
 
-        // Adding less class for "Less search options", so expand more svg icon is added through css
-        $('.show-search-form-trigger').toggleClass('less');
-		
-		$('.showunder 50 €-search-form-trigger').attr('aria-expanded', false);
-		$('.show-search-form-trigger.less').attr('aria-expanded', true);
-		
-		$('.show-search-form-trigger').text(showSearch);
-		$('.show-search-form-trigger.less').text(hideSearch);
-		
-      });
 	  
 	  
 	  $(".view-search-courses .view-empty", context).each(function () {
-		  console.log($(this));
+		 // console.log($(this));
 		  
 		  $(this).appendTo("#block-finnishcourses-bootstrap-page-title .content");
 		  
@@ -136,6 +120,52 @@
 			  $('.view-search-courses .view-header .form-item-sort-bef-combine').append('<button type="submit" class="btn btn-primary">'+sortText+'</button>');
 			  
 			  
+	   /*
+	   *
+	   *  Jos on jo hakuehtoja valittuna niin näytetään lomake avattuna
+	   *
+	   */
+	   
+	   // Onko kaupunkeja valittuna
+	   
+			  var cityCount = 0;
+			  
+			  $('[data-drupal-selector="edit-course-town"] input').each(function () {
+					  
+				  if (this.checked) {
+					   cityCount++;
+				   }
+			  });
+			  
+			  if (cityCount > 0) {
+				  
+				  $(".block-views-exposed-filter-blocksearch-courses-page-1 form").show();
+			  }
+			  
+			  
+		 // Onko aloitustaso valittua
+		 
+		 
+		     var startingLevel = 'All';
+			  
+			  $('[data-drupal-selector="edit-starting-level"] input').each(function () {
+					  
+				  if (this.checked) {
+					   startingLevel = $(this).prop("value");
+					  // console.log($(this).prop("value"));
+				   }
+			  });
+			  
+			 // console.log(startingLevel);
+			  
+			  if (startingLevel != 'All') {
+				  
+				  $(".block-views-exposed-filter-blocksearch-courses-page-1 form").show();
+			  } 
+		 
+			 
+			  
+			// console.log(startingLevel);
 			  
 			  	  
 			  
@@ -153,7 +183,7 @@
 					   }
 				  });
 				  
-				 console.log(cityCount);
+				 //console.log(cityCount);
 			  
 			  
 				if ($(this).is(':checked')) {
@@ -202,6 +232,34 @@
 			  });
 		 
 		 });
+		 
+		 
+		 var MoreOptionsSelected = 0;
+		 
+		 var checkboxCount = 0;
+		 
+		 $(".more-options-wrapper input").each(function () {
+			 
+			//console.log($(this).attr('type'));			
+			//console.log($(this).val());
+			
+			if($(this).attr('type') == 'checkbox') {
+				
+				if (this.checked) {
+				   checkboxCount++;
+			    }
+
+			}
+			
+		 
+		 });
+		 
+		 if(checkboxCount > 0) {
+			 
+			MoreOptionsSelected += checkboxCount; 
+		 }
+		 
+		 console.log(MoreOptionsSelected);
 	  
 
 		 
@@ -256,6 +314,24 @@
 		});	
 		 
 
+
+		
+	 $(".show-search-form-trigger", context).on('click', function (event) {
+		event.preventDefault();  
+        $(".block-views-exposed-filter-blocksearch-courses-page-1 form").toggle();
+		
+		//console.log($(".more-options-wrapper"));
+
+        // Adding less class for "Less search options", so expand more svg icon is added through css
+        $('.show-search-form-trigger').toggleClass('less');
+		
+		$('.showunder 50 €-search-form-trigger').attr('aria-expanded', false);
+		$('.show-search-form-trigger.less').attr('aria-expanded', true);
+		
+		$('.show-search-form-trigger').text(showSearch);
+		$('.show-search-form-trigger.less').text(hideSearch);
+		
+      });
 	
 	
       // STICKY NAVBAR - TRANSPARENT BACKGROUND WHEN SCROLLED
