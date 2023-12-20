@@ -11,11 +11,29 @@
     attach: function (context, settings) {
 		
 		
+		
+	   $('.more-options-wrapper input[type=text]').bind("keyup keypress", function(e) {
+		  var code = e.keyCode || e.which; 
+
+		  if (code  == 13) {    
+			  //if($(this).val()==''){
+				  e.preventDefault();
+				  
+				  $('#views-exposed-form-search-courses-page-1').submit();
+				  return false;
+			  //}
+		  }
+		});	
+		
+		
       // SEARCH MORE OPTIONS "BUTTON"
       let lessSearch = Drupal.t("Less search options");
       let moreSearch = Drupal.t("More search options");
 	  
 	   $(".more-search-options-trigger", context).on('click', function (event) {
+		   
+		//console.log(event);   
+		   
 		event.preventDefault();  
         $(".more-options-wrapper").toggle();
 		
