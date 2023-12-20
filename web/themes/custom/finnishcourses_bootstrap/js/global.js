@@ -238,10 +238,22 @@
 		 
 		 var checkboxCount = 0;
 		 
-		 $(".more-options-wrapper input").each(function () {
+		 var textLength = 0;
+		 
+		 var selectLength = 0;
+		 
+		  $(".more-options-wrapper select", context).each(function () {
+			  
+			// console.log($(this).val());
+			  if ($(this).val() != 'All') {
+				selectLength += 1;
+			  }
+		  });
+		 
+		 $(".more-options-wrapper input", context).each(function () {
 			 
 			//console.log($(this).attr('type'));			
-			//console.log($(this).val());
+			
 			
 			if($(this).attr('type') == 'checkbox') {
 				
@@ -251,15 +263,39 @@
 
 			}
 			
+			if($(this).attr('type') == 'text') {
+				
+				//console.log($(this).val().length);
+				
+				textLength += $(this).val().length;
+
+			}
+
 		 
 		 });
+		 
+		 
+		 if(selectLength > 0) {
+			 
+			MoreOptionsSelected += selectLength; 
+		 }
 		 
 		 if(checkboxCount > 0) {
 			 
 			MoreOptionsSelected += checkboxCount; 
 		 }
 		 
-		 console.log(MoreOptionsSelected);
+		 if (textLength > 0) {
+			 MoreOptionsSelected += textLength; 
+		 }
+		 
+		 if (MoreOptionsSelected > 0) {
+			 
+			 $(".block-views-exposed-filter-blocksearch-courses-page-1 form").show();
+			 $(".block-views-exposed-filter-blocksearch-courses-page-1 .more-options-wrapper").show();
+		 }
+		 
+		 //console.log(MoreOptionsSelected);
 	  
 
 		 
