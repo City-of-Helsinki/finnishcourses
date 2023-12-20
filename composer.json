@@ -226,7 +226,6 @@
 			"drupal/autologout": {
 				"Warning: Undefined array key 1": "https://www.drupal.org/files/issues/2023-07-03/undefined-array-key.patch"
 			}
-
         },
         "drupal-scaffold": {
             "initial": {

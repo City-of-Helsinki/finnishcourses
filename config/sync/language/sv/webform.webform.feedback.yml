@@ -1,0 +1,24 @@
+title: Respons
+elements: |
+  type_of_feedback:
+    '#title': 'Typ av respons'
+    '#options':
+      praise: Beröm
+      criticism: Klagomål
+      question: Fråga
+      development_suggestion: Utvecklingsförslag
+      other: Annat
+  title:
+    '#title': Rubrik
+  message:
+    '#title': Meddelande
+  contact_information:
+    '#markup': "<h2>Kontaktinformation</h2>\r\n\r\n<p>Om du vill ha ett svar på din respons, lämna dina kontaktuppgifter.</p>"
+  name_pseudonym:
+    '#title': Namn/signatur
+  email_address:
+    '#title': E-post
+handlers:
+  email:
+    settings:
+      body: '<p>_default</p>'

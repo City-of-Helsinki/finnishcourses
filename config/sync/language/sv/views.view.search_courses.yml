@@ -37,7 +37,7 @@ display:
       empty:
         area:
           content:
-            value: "<p><font style=\"vertical-align: inherit;\"><font style=\"vertical-align: inherit;\">Yritä löysätä hakuehtojasi.</font></font></p>\r\n"
+            value: "<p>Yritä löysätä hakuehtojasi.</p>\r\n"
             format: basic_html
       filters:
         field_starting_level:
@@ -101,6 +101,9 @@ display:
         field_course_end_date:
           expose:
             label: Sluttid
+      header:
+        result:
+          content: 'Sökkriterier hittades @total kurs(er)'
   page_1:
     display_options:
       display_extenders:
