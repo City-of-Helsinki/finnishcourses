@@ -139,7 +139,7 @@
 			  
 			  if (cityCount > 0) {
 				  
-				  $(".block-views-exposed-filter-blocksearch-courses-page-1 form").show();
+				  openSearch();
 			  }
 			  
 			  
@@ -160,14 +160,14 @@
 			  
 			  if (startingLevel != 'All') {
 				  
-				  $(".block-views-exposed-filter-blocksearch-courses-page-1 form").show();
+				  openSearch();
 			  } 
 		 
 			 
 			 $('[data-drupal-selector="edit-online-course"]').each(function () {
 					  
 				  if (this.checked) {
-					   $(".block-views-exposed-filter-blocksearch-courses-page-1 form").show();
+					   openSearch();
 				   }
 			  });
 			  
@@ -297,8 +297,9 @@
 		 
 		 if (MoreOptionsSelected > 0) {
 			 
-			 $(".block-views-exposed-filter-blocksearch-courses-page-1 form").show();
-			 $(".block-views-exposed-filter-blocksearch-courses-page-1 .more-options-wrapper").show();
+			 openSearch();
+			 //$(".block-views-exposed-filter-blocksearch-courses-page-1 form").show();
+			 openMoreOptions();
 		 }
 		 
 		 //console.log(MoreOptionsSelected);
@@ -362,7 +363,7 @@
 		event.preventDefault();  
         $(".block-views-exposed-filter-blocksearch-courses-page-1 form").toggle();
 		
-		//console.log($(".more-options-wrapper"));
+		
 
         // Adding less class for "Less search options", so expand more svg icon is added through css
         $('.show-search-form-trigger').toggleClass('less');
@@ -374,7 +375,26 @@
 		$('.show-search-form-trigger.less').text(hideSearch);
 		
       });
-	
+	  
+	  
+	  function openSearch() {
+		  
+		  //console.log("test");
+		  
+		  $(".block-views-exposed-filter-blocksearch-courses-page-1 form").show();
+		  $('.show-search-form-trigger').addClass('less');
+		  $('.show-search-form-trigger.less').attr('aria-expanded', true);
+		  $('.show-search-form-trigger').text(hideSearch);
+	  }
+	  
+	  function openMoreOptions() {
+		  
+		$(".more-options-wrapper").show();
+		
+        // Adding less class for "Less search options", so expand more svg icon is added through css
+        $('.more-search-options-trigger').addClass('less').attr('aria-expanded', true);
+		$(".more-search-options-trigger").text(lessSearch);
+	  }
 	
       // STICKY NAVBAR - TRANSPARENT BACKGROUND WHEN SCROLLED
       function checkScroll() {
