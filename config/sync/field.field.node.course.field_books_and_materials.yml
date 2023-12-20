@@ -10,11 +10,8 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    only_text: only_text
-    basic_html: '0'
-    restricted_html: '0'
-    full_html: '0'
-    plain_text: '0'
+    allowed_formats:
+      - materials
 id: node.course.field_books_and_materials
 field_name: field_books_and_materials
 entity_type: node

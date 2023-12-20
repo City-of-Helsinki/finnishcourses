@@ -1,0 +1,8 @@
+settings:
+  allowed_values:
+    -
+      label: 'Det finns lediga platser på kursen'
+    -
+      label: 'Kursen är fullsatt'
+    -
+      label: 'Fråga utbildningsanordnaren'

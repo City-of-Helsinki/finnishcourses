@@ -1,0 +1,7 @@
+uuid: 75b3b014-268b-4e8b-848a-eae9548b73ee
+langcode: fi
+status: false
+dependencies: {  }
+formId: node_feedback_form
+captchaType: default
+label: node_feedback_form

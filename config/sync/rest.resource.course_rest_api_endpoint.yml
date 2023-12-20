@@ -5,7 +5,6 @@ dependencies:
   module:
     - basic_auth
     - course_rest_api
-    - hal
     - serialization
 id: course_rest_api_endpoint
 plugin_id: course_rest_api_endpoint
@@ -14,7 +13,6 @@ configuration:
   methods:
     - POST
   formats:
-    - hal_json
-    - json
+    1: json
   authentication:
     - basic_auth

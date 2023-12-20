@@ -1,0 +1,8 @@
+uuid: f85f97e2-0367-4d2e-bbea-84e3906077db
+langcode: fi
+status: true
+dependencies: {  }
+id: v3_bot_verification
+label: 'v3 Bot verification'
+threshold: 0.7
+challenge: recaptcha/reCAPTCHA

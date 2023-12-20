@@ -8,6 +8,7 @@ dependencies:
     - taxonomy.vocabulary.street_adresses
   module:
     - content_translation
+    - file
     - node
     - rest
     - taxonomy
@@ -18,6 +19,7 @@ is_admin: null
 permissions:
   - 'create course content'
   - 'create terms in street_adresses'
+  - 'delete own files'
   - 'edit any course content'
   - 'restful post course_rest_api_endpoint'
   - 'translate course node'

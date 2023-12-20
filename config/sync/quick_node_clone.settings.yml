@@ -3,7 +3,12 @@ _core:
 exclude:
   node:
     course:
+      - field_course_end_date
       - field_course_id
+      - field_course_start_date
+      - field_course_unpublish_date
+      - field_registration_end_date
+      - field_registration_start_date
   paragraph: {  }
 text_to_prepend_to_title: ''
 clone_status: false

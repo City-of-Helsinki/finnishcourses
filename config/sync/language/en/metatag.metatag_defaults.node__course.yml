@@ -1,0 +1,2 @@
+tags:
+  description: '[node:field_course_organization], Course dates: [node:field_course_start_date:date:date_only] - [node:field_course_end_date:date:date_only], [node:field_course_town]'

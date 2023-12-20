@@ -6,7 +6,7 @@ display:
       title: Мультимедиа
       fields:
         media_bulk_form:
-          action_title: Action
+          action_title: Действие
         thumbnail__target_id:
           label: Миниатюра
         name:

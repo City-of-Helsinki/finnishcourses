@@ -481,7 +481,10 @@ display:
     display_options:
       display_description: ''
       display_extenders:
-        metatag_display_extender: {  }
+        metatag_display_extender:
+          metatags:
+            description: 'The following training providers publish their course information through the finnishcourses.fi service. '
+          tokenize: false
       path: training-providers
       menu:
         type: normal

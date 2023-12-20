@@ -10,11 +10,8 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    full_html: full_html
-    only_text: '0'
-    basic_html: '0'
-    restricted_html: '0'
-    plain_text: '0'
+    allowed_formats:
+      - full_html
 id: node.front_page.field_header_text
 field_name: field_header_text
 entity_type: node

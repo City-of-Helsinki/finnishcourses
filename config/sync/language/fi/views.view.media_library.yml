@@ -2,6 +2,7 @@ display:
   default:
     display_title: Oletus
     display_options:
+      title: Media
       fields:
         media_bulk_form:
           action_title: Toiminto
@@ -51,7 +52,9 @@ display:
         media_bulk_form:
           action_title: Toiminto
         edit_media:
-          text: Edit
+          text: Muokkaa
+        delete_media:
+          text: Poista
   widget:
     display_title: Widgetti
     display_options:

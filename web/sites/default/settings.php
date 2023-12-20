@@ -65,7 +65,7 @@
   header('HTTP/1.1 301 Moved Permanently');
   header('Location: https://finnishcourses.fi'. $_SERVER['REQUEST_URI']);
   exit();
-} 
+}
 
 
 if ($_SERVER['HTTP_HOST'] == 'www.finnishcourses.fi') {

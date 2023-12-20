@@ -1,0 +1,45 @@
+uuid: b0d0ef30-c00e-4377-9990-5dc7dbfc430f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:49e737e8-008d-4e0c-8e4c-d547bc8c8524'
+  module:
+    - block_content
+    - block_visibility_groups
+    - language
+    - system
+  theme:
+    - finnishcourses_bootstrap
+id: ehdotustekstiksien
+theme: finnishcourses_bootstrap
+region: content
+weight: -9
+provider: null
+plugin: 'block_content:49e737e8-008d-4e0c-8e4c-d547bc8c8524'
+settings:
+  id: 'block_content:49e737e8-008d-4e0c-8e4c-d547bc8c8524'
+  label: 'Ehdotus tekstiksi (en)'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    context_mapping: {  }
+    block_visibility_group: ''
+  language:
+    id: language
+    negate: false
+    context_mapping:
+      language: '@language.current_language_context:language_interface'
+    langcodes:
+      en: en
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: '<front>'

@@ -61,6 +61,7 @@ permissions:
   - 'delete content translations'
   - 'delete media'
   - 'delete own course content'
+  - 'delete own files'
   - 'delete own page content'
   - 'delete terms in course_features'
   - 'delete terms in course_levels'

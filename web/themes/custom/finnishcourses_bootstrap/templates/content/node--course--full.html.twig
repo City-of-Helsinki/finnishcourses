@@ -113,6 +113,14 @@
     {% endif %}
 	
 	
+	
+	{% if node.field_online_and_traditional_tea.value == '1' %}
+	
+	{{ node.field_online_and_traditional_tea.fieldDefinition.label }}
+	
+	{% endif %}   
+	
+	
 	   
 	
 	
@@ -147,7 +155,7 @@
       {{ content.field_course_week_hours }}
       {% if node.field_ask_exact_times.value %}
         <div class="ask-exact-times">
-          <span>{% trans %}Note! Exceptions on the course schedule. Check with the training provider!{% endtrans %}</span>
+          <span>{% trans %}Note! There are some exceptions to the course schedule. Ask the education organiser for the exact schedule.{% endtrans %}</span>
         </div>
       {% endif %}
       {{ content.field_organizers_course_id }}
@@ -178,11 +186,21 @@
       <div class="registration-dates">
         <div class="field__label">{% trans with {'context': 'Registration dates'} %}Dates{% endtrans %}</div>
 		
+		{% if node.field_continuous_registration.value is not empty %}
+			
+			{% if node.field_continuous_registration.value %} 
+				{% trans %}There is continuous enrolment for the course.{% endtrans %} 
+			{% else %}
+				<div class="field__item">{{ content.field_registration_start_date }} - {{ content.field_registration_end_date }}</div>
+			{% endif %}
 		
-		{% if content.field_continuous_registration %} {% trans %}Continuous registration{% endtrans %} {% else %}
+		{% else %}
 		
 			<div class="field__item">{{ content.field_registration_start_date }} - {{ content.field_registration_end_date }}</div>
+			
 		{% endif %}
+
+	
       </div>
       <div class="enroll-online">
         <div class="field__label">

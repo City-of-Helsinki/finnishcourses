@@ -8,8 +8,10 @@ url:
     en: ''
     fi: fi
     ru: ru
+    sv: sv
   domains:
     en: ''
     fi: ''
     ru: ''
+    sv: ''
 selected_langcode: site_default

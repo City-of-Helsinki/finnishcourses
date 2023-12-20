@@ -1,0 +1,15 @@
+uuid: abd7d233-6b73-449a-a740-7a9a4205d177
+langcode: sv
+status: true
+dependencies:
+  module:
+    - disable_language
+third_party_settings:
+  disable_language:
+    disable: true
+    redirect_language: fi
+id: sv
+label: Svenska
+direction: ltr
+weight: -8
+locked: false

@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.course.field_ask_exact_times
     - field.field.node.course.field_ask_more_email
     - field.field.node.course.field_books_and_materials
+    - field.field.node.course.field_continuous_registration
     - field.field.node.course.field_course_availability
     - field.field.node.course.field_course_end_date
     - field.field.node.course.field_course_features
@@ -79,6 +80,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 13
+    region: content
+  field_continuous_registration:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 29
     region: content
   field_course_availability:
     type: list_default
@@ -210,7 +221,7 @@ content:
         open_text: 'Currently open!'
         closed_text: 'Currently closed'
       timezone_field: ''
-      office_hours_first_day: ''
+      office_hours_first_day: '1'
       schema:
         enabled: false
     third_party_settings: {  }

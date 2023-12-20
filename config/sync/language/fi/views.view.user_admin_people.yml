@@ -1,13 +1,26 @@
-label: Käyttäjät
-description: 'Etsi ja hallinnoi sivustoasi käyttäviä ihmisiä.'
 display:
   default:
-    display_title: Oletus
     display_options:
+      filters:
+        field_organization_target_id:
+          expose:
+            label: Järjestäjä
+        combine:
+          expose:
+            label: 'Nimi tai sähköposti sisältää'
+        status:
+          group_info:
+            label: Tila
+            group_items:
+              1:
+                title: Aktiivinen
+              2:
+                title: Suljettu
+        roles_target_id:
+          expose:
+            label: Rooli
       title: Käyttäjät
       fields:
-        user_bulk_form:
-          label: Massapäivitys
         name:
           label: Käyttäjätunnus
         status:
@@ -41,25 +54,8 @@ display:
       empty:
         area_text_custom:
           content: 'Ei saatavilla olevia ihmisiä.'
-      filters:
-        combine:
-          expose:
-            label: 'Nimi tai sähköposti sisältää'
-        status:
-          group_info:
-            label: Tila
-            group_items:
-              1:
-                title: Aktiivinen
-              2:
-                title: Suljettu
-        roles_target_id:
-          expose:
-            label: Rooli
-        permission:
-          expose:
-            label: Käyttöoikeus
       use_more_text: lisää
+    display_title: Oletus
   page_1:
     display_title: Sivu
     display_options:
@@ -69,3 +65,5 @@ display:
       tab_options:
         title: Käyttäjät
         description: 'Ylläpidä käyttäjiä, rooleja ja käyttöoikeuksia.'
+label: Käyttäjät
+description: 'Etsi ja hallinnoi sivustoasi käyttäviä ihmisiä.'

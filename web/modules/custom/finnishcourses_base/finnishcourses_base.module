@@ -148,9 +148,14 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     $townOptions = getTownOptions($form_state, $form);
     if (!empty($form['field_course_town']['widget']['#default_value'])) {
       $townDefault = $form['field_course_town']['widget']['#default_value'];
-    } else {
+    } elseif (is_array($townOptions)) {
       $townDefault = array_keys($townOptions)[0];
-    }
+    } else {
+	  $townDefault = "";
+
+	\Drupal::messenger()->addMessage('Organisaation kuntatieto puuttuu');
+
+	}
 
     //ddl($addressDefault);
     //$form['field_course_street_address']['#attributes']['id'][] = 'street-select';
@@ -550,6 +555,7 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
       $entity->addTranslation('sv', $entity->toArray());
     }
 
+
     if (fnmatch('/clone/*/quick_clone', \Drupal::request()->getRequestUri())) {
       $originalTitle = $entity->getTitle();
       if ($entity->hasTranslation('en')) {
@@ -561,7 +567,7 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
         $translationRu = $entity->getTranslation('ru');
         $translationRu->setTitle($originalTitle);
       }
-	  
+ 
 	  if ($entity->hasTranslation('sv')) {
         $translationRu = $entity->getTranslation('sv');
         $translationRu->setTitle($originalTitle);
@@ -590,8 +596,7 @@ function finnishcourses_base_entity_presave(EntityInterface $entity) {
     if (!$entity->hasTranslation('ru')) {
       $entity->addTranslation('ru', $entity->toArray());
     }
-	
-	 if (!$entity->hasTranslation('sv')) {
+    if (!$entity->hasTranslation('sv')) {
       $entity->addTranslation('sv', $entity->toArray());
     }
   }
