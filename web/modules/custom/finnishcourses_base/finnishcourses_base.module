@@ -122,6 +122,8 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
 	//  if (!empty($form['field_course_unpublish_date'])) {
     if (!$administrator) {
       unset($form['field_course_unpublish_date']);
+	  
+	  $form['#attributes']['class'][] = 'not-admin';
     }
 
      // Set ajax callback function when organization field value changed
@@ -173,6 +175,10 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
     // Disable course id field because it will be generated automatically
     $form['field_course_id']['#disabled'] = 'disabled';
     $form['field_course_times_of_day']['#disabled'] = 'disabled';
+	
+	$form['status']['widget']['value']['#title'] = t("Published");
+	
+	//dsm($form['status']);
 
 
 

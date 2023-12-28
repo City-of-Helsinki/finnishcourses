@@ -1,6 +1,11 @@
 
 
 
+form.node-course-edit-form.not-admin layout-region--node-secondary {
+	display: none;
+}
+
+
 .role-course_editor .toolbar-tab .toolbar-item#toolbar-item-administration {
 	// display: none;
 }
@@ -44,6 +49,10 @@
 }
 
 .field--name-field-books-and-materials .filter-help {
+	display: none;
+}
+
+.form-item label .translation-entity-all-languages {
 	display: none;
 }
 
