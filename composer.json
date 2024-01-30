@@ -85,7 +85,7 @@
         "drupal/conditional_fields": "4.0.0-alpha3",
         "drupal/config_split": "1.9",
         "drupal/cookiehub": "^1.0",
-        "drupal/core": "10.1.4",
+        "drupal/core": "10.1.8",
         "drupal/ctools": "3.14",
         "drupal/devel": "5.1.2",
         "drupal/devel_debug_log": "2.0.2",
