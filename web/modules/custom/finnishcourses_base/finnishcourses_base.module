@@ -840,12 +840,12 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 	 $form['sort_bef_combine']['#options']['field_course_start_date_DESC'] = t('Last starting date');
 	 $form['sort_bef_combine']['#options']['field_course_end_date_ASC'] = t('First ending date');
 	 $form['sort_bef_combine']['#options']['field_course_end_date_DESC'] = t('Last ending date');
-	 $form['sort_bef_combine']['#options']['field_course_fee_ASC'] = t('Lowest price');
-	 $form['sort_bef_combine']['#options']['field_course_fee_DESC'] = t('Highest price');
 	 $form['sort_bef_combine']['#options']['field_starting_level_ASC'] = t('Lowest starting level');
 	 $form['sort_bef_combine']['#options']['field_starting_level_DESC'] = t('Highest starting level');
 	 $form['sort_bef_combine']['#options']['field_target_level_ASC'] = t('Lowest target level');
 	 $form['sort_bef_combine']['#options']['field_target_level_DESC'] = t('Highest target level');
+	 $form['sort_bef_combine']['#options']['field_course_fee_ASC'] = t('Lowest price');
+	 $form['sort_bef_combine']['#options']['field_course_fee_DESC'] = t('Highest price');
 	 
 	
 
