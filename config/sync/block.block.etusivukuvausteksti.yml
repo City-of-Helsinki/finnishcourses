@@ -14,7 +14,7 @@ dependencies:
 id: etusivukuvausteksti
 theme: finnishcourses_bootstrap
 region: content
-weight: -11
+weight: -12
 provider: null
 plugin: 'block_content:3bafbb62-730e-4071-80a1-88338d629979'
 settings:

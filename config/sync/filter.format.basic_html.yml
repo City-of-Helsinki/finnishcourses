@@ -8,7 +8,7 @@ dependencies:
     - spamspan
 _core:
   default_config_hash: P8ddpAIKtawJDi5SzOwCzVnnNYqONewSTJ6Xn0dW_aQ
-name: finnishcourses@konsepto.fi
+name: 'Basic html'
 format: basic_html
 weight: 0
 filters:

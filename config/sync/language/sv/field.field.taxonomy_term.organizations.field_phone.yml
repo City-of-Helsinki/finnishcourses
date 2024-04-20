@@ -11,8 +11,7 @@ id: taxonomy_term.organizations.field_phone
 field_name: field_phone
 entity_type: taxonomy_term
 bundle: organizations
-label: Phone
-description: ''
+label: Telefonnummer
 required: false
 translatable: false
 default_value: {  }

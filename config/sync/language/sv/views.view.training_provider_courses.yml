@@ -1,0 +1,26 @@
+display:
+  default:
+    display_options:
+      fields:
+        field_online_course_1:
+          settings:
+            format_custom_true: Webbkurs
+        field_starting_level:
+          label: Startnivå
+        field_target_level:
+          label: Målnivå
+        field_course_start_date:
+          label: Datum
+        field_course_fee:
+          label: Pris
+        field_course_town:
+          label: Plats
+        field_online_course:
+          label: Plats
+        field_organizers_course_id:
+          label: 'Kursens ID'
+      empty:
+        area:
+          content:
+            value: "<p>No upcoming courses for the training provider at the moment.</p>\r\n"
+            format: basic_html

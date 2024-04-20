@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - media
+    - linkit
     - pathologic
     - spamspan
 name: 'Only text'
@@ -29,15 +29,6 @@ filters:
       local_settings:
         protocol_style: full
         local_paths: ''
-  media_embed:
-    id: media_embed
-    provider: media
-    status: false
-    weight: 100
-    settings:
-      default_view_mode: default
-      allowed_view_modes: {  }
-      allowed_media_types: {  }
   filter_spamspan:
     id: filter_spamspan
     provider: spamspan
@@ -45,10 +36,10 @@ filters:
     weight: 0
     settings:
       spamspan_at: ' [at] '
-      spamspan_use_graphic: '1'
-      spamspan_dot_enable: '0'
+      spamspan_use_graphic: true
+      spamspan_dot_enable: false
       spamspan_dot: ' [dot] '
-      spamspan_use_form: '0'
+      spamspan_use_form: false
       spamspan_form_pattern: '<a href="%url?goto=%email">%displaytext</a>'
       spamspan_form_default_url: contact
       spamspan_form_default_displaytext: 'contact form'

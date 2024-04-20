@@ -5,6 +5,7 @@ dependencies:
   module:
     - block_visibility_groups
     - ctools
+    - node
   theme:
     - finnishcourses_bootstrap
 id: entityviewcontent_2

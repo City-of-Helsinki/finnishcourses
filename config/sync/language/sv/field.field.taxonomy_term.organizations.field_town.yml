@@ -9,8 +9,7 @@ id: taxonomy_term.organizations.field_town
 field_name: field_town
 entity_type: taxonomy_term
 bundle: organizations
-label: Town
-description: ''
+label: Postort
 required: false
 translatable: true
 default_value: {  }

@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - spamspan
-name: otto.manninen@konsepto.fi
+name: Materials
 format: materials
 weight: 0
 filters:

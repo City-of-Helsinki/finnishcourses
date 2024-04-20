@@ -61,7 +61,7 @@
 // Force HTTPS
 // PHP_SAPI command line (cli) check prevents drush commands from giving a
 // "Drush command terminated abnormally due to an unrecoverable error"
-if ( ($_SERVER['HTTP_HOST'] !== 'finnishcourses.usability.konsepto-asiakas.fi') && ($_SERVER['HTTP_HOST'] !== 'finnishcourses.test') && (!array_key_exists('HTTPS', $_SERVER)) && (PHP_SAPI !== 'cli') ) {
+if ( ($_SERVER['HTTP_HOST'] !== 'finnishcourses.usability.konsepto-asiakas.fi') && ($_SERVER['HTTP_HOST'] !== 'finnishcourses.test') && ($_SERVER['HTTP_HOST'] !== 'phpstack-342940-4500743.cloudwaysapps.com') && (!array_key_exists('HTTPS', $_SERVER)) && (PHP_SAPI !== 'cli') ) {
   header('HTTP/1.1 301 Moved Permanently');
   header('Location: https://finnishcourses.fi'. $_SERVER['REQUEST_URI']);
   exit();
@@ -745,6 +745,7 @@ $settings['trusted_host_patterns'] = [
   '^finnishcourses\.fi$',
   '^phpstack-342940-1979446\.cloudwaysapps\.com$',
   '^finnishcourses.usability\.konsepto-asiakas\.fi$', 
+  '^phpstack-342940-4500743\.cloudwaysapps\.com$',
 ];
 
 /**
