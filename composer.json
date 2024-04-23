@@ -78,14 +78,14 @@
         "drupal/block_visibility_groups": "2.0.1",
         "drupal/bootstrap_barrio": "5.1.10",
         "drupal/bootstrap_datepicker": "2.0.0",
-        "drupal/bootstrap_sass": "5.0.6",
+        "drupal/bootstrap_sass": "5.0.10",
         "drupal/ckeditor": "^1.0",
         "drupal/ckeditor_youtube": "1.5",
         "drupal/ckwordcount": "^2.0",
         "drupal/conditional_fields": "4.0.0-alpha3",
         "drupal/config_split": "1.9",
         "drupal/cookiehub": "^1.0",
-        "drupal/core": "10.1.8",
+        "drupal/core": "10.2.5",
         "drupal/ctools": "3.14",
         "drupal/devel": "5.1.2",
         "drupal/devel_debug_log": "2.0.2",
@@ -110,7 +110,7 @@
         "drupal/linkit": "6.1.0",
         "drupal/menu_admin_per_menu": "^1.0",
         "drupal/menu_block": "^1.5",
-        "drupal/menu_trail_by_path": "2.0.0",
+        "drupal/menu_trail_by_path": "2.0.1",
         "drupal/metatag": "^1.8",
         "drupal/office_hours": "1.11",
         "drupal/pathauto": "1.11",
@@ -137,7 +137,7 @@
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/upgrade_status": "4.0.0",
         "drupal/webform": "6.2.0-beta6",
-        "drush/drush": "^11.0",
+        "drush/drush": "^12.0",
         "furf/jquery-ui-touch-punch": "dev-master",
         "platformsh/config-reader": "^2.2",
         "vlucas/phpdotenv": "^2.4",
@@ -202,12 +202,12 @@
         "patches": {
             "drupal/core": {
                 "Grouped exposed filters do not work like they should": "https://www.drupal.org/files/issues/1810148-58.patch",
-                "Untranslatable aliases generation fix for translations": "https://www.drupal.org/files/issues/2022-12-20/2689459-161.patch",
+				"If you dont want to translate your URL alias the original URL alias wont work with your translations": "https://www.drupal.org/files/issues/2024-02-21/2689459-188.patch",
 				"Entity view/form mode formatter/widget settings have no translation UI Action patch": "https://www.drupal.org/files/issues/2020-12-04/2546212-168-actions.patch",
 				"Entity view/form mode formatter/widget settings have no translation UI": "https://www.drupal.org/files/issues/2020-12-04/2546212-168.patch",
 				"PHP Notice: Undefined index: type in claro_preprocess_input()": "https://www.drupal.org/files/issues/2020-06-02/preprocess-input-notice-3144876-6.patch",
 				"Make exposed filter values available as tokens for text areas":"https://www.drupal.org/files/issues/2022-10-30/2761273-50.patch",
-				"Notice: Undefined index: value in NumericFilter->acceptExposedInput()": "https://www.drupal.org/files/issues/2023-02-23/2825860-139.patch"
+				"Warning: Undefined array key value in Drupal":"https://www.drupal.org/files/issues/2024-01-31/3418238-2.patch"
             },
 			"drupal/redirect_after_login": {
 				"Headers have already been sent after upgrade to Drupal 9.2 (can't login)": "https://www.drupal.org/files/issues/2021-06-20/3214949.patch"
@@ -226,6 +226,7 @@
 			},
 			"drupal/autologout": {
 				"Warning: Undefined array key 1": "https://www.drupal.org/files/issues/2023-07-03/undefined-array-key.patch"
+				
 			}
         },
         "drupal-scaffold": {

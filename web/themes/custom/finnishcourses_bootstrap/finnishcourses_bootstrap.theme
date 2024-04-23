@@ -78,6 +78,7 @@ function finnishcourses_bootstrap_preprocess_node(&$variables) {
     }
     //kint($courseLocation);
 
+	$variables['organization_name'] = $organizationName;
     $variables['course_location'] = $courseLocation;
     $variables['course_town'] = $townName;
 

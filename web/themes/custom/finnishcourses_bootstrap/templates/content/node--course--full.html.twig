@@ -73,6 +73,19 @@
   ]
 %}
 
+<script>
+// Push Category View Data to Matomo - Fill category dynamically
+_paq.push(['setEcommerceView',
+    '{{ node.title.value }}', // Product name is not applicable for a category view.
+    false, // Product SKU is not applicable for a category view.
+    '{{ organization_name }}', // (Optional) Product category, or array of up to 5 categories
+]);
+
+// You must also call trackPageView when tracking a category view 
+_paq.push(['trackPageView']);
+
+</script>
+
 <article{{ attributes.addClass(classes).removeAttribute('role') }}>
   <header>
     {{ title_prefix }}
@@ -96,28 +109,24 @@
   </header>
   <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
     <div class="group-wrapper">
-	
-	
-	
-	
-	
+
     
     {% if node.field_online_course.value %}
      <div class="location-header online-course">
-		<div class="field"><span>{% trans %}Online course{% endtrans %}</span>, <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_course_organization.entity.tid.value}) }}"> {{ node.field_course_organization.entity.name.value }}</a></div>
+		<div class="field"><span>{% trans %}Online course{% endtrans %}</span>, <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_course_organization.entity.tid.value}) }}"> {{ organization_name }}</a></div>
 	</div>
 	{% else %}
 	<div class="location-header">	
-		<div class="field">{{ course_town }}, <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_course_organization.entity.tid.value}) }}"> {{ node.field_course_organization.entity.name.value }}</a></div>
+		<div class="field">{{ course_town }}, <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_course_organization.entity.tid.value}) }}"> {{ organization_name }}</a></div>
 	</div>
     {% endif %}
 	
 	
 	
-	{% if node.field_online_and_traditional_tea.value == '1' %}
-	
-	{{ node.field_online_and_traditional_tea.fieldDefinition.label }}
-	
+	{% if node.field_online_and_traditional.value == '1' %}
+		<div class="online-and-traditional">
+			{{ node.field_online_and_traditional.fieldDefinition.label }}
+		</div>
 	{% endif %}   
 	
 	
