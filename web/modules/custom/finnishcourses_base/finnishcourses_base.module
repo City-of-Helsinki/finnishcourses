@@ -178,7 +178,10 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
 	
 	$form['status']['widget']['value']['#title'] = t("Published");
 	
-	//dsm($form['status']);
+	
+	$form['publish_on']['widget'][0]['value']['#title'] = t("Scheduled course publish date");
+	
+	//dsm($form['publish_on']['widget'][0]['value']);
 
 
 
@@ -403,6 +406,8 @@ function refreshLocationOptions(array $form, FormStateInterface &$form_state) {
 }
 
 function finnishcourse_course_form_submit(array $form, FormStateInterface $form_state) {
+	//dsm($form);
+	
   $form_state->setRedirect('view.manage_courses.page_1');
 }
 
@@ -430,12 +435,29 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
 
 	$date_now = new DateTime();
 	
+
 	$original_course_start_date = $entity->field_course_start_date->value;
 	$course_start_date = new DateTime($entity->field_course_start_date->value);
 	$course_start_date->modify('+' . $days . ' day');
 	
+	$unpublish_timestamp = mktime(0, 0, 0, date("m"), date("d")+$days, date("Y"));
+	
+	if ( isset($entity->publish_on->value) ) {
+		
+		$sheduled_publish_date = $entity->publish_on->value;
+		
+		$unpublish_timestamp = $sheduled_publish_date + ($days * 86400);
+		
+		$publish_date_message = date("d.m.Y - H:i", $sheduled_publish_date);
+		
+		\Drupal::messenger()->addMessage(t('Course is scheduled to be published @date',array('@date' => $publish_date_message)));
+	
+	}
+	
+	
 	// New unpublish date is current + 2 weeks in format 2020-02-12
-	$new_unpublish_date = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d")+$days, date("Y")));
+	$new_unpublish_date = date("Y-m-d", $unpublish_timestamp);
+	
 	$new_unpublish_compare_date = new DateTime($new_unpublish_date);			
 
 
@@ -456,7 +478,15 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
 		// Set new unpublish date
 		$entity->field_course_unpublish_date->value = $new_unpublish_date;
 		 \Drupal::logger('finnishcourses_base')->notice('node ' . $nid . ' published. New unpublish date is ' . $new_unpublish_date . ', Organizations week cycle is: ' . $days / 7 . ', Original course start date is: ' . $original_course_start_date);
+	
+		$unpublish_date_message = date("d.m.Y - H:i", $unpublish_timestamp);
+	
+	\Drupal::messenger()->addMessage(t('Course is scheduled to be unpublished @date',array('@date' => $unpublish_date_message)));
+	//dsm($new_unpublish_date);
+	
 	}
+	
+	
 
 	 
     if (empty($entity->get('field_course_id')->getValue())) {
@@ -842,18 +872,23 @@ function finnishcourses_base_form_views_exposed_form_alter(&$form, FormStateInte
 
     $form['sort_bef_combine']['#weight'] = 99;
 	
+	// $form['sort_bef_combine']['#sort_options'] = FALSE;
+    // $form['sort_bef_combine'] ['#sort_start'] = 1;
+	
+	
+	
 	 $form['sort_bef_combine']['#options']['field_course_start_date_ASC'] = t('First starting date');
 	 $form['sort_bef_combine']['#options']['field_course_start_date_DESC'] = t('Last starting date');
 	 $form['sort_bef_combine']['#options']['field_course_end_date_ASC'] = t('First ending date');
 	 $form['sort_bef_combine']['#options']['field_course_end_date_DESC'] = t('Last ending date');
-	 $form['sort_bef_combine']['#options']['field_course_fee_ASC'] = t('Lowest price');
-	 $form['sort_bef_combine']['#options']['field_course_fee_DESC'] = t('Highest price');
 	 $form['sort_bef_combine']['#options']['field_starting_level_ASC'] = t('Lowest starting level');
 	 $form['sort_bef_combine']['#options']['field_starting_level_DESC'] = t('Highest starting level');
 	 $form['sort_bef_combine']['#options']['field_target_level_ASC'] = t('Lowest target level');
 	 $form['sort_bef_combine']['#options']['field_target_level_DESC'] = t('Highest target level');
+	 $form['sort_bef_combine']['#options']['field_course_fee_ASC'] = t('Lowest price');
+	 $form['sort_bef_combine']['#options']['field_course_fee_DESC'] = t('Highest price');
 	 
-	
+	//dsm($form['sort_bef_combine']);
 
     $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
 	

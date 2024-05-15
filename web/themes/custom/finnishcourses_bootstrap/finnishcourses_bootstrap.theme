@@ -57,6 +57,9 @@ function finnishcourses_bootstrap_preprocess_node(&$variables) {
 	  $organization_trans = \Drupal::service('entity.repository')->getTranslationFromContext($organization, $curr_langcode);
       $organizationName = $organization_trans->getName();
       $locationText = $organizationName;
+	  
+	  
+	  
     }
 
     if (!$node->get('field_course_street_address')->isEmpty()) {
@@ -78,6 +81,7 @@ function finnishcourses_bootstrap_preprocess_node(&$variables) {
     }
     //kint($courseLocation);
 
+	$variables['organization_name'] = $organizationName;
     $variables['course_location'] = $courseLocation;
     $variables['course_town'] = $townName;
 

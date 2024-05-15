@@ -1,7 +1,7 @@
 
 
 
-form.node-course-edit-form.not-admin layout-region--node-secondary {
+form.node-course-edit-form.not-admin .layout-region--node-secondary {
 	display: none;
 }
 

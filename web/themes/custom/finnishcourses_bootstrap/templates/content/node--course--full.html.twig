@@ -98,9 +98,22 @@
     <div class="group-wrapper">
 	
 	
+{#	{{ node.field_course_organization.entity.activeLangcode }}
+	
+	{{ content.field_course_organization }} otto
+	
+	{{ dump(node.field_course_organization.entity) }}
+	
+	{{ dump( node.field_course_organization.entity.name.value ) }}
+	
+	#}
 	
 	
+	{{ dump( node ) }}
 	
+
+	
+	{{ node.title.value }}
     
     {% if node.field_online_course.value %}
      <div class="location-header online-course">
