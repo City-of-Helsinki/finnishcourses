@@ -10,8 +10,7 @@ id: taxonomy_term.organizations.field_locations_towns
 field_name: field_locations_towns
 entity_type: taxonomy_term
 bundle: organizations
-label: 'Towns of locations'
-description: ''
+label: 'Kursorternas kommuner'
 required: false
 translatable: false
 default_value: {  }

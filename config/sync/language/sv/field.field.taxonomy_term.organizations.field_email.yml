@@ -9,8 +9,7 @@ id: taxonomy_term.organizations.field_email
 field_name: field_email
 entity_type: taxonomy_term
 bundle: organizations
-label: Email
-description: ''
+label: E-post
 required: false
 translatable: false
 default_value: {  }

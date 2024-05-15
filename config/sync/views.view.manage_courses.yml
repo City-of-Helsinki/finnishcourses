@@ -1137,6 +1137,52 @@ display:
             operator: ''
             operator_limit_selection: false
             operator_list: {  }
+        field_organizers_course_id_value:
+          id: field_organizers_course_id_value
+          table: node__field_organizers_course_id
+          field: field_organizers_course_id_value
+          relationship: reverse__node__field_course_organization
+          group_type: group
+          admin_label: ''
+          plugin_id: string
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_organizers_course_id_value_op
+            label: 'Kurssin tunnus'
+            description: ''
+            use_operator: false
+            operator: field_organizers_course_id_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_organizers_course_id_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              course_editor: '0'
+              organization_admin: '0'
+              infofinland_user: '0'
+              rest_api: '0'
+              testing: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         field_course_id_value:
           id: field_course_id_value
           table: node__field_course_id

@@ -1,12 +1,9 @@
 third_party_settings:
   field_group:
-    group_course_dates:
-      label: 'Kurssin ajankohta'
-    group_course_additional_informat:
-      label: 'Kurssin lisätiedot'
-    group_course_location:
-      label: Kurssipaikka
-    group_registration_details:
-      label: Ilmoittautumistiedot
-    group_course_basic_details:
-      label: 'Kurssin perusominaisuudet'
+    group_course_dates: {  }
+    group_course_additional_informat: {  }
+    group_course_location: {  }
+    group_registration_details: {  }
+    group_course_basic_details: {  }
+    group_course_publish_settings:
+      label: 'Kurssin julkaisuasetukset'

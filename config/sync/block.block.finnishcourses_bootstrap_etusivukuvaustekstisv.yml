@@ -1,9 +1,9 @@
-uuid: b0d0ef30-c00e-4377-9990-5dc7dbfc430f
-langcode: en
+uuid: dc4babb9-f104-4dea-ad27-6feadf9eb850
+langcode: fi
 status: true
 dependencies:
   content:
-    - 'block_content:basic:49e737e8-008d-4e0c-8e4c-d547bc8c8524'
+    - 'block_content:basic:ddc77730-954d-4b40-98e8-b871ddb2d8fb'
   module:
     - block_content
     - block_visibility_groups
@@ -11,15 +11,15 @@ dependencies:
     - system
   theme:
     - finnishcourses_bootstrap
-id: ehdotustekstiksien
+id: finnishcourses_bootstrap_etusivukuvaustekstisv
 theme: finnishcourses_bootstrap
 region: content
-weight: -11
+weight: -10
 provider: null
-plugin: 'block_content:49e737e8-008d-4e0c-8e4c-d547bc8c8524'
+plugin: 'block_content:ddc77730-954d-4b40-98e8-b871ddb2d8fb'
 settings:
-  id: 'block_content:49e737e8-008d-4e0c-8e4c-d547bc8c8524'
-  label: 'Ehdotus tekstiksi (en)'
+  id: 'block_content:ddc77730-954d-4b40-98e8-b871ddb2d8fb'
+  label: 'Etusivu kuvausteksti (sv)'
   label_display: '0'
   provider: block_content
   status: true
@@ -29,7 +29,6 @@ visibility:
   condition_group:
     id: condition_group
     negate: false
-    context_mapping: {  }
     block_visibility_group: ''
   language:
     id: language
@@ -37,9 +36,8 @@ visibility:
     context_mapping:
       language: '@language.current_language_context:language_interface'
     langcodes:
-      en: en
+      sv: sv
   request_path:
     id: request_path
     negate: false
-    context_mapping: {  }
     pages: '<front>'

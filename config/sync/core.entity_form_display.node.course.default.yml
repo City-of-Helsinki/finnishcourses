@@ -53,11 +53,10 @@ third_party_settings:
       children:
         - field_course_start_date
         - field_course_end_date
-        - field_course_unpublish_date
       label: 'Kurssin ajankohta'
       region: content
       parent_name: group_course_basic_details
-      weight: 13
+      weight: 12
       format_type: fieldset
       format_settings:
         classes: ''
@@ -70,7 +69,7 @@ third_party_settings:
       label: 'Kurssin lisätiedot'
       region: content
       parent_name: ''
-      weight: 12
+      weight: 11
       format_type: details
       format_settings:
         classes: ''
@@ -85,7 +84,7 @@ third_party_settings:
       label: Kurssipaikka
       region: content
       parent_name: group_course_basic_details
-      weight: 17
+      weight: 16
       format_type: fieldset
       format_settings:
         classes: ''
@@ -101,7 +100,7 @@ third_party_settings:
       label: Ilmoittautumistiedot
       region: content
       parent_name: group_course_basic_details
-      weight: 14
+      weight: 13
       format_type: fieldset
       format_settings:
         classes: ''
@@ -135,13 +134,29 @@ third_party_settings:
       label: 'Kurssin perusominaisuudet'
       region: content
       parent_name: ''
-      weight: 11
+      weight: 10
       format_type: fieldset
       format_settings:
         classes: ''
         id: ''
         description: ''
         required_fields: true
+    group_course_publish_settings:
+      children:
+        - publish_on
+        - field_course_unpublish_date
+        - status
+      label: 'Course publish settings'
+      region: content
+      parent_name: ''
+      weight: 12
+      format_type: fieldset
+      format_settings:
+        classes: publish-settings
+        show_empty_fields: false
+        id: publish-settings
+        description: ''
+        required_fields: false
 id: node.course.default
 targetEntityType: node
 bundle: course
@@ -155,7 +170,7 @@ content:
     third_party_settings: {  }
   field_ask_exact_times:
     type: boolean_checkbox
-    weight: 21
+    weight: 20
     region: content
     settings:
       display_label: true
@@ -255,14 +270,14 @@ content:
     third_party_settings: {  }
   field_course_fee:
     type: number
-    weight: 18
+    weight: 17
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_course_id:
     type: string_textfield
-    weight: 22
+    weight: 21
     region: content
     settings:
       size: 60
@@ -408,7 +423,7 @@ content:
             selector: ''
   field_course_times_of_day:
     type: options_buttons
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -453,27 +468,27 @@ content:
             selector: ''
   field_course_unpublish_date:
     type: datetime_default
-    weight: 27
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }
   field_course_week_hours:
     type: office_hours_default
-    weight: 20
+    weight: 19
     region: content
     settings:
       collapsed: false
     third_party_settings: {  }
   field_discount_eligibility:
     type: boolean_checkbox
-    weight: 19
+    weight: 18
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_map_link:
     type: link_default
-    weight: 30
+    weight: 31
     region: content
     settings:
       placeholder_url: ''
@@ -498,7 +513,7 @@ content:
             selector: ''
   field_meta_tags:
     type: metatag_firehose
-    weight: 15
+    weight: 16
     region: content
     settings:
       sidebar: true
@@ -520,7 +535,7 @@ content:
     third_party_settings: {  }
   field_organizers_course_id:
     type: string_textfield
-    weight: 23
+    weight: 22
     region: content
     settings:
       size: 60
@@ -534,7 +549,7 @@ content:
     third_party_settings: {  }
   field_registration_link:
     type: link_default
-    weight: 38
+    weight: 39
     region: content
     settings:
       placeholder_url: ''
@@ -548,13 +563,13 @@ content:
     third_party_settings: {  }
   field_starting_level:
     type: options_select
-    weight: 15
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   field_target_level:
     type: options_select
-    weight: 16
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -580,7 +595,7 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 8
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -590,13 +605,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   simple_sitemap:
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 13
+    weight: 24
     region: content
     settings:
       display_label: true
@@ -631,15 +646,10 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  unpublish_on:
-    type: datetime_timestamp_no_default
-    weight: 9
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   url_redirects:
-    weight: 10
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  unpublish_on: true

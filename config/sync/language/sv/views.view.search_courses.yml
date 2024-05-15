@@ -41,8 +41,6 @@ display:
             format: basic_html
       filters:
         field_starting_level:
-          expose:
-            description: ''
           group_info:
             label: 'Hur bra är dina finskakunskaper i dagsläget?'
             group_items:
@@ -56,10 +54,6 @@ display:
                 title: 'Den högsta nivån (C)'
         field_course_fee:
           expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
             label: Kursavgiften
           group_info:
             label: 'Pris (€)'
@@ -68,17 +62,12 @@ display:
                 title: 'Över 150 €'
         field_course_start_date:
           group_info:
-            description: ''
             label: 'Kursens startdatum'
           admin_label: Starttid
           expose:
             label: Starttid
         field_online_course:
           expose:
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
             label: Webbkurs
           group_info:
             label: Webbkurs

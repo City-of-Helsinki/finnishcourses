@@ -1697,7 +1697,7 @@ display:
               plugin_id: default
               advanced:
                 combine: true
-                combine_rewrite: "Starting date Asc|First starting date\r\nStarting date Desc|Last starting date\r\nEnding date Asc|First ending date\r\nEnding date Desc|Last ending date\r\nPrice Asc|Lowest price\r\nPrice Desc|Highest price\r\nStarting level Asc|Lowest starting level\r\nStarting level Desc|Highest starting level\r\nTarget level Asc|Lowest target level\r\nTarget level Desc|Highest target level"
+                combine_rewrite: "Starting date Asc|First starting date\r\nStarting date Desc|Last starting date\r\nEnding date Asc|First ending date\r\nEnding date Desc|Last ending date\r\nStarting level Asc|Lowest starting level\r\nStarting level Desc|Highest starting level\r\nTarget level Asc|Lowest target level\r\nTarget level Desc|Highest target level\r\nPrice Asc|Lowest price\r\nPrice Desc|Highest price"
                 reset: false
                 reset_label: ''
                 collapsible: false
@@ -1904,19 +1904,6 @@ display:
             label: 'Course end date'
             field_identifier: field_course_end_date
           exposed: true
-        field_course_fee:
-          id: field_course_fee
-          table: search_api_index_courses_index
-          field: field_course_fee
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: search_api
-          order: ASC
-          expose:
-            label: Price
-            field_identifier: field_course_fee
-          exposed: true
         field_starting_level:
           id: field_starting_level
           table: search_api_index_courses_index
@@ -1942,6 +1929,19 @@ display:
           expose:
             label: 'Target level'
             field_identifier: field_target_level
+          exposed: true
+        field_course_fee:
+          id: field_course_fee
+          table: search_api_index_courses_index
+          field: field_course_fee
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: Price
+            field_identifier: field_course_fee
           exposed: true
       arguments: {  }
       filters:
@@ -2683,6 +2683,7 @@ display:
         - 'config:field.storage.node.field_starting_level'
         - 'config:field.storage.node.field_target_level'
         - 'config:search_api.index.courses_index'
+        - 'search_api_list:courses_index'
   page_1:
     id: page_1
     display_title: Page
@@ -2724,6 +2725,7 @@ display:
         - 'config:field.storage.node.field_starting_level'
         - 'config:field.storage.node.field_target_level'
         - 'config:search_api.index.courses_index'
+        - 'search_api_list:courses_index'
   page_2:
     id: page_2
     display_title: 'Swedish courses page'
@@ -2912,6 +2914,7 @@ display:
         - 'config:field.storage.node.field_starting_level'
         - 'config:field.storage.node.field_target_level'
         - 'config:search_api.index.courses_index'
+        - 'search_api_list:courses_index'
   page_3:
     id: page_3
     display_title: 'YKI courses page'
@@ -3111,3 +3114,4 @@ display:
         - 'config:field.storage.node.field_starting_level'
         - 'config:field.storage.node.field_target_level'
         - 'config:search_api.index.courses_index'
+        - 'search_api_list:courses_index'

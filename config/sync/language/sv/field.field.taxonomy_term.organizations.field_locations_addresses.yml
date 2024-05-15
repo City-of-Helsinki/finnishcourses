@@ -10,8 +10,7 @@ id: taxonomy_term.organizations.field_locations_addresses
 field_name: field_locations_addresses
 entity_type: taxonomy_term
 bundle: organizations
-label: 'Addresses of locations'
-description: ''
+label: 'Adresser till platser'
 required: false
 translatable: false
 default_value: {  }

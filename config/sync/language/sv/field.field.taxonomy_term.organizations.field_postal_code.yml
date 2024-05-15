@@ -9,8 +9,7 @@ id: taxonomy_term.organizations.field_postal_code
 field_name: field_postal_code
 entity_type: taxonomy_term
 bundle: organizations
-label: 'Postal code'
-description: ''
+label: Postnummer
 required: false
 translatable: false
 default_value: {  }

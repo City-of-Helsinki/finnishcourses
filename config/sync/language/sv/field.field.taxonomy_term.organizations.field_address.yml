@@ -9,8 +9,7 @@ id: taxonomy_term.organizations.field_address
 field_name: field_address
 entity_type: taxonomy_term
 bundle: organizations
-label: Address
-description: ''
+label: Gatuadress
 required: false
 translatable: true
 default_value: {  }
