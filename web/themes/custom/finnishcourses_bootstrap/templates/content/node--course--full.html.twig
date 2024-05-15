@@ -123,16 +123,6 @@ _paq.push(['trackPageView']);
 	
 	
 	
-	{% if node.field_online_and_traditional.value == '1' %}
-		<div class="online-and-traditional">
-			{{ node.field_online_and_traditional.fieldDefinition.label }}
-		</div>
-	{% endif %}   
-	
-	
-	   
-	
-	
       <h2>{% trans %}Course information{% endtrans %}</h2>
 
 
@@ -154,7 +144,12 @@ _paq.push(['trackPageView']);
           <div class="field__label">{% trans %}Location{% endtrans %}</div>
           <div class="field__item"><span>{% trans %}Online course{% endtrans %}</span>, {{ node.field_course_organization.entity.name.value }}</div>
         </div>
-      {% endif %}								  		 
+      {% endif %}	
+{% if node.field_online_and_traditional.value == '1' %}
+		<div class="online-and-traditional">
+			{% trans %}Part of the course's teaching is face-to-face teaching and part is distance teaching.{% endtrans %}
+		</div>
+	{% endif %}	  
       {{ content.field_course_fee }}
 	  {% if node.field_discount_eligibility.value %}
         <div class="discount-eligibility">
@@ -189,6 +184,8 @@ _paq.push(['trackPageView']);
       <h2>{% trans %}Training provider{% endtrans %}</h2>
       {{ content.field_course_organization }}
     </div>
+	
+
 
     <div class="course-registration">
       <h2>{% trans %}Registration{% endtrans %}</h2>

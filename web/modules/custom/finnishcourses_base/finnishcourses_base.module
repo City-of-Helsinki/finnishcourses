@@ -477,6 +477,9 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
 	if (isset($entity->original) && $course_editor && isset($new_unpublish_date) && $entity->original->get('status')->value == 0 && ($entity->get('status')->value == 1 || isset($entity->publish_on->value)) && $new_unpublish_compare_date >  $course_start_date) {
 		// Set new unpublish date
 		$entity->field_course_unpublish_date->value = $new_unpublish_date;
+		
+		//$entity->set('field_course_unpublish_date', $new_unpublish_date);
+		
 		 \Drupal::logger('finnishcourses_base')->notice('node ' . $nid . ' published. New unpublish date is ' . $new_unpublish_date . ', Organizations week cycle is: ' . $days / 7 . ', Original course start date is: ' . $original_course_start_date);
 	
 		$unpublish_date_message = date("d.m.Y - H:i", $unpublish_timestamp);
