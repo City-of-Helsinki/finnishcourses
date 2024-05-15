@@ -136,7 +136,7 @@
         "drupal/tvi": "2.0.0-alpha1",
         "drupal/twig_debugger": "^1.1",
         "drupal/ultimate_cron": "^2.0@alpha",
-        "drupal/upgrade_status": "4.0.0",
+        "drupal/upgrade_status": "4.3.1",
         "drupal/webform": "6.2.0-beta6",
         "drush/drush": "^12.0",
         "furf/jquery-ui-touch-punch": "dev-master",
