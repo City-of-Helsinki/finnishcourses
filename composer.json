@@ -81,7 +81,6 @@
         "drupal/bootstrap_sass": "5.0.10",
         "drupal/ckeditor": "^1.0",
         "drupal/ckeditor_youtube": "1.5",
-        "drupal/ckwordcount": "^2.0",
         "drupal/conditional_fields": "4.0.0-alpha3",
         "drupal/config_split": "1.9",
         "drupal/cookiehub": "^1.0",
