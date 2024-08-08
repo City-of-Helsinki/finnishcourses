@@ -1,0 +1,20 @@
+{
+    "name": "druidfi/iframe_cookie_consent",
+    "description": "Adds Ckeditor plugin which converts iframe embeds to support cookie consent",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Tuomas Välimaa (tvalimaa)",
+            "role": "Maintainer"
+        }
+    ],
+    "homepage": "https://github.com/druidfi/iframe_cookie_consent",
+    "require": {
+        "php": "^8.0",
+        "ext-dom": "*",
+        "ext-libxml": "*",
+        "drupal/core": "^9.5 || ^10.0",
+        "masterminds/html5": "^2.7"
+    }
+}

@@ -1,0 +1,5 @@
+name: Iframe Cookie Consent
+description: Hide and show content based on the visitor's consent
+type: module
+package: Custom
+core_version_requirement: ^9.5 || ^10
