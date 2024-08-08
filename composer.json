@@ -109,6 +109,7 @@
         "drupal/search_api": "1.29",
         "drupal/select_or_other": "^4.1",
         "drupal/sendgrid_integration": "2.2",
+        "drupal/simple_popup_blocks": "^3.1",
         "drupal/simple_sitemap": "4.1.4",
         "drupal/single_datetime": "2.0.0-beta1",
         "drupal/spamspan": "3.1.3",

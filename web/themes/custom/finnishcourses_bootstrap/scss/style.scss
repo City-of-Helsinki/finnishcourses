@@ -1161,3 +1161,45 @@ h1, h2, h3, .fieldset-legend {
 	}
 }
 
+
+.spb-popup-main-wrapper {
+    position: fixed;
+    padding: 5px;
+    border: 0;
+    z-index: 999999;
+    background-color: #fff;
+}
+
+
+.spb-controls {
+
+	background: #0073cf;
+	color: #fff;
+	width: 390px;
+}
+
+.spb_close {
+    border: 0;
+    cursor: pointer;
+    float: right;
+    margin: 6px;
+    padding: 0 10px;
+    color: #0073cf;
+    background: #fff;
+}
+
+#kysely {
+	//display: none;
+}
+
+#kysely .content {
+	margin: 50px 10px 10px 10px;
+	}
+
+#kysely a.btn-primary {
+	display: block;
+    width: 277px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+}					 
