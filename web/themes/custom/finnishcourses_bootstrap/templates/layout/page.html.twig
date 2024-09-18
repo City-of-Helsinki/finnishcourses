@@ -132,6 +132,20 @@
     {% endblock %}
 </div>
 
+
+{% if show_form %} 
+	<div id="kysely-{{ popup_form_language_id}}" class="popup-kysely">
+	<div class="content">
+	<p><strong>{{ 'Hello, help us develop the course search.'|trans }}</strong></p>
+	<p>{{ 'Your opinion is important to us!'|trans }}<br />{{ 'Take our survey – it will take about 3 minutes.'|trans }}</p>
+
+	<p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=wWvrPyLXJkeWbFtYtk33Unzg_3y5Y5RFs-bs6N_6X95URDlSMjkzUzJTRDdIUzlPNjVLV0lSQlJNSSQlQCN0PWcu&lang={{ popup_form_language_id}}" target="_blank" class="btn btn-primary">{{ 'Start now'|trans }}</a></p>
+	</div>
+	</div>
+{% endif %} 	
+
+
+
 {% block footer %}
     <div class="footer">
 		<div class="site-footer__top clearfix">

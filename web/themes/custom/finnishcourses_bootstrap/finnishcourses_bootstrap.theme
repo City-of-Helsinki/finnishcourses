@@ -57,6 +57,9 @@ function finnishcourses_bootstrap_preprocess_node(&$variables) {
 	  $organization_trans = \Drupal::service('entity.repository')->getTranslationFromContext($organization, $curr_langcode);
       $organizationName = $organization_trans->getName();
       $locationText = $organizationName;
+	  
+	  
+	  
     }
 
     if (!$node->get('field_course_street_address')->isEmpty()) {
@@ -173,6 +176,19 @@ function finnishcourses_bootstrap_preprocess_page(&$variables) {
   
   $language_id = Drupal::languageManager()->getCurrentLanguage()->getId();
   
+  
+  $popup_form_language_id = $language_id;
+  
+  if ($popup_form_language_id == 'en') {
+	  $popup_form_language_id = 'en-GB';
+	
+  }
+  
+  $variables['popup_form_language_id'] = array(
+    '#markup' => $popup_form_language_id,
+  );
+  
+  
   if ($language_id == 'ru') {
 	  $language_id = 'fi';
   }
@@ -181,7 +197,32 @@ function finnishcourses_bootstrap_preprocess_page(&$variables) {
     '#markup' => $language_id,
   );
   
- 
+
+	$variables['is_contact'] = FALSE;
+	 
+	if (isset($variables['node']) && $variables['node']->id() == '23') {
+		
+		$variables['is_contact'] = TRUE;
+	}
+	
+	$variables['show_form'] = TRUE;
+	
+	if (isset($variables['node']) && $variables['node']->id() == '4665') {
+		
+		$variables['show_form'] = FALSE;
+	}
+	
+	
+	if ($popup_form_language_id == 'en-GB') {
+	  $variables['show_form'] = FALSE;
+    }
+	
+	
+	
+
+
+
+
   
   
    // Iterate over all footer menus and merge them together.
