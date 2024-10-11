@@ -67,7 +67,7 @@
         "drupal/bootstrap_barrio": "5.1.10",
         "drupal/bootstrap_datepicker": "2.0.0",
         "drupal/bootstrap_sass": "5.0.10",
-        "drupal/conditional_fields": "4.0.0-alpha3",
+        "drupal/conditional_fields": "4.0.0-alpha4",
         "drupal/config_split": "1.9",
         "drupal/core": "10.2.5",
         "drupal/ctools": "3.14",
@@ -207,7 +207,12 @@
 			"drupal/autologout": {
 				"Warning: Undefined array key 1": "https://www.drupal.org/files/issues/2023-07-03/undefined-array-key.patch"
 				
+			},
+			"drupal/simple_popup_blocks": {
+				"Uncaught TypeError: $(...).once is not a function with Drupal 10": "https://www.drupal.org/files/issues/2023-08-22/once_deprecation-3350919-25.patch"
+				
 			}
+			
         },
         "drupal-scaffold": {
             "initial": {
