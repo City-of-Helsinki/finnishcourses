@@ -16,6 +16,32 @@ body {
   min-width: fit-content;
 }
 
+#main {
+	.field--name-body {
+
+		.placeholder {
+			width: 100%;
+			border: 1px solid #0073cf;
+			padding: 50px 50px;
+			margin-bottom: 15px;
+			font-size: 18px;
+			p {
+			
+			}
+			a {
+				display: block;
+				margin-top: 10px;
+			
+			}
+		
+		}
+		
+		iframe:not([src]) {
+		   display:none;
+		}
+	}
+}
+
 .node--type-course {
   #block-finnishcourses-bootstrap-content {
     max-width: 760px;
