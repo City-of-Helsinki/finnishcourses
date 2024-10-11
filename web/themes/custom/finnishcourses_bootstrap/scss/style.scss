@@ -1188,18 +1188,27 @@ h1, h2, h3, .fieldset-legend {
     background: #fff;
 }
 
-#kysely {
+.popup-kysely {
 	display: none;
 }
 
-#kysely .content {
+.simple-popup-blocks-global .popup-kysely {
+	display: block;
+}
+
+.popup-kysely .content {
 	margin: 50px 10px 10px 10px;
 	}
 
-#kysely a.btn-primary {
+.popup-kysely a.btn-primary {
 	display: block;
     width: 277px;
     margin: 0 auto;
     text-align: center;
     color: #fff;
-}					 
+}	
+
+.popup-kysely p:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
