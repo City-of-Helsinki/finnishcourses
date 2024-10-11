@@ -67,7 +67,7 @@
         "drupal/bootstrap_barrio": "5.1.10",
         "drupal/bootstrap_datepicker": "2.0.0",
         "drupal/bootstrap_sass": "5.0.10",
-        "drupal/conditional_fields": "4.0.0-alpha3",
+        "drupal/conditional_fields": "4.0.0-alpha4",
         "drupal/config_split": "1.9",
         "drupal/core": "10.2.5",
         "drupal/ctools": "3.14",
