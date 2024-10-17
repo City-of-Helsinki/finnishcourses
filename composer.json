@@ -54,7 +54,6 @@
     "require": {
         "php": ">=5.6",
         "bootstrap-datepicker/bootstrap-datepicker": "^1.9",
-        "ckeditor-youtube-plugin/ckeditor-youtube-plugin": "^2.1",
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
         "datetimepicker/datetimepicker": "^2.5",
@@ -69,7 +68,7 @@
         "drupal/bootstrap_sass": "5.0.10",
         "drupal/conditional_fields": "4.0.0-alpha4",
         "drupal/config_split": "1.9",
-        "drupal/core": "10.2.5",
+        "drupal/core": "10.2.10",
         "drupal/ctools": "3.14",
         "drupal/devel": "5.1.2",
         "drupal/devel_debug_log": "2.0.2",
