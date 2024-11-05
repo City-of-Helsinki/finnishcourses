@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a80c28a8a8b4a493528d1effd1749d8",
+    "content-hash": "153cd6bef90030181faf7b67933eccf0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1704,67 +1704,6 @@
                 "source": "https://git.drupalcode.org/project/advagg",
                 "issues": "https://drupal.org/project/issues/advagg",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
-            }
-        },
-        {
-            "name": "drupal/allowed_formats",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/allowed_formats.git",
-                "reference": "2.0.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/allowed_formats-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "ac6c6d398f303608ced7e9cd9d4556a728dc41f0"
-            },
-            "require": {
-                "drupal/core": "^9.2 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1669170410",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Northern Commerce (formerly Digital Echidna)",
-                    "homepage": "https://www.drupal.org/northern-commerce-formerly-digital-echidna",
-                    "role": "Supporting organization"
-                },
-                {
-                    "name": "Jordan Thompson (nord102)",
-                    "homepage": "https://www.drupal.org/u/nord102",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Wunder",
-                    "homepage": "https://www.drupal.org/wunder",
-                    "role": "Supporting organization"
-                },
-                {
-                    "name": "Florian Loretan (floretan)",
-                    "homepage": "https://www.drupal.org/u/floretan",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "Limit which text formats are available for each field instance.",
-            "homepage": "https://www.drupal.org/project/allowed_formats",
-            "support": {
-                "source": "http://cgit.drupalcode.org/allowed_formats",
-                "issues": "https://www.drupal.org/project/issues/allowed_formats"
             }
         },
         {
@@ -4172,54 +4111,6 @@
             }
         },
         {
-            "name": "drupal/link_attributes",
-            "version": "1.14.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/link_attributes.git",
-                "reference": "8.x-1.14"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/link_attributes-8.x-1.14.zip",
-                "reference": "8.x-1.14",
-                "shasum": "fa4f27ecaed7e6b3c58c0adc679918a9beb7ded5"
-            },
-            "require": {
-                "drupal/core": "^9 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.14",
-                    "datestamp": "1687393687",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "larowlan",
-                    "homepage": "https://www.drupal.org/user/395439"
-                }
-            ],
-            "description": "Provides a widget to allow settings of link attributes for menu links.",
-            "homepage": "https://www.drupal.org/project/link_attributes",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "https://git.drupalcode.org/project/link_attributes",
-                "issues": "https://www.drupal.org/project/issues/link_attributes"
-            }
-        },
-        {
             "name": "drupal/linkit",
             "version": "6.1.0",
             "source": {
@@ -4344,29 +4235,29 @@
         },
         {
             "name": "drupal/maxlength",
-            "version": "3.0.0-beta1",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/maxlength.git",
-                "reference": "3.0.0-beta1"
+                "reference": "3.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/maxlength-3.0.0-beta1.zip",
-                "reference": "3.0.0-beta1",
-                "shasum": "3881f6e72c02cff100c518be7c83f71cb3c42bf9"
+                "url": "https://ftp.drupal.org/files/projects/maxlength-3.1.0.zip",
+                "reference": "3.1.0",
+                "shasum": "48f5beb8c2242cb2557cf0706341b8bb01ebaff1"
             },
             "require": {
-                "drupal/core": "^10"
+                "drupal/core": "^10 || ^11"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.0-beta1",
-                    "datestamp": "1707234085",
+                    "version": "3.1.0",
+                    "datestamp": "1724334810",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -5658,27 +5549,27 @@
         },
         {
             "name": "drupal/simple_sitemap",
-            "version": "4.1.4",
+            "version": "4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/simple_sitemap.git",
-                "reference": "4.1.4"
+                "reference": "4.2.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/simple_sitemap-4.1.4.zip",
-                "reference": "4.1.4",
-                "shasum": "55986f9819c60216ad6401941ca4176a1e086c8b"
+                "url": "https://ftp.drupal.org/files/projects/simple_sitemap-4.2.1.zip",
+                "reference": "4.2.1",
+                "shasum": "d96b481571ca2fecdb305e87d2557f9338116864"
             },
             "require": {
-                "drupal/core": "^9.3 || ^10",
+                "drupal/core": "^10.2 || ^11",
                 "ext-xmlwriter": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.1.4",
-                    "datestamp": "1674226567",
+                    "version": "4.2.1",
+                    "datestamp": "1723802052",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5702,7 +5593,7 @@
                     "role": "Maintainer"
                 },
                 {
-                    "name": "WalkingDexter",
+                    "name": "walkingdexter",
                     "homepage": "https://www.drupal.org/user/3251330"
                 }
             ],
@@ -11788,7 +11679,6 @@
     "stability-flags": {
         "drupal/disable_language": 10,
         "drupal/inline_entity_form": 5,
-        "drupal/maxlength": 10,
         "drupal/pathologic": 20,
         "drupal/role_delegation": 15,
         "drupal/ultimate_cron": 15,
@@ -11803,5 +11693,5 @@
     "platform-overrides": {
         "php": "8.1.0"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
