@@ -743,9 +743,8 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 $settings['trusted_host_patterns'] = [
   '^finnishcourses\.test$',
   '^finnishcourses\.fi$',
-  '^phpstack-342940-1979446\.cloudwaysapps\.com$',
   '^finnishcourses.usability\.konsepto-asiakas\.fi$', 
-  '^phpstack-342940-4500743\.cloudwaysapps\.com$',
+  '^phpstack-342940-.+\.cloudwaysapps\.com$',
 ];
 
 /**
