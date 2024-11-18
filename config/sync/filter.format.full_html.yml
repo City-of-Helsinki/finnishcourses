@@ -4,7 +4,10 @@ status: true
 dependencies:
   module:
     - editor
+    - iframe_cookie_consent
     - linkit
+    - media
+    - pathologic
     - spamspan
 _core:
   default_config_hash: hewPmBgni9jlDK_IjLxUx1HsTbinK-hdl0lOwjbteIY
@@ -12,6 +15,12 @@ name: 'Full HTML'
 format: full_html
 weight: 1
 filters:
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: 11
+    settings: {  }
   filter_align:
     id: filter_align
     provider: filter
@@ -24,27 +33,38 @@ filters:
     status: true
     weight: 9
     settings: {  }
-  filter_htmlcorrector:
-    id: filter_htmlcorrector
-    provider: filter
-    status: true
-    weight: 10
-    settings: {  }
-  editor_file_reference:
-    id: editor_file_reference
-    provider: editor
-    status: true
-    weight: 11
-    settings: {  }
   filter_html:
     id: filter_html
     provider: filter
     status: false
     weight: -10
     settings:
-      allowed_html: '<a href hreflang data-entity-type data-entity-uuid data-entity-substitution> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-entity-substitution data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre>'
+      allowed_html: ''
       filter_html_help: true
       filter_html_nofollow: false
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: 12
+    settings: {  }
+  filter_pathologic:
+    id: filter_pathologic
+    provider: pathologic
+    status: false
+    weight: 50
+    settings:
+      settings_source: global
+      local_settings:
+        protocol_style: full
+        local_paths: ''
+        keep_language_prefix: true
   filter_spamspan:
     id: filter_spamspan
     provider: spamspan
@@ -59,6 +79,12 @@ filters:
       spamspan_form_pattern: '<a href="%url?goto=%email">%displaytext</a>'
       spamspan_form_default_url: contact
       spamspan_form_default_displaytext: 'contact form'
+  iframecookieconsent:
+    id: iframecookieconsent
+    provider: iframe_cookie_consent
+    status: true
+    weight: 0
+    settings: {  }
   linkit:
     id: linkit
     provider: linkit
@@ -66,9 +92,12 @@ filters:
     weight: -11
     settings:
       title: false
-  filter_image_lazy_load:
-    id: filter_image_lazy_load
-    provider: filter
+  media_embed:
+    id: media_embed
+    provider: media
     status: true
-    weight: 12
-    settings: {  }
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_view_modes: {  }
+      allowed_media_types: {  }

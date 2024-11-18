@@ -27,6 +27,7 @@ dependencies:
     - field.field.node.course.field_map_link
     - field.field.node.course.field_meta_tags
     - field.field.node.course.field_number_of_lessons
+    - field.field.node.course.field_online_and_traditional
     - field.field.node.course.field_online_course
     - field.field.node.course.field_organizers_course_id
     - field.field.node.course.field_registration_end_date
@@ -210,6 +211,7 @@ content:
       grouped: false
       show_closed: all
       closed_format: ''
+      all_day_format: 'All day open'
       separator:
         days: ''
         grouped_days: ' - '
@@ -220,6 +222,11 @@ content:
         position: ''
         open_text: 'Currently open!'
         closed_text: 'Currently closed'
+      exceptions:
+        title: 'Exception hours'
+        restrict_exceptions_to_num_days: 7
+        date_format: long
+        all_day_format: 'All day open'
       timezone_field: ''
       office_hours_first_day: '1'
       schema:
@@ -264,6 +271,16 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 6
+    region: content
+  field_online_and_traditional:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 30
     region: content
   field_online_course:
     type: boolean

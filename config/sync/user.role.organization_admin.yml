@@ -33,7 +33,7 @@ dependencies:
     - view_unpublished
 id: organization_admin
 label: 'Organization admin'
-weight: 4
+weight: -3
 is_admin: null
 permissions:
   - 'access files overview'
@@ -55,7 +55,6 @@ permissions:
   - 'create terms in course_features'
   - 'create terms in course_levels'
   - 'create terms in street_adresses'
-  - 'create terms in towns'
   - 'create url aliases'
   - 'create video media'
   - 'delete any course content'
@@ -70,7 +69,6 @@ permissions:
   - 'delete terms in organizations'
   - 'delete terms in street_adresses'
   - 'delete terms in tags'
-  - 'delete terms in towns'
   - 'edit any course content'
   - 'edit any page content'
   - 'edit own audio media'
@@ -84,7 +82,6 @@ permissions:
   - 'edit terms in organizations'
   - 'edit terms in street_adresses'
   - 'edit terms in tags'
-  - 'edit terms in towns'
   - 'revert course revisions'
   - 'revert page revisions'
   - 'schedule publishing of nodes'

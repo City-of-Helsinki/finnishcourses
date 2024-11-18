@@ -13,7 +13,6 @@ dependencies:
     - node.type.course
     - node.type.page
     - taxonomy.vocabulary.street_adresses
-    - taxonomy.vocabulary.towns
   module:
     - content_translation
     - file
@@ -29,7 +28,7 @@ dependencies:
     - view_unpublished
 id: course_editor
 label: 'Course editor'
-weight: 3
+weight: -7
 is_admin: null
 permissions:
   - 'access toolbar'
@@ -41,7 +40,6 @@ permissions:
   - 'create media'
   - 'create remote_video media'
   - 'create terms in street_adresses'
-  - 'create terms in towns'
   - 'create url aliases'
   - 'create video media'
   - 'delete media'

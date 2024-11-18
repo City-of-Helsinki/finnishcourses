@@ -183,7 +183,6 @@ display:
           title: ''
           default_argument_type: current_user
           default_argument_options: {  }
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -301,14 +300,15 @@ display:
         - user
         - user.permissions
       tags:
-        - 'config:core.entity_view_display.node.article.default'
-        - 'config:core.entity_view_display.node.article.rss'
-        - 'config:core.entity_view_display.node.article.search_index'
-        - 'config:core.entity_view_display.node.article.search_result'
-        - 'config:core.entity_view_display.node.article.teaser'
         - 'config:core.entity_view_display.node.course.default'
         - 'config:core.entity_view_display.node.course.search_index'
         - 'config:core.entity_view_display.node.course.teaser'
+        - 'config:core.entity_view_display.node.feedback.bottom_content'
+        - 'config:core.entity_view_display.node.feedback.default'
+        - 'config:core.entity_view_display.node.feedback.teaser'
+        - 'config:core.entity_view_display.node.front_page.default'
+        - 'config:core.entity_view_display.node.front_page.header_image'
+        - 'config:core.entity_view_display.node.front_page.teaser'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.search_index'
         - 'config:core.entity_view_display.node.page.search_result'
@@ -331,14 +331,15 @@ display:
         - user
         - user.permissions
       tags:
-        - 'config:core.entity_view_display.node.article.default'
-        - 'config:core.entity_view_display.node.article.rss'
-        - 'config:core.entity_view_display.node.article.search_index'
-        - 'config:core.entity_view_display.node.article.search_result'
-        - 'config:core.entity_view_display.node.article.teaser'
         - 'config:core.entity_view_display.node.course.default'
         - 'config:core.entity_view_display.node.course.search_index'
         - 'config:core.entity_view_display.node.course.teaser'
+        - 'config:core.entity_view_display.node.feedback.bottom_content'
+        - 'config:core.entity_view_display.node.feedback.default'
+        - 'config:core.entity_view_display.node.feedback.teaser'
+        - 'config:core.entity_view_display.node.front_page.default'
+        - 'config:core.entity_view_display.node.front_page.header_image'
+        - 'config:core.entity_view_display.node.front_page.teaser'
         - 'config:core.entity_view_display.node.page.default'
         - 'config:core.entity_view_display.node.page.search_index'
         - 'config:core.entity_view_display.node.page.search_result'

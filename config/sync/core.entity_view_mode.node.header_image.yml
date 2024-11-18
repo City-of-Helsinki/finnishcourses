@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.header_image
 label: 'Header image'
+description: ''
 targetEntityType: node
 cache: true

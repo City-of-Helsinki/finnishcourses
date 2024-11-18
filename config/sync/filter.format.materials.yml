@@ -3,6 +3,7 @@ langcode: fi
 status: true
 dependencies:
   module:
+    - pathologic
     - spamspan
 name: Materials
 format: materials
@@ -14,9 +15,20 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <p> <br> <span> <img src alt height width data-entity-type data-entity-uuid data-entity-substitution data-align data-caption> <a href hreflang !href accesskey id rel target title data-entity-type data-entity-uuid data-entity-substitution> <div> <iframe width height src frameborder allowfullscreen allow> <object> <param>'
+      allowed_html: '<br> <p> <strong> <em> <ul> <ol start> <li>'
       filter_html_help: true
       filter_html_nofollow: false
+  filter_pathologic:
+    id: filter_pathologic
+    provider: pathologic
+    status: false
+    weight: 50
+    settings:
+      settings_source: global
+      local_settings:
+        protocol_style: full
+        local_paths: ''
+        keep_language_prefix: true
   filter_spamspan:
     id: filter_spamspan
     provider: spamspan

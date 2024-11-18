@@ -4,23 +4,21 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_books_and_materials
+    - filter.format.materials
     - node.type.course
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - materials
 id: node.course.field_books_and_materials
 field_name: field_books_and_materials
 entity_type: node
 bundle: course
-label: 'Books and course materials'
+label: 'Kirjat ja materiaalit'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats:
+    - materials
 field_type: text_long

@@ -1,7 +1,12 @@
 uuid: 70eb50bf-dea3-4953-87eb-e660fa351b8d
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_trail_by_path
+third_party_settings:
+  menu_trail_by_path:
+    trail_source: ''
 id: foo
 label: 'Footer Second'
 description: ''

@@ -32,18 +32,25 @@ display:
         field_starting_level:
           expose:
             label: 'Исходный уровень'
+            description: ''
           group_info:
             group_items:
               1:
-                title: 'Только начинаю изучать язык'
+                title: 'Только начинаю изучать язык (0)'
               2:
-                title: 'Базовый уровень'
+                title: 'Базовый уровень (A)'
               3:
-                title: Продвинутый
+                title: 'Продвинутый (B)'
+              4:
+                title: 'Высший уровень (C)'
             label: 'Ваш уровень владения языком в настоящий момент?'
         field_course_fee:
           expose:
             label: 'Стоимость (€)'
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
           group_info:
             label: 'Стоимость (€)'
             group_items:
@@ -54,6 +61,7 @@ display:
         field_course_start_date:
           group_info:
             label: 'Курс начинается'
+            description: ''
           expose:
             label: 'Курс начинается'
         field_course_town:
@@ -62,6 +70,10 @@ display:
         field_online_course:
           expose:
             label: Онлайн-курс
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
         field_course_times_of_day:
           expose:
             label: Время
@@ -116,3 +128,6 @@ display:
     display_title: 'Kурсы шведского языка'
     display_options:
       title: 'Kурсы шведского языка'
+  page_3:
+    display_options:
+      title: 'Курсы подготовки к экзамену YKI'

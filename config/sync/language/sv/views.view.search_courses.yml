@@ -52,9 +52,15 @@ display:
                 title: 'Medelnivå (B)'
               4:
                 title: 'Den högsta nivån (C)'
+          expose:
+            description: ''
         field_course_fee:
           expose:
             label: Kursavgiften
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
           group_info:
             label: 'Pris (€)'
             group_items:
@@ -63,12 +69,17 @@ display:
         field_course_start_date:
           group_info:
             label: 'Kursens startdatum'
+            description: ''
           admin_label: Starttid
           expose:
             label: Starttid
         field_online_course:
           expose:
             label: Webbkurs
+            description: ''
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
           group_info:
             label: Webbkurs
         field_course_town:
@@ -92,10 +103,16 @@ display:
             label: Sluttid
       header:
         result:
-          content: 'Sökkriterier hittades @total kurs(er)'
+          content: 'Med sökkriterierna hittades @total kurs(er)'
   page_1:
     display_options:
       display_extenders:
         metatag_display_extender:
           metatags:
             title: 'Sök kurser i finska | Finnishcourses'
+  page_2:
+    display_options:
+      title: 'Kurser i svenska'
+  page_3:
+    display_options:
+      title: 'Kurser för allmän språkexamen (YKI)'

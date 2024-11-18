@@ -1,0 +1,21 @@
+uuid: f6285854-d8e9-4922-99f1-77a4971bd657
+langcode: fi
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_online_and_traditional
+    - node.type.course
+id: node.course.field_online_and_traditional
+field_name: field_online_and_traditional
+entity_type: node
+bundle: course
+label: 'Kurssilla on lähiopetusta ja etäopetusta'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean

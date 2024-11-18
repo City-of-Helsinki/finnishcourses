@@ -57,66 +57,62 @@
         "composer/installers": "^1.2",
         "cweagans/composer-patches": "^1.6.5",
         "datetimepicker/datetimepicker": "^2.5",
-        "drupal/admin_toolbar": "3.4.1",
-        "drupal/advagg": "6.0.0-alpha1",
-        "drupal/autologout": "1.4",
-        "drupal/better_exposed_filters": "6.0.3",
-        "drupal/block_visibility_groups": "2.0.1",
-        "drupal/bootstrap_barrio": "5.1.10",
+        "drupal/admin_toolbar": "3.5.1",
+        "drupal/allowed_formats": "^3.0",
+        "drupal/autologout": "2.0.0",
+        "drupal/better_exposed_filters": "7.0.2",
+        "drupal/block_visibility_groups": "2.0.3",
+        "drupal/bootstrap_barrio": "5.1.12",
         "drupal/bootstrap_datepicker": "2.0.0",
-        "drupal/bootstrap_sass": "5.0.10",
-        "drupal/conditional_fields": "4.0.0-alpha4",
-        "drupal/config_split": "1.9",
-        "drupal/core": "10.2.10",
-        "drupal/ctools": "3.14",
-        "drupal/devel": "5.1.2",
-        "drupal/devel_debug_log": "2.0.2",
-        "drupal/disable_language": "^1.0@beta",
-        "drupal/entity_browser": "2.9",
-        "drupal/entity_clone": "2.0.0-beta2",
-        "drupal/field_group": "3.4",
-        "drupal/file_mdm": "3.0.0",
-        "drupal/filelog": "2.1.1",
-        "drupal/flood_control": "2.3.2",
+        "drupal/conditional_fields": "4.0.0-alpha5",
+        "drupal/config_split": "2.0.1",
+        "drupal/core": "10.3.8",
+        "drupal/ctools": "4.1.0",
+        "drupal/devel": "5.3.1",
+        "drupal/entity_browser": "2.12",
+        "drupal/field_group": "4.0.0-alpha1",
+        "drupal/file_mdm": "3.1.0",
+        "drupal/filelog": "3.0.0",
+        "drupal/flood_control": "3.0.0",
         "drupal/force_password_change": "^2.0",
-        "drupal/geolocation": "3.12",
-        "drupal/google_tag": "1.6",
-        "drupal/honeypot": "^2.0.2",
-        "drupal/image_effects": "3.5",
-        "drupal/inline_entity_form": "^1.0@RC",
+        "drupal/geolocation": "4.0.0-alpha7",
+        "drupal/google_tag": "2.0.6",
+        "drupal/honeypot": "^2.2.0",
+        "drupal/image_effects": "4.0.0-rc3",
         "drupal/jquery_ui_touch_punch": "^1.0",
-        "drupal/linkit": "6.1.0",
+        "drupal/js_cookie": "^1.0",
+        "drupal/linkit": "7.0.0-alpha2",
         "drupal/maxlength": "^3.1.0",
         "drupal/menu_admin_per_menu": "^1.0",
         "drupal/menu_block": "^1.5",
-        "drupal/menu_trail_by_path": "2.0.1",
-        "drupal/metatag": "^1.8",
-        "drupal/office_hours": "1.11",
+        "drupal/menu_trail_by_path": "2.1.0",
+        "drupal/metatag": "^2.1.0",
+        "drupal/office_hours": "1.19",
         "drupal/pathauto": "1.13",
-        "drupal/pathologic": "^2.0@dev",
-        "drupal/permissions_filter": "^1.0",
-        "drupal/quick_node_clone": "1.16",
+        "drupal/quick_node_clone": "1.19",
         "drupal/recaptcha": "^3.1",
-        "drupal/recaptcha_v3": "^1.7",
+        "drupal/recaptcha_v3": "^2.0.3",
         "drupal/redirect": "^1.3",
+        "drupal/redirect_after_login": "^3.0",
         "drupal/redis": "^1.1",
         "drupal/restui": "^1.17",
         "drupal/role_delegation": "^1.0@alpha",
-        "drupal/scheduler": "^1.0",
-        "drupal/search_api": "1.29",
-        "drupal/select_or_other": "^4.1",
-        "drupal/sendgrid_integration": "2.2",
-        "drupal/simple_popup_blocks": "^3.1",
+        "drupal/scheduler": "^2.1.0",
+        "drupal/search_api": "1.35",
+        "drupal/select_or_other": "4.x-dev@dev",
+        "drupal/sendgrid_integration": "2.3",
+        "drupal/simple_popup_blocks": "^3.4",
         "drupal/simple_sitemap": "4.2.1",
-        "drupal/single_datetime": "2.0.0-beta1",
-        "drupal/spamspan": "3.1.3",
-        "drupal/time_range": "2.0.1",
+        "drupal/single_datetime": "2.0.0-beta2",
+        "drupal/spamspan": "3.2.0",
+        "drupal/time_range": "9.0.3",
         "drupal/token": "^1.5",
-        "drupal/tvi": "2.0.0-alpha1",
+        "drupal/tvi": "2.0.0",
         "drupal/twig_debugger": "^1.1",
         "drupal/ultimate_cron": "^2.0@alpha",
         "drupal/upgrade_status": "4.3.1",
-        "drupal/webform": "6.2.0-beta6",
+        "drupal/view_unpublished": "^1.3",
+        "drupal/webform": "6.3.x-dev@dev",
         "drush/drush": "^12.0",
         "furf/jquery-ui-touch-punch": "dev-master",
         "platformsh/config-reader": "^2.2",
@@ -143,7 +139,7 @@
             "zaporylie/composer-drupal-optimizations": true
         },
         "platform": {
-            "php": "8.1.0"
+            "php": "8.3.0"
         }
     },
     "autoload": {
@@ -182,7 +178,7 @@
         "patches": {
             "drupal/core": {
                 "Grouped exposed filters do not work like they should": "https://www.drupal.org/files/issues/1810148-58.patch",
-				"If you dont want to translate your URL alias the original URL alias wont work with your translations": "https://www.drupal.org/files/issues/2024-02-21/2689459-188.patch",
+				"If you dont want to translate your URL alias the original URL alias wont work with your translations": "https://www.drupal.org/files/issues/2024-06-26/2689459_d10.3.0.patch",
 				"Entity view/form mode formatter/widget settings have no translation UI Action patch": "https://www.drupal.org/files/issues/2020-12-04/2546212-168-actions.patch",
 				"Entity view/form mode formatter/widget settings have no translation UI": "https://www.drupal.org/files/issues/2020-12-04/2546212-168.patch",
 				"PHP Notice: Undefined index: type in claro_preprocess_input()": "https://www.drupal.org/files/issues/2020-06-02/preprocess-input-notice-3144876-6.patch",
@@ -202,14 +198,21 @@
 				"Automated Drupal 10 patch": "https://www.drupal.org/files/issues/2022-06-16/shortcutperrole.2.0.x-dev.rector.patch"
 			},
 			"drupal/autologout": {
-				"Warning: Undefined array key 1": "https://www.drupal.org/files/issues/2023-07-03/undefined-array-key.patch"
-				
+				"Warning: Undefined array key 1": "https://www.drupal.org/files/issues/2024-06-18/autologout_3372010-29.patch"
 			},
-			"drupal/simple_popup_blocks": {
-				"Uncaught TypeError: $(...).once is not a function with Drupal 10": "https://www.drupal.org/files/issues/2023-08-22/once_deprecation-3350919-25.patch"
-				
+			"drupal/redirect_after_login": {
+				"Drupal 11 compatibility": "https://www.drupal.org/files/issues/2024-07-22/redirect_after_login-3462725.patch"
+			},
+			"drupal/filelog": {
+				"Drupal 11 compatibility": "https://www.drupal.org/files/issues/2024-07-28/filelog.3.0.x-dev.rector.patch"
+			},
+			"drupal/conditional_fields": {
+				"Automated Drupal 11 compatibility fixes for conditional_fields": "https://www.drupal.org/files/issues/2024-08-26/drupal-11-compatibility-3428532-12.patch"
+			},
+			"drupal/select_or_other": {
+				"Automated Drupal 11 compatibility fixes for select_or_other": "https://www.drupal.org/files/issues/2024-05-30/select_or_other.4.x-dev.rector.patch"
 			}
-			
+
         },
         "drupal-scaffold": {
             "initial": {

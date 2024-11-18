@@ -13,7 +13,7 @@ elements: |
   message:
     '#title': Meddelande
   contact_information:
-    '#markup': "<h2>Kontaktinformation</h2>\r\n\r\n<p>Om du vill ha ett svar på din respons, lämna dina kontaktuppgifter.</p>"
+    '#markup': '<h2>Kontaktinformation</h2><p>Om du vill ha ett svar på din respons, lämna dina kontaktuppgifter.</p>'
   name_pseudonym:
     '#title': Namn/signatur
   email_address:
@@ -22,3 +22,5 @@ handlers:
   email:
     settings:
       body: '<p>_default</p>'
+settings:
+  confirmation_message: '<p><span style="-webkit-text-stroke-width:0px;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);display:inline !important;float:none;font-family:&quot;Noto Sans&quot;, &quot;Noto Sans Arabic&quot;, &quot;Noto Sans Chinese&quot;, sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;letter-spacing:normal;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;">Tack för din respons!</span></p>'

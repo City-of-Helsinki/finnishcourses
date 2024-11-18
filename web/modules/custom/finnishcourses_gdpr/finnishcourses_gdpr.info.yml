@@ -2,4 +2,4 @@ name: 'Finnishcourses GDPR'
 type: module
 description: 'Create additional log lines'
 package: 'Finnishcourses custom'
-core_version_requirement: ^8 || ^9 || ^10
+core_version_requirement: ^9 || ^10 || ^11

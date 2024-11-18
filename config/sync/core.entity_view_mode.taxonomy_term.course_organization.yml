@@ -6,5 +6,6 @@ dependencies:
     - taxonomy
 id: taxonomy_term.course_organization
 label: 'Course organization'
+description: ''
 targetEntityType: taxonomy_term
 cache: true

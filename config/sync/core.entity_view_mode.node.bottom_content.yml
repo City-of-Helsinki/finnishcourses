@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.bottom_content
 label: 'Bottom content'
+description: ''
 targetEntityType: node
 cache: true
