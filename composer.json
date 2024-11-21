@@ -67,7 +67,7 @@
         "drupal/bootstrap_sass": "5.0.10",
         "drupal/conditional_fields": "4.0.0-alpha4",
         "drupal/config_split": "1.9",
-        "drupal/core": "10.2.10",
+        "drupal/core": "10.2.11",
         "drupal/ctools": "3.14",
         "drupal/devel": "5.1.2",
         "drupal/devel_debug_log": "2.0.2",
