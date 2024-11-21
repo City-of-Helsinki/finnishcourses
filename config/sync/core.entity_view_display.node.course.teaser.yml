@@ -28,6 +28,7 @@ dependencies:
     - field.field.node.course.field_map_link
     - field.field.node.course.field_meta_tags
     - field.field.node.course.field_number_of_lessons
+    - field.field.node.course.field_online_and_traditional
     - field.field.node.course.field_online_course
     - field.field.node.course.field_organizers_course_id
     - field.field.node.course.field_registration_end_date
@@ -73,6 +74,7 @@ hidden:
   field_map_link: true
   field_meta_tags: true
   field_number_of_lessons: true
+  field_online_and_traditional: true
   field_online_course: true
   field_organizers_course_id: true
   field_registration_end_date: true

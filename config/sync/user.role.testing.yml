@@ -6,7 +6,7 @@ dependencies:
     - disable_language
 id: testing
 label: Testing
-weight: 7
+weight: -4
 is_admin: null
 permissions:
   - 'view disabled languages'

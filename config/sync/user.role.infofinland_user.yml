@@ -25,6 +25,7 @@ dependencies:
     - file
     - filter
     - force_password_change
+    - help
     - media
     - menu_admin_per_menu
     - menu_link_content
@@ -40,13 +41,14 @@ dependencies:
     - view_unpublished
     - webform
 id: infofinland_user
-label: 'Infofinland user'
-weight: 5
+label: InfoFinland-käyttäjä
+weight: -6
 is_admin: null
 permissions:
   - 'access administration pages'
   - 'access content overview'
   - 'access files overview'
+  - 'access help pages'
   - 'access media overview'
   - 'access site in maintenance mode'
   - 'access taxonomy overview'

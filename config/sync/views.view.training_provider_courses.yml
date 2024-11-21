@@ -1346,7 +1346,6 @@ display:
             vids:
               organizations: organizations
             anyall: ','
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true

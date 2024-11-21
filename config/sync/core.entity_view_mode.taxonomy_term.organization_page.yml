@@ -6,5 +6,6 @@ dependencies:
     - taxonomy
 id: taxonomy_term.organization_page
 label: 'Organization page'
+description: ''
 targetEntityType: taxonomy_term
 cache: true

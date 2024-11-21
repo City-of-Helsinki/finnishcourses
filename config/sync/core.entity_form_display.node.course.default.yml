@@ -27,6 +27,7 @@ dependencies:
     - field.field.node.course.field_map_link
     - field.field.node.course.field_meta_tags
     - field.field.node.course.field_number_of_lessons
+    - field.field.node.course.field_online_and_traditional
     - field.field.node.course.field_online_course
     - field.field.node.course.field_organizers_course_id
     - field.field.node.course.field_registration_end_date
@@ -41,6 +42,7 @@ dependencies:
     - datetime
     - field_group
     - link
+    - maxlength
     - metatag
     - office_hours
     - path
@@ -56,7 +58,7 @@ third_party_settings:
       label: 'Kurssin ajankohta'
       region: content
       parent_name: group_course_basic_details
-      weight: 12
+      weight: 13
       format_type: fieldset
       format_settings:
         classes: ''
@@ -84,7 +86,7 @@ third_party_settings:
       label: Kurssipaikka
       region: content
       parent_name: group_course_basic_details
-      weight: 16
+      weight: 17
       format_type: fieldset
       format_settings:
         classes: ''
@@ -100,7 +102,7 @@ third_party_settings:
       label: Ilmoittautumistiedot
       region: content
       parent_name: group_course_basic_details
-      weight: 13
+      weight: 14
       format_type: fieldset
       format_settings:
         classes: ''
@@ -114,6 +116,7 @@ third_party_settings:
         - field_course_availability
         - field_course_in_swedish
         - field_online_course
+        - field_online_and_traditional
         - group_course_dates
         - group_registration_details
         - field_starting_level
@@ -146,7 +149,7 @@ third_party_settings:
         - publish_on
         - field_course_unpublish_date
         - status
-      label: 'Course publish settings'
+      label: 'Kurssin julkaisuasetukset'
       region: content
       parent_name: ''
       weight: 12
@@ -170,7 +173,7 @@ content:
     third_party_settings: {  }
   field_ask_exact_times:
     type: boolean_checkbox
-    weight: 20
+    weight: 21
     region: content
     settings:
       display_label: true
@@ -190,7 +193,11 @@ content:
     settings:
       rows: 3
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      maxlength:
+        maxlength_js: 50
+        maxlength_js_label: 'Tekstin enimmäispituus on @limit merkkiä, josta jäljellä on <strong>@remaining</strong>'
+        maxlength_js_enforce: true
   field_continuous_registration:
     type: boolean_checkbox
     weight: 37
@@ -270,14 +277,14 @@ content:
     third_party_settings: {  }
   field_course_fee:
     type: number
-    weight: 17
+    weight: 18
     region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
   field_course_id:
     type: string_textfield
-    weight: 21
+    weight: 22
     region: content
     settings:
       size: 60
@@ -474,14 +481,14 @@ content:
     third_party_settings: {  }
   field_course_week_hours:
     type: office_hours_default
-    weight: 19
+    weight: 20
     region: content
     settings:
       collapsed: false
     third_party_settings: {  }
   field_discount_eligibility:
     type: boolean_checkbox
-    weight: 18
+    weight: 19
     region: content
     settings:
       display_label: true
@@ -526,6 +533,13 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
+  field_online_and_traditional:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_online_course:
     type: boolean_checkbox
     weight: 11
@@ -535,7 +549,7 @@ content:
     third_party_settings: {  }
   field_organizers_course_id:
     type: string_textfield
-    weight: 22
+    weight: 23
     region: content
     settings:
       size: 60
@@ -563,13 +577,13 @@ content:
     third_party_settings: {  }
   field_starting_level:
     type: options_select
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
   field_target_level:
     type: options_select
-    weight: 15
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }

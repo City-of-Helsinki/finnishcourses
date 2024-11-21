@@ -13,16 +13,14 @@ elements: |
   message:
     '#title': Viesti
   contact_information:
-    '#markup': "<h2>Yhteystiedot</h2>\nAnna yhteystietosi, jos haluat vastauksen palautteeseen.\n"
+    '#markup': '<h2>Yhteystiedot</h2><p>Anna yhteystietosi, jos haluat vastauksen palautteeseen.</p>'
   name_pseudonym:
     '#title': Nimi/nimimerkki
   email_address:
     '#title': Sähköpostiosoite
-  phone_number:
-    '#title': Puhelinnumero
-  street_address:
-    '#title': Katuosoite
-  postal_code:
-    '#title': Postinumero
-  post_office:
-    '#title': Postitoimipaikka
+settings:
+  confirmation_message: '<p>Kiitos palautteestasi!</p>'
+handlers:
+  email:
+    settings:
+      body: '<p>_default</p>'

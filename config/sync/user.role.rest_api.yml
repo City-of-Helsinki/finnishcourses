@@ -14,7 +14,7 @@ dependencies:
     - taxonomy
 id: rest_api
 label: 'Rest api'
-weight: 6
+weight: -5
 is_admin: null
 permissions:
   - 'create course content'

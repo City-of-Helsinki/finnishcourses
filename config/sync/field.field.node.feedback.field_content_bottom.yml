@@ -6,21 +6,17 @@ dependencies:
     - field.storage.node.field_content_bottom
     - node.type.feedback
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - basic_html
 id: node.feedback.field_content_bottom
 field_name: field_content_bottom
 entity_type: node
 bundle: feedback
-label: 'Content after feedback form'
+label: 'Sisältö palautelomakkeen jälkeen'
 description: ''
 required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
-settings: {  }
+settings:
+  allowed_formats: {  }
 field_type: text_long
