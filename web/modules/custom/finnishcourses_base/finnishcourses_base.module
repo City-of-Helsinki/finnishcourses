@@ -99,7 +99,7 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
       $form['#fieldgroups']['group_course_additional_informat']->format_type = 'fieldset';
     }
     if (!empty($form['field_course_week_hours']['widget']['#type'])) {
-      $form['field_course_week_hours']['widget']['#type'] = 'fieldset';
+      //$form['field_course_week_hours']['widget']['#type'] = 'fieldset';
     }
 	
 	global $course_editor;
@@ -362,7 +362,8 @@ function getOptionsFromTerm($tid = '', $field = '') {
 
     // Select or other widget need option key in different format
     if ($field == 'field_locations_addresses') {
-      $optionKey = $locationTerm->label() . ' ('.$value['target_id'].')';
+      //$optionKey = $locationTerm->label() . ' ('.$value['target_id'].')';
+	   $optionKey = $value['target_id'];
     } else {
       $optionKey = $value['target_id'];
     }
@@ -962,6 +963,7 @@ function finnishcourses_base_preprocess_field(&$variables) {
 }
 
 function finnishcourses_base_preprocess_office_hours(&$variables) {
+  
   if (!empty($variables['items'])) {
     foreach ($variables['items'] as $key => $item) {
       if (isset($item['slots']) && isset($item['slots']['#type']) && $item['slots']['#type'] == 'markup') {
