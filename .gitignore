@@ -53,3 +53,5 @@ web/password.php
 
 /web/.htaccess
 web/.htaccess
+
+web/private:
