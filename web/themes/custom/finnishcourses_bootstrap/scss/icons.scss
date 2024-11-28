@@ -52,63 +52,6 @@
   }
 }
 
-.form-item-start-date, .form-item-ending-before {
-  &::before {
-    content: url(../images/icons/ic_insert_invitation@1x.svg);
-    position: absolute;
-    height: 24px;
-    width: 24px;
-    pointer-events: none;
-  }
-}
-
-.form-item-start-date {
-  &::before {
-    right: 186px;
-    top: 11px;
-/*     @include media-breakpoint-down(md-t) {
-      right: 63px;
-    } */
-    @include media-breakpoint-only(sm-t) {
-    right: 28px;
-    top: 45px;
-    }
-    @include media-breakpoint-down(sm) {
-     right: 10px;
-     top: 45px;
-    }
-  }
-}
-
-.form-item-ending-before {
-  &::before {
-    right: 186px;
-    top: 11px;
-    @include media-breakpoint-only(sm-t) {
-      right: 28px;
-      top: 45px;
-    }
-    @include media-breakpoint-down(sm) {
-     right: 10px;
-     top: 45px;
-    }
-  }
-}
-
-.form-item-ending-before {
-  &::after {
-    //content: ("-");
-    position: absolute;
-    top: 11px;
-    height: 2px;
-    width: 2px;
-    right: 168px;
-    @include media-breakpoint-down(sm-t) {
-      left: -3px;
-    }
-  }
-}
-
 .levels-link {
   &::after {
     content: url(../images/icons/ic_chevron_right.svg);
