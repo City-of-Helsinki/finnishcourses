@@ -137,40 +137,60 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
         'message' => NULL,
       ],
     ];
-
-    $addressOptions = getAddressOptions($form_state, $form);
-    if (!empty($form['field_course_street_address']['widget']['#default_value'])) {
-      $addressDefault = $form['field_course_street_address']['widget']['#default_value'];
-    } elseif (is_array($addressOptions)) {
-      $addressDefault = array_keys($addressOptions)[0];
-	} else {
-		$addressDefault = "";
-    }
-
-    $townOptions = getTownOptions($form_state, $form);
-    if (!empty($form['field_course_town']['widget']['#default_value'])) {
-      $townDefault = $form['field_course_town']['widget']['#default_value'];
-    } elseif (is_array($townOptions)) {
-      $townDefault = array_keys($townOptions)[0];
-    } else {
-	  $townDefault = "";
-
-	\Drupal::messenger()->addMessage('Organisaation kuntatieto puuttuu');
-
+	
+	
+	// 
+	
+	$is_online_course = FALSE;
+	
+	$online_course_status = $form['field_online_course']['widget']['value']['#default_value'];
+	$online_and_traditional_status = $form['field_online_and_traditional']['widget']['value']['#default_value'];
+	
+	
+	if ($online_course_status && !$online_and_traditional_status) {
+		
+		$is_online_course = TRUE;
 	}
+	
+	// Ei lisätä oletuksia kunta ja osoitetiedoiksi, jos kyseessä on verkkokurssi jolla ei ole lähiopetusta
+	
+	if (!$is_online_course) {
 
-    //ddl($addressDefault);
-    //$form['field_course_street_address']['#attributes']['id'][] = 'street-select';
-    $form['field_course_street_address']['#prefix'] = '<div id="street-select">';
-    $form['field_course_street_address']['widget']['#options'] = $addressOptions;
-    $form['field_course_street_address']['widget']['#default_value'] = $addressDefault;
-    $form['field_course_street_address']['#suffix'] = '</div>';
+		$addressOptions = getAddressOptions($form_state, $form);
+		if (!empty($form['field_course_street_address']['widget']['#default_value'])) {
+		  $addressDefault = $form['field_course_street_address']['widget']['#default_value'];
+		} elseif (is_array($addressOptions)) {
+		  $addressDefault = array_keys($addressOptions)[0];
+		} else {
+			$addressDefault = "";
+		}
 
-    //$form['field_course_town']['#attributes']['id'][] = 'town-select';
-    $form['field_course_town']['#prefix'] = '<div id="town-select">';
-    $form['field_course_town']['widget']['#options'] = $townOptions;
-    $form['field_course_town']['widget']['#default_value'] = $townDefault;
-    $form['field_course_town']['#suffix'] = '</div>';
+		$townOptions = getTownOptions($form_state, $form);
+		if (!empty($form['field_course_town']['widget']['#default_value'])) {
+		  $townDefault = $form['field_course_town']['widget']['#default_value'];
+		} elseif (is_array($townOptions)) {
+		  $townDefault = array_keys($townOptions)[0];
+		} else {
+		  $townDefault = "";
+
+		\Drupal::messenger()->addMessage('Organisaation kuntatieto puuttuu');
+
+		}
+	
+		//$form['field_course_street_address']['#attributes']['id'][] = 'street-select';
+		$form['field_course_street_address']['#prefix'] = '<div id="street-select">';
+		$form['field_course_street_address']['widget']['#options'] = $addressOptions;
+		$form['field_course_street_address']['widget']['#default_value'] = $addressDefault;
+		$form['field_course_street_address']['#suffix'] = '</div>';
+
+		//$form['field_course_town']['#attributes']['id'][] = 'town-select';
+		$form['field_course_town']['#prefix'] = '<div id="town-select">';
+		$form['field_course_town']['widget']['#options'] = $townOptions;
+		$form['field_course_town']['widget']['#default_value'] = $townDefault;
+		$form['field_course_town']['#suffix'] = '</div>';
+		
+	}
+	
 
     // Disable course id field because it will be generated automatically
     $form['field_course_id']['#disabled'] = 'disabled';
@@ -407,8 +427,7 @@ function refreshLocationOptions(array $form, FormStateInterface &$form_state) {
 }
 
 function finnishcourse_course_form_submit(array $form, FormStateInterface $form_state) {
-	//dsm($form);
-	
+
   $form_state->setRedirect('view.manage_courses.page_1');
 }
 
@@ -610,6 +629,23 @@ function finnishcourses_base_node_presave(EntityInterface $entity) {
         $translationRu->setTitle($originalTitle);
       }							   
     }
+	
+
+	$online_course = $entity->get('field_online_course')->getValue();
+	
+	$online_and_traditional = $entity->get('field_online_and_traditional')->getValue();
+	
+	//dsm($online_course[0]['value']);
+	
+	// Poistetaan kunta, kartta ja osoitetiedot, jos kyseessä on verkkokurssi jolla ei ole lähiopetusta
+	
+	 if ($online_course[0]['value'] == 1 && $online_and_traditional[0]['value'] == 0) {
+		
+		$entity->set('field_course_street_address', NULL);
+		$entity->set('field_course_town', NULL);
+		$entity->set('field_map_link', NULL);
+		
+	} 
 
 
   }

@@ -59,14 +59,15 @@
         "datetimepicker/datetimepicker": "^2.5",
         "drupal/admin_toolbar": "3.5.1",
         "drupal/allowed_formats": "^3.0",
-        "drupal/autologout": "2.0.0",
+        "drupal/autologout": "2.0.1",
         "drupal/better_exposed_filters": "7.0.2",
         "drupal/block_visibility_groups": "2.0.3",
         "drupal/bootstrap_barrio": "5.1.12",
         "drupal/bootstrap_datepicker": "^2.0",
         "drupal/conditional_fields": "^4.0@alpha",
+        "drupal/config_filter": "^2.7",
         "drupal/config_split": "2.0.1",
-        "drupal/core": "11.0.7",
+        "drupal/core": "11.0.9",
         "drupal/ctools": "4.1.0",
         "drupal/entity_browser": "2.12",
         "drupal/field_group": "4.0.0-alpha1",
@@ -196,9 +197,6 @@
 			"drupal/shortcutperrole": {
 				"Automated Drupal 10 patch": "https://www.drupal.org/files/issues/2022-06-16/shortcutperrole.2.0.x-dev.rector.patch"
 			},
-			"drupal/autologout": {
-				"Warning: Undefined array key 1": "https://www.drupal.org/files/issues/2024-06-18/autologout_3372010-29.patch"
-			},
 			"drupal/redirect_after_login": {
 				"Drupal 11 compatibility": "https://www.drupal.org/files/issues/2024-07-22/redirect_after_login-3462725.patch"
 			},
@@ -230,5 +228,8 @@
         "drupal-lenient": {
             "allowed-list": ["drupal/bootstrap_datepicker", "drupal/conditional_fields", "drupal/filelog", "drupal/redirect_after_login", "drupal/force_password_change", "drupal/select_or_other"]
         }
+    },
+    "require-dev": {
+        "drupal/devel": "^5.3"
     }
 }
