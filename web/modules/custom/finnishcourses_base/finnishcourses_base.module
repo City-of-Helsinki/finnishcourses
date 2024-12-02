@@ -672,6 +672,16 @@ function finnishcourses_base_entity_presave(EntityInterface $entity) {
     if (!$entity->hasTranslation('sv')) {
       $entity->addTranslation('sv', $entity->toArray());
     }
+	
+	
+	if($entity->hasTranslation('en')){
+		$entity_original = $entity->getTranslation('en');
+		$name = $entity_original->getName();
+		$entity->set('field_original_name', $name);
+	}
+	
+	
+	
   }
 }
 
