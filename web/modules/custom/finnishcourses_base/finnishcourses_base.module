@@ -13,6 +13,7 @@ use Drupal\course_services\CourseDataService;
 use Drupal\webform\Plugin\WebformHandlerInterface;
 use Drupal\node\Entity\Node;
 use Drupal\Core\Access\AccessResult;
+use Drupal\pathauto\PathautoState;
 
 
 
@@ -427,6 +428,7 @@ function refreshLocationOptions(array $form, FormStateInterface &$form_state) {
 }
 
 function finnishcourse_course_form_submit(array $form, FormStateInterface $form_state) {
+	
 
   $form_state->setRedirect('view.manage_courses.page_1');
 }
@@ -677,6 +679,8 @@ function finnishcourses_base_entity_presave(EntityInterface $entity) {
 	if($entity->hasTranslation('en')){
 		$entity_original = $entity->getTranslation('en');
 		$name = $entity_original->getName();
+		//$entity->path['pathauto'] = TRUE;
+		$entity->path->pathauto = PathautoState::CREATE;
 		$entity->set('field_original_name', $name);
 	}
 	
@@ -743,8 +747,26 @@ function finnishcourses_base_page_attachments(array &$page) {
    
   //$javascript_header = 'var cpm = {language: "' .$language . '"}';
   
+  $matomo_env = getenv('FINNISHCOURSES_MATOMO_ENV');
+ 
+  if ($matomo_env = 'dev') {
+	  
+	$matomo = 'var _paq = window._paq = window._paq || [];_paq.push(["trackPageView"]);_paq.push(["enableLinkTracking"]);(function() {
+    var u="https://matomo.konsepto.fi/";
+    _paq.push(["setTrackerUrl", u+"matomo.php"]);
+    _paq.push(["setSiteId", "19"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0];
+    g.async=true; g.src=u+"matomo.js"; s.parentNode.insertBefore(g,s);
+  })();';
   
-  $matomo = 'var _paq=window._paq=window._paq||[];_paq.push(["trackPageView"]),_paq.push(["setDoNotTrack",1]),_paq.push(["enableLinkTracking"]),function(){var a="//webanalytics.digiaiiris.com/js/";_paq.push(["setTrackerUrl",a+"tracker.php"]),_paq.push(["setSiteId","441"]);var e=(t=document).createElement("script"),t=t.getElementsByTagName("script")[0];e.type="text/javascript",e.async=!0,e.src=a+"piwik.min.js",t.parentNode.insertBefore(e,t)}();';
+ 
+  
+  } else {
+  
+	$matomo = 'var _paq=window._paq=window._paq||[];_paq.push(["trackPageView"]),_paq.push(["enableLinkTracking"]),function(){var a="//webanalytics.digiaiiris.com/js/";_paq.push(["setTrackerUrl",a+"tracker.php"]),_paq.push(["setSiteId","441"]);var e=(t=document).createElement("script"),t=t.getElementsByTagName("script")[0];e.type="text/javascript",e.async=!0,e.src=a+"piwik.min.js",t.parentNode.insertBefore(e,t)}();';
+ 
+  }
+  
   
     $page['#attached']['html_head'][] = [
     // The data.

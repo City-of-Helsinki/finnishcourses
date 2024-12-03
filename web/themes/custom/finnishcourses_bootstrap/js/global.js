@@ -148,16 +148,52 @@
 	   
 			  var cityCount = 0;
 			  
+			  var cities = [];
+			  
 			  $('[data-drupal-selector="edit-course-town"] input').each(function () {
 					  
 				  if (this.checked) {
 					   cityCount++;
+					   
+					   var city = $(this).next('label').text().trim();
+					   
+					   cities.push(city);
+					   
+					   
+					  
+					 
 				   }
 			  });
 			  
 			  if (cityCount > 0) {
 				  
 				  openSearch();
+				  
+				 // console.log(cities.join());
+				  
+				  var searchCountPaq = $('.views-exposed-form').data("total");
+ 
+				  //_paq.push(['trackEvent', 'Search', 'Email Link Click', city]);
+					   
+				   _paq.push(['trackSiteSearch',
+						// Search keyword searched for
+						"Test",
+						// Search category selected in your search engine. If you do not need this, set to false
+						cities.join(),
+						// Number of results on the Search results page. Zero indicates a 'No Result Search Keyword'. Set to false if you don't know
+						searchCountPaq
+					]);
+
+					// We recommend not to call trackPageView() on the Site Search Result page
+					// _paq.push(['trackPageView']);
+					
+					_paq.push(['trackEvent', 
+						'Search', 
+						'Filter by city', 
+						cities.join()
+					]);
+			  
+				  
 			  }
 			  
 			  
@@ -223,7 +259,7 @@
 					$('[data-drupal-selector="edit-field-online-course-all-2"]').prop('checked', true);
 				  
 				  } else {
-					 console.log("all"); 
+					// console.log("all"); 
 					$('[data-drupal-selector="edit-field-online-course-all"]').prop('checked', true);
 					$('[data-drupal-selector="edit-field-online-course-all-2"]').prop('checked', true);
 				  }
@@ -242,7 +278,7 @@
 			  
 			  $('.view-search-courses .view-header .form-item-sort-bef-combine button').click(function() {
 				  var selectedValue = $('.view-search-courses .view-header .form-item-sort-bef-combine select').val();
-				  console.log(selectedValue);
+				  //console.log(selectedValue);
 				  originalSelect.val(selectedValue);
 				  $('.bef-exposed-form form').submit();
 			  });	  
@@ -544,11 +580,11 @@
 
 
 	  // Front page advanced search date format
-	  if ( $( ".bef-datepicker" ).length ) {
+	 /*  if ( $( ".bef-datepicker" ).length ) {
 		$('html:lang(fi) .bef-datepicker').datepicker({ dateFormat: 'd.m.yy' });
 		$('html:lang(ru) .bef-datepicker').datepicker({ dateFormat: 'd.m.yy' });
 		$('html:lang(en) .bef-datepicker').datepicker({ dateFormat: 'd.m.yy' });
-	  }
+	  } */
 	  
 	  
 	   //$('html:lang(fi) #edit-course-fee-1--2').attr('aria-label', '0  49');
@@ -598,6 +634,15 @@
 	  
 	  var newTitle = $('.path-search .view-search-courses .view-header h2').text();
 	  //console.log(newTitle);
+	  var searchCount = $('.path-search .view-search-courses .view-header h2 span').data("total");
+	  
+	  $('.views-exposed-form').attr({ 'data-total': searchCount });
+	  
+	 // $('body').attr({ 'data-total': searchCount });
+	  
+	  
+	 // console.log(searchCount);
+	   
 	  $('.path-search .view-search-courses .view-header h2').remove();
 	  $('.path-search h1').text(newTitle).show();
 	  /* $('.path-search h1.title').text(newTitle);
