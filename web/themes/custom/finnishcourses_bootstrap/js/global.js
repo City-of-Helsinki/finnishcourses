@@ -10,7 +10,7 @@
   Drupal.behaviors.bootstrap_barrio_subtheme = {
     attach: function (context, settings) {
 		
-		
+	
 		
 	   $('.more-options-wrapper input[type=text]').bind("keyup keypress", function(e) {
 		  var code = e.keyCode || e.which; 
@@ -18,6 +18,8 @@
 		  if (code  == 13) {    
 			  //if($(this).val()==''){
 				  e.preventDefault();
+				  
+				  console.log("test 2");
 				  
 				  $('#views-exposed-form-search-courses-page-1').submit();
 				  return false;
@@ -30,34 +32,33 @@
       let lessSearch = Drupal.t("Less search options");
       let moreSearch = Drupal.t("More search options");
 	  
-	   $(".more-search-options-trigger", context).on('click', function (event) {
-		   
-		//console.log($(".more-options-wrapper"));   
-		   
-		event.preventDefault();  
-											
-		
-        $(".more-options-wrapper").toggle();
-		
-	
-		
-		//console.log($(".more-options-wrapper"));
+	  
+	 
+	  
+	    $(once('bind-click-event', '.more-search-options-trigger', context)).each(function () {
+			$(this).on('click', function() {   
+				   
+				event.preventDefault();  		
+				
+				$(".more-options-wrapper").toggle();
+				
 
-        // Adding less class for "Less search options", so expand more svg icon is added through css
-        $('.more-search-options-trigger').toggleClass('less');
-		
-		$('.more-search-options-trigger').attr('aria-expanded', false);
-		$('.more-search-options-trigger.less').attr('aria-expanded', true);
-		
+				// Adding less class for "Less search options", so expand more svg icon is added through css
+				$('.more-search-options-trigger').toggleClass('less');
+				
+				$('.more-search-options-trigger').attr('aria-expanded', false);
+				$('.more-search-options-trigger.less').attr('aria-expanded', true);
+				
 
-		
-		
+				
+				
 
-        // Twice  $(".more-search-options-trigger").text, otherwise it won't toggle between
-        // "Less search options" and "More search options"
-        $(".more-search-options-trigger").text($(".more-search-options-trigger").text()
-        === lessSearch ? moreSearch : lessSearch);
-      });
+				// Twice  $(".more-search-options-trigger").text, otherwise it won't toggle between
+				// "Less search options" and "More search options"
+				$(".more-search-options-trigger").text($(".more-search-options-trigger").text()
+				=== lessSearch ? moreSearch : lessSearch);
+			});
+	  });
 	  
 	  
 	  // SHOW SEARCH FORM "BUTTON"
@@ -68,7 +69,7 @@
 	  
 	  
 	  $(".view-search-courses .view-empty", context).each(function () {
-		 // console.log($(this));
+		 //console.log($(this));
 		  
 		  $(this).appendTo("#block-finnishcourses-bootstrap-page-title .content");
 		  
@@ -127,6 +128,9 @@
 	  
 	  
 	   $(".form-item-sort-bef-combine", context).each(function () {
+		   
+		   
+		  
 			  
 			  var originalSort = $(this);
 			  
@@ -424,26 +428,30 @@
 		 
 
 
-		
-	 $(".show-search-form-trigger", context).on('click', function (event) {
-		 
- 
-		event.preventDefault();  
-		
-        $(".block-views-exposed-filter-blocksearch-courses-page-1 form").toggle();
-		
-		
 
-        // Adding less class for "Less search options", so expand more svg icon is added through css
-        $('.show-search-form-trigger').toggleClass('less');
-		
-		$('.showunder 50 €-search-form-trigger').attr('aria-expanded', false);
-		$('.show-search-form-trigger.less').attr('aria-expanded', true);
-		
-		$('.show-search-form-trigger').text(showSearch);
-		$('.show-search-form-trigger.less').text(hideSearch);
-		
-      });
+      $(once('show-search-click-event', '.show-search-form-trigger', context)).each(function () {
+			$(this).on('click', function() {   
+			
+		 //$(".show-search-form-trigger", context).on('click', function (event) {
+			 
+	 
+			event.preventDefault();  
+			
+			$(".block-views-exposed-filter-blocksearch-courses-page-1 form").toggle();
+			
+			
+
+			// Adding less class for "Less search options", so expand more svg icon is added through css
+			$('.show-search-form-trigger').toggleClass('less');
+			
+			$('.showunder 50 €-search-form-trigger').attr('aria-expanded', false);
+			$('.show-search-form-trigger.less').attr('aria-expanded', true);
+			
+			$('.show-search-form-trigger').text(showSearch);
+			$('.show-search-form-trigger.less').text(hideSearch);
+			
+		  });
+	  });
 	  
 	  
 	  function openSearch() {
