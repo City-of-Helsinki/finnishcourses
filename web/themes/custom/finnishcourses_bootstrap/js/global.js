@@ -32,10 +32,14 @@
 	  
 	   $(".more-search-options-trigger", context).on('click', function (event) {
 		   
-		//console.log(event);   
+		//console.log($(".more-options-wrapper"));   
 		   
 		event.preventDefault();  
+											
+		
         $(".more-options-wrapper").toggle();
+		
+	
 		
 		//console.log($(".more-options-wrapper"));
 
@@ -150,6 +154,9 @@
 			  
 			  var cities = [];
 			  
+			  var keywords = $('#edit-keyword').val();
+			  
+			  
 			  $('[data-drupal-selector="edit-course-town"] input').each(function () {
 					  
 				  if (this.checked) {
@@ -159,9 +166,9 @@
 					   
 					   cities.push(city);
 					   
-					   
-					  
-					 
+		
+	   
+	  
 				   }
 			  });
 			  
@@ -177,7 +184,7 @@
 					   
 				   _paq.push(['trackSiteSearch',
 						// Search keyword searched for
-						"",
+						keywords,
 						// Search category selected in your search engine. If you do not need this, set to false
 						cities.join(),
 						// Number of results on the Search results page. Zero indicates a 'No Result Search Keyword'. Set to false if you don't know
@@ -417,6 +424,7 @@
 		 
  
 		event.preventDefault();  
+		
         $(".block-views-exposed-filter-blocksearch-courses-page-1 form").toggle();
 		
 		
@@ -634,16 +642,16 @@
 	  
 	  // siirretään h1 otsikko kurssihaun tulossivulla
 	  
-	  var newTitle = $('.path-search .view-search-courses .view-header h2').text();
+	  var newTitle = $('.path-search .view-search-courses .view-header h2 span').text();
 	  //console.log(newTitle);
 	  var searchCount = $('.path-search .view-search-courses .view-header h2 span').data("total");
 	  
-	//  $('.views-exposed-form').attr({ 'data-total': searchCount });
+	  $('.views-exposed-form').attr({ 'data-total': searchCount });
 	  
 	 // $('body').attr({ 'data-total': searchCount });
 	  
 	  
-	 // console.log(searchCount);
+	 console.log(newTitle);
 	   
 	  $('.path-search .view-search-courses .view-header h2').remove();
 	  $('.path-search h1').text(newTitle).show();
