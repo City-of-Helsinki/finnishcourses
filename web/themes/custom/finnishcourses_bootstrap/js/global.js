@@ -97,6 +97,11 @@
 	   $(".js-form-item-organization", context).each(function () {
 	       sortSelectOptions('.js-form-item-organization select', true);
 	   });
+	   
+	   
+	   
+	   
+	   
 	  
 	  // aria labelit hintakenttään
 	  
@@ -651,7 +656,7 @@
 	 // $('body').attr({ 'data-total': searchCount });
 	  
 	  
-	 console.log(newTitle);
+	//console.log(newTitle);
 	   
 	  $('.path-search .view-search-courses .view-header h2').remove();
 	  $('.path-search h1').text(newTitle).show();
@@ -666,6 +671,61 @@
 		$( this ).attr( "lang", lang );
 
 	  });
+	  
+	  
+	  // matomo  full node view
+	   
+	$(".node--type-course.node--view-mode-full").each(function () {
+		
+		
+		var organization = $(this).data("organization");
+		
+		var course_language = $(this).data("course-language")
+	
+	
+		//console.log(organization);
+		//console.log(course_language);
+		
+		
+		_paq.push(['trackEvent', 
+				'View Course', 
+				'Course language', 
+				course_language
+		]);
+		
+		_paq.push(['trackEvent', 
+				'View Course', 
+				'Organization', 
+				organization
+		]);
+		
+		
+		/* if ($(this).hasClass('swedish-course')) {
+			
+			_paq.push(['trackEvent', 
+				'View Course', 
+				'Course language', 
+				'ruotsinkielinen'
+			]);
+		}
+		
+		if ($(this).hasClass('finnish-course')) {
+			
+			_paq.push(['trackEvent', 
+				'View Course', 
+				'Course language', 
+				'suomenkielinen'
+			]);
+		} */
+		
+	
+		
+		
+		//  var searchCount = $('.path-search .view-search-courses .view-header h2 span').data("total");
+	  
+	 // $('.views-exposed-form').attr({ 'data-total': searchCount });
+		
+	 });
 
 		 
 	

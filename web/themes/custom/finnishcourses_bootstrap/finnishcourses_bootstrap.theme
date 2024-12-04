@@ -58,8 +58,7 @@ function finnishcourses_bootstrap_preprocess_node(&$variables) {
       $organizationName = $organization_trans->getName();
       $locationText = $organizationName;
 	  
-	  
-	  
+	  $variables['attributes']['data-organization'][] = $organizationName;
     }
 
     if (!$node->get('field_course_street_address')->isEmpty()) {
@@ -79,6 +78,20 @@ function finnishcourses_bootstrap_preprocess_node(&$variables) {
     } else {
       $courseLocation = $locationText;
     }
+	
+	  if (!$node->get('field_course_in_swedish')->isEmpty()) {
+		  
+		  if ($node->get('field_course_in_swedish')->value == 1) {
+			  $variables['attributes']['data-course-language'][] = 'swedish';
+		  } else {
+			  $variables['attributes']['data-course-language'][] = 'finnish';
+		  }
+		  
+	  }	  
+	  
+	  //dsm($variables['attributes']);
+	
+	
     //kint($courseLocation);
 
 	$variables['organization_name'] = $organizationName;
