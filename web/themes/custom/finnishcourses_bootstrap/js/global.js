@@ -19,7 +19,7 @@
 			  //if($(this).val()==''){
 				  e.preventDefault();
 				  
-				  console.log("test 2");
+				  //console.log("test 2");
 				  
 				  $('#views-exposed-form-search-courses-page-1').submit();
 				  return false;
@@ -67,8 +67,8 @@
 	  
 
 	  
-	  
-	  $(".view-search-courses .view-empty", context).each(function () {
+	   $(once('view-empty', '.view-search-courses .view-empty', context)).each(function () {
+	 // $(".view-search-courses .view-empty", context).each(function () {
 		 //console.log($(this));
 		  
 		  $(this).appendTo("#block-finnishcourses-bootstrap-page-title .content");
@@ -106,7 +106,9 @@
 	  
 	  // aria labelit hintakenttään
 	  
-	  $("#edit-course-fee", context).each(function () {
+	  $(once('course-fee', '#edit-course-fee', context)).each(function () {
+	  //$("#edit-course-fee", context).each(function () {
+		
 		  
 		  $('html:lang(fi) .form-item-course-fee-1').attr('aria-label', 'alle 50 euroa');
 		  $('html:lang(fi) .form-item-course-fee-2').attr('aria-label', '50 viiva 149 euroa');
@@ -127,10 +129,12 @@
 	  
 	  
 	  
-	   $(".form-item-sort-bef-combine", context).each(function () {
+	
+	  $(once('sort-bef-combine', '.form-item-sort-bef-combine', context)).each(function () {
+	  // $(".form-item-sort-bef-combine", context).each(function () {
 		   
 		   
-		  
+				
 			  
 			  var originalSort = $(this);
 			  
