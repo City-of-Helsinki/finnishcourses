@@ -177,7 +177,7 @@
 					   
 				   _paq.push(['trackSiteSearch',
 						// Search keyword searched for
-						"Test",
+						"",
 						// Search category selected in your search engine. If you do not need this, set to false
 						cities.join(),
 						// Number of results on the Search results page. Zero indicates a 'No Result Search Keyword'. Set to false if you don't know
@@ -414,6 +414,8 @@
 
 		
 	 $(".show-search-form-trigger", context).on('click', function (event) {
+		 
+ 
 		event.preventDefault();  
         $(".block-views-exposed-filter-blocksearch-courses-page-1 form").toggle();
 		
@@ -636,7 +638,7 @@
 	  //console.log(newTitle);
 	  var searchCount = $('.path-search .view-search-courses .view-header h2 span').data("total");
 	  
-	  $('.views-exposed-form').attr({ 'data-total': searchCount });
+	//  $('.views-exposed-form').attr({ 'data-total': searchCount });
 	  
 	 // $('body').attr({ 'data-total': searchCount });
 	  
