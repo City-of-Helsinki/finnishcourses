@@ -98,7 +98,7 @@
         "drupal/role_delegation": "^1.0@alpha",
         "drupal/scheduler": "^2.1.0",
         "drupal/search_api": "1.35",
-        "drupal/select_or_other": "4.x-dev@dev",
+        "drupal/select_or_other": "^4.2",
         "drupal/sendgrid_integration": "2.3",
         "drupal/simple_popup_blocks": "^3.4",
         "drupal/simple_sitemap": "4.2.1",
@@ -206,9 +206,6 @@
 			},
 			"drupal/conditional_fields": {
 				"Automated Drupal 11 compatibility fixes for conditional_fields": "https://www.drupal.org/files/issues/2024-08-26/drupal-11-compatibility-3428532-12.patch"
-			},
-			"drupal/select_or_other": {
-				"Automated Drupal 11 compatibility fixes for select_or_other": "https://www.drupal.org/files/issues/2024-05-30/select_or_other.4.x-dev.rector.patch"
 			},
 			"drupal/bootstrap_datepicker": {
 				"Automated Drupal 11 compatibility fixes for bootstrap_datepicker": "https://www.drupal.org/files/issues/2024-03-16/bootstrap_datepicker.2.0.0.rector.patch"

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d4e680f2c5c7489174edbec4977883d",
+    "content-hash": "fc608c0a0bb743909735245e35753e5e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4375,26 +4375,29 @@
         },
         {
             "name": "drupal/select_or_other",
-            "version": "dev-4.x",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/select_or_other.git",
-                "reference": "bd29ceb7dd31767a32acc2e5d47f368c589f093e"
+                "reference": "4.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/select_or_other-4.2.0.zip",
+                "reference": "4.2.0",
+                "shasum": "1e33d196a7bc6116c66d5e77b53e2fee6f1e62d9"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10 || ^11 || ^12"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-4.x": "4.x-dev"
-                },
                 "drupal": {
-                    "version": "4.1.0+1-dev",
-                    "datestamp": "1696262244",
+                    "version": "4.2.0",
+                    "datestamp": "1733203728",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
                 }
             },
@@ -4418,6 +4421,10 @@
                 {
                     "name": "hmendes",
                     "homepage": "https://www.drupal.org/user/3673677"
+                },
+                {
+                    "name": "ivnish",
+                    "homepage": "https://www.drupal.org/user/3547706"
                 },
                 {
                     "name": "legolasbo",
@@ -11152,7 +11159,6 @@
         "drupal/conditional_fields": 15,
         "drupal/office_hours": 20,
         "drupal/role_delegation": 15,
-        "drupal/select_or_other": 20,
         "drupal/ultimate_cron": 15,
         "drupal/webform": 20,
         "furf/jquery-ui-touch-punch": 20
