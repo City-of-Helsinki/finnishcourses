@@ -126,6 +126,8 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
 	  
 	  $form['#attributes']['class'][] = 'not-admin';
     }
+	
+	
 
      // Set ajax callback function when organization field value changed
     // refreshLocationOptions callback loads street address and town options for selected organization
@@ -418,12 +420,19 @@ function getDefaultFromTerm($tid = '', $field = '') {
 
 function refreshLocationOptions(array $form, FormStateInterface &$form_state) {
 
+   unset($form['field_course_street_address']['#group']);
+   unset($form['field_course_town']['#group']);
+
   $element = $form_state->getTriggeringElement();
   //ddl($element['#value']);
   //ddl($form_state);
   $response = new AjaxResponse();
   $response->addCommand(new ReplaceCommand("#street-select", ($form['field_course_street_address'])));
   $response->addCommand(new ReplaceCommand("#town-select", ($form['field_course_town'])));
+  
+  //dsm($form['field_course_town']);
+  //dsm($response);
+  
   return $response;
 }
 

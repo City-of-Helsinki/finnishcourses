@@ -142,7 +142,7 @@ _paq.push(['trackPageView']);
 	  {% if node.field_online_course.value %}
         <div class="course-location online-course">
           <div class="field__label">{% trans %}Location{% endtrans %}</div>
-          <div class="field__item"><span>{% trans %}Online course{% endtrans %}</span>, {{ node.field_course_organization.entity.name.value }}</div>
+          <div class="field__item"><span>{% trans %}Online course{% endtrans %}</span></div>
         </div>
       {% endif %}	
 {% if node.field_online_and_traditional.value == '1' %}
@@ -165,11 +165,7 @@ _paq.push(['trackPageView']);
       {{ content.field_organizers_course_id }}
       <div class="course-lessons">
         <div class="field__label">
-          {% if node.field_online_course.value %}
-            {% trans %}Guided teaching per week{% endtrans %}
-          {% else %}
-            {% trans %}Teaching hours per week{% endtrans %}
-          {% endif %}
+          {% trans %}Weekly lessons{% endtrans %}
         </div>
         <div class="field__item">{{ content.field_number_of_lessons }}</div>
       </div>
