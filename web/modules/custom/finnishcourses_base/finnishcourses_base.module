@@ -201,12 +201,11 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
 	
 	$form['status']['widget']['value']['#title'] = t("Published");
 	
+	$form['status']['widget']['value']['#description'] = t("Valitse tämä, jos haluat julkaista kurssin, myös silloin, jos käytät ajastettua julkaisua. Jos haluat, että kurssi ei näy enää sivustolla, ota tämä valinta pois päältä ja tallenna kurssi.");
+	
 	
 	$form['publish_on']['widget'][0]['value']['#title'] = t("Scheduled course publish date");
 	
-	//dsm($form['publish_on']['widget'][0]['value']);
-
-
 
     foreach (array_keys($form['actions']) as $action) {
       if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
