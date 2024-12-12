@@ -216,6 +216,8 @@
 				  
 			  }
 			  
+			   // Onko verkkokurssi valittuna
+			  
 			  
 		 // Onko aloitustaso valittua
 		 
@@ -242,6 +244,22 @@
 					  
 				  if (this.checked) {
 					   openSearch();
+					   
+					 _paq.push(['trackSiteSearch',
+						// Search keyword searched for
+						keywords,
+						// Search category selected in your search engine. If you do not need this, set to false
+						'Verkkokurssi',
+						// Number of results on the Search results page. Zero indicates a 'No Result Search Keyword'. Set to false if you don't know
+						searchCountPaq
+					]);   
+					   
+					_paq.push(['trackEvent', 
+						'Search', 
+						'Filter by city', 
+						'Verkkokurssi'
+					]);
+					   
 				   }
 			  });
 			  
