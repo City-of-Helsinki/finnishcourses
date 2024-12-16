@@ -756,8 +756,11 @@ function finnishcourses_base_page_attachments(array &$page) {
   //$javascript_header = 'var cpm = {language: "' .$language . '"}';
   
   $matomo_env = getenv('FINNISHCOURSES_MATOMO_ENV');
+  
+  $matomo = 'var _paq=window._paq=window._paq||[];_paq.push(["trackPageView"]),_paq.push(["enableLinkTracking"]),function(){var a="//webanalytics.digiaiiris.com/js/";_paq.push(["setTrackerUrl",a+"tracker.php"]),_paq.push(["setSiteId","441"]);var e=(t=document).createElement("script"),t=t.getElementsByTagName("script")[0];e.type="text/javascript",e.async=!0,e.src=a+"piwik.min.js",t.parentNode.insertBefore(e,t)}();';
  
-  if ($matomo_env = 'dev') {
+ 
+  if ($matomo_env == 'dev') {
 	  
 	$matomo = 'var _paq = window._paq = window._paq || [];_paq.push(["trackPageView"]);_paq.push(["enableLinkTracking"]);(function() {
     var u="https://matomo.konsepto.fi/";
@@ -766,14 +769,8 @@ function finnishcourses_base_page_attachments(array &$page) {
     var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0];
     g.async=true; g.src=u+"matomo.js"; s.parentNode.insertBefore(g,s);
   })();';
-  
  
-  
-  } else {
-  
-	$matomo = 'var _paq=window._paq=window._paq||[];_paq.push(["trackPageView"]),_paq.push(["enableLinkTracking"]),function(){var a="//webanalytics.digiaiiris.com/js/";_paq.push(["setTrackerUrl",a+"tracker.php"]),_paq.push(["setSiteId","441"]);var e=(t=document).createElement("script"),t=t.getElementsByTagName("script")[0];e.type="text/javascript",e.async=!0,e.src=a+"piwik.min.js",t.parentNode.insertBefore(e,t)}();';
- 
-  }
+  } 
   
   
     $page['#attached']['html_head'][] = [
