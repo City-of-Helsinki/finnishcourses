@@ -544,11 +544,11 @@
 
 
 	  // Front page advanced search date format
-	  if ( $( ".bef-datepicker" ).length ) {
+	 /*  if ( $( ".bef-datepicker" ).length ) {
 		$('html:lang(fi) .bef-datepicker').datepicker({ dateFormat: 'd.m.yy' });
 		$('html:lang(ru) .bef-datepicker').datepicker({ dateFormat: 'd.m.yy' });
 		$('html:lang(en) .bef-datepicker').datepicker({ dateFormat: 'd.m.yy' });
-	  }
+	  } */
 	  
 	  
 	   //$('html:lang(fi) #edit-course-fee-1--2').attr('aria-label', '0  49');

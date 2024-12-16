@@ -396,6 +396,9 @@ function getDefaultFromTerm($tid = '', $field = '') {
 
 function refreshLocationOptions(array $form, FormStateInterface &$form_state) {
 
+   unset($form['field_course_street_address']['#group']);
+   unset($form['field_course_town']['#group']);
+   
   $element = $form_state->getTriggeringElement();
   //ddl($element['#value']);
   //ddl($form_state);
