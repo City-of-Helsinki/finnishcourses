@@ -688,8 +688,13 @@ function finnishcourses_base_entity_presave(EntityInterface $entity) {
 		$entity_original = $entity->getTranslation('en');
 		$name = $entity_original->getName();
 		//$entity->path['pathauto'] = TRUE;
-		$entity->path->pathauto = PathautoState::CREATE;
-		$entity->set('field_original_name', $name);
+		
+		if (isset($name)) {
+		
+			$entity->path->pathauto = PathautoState::CREATE;
+			$entity->set('field_original_name', $name);
+		
+		}
 	}
 	
 	

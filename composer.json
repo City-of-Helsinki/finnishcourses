@@ -59,6 +59,7 @@
         "datetimepicker/datetimepicker": "^2.5",
         "drupal/admin_toolbar": "3.5.1",
         "drupal/allowed_formats": "^3.0",
+        "drupal/antibot": "^2.0",
         "drupal/autologout": "2.0.1",
         "drupal/better_exposed_filters": "7.0.2",
         "drupal/block_visibility_groups": "2.0.3",
