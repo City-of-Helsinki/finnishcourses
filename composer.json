@@ -77,7 +77,7 @@
         "drupal/flood_control": "3.0.0",
         "drupal/force_password_change": "^2.0",
         "drupal/geolocation": "4.0.0-alpha7",
-        "drupal/google_tag": "2.0.6",
+        "drupal/google_tag": "2.0.8",
         "drupal/honeypot": "^2.2.0",
         "drupal/image_effects": "4.0.0-rc3",
         "drupal/jquery_ui_touch_punch": "^1.0",
