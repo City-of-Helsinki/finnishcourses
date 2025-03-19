@@ -1,3 +1,0 @@
-tips:
-  log-blocked-form-submissions:
-    label: 'Записывать в системный журнал заблокированные запросы'

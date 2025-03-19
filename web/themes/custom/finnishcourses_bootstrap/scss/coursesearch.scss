@@ -84,6 +84,13 @@
 	}
   
 	.form-checkboxes {
+	
+		display: flex;
+        justify-content: center;
+        gap: 20px;
+	
+	
+	
 		div.js-form-item {
 			text-align: left;
 		}
@@ -108,10 +115,10 @@
 	  
 	  
 	  @include media-breakpoint-up(sm-t) {
-		display: grid;
+		/* display: grid;
 		grid-gap: 0;
 		justify-self: center;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: 130px 1fr 1fr 1fr;  */
 		/* div.js-form-item {
 			border-bottom: 1px solid #129942;
 		}
@@ -122,14 +129,22 @@
 		
 	  }
 	  @include media-breakpoint-down(sm-t) {
-		grid-template-columns: 1fr 1fr 1fr;
+		/* grid-template-columns: 130px 1fr 1fr; */
 	  }
 	  @include media-breakpoint-down(sm) {
-		display: grid;
+	  
+	  flex-wrap: wrap;
+		/* display: grid;
 		grid-gap: 0;
 		justify-self: center;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 130px 1fr; */
 		div.js-form-item {
+		
+			flex: 25%;
+			
+			label {
+				padding-bottom: 0;
+			}
 			/* &:nth-child(5),
 			&:nth-child(6),
 			&:nth-child(7)			{

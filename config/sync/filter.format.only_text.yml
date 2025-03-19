@@ -4,7 +4,6 @@ status: true
 dependencies:
   module:
     - linkit
-    - pathologic
     - spamspan
 name: 'Only text'
 format: only_text
@@ -16,20 +15,9 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p> <strong> <em> <a href data-entity-type data-entity-uuid data-entity-substitution hreflang accesskey id rel target title> <ul type> <ol start type> <li> <cite> <dl> <dt> <dd> <span> <div> <object> <param> <blockquote cite> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <img src alt height width data-entity-type data-entity-uuid data-entity-substitution data-align data-caption> <iframe width height src frameborder allowfullscreen allow>'
+      allowed_html: '<br> <p> <strong> <em> <a href data-entity-type data-entity-uuid data-entity-substitution> <ul> <ol start> <li>'
       filter_html_help: false
       filter_html_nofollow: false
-  filter_pathologic:
-    id: filter_pathologic
-    provider: pathologic
-    status: true
-    weight: 50
-    settings:
-      settings_source: global
-      local_settings:
-        protocol_style: full
-        local_paths: ''
-        keep_language_prefix: false
   filter_spamspan:
     id: filter_spamspan
     provider: spamspan

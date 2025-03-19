@@ -6,7 +6,7 @@ display:
       header:
         area:
           content:
-            value: "<p>Finnishcourses.fi -palvelussa kurssitietoja ilmoittavat seuraavat koulutuksen järjestäjät</p>\r\n"
+            value: '<p>Finnishcourses.fi -palvelussa kurssitietoja ilmoittavat seuraavat koulutuksen järjestäjät.</p>'
             format: basic_html
       fields:
         nothing:

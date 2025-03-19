@@ -312,7 +312,7 @@ handlers:
         email_address: email_address
         service_request_id: service_request_id
       custom_data: ''
-      custom_options: ''
+      custom_options: 'verify: /home/master/.ssh/cacert.pem'
       file_data: true
       cast: false
       debug: false

@@ -9,7 +9,7 @@ id: node.course.field_number_of_lessons
 field_name: field_number_of_lessons
 entity_type: node
 bundle: course
-label: 'Contact teaching hours per week'
+label: 'Weekly lessons'
 description: ''
 required: false
 translatable: false

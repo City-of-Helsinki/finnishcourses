@@ -18,22 +18,29 @@ display:
             first: '« första'
             last: 'sista »'
       fields:
+        node_bulk_form:
+          action_title: Åtgärd
         title:
           label: Titel
+          separator: ', '
         type:
           label: Innehållstyp
           separator: ', '
         name:
           label: Författare
+          separator: ', '
         status:
           label: Status
           settings:
             format_custom_true: Publicerad
             format_custom_false: 'Ej publicerad'
+          separator: ', '
         publish_on:
           label: 'Publicera den'
+          separator: ', '
         unpublish_on:
           label: 'Avpublicera den'
+          separator: ', '
         operations:
           label: Funktioner
       filters:
@@ -64,7 +71,7 @@ display:
   overview:
     display_options:
       menu:
-        title: Schemalagd
+        title: 'Schemalagt innehåll'
       tab_options:
         title: Innehåll
     display_title: Innehållsöversikt
@@ -78,3 +85,4 @@ display:
         uid:
           exception:
             title: Alla
+    display_title: Användare

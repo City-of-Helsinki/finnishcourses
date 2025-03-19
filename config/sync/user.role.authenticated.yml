@@ -6,6 +6,7 @@ dependencies:
     - filter.format.basic_html
     - filter.format.materials
     - filter.format.only_text
+    - filter.format.webform_default
   module:
     - comment
     - file
@@ -31,4 +32,5 @@ permissions:
   - 'use text format basic_html'
   - 'use text format materials'
   - 'use text format only_text'
+  - 'use text format webform_default'
   - 'view media'

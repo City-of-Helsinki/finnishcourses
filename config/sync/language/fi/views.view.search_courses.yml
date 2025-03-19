@@ -59,7 +59,7 @@ display:
             label: Verkkokurssi
       header:
         result:
-          content: 'Hakuehdoilla löytyi @total kurssi(a)'
+          content: '<span data-total="@total">Hakuehdoilla löytyi @total kurssi(a)</span>'
       title: 'Etsi suomen kielen kursseja nyt'
       fields:
         field_starting_level:
@@ -106,7 +106,7 @@ display:
       empty:
         area:
           content:
-            value: "<p>Koita vähentää hakukriteerejä.</p>\r\n"
+            value: '<p>Koita vähentää hakukriteerejä.</p>'
             format: basic_html
   page_1:
     display_title: Sivu

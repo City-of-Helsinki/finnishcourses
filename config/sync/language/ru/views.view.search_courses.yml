@@ -36,13 +36,13 @@ display:
           group_info:
             group_items:
               1:
-                title: 'Только начинаю изучать язык (0)'
+                title: 'Начинающий (0)'
               2:
-                title: 'Базовый уровень (A)'
+                title: 'Базовый (A)'
               3:
                 title: 'Продвинутый (B)'
               4:
-                title: 'Высший уровень (C)'
+                title: 'Высший (C)'
             label: 'Ваш уровень владения языком в настоящий момент?'
         field_course_fee:
           expose:
@@ -105,11 +105,11 @@ display:
             label: 'Целевой уровень'
       header:
         result:
-          content: '@total курсов найдено по вашему запросу'
+          content: "<span data-total=\"@total\">@total курсов найдено по вашему запросу\r\n</span>"
       empty:
         area:
           content:
-            value: "<p>Попробуйте уменьшить критерии поиска.</p>\r\n"
+            value: '<p>Попробуйте уменьшить критерии поиска.</p>'
             format: basic_html
       pager:
         options:

@@ -7,11 +7,10 @@ dependencies:
     - iframe_cookie_consent
     - linkit
     - media
-    - pathologic
     - spamspan
 _core:
   default_config_hash: hewPmBgni9jlDK_IjLxUx1HsTbinK-hdl0lOwjbteIY
-name: 'Full HTML'
+name: 'Täysi HTML'
 format: full_html
 weight: 1
 filters:
@@ -54,17 +53,6 @@ filters:
     status: true
     weight: 12
     settings: {  }
-  filter_pathologic:
-    id: filter_pathologic
-    provider: pathologic
-    status: false
-    weight: 50
-    settings:
-      settings_source: global
-      local_settings:
-        protocol_style: full
-        local_paths: ''
-        keep_language_prefix: true
   filter_spamspan:
     id: filter_spamspan
     provider: spamspan

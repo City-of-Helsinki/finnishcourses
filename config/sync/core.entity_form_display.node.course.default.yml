@@ -37,7 +37,6 @@ dependencies:
     - field.field.node.course.field_target_level
     - node.type.course
   module:
-    - bootstrap_datepicker
     - conditional_fields
     - datetime
     - field_group
@@ -212,62 +211,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_course_end_date:
-    type: bootstrap_date_widget
-    weight: 26
+    type: datetime_default
+    weight: 42
     region: content
-    settings:
-      title: ''
-      format: dd.mm.yyyy
-      language: fi
-      show_week_days: '1'
-      today_btn: 'TRUE'
-      autoclose: '1'
-      week_start: '1'
-      assume_nearby_year: '1'
-      container: body
-      calendar_weeks: '1'
-      dates_disabled: ''
-      enable_on_readonly: '1'
-      end_date_selection: date
-      end_date: ''
-      end_date_timedelta: ''
-      force_parse: '1'
-      keyboard_navigation: '1'
-      max_view_mode: '4'
-      min_view_mode: '0'
-      orientation: auto
-      show_on_focus: '1'
-      start_date_selection: date
-      start_date: ''
-      start_date_timedelta: ''
-      start_view: '0'
-      update_view_date: '1'
-      z_index_offset: '10'
-      clear_btn: 0
-      toggle_active: false
-      days_of_week_disabled:
-        1: 0
-        2: 0
-        3: 0
-        4: 0
-        5: 0
-        6: 0
-        7: 0
-      days_of_week_highlighted:
-        1: 0
-        2: 0
-        3: 0
-        4: 0
-        5: 0
-        6: 0
-        7: 0
-      disable_touch_keyboard: 0
-      immediate_updates: 0
-      keep_empty_values: 0
-      multidate: false
-      multidate_separator: ','
-      rtl: 0
-      today_highlight: 0
+    settings: {  }
     third_party_settings: {  }
   field_course_features:
     type: options_buttons
@@ -327,62 +274,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_course_start_date:
-    type: bootstrap_date_widget
-    weight: 25
+    type: datetime_default
+    weight: 41
     region: content
-    settings:
-      title: ''
-      format: dd.mm.yyyy
-      language: fi
-      show_week_days: '1'
-      today_btn: 'TRUE'
-      autoclose: '1'
-      week_start: '1'
-      assume_nearby_year: '1'
-      container: body
-      calendar_weeks: '1'
-      dates_disabled: ''
-      enable_on_readonly: '1'
-      end_date_selection: date
-      end_date: ''
-      end_date_timedelta: ''
-      force_parse: '1'
-      keyboard_navigation: '1'
-      max_view_mode: '4'
-      min_view_mode: '0'
-      orientation: auto
-      show_on_focus: '1'
-      start_date_selection: date
-      start_date: ''
-      start_date_timedelta: ''
-      start_view: '0'
-      today_highlight: '1'
-      update_view_date: '1'
-      z_index_offset: '10'
-      clear_btn: 0
-      toggle_active: false
-      days_of_week_disabled:
-        1: 0
-        2: 0
-        3: 0
-        4: 0
-        5: 0
-        6: 0
-        7: 0
-      days_of_week_highlighted:
-        1: 0
-        2: 0
-        3: 0
-        4: 0
-        5: 0
-        6: 0
-        7: 0
-      disable_touch_keyboard: 0
-      immediate_updates: 0
-      keep_empty_values: 0
-      multidate: false
-      multidate_separator: ','
-      rtl: 0
+    settings: {  }
     third_party_settings: {  }
   field_course_street_address:
     type: select_or_other_reference
@@ -475,7 +370,7 @@ content:
             selector: ''
   field_course_unpublish_date:
     type: datetime_default
-    weight: 23
+    weight: 25
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -609,12 +504,12 @@ content:
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 22
+    weight: 24
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 6
+    weight: 50
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -625,7 +520,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 24
+    weight: 26
     region: content
     settings:
       display_label: true

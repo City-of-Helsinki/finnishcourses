@@ -10,6 +10,7 @@ dependencies:
     - field.field.taxonomy_term.organizations.field_email
     - field.field.taxonomy_term.organizations.field_locations_addresses
     - field.field.taxonomy_term.organizations.field_locations_towns
+    - field.field.taxonomy_term.organizations.field_original_name
     - field.field.taxonomy_term.organizations.field_phone
     - field.field.taxonomy_term.organizations.field_postal_code
     - field.field.taxonomy_term.organizations.field_town
@@ -86,5 +87,6 @@ hidden:
   field_courses_unpublishing_cycle: true
   field_locations_addresses: true
   field_locations_towns: true
+  field_original_name: true
   langcode: true
   search_api_excerpt: true

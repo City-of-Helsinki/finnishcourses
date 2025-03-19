@@ -3,12 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_course_length
-    - field.storage.node.field_course_town
-    - field.storage.node.field_online_and_traditional
-    - field.storage.node.field_online_course
+    - field.storage.node.field_registration_end_date
+    - field.storage.node.field_registration_start_date
     - node.type.course
+    - user.role.administrator
+    - user.role.infofinland_user
   module:
+    - datetime
     - node
     - taxonomy
     - user
@@ -75,145 +76,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_online_course:
-          id: field_online_course
-          table: node__field_online_course
-          field: field_online_course
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: nid
           plugin_id: field
-          label: Verkkokurssi
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: boolean
-          settings:
-            format: default
-            format_custom_false: ''
-            format_custom_true: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_online_and_traditional:
-          id: field_online_and_traditional
-          table: node__field_online_and_traditional
-          field: field_online_and_traditional
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Kurssilla on lähiopetusta ja etäopetusta'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: boolean
-          settings:
-            format: default
-            format_custom_false: ''
-            format_custom_true: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_course_length:
-          id: field_course_length
-          table: node__field_course_length
-          field: field_course_length
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: 'Lähiopetustunnit yhteensä'
+          label: ID
           exclude: false
           alter:
             alter_text: false
@@ -258,7 +131,7 @@ display:
           type: number_integer
           settings:
             thousand_separator: ''
-            prefix_suffix: false
+            prefix_suffix: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -269,15 +142,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_course_town:
-          id: field_course_town
-          table: node__field_course_town
-          field: field_course_town
+        field_registration_start_date:
+          id: field_registration_start_date
+          table: node__field_registration_start_date
+          field: field_registration_start_date
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Kunta
+          label: 'Ilmoittautumisen alkamisajankohta'
           exclude: false
           alter:
             alter_text: false
@@ -318,11 +191,76 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: datetime_default
           settings:
-            link: false
-          group_column: target_id
+            timezone_override: ''
+            format_type: medium
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_registration_end_date:
+          id: field_registration_end_date
+          table: node__field_registration_end_date
+          field: field_registration_end_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Ilmoittautumisen loppumisajankohta'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_default
+          settings:
+            timezone_override: ''
+            format_type: medium
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -333,15 +271,18 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: mini
+        type: full
         options:
           offset: 0
-          items_per_page: 100
+          pagination_heading_level: h4
+          items_per_page: 500
           total_pages: null
           id: 0
           tags:
             next: ››
             previous: ‹‹
+            first: '« Ensimmäinen'
+            last: 'Viimeinen »'
           expose:
             items_per_page: false
             items_per_page_label: 'Merkintöjä sivua kohti'
@@ -350,6 +291,7 @@ display:
             items_per_page_options_all_label: '- Kaikki -'
             offset: false
             offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -361,43 +303,33 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: perm
+        type: role
         options:
-          perm: 'access content'
+          role:
+            administrator: administrator
+            infofinland_user: infofinland_user
       cache:
         type: tag
         options: {  }
       empty: {  }
       sorts:
-        created:
-          id: created
+        nid_1:
+          id: nid_1
           table: node_field_data
-          field: created
+          field: nid
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
-          entity_field: created
-          plugin_id: date
-          order: DESC
+          entity_field: nid
+          plugin_id: standard
+          order: ASC
           expose:
             label: ''
             field_identifier: ''
           exposed: false
-          granularity: second
       arguments: {  }
       filters:
-        status:
-          id: status
-          table: node_field_data
-          field: status
-          entity_type: node
-          entity_field: status
-          plugin_id: boolean
-          value: '1'
-          group: 1
-          expose:
-            operator: ''
         type:
           id: type
           table: node_field_data
@@ -407,27 +339,32 @@ display:
           plugin_id: bundle
           value:
             course: course
-        field_online_course_value:
-          id: field_online_course_value
-          table: node__field_online_course
-          field: field_online_course_value
+          group: 1
+        field_registration_start_date_value:
+          id: field_registration_start_date_value
+          table: node__field_registration_start_date
+          field: field_registration_start_date_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: boolean
-          operator: '='
-          value: All
-          group: 1
+          plugin_id: datetime
+          operator: '<'
+          value:
+            min: ''
+            max: ''
+            value: '2025-01-01 00:00:00'
+            type: date
+          group: 2
           exposed: true
           expose:
-            operator_id: ''
-            label: 'Verkkokurssi (field_online_course)'
+            operator_id: field_registration_start_date_value_op
+            label: 'Ilmoittautumisen alkamisajankohta (field_registration_start_date)'
             description: ''
-            use_operator: false
-            operator: field_online_course_value_op
+            use_operator: true
+            operator: field_registration_start_date_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_online_course_value
+            identifier: field_registration_start_date_value
             required: false
             remember: false
             multiple: false
@@ -440,6 +377,9 @@ display:
               rest_api: '0'
               testing: '0'
               organization_admin: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -452,27 +392,31 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        field_online_and_traditional_value:
-          id: field_online_and_traditional_value
-          table: node__field_online_and_traditional
-          field: field_online_and_traditional_value
+        field_registration_end_date_value:
+          id: field_registration_end_date_value
+          table: node__field_registration_end_date
+          field: field_registration_end_date_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: boolean
-          operator: '='
-          value: All
-          group: 1
+          plugin_id: datetime
+          operator: '>'
+          value:
+            min: ''
+            max: ''
+            value: '2024-01-01 00:00:00'
+            type: date
+          group: 2
           exposed: true
           expose:
-            operator_id: ''
-            label: 'Kurssilla on lähiopetusta ja etäopetusta'
+            operator_id: field_registration_end_date_value_op
+            label: 'Ilmoittautumisen loppumisajankohta (field_registration_end_date)'
             description: ''
-            use_operator: false
-            operator: field_online_and_traditional_value_op
+            use_operator: true
+            operator: field_registration_end_date_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_online_and_traditional_value
+            identifier: field_registration_end_date_value
             required: false
             remember: false
             multiple: false
@@ -485,6 +429,9 @@ display:
               rest_api: '0'
               testing: '0'
               organization_admin: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -497,8 +444,58 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+          2: AND
       style:
         type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            title: title
+            nid: nid
+            field_registration_start_date: field_registration_start_date
+            field_registration_end_date: field_registration_end_date
+          default: '-1'
+          info:
+            title:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            nid:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_registration_start_date:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_registration_end_date:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
       row:
         type: fields
       query:
@@ -506,7 +503,7 @@ display:
         options:
           query_comment: ''
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_tags: {  }
       relationships:
@@ -540,31 +537,30 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags:
-        - 'config:field.storage.node.field_course_length'
-        - 'config:field.storage.node.field_course_town'
-        - 'config:field.storage.node.field_online_and_traditional'
-        - 'config:field.storage.node.field_online_course'
+        - 'config:field.storage.node.field_registration_end_date'
+        - 'config:field.storage.node.field_registration_start_date'
   page_1:
     id: page_1
     display_title: Page
     display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
+      rendering_language: fi
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
       path: admin/online-courses
     cache_metadata:
       max-age: -1
       contexts:
-        - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags:
-        - 'config:field.storage.node.field_course_length'
-        - 'config:field.storage.node.field_course_town'
-        - 'config:field.storage.node.field_online_and_traditional'
-        - 'config:field.storage.node.field_online_course'
+        - 'config:field.storage.node.field_registration_end_date'
+        - 'config:field.storage.node.field_registration_start_date'

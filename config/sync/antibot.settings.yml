@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: 2TnP0TViNExHGuA7Cdr4L3uxhYGNzKyL0XnoAhtSHMQ
+form_ids:
+  - webform_submission_feedback_node_94_add_form
+excluded_form_ids:
+  - ''
+show_form_ids: false

@@ -2,7 +2,6 @@ label: 'Koulutuksen järjestäjät - Kurssit'
 display:
   default:
     display_options:
-      title: '{{ field_course_organization }} - Kurssit'
       fields:
         field_starting_level:
           label: Aloitustaso
@@ -26,7 +25,7 @@ display:
       empty:
         area:
           content:
-            value: "<p>Ei tulevia kursseja tällä hetkellä.</p>\r\n"
+            value: '<p>Ei tulevia kursseja tällä hetkellä.</p>'
             format: basic_html
       arguments:
         tid:

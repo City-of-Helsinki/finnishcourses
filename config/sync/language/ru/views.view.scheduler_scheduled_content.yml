@@ -44,6 +44,8 @@ display:
             first: '« первая'
             last: 'последняя »'
       fields:
+        node_bulk_form:
+          action_title: Действие
         title:
           label: Заголовок
         name:
@@ -62,8 +64,6 @@ display:
     display_title: Основной
   overview:
     display_options:
-      menu:
-        title: Запланировано
       tab_options:
         title: Содержимое
   user_page:
@@ -76,3 +76,4 @@ display:
         uid:
           exception:
             title: Все
+    display_title: Пользователь

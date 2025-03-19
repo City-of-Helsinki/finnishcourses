@@ -13,7 +13,7 @@ field_name: field_books_and_materials
 entity_type: node
 bundle: course
 label: 'Kirjat ja materiaalit'
-description: ''
+description: 'Kirjoita tähän kenttään vain kurssikirjan/oppimateriaalin nimi.'
 required: false
 translatable: false
 default_value: {  }

@@ -278,10 +278,12 @@ body {
 
 .navbar {
   padding: 0;
+  min-height: 80px;
 }
 
 .navbar-brand {
   padding-bottom: 0;
+  margin-right: 40px;
 }
 
 .region-secondary-menu {
@@ -1237,4 +1239,11 @@ h1, h2, h3, .fieldset-legend {
 .popup-kysely p:last-child {
     border-bottom: 0;
     padding-bottom: 0;
+}
+
+
+.alert {
+	p {
+		display: inline;
+	}
 }

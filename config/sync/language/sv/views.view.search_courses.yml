@@ -37,7 +37,7 @@ display:
       empty:
         area:
           content:
-            value: "<p>Yritä löysätä hakuehtojasi.</p>\r\n"
+            value: '<p>Yritä löysätä hakuehtojasi.</p>'
             format: basic_html
       filters:
         field_starting_level:
@@ -52,15 +52,9 @@ display:
                 title: 'Medelnivå (B)'
               4:
                 title: 'Den högsta nivån (C)'
-          expose:
-            description: ''
         field_course_fee:
           expose:
             label: Kursavgiften
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
           group_info:
             label: 'Pris (€)'
             group_items:
@@ -69,17 +63,12 @@ display:
         field_course_start_date:
           group_info:
             label: 'Kursens startdatum'
-            description: ''
           admin_label: Starttid
           expose:
             label: Starttid
         field_online_course:
           expose:
             label: Webbkurs
-            description: ''
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
           group_info:
             label: Webbkurs
         field_course_town:
@@ -103,7 +92,7 @@ display:
             label: Sluttid
       header:
         result:
-          content: 'Med sökkriterierna hittades @total kurs(er)'
+          content: '<span data-total="@total">Med sökkriterierna hittades @total kurs(er)</span>'
   page_1:
     display_options:
       display_extenders:
