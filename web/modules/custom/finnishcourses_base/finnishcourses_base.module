@@ -160,37 +160,50 @@ function finnishcourses_base_form_alter(&$form, FormStateInterface $form_state, 
 	if (!$is_online_course) {
 
 		$addressOptions = getAddressOptions($form_state, $form);
-		if (!empty($form['field_course_street_address']['widget']['#default_value'])) {
-		  $addressDefault = $form['field_course_street_address']['widget']['#default_value'];
-		} elseif (is_array($addressOptions)) {
-		  $addressDefault = array_keys($addressOptions)[0];
-		} else {
-			$addressDefault = "";
-		}
+		
+		if ($addressOptions) {
+			
+			if (!empty($form['field_course_street_address']['widget']['#default_value'])) {
+			  $addressDefault = $form['field_course_street_address']['widget']['#default_value'];
+			} elseif (is_array($addressOptions)) {
+			  $addressDefault = array_keys($addressOptions)[0];
+			} else {
+				$addressDefault = "";
+			}
+			
+			$form['field_course_street_address']['#prefix'] = '<div id="street-select">';
+			$form['field_course_street_address']['widget']['#options'] = $addressOptions;
+			$form['field_course_street_address']['widget']['#default_value'] = $addressDefault;
+			$form['field_course_street_address']['#suffix'] = '</div>';
+			
+		}	
 
 		$townOptions = getTownOptions($form_state, $form);
-		if (!empty($form['field_course_town']['widget']['#default_value'])) {
-		  $townDefault = $form['field_course_town']['widget']['#default_value'];
-		} elseif (is_array($townOptions)) {
-		  $townDefault = array_keys($townOptions)[0];
-		} else {
-		  $townDefault = "";
+		
+		if ($townOptions) {
+			
+			//dsm($townOptions);
+			
+			
+			if (!empty($form['field_course_town']['widget']['#default_value'])) {
+			  $townDefault = $form['field_course_town']['widget']['#default_value'];
+			} elseif (is_array($townOptions)) {
+			  $townDefault = array_keys($townOptions)[0];
+			} else {
+			  //$townDefault = "";
 
-		\Drupal::messenger()->addMessage('Organisaation kuntatieto puuttuu');
+				\Drupal::messenger()->addMessage('Organisaation kuntatieto puuttuu');
 
-		}
-	
-		//$form['field_course_street_address']['#attributes']['id'][] = 'street-select';
-		$form['field_course_street_address']['#prefix'] = '<div id="street-select">';
-		$form['field_course_street_address']['widget']['#options'] = $addressOptions;
-		$form['field_course_street_address']['widget']['#default_value'] = $addressDefault;
-		$form['field_course_street_address']['#suffix'] = '</div>';
-
-		//$form['field_course_town']['#attributes']['id'][] = 'town-select';
-		$form['field_course_town']['#prefix'] = '<div id="town-select">';
-		$form['field_course_town']['widget']['#options'] = $townOptions;
-		$form['field_course_town']['widget']['#default_value'] = $townDefault;
-		$form['field_course_town']['#suffix'] = '</div>';
+			}
+			
+			//$form['field_course_town']['#attributes']['id'][] = 'town-select';
+			$form['field_course_town']['#prefix'] = '<div id="town-select">';
+			$form['field_course_town']['widget']['#options'] = $townOptions;
+			$form['field_course_town']['widget']['#default_value'] = $townDefault;
+			$form['field_course_town']['#suffix'] = '</div>';
+			
+		}	
+		
 		
 	}
 	
