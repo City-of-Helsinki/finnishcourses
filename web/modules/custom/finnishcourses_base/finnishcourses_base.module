@@ -1116,9 +1116,19 @@ function finnishcourses_base_preprocess_views_view_field(&$variables) {
   if (isset($variables['field']) && !empty($variables['field']->field) && $variables['field']->field == 'nid') {
     
 	//$nid = $variables['field']->getValue($variables['row']);
-	$nid = $variables['output']->__toString();
+	//$nid = $variables['output']->__toString();
 	
-	//dsm($nid);
+	if ( isset($variables['row']->nid) ) {
+	
+		$nid = $variables['row']->nid;
+	
+	} elseif ( isset($variables['row']->_entity->nid->value) ) {
+ 
+		$nid = $variables['row']->_entity->nid->value;
+		
+	}	
+	
+	
 
     if (!empty($nid)) {
       $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
