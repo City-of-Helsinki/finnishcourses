@@ -11831,6 +11831,11 @@ input[type=checkbox]:checked::after {
     text-align: left;
   }
 }
+@media (min-width: 845px) {
+  .footer nav .nav .nav-item {
+    max-width: 260px;
+  }
+}
 .footer nav .nav .nav-item active {
   padding-bottom: 0;
 }

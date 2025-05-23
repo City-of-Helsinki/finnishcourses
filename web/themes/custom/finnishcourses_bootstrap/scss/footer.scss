@@ -41,12 +41,19 @@
           .nav-item {
           //  flex: 1 1 160px;
             margin: 1px;
+			
           //  float: left;
 			
 			text-align: center;
 			@include media-breakpoint-up(sm) {
 				text-align: left;
+				
 			}
+			@include media-breakpoint-up(sm-t) {
+				
+				max-width: 260px;
+			}
+			
             active {
               padding-bottom: 0;
             }
