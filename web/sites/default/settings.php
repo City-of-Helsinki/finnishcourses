@@ -105,12 +105,12 @@ if ($_SERVER['HTTP_HOST'] == 'www.finnishcourses.fi') {
  * @endcode
  */
 $databases['default']['default'] = [
-  'database' => getenv('FINNISHCOURSES_MYSQL_DATABASE'),
-  'username' => getenv('FINNISHCOURSES_MYSQL_USER'),
-  'password' => getenv('FINNISHCOURSES_MYSQL_PASSWORD'),
+  'database' => $_SERVER['FINNISHCOURSES_MYSQL_DATABASE'],
+  'username' => $_SERVER['FINNISHCOURSES_MYSQL_USER'],
+  'password' => $_SERVER['FINNISHCOURSES_MYSQL_PASSWORD'],
   'prefix' => '',
-  'host' => getenv('FINNISHCOURSES_MYSQL_HOSTNAME'),
-  'port' => getenv('FINNISHCOURSES_MYSQL_PORT'),
+  'host' => $_SERVER['FINNISHCOURSES_MYSQL_HOSTNAME'],
+  'port' => $_SERVER['FINNISHCOURSES_MYSQL_PORT'],
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 ];
@@ -546,7 +546,7 @@ if ($settings['hash_salt']) {
  * See https://www.drupal.org/documentation/modules/file for more information
  * about securing private files.
  */
-$settings['file_private_path'] = getenv('FINNISHCOURSES_FILE_PRIVATE_PATH');
+$settings['file_private_path'] = $_SERVER['FINNISHCOURSES_FILE_PRIVATE_PATH'];
 
 /**
  * Session write interval:

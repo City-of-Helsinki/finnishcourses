@@ -120,7 +120,7 @@
         "furf/jquery-ui-touch-punch": "dev-master",
         "mglaman/composer-drupal-lenient": "^1.0",
         "platformsh/config-reader": "^2.2",
-        "vlucas/phpdotenv": "^2.4",
+        "vlucas/phpdotenv": "^5.0",
         "w8tcha/ckeditor-wordcount-plugin": "^1.17",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3",
@@ -188,9 +188,6 @@
 				"Make exposed filter values available as tokens for text areas":"https://www.drupal.org/files/issues/2022-10-30/2761273-50.patch",
 				"Warning: Undefined array key value in Drupal":"https://www.drupal.org/files/issues/2024-01-31/3418238-2.patch"
             },
-			"drupal/redirect_after_login": {
-				"Headers have already been sent after upgrade to Drupal 9.2 (can't login)": "https://www.drupal.org/files/issues/2021-06-20/3214949.patch"
-			},
 			"drupal/search_api": {
 				"Search Results - undefined array key #conjunction in prepareKeys()": "patches/contrib/search_api/0001-fix.patch"
 			},
@@ -199,9 +196,6 @@
 			},
 			"drupal/shortcutperrole": {
 				"Automated Drupal 10 patch": "https://www.drupal.org/files/issues/2022-06-16/shortcutperrole.2.0.x-dev.rector.patch"
-			},
-			"drupal/redirect_after_login": {
-				"Drupal 11 compatibility": "https://www.drupal.org/files/issues/2024-07-22/redirect_after_login-3462725.patch"
 			},
 			"drupal/filelog": {
 				"Drupal 11 compatibility": "https://www.drupal.org/files/issues/2024-07-28/filelog.3.0.x-dev.rector.patch"
